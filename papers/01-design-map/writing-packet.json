@@ -1,0 +1,55 @@
+{
+  "schema": "openclaw.scientific-writing.packet.v1",
+  "artifact_id": "trust-and-review-paper-01-private-draft-2026-08-24",
+  "purpose": "Produce a source-bounded design-map manuscript that consolidates machine-verifiable scientific records and plural review governance without claiming empirical superiority.",
+  "audience": "Scholarly communication, computational science, research infrastructure, metascience, and governance researchers; private internal review at this stage.",
+  "section_type": "full critical-design-synthesis manuscript",
+  "target_latex_fragments": ["main.tex"],
+  "outline": [
+    "Motivate the gap between cosmetic rerendering and scientific review.",
+    "Define epistemic achievement separately from record, resources, and governance.",
+    "Map representative prior systems and standards as components to reuse.",
+    "Specify shared claim/evidence records and plural trust-domain views.",
+    "Apply the design to portable and HPC/restricted workflows.",
+    "State threat boundaries, falsifiers, limitations, and first unmet gates."
+  ],
+  "evidence_packets": [
+    "OUTLINE.md",
+    "CLAIMS.md",
+    "../../shared/research/reviewer-trust-closest-work-matrix.md",
+    "../../shared/research/reviewer-trust-governance-landscape.md",
+    "../../shared/research/scaling-mcrp-to-a-peer-review-corpus.md",
+    "../../shared/protocol/reviewer-trust-domains-v0.1-draft.md",
+    "../../shared/references.bib"
+  ],
+  "retrieval_capability": "bounded local evidence corpus plus citation identity tools; no independent exhaustive corpus search performed in this drafting pass",
+  "claim_ledger": "claim-ledger.json",
+  "bibliography_inputs": ["references.bib", "../../shared/references.bib"],
+  "figures_tables": [
+    "Table 1 epistemic achievement ladder",
+    "Table 2 assessment modes",
+    "Table 3 threat analysis",
+    "No external figures in this draft"
+  ],
+  "human_questions": [
+    "Who accepts authorship responsibility and approves AI-assistance disclosure?",
+    "Which exact venue and article type should govern final length and style?",
+    "Which public or sanitized HPC workflow can support the second case without exposing restricted material?",
+    "What evidence would justify promoting the plural-trust architecture from design profile to empirical recommendation?"
+  ],
+  "constraints": [
+    "Private draft; no submission, preprint, public release, or external contact.",
+    "Contribution posture is synthesis, unification, clarification, and operational consolidation.",
+    "No mock results, invented citations, privacy guarantees, or machine-validity claims.",
+    "Every assessment mode must state exclusions and resource burden.",
+    "R0 is the portable floor for lightweight work, not a universal gate for expensive science."
+  ],
+  "excluded_claims": [
+    "The architecture improves peer-review quality.",
+    "Plural trust views outperform global reputation.",
+    "Per-case personas guarantee anonymity.",
+    "The worked cases have been implemented or independently reviewed.",
+    "Machine checks establish scientific validity.",
+    "This is the first system to combine provenance, review, and reputation."
+  ]
+}

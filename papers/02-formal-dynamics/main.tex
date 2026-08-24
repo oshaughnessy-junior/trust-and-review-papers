@@ -1,0 +1,491 @@
+\documentclass[11pt]{article}
+\input{../../latex/common-preamble.tex}
+
+\title{Trust Without a Global Score:\\Localized, Typed, and Forkable Reviewer Networks}
+\author{Private working draft---authorship not yet assigned}
+\date{24 August 2026}
+
+\newcommand{\view}{\mathcal{V}}
+\newcommand{\events}{\mathcal{E}}
+\newcommand{\actors}{\mathcal{A}}
+\newcommand{\domains}{\mathcal{D}}
+\newcommand{\topics}{\mathcal{Z}}
+\newcommand{\caps}{\mathcal{C}}
+\newcommand{\roles}{\mathcal{R}}
+\newcommand{\policies}{\mathcal{P}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\CR}{\operatorname{CR}}
+
+\begin{document}
+\maketitle
+
+\draftstatus{Theory/model first draft. Definitions and protocol semantics are proposed design choices. Candidate propositions are proof obligations, simulations are planned, and no empirical or analytical result is claimed. This document is private and not submission-ready.}
+
+\begin{abstract}
+Reviewer reputation can become an allocation mechanism: standing affects assignments, assignments create the opportunity to be observed, and those observations update standing.  A single recursively computed score can therefore couple scientific specialties, institutions, and governance regimes even when the underlying review tasks are not interchangeable.  This paper develops a formal research program for a different object: a root-, domain-, topic-, capability-, role-, policy-, and time-relative \emph{reliance view}.  The view is computed from typed events and returns admissibility, routing features, exclusions, uncertainty, resource feasibility, and an explanation; it is not a scientific verdict or an intrinsic property of a person.  We specify five comparison arms, from random assignment through a global recursive score to a capacity-gated local policy; importer-authorized interdomain bridges; nested and forkable domains; an observation model for fresh case personas; heterogeneous malicious and miscalibrated actors; and multiaxis review resources.  We also state candidate bridge-influence and fork-separation propositions, a feedback-dynamics family, observables, adversarial regimes, and no-go conditions.  The manuscript deliberately contains no results.  Its purpose is to make the assumptions, proof obligations, simulation contract, and failure criteria precise enough that subsequent analysis can falsify the design rather than merely illustrate it.
+\end{abstract}
+
+\section{Introduction}
+
+A machine-verifiable scientific record can preserve claims, evidence, workflow provenance, attestations, and later corrections.  That record does not by itself decide who should inspect a calibration, rerun an inference, audit a provenance chain, or judge whether a downselected computation is scientifically adequate.  Scaling from records to a peer-review corpus therefore introduces an actor-governance problem.  Review work is scarce, reviewers have different capabilities and conflicts, review outcomes arrive late and selectively, and some actors or institutions may be mistaken, strategic, or captured.
+
+The Minimum Credible Reproducibility Protocol (MCRP) core governs that claim/evidence scientific record. The Trust-Domain Review Graph (TDRG) is an optional, separately versioned actor-routing and reliance profile; it remains outside MCRP core conformance until privacy, accountability, interoperability, replay, and empirical promotion gates pass. Paper~01 owns the cross-literature taxonomy, interface obligations, and design walkthroughs; this paper imports the record and canonical resource semantics as exogenous inputs and specifies the TDRG model and evaluation program; Paper~03 owns the proposed normative exchange and conformance profile.
+
+The tempting abstraction is a reputation score.  Recursive reputation systems such as EigenTrust aggregate local transaction histories into a global vector and use pretrusted peers to resist some malicious collectives \citep{kamvar2003eigentrust}.  PageRank and its personalized and topic-biased descendants provide a closely related language for recursively routing attention \citep{page1999pagerank,haveliwala2002topic}.  These mechanisms are established prior art.  The issue is not whether their mathematics is legitimate.  It is whether a universal actor score is the right scientific-review object once scores affect future review opportunities.
+
+Scientific review is intrinsically multicolor.  Competence in detector calibration does not entail competence in population inference; reproducibility inspection does not entail scientific interpretation; and a conflict-free reviewer in one institutional setting may be ineligible in another.  Multilayer-network theory warns that aggregating distinct edge types changes the system being studied \citep{boccaletti2014multilayer}.  Local-trust work likewise shows that observer-relative judgments can behave differently from a single global value, especially for controversial actors \citep{massa2005local}.  These results motivate locality, but they do not establish that locality improves scientific review.
+
+The central feedback loop raises a second concern.  Let standing influence assignment; let assignment create observed reports and votes; and let those observations update standing.  Networked endorsement models can exhibit transitions from relatively egalitarian to concentrated outcomes under some ranking dynamics \citep{kawakatsu2021hierarchy}.  This is not evidence that the same transition occurs in the model proposed here.  It is a reason to analyze assignment and standing jointly rather than evaluating a trust algorithm on a frozen graph.
+
+We therefore formalize reviewer reliance as a scoped query,
+\begin{equation}
+ \view(S,d,z,c,r,q,P,\events_{\leq\tau},t_{\mathrm{eval}})
+   = F(S,d,z,c,r,q,P,\events_{\leq\tau},t_{\mathrm{eval}}),
+ \label{eq:view}
+\end{equation}
+where $S$ is a declared root set; $d$, $z$, $c$, and $r$ identify domain, topic, capability, and role; $q$ is a review request; $P$ is a versioned policy; $\events_{\leq\tau}$ is a frozen event cut; and $t_{\mathrm{eval}}$ is an evaluation clock with $\tau\leq t_{\mathrm{eval}}$.  The separation permits historical replay under explicitly selected expiry and freshness rules. A conforming evaluator is intended to be deterministically replayable relative to these inputs; this is not scientific reproduction. Different roots or policies may legitimately produce different views.  Graph position is a routing feature, not evidence of honesty, correctness, unique personhood, or scientific validity.
+
+The contribution sought by this paper is a consolidated model specification and comparative research program, not invention of the components or completed comparative theory. Recursive reputation, personalized rank, topic-biased rank, flow-bounded trust, fair assignment, anonymous reputation, repository-mediated review, and polycentric governance all have substantial prior art \citep{levien1998attack,stelmakh2021peerreview4all,zhai2016anonrep,rodriguez2006convergence,ostrom2010polycentric}.  The narrower objective is to connect them in one scientific-review model that makes roots, topic colors, importer-controlled bridges, fission, anonymity observability, assignment feedback, and multiaxis resource costs jointly explicit.
+
+This first draft contributes five artifacts: (i) definitions for scoped reliance and its observability boundary; (ii) comparison arms A0--A4 with a common downstream assignment stage; (iii) candidate analytical statements for imported influence and fork separation; (iv) a preregisterable synthetic evaluation contract; and (v) no-go regimes in which the composite policy must be rejected or downgraded.  No theorem has yet been proved and no simulation has been run.
+
+\begin{evidencegate}[Evidence gate: central scientific claim]
+Any statement that localized or capacity-bounded views improve capture resistance requires a checked analysis and preregistered A0--A4 experiments on identical frozen inputs.  Until those artifacts exist, this manuscript may define and compare policies but may not claim superiority.
+\end{evidencegate}
+
+\section{Prior work and the residual question}
+
+\subsection{Recursive, personalized, and topic-sensitive routing}
+
+EigenTrust converts normalized local satisfaction values into a global reputation vector and introduces pretrusted peers to anchor the computation under malicious behavior \citep{kamvar2003eigentrust}.  It is the appropriate global recursive baseline for this study, not a straw person.  PageRank supplies the canonical restart-walk formulation \citep{page1999pagerank}; topic-sensitive PageRank shows how distinct biased vectors can serve distinct queries \citep{haveliwala2002topic}.  Massa and Avesani distinguish global from local trust and report that local metrics can better address controversial users in an Epinions data set \citep{massa2005local}.  These works preempt any broad claim that root-relative, personalized, or topic-specific graph scores are new.
+
+The scientific-review question differs in its measurement target.  File-sharing transactions, web links, and product-review trust are not interchangeable with evidence-bearing checks of scientific claims.  A reviewer can be sincere yet scientifically miscalibrated; a useful negative report can disagree with authors and panel majorities; and a later-confirmed defect may arrive months after the assignment.  Consequently, the event model below refuses to collapse social approval, delegation, conduct, and delayed defect evidence into one edge weight.
+
+\subsection{Attack fronts, identities, and assignment}
+
+Levien and Aiken formulate root-relative trust as an attack-resistance problem and construct a max-flow metric under explicit graph and acceptance assumptions \citep{levien1998attack}.  The proposed capacity gate profiles this prior art.  Its new evaluation question is operational: whether an explicit frontier budget helps in sparse scientific specialties once false exclusion, reviewer workload, institutional overlap, and legitimate minority views are counted.
+
+Graph defenses do not establish that identifiers denote unique people.  Douceur's Sybil analysis makes the dependence on identity or resource assumptions explicit \citep{douceur2002sybil}.  We accordingly distinguish a coalition of counterfeit identifiers from a coalition of unique humans and from management capture of assignment or adjudication.  These threat classes can produce similar graph patterns while requiring different controls.
+
+Reviewer assignment is also its own optimization problem.  PeerReview4All formalizes fair and accurate assignment under objective- and subjective-score models \citep{stelmakh2021peerreview4all}.  Our graph policies operate upstream: they define scoped admissibility and routing features.  The same declared assignment optimizer must be applied across arms wherever possible, otherwise an improvement due to assignment fairness could be misattributed to trust localization.
+
+\subsection{Anonymous reputation, review infrastructures, and governance}
+
+Tracking-resistant anonymous reputation is not an empty design space.  AnonRep demonstrates a concrete protocol in which users can prove reputation properties and receive feedback without ordinary long-term tracking \citep{zhai2016anonrep}.  The present paper therefore does not claim that anonymous accountability is new.  It instead asks which graph is observable to which service when public reviews use fresh case personas, and refuses to infer a public person-level trajectory when no public linkage exists.
+
+Repository-mediated, deconstructed peer review with social-network reviewer selection was proposed well before the present work \citep{rodriguez2006convergence}.  Likewise, polycentric governance supplies an established account of multiple decision centers under shared rules \citep{ostrom2010polycentric}.  Nested domains and fission below are a proposed protocol specialization of these broader ideas, not a new theory of governance.
+
+\subsection{Residual contribution and falsification posture}
+
+The residual question is whether a common formal model can expose the interactions among five mechanisms that are usually analyzed separately: typed reliance, endogenous assignment feedback, importer-authorized bridges, fork containment, and privacy/resource constraints.  Table~\ref{tab:prior} records the boundary.
+
+\begin{table}[htbp]
+\centering
+\caption{Prior-art boundary and paper-specific question.}
+\label{tab:prior}
+\begin{tabularx}{\linewidth}{@{}p{0.23\linewidth}X X@{}}
+\toprule
+Mechanism & Established contribution & Question retained here \\
+\midrule
+Global recursive rank & Eigenvector/restart aggregation and pretrusted anchors & Behavior when rank controls scientific-review opportunities \\
+Local/topic rank & Root- and query-relative vectors & Leakage and coverage across topic--capability layers \\
+Flow-bounded trust & Capacity-based attack-frontier analysis & Sparse-domain exclusion and institutional overlap \\
+Fair assignment & Coverage- and fairness-aware reviewer allocation & Matched downstream optimizer after scoped eligibility \\
+Anonymous reputation & Private or cryptographic longitudinal reputation & Observable graph under fresh case personas and service coalitions \\
+Polycentric governance & Multiple decision centers under shared rules & Deterministic domain views, explicit imports, and fork replay \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{evidencegate}[Evidence gate: novelty]
+The closest-work audit must be repeated immediately before submission.  If an existing system already joins the same event semantics, bridge rules, fork dependencies, feedback model, and resource evaluation, the contribution must be narrowed to replication, interoperability, or comparative evaluation.
+\end{evidencegate}
+
+\section{Formal objects, scopes, and observability}
+
+\subsection{Actors, cases, layers, and events}
+
+Let $i,j\in\actors$ index durable private domain accounts; $q\in\mathcal{Q}$ index review requests tied to a versioned claim/evidence release; $d\in\domains$ index governance domains; $z\in\topics$ index scientific topics; $c\in\caps$ index capabilities; and $r\in\roles$ index review roles.  A layer is
+\begin{equation}
+ \ell=(d,z,c,r)\in\domains\times\topics\times\caps\times\roles.
+\end{equation}
+Capabilities may include calibration, statistical inference, numerical reconstruction, workflow provenance, uncertainty review, or domain interpretation.  Roles may distinguish primary reviewer, reproduction auditor, bridge approver, adjudicator, or supervised newcomer.
+
+The append-only history $\events_{\leq\tau}$ contains signed, typed events available at cut $\tau$: credentials; scoped positive delegations; assignments; reports; report evaluations; later defect outcomes; conflicts; bridge approvals and revocations; sanctions with due process; policy changes; and fork declarations.  It does not contain an omniscient reviewer-quality label.  A policy $P\in\policies$ names event schemas, expiry rules, conflict predicates, admissibility thresholds, bridge composition, resource constraints, and deterministic tie-breaking.
+
+\designchoice{The view in Eq.~\eqref{eq:view} returns an admissible set, routing features, exclusions, uncertainty, resource feasibility, a dependency explanation, and expiry.  It does not return a universal leaderboard or a scientific disposition.}
+
+The distinction matters for interpretation.  Two roots may make different but policy-compliant assignments.  A policy may decline to route through an actor without asserting that the actor is incompetent or dishonest.  A report may identify a defect without acquiring authority over unrelated topics.  The view's provenance must name the roots, policy version, graph/event cut, bridge versions, resource profile, and observer class used to compute it.
+
+\subsection{Fresh personas and observer classes}
+
+For each case $q$, actor $i$ uses a fresh public persona $\pi_{i,q}$.  It is linkable within that case and, under the target privacy property, ordinarily unlinkable to $\pi_{i,q'}$ for $q\neq q'$.  We distinguish:
+\begin{itemize}
+ \item $O_{\rm pub}$: authors, readers, and ordinary reviewers, who see public case personas and public events;
+ \item $O_{\rm route}$: an assignment service, which sees eligible private handles and policy inputs but not civil identity;
+ \item $O_{\rm rep}$: a reputation custodian, which sees domain accounts and permitted longitudinal events but not civil identity;
+ \item $O_{\rm reg}$: a uniqueness registrar, which links civil identity to a domain account but does not see review text;
+ \item $O_{\mathcal{K}}$: an explicitly named coalition $\mathcal{K}$ of services; and
+ \item $O_{\rm open}$: a threshold-authorized identity-opening procedure for enumerated conduct cases.
+\end{itemize}
+
+\paragraph{Candidate non-identifiability statement.}
+Suppose two latent account-to-persona assignments induce the same distribution over all observations available to $O_{\rm pub}$, while exchanging the cross-case linkage of two accounts.  Then no estimator based only on $O_{\rm pub}$ observations can distinguish those assignments or consistently estimate a person-level longitudinal parameter that changes under the exchange.  This is an observational equivalence argument, not yet a formal theorem.  Timing, prose, rare expertise, and resource fingerprints are auxiliary leakage channels and must be modeled separately.
+
+\begin{evidencegate}[Evidence gate: anonymity]
+A formal statement requires a precise adversary, transcript distribution, auxiliary-information model, and security notion.  An implementation requires an independently reviewed credential or anonymous-reputation mechanism.  This manuscript does not establish unlinkability, resistance to stylometry, or safe identity opening.
+\end{evidencegate}
+
+\section{Typed reliance graphs and comparison arms}
+
+\subsection{Positive delegation and local stationary mass}
+
+For each layer $\ell$, define a directed positive-delegation graph
+\begin{equation}
+ G_\ell(\tau)=(A_\ell,W_\ell(\tau)),\qquad W_{ij}^{\ell}\geq 0.
+\end{equation}
+An edge means that source $i$ is willing, within a named scope and evidence basis, to rely on target $j$ for layer $\ell$.  Edges carry limits and expiry.  Conflicted, suspended, policy-ineligible, or expired edges are removed before evaluation.
+
+Negative judgments are not negative algebraic edges.  They are source-local route blocks, recusals, evidence-bearing challenges, or adjudicated sanctions with scope, expiry, notice, and appeal.  This choice avoids deriving positive authority from ``the enemy of my enemy'' and avoids automatically contaminating a target's neighbors.
+
+Let $T_\ell$ be the row-stochastic transition matrix derived from admissible positive edges, including a declared dangling-node rule.  Let $s_\ell$ be a normalized restart distribution supported on roots $S_\ell$, and let $0<\alpha<1$.  A local routing feature is the unique stationary solution
+\begin{equation}
+ p_\ell=(1-\alpha)s_\ell+\alpha T_\ell^{\mathsf T}p_\ell.
+ \label{eq:ppr}
+\end{equation}
+Equation~\eqref{eq:ppr} profiles personalized PageRank.  It is neither a new algorithm nor sufficient for eligibility.
+
+\subsection{Capacity gate and assignment stage}
+
+The proposed A4 arm first applies a root-relative capacity gate.  Capacities $u_{ij}^\ell$ bound the amount of reliance delegated through an edge.  A candidate is admissible only when sufficient flow reaches it under the frozen policy, optionally with independent-path and disclosed control-cluster constraints.  Flow paths do not by themselves prove independence: two paths may share an employer, supervisor, funding source, or management controller.
+
+After an arm produces an admissible set $e_{iq}\in\{0,1\}$ and routing features $v_{iq}$, a common assignment stage selects a panel subject to expertise coverage, conflicts, control diversity, workload, exploration, and resource feasibility.  This stage should use a faithful fairness-aware assignment method such as the class studied by \citet{stelmakh2021peerreview4all}; the exact optimizer is a preregistered profile choice.
+
+\subsection{A0--A4 baselines}
+
+The comparison families are defined in Table~\ref{tab:arms}.  They must receive identical tasks, actor pools, events, latent types, seeds, and resource budgets.
+
+\begin{table}[htbp]
+\centering
+\caption{Comparison arms.  A4 is a proposed composite under evaluation, not a demonstrated improvement.}
+\label{tab:arms}
+\begin{tabularx}{\linewidth}{@{}p{0.08\linewidth}p{0.34\linewidth}X@{}}
+\toprule
+Arm & Admissibility/routing & Purpose \\
+\midrule
+A0 & Verified eligibility plus fair uniform or randomized assignment; no longitudinal reputation & Minimal allocation baseline \\
+A1 & Raw report-object ratings or vote average & Popularity baseline; tests conflation of reaction with quality \\
+A2 & One global EigenTrust/PageRank-like recursive score & Global recursive baseline \\
+A3 & Layer-local personalized restart walk from declared roots & Locality baseline \\
+A4 & Frontier capacity gate, local walk, control diversity, workload, exploration, and resource constraints & Proposed composite \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\designchoice{Report feedback, later evidence-bearing defect outcomes, trust delegation, and conduct adjudication are separate event types.  A1 deliberately tests the common but unsafe shortcut of collapsing them.}
+
+\begin{evidencegate}[Evidence gate: baseline fidelity]
+Each arm requires a versioned implementation, deterministic replay tests, identical frozen inputs, and a review confirming that A2 and the assignment stage faithfully represent their cited methods.  No comparison is valid until this gate passes.
+\end{evidencegate}
+
+\section{Endogenous assignment and standing dynamics}
+
+\subsection{Individual stochastic model}
+
+At round $t$, arm $a$ produces eligibility $e^a_{iq}(t)$ and a routing feature $v^a_{iq}(t)$.  A candidate assignment kernel is
+\begin{equation}
+ \Pr(i\mid q,t,a)\propto e^a_{iq}(t)
+ \exp\!\left[\beta v^a_{iq}(t)-\lambda L_i(t)-C(r_q,b_i(t))\right],
+ \label{eq:assignment}
+\end{equation}
+subject to the panel-level constraints above and a declared exploration floor.  $L_i(t)$ is workload, $r_q$ is the task resource requirement, $b_i(t)$ is available capacity, and $C$ is a preregistered infeasibility/cost transform.  Parameter $\beta$ controls exploitation of standing.  Because assignment creates the opportunity to generate future evidence, $\beta$ also controls feedback strength.
+
+For actor $i$ and layer $\ell$, let $\theta_{i\ell}$ denote latent task competence or calibration, $h_i$ intent/type, $g_{i\ell}$ availability, $\kappa_{iq}$ conflict or control status, $\rho_{iq}$ resource feasibility, $y_{iq}$ a report action, and $o_{iq}(t)$ delayed evidence indicating whether a material finding was confirmed, falsified, or unresolved.  The simulator may know these variables; the evaluator must not use $\theta$ or $h$ as an oracle when computing assignments.
+
+\subsection{Candidate mean-field family}
+
+For a tractable specialization, partition actors into groups $k=1,\ldots,K$ such as calibrated incumbents, calibrated newcomers, miscalibrated actors, an adversarial coalition, and a qualified minority.  Let $x_k(t)$ be the group's share of assignment opportunity or routing mass and $n_k$ its eligible size.  Consider
+\begin{equation}
+ a_k(x)=(1-\zeta)\frac{\exp(\beta x_k)}{\sum_j\exp(\beta x_j)}
+   +\zeta\frac{n_k}{\sum_j n_j},
+ \label{eq:explore}
+\end{equation}
+where $\zeta$ is exploration.  Let the expected update signal be
+\begin{equation}
+ u_k(x,t)=(1-\chi)d_k(t)+\chi s_k(x,t)+m_k(t),
+\end{equation}
+where $d_k$ is delayed evidence-bearing performance, $s_k$ is contemporaneous social feedback, $\chi$ is their mixing weight, and $m_k$ is strategic manipulation.  With $\phi_k=\exp(\eta u_k)$, a candidate flow is
+\begin{equation}
+ \dot x_k=a_k(x)\phi_k(x,t)
+ -x_k\sum_j a_j(x)\phi_j(x,t)-\mu(x_k-x^0_k).
+ \label{eq:meanfield}
+\end{equation}
+The positive transform prevents a negative evaluation from becoming a negative assignment rate.  The centered terms preserve total mass when $\sum_kx_k=\sum_kx^0_k=1$, but boundary invariance, existence, and parameter identifiability still require analysis.
+
+\openhypothesis{As exploitation $\beta$ and social-feedback reliance $\chi$ increase, a competence-ordered or symmetric fixed point can lose stability; exploration $\zeta$ may delay concentration but impose an allocation cost.  Neither the threshold nor even this qualitative behavior has been established for Eq.~\eqref{eq:meanfield}.}
+
+The intended analysis has four obligations.  First, determine whether the simplex is forward invariant or revise the flow.  Second, identify fixed points and their local stability in a two- or three-group specialization.  Third, compare the deterministic prediction with a finite-population stochastic process.  Fourth, show that any transition has a scientific-review implication beyond reproducing known reinforcement behavior.  A reinforced-urn model remains an alternative if it provides cleaner finite-size results.
+
+\begin{evidencegate}[Evidence gate: feedback result]
+No stability threshold, phase transition, or sensitivity result is available.  Promotion requires a checked derivation, symbolic or independent numerical verification, finite-size simulations, complete parameter definitions, and counterexample search.  A result that merely reproduces known PageRank or preferential-allocation behavior is insufficient.
+\end{evidencegate}
+
+\section{Multicolor trust and importer-authorized bridges}
+
+\subsection{Single-color inference}
+
+The storage substrate may be multilayered, but inference is single-layer by default.  No operator may silently sum $W_\ell$ over topics, capabilities, roles, or domains.  A cross-layer review request instead declares a coverage contract such as
+\begin{multline}
+ \operatorname{AND}(\text{calibration},\text{inference},\text{uncertainty},
+ \text{provenance},\\
+ \text{execution or approved downselect},\text{control diversity}).
+\end{multline}
+The contract returns a vector of satisfied and unsatisfied obligations.  It is not the average reputation of a panel.
+
+This ``multicolor'' semantics has a simple structural benefit: when a transition block is absent, authority cannot cross that block inside the declared evaluator.  Its scientific and operational value is not automatic.  Strict separation may exclude interdisciplinary reviewers, reduce anonymity sets, and create broker concentration at the few approved interfaces.
+
+\subsection{Bridge object}
+
+A bridge from source layer $m$ to importing layer $\ell$ is
+\begin{equation}
+ B_{\ell\leftarrow m}=(a_B,M_B,E_B,\gamma_B,b_B,h_B,\tau_B,R_B),
+\end{equation}
+where $a_B$ is the importer-side approver, $M_B$ maps credential, capability, review-event, or evidence vocabularies into the target scope, $E_B$ is an evidence predicate, $\gamma_B$ attenuation, $b_B$ capacity, $h_B$ the highest imported eligibility band, $\tau_B$ expiry, and $R_B$ revocation rule. $M_B$ may reference an MCRP claim identifier but cannot rewrite or promote that claim. Only the importer may authorize the bridge. Imported actors normally enter a supervised or onboarding band. Scientific dispositions, sanctions, and negative standing are off by default and do not transfer through this positive-delegation bridge; each requires a separately authorized typed-event mapping.
+
+A chain of bridges composes using explicit rules.  A conservative profile uses the strictest eligibility band, the minimum applicable capacity, and the product of attenuation factors.  It never computes an implicit transitive closure.  Cycles require a joint transition-mass check rather than pairwise intuition.
+
+\subsection{Candidate imported-mass bound}
+
+Partition one evaluated layer into importer-trusted nodes $H$ and an external region $X$.  Assume (i) restart mass has no support in $X$; (ii) from any normalized mass supported in $H$, at most $\epsilon$ of transition mass crosses to $X$ after capacity gating; and (iii) once mass enters $X$, an adversary may retain all of it.  If $x=\sum_{i\in X}p_i$, stationarity yields the candidate inequality
+\begin{equation}
+ x\leq \alpha\left[\epsilon(1-x)+x\right],
+\end{equation}
+and algebra gives
+\begin{equation}
+ x\leq \frac{\alpha\epsilon}{1-\alpha+\alpha\epsilon}.
+ \label{eq:bridgebound}
+\end{equation}
+
+\paragraph{Candidate Proposition 1 (proof obligation).}
+Under the three assumptions and the exact dangling-node and normalization rules of Eq.~\eqref{eq:ppr}, Eq.~\eqref{eq:bridgebound} bounds stationary routing mass in $X$.
+
+This statement is intentionally narrow.  It bounds mass, not actor count, correctness, independence, or collusion by actors already admitted to $H$.  It also says nothing about off-protocol influence, a captured importer, or a hidden common controller.  Multiple imported regions and cyclic bridges may require a vector inequality and a spectral condition.
+
+\begin{evidencegate}[Evidence gate: bridge proposition]
+Candidate Proposition 1 has not received a checked proof.  Before promotion, verify the derivation for dangling nodes, multiple roots, endogenous normalization, multiple and cyclic bridges, time-varying graphs, and the conversion from flow capacity to transition mass.  Search for counterexamples in which pairwise bridge caps fail under composition.
+\end{evidencegate}
+
+\section{Nested domains, capture, and fission}
+
+\subsection{Domain state and dependency closure}
+
+A domain has one normative parent and zero or more competency imports.  Normative inheritance may supply event formats, identity and privacy minima, due process, and archival rules.  It does not itself create a scientific-trust edge.  Define domain state
+\begin{equation}
+ \Omega_d(\tau)=\bigl(\events^{\rm shared}_{\leq\tau},
+ \events^{\rm private,d}_{\leq\tau},S_d,P_d,B_d,R_d\bigr),
+ \label{eq:domainstate}
+\end{equation}
+where $B_d$ is the accepted bridge set and $R_d$ the resource policy.  The evaluator $F_d$ must declare the dependency closure of every output.
+
+Capture can occur at several distinct surfaces: roots may be malicious or unrepresentative; policy maintainers may alter thresholds; bridge approvers may admit an external coalition; managers may control assignment or evaluation; registrars may create or suppress accounts; and shared infrastructure may equivocate.  A graph-only threat model covers none of these automatically.
+
+\subsection{Fork semantics}
+
+A fork at event cut $\tau_f$ creates domains $d_a$ and $d_b$ that reference the same immutable public history through $\tau_f$ but may select different roots, policies, bridges, and later events.  Private mappings and trust edges do not copy automatically.  Neither fork's existence asserts that its scientific conclusions are correct.
+
+\paragraph{Candidate Proposition 2 (dependency separation).}
+If $F_{d_a}$ is deterministic from $\Omega_{d_a}$, and $\Omega_{d_a}$ neither imports an event class from $d_b$ nor accepts a bridge or service dependency controlled by $d_b$, then changes confined to $\events^{\rm private,b}$, $S_b$, or $P_b$ cannot change $\view_a$.
+
+This is intended as a structural proposition about declared software dependencies, not a behavioral theorem.  It may become nearly tautological after formalization, but that is useful: a replay engine should be able to test the dependency claim exactly.  Public misinformation in the shared record, compromised common infrastructure, social pressure, or a bridge accepted by $d_a$ can still cross the boundary.
+
+\subsection{Contamination radius}
+
+For an adverse event set $\Delta E$, let $\delta_q$ compare unperturbed and attacked decisions for case $q$, for example by assignment-set symmetric difference, total variation in assignment probabilities, or an eligibility-band change.  For threshold $\eta$ and evaluation cases $Q_{\rm eval}$, define
+\begin{equation}
+ \CR(\Delta E;\eta)=\frac{1}{|Q_{\rm eval}|}
+ \sum_{q\in Q_{\rm eval}}\ind\!\left[
+ \delta_q(\view,\view^{\Delta})\geq\eta\right].
+ \label{eq:cr}
+\end{equation}
+The statistic must be reported by layer, domain, institutional/control cluster, newcomer status, and risk class.  A low global average can coexist with complete capture of a small specialty.
+
+Fork utility is multiobjective: preserve shared scientific and review objects; reduce post-fork cross-boundary contamination; retain legitimate reviewer coverage; preserve appeals and provenance; and avoid shrinking anonymity sets below policy.  Fission should be compared with less disruptive responses such as root replacement, bridge revocation, or policy repair.
+
+\begin{evidencegate}[Evidence gate: fission]
+Candidate Proposition 2 requires a machine-checkable dependency semantics and deterministic replay test.  Any claim that fission improves real governance additionally requires adversarial experiments and field evidence.  No such evidence exists in this draft.
+\end{evidencegate}
+
+\section{Heterogeneous actors and trust boundaries}
+
+\subsection{Actor taxonomy}
+
+The simulation distinguishes latent types because conflating them can make a defense appear more general than it is:
+\begin{itemize}
+ \item \emph{calibrated incumbents} have evidence-aligned task competence and established eligibility;
+ \item \emph{calibrated newcomers} have competence but little graph history;
+ \item \emph{sincere miscalibrated actors} systematically err without adversarial intent;
+ \item \emph{qualified dissenters} disagree with the current majority yet may identify later-confirmed defects;
+ \item \emph{strategic or malicious actors} may behave well until a high-value case, reciprocally endorse, suppress findings, or whitewash;
+ \item \emph{Sybil coalitions} control multiple identifiers contrary to the identity assumption;
+ \item \emph{unique-human coalitions} coordinate without violating uniqueness; and
+ \item \emph{institutional controllers} manipulate assignment, evaluation, appeals, roots, registrars, or bridge approval without adding graph nodes.
+\end{itemize}
+
+These types are latent in a simulator and generally not identifiable from event history alone.  The operational policy observes credentials, typed reports, delayed outcomes, conflicts, delegations, workloads, and adjudicated conduct.  It should report uncertainty rather than translate behavioral ambiguity into a moral label.
+
+\subsection{Transitive trust boundaries}
+
+Review inevitably bottoms out in external dependencies: identity issuers, source data, calibrations, software libraries, schedulers, hardware, attestation services, and prior scientific judgments.  The graph must expose where it stops.  A reviewer of a gravitational-wave inference may inspect likelihood code and posterior diagnostics while relying on a separately reviewed detector calibration and a facility's data-authentication chain.  A digested product may make some algorithmic and inferential claims assessable while leaving raw-data or full-scale compute claims outside scope.
+
+The framework therefore treats trust boundaries as versioned declarations.  An external tool or data release is not ``trusted'' absolutely; it is accepted for a particular evidence function, version, scope, and expiry, with a named fallback if it becomes stale or unavailable.  A bridge does not launder an external scientific conclusion into local correctness.
+
+\begin{evidencegate}[Evidence gate: actor controls]
+No proposed control has been shown to distinguish malicious actors, sincere error, and qualified dissent from available observations.  Evaluation must include all three, plus unique-human coalitions and management capture; success against Sybils alone is not sufficient.
+\end{evidencegate}
+
+\section{Resource-constrained review and downselect modes}
+
+\subsection{Multiaxis resource vector}
+
+For every review request $q$, define the canonical resource declaration
+\begin{equation}
+ r_q=(c_q,s_q,a_q,p_q,w_q,h_q,g_q,o_q,m_q,f_q),
+ \label{eq:resource}
+\end{equation}
+where components denote compute (including CPU/GPU), storage, access restrictions, platform and scheduler requirements, wall time, human intelligence, agent intelligence, operational support, monetary or allocative cost, and freshness. Actor or team $i$ has time-dependent capacity $b_i(t)$, access permissions, and capability-specific substitution limits. Human and agent intelligence are not presumed interchangeable, and the vector is not reduced to an additive score.
+
+R0 is a portable-lightweight technical profile: the analysis is documented and runnable with contemporary portable tools on lightweight compute and without a specialty scheduler. Higher-resource paths may require Condor or another facility scheduler, GPUs, large storage, restricted data, scarce domain experts, or substantial agent supervision. These are resource profiles, not epistemic achievements or a linear scientific-quality ladder. The strongest supported epistemic conclusion must be reported separately for each claim.
+
+\subsection{Declared review modes}
+
+We distinguish six assessment modes, each with an explicit covered-claim and excluded-claim set:
+\begin{enumerate}
+ \item \textbf{Full execution}: execute the full declared path under its stated resource profile, whether R0 or facility-scale.
+ \item \textbf{Bounded recomputation}: recompute a scientifically selected partition or reduced configuration, with scaling, convergence, and representativeness checks.
+ \item \textbf{Digest audit}: inspect the digest-producing algorithms and provenance and regenerate sampled digests from accessible inputs.
+ \item \textbf{Restricted-platform witnessed attestation}: have an authorized executor run the workflow where controlled data or hardware reside and release approved signed logs, checks, commitments, and outputs.
+ \item \textbf{Frozen-output inspection}: inspect preserved outputs, invariants, logs, and provenance when execution is currently infeasible.
+ \item \textbf{Independent evidence path}: test a bounded claim with a materially different implementation, method, dataset, or experiment.
+\end{enumerate}
+A record-only consistency audit is narrower still. Witnessed execution and bounded recomputation remain distinct because custody and inferential scope differ. No assessment mode is itself ``reproduction'': the resulting epistemic disposition depends on independence, scope, provenance, discrepancies, and human scientific judgment. A cheap digest audit must never be counted as equivalent to full execution.
+
+For policy comparison, resource observables include confirmed defect yield per reviewer-hour, agent-hour, GPU-hour, storage-byte-month, and support hour; access delay; orchestration burden; and the distribution of scarce intelligence across assignments.  A policy that appears capture-resistant only because it excludes expensive cases or rare specialists has failed the intended comparison.
+
+\begin{evidencegate}[Evidence gate: resource calibration]
+Equation~\eqref{eq:resource} is a schema, not a validated cost model.  Promotion requires representative workflow measurements, including at least one portable path and one HPC, restricted-data, or prohibitive-storage path; explicit substitution assumptions; and sensitivity to human and agent intelligence estimates.
+\end{evidencegate}
+
+\section{Preregistered evaluation design}
+
+\subsection{Synthetic regimes}
+
+Initial evaluation uses synthetic multilayer networks so latent types and planted defects are known by construction.  Empirical calibration, if later attempted, must use consented or sanitized data with privacy and selection analysis.  Each experiment manifest freezes task cases, graph/event snapshots, actor controls, roots, policies, bridge objects, resource profiles, random seeds, and software/environment identifiers.
+
+Sweeps must include root corruption fraction and centrality; reciprocal endorsement; Sybil and unique-human coalitions; sincere correlated miscalibration; strategic on/off behavior; qualified minorities with delayed confirmation; bridge capacity and expiry lag; hidden institutional overlap; manager control of assignment or adjudication; censored defect outcomes; sparse layers and rare specialists; metadata leakage; stale credentials and dependencies; and forks before and after capture.
+
+\subsection{Observables}
+
+Table~\ref{tab:observables} defines the primary families.  Report distributions and subgroup outcomes, not only means.
+
+\begin{longtable}{@{}p{0.22\linewidth}p{0.70\linewidth}@{}}
+\caption{Primary observables and interpretation limits.}\label{tab:observables}\\
+\toprule
+Family & Measures \\
+\midrule
+\endfirsthead
+\toprule
+Family & Measures \\
+\midrule
+\endhead
+Epistemic utility & Planted or later-confirmed material defects found per resource unit; false alarms; unresolved findings; missed defects.  Conditional on simulator labels or bounded audit evidence. \\
+Eligibility & False eligibility and false exclusion by layer and actor type; qualified-minority survival; newcomer wait and supervision burden. \\
+Governance & Contamination radius; root and bridge sensitivity; cross-topic leakage; appeal, reversal, and correction latency; fork record preservation. \\
+Concentration & Assignment HHI, Gini, entropy, control-cluster concentration, and effective number of independent reviewers. \\
+Privacy & Effective anonymity-set size and persona-linkage precision/recall for each observer and coalition. \\
+Resources & Human hours, agent hours, compute, storage, wall time, access delay, orchestration, and support; coverage lost under budgets. \\
+\bottomrule
+\end{longtable}
+
+The primary contrasts are A2 versus A3 for locality, A3 versus A4 for the capacity/composite increment, and each reputation arm versus A0.  A1 tests whether popularity produces misleading gains when reviewer feedback is treated as ground truth.  Uncertainty must include stochastic seeds and finite-network variability.  Sensitivity analyses vary the missingness of delayed outcomes and the correlation between institutional control and graph paths.
+
+\subsection{Decision and stop rules}
+
+The composite A4 policy must not be called superior if it fails to reduce contamination in its preregistered target regimes; if newcomer or qualified-minority exclusion exceeds a preregistered ceiling; if authority crosses a boundary without importer approval; if replay is nondeterministic; if privacy requires an undeclared linkage service; or if resource costs render its safeguards unavailable in the claimed deployment class.  Simpler arms should be preferred when they match A4 within declared uncertainty and cost tolerances.
+
+\begin{evidencegate}[Evidence gate: simulation]
+No simulation, phase diagram, parameter sweep, or empirical calibration has been run.  The future Results section may be populated only from fixed experiment manifests that record code revision, environment, graph digest, parameters, seeds, output digests, and independent verification.  Negative and subgroup results are mandatory.
+\end{evidencegate}
+
+\section{Results reserved for verified artifacts}
+
+This section intentionally contains no outcome prose.  The minimum result package is:
+\begin{enumerate}
+ \item a checked analytical result or informative counterexample for assignment feedback;
+ \item a checked imported-influence bound or a counterexample to its composition assumptions;
+ \item a reproducible A0--A4 phase diagram over capture, feedback, exploration, and frontier capacity;
+ \item subgroup outcomes for calibrated newcomers, qualified minorities, miscalibrated actors, malicious actors, and institutional coalitions;
+ \item privacy outcomes for each observer class;
+ \item multiaxis resource and downselect-mode outcomes; and
+ \item regimes where localization or A4 is worse than a simpler baseline.
+\end{enumerate}
+
+Planned figures are an architecture schematic; the standing--assignment--evidence feedback loop; multicolor bridges and a coverage contract; a phase diagram; contamination maps after root, bridge, and management capture; a capture--coverage--privacy--intelligence trade-off frontier; and a fork replay experiment.  Planned tables will report assumptions, arms, threats, estimands, resource profiles, and claim dispositions.  These are figure specifications, not placeholders for imagined data.
+
+\begin{evidencegate}[Evidence gate: all result language]
+There are currently no analytical, simulation, pilot, or field results.  Captions, numerical statements, trends, comparative adjectives, and conclusions about policy performance remain prohibited until linked evidence artifacts pass review.
+\end{evidencegate}
+
+\section{Discussion: interpretation and no-go regimes}
+
+The formalism is useful before a performance result because it identifies what a reviewer trust system may legitimately claim. A conforming implementation is intended to explain which roots, policies, events, and bridges produced an assignment, enforce declared transition boundaries and resource eligibility, and support deterministic replay under a fork. Each remains an implementation test. None establishes honesty, personhood, independence, review correctness, or scientific validity.
+
+Localization exchanges one failure mode for others.  It may reduce unapproved cross-topic transitions by construction, yet fragment sparse specialties, delay newcomers, concentrate authority in bridge approvers, reduce anonymity sets, and increase human or agent intelligence costs.  Roots and bridges remain governance boundary conditions.  A captured root set or importer can authorize harmful influence while satisfying the mathematics.
+
+Observed outcomes are a second no-go boundary.  Editorial acceptance, author satisfaction, majority agreement, helpfulness votes, prestige, and citation count are not ground truth.  Later defect confirmation is closer to the target but is selectively observed: prominent or controversial work may receive more audits, while expensive and restricted workflows receive fewer.  Empirical studies therefore require planted defects, randomized audit opportunities, explicit missingness models, or sharply bounded claims.
+
+Privacy and accountability also create a structural trade-off.  If public personas are genuinely unlinkable, the public transcript lacks the join key required for public longitudinal aggregation.  A private custodian, cryptographic reputation proof, or other auxiliary mechanism must carry that state.  Each choice creates an operator, coalition, or implementation assumption.  AnonRep demonstrates that richer cryptographic constructions are possible \citep{zhai2016anonrep}; it does not remove the need to name the adversary and trust boundary for a scientific deployment.
+
+Finally, fission separates declared dependencies; capture containment remains an empirical estimand. Shared public misinformation, common software compromise, informal prestige, or management pressure may cross a fork without a protocol edge. A fork may preserve record continuity while losing scarce reviewers and interdisciplinary coverage. It is an exit mechanism to be evaluated, not an automatic cure for disagreement or capture.
+
+If A4 does not outperform A0--A3 in its target regimes, the correct outcome is a negative result.  The vocabulary may still support interoperability: scoped views, typed events, explicit bridges, observer-relative privacy, resource profiles, and replayable forks clarify what a system does.  They do not justify adoption without evidence.
+
+\begin{evidencegate}[Evidence gate: field interpretation]
+No claim about deployed peer-review behavior, real reviewer quality, institutional capture rates, privacy safety, or generalization beyond scientific review is supported.  Those claims require consented field evidence, independent security and scientific review, and explicit human sign-off.
+\end{evidencegate}
+
+\section{Conclusion}
+
+This paper places a falsifiable stake in the ground: reviewer reliance should be evaluated as a scoped, root-relative, typed, time-bounded policy view rather than assumed to be a universal actor attribute.  It specifies how to compare that choice against simpler and global baselines while accounting for assignment feedback, bridges, nested domains, fission, anonymity, heterogeneous actors, and scarce compute, storage, support, human intelligence, and agent intelligence.  The decisive work remains undone.  Candidate propositions need proofs or counterexamples; the mean-field family needs analysis; A0--A4 need faithful implementations; and simulations need preregistration and independent verification.  Until then, this is a model specification and research program, not evidence that localized trust works.
+
+\appendix
+\section{Notation and proof obligations}
+
+\begin{longtable}{@{}p{0.18\linewidth}p{0.74\linewidth}@{}}
+\toprule
+Symbol & Meaning \\
+\midrule
+$\events_{\leq\tau}$ & Signed typed events visible at cut and evaluation time $\tau$ \\
+$\ell=(d,z,c,r)$ & Domain--topic--capability--role layer \\
+$S_\ell,s_\ell$ & Declared root set and normalized restart distribution \\
+$P$ & Versioned deterministic policy \\
+$\view$ & Scoped reliance view; not an intrinsic person score \\
+$T_\ell,p_\ell$ & Admissible transition matrix and personalized stationary mass \\
+$B_{\ell\leftarrow m}$ & Importer-authorized, versioned, expiring bridge \\
+$\Omega_d$ & Domain state and declared dependencies \\
+$\CR$ & Fraction of cases with decision distance above threshold \\
+$r_q,b_i$ & Task requirement and actor/team resource capacity vectors \\
+\bottomrule
+\end{longtable}
+
+Before any analytical statement is promoted, the proof packet must state assumptions, definitions, proof, edge cases, counterexample search, and an independent check.  Candidate Proposition 1 must resolve bridge cycles and normalization.  Candidate Proposition 2 must be expressed against a machine-readable dependency closure.  The feedback model must establish its state space and invariance before a stability threshold is meaningful.
+
+\section{Simulation artifact contract}
+
+Every future run must record: repository and code revision; environment and solver versions; graph and event digests; policy, roots, bridges, resource profile, and observer class; generative parameters and actor/control labels; random seeds; assignment optimizer version; planned contrasts; raw and derived output digests; validation and adversarial-test results; and reviewer sign-off.  A rerendered figure without these inputs is not a reproduction artifact.
+
+The simulator must make oracle boundaries explicit.  Latent competence, intent, planted defects, and true account linkage may generate events and score evaluation, but they may not enter an operational assignment policy unless the experiment arm explicitly tests an unrealistic oracle upper bound.  Missing and delayed outcomes must be represented, not silently replaced by final labels.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,23 @@
+% Shared preamble for private TrustAndReview manuscript drafts.
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,tabularx,longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[round,authoryear]{natbib}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!60!black}
+\setlist{nosep}
+
+\newcommand{\draftstatus}[1]{%
+  \begin{center}\fcolorbox{black}{yellow!15}{\parbox{0.92\linewidth}{\textbf{Private draft status:} #1}}\end{center}}
+\newenvironment{evidencegate}[1][Evidence required before promotion]
+  {\begin{quote}\color{red!60!black}\textbf{#1.} }
+  {\end{quote}}
+\newcommand{\designchoice}[1]{\textbf{Design choice:} #1}
+\newcommand{\openhypothesis}[1]{\textbf{Open hypothesis:} #1}
+\newcommand{\implementationobservation}[1]{\textbf{Implementation observation:} #1}

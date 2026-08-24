@@ -1,0 +1,395 @@
+\documentclass[11pt]{article}
+\input{../../latex/common-preamble.tex}
+
+\title{From Executable Artifacts to Plural Review:\\
+A Design Map for the Machine-Verifiable Scientific Record}
+\author{Private authorship placeholder}
+\date{24 August 2026}
+
+\newcommand{\mcrp}{MCRP}
+\newcommand{\tdrg}{TDRG}
+\newcommand{\Rzero}{R0}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+\maketitle
+
+\draftstatus{Private first draft for internal scientific review. The contribution is synthesis, unification, clarification, and operational consolidation. The manuscript is not approved for submission or public release. Primary-source gap audit, executable worked-case packets, independent review, authorship, and human release approval remain open gates.}
+
+\begin{abstract}
+Computational-publication systems can make papers, code, data, and environments addressable, yet an addressable artifact is not the same thing as a reviewed scientific claim. Rebuilding a figure from saved values may establish rerenderability while leaving acquisition, calibration, inference, transitive tools, and scientific interpretation untouched. The missing structure is partly technical and partly institutional: evidence must be linked to individual claims, provenance must cross raw, intermediate, and derived products, review burdens must be represented honestly, and independent communities must be able to decide whose scoped judgments they rely on without reducing scientific authority to one global reputation score. We synthesize a design map from computational reproducibility, independent execution, provenance and research-object standards, claim-level knowledge representation, archival identity, graph trust, and polycentric governance. The map separates a shared, version-addressed claim/evidence record from plural trust-domain views that are local to roots, topic, capability, policy, and time. It also separates five epistemic achievements---rerenderability, repeatability, reproducibility, independent replication, and scientific validity---from a multiaxis resource profile that includes compute, storage, access, platform, human expertise, agent capability, and operational support. Two design walkthroughs illustrate how a portable laptop analysis and an HPC or restricted-data workflow could expose different assessment modes without labeling them equivalent. The result is a falsifiable interoperability and governance profile, not evidence that automation proves correctness or that local trust improves peer review. We state threat boundaries, anti-patterns, limitations, first unmet evidence gates, and an evaluation program intended to determine whether the consolidation adds operational value beyond existing components.
+\end{abstract}
+
+\section{Introduction}
+
+A Makefile can be scientifically useful and still be scientifically cosmetic. Suppose it reads a preserved table and rebuilds the plots in a paper. Successful execution demonstrates that the plotting instructions remain compatible with the table and the current environment. It does not show where the table came from, whether the raw measurements were the intended measurements, whether a calibration was current, whether an upstream selection or likelihood was correct, whether uncertainty was propagated, or whether two nominally independent implementations share the same defective library. The generated figure may be pixel-identical and the evidentiary chain may still be broken.
+
+This distinction is familiar in different forms across work on reproducibility and artifact evaluation. Terminology varies by community, but major treatments distinguish rerunning the same computation from obtaining a result through materially independent means, while artifact badges and independent-execution services describe narrower and inspectable achievements \citep{nasem-reproducibility-2019,acm-artifact-badging-2020,nust-codecheck-2021}. Software review in the Journal of Open Source Software, computational replication reports in ReScience, and CODECHECK certificates each make valuable but different review objects visible \citep{smith-joss-2018,rougier-rescience-2017,nust-codecheck-2021}. Provenance standards and research-object profiles can identify entities, activities, agents, workflow runs, and their relations \citep{w3c-prov-o-2013,khan-cwlprov-2019,ro-crate-1.2,workflow-run-ro-crate-2024}. None of these observations diminishes those systems. They reveal why the larger problem is a composition problem.
+
+Agentic execution makes that composition urgent. Agents can traverse repositories, run tests, compare manifests, and inspect larger evidence graphs than a human reviewer could economically inspect alone. Recent preprints propose agentic reproducibility assessment and agent-oriented provenance \citep{ara-2026,prov-agent-2025}. Those demonstrations should be read at the strength of their evaluated tasks, not as proof that an agent can certify scientific validity. An agent can inherit a mutable service, accept a plausible but wrong tolerance, miss a domain-specific calibration failure, or produce a polished audit trail around an incomplete evidence path. Human reviewers can fail in analogous ways. The relevant question is therefore not whether humans or agents are trustworthy in the abstract, but which actor performed which check, with which information, competence, tools, resources, dependencies, and accountability.
+
+We ask: \emph{what information and governance structures are required for a machine-verifiable scientific record to support reproducibility review by independent actors who differ in expertise, resources, incentives, and trust relationships?} Our bounded answer is a two-layer design map. The first layer is a shared, version-addressed record of claims, evidence, transformations, provenance, review events, and correction events. The second comprises plural reliance views: a scientific community or institution computes a view from declared roots for a particular topic, capability, policy, event cut, and time. A reliance view may route attention or document a domain's declared dependencies. It cannot alter the evidence substrate and cannot make a scientific statement true.
+
+The \mcrp{} core governs the claim/evidence scientific record. The \tdrg{} is an optional, separately versioned actor-routing and reliance profile; it remains outside core conformance until its privacy, accountability, interoperability, replay, and empirical promotion gates pass. This paper maps the literature and interface obligations across both layers. Paper~02 imports the record and resource semantics as exogenous interfaces and owns formal observability, candidate dynamics, proofs or counterexamples, and A0--A4 comparisons; Paper~03 owns the proposed normative \tdrg{} exchange and conformance profile.
+
+The paper's contribution is not a new provenance ontology, graph algorithm, credential primitive, or universal theory of reviewer quality. Global recursive reputation, local trust, attack-resistant graph capacity, claim-centric knowledge objects, and polycentric governance all have extensive prior art \citep{kamvar-eigentrust-2003,massa-localtrust-2005,levien-aiken-1998,micropublications-2014,ostrom-polycentric-2010}. Our contribution is to consolidate these components into one reviewable design vocabulary, expose the interfaces and trust boundaries between them, and state how the design could fail. In particular, we:
+
+\begin{enumerate}
+  \item separate epistemic achievement from record completeness, resource burden, and governance reliance;
+  \item make the claim, rather than the paper or repository, the unit to which evidence and review conclusions attach;
+  \item define full execution and bounded downselect modes without silently equating their evidentiary force;
+  \item profile plural, topic- and capability-scoped trust domains without introducing a public universal reviewer score; and
+  \item derive adversarial cases, falsifiers, downgrade rules, and first unmet evidence gates for an implementation and empirical program.
+\end{enumerate}
+
+The proposal is deliberately conservative about automation. Machine checks can verify identifiers, schemas, signatures, declared dependencies, test results, and policy conformance. They can report discrepancies. Scientific validity still requires domain judgment about assumptions, measurement, calibration, inference, uncertainty, alternatives, and the relevance of external knowledge. Review ultimately bottoms out in explicitly accepted external tools, data, calibrations, institutions, and people.
+
+\section{Method: critical design synthesis}
+\label{sec:method}
+
+This manuscript is a critical design synthesis, not a registered systematic review or meta-analysis. We begin from six evidence families represented in the private source packet: computational artifact review and independent execution; provenance and research objects; claim-level evidence representation; archival identity and versioning; graph-based trust and decentralized governance; and emerging agentic assessment. The method has three stages: define the comparison dimensions before judging systems, map representative primary sources at the feature level, and trace every proposed requirement to prior art, a documented failure mode, or an explicit design judgment.
+
+\subsection{Comparison dimensions}
+
+System names are poor comparison units because similarly named services may review different objects and make different promises. We instead ask, for each representative system or standard:
+
+\begin{itemize}
+  \item What is addressable: paper, repository, release, workflow run, assertion, evidence object, review, or actor?
+  \item Are raw, intermediate, and derived data distinguishable and versioned?
+  \item Are environment, configuration, randomness, compute platform, and external services captured?
+  \item Does the system declare the resources and access needed for another assessment?
+  \item Are transitive tools, data, and calibrations inside the reviewed scope or explicit boundaries?
+  \item Are validation tests, scientific invariants, negative tests, and human sign-offs represented separately?
+  \item Does identity or reputation operate globally, locally, by topic, by capability, or not at all?
+  \item Are correction, supersession, and later reproduction failures append-only events?
+\end{itemize}
+
+The comparison is intentionally compositional. PROV-O, for example, supplies a general vocabulary for provenance; it does not purport to determine whether a detector calibration is scientifically adequate \citep{w3c-prov-o-2013}. Workflow Run RO-Crate packages workflow-run provenance into a research-object profile; it does not by itself establish which claim a run supports or what review conclusion is warranted \citep{workflow-run-ro-crate-2024}. The question is not which component ``solves reproducibility,'' but which semantic obligation each component can carry without distortion.
+
+\subsection{Claim discipline and novelty gate}
+
+We classify manuscript statements as prior-art observations, proposed definitions, design choices, implementation observations, open hypotheses, or empirical conclusions. This draft contains no population-level empirical conclusions. Its strongest intended result is that the proposed objects can be specified coherently and applied to two representative cases. Even that claim remains conditional until executable case packets and independent annotations exist.
+
+Our novelty gate is adversarial. If a primary-source audit identifies an existing end-to-end system with materially the same claim/evidence objects, multiaxis resource semantics, plural reliance views, and correction model, the contribution must be downgraded to a comparison or interoperability profile. If standards mapping shows that a proposed field duplicates an established field, the established field should be reused. If independent annotators cannot apply the distinctions reliably, the taxonomy has failed its practical purpose.
+
+\begin{evidencegate}[First unmet scholarship gate]
+The dated, primary-source gap table is not yet complete. This draft cites representative primary papers and normative specifications from the supplied evidence packet, but does not claim an exhaustive search. Before external circulation, the source ledger must record exact searches, dates, inclusion decisions, source locators, and field-by-field comparisons for the closest end-to-end systems.
+\end{evidencegate}
+
+\subsection{Method limitations}
+
+Public literature underrepresents practices embedded in observatories, collaborations, internal review boards, regulated laboratories, and restricted infrastructures. English-language and database coverage may exclude relevant systems. Moreover, compatibility on paper does not establish deployability, security, adoption, or improved decisions. We use the design map to sharpen tests, not to substitute architecture prose for those tests.
+
+\section{A ladder of epistemic achievements}
+\label{sec:ladder}
+
+The phrase ``reproducible paper'' often compresses several distinct accomplishments. We use the ladder in Table~\ref{tab:ladder} as an operational vocabulary. The labels are informed by existing reproducibility distinctions \citep{nasem-reproducibility-2019,acm-artifact-badging-2020}, but the five-level arrangement is a design normalization for this paper rather than a claim of universal terminology.
+
+\begin{table}[ht]
+\centering
+\caption{Epistemic achievement is not one badge. Each row requires additional evidence, but scientific validity is not a mechanical superset of the preceding rows.}
+\label{tab:ladder}
+\begin{tabularx}{\textwidth}{@{}L{0.19\textwidth}X X@{}}
+\toprule
+Achievement & Operational question & What a pass does not establish \\
+\midrule
+Rerenderability & Can a presentation artifact be regenerated from preserved derived values? & Correct upstream data, transformations, inference, or interpretation. \\
+Computational repeatability & Can the same implementation run on materially equivalent inputs and environment and agree within declared tolerances? & Independent implementation, independent data, or scientific validity. \\
+Computational reproducibility & Can an independent actor reconstruct the reported computational result from identified inputs, code, configuration, dependencies, and workflow, with discrepancies explained? & Independence of underlying methods or correctness of domain assumptions. \\
+Independent replication & Does a materially independent implementation, dataset, method, or experiment test the same claim? & Universal validity or freedom from shared external failures. \\
+Scientific validity & Does the claim survive appropriate scrutiny of assumptions, calibration, measurement, inference, uncertainty, alternatives, and external knowledge? & Permanence: new data and later failures may still revise the conclusion. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The ladder is not a scalar score. A preserved container may support repeatability yet depend on an invalid model. An independent reimplementation may reproduce a numerical error embedded in a shared calibration dataset. A scientifically credible claim may rely on an instrument or restricted dataset that cannot be redistributed. Reporting should therefore attach achievements to particular claims and evidence paths, with explicit exclusions, rather than placing one badge on an entire paper.
+
+This formulation also explains why a portable execution floor is valuable. For lightweight analyses, full documentation and contemporary, scheduler-free execution on ordinary computing should be the default minimum. We call this resource class \Rzero. It makes review cheaper and exposes avoidable fragility. It is not, however, an admission rule that excludes valuable science whose full resource package requires accelerators, specialty schedulers, large storage, controlled data, or scarce expertise. The answer to expensive science is not to call a plot-only package reproducible; it is to expose the resource burden and offer bounded evidence paths whose conclusions are honestly labeled.
+
+\section{Four orthogonal dimensions of the record}
+\label{sec:dimensions}
+
+We separate four questions that a single ``reproducibility level'' cannot answer.
+
+\paragraph{Claim and evidence.} What exact assertion is under review, and which results, diagnostics, derivations, or measurements support it? Claim-centric representations such as micropublications, nanopublications, and evidence graphs demonstrate that assertions, evidence, argumentation, and provenance can be first-class objects \citep{micropublications-2014,nanopublications-2018,evi-2021}. We do not propose another universal ontology. We require a profile that gives each consequential claim a stable identifier, scope, uncertainty statement, evidence links, and reasoning relation.
+
+\paragraph{Provenance and identity.} Which versioned inputs, transformations, environments, agents, and services produced an evidence object? PROV-O supplies a general entity--activity--agent model, while CWLProv and Workflow Run RO-Crate illustrate workflow-oriented profiles \citep{w3c-prov-o-2013,khan-cwlprov-2019,workflow-run-ro-crate-2024}. Content digests identify bytes; persistent release identifiers and versioning connect those bytes to archival and citation practices. A mutable project identifier and an immutable release identifier serve different purposes, a distinction made explicit in archival versioning guidance \citep{zenodo-doi-versioning}.
+
+\paragraph{Resources.} What would another actor need to inspect, execute, or independently test the evidence path? Compute and storage are necessary but insufficient. Access permission, wall-clock latency, scheduler knowledge, domain expertise, model or agent capability, operator support, and monetary or allocation cost can dominate feasibility. These resources must be declared without treating intelligence as ambient and free.
+
+\paragraph{Governance and reliance.} Who reviewed which scope under which policy, and whose judgment does a relying community accept? A signed review shows that a key produced a statement. It does not establish the actor's competence, independence, good faith, or standing in every topic. Governance therefore concerns assignment, eligibility, conflicts, accountability, appeals, and the local decision to rely on an external review.
+
+These dimensions intersect but should not be collapsed. A complete provenance graph may have no scientific reviewer. A trusted reviewer may have inspected only one claim. A full rerun may be affordable only to a well-resourced site. A restricted-data attestation may be credible to one domain and unacceptable to another. The record should preserve these differences rather than average them away.
+
+\section{Landscape: components to compose, not replace}
+\label{sec:landscape}
+
+\subsection{Software review, reimplementation, and independent execution}
+
+JOSS centers review on research software and its repository, documentation, tests, contribution practices, and research relevance \citep{smith-joss-2018}. ReScience was created to publish independent computational replications and encourage sustainable computational practice \citep{rougier-rescience-2017}. CODECHECK organizes independent execution of computations associated with research articles and emits public certificates and reports \citep{nust-codecheck-2021}. These mechanisms demonstrate that review can produce durable artifacts beyond a journal decision. They do not have the same unit of assessment: a software package, a replication, and an execution report answer different questions.
+
+Artifact-badging policies similarly distinguish availability, functionality, and result reproduction rather than claiming that one review establishes scientific truth \citep{acm-artifact-badging-2020}. The design implication is to preserve each review action with its scope and strongest warranted conclusion. A software-quality review can be cited as accepted reliance on a transitive tool; it should not automatically become validation of every scientific claim produced with that tool.
+
+\subsection{Provenance, research objects, and archival identity}
+
+The provenance and research-object ecosystem already supplies much of the transport vocabulary needed for a machine-verifiable record. PROV-O can express entities, activities, agents, derivations, associations, and attributions \citep{w3c-prov-o-2013}. CWLProv packages workflow provenance using established vocabularies \citep{khan-cwlprov-2019}. RO-Crate describes research objects in JSON-LD, and Workflow Run RO-Crate profiles prospective and retrospective provenance for workflow executions \citep{ro-crate-1.2,workflow-run-ro-crate-2024}. Our design should profile and extend these standards only where claim, review, resource, or governance semantics are absent.
+
+What remains irreducibly scientific is the meaning of a transformation. A provenance edge can state that an activity used a calibration file and generated a strain series. Whether that calibration is valid for the observing interval, whether its uncertainty was propagated, and whether a downstream approximation is acceptable are domain judgments. A complete record makes those judgments inspectable and assignable; it does not automate them away.
+
+\subsection{Claim-level representation}
+
+Micropublications represent claims, evidence, arguments, and annotations; nanopublications package small assertions with provenance and publication information; evidence-graph work connects data, methods, and results in defeasible computational reasoning \citep{micropublications-2014,nanopublications-2018,evi-2021}. These lines of work preempt any broad claim that claim-level scholarly objects are new. The remaining task is profiling: which existing fields can carry a claim manifest, where are domain-specific extensions needed, and can a review event point to the exact evidence and transformation paths examined?
+
+\subsection{Trust and polycentric governance}
+
+Graph trust is likewise established prior art. EigenTrust computes a global recursive reputation from local transaction histories and pretrusted peers \citep{kamvar-eigentrust-2003}. Local trust research shows why a universal value can erase observer-relative controversy, at least in recommender settings \citep{massa-localtrust-2005}. Attack-resistant max-flow work makes root dependence and capacity assumptions explicit \citep{levien-aiken-1998}. None of these algorithms establishes scientific competence or truth. For scientific review, the choice of roots, edge types, topic, capability, expiry, and policy is itself governance.
+
+Polycentric governance offers an institutional lens in which multiple decision centers operate under shared general rules \citep{ostrom-polycentric-2010}. We use that lens cautiously. It motivates common record formats beneath local authority, but it does not prove that fragmentation improves review. A domain fork can contain capture and preserve exit while also increasing burden, duplicating effort, or letting actors evade accountability.
+
+\subsection{Agentic assessment}
+
+Agentic reproducibility assessment and agent provenance are active research areas \citep{ara-2026,prov-agent-2025,traxia-2026}. Their presence strengthens the case for recording model and tool versions, prompts or policies, external services, human interventions, and failure cases. It also sharpens the boundary between task completion and scientific review. A successful automated run is an implementation observation tied to an exact artifact and evaluation protocol. General reliability, independence, and domain judgment remain open empirical questions.
+
+\section{The consolidated design map}
+\label{sec:architecture}
+
+\subsection{Layer A: a shared claim/evidence record}
+
+Layer A is a versioned event and object substrate. Its minimum objects are:
+
+\begin{enumerate}
+  \item \textbf{Release identities}: a mutable project identity, an immutable release identifier, content digests, archive location, license, access and retention status, and supersession links.
+  \item \textbf{Claim records}: claim identifier, normalized assertion, scope, uncertainty, evidence links, reasoning relation, and explicit exclusions.
+  \item \textbf{Artifact records}: raw, intermediate, and derived identity; format; size; access class; retention; and relevant license or restriction.
+  \item \textbf{Execution records}: source revision, environment, workflow, configuration, randomness, hardware, scheduler, external-service interactions, logs, outputs, and tolerances.
+  \item \textbf{Validation records}: unit and integration tests, scientific invariants, negative or adversarial tests, convergence checks, discrepancies, and designated human sign-off.
+  \item \textbf{Boundary records}: transitive tools, external datasets, calibrations, platforms, services, and institutions accepted rather than re-reviewed.
+  \item \textbf{Lifecycle events}: review request, report, response, challenge, appeal, correction, failed reproduction, freshness check, supersession, and withdrawal.
+\end{enumerate}
+
+The substrate need not be one physical database or blockchain. ``Shared'' means that independently held records can be resolved and verified against common identifiers and event semantics. ``Immutable'' means that a reviewed release and signed event are not silently rewritten; a later correction appends a new event and points to the affected version. Confidential data and private identity maps may remain outside the public substrate, represented through access metadata, controlled attestations, or commitments.
+
+\subsection{Layer B: plural trust-domain views}
+
+Layer B does not change Layer A. It computes a relying domain's view of which actors or reviews are eligible for a specified task. A canonical reliance view is
+\[
+V(S,d,z,c,r,q,P,E_{\leq\tau},t_{\mathrm{eval}}), \qquad \tau\leq t_{\mathrm{eval}},
+\]
+where $S$ is the declared root set, $d$ the trust domain, $z$ the scientific topic, $c$ the review capability, $r$ the role, $q$ the case or reliance question, $P$ the policy version, $E_{\leq\tau}$ the frozen visible event cut, and $t_{\mathrm{eval}}$ the evaluation clock. Separating the cut from the clock permits replay of historical evidence while applying an explicitly selected historical or current expiry policy. The output is a reliance view or routing feature, never a scientific disposition.
+
+\designchoice{Trust is directed, typed, scoped, expiring, and root-relative. There is no public universal field \texttt{trusted=true} and no public scalar reviewer leaderboard.}
+
+The target privacy property is case-scoped public unlinkability against a named observer, not generic anonymity. Fresh public personas may contribute to that property while a declared private custodian or cryptographic mechanism carries eligibility and accountability state. This is a systems requirement, not a result established here: timing, stylometry, rare expertise, small pools, resource fingerprints, and service coalitions can reveal identity. Review reports, usefulness votes, positive delegations, challenge events, and conduct findings must be distinct event types because they answer different questions.
+
+Domains may import another domain's competence through an explicit bridge accepted by the importer. A bridge is typed by topic and capability, attenuated, expiring, and revocable. It may map credential, capability, review-event, and evidence vocabularies, and may reference claim identifiers, but it does not rewrite or promote claims. Scientific dispositions, sanctions, and negative standing do not transfer through an ordinary positive-delegation bridge; any transfer requires a separately authorized typed-event mapping and is off by default. A fork retains the shared scientific and public review objects but changes roots or policy. Private identity mappings and private distrust edges do not copy automatically. Forking creates declared dependency separation; whether it contains institutional capture is an empirical question, and it does not decide which scientific conclusion is correct.
+
+\subsection{The interface contract}
+
+A review request binds the layers by naming exact claim identifiers, evidence identifiers, release digests, requested competence, assessment mode, resource declaration, and policy version. The resulting report records what the reviewer did, what failed, what was excluded, and which conclusion the reviewer is authorized to sign. Relying domains can then accept or reject the report under their own declared policies without rewriting it.
+
+Eight invariants follow:
+
+\begin{enumerate}
+  \item Every consequential review conclusion points to a claim and evidence scope.
+  \item Derived views never rewrite signed source events.
+  \item Trust is typed, directed, expiring, and root-relative.
+  \item Negative events do not propagate into unrelated domains by default.
+  \item A cheaper assessment mode cannot be reported as a stronger epistemic achievement.
+  \item Transitive dependencies and restricted components are explicit trust boundaries, not omitted nodes.
+  \item Machine checks report conformance and discrepancies; designated humans make scientific and governance decisions.
+  \item Later failures append status or correction events without erasing the originally reviewed release.
+\end{enumerate}
+
+These are proposed protocol invariants. They should be rejected or revised if they cannot be represented interoperably, impose disproportionate burden, or obscure rather than clarify decisions.
+
+\section{Resources and assessment modes}
+\label{sec:resources}
+
+For an evidence path $p$, define a resource declaration
+\[
+\mathcal{R}(p)=(C,S,A,P,W,H,G,O,M,F),
+\]
+where $C$ is compute, $S$ storage, $A$ data access, $P$ platform requirements, $W$ wall-clock latency, $H$ human expertise, $G$ agent capability, $O$ operator and support labor, $M$ monetary or allocative cost, and $F$ freshness constraints. The vector is descriptive, not additive: ten hours of expert calibration judgment cannot be exchanged mechanically for ten GPU-hours.
+
+Human and agent intelligence belong in the declaration for the same reason that software versions do. A workflow may be executable only when a scientist chooses a quality interval, an operator recovers a failed scheduler job, or an agent discovers a package-specific remediation. The actor, capability, instruction or policy, intervention, and resulting artifact should be recorded. Neither ``automatic'' nor ``human in the loop'' is sufficiently precise.
+
+One claim may expose several assessment modes:
+
+\begin{description}
+  \item[Full independent execution.] The reviewer controls an execution over the declared input scope with the required resources.
+  \item[Bounded recomputation.] A smaller input partition or lower-cost configuration is rerun with scaling, convergence, and representativeness checks.
+  \item[Digest audit.] The algorithm that creates a reduced or digested product is inspected and sampled partitions are regenerated from accessible inputs.
+  \item[Restricted-platform attestation.] An authorized executor runs the workflow where data or hardware reside and releases signed logs, checks, commitments, and approved outputs.
+  \item[Frozen-output inspection.] Reviewers inspect preserved outputs, invariants, logs, and provenance when execution is currently infeasible.
+  \item[Independent evidence path.] A different implementation, method, dataset, or experiment tests a bounded claim.
+\end{description}
+
+Each mode ends in a sign-off template that lists warranted and unwarranted conclusions. A downselect is valuable when it tests a material transformation or invariant. It becomes cosmetic when authors choose it only because it reproduces the final presentation while bypassing the scientific risk.
+
+\section{Worked case A: a portable \Rzero analysis}
+\label{sec:r0}
+
+Consider a public-data analysis with three claims: a fitted slope is positive over a declared range; a model residual passes a prespecified diagnostic; and a sensitivity result is stable to one alternate preprocessing choice. The entire analysis runs on a contemporary laptop, requires no specialty scheduler, consumes less than 10~GB, and completes within one hour. These numbers are illustrative requirements for the case packet, not measured results.
+
+The release identifies the downloaded raw files by digest and archive locator. A preprocessing activity produces an intermediate table; a fitting activity produces parameters and diagnostics; a rendering activity produces the table and figures. Each transition records code revision, environment lock, configuration, seed where applicable, commands, input and output digests, and expected tolerances. Claim~1 points to the fit and diagnostic evidence, not merely the figure. Claim~2 points to the residual test and the prespecified decision rule. Claim~3 points to both preprocessing branches and their comparison.
+
+The validation package includes ordinary tests and scientific invariants. A unit test checks parsing. An integration test checks that a clean execution reaches the expected outputs. A scientific invariant checks that filtered counts and units are consistent across stages. A negative test corrupts an input header or uses an invalid unit and must fail before fitting. Another adversarial check replaces an upstream intermediate table with a same-shaped but wrong file; the workflow must detect the digest mismatch instead of happily regenerating the figure.
+
+The review is split into at least two scopes. A provenance/software reviewer checks identities, environment reconstruction, workflow behavior, and negative tests. A scientific reviewer checks the claim definitions, diagnostics, assumptions, and interpretation. Their reports remain distinct even if one person is qualified for both. A reviewer-controlled full execution can warrant computational repeatability and, when the reviewer independently reconstructs the released path, the bounded computational-reproducibility conclusion. It cannot warrant independent replication or scientific validity without the corresponding evidence.
+
+Freshness is a lifecycle obligation. The release declares when dependencies, external data locators, and executable tests will be checked. If a later operating-system or dependency update breaks the run, the record appends a failed-reproduction event with logs and affected scope. The reviewed release remains recoverable. A remediated release receives a new immutable identifier and a supersession relation. This avoids the fiction that a badge, once earned, is permanently current.
+
+\begin{evidencegate}[First unmet artifact gate for Case A]
+The executable \Rzero case packet has not yet been attached to this manuscript. Promotion from design walkthrough to implementation observation requires a frozen claim manifest, data inventory, digests, environment lock, tests including the corrupted-input case, an execution record, reviewer reports, and a simulated later-failure/correction event.
+\end{evidencegate}
+
+\section{Worked case B: HPC, large storage, or restricted data}
+\label{sec:hpc}
+
+Now consider a representative scientific-inference workflow that requires a specialty scheduler, GPU acceleration, substantial storage, domain calibrations, and inputs that may be restricted or too large to redistribute. The intended analogy is to real high-throughput inference systems; the published fixture must use public or sanitized material and must not expose collaboration-internal or restricted information.
+
+The claim/evidence graph separates acquisition and calibration, preprocessing, expensive inference, reduced likelihood or posterior products, convergence and scientific diagnostics, and final claims. The full resource declaration names accelerator class, scheduler and queue assumptions, container or module stack, scratch and archival storage, wall time, allocation or monetary cost, operator support, domain expertise, and any agent assistance. It also names retention constraints: a reviewer who receives a reduced product after raw partitions have expired faces a different evidence boundary from a reviewer with controlled access to the original partitions.
+
+No single downselect is treated as universally sufficient. A suitably resourced independent site may perform a full rerun. A second reviewer may run a reduced-scale configuration and test convergence and scaling. A third may inspect the digest-generation algorithm and regenerate sampled reduced products from accessible partitions. Restricted inputs may be executed only within an approved facility, producing an attestation, logs, checks, and export-approved diagnostics. A domain scientist may test a bounded claim with a different inference method. Each path answers a different question.
+
+Table~\ref{tab:modes} illustrates the sign-off discipline.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Illustrative assessment modes for the two cases. Entries state the strongest plausible conclusion, subject to the actual artifacts and review.}
+\label{tab:modes}
+\begin{tabularx}{\textwidth}{@{}L{0.18\textwidth}L{0.18\textwidth}X X@{}}
+\toprule
+Case and mode & Dominant resources & Potentially warranted & Explicitly not warranted \\
+\midrule
+\Rzero full execution & laptop, public access, general scientific and software review & repeatability; bounded reproducibility of the declared path & independent replication; general validity \\
+HPC full execution & scheduler, GPUs, storage, operator and domain support & repeatability and possibly bounded reproducibility for executed claims & independence of shared calibrations or methods \\
+Reduced-scale rerun & smaller allocation plus convergence expertise & behavior in tested regime; selected invariants & full-scale numerical equivalence \\
+Digest audit & accessible partitions, algorithm review, sampling design & sampled lineage and digest-generation behavior & unobserved partitions; attestor honesty \\
+Restricted attestation & authorized facility, governance, export review & named checks ran on committed inputs under declared controls & independent custody; unrestricted inspection \\
+Alternative method & independent implementation or model expertise & bounded replication evidence for a named claim & equivalence outside tested scope \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Transitive trust boundaries are central. A waveform model, calibration release, scheduler, GPU library, container runtime, external model service, and storage platform may each affect the output. Review cannot recurse forever. It bottoms out in accepted prior review, validation, institutional controls, or explicit unreviewed reliance. The record must identify that boundary so another domain can choose differently. Two ``independent'' reruns that share the same calibration or library are not independent with respect to failures in that component.
+
+The coverage contract is therefore a vector rather than an averaged score. It may require domain science, statistical inference, provenance and software, compute operations, and restricted-data governance. A domain may accept external coverage for one component through an expiring bridge. No reviewer or parent institution automatically inherits authority over every component.
+
+\begin{evidencegate}[First unmet artifact gate for Case B]
+The representative HPC/restricted-data packet is not yet instantiated. Until its public or sanitized claim graph, resource measurements, downselect algorithms, sampled recomputations, boundary list, attestations, and claim-specific exclusions are independently inspected, this section demonstrates only intended representational coverage.
+\end{evidencegate}
+
+\section{Threat and negative analysis}
+\label{sec:threats}
+
+The design is useful only if it makes failure visible at the correct boundary. Table~\ref{tab:threats} classifies representative attacks and errors. ``Prevent'' is intentionally rare: most scientific-review mechanisms detect, localize, or record failures rather than making them impossible.
+
+\begin{longtable}{@{}L{0.22\textwidth}L{0.18\textwidth}L{0.51\textwidth}@{}}
+\caption{Threats, intended response, and residual risk.}\label{tab:threats}\\
+\toprule
+Scenario & Intended response & Residual risk \\
+\midrule
+\endfirsthead
+\toprule
+Scenario & Intended response & Residual risk \\
+\midrule
+\endhead
+Figure-only Makefile & Detect through missing claim-to-upstream path and fail the coverage contract. & A plausible but fabricated upstream graph can still deceive reviewers. \\
+Mutable external service & Record request, response digest where permitted, service identity, time, policy, and fallback; mark as a boundary. & Provider internals or nondeterminism may remain unavailable. \\
+Conflicted restricted-data attestor & Require conflict disclosure, separated roles, independent logs or sampling, and local acceptance of the boundary. & Colluding institutions can still produce false attestations. \\
+Shared defective calibration & Display common ancestry across evidence paths and prevent false independence labels. & An unknown shared dependency may be omitted or misidentified. \\
+Prestigious reviewer in wrong topic & Scope routing by topic and capability; separate prestige from coverage. & Credentials and graph edges can still be stale or strategically inflated. \\
+Manager controls assignment and sanctions & Expose control roles; require separation, appeal, random audit, and fork/exit paths. & Informal power can operate outside recorded policy. \\
+Cross-case persona linkage & Fresh personas and separated identity services reduce routine linkage. & Timing, stylometry, small pools, and operator collusion remain. \\
+Global score suppresses dissent & Do not publish a universal scalar; preserve root-relative views and dissenting reports. & Local domains can still become captured or exclusionary. \\
+Fork after governance conflict & Retain common public evidence and events while changing policy and roots. & Fragmentation, duplicated work, and accountability avoidance may increase. \\
+Scheduled rerun fails & Append a time-stamped failure and correction or supersession path. & Failure diagnosis can be costly or impossible after platform loss. \\
+\bottomrule
+\end{longtable}
+
+An explicit anti-pattern list follows from these cases:
+
+\begin{itemize}
+  \item \textbf{Cosmetic rebuild}: presentation regeneration is advertised as end-to-end reproducibility.
+  \item \textbf{Paper--repository equivalence}: a repository link is treated as a claim/evidence mapping.
+  \item \textbf{Universal badge}: one label hides per-claim scope, resource burden, age, and exclusions.
+  \item \textbf{Hidden service}: an external API or model changes without a captured interaction or boundary.
+  \item \textbf{Transitive blindness}: tools, data, calibrations, and facilities are omitted because they are ``standard.''
+  \item \textbf{Global reviewer score}: agreement, popularity, and competence across topics are compressed into one public number.
+  \item \textbf{Anonymous prestige identity}: a durable pseudonym recreates cross-case ranking while being described as unlinkable.
+  \item \textbf{Machine validity certificate}: schema and execution checks are presented as proof of scientific correctness.
+\end{itemize}
+
+\section{Evaluation and falsification agenda}
+\label{sec:evaluation}
+
+The design should be evaluated against counter-designs rather than only a paper-and-Makefile baseline. Relevant baselines include a container without claim mapping, centralized artifact review, a single global recursive reputation, raw review voting, a common event history with no trust overlay, and the proposed local typed views with explicit bridges and forks.
+
+Five tests are required. First, a \emph{coverage test} asks whether independent annotators can map representative systems and both worked cases without inventing fields. Second, an \emph{interoperability test} projects the core objects into PROV-O, RO-Crate, Workflow Run RO-Crate, and established review-event vocabularies and records every lossy mapping. Third, a \emph{decision test} asks whether assessment modes and coverage contracts change what reviewers can honestly sign. Fourth, a \emph{burden test} measures author, reviewer, operator, human-expertise, agent, compute, and storage costs. Fifth, an \emph{adversarial test} measures missing and stale provenance, captured roots, collusion, topic leakage, privacy leakage, newcomer exclusion, and minority-view survival.
+
+\openhypothesis{Plural, root-relative topic and capability views can localize some capture and authority leakage better than one global score, but may increase fragmentation, exclusion, and governance cost. No superiority claim is admissible without comparative evidence.}
+
+The design contribution should be downgraded to vocabulary or an interoperability profile if any of the following occurs:
+
+\begin{enumerate}
+  \item an existing system already implements materially equivalent end-to-end semantics;
+  \item the worked cases require exceptions that erase the separation between evidence and actor reliance;
+  \item independent annotators cannot apply the distinctions reliably;
+  \item standards mapping reveals avoidable reinvention or incompatible semantics;
+  \item downselect modes obscure what was assessed;
+  \item local views reconstruct a de facto global authority; or
+  \item record burden is disproportionate to the decisions enabled.
+\end{enumerate}
+
+The first empirical study must report negative regimes. Faster routing is not sufficient if it concentrates assignments, harms newcomer access, suppresses qualified dissent, leaks reviewer identity, or transfers institutional capture across domains. Review quality should be evaluated through typed outcomes: exact claim coverage, confirmed or falsified defects, missed planted defects, actionable limitations, conflict findings, and appeal reversals. Agreement with authors or majority opinion is not ground truth.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Portability is a floor where feasible, not a universal gate}
+
+For lightweight work, \Rzero---fully documented, runnable with contemporary portable tools on modest computing and no specialty scheduler---is a credible minimum. It prevents authors from invoking complexity where none is necessary and gives reviewers meaningful control. But the scientific record also contains large instruments, simulations, restricted cohorts, proprietary calibrations, and high-throughput inference. Excluding them because every reviewer cannot perform a full rerun would mistake resource equality for evidentiary honesty. The better requirement is to expose the full resource package, support multiple bounded assessment modes, and preserve claim exclusions.
+
+\subsection{Intelligence is part of the resource package}
+
+Scientific workflows are maintained by people and increasingly by agents. Expertise is consumed when a reviewer recognizes a pathological diagnostic, an operator understands a scheduler failure, or an agent locates and applies a remediation. Recording these interventions is not a claim that intelligence can be reduced to a scalar. It is recognition that reproducibility depends on capabilities, time, access, and accountability. An undocumented heroic expert is as much a hidden dependency as an undocumented external service.
+
+\subsection{Review bottoms out in declared trust boundaries}
+
+No review can validate every compiler, mathematical library, instrument, archival service, identity issuer, and prior dataset from first principles. The record therefore cannot eliminate trust; it can make reliance explicit, typed, and revisable. A reviewer may accept a versioned calibration because a designated domain group reviewed it. Another domain may demand an independent check. A later defect appends a challenge and identifies downstream claims. This is a more accurate representation than a binary reproducible/not-reproducible badge.
+
+\subsection{Plural governance localizes disagreement but does not resolve it}
+
+Local reliance views avoid declaring that one global ranking is scientific truth. They permit communities to change declared governance dependencies while retaining common evidence. Whether this contains real capture remains an open empirical question. The price is real: inconsistent eligibility, duplicated review, bridge brokers, minority exclusion within domains, and strategic forking. Polycentric governance is therefore a design lens and hypothesis source, not an empirical endorsement \citep{ostrom-polycentric-2010}.
+
+\subsection{Relationship to an agentic-era protocol}
+
+The design map can guide a Minimum Credible Reproducibility Protocol, but the governance layer should remain a profile until its privacy, assignment, appeal, and capture properties are tested. The minimum record can require claim identifiers, evidence and provenance, resource declarations, tests, boundaries, freshness, and human sign-off without requiring every deployment to adopt one graph method. Protocol core conformance and optional trust-domain governance should be versioned separately.
+
+\section{Limitations and first unmet gates}
+\label{sec:limitations}
+
+The synthesis is bounded by the supplied evidence packet and may miss private, domain-specific, or recent work. It does not justify a universal maximum trust-domain size. No graph method proves competence, independence, uniqueness, good faith, or scientific truth. Case-scoped public unlinkability is conditional on the named observer, pool size, traffic, content, service separation, and opening policy. Restricted and expensive workflows may remain only partially assessable. Archival identity does not guarantee future executability. Resource declarations can be inaccurate. Agent-assisted review inherits model, tool, prompt, service, and operator dependencies. Forking can separate declared dependencies while fragmenting authority or avoiding accountability; capture containment is unestablished.
+
+The two cases are design walkthroughs. They do not demonstrate better peer-review quality, fraud detection, adoption, security, or population-level scientific validity. The first unmet gates are explicit:
+
+\begin{enumerate}
+  \item \textbf{Scholarship}: complete the dated primary-source identity and sentence-level support ledger, including closest-work and standards crosswalks.
+  \item \textbf{Artifacts}: instantiate both worked cases with immutable identifiers, run records, negative tests, resource measurements, and claim-specific sign-offs.
+  \item \textbf{Evaluation}: preregister annotation, interoperability, burden, and adversarial comparisons against credible baselines.
+  \item \textbf{Independent review}: obtain separate scholarly-communication, computational-science, and governance/privacy critiques; do not average their coverage.
+  \item \textbf{Human release}: resolve authorship responsibility, AI-assistance disclosure, security and privacy review, licensing, fee route, and approval before any public posting or submission.
+\end{enumerate}
+
+\section{Conclusion}
+
+Machine-verifiable publication is not achieved by attaching code to a paper or by reproducing its final pictures. A credible record must make individual claims, evidence paths, provenance, resource burdens, validation, accepted external boundaries, review scopes, and later failures addressable. Scaling that record to independent actors introduces a second problem: reliance must remain local to topic, capability, roots, policy, and time rather than becoming a universal vote on who is trustworthy.
+
+The resulting two-layer design is a consolidation of established components and explicit protocol choices. Its value is that hidden assumptions become interfaces, exclusions, and tests. Its limits are equally important: automation does not certify scientific validity; downselects do not become full reruns by declaration; graph trust does not establish truth; and plural governance does not eliminate power. Whether the consolidation improves review is an empirical question. The next credible step is therefore not a stronger claim, but source-complete crosswalks, executable cases, adversarial evaluation, independent critique, and human accountability for release.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

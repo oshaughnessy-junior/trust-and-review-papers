@@ -38,8 +38,14 @@ def main() -> int:
     ]:
         require(f"papers/{paper}/OUTLINE.md", errors)
         require(f"papers/{paper}/CLAIMS.md", errors)
-    if (ROOT / "papers/05-software-paper/OUTLINE.md").exists():
-        errors.append("Paper 05 must remain deferred until its recorded maturity gate passes")
+        require(f"papers/{paper}/main.tex", errors)
+        require(f"papers/{paper}/references.bib", errors)
+        require(f"papers/{paper}/writing-packet.json", errors)
+        require(f"papers/{paper}/logical-claims-audit.json", errors)
+        require(f"papers/{paper}/claim-ledger.json", errors)
+    for forbidden in ["OUTLINE.md", "main.tex"]:
+        if (ROOT / f"papers/05-software-paper/{forbidden}").exists():
+            errors.append(f"Paper 05 must remain deferred until its recorded maturity gate passes: found {forbidden}")
 
     packet = json.loads(require("science-writing/writing-packet.json", errors).read_text())
     if packet.get("schema") != "openclaw.scientific-writing.packet.v1":

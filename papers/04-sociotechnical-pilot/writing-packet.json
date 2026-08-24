@@ -1,0 +1,79 @@
+{
+  "schema": "openclaw.scientific-writing.packet.v1",
+  "artifact_id": "trust-and-review-paper04-stage0-2026-08-24",
+  "purpose": "Produce a compile-ready private Stage-0 preregistration/protocol that makes a future sociotechnical pilot falsifiable and safety-gated without implying participant evidence.",
+  "audience": "Human investigators, IRB/ethics reviewers, privacy and security reviewers, participating-domain representatives, peer-review and metascience researchers, and prospective independent methods reviewers.",
+  "section_type": "full private protocol manuscript",
+  "target_latex_fragments": [
+    "main.tex"
+  ],
+  "outline": [
+    "Bounded motivation and prior interventions",
+    "Research objectives, units, and estimands",
+    "Frozen intervention, comparator, and control-graph independence",
+    "Ethics, positionality, consent, and anti-coercion",
+    "Stage 0 readiness, Stage 1 shadow pilot, and separate Stage 2 gate",
+    "Outcomes, mixed-method measurement, and analysis",
+    "Adversary-specific privacy, appeals, adverse events, and stop rules",
+    "Disclosure-safe reproducibility and evidence promotion",
+    "Limitations, transfer conditions, and current gates"
+  ],
+  "evidence_packets": [
+    "OUTLINE.md",
+    "CLAIMS.md",
+    "../../PUBLICATION_PROGRAM.md",
+    "../../shared/research/reviewer-trust-closest-work-matrix.md",
+    "Primary-source metadata and source pages recorded in claim-ledger.json"
+  ],
+  "claim_ledger": "claim-ledger.json",
+  "bibliography_inputs": [
+    "references.bib"
+  ],
+  "figures_tables": [
+    "Candidate outcome-family longtable",
+    "Current gate-status table"
+  ],
+  "human_questions": [
+    "Which authority must issue the human-subject determination in each participating jurisdiction?",
+    "Which no-fee or RIT-covered venue accepts a Stage-1 protocol or Registered Report in this scope?",
+    "Which communities could qualify as operationally independent without creating coercive recruitment?",
+    "Which outcomes and precision targets are decision-relevant enough to become co-primary?",
+    "Who can serve as independent appeal, incident, adjudication, and safety operators?",
+    "What participant compensation and data-retention terms are ethically and operationally defensible?"
+  ],
+  "constraints": [
+    "Private draft only; no submission, posting, recruitment, intervention, or contact.",
+    "No result prose or claim of usefulness, safety, fairness, anonymity, independence, or field efficacy.",
+    "No global actor score, employment use, automatic sanction, or experimental effect on official disposition during Stage 1.",
+    "Human-subject classification and approval remain external human decisions.",
+    "Disclosure-safe reproduction cannot override consent, law, confidentiality, or data-use restrictions.",
+    "All positive field claims remain blocked until ethics-approved data lock and independent review."
+  ],
+  "excluded_claims": [
+    "TDRG improves peer-review quality or scientific validity.",
+    "TDRG is safe, fair, legitimate, anonymous, capture-resistant, or cost-effective.",
+    "Case-scoped personas prevent reidentification.",
+    "Nominally separate domains are operationally independent.",
+    "Participant comprehension, consent, or anti-retaliation protections are effective.",
+    "Any human-subject result, implementation fidelity observation, or deployment readiness claim."
+  ],
+  "retrieval_capability": "bounded web retrieval plus cite-and-verify and audit-bibliography procedures",
+  "retrieval_record": {
+    "used": [
+      "Publisher or authoritative pages for every cited DOI and official ethics/privacy document",
+      "PubMed/PMC records for peer-review and preregistration sources",
+      "Official HHS, DHS, NIST, AEA, ACM, IEEE/DBLP, Springer, BMJ, PNAS, Nature, and F1000Research metadata"
+    ],
+    "rejected": [
+      "Wikipedia and secondary summaries as support",
+      "Unverified claims that preregistration prevents bias",
+      "Unverified claims that an anonymity mechanism is secure in this deployment",
+      "Broad novelty claims for decentralized or graph-based peer review"
+    ],
+    "missing": [
+      "Systematic G1 gap audit for workplace coercion, organizational retaliation, participatory governance, peer-review harms, and qualitative methods",
+      "Domain-specific literature for the eventual participating communities",
+      "Independent legal, ethics, privacy, security, statistics, and qualitative-methods review"
+    ]
+  }
+}

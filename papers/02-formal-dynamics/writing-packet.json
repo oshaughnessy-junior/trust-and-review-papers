@@ -1,0 +1,67 @@
+{
+  "schema": "openclaw.scientific-writing.packet.v1",
+  "artifact_id": "trust-review-paper02-formal-dynamics-v0.1",
+  "purpose": "Create a compile-ready private theory/model first draft that separates definitions, design choices, proof obligations, open hypotheses, planned simulations, and actual results.",
+  "audience": "Network science, computational social science, security, and scientific-peer-review researchers; internal authors before venue selection.",
+  "section_type": "full theory/model manuscript with a deliberately empty results section",
+  "target_latex_fragments": [
+    "main.tex",
+    "references.bib"
+  ],
+  "outline": [
+    "Scaling problem and residual contribution",
+    "Prior-art boundary",
+    "Scoped reliance and observer model",
+    "A0-A4 comparison families",
+    "Endogenous assignment dynamics",
+    "Multicolor trust and importer-approved bridges",
+    "Nested domains, capture, and fission",
+    "Heterogeneous actors and transitive trust boundaries",
+    "Multiaxis resources and downselect modes",
+    "Preregistered experiments, observables, and no-go rules",
+    "Results evidence gate and bounded discussion"
+  ],
+  "evidence_packets": [
+    "OUTLINE.md",
+    "MODEL.md",
+    "CLAIMS.md",
+    "../../shared/research/reviewer-trust-governance-landscape.md",
+    "../../shared/research/reviewer-trust-closest-work-matrix.md",
+    "bounded primary-source web retrieval performed 2026-08-24; identities recorded in verification artifacts"
+  ],
+  "claim_ledger": "claim-ledger.json",
+  "bibliography_inputs": [
+    "references.bib",
+    "primary publisher, conference, institutional, or canonical author pages only"
+  ],
+  "figures_tables": [
+    "Prior-art boundary table",
+    "A0-A4 comparison table",
+    "Primary observables table",
+    "Notation table",
+    "No result figures populated"
+  ],
+  "human_questions": [
+    "Which author list and corresponding author should be used?",
+    "Which target venue should control length and style after analytical results exist?",
+    "What exclusion ceiling for newcomers and qualified minorities is scientifically acceptable?",
+    "Which restricted/HPC workflow may be used for later resource calibration?"
+  ],
+  "constraints": [
+    "Private draft; no publication or external contact",
+    "No theorem described as proved",
+    "No simulation or empirical result described as completed",
+    "Every absent result is protected by an evidence gate",
+    "Prior-art components are credited rather than claimed as inventions",
+    "Graph scores and review votes are never equated with scientific validity"
+  ],
+  "excluded_claims": [
+    "A4 is superior to A0-A3",
+    "The bridge bound has been proved",
+    "The mean-field model has a demonstrated phase transition",
+    "Fresh personas provide a deployed privacy guarantee",
+    "Fission improves real governance",
+    "The framework generalizes beyond scientific review",
+    "Any field or human-subject result"
+  ]
+}

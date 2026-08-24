@@ -1,4 +1,6 @@
 build/
+**/build/
+**/rendered/
 *.aux
 *.bbl
 *.blg
