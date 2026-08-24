@@ -1,0 +1,59 @@
+{
+  "schema": "openclaw.scientific-writing.packet.v1",
+  "artifact_id": "packet:trustandreview:publication-program-v0.1",
+  "purpose": "Turn a researched protocol and governance landscape into a sequenced, claim-disciplined private publication program without converting open hypotheses into results.",
+  "audience": "Researchers in scholarly communication, network science, research integrity, sociotechnical systems, and scientific workflow provenance.",
+  "section_type": "multi-paper structural outlines and evidence plan",
+  "target_latex_fragments": [
+    "papers/01-design-map/OUTLINE.md",
+    "papers/02-formal-dynamics/OUTLINE.md",
+    "papers/02-formal-dynamics/MODEL.md",
+    "papers/03-protocol-and-evaluation/OUTLINE.md",
+    "papers/04-sociotechnical-pilot/OUTLINE.md"
+  ],
+  "outline": [
+    "Map the fragmented prior literatures and define the consolidated object",
+    "State root-relative trust as a scoped reliance view rather than a personal scalar",
+    "Derive formal questions and comparison arms without claiming results",
+    "Specify protocol objects and a bounded reference implementation",
+    "Evaluate conformance and adversarial properties before field effectiveness",
+    "Gate independent-actor pilots on ethics, privacy, power, and preregistration",
+    "Defer a software paper until release and use evidence exists"
+  ],
+  "evidence_packets": [
+    "shared/research/reviewer-trust-governance-landscape.md",
+    "shared/research/reviewer-trust-closest-work-matrix.md",
+    "shared/research/scaling-mcrp-to-a-peer-review-corpus.md",
+    "shared/research/reviewer-trust-publication-program.md",
+    "shared/research/reviewer-trust-domain-experiments.md",
+    "shared/protocol/reviewer-trust-domains-v0.1-draft.md"
+  ],
+  "claim_ledger": "science-writing/claim-ledger.json",
+  "bibliography_inputs": ["shared/references.bib"],
+  "figures_tables": [
+    "Paper 01 design-layer and resource-vector diagrams",
+    "Paper 02 phase/capture diagrams, contingent on executed analysis",
+    "Paper 03 conformance matrix and attack comparisons, contingent on artifacts",
+    "Paper 04 participant flow and adverse-event accounting, contingent on ethics approval"
+  ],
+  "human_questions": [
+    "Which human authors accept responsibility for each paper?",
+    "Should the design map or the formal result lead the submission sequence after evidence gates?",
+    "Which exact venue and article type has a confirmed no-fee or RIT-covered route at submission time?",
+    "What ethics/IRB determination and independent governance are required before any pilot?"
+  ],
+  "constraints": [
+    "Private-not-approved: no submission, preprint, public release, or external contact.",
+    "Use only public literature, synthetic fixtures, and non-sensitive inherited packets.",
+    "Separate observation, inference, implication, caveat, transition, design choice, and open hypothesis.",
+    "Primary-source identity and claim-support verification remain required before publishable prose.",
+    "The persistent science-writer gateway run timed out; this packet was created by directly applying the shared scientific-writing skill."
+  ],
+  "excluded_claims": [
+    "Do not claim invention of decentralized review, graph trust, topic reputation, anonymous credentials, provenance, or append-only logs.",
+    "Do not claim that local trust improves scientific correctness, fairness, privacy, or capture resistance before results exist.",
+    "Do not claim that the v0.1 prototype provides signatures, Sybil resistance, unlinkability, appeals, governance legitimacy, or field validation.",
+    "Do not draft a JOSS paper from a repository skeleton."
+  ],
+  "retrieval_capability": "Existing bounded research packet available; new primary-source and venue-policy verification is pending."
+}

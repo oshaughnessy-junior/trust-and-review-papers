@@ -1,0 +1,28 @@
+# TrustAndReview papers
+
+Private working repository for a coordinated publication program on machine-verifiable scientific records and scalable, plural peer-review trust.
+
+This repository is a research workspace, not a claim that every planned paper is ready. Each paper has its own maturity gate. Outlines separate established prior work, proposed synthesis, implementation claims, and claims that require new theory or empirical evidence.
+
+## Publication sequence
+
+1. **Design map and consolidation** — unify reproducibility records, accountable review, plural trust, and lifecycle governance; mature enough for a full outline.
+2. **Formal dynamics of localized trust domains** — analyze contamination, bridge policies, fission, and nested domains; mature enough for a model-and-experiments outline, not yet for broad claims.
+3. **Protocol and reference evaluation** — specify interoperable review events and evaluate a minimal implementation; mature enough for a full outline tied to the tooling repository.
+4. **Sociotechnical pilot** — study use by independent actors under adversarial and institutional conditions; mature enough for a preregistration-style outline, not yet a results paper.
+5. **Software paper** — deferred until the tooling has a stable release, external use, documentation, tests, and archival citation.
+
+See [PUBLICATION_PROGRAM.md](PUBLICATION_PROGRAM.md) for gates, venue hypotheses, and dependencies.
+
+## Shared controls
+
+- [SCIENCE_WRITING_PACKET.md](SCIENCE_WRITING_PACKET.md): claim discipline, evidence standards, review gates, and manuscript checks.
+- [CLAIM_LEDGER_TEMPLATE.md](CLAIM_LEDGER_TEMPLATE.md): required claim-to-evidence mapping for each paper.
+- `shared/research/`: inherited research packets and closest-work comparisons.
+- `shared/protocol/`: current protocol source material.
+
+## Provenance and release posture
+
+The seed material is derived from the private `oshaughnessy-junior/mcrp-protocol-paper` worktree at commit `666e897` and earlier reviewed commits recorded there. Copied files retain their original text; new manuscripts must cite primary sources rather than cite the internal packet as authority.
+
+No submission, preprint, public release, or license grant is implied. Authorship, AI-assistance disclosure, venue, and repository licensing require human decisions before release.

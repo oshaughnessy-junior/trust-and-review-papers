@@ -1,0 +1,78 @@
+{
+  "schema": "openclaw.scientific-writing.audit.v1",
+  "artifact_id": "audit:trustandreview:publication-program-v0.1",
+  "manuscript": "Papers 01-05 publication program",
+  "section": "Cross-paper argument chain",
+  "claims": [
+    {
+      "id": "audit-001",
+      "text": "The program treats provenance plus plural governance as the consolidated object required for scalable review.",
+      "rhetorical_role": "program-thesis",
+      "logic_type": "implication",
+      "consequence_level": "high",
+      "ledger_claim_id": "program-claim-001",
+      "support_status": "blocked",
+      "evidence": "The design map motivates the relation and defines counter-designs, but the necessity claim is not yet established.",
+      "citation": "",
+      "caveat": "Unification and operational clarification are defensible; universal necessity is not yet demonstrated.",
+      "unresolved_question": "Can a credible counterexample scale provenance and review without the proposed governance layer?",
+      "action": "narrow"
+    },
+    {
+      "id": "audit-002",
+      "text": "Localized multicolor trust and importer-approved bridges can contain contamination better than a single global score.",
+      "rhetorical_role": "formal-paper-hypothesis",
+      "logic_type": "inference",
+      "consequence_level": "high",
+      "ledger_claim_id": "program-claim-002",
+      "support_status": "blocked",
+      "evidence": "Paper 02 states a candidate bound, observables, baselines, and attack regimes but has no checked result.",
+      "citation": "",
+      "caveat": "Localization may also fragment knowledge, amplify bad roots, or reduce qualified reviewer supply.",
+      "unresolved_question": "Which parameter regimes yield containment without unacceptable exclusion or concentration?",
+      "action": "narrow"
+    },
+    {
+      "id": "audit-003",
+      "text": "The v0.1 tooling demonstrates deterministic root-relative topic-scoped propagation with explicit bridges, event separation, revocation, expiry, and resource-mode accounting.",
+      "rhetorical_role": "implementation-observation",
+      "logic_type": "observation",
+      "consequence_level": "low",
+      "ledger_claim_id": "",
+      "support_status": "verified",
+      "evidence": "Local project test run passed 11 unit tests and two CLI demonstrations on 2026-08-24; final commit/run identifiers are recorded in the owning activity.",
+      "citation": "",
+      "caveat": "Mechanism demonstration only; no field efficacy, security, privacy, or scientific-validity conclusion follows.",
+      "unresolved_question": "",
+      "action": "keep"
+    },
+    {
+      "id": "audit-004",
+      "text": "The sociotechnical pilot will determine whether the protocol is useful and safe under independent use.",
+      "rhetorical_role": "pilot-purpose",
+      "logic_type": "paper-description",
+      "consequence_level": "medium",
+      "ledger_claim_id": "program-claim-004",
+      "support_status": "blocked",
+      "evidence": "The preregistration outline defines outcomes and stop rules; no study has been approved or conducted.",
+      "citation": "",
+      "caveat": "A bounded pilot may reveal context-specific effects but cannot establish universal usefulness or safety.",
+      "unresolved_question": "What independent governance and ethics determination are required?",
+      "action": "narrow"
+    },
+    {
+      "id": "audit-005",
+      "text": "JOSS is a future option for the software.",
+      "rhetorical_role": "venue-recommendation",
+      "logic_type": "paper-description",
+      "consequence_level": "low",
+      "ledger_claim_id": "",
+      "support_status": "not-applicable",
+      "evidence": "Paper 05 is explicitly deferred until release, documentation, maintenance, external-use, and human-contribution gates are met.",
+      "citation": "",
+      "caveat": "Future venue fit and policy must be rechecked.",
+      "unresolved_question": "",
+      "action": "keep"
+    }
+  ]
+}
