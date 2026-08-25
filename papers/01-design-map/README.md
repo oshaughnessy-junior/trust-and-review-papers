@@ -7,9 +7,8 @@
 `main.tex` is a coherent critical-design-synthesis manuscript rather than an
 expanded outline. Its contribution posture is deliberately bounded to
 unification, clarification, operational consolidation, explicit interfaces,
-and falsifiable protocol choices. The compiled document is 18 pages including
-approximately three pages of references (roughly 15 substantive manuscript
-pages).
+and falsifiable protocol choices. The compiled document is 19 pages including
+three pages of references (roughly 16 substantive manuscript pages).
 
 The manuscript includes:
 
