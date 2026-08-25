@@ -129,6 +129,20 @@
       "caveat": "Contribution posture is synthesis and consolidation.",
       "unresolved_question": "Complete independent novelty review.",
       "action": "remove"
+    },
+    {
+      "id": "LA-010",
+      "text": "Executable-publication, continuous-analysis, workflow-platform, and dependency-capture systems already implement substantial parts of the proposed record.",
+      "rhetorical_role": "narrow novelty and identify components to reuse",
+      "logic_type": "background",
+      "consequence_level": "medium",
+      "ledger_claim_id": "P01-C013",
+      "support_status": "verified",
+      "evidence": "Primary papers for Jupyter, continuous analysis, Whole Tale, Galaxy, and ReproZip, with dated feature-level locators in CLOSEST_WORK_CROSSWALK.md",
+      "citation": "kluyver-jupyter-2016; beaulieu-jones-continuous-2017; brinckman-whole-tale-2019; afgan-galaxy-2018; chirigati-reprozip-2016",
+      "caveat": "No exhaustiveness or comparative-effectiveness claim; absence from checked sources is not absence from later implementations.",
+      "unresolved_question": "Complete review-event/correction standards and citation chaining before closing G1.",
+      "action": "keep"
     }
   ]
 }

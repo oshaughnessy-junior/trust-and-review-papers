@@ -193,6 +193,22 @@
       "human_required": true,
       "human_verifier": null,
       "notes": "Explicitly excluded; do not introduce without a completed novelty audit."
+    },
+    {
+      "id": "P01-C013",
+      "claim": "Executable notebooks, continuous analysis, Whole Tale, Galaxy, and ReproZip provide complementary prior-art mechanisms for executable narrative, environment reconstruction, repeated execution, workflow history, and dependency capture, but their cited scopes do not themselves authorize a per-claim scientific-validity conclusion.",
+      "claim_type": "interpretation",
+      "consequence_level": "medium",
+      "sources": ["doi:10.3233/978-1-61499-649-1-87", "doi:10.1038/nbt.3780", "doi:10.1016/j.future.2017.12.029", "doi:10.1093/nar/gky379", "doi:10.1145/2882903.2899401"],
+      "identity_status": "verified",
+      "support_status": "supported",
+      "source_locator": "Jupyter pp. 87-89; continuous-analysis methods and discussion; Whole Tale abstract, architecture, related work, and summary; Galaxy scalability, environment, history, and workflow sections; ReproZip abstract and Sections 1-2",
+      "evidence": "The sources document the named execution and capture mechanisms. The negative scope statement is restricted to the review conclusions defined in those checked sources and does not assert that later implementations lack additional features.",
+      "disposition": "verified",
+      "reviewer": "daily-paper-progress-agent",
+      "human_required": false,
+      "human_verifier": null,
+      "notes": "Narrows novelty and positions these systems as reusable components; no comparative-effectiveness claim."
     }
   ]
 }
