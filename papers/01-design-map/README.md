@@ -7,8 +7,8 @@
 `main.tex` is a coherent critical-design-synthesis manuscript rather than an
 expanded outline. Its contribution posture is deliberately bounded to
 unification, clarification, operational consolidation, explicit interfaces,
-and falsifiable protocol choices. The compiled document is 19 pages including
-three pages of references (roughly 16 substantive manuscript pages).
+and falsifiable protocol choices. The current page count is recorded by the latest
+verification receipt rather than treated as stable manuscript content.
 
 The manuscript includes:
 
@@ -30,14 +30,19 @@ The worked cases are design walkthroughs, **not implementation results**.
 ## Source and claim artifacts
 
 - `references.bib`: paper-local bibliography containing only cited sources;
-- `CLOSEST_WORK_CROSSWALK.md`: dated feature-level primary-source crosswalk
-  covering the first bounded part of G1;
+- `CLOSEST_WORK_CROSSWALK.md`: dated feature-level primary-source crosswalk v0.2
+  covering executable/capture/provenance/archival components plus review-event,
+  correction, versioning, bounded linkage review, and inclusion/exclusion decisions;
 - `bibliography-audit-input-2026-08-25.json` and
   `bibliography-audit-2026-08-25.md`: structured metadata input and audit
   receipt for the six added peer-reviewed sources;
+- `bibliography-audit-input-2026-08-26.json` and
+  `bibliography-audit-2026-08-26.md`: clean registrar audit for six DOI-bearing
+  standards/primary sources plus manual authoritative-page checks for four web
+  specifications;
 - `writing-packet.json`: audience, evidence inputs, constraints, exclusions,
   and human questions;
-- `claim-ledger.json`: 13 consequential claims with identity/support posture;
+- `claim-ledger.json`: 14 consequential claims with identity/support posture;
 - `logical-claims-audit.json`: rhetorical and logical-strength audit.
 
 The local bibliography identity command could not reach external metadata
@@ -103,16 +108,26 @@ observed. Ragged-right table columns were introduced after the first render to
 remove excessive interword spacing in narrow columns, then recompiled and
 reinspected.
 
+## Verification update — 2026-08-26
+
+The v0.2 standards slice passed document mapping, scientific-writing artifact
+validation, claim-ledger validation (14 claims), JSON parsing, repository
+validation, bibliography identity audit (6/6 DOI records clean plus four
+authoritative web records manually checked), and `latexmk`. The compiled PDF is
+21 letter-size pages. The LaTeX summarizer reported no critical errors or warnings;
+the explicit scan found no overfull boxes, unresolved citations/references, or
+fatal errors. Render inspection covered manuscript pages 6–8 and bibliography
+pages 18–21; the added section and new references are readable with no clipping or
+malformed page break. `git diff --check` passed.
+
 ## First unmet gates
 
-1. **G1 scholarship:** extend the dated source-locator crosswalk from executable
-   publication, continuous analysis, workflow/capture, provenance, and archival
-   identity into review-event exchange/correction standards and backward/forward
-   citation chaining; record inclusion/exclusion decisions and rerun metadata
-   audits. The 2026-08-25 v0.1 crosswalk is a bounded advance, not gate closure.
-2. **G2/G3 evidence:** instantiate immutable R0 and public/sanitized HPC case
-   packets with runs, negative tests, resource measurements, and bounded
-   sign-offs.
+1. **G2 evidence:** instantiate an immutable public R0 case packet with a recorded
+   run, negative test, ten-axis resource measurement, claim-scoped disposition,
+   and bounded sign-off. The targeted G1 crosswalk closed at v0.2 on 2026-08-26,
+   but it is not exhaustive and broad novelty remains blocked.
+2. **G3 evidence:** instantiate a public/sanitized HPC case packet with runs,
+   negative tests, resource measurements, and bounded sign-offs.
 3. **G4 independent review:** obtain separate scholarly-communication,
    computational-science, and governance/privacy close reads.
 4. **G5 human release:** resolve authorship responsibility, AI disclosure,

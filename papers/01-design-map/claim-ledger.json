@@ -209,6 +209,22 @@
       "human_required": false,
       "human_verifier": null,
       "notes": "Narrows novelty and positions these systems as reusable components; no comparative-effectiveness claim."
+    },
+    {
+      "id": "P01-C014",
+      "claim": "NISO terminology, COAR Notify, DocMaps, Crossref peer-review registration, Crossmark, NISO version/correction practices, JATS, and DataCite cover complementary terminology, transport, process assertion, registration, status, serialization, and identifier relations, but the checked standards do not natively carry the full MCRP claim-scoped scientific disposition, resource, assessment-mode, transitive-boundary, and local-reliance semantics.",
+      "claim_type": "interpretation",
+      "consequence_level": "medium",
+      "sources": ["doi:10.3789/ansi.niso.z39.106-2023", "url:https://coar-notify.net/specification/1.0.1/", "url:https://docmaps.knowledgefutures.org/pub/sgkf1pqa/release/7", "url:https://www.crossref.org/documentation/schema-library/markup-guide-record-types/peer-reviews/", "url:https://www.crossref.org/documentation/crossmark/", "doi:10.3789/niso-rp-8-2008", "doi:10.3789/niso-rp-45-2024", "doi:10.3789/ansi.niso.z39.96-2024", "doi:10.14454/qdd3-ps68"],
+      "identity_status": "verified",
+      "support_status": "supported",
+      "source_locator": "Official scopes, event/relation vocabularies, review-object fields, version/update guidance, and explicit non-goals recorded in CLOSEST_WORK_CROSSWALK.md v0.2",
+      "evidence": "The sources define distinct lifecycle layers and their checked fields. The negative scope statement is limited to those specifications; it does not claim that no implementation can attach richer extension data.",
+      "disposition": "verified",
+      "reviewer": "daily-paper-progress-agent",
+      "human_required": false,
+      "human_verifier": null,
+      "notes": "Supports reuse plus explicit lossy-mapping markers. It is not a novelty, completeness, or effectiveness claim."
     }
   ]
 }

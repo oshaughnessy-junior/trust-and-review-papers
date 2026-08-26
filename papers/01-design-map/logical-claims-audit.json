@@ -141,7 +141,21 @@
       "evidence": "Primary papers for Jupyter, continuous analysis, Whole Tale, Galaxy, and ReproZip, with dated feature-level locators in CLOSEST_WORK_CROSSWALK.md",
       "citation": "kluyver-jupyter-2016; beaulieu-jones-continuous-2017; brinckman-whole-tale-2019; afgan-galaxy-2018; chirigati-reprozip-2016",
       "caveat": "No exhaustiveness or comparative-effectiveness claim; absence from checked sources is not absence from later implementations.",
-      "unresolved_question": "Complete review-event/correction standards and citation chaining before closing G1.",
+      "unresolved_question": "A wider independent search remains required before any broad novelty claim.",
+      "action": "keep"
+    },
+    {
+      "id": "LA-011",
+      "text": "Existing review-event, correction, versioning, serialization, and PID standards cover complementary lifecycle layers but do not natively encode the full MCRP scientific-review event.",
+      "rhetorical_role": "bound interoperability contribution and prevent reinvention",
+      "logic_type": "inference",
+      "consequence_level": "medium",
+      "ledger_claim_id": "P01-C014",
+      "support_status": "verified",
+      "evidence": "Official and normative feature-level scopes, fields, relations, and non-goals recorded in CLOSEST_WORK_CROSSWALK.md v0.2",
+      "citation": "niso-peer-review-2023; coar-notify-1.0.1; docmaps-framework-2021; crossref-peer-review-2026; crossref-crossmark-2026; niso-jav-2008; niso-crec-2024; jats-1.4; datacite-schema-4.7",
+      "caveat": "The audit is targeted, not exhaustive; richer implementations or extensions may exist.",
+      "unresolved_question": "Can a worked record project into each selected standard with every loss made explicit?",
       "action": "keep"
     }
   ]
