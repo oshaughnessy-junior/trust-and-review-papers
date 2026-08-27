@@ -21,6 +21,20 @@
       "affected_scope": "The registered evidence and negative-test JSON matched, but exact string equality over the full derived correlation curve failed across numerical platforms.",
       "claim_disposition": "R0-GW150914-C001 remains bounded; cross-platform clean replay is not passed until a declared numerical tolerance is verified.",
       "supersedes": null
+    },
+    {
+      "event_id": "R0-GW150914-E003",
+      "event_type": "remediated",
+      "date": "2026-08-27",
+      "status": "cross-platform-ci-pass",
+      "platform": "GitHub Actions ubuntu-latest x86_64 and local macOS arm64",
+      "records": [
+        "https://github.com/oshaughnessy-junior/trust-and-review-papers/actions/runs/33077335398",
+        "https://github.com/oshaughnessy-junior/trust-and-review-papers/actions/runs/33077340529"
+      ],
+      "remediation": "Retain exact identity and claim/negative-test decisions, while comparing the full derived curve under declared absolute tolerances of 1e-12 s in lag and 1e-10 in normalized correlation.",
+      "claim_disposition": "Bounded computational repeatability passes on the two declared platforms; human scientific sign-off remains pending.",
+      "supersedes": "R0-GW150914-E002"
     }
   ],
   "next_freshness_check_by": "2026-11-27",

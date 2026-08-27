@@ -89,3 +89,10 @@ The initial source retrieval is dated 2026-08-27. The resource record requests a
 clean replay by 2026-11-27. Any source drift, dependency failure, numerical
 discrepancy, or invariant failure must append a `stale` or `reproduction-failed`
 event and a superseding run; this passing record must not be overwritten.
+
+The first Linux CI replay did exactly that: exact string equality for the full
+correlation curve failed despite matching claim and negative-test records. The
+failure and remediation are retained in `lifecycle-events.json`. Declared
+scientifically negligible floating-point tolerances replaced undeclared bytewise
+numeric equality; subsequent Linux and macOS checks passed without changing the
+claim thresholds or pending human-review disposition.

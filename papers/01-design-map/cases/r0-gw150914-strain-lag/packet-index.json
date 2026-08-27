@@ -6,7 +6,7 @@
   "identity_note": "This index excludes itself. Source and artifact content digests bind this release candidate; a repository commit and approved archive identifier remain pending.",
   "entries": [
     {"path": "Makefile", "sha256": "f8db80c2ae0884784b309cd645b20dc5556048adc9f584bfa9d82c13d0b236b8"},
-    {"path": "README.md", "sha256": "8a2f55b1d73fcfb83aaecfbf53e5da226fcd7c42e232a32f04fe4efbae363ef9"},
+    {"path": "README.md", "sha256": "b096b931bf932ae92e429e8f55b218770e8f417137beaa9a42fb1d296e6f8853"},
     {"path": "artifacts/derived/lag-correlation.csv", "sha256": "1dc76a3b3ffb8c36fea2c6614c7b831acfba6b3910e8e49563d01b52b41ac10d"},
     {"path": "artifacts/evidence/claim-evidence.json", "sha256": "5f7de7a9a89bbfe3f4f506b0487ade1d539a161278d511cbf1ac16a861664c1f"},
     {"path": "artifacts/evidence/negative-tests.json", "sha256": "2203ea20a1cf99bd90953eabbf33c0479f55c2c38b6622b1bfe7091add142eef"},
@@ -16,7 +16,7 @@
     {"path": "claim-manifest.json", "sha256": "3d6b43e75bae94c48cb6081b2c8a9dab7202ccacf589e49a72920562fda305fd"},
     {"path": "data/raw/H-H1_LOSC_4_V2-1126259446-32.hdf5", "sha256": "6e6976e932074a3b4e4a398ed02c62e30fcaa2781811762caea04937133583f6"},
     {"path": "data/raw/L-L1_LOSC_4_V2-1126259446-32.hdf5", "sha256": "56706e68c811b15548f1d7ed69d7c48d5fcc62aeb21fbaf131355f3cc5c07189"},
-    {"path": "lifecycle-events.json", "sha256": "5ffaf4d4d3c0aade91eefbf139465a7c69fe5dd09607f6d56355a0880c4f4e07"},
+    {"path": "lifecycle-events.json", "sha256": "90a7f6141a64b0378272b706ddd191be4487b1f73eeaeced22318ba8fefea632"},
     {"path": "pixi.lock", "sha256": "0dab6c042b55f185b39b5c578a9b3a9cc4bc4dde865b48d9bce666b969065b48"},
     {"path": "pixi.toml", "sha256": "ed216d6fbb1c36bb9801be62566af25fa17f751140de0460f6f5e3e8b959aa4b"},
     {"path": "review-checklist.md", "sha256": "849fce1c442f44d6fcfec4fa8059a3aa428ddb33300009deb6a94424dbfefdca"},
