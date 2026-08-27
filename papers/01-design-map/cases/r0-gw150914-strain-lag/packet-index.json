@@ -1,0 +1,29 @@
+{
+  "schema": "trustandreview.packet-index.v0.1",
+  "case_id": "r0-gw150914-v2-strain-lag-v0.1-rc1",
+  "archive_status": "UNMINTED",
+  "generated_on": "2026-08-27",
+  "identity_note": "This index excludes itself. Source and artifact content digests bind this release candidate; a repository commit and approved archive identifier remain pending.",
+  "entries": [
+    {"path": "Makefile", "sha256": "f8db80c2ae0884784b309cd645b20dc5556048adc9f584bfa9d82c13d0b236b8"},
+    {"path": "README.md", "sha256": "c8611f11148f071a717e3e7ed87da3fb5dab0902b5968d2c2291b0bbfe01043a"},
+    {"path": "artifacts/derived/lag-correlation.csv", "sha256": "1dc76a3b3ffb8c36fea2c6614c7b831acfba6b3910e8e49563d01b52b41ac10d"},
+    {"path": "artifacts/evidence/claim-evidence.json", "sha256": "5f7de7a9a89bbfe3f4f506b0487ade1d539a161278d511cbf1ac16a861664c1f"},
+    {"path": "artifacts/evidence/negative-tests.json", "sha256": "2203ea20a1cf99bd90953eabbf33c0479f55c2c38b6622b1bfe7091add142eef"},
+    {"path": "artifacts/intermediate/preprocessing-summary.json", "sha256": "da1430d35e56d70a4ae8c1a7ee17bb67c059584f89bf0b129e8b40638f17ccb6"},
+    {"path": "artifacts/provenance/resource-declaration.json", "sha256": "39aab266fad82a194ae5a3cb243f3539771e43fd549d613d78b217013cfd3f4a"},
+    {"path": "artifacts/provenance/run-record.json", "sha256": "cfc4533ffc32807735004e295fbc6633b52127b04b17d189bd1286c24432fa6c"},
+    {"path": "claim-manifest.json", "sha256": "17e4405bd38a4269b52d232749460054bcf41116f2b12b82152b19f4ad8ea1dd"},
+    {"path": "data/raw/H-H1_LOSC_4_V2-1126259446-32.hdf5", "sha256": "6e6976e932074a3b4e4a398ed02c62e30fcaa2781811762caea04937133583f6"},
+    {"path": "data/raw/L-L1_LOSC_4_V2-1126259446-32.hdf5", "sha256": "56706e68c811b15548f1d7ed69d7c48d5fcc62aeb21fbaf131355f3cc5c07189"},
+    {"path": "lifecycle-events.json", "sha256": "baec4c85a88f70986499ee7d170070e3b3aded075d1f7dbedfde112088c7b01c"},
+    {"path": "pixi.lock", "sha256": "0dab6c042b55f185b39b5c578a9b3a9cc4bc4dde865b48d9bce666b969065b48"},
+    {"path": "pixi.toml", "sha256": "ed216d6fbb1c36bb9801be62566af25fa17f751140de0460f6f5e3e8b959aa4b"},
+    {"path": "review-checklist.md", "sha256": "64f073af85c3ea0f041a77e5531471a147fa803490dc38a7faf8b8d8b0fdda49"},
+    {"path": "review-signoff.json", "sha256": "3551ebe910b52fa54ae3712385dc3e2f204084f3f3e41671e0afd73d0a21c550"},
+    {"path": "run_case.py", "sha256": "7639953fbe897362aa02747d22b3356b1f97a426a1d693b8a66266b19ab5a210"},
+    {"path": "source-manifest.json", "sha256": "327ce26cf627acc79bfeb498a2dff79e90584b60d6dc6e2eb94f5a48cafcda70"},
+    {"path": "test_case.py", "sha256": "0b2f3376809692a2fb0c75304a58a3597da982fb6cf7f546506a54e138276f25"},
+    {"path": "trust-boundaries.json", "sha256": "c135fc7230694446c9d7645607fc29fe59df745d2a637ebfdc520f3a1a5dff35"}
+  ]
+}

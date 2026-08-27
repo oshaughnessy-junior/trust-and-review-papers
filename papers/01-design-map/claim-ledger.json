@@ -225,6 +225,28 @@
       "human_required": false,
       "human_verifier": null,
       "notes": "Supports reuse plus explicit lossy-mapping markers. It is not a novelty, completeness, or effectiveness claim."
+    },
+    {
+      "id": "P01-C015",
+      "claim": "The attached GW150914-v2 R0 release candidate verifies two registered public strain-file identities, executes a locked laptop-scale filter/correlation path, observes a 5.371 ms intersite lag, rejects a +25 ms adversarial shift against the 10 ms bound, and passes eight machine checks; this supports only bounded computational repeatability and one necessary invariant for the exact registered path.",
+      "claim_type": "fact",
+      "consequence_level": "low",
+      "sources": [
+        "doi:10.7935/K5MW2F23",
+        "artifact:cases/r0-gw150914-strain-lag/claim-manifest.json",
+        "artifact:cases/r0-gw150914-strain-lag/artifacts/evidence/claim-evidence.json",
+        "artifact:cases/r0-gw150914-strain-lag/artifacts/evidence/negative-tests.json",
+        "artifact:cases/r0-gw150914-strain-lag/artifacts/provenance/run-record.json"
+      ],
+      "identity_status": "verified",
+      "support_status": "supported",
+      "source_locator": "GWOSC v2 event page and DOI metadata; attached case manifests, recorded evidence, and passing conformance suite",
+      "evidence": "The committed evidence records lag 0.00537109375 s and correlation -0.400196295324; the +25 ms fixture records absolute lag 0.01953125 s and a failed physical-bound decision. The clean replay and seven additional tests pass under the lock-selected environment.",
+      "disposition": "verified",
+      "reviewer": "daily-paper-progress-agent",
+      "human_required": false,
+      "human_verifier": null,
+      "notes": "Verification is of the implementation observation only. Human gravitational-wave review, independent custody, archival identity, calibration, original-search reproduction, astrophysical interpretation, replication, and scientific validity remain explicitly unwarranted."
     }
   ]
 }

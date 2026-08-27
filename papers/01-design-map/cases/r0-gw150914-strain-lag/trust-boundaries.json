@@ -1,0 +1,38 @@
+{
+  "schema": "trustandreview.trust-boundaries.v0.1",
+  "case_id": "r0-gw150914-v2-strain-lag-v0.1-rc1",
+  "reviewed_here": [
+    "content identity and declared version of the two bundled GWOSC files",
+    "HDF5 geometry and event-time quality/injection-mask policy",
+    "declared filtering, windowing, normalized correlation, and lag decision rule",
+    "clean replay and the registered adversarial fixtures",
+    "claim-scoped evidence, run lineage, and ten-axis resource declaration"
+  ],
+  "accepted_external_boundaries": [
+    {
+      "component": "GWOSC GW150914-v2 strain products",
+      "accepted_reliance": "calibration, detector-state metadata, event curation, and HDF5 construction",
+      "not_revalidated": "raw interferometer telemetry, calibration pipeline, or the original search"
+    },
+    {
+      "component": "Pixi and conda-forge package distribution",
+      "accepted_reliance": "environment resolution and delivery of lock-selected packages",
+      "not_revalidated": "package-build provenance or registry governance"
+    },
+    {
+      "component": "CPython, NumPy, SciPy, h5py, and HDF5",
+      "accepted_reliance": "language runtime, array arithmetic, filtering, correlation, and file decoding",
+      "not_revalidated": "transitive numerical-library correctness"
+    },
+    {
+      "component": "host operating system, filesystem, CPU, and math libraries",
+      "accepted_reliance": "process execution, storage, clocks, and floating-point behavior",
+      "not_revalidated": "hardware or platform supply chain"
+    }
+  ],
+  "independence_limits": [
+    "A second run using the same GWOSC products does not independently validate calibration or event curation.",
+    "A second run using the same locked scientific libraries is not independent with respect to shared-library defects.",
+    "The agent-assisted packet review is not a substitute for human gravitational-wave domain sign-off."
+  ]
+}

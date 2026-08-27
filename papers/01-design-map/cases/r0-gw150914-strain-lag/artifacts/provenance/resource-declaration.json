@@ -1,0 +1,46 @@
+{
+  "axes": {
+    "access": {
+      "rerun_requires_network": false,
+      "upstream_access": "public CC BY 4.0; no account"
+    },
+    "agent_capability": {
+      "case_authoring_support": "Codex; recorded separately from human review",
+      "required_for_rerun": false
+    },
+    "compute": {
+      "accelerator": "none",
+      "cpu_seconds_observed": 0.024274000000000018,
+      "peak_rss_bytes_observed": 134987776,
+      "processes": 1
+    },
+    "freshness": {
+      "on_failure": "append reproduction-failed or stale event; never overwrite this run",
+      "reexecute_by": "2026-11-27",
+      "source_retrieved": "2026-08-27"
+    },
+    "human_expertise": {
+      "execution": "basic CLI",
+      "scientific_signoff": "GW strain/data-quality interpretation; pending"
+    },
+    "monetary_allocative_cost": {
+      "allocation_required": false,
+      "marginal_cost_usd_observed": 0
+    },
+    "operator_support": {
+      "required_for_rerun": false,
+      "setup": "Pixi environment resolution and approximately 2 MB local input"
+    },
+    "platform": {
+      "requirement": "Pixi-supported contemporary macOS arm64 or Linux x86_64; no scheduler"
+    },
+    "storage": {
+      "artifact_bytes_observed": 16190,
+      "registered_input_bytes": 2048012
+    },
+    "wall_clock": {
+      "seconds_observed": 0.03365300002042204
+    }
+  },
+  "schema": "trustandreview.resource-declaration.v0.1"
+}

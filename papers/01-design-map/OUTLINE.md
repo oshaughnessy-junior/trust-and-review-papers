@@ -214,7 +214,13 @@ A review action references exact claim IDs, evidence IDs, release digests, reque
 
 ### 5. Worked case A: portable Level-0 computational analysis
 
-**Scenario:** a contemporary laptop-scale analysis using public data, portable tools, no specialty scheduler, modest storage, and a deterministic or explicitly seeded workflow.
+**Instantiated scenario:** a contemporary laptop-scale analysis of the public
+GWOSC GW150914-v2 H1/L1 strain products, using portable locked tools, no specialty
+scheduler, about 2 MB of registered input, and a deterministic workflow. The
+release candidate checks exact source identity and event-time quality metadata,
+recomputes a bounded lag-correlation invariant, and exercises digest/version and
+adversarial-shift failures. Human scientific sign-off and independent replay are
+still pending.
 
 **Walkthrough:**
 
@@ -226,9 +232,13 @@ A review action references exact claim IDs, evidence IDs, release digests, reque
 6. Record reviewer-controlled execution, discrepancies, responses, and human sign-off.
 7. Schedule a freshness run and append a failure/supersession event if dependency drift later breaks execution.
 
-**What the case can establish:** representational completeness, conformance of the record, and feasibility of the review lifecycle for this fixture.
+**What the case can establish now:** bounded computational repeatability of the
+registered path, satisfaction of one necessary lag invariant, machine conformance
+of the record, and implementation of the ten-axis/lifecycle representation.
 
-**What it cannot establish:** independent replication, general scientific validity, security of identity services, or scalability to HPC.
+**What it cannot establish:** the original search, calibration validity,
+astrophysical origin, independent replication, general scientific validity,
+security of identity services, or scalability to HPC.
 
 ### 6. Worked case B: HPC/GPU/restricted-data workflow with downselects
 
@@ -384,4 +394,3 @@ Each case packet must include:
 ## Venue posture
 
 First assess the diamond-open-access **Journal of Electronic Publishing** and the no-author-fee **Information Research** against the finished manuscript's scope. Treat JASIST/ARIST-style synthesis as a possible non-APC or RIT-supported route only after current terms are verified. Venue and agreement claims are time-sensitive: recheck the exact journal, article type, corresponding-author eligibility, annual caps, repository rights, and license immediately before submission. Do not submit, post a preprint, or incur a charge without G5 approval.
-

@@ -157,6 +157,20 @@
       "caveat": "The audit is targeted, not exhaustive; richer implementations or extensions may exist.",
       "unresolved_question": "Can a worked record project into each selected standard with every loss made explicit?",
       "action": "keep"
+    },
+    {
+      "id": "LA-012",
+      "text": "The attached public R0 packet is a bounded implementation observation of identity-checked computational repeatability and one necessary lag invariant, not an independent replication or scientific-validity result.",
+      "rhetorical_role": "replace the portable-case placeholder with measured evidence while bounding its epistemic ceiling",
+      "logic_type": "paper-description",
+      "consequence_level": "low",
+      "ledger_claim_id": "P01-C015",
+      "support_status": "verified",
+      "evidence": "Registered GWOSC-v2 source identities, frozen workflow configuration, clean replay, eight passing conformance/adversarial tests, recorded claim evidence, and ten-axis resource observation",
+      "citation": "gwosc-gw150914-data-2016; local immutable-source-bound case packet",
+      "caveat": "Human domain sign-off, independent clean-checkout replay, archive minting, and validation of accepted external products and libraries are pending.",
+      "unresolved_question": "Will an independent executor and a qualified gravitational-wave reviewer accept the preprocessing, boundary declarations, and conclusion strength?",
+      "action": "keep"
     }
   ]
 }

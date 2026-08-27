@@ -1,0 +1,40 @@
+{
+  "schema": "trustandreview.claim-manifest.v0.1",
+  "release": {
+    "case_id": "r0-gw150914-v2-strain-lag-v0.1-rc1",
+    "archive_status": "UNMINTED",
+    "identity_rule": "This release candidate is bound to the Git commit containing the packet and the content digests in source-manifest.json and the run record.",
+    "license_status": "Paper repository license is pending; the bundled GWOSC inputs are CC BY 4.0."
+  },
+  "claim": {
+    "id": "R0-GW150914-C001",
+    "assertion": "For the registered GWOSC GW150914-v2 32-second 4096-Hz H1/L1 strain files, the declared 35–350 Hz zero-phase filter and 0.2-second event-window correlation recover an absolute intersite lag no larger than 10 ms.",
+    "scope": "Exact registered inputs and frozen workflow configuration only.",
+    "evidence": [
+      "artifacts/evidence/claim-evidence.json",
+      "artifacts/evidence/negative-tests.json",
+      "artifacts/derived/lag-correlation.csv",
+      "artifacts/provenance/run-record.json",
+      "artifacts/provenance/resource-declaration.json"
+    ],
+    "strongest_warranted_conclusion": "bounded computational repeatability of the registered processing path and satisfaction of one necessary intersite-lag invariant",
+    "explicit_exclusions": [
+      "reproduction of the original search or detection significance",
+      "calibration or data-quality revalidation",
+      "parameter estimation or astrophysical inference",
+      "proof that the correlation has astrophysical origin",
+      "independent replication or scientific validity"
+    ]
+  },
+  "workflow_configuration": {
+    "event_gps": 1126259462.4,
+    "bandpass_hz": [35.0, 350.0],
+    "filter_order": 4,
+    "filter_phase": "scipy.signal.sosfiltfilt zero-phase forward-backward",
+    "event_window_half_width_seconds": 0.1,
+    "lag_search_half_width_seconds": 0.04,
+    "physical_lag_bound_seconds": 0.01,
+    "minimum_absolute_correlation": 0.3,
+    "randomness": "none"
+  }
+}

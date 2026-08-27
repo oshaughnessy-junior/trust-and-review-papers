@@ -1,0 +1,22 @@
+{
+  "schema": "trustandreview.review-signoff.v0.1",
+  "review_target": "r0-gw150914-v2-strain-lag-v0.1-rc1",
+  "machine_checks": {
+    "status": "passed",
+    "scope": "source identity/version, HDF5 geometry, quality/injection policy, deterministic processing, lag invariant, adversarial failures, and clean replay",
+    "scientific_validity_proven": false
+  },
+  "agent_reproducibility_review": {
+    "status": "bounded-pass",
+    "scope": "portable execution, identity/provenance completeness for the declared path, resource reporting, and conclusion strength",
+    "reviewer": "Codex daily-paper-progress agent",
+    "limitations": "No independent custody and no human domain authority."
+  },
+  "human_scientific_review": {
+    "status": "pending",
+    "required_scope": "Confirm preprocessing choices, the 10 ms necessary-bound interpretation, quality/injection policy, accepted boundaries, and conclusion strength.",
+    "reviewer": null,
+    "signed_at": null
+  },
+  "disposition": "machine-verified; human-scientific-signoff-pending"
+}

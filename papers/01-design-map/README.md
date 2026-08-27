@@ -25,7 +25,10 @@ The manuscript includes:
 - transitive trust boundaries, threat cases, anti-patterns, limitations,
   falsifiers, downgrade rules, and first unmet gates.
 
-The worked cases are design walkthroughs, **not implementation results**.
+Case A now includes a bounded public R0 implementation observation; its human
+scientific sign-off and independent replay remain pending. Case B remains a design
+walkthrough. Neither case is evidence of scientific validity or review-system
+effectiveness.
 
 ## Source and claim artifacts
 
@@ -122,10 +125,12 @@ malformed page break. `git diff --check` passed.
 
 ## First unmet gates
 
-1. **G2 evidence:** instantiate an immutable public R0 case packet with a recorded
-   run, negative test, ten-axis resource measurement, claim-scoped disposition,
-   and bounded sign-off. The targeted G1 crosswalk closed at v0.2 on 2026-08-26,
-   but it is not exhaustive and broad novelty remains blocked.
+1. **G2 evidence:** the GW150914-v2 public R0 release candidate now has registered
+   source digests, a locked portable environment, a recorded run, eight positive
+   and adversarial checks, a ten-axis resource declaration, claim-scoped evidence,
+   trust boundaries, and an append-only freshness policy. Close G2 only after
+   separate human gravitational-wave sign-off and an independent clean-checkout
+   replay; archival identity and repository licensing also remain human-gated.
 2. **G3 evidence:** instantiate a public/sanitized HPC case packet with runs,
    negative tests, resource measurements, and bounded sign-offs.
 3. **G4 independent review:** obtain separate scholarly-communication,

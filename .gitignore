@@ -1,4 +1,7 @@
 build/
+.pixi/
+__pycache__/
+*.pyc
 **/build/
 **/rendered/
 *.aux
@@ -7,4 +10,6 @@ build/
 *.log
 *.out
 *.pdf
+*.fdb_latexmk
+*.fls
 .DS_Store

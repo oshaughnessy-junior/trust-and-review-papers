@@ -1,0 +1,66 @@
+{
+  "detectors": {
+    "H1": {
+      "detector": "H1",
+      "duration_seconds": 32,
+      "event_dq_bits": {
+        "BURST_CAT1": true,
+        "BURST_CAT2": true,
+        "BURST_CAT3": true,
+        "CBC_CAT1": true,
+        "CBC_CAT2": true,
+        "CBC_CAT3": true,
+        "DATA": true
+      },
+      "event_dq_mask": 127,
+      "event_injection_bits": {
+        "NO_BURST_HW_INJ": true,
+        "NO_CBC_HW_INJ": true,
+        "NO_CW_HW_INJ": true,
+        "NO_DETCHAR_HW_INJ": true,
+        "NO_STOCH_HW_INJ": true
+      },
+      "event_injection_mask": 31,
+      "gps_start": 1126259446,
+      "sample_rate_hz": 4096.0
+    },
+    "L1": {
+      "detector": "L1",
+      "duration_seconds": 32,
+      "event_dq_bits": {
+        "BURST_CAT1": true,
+        "BURST_CAT2": true,
+        "BURST_CAT3": true,
+        "CBC_CAT1": true,
+        "CBC_CAT2": true,
+        "CBC_CAT3": true,
+        "DATA": true
+      },
+      "event_dq_mask": 127,
+      "event_injection_bits": {
+        "NO_BURST_HW_INJ": true,
+        "NO_CBC_HW_INJ": true,
+        "NO_CW_HW_INJ": false,
+        "NO_DETCHAR_HW_INJ": true,
+        "NO_STOCH_HW_INJ": true
+      },
+      "event_injection_mask": 23,
+      "gps_start": 1126259446,
+      "sample_rate_hz": 4096.0
+    }
+  },
+  "workflow_configuration": {
+    "bandpass_hz": [
+      35.0,
+      350.0
+    ],
+    "event_gps": 1126259462.4,
+    "event_window_half_width_seconds": 0.1,
+    "filter_order": 4,
+    "filter_phase": "scipy.signal.sosfiltfilt zero-phase forward-backward",
+    "lag_search_half_width_seconds": 0.04,
+    "minimum_absolute_correlation": 0.3,
+    "physical_lag_bound_seconds": 0.01,
+    "randomness": "none"
+  }
+}
