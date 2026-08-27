@@ -10,6 +10,17 @@
       "status": "machine-pass-human-signoff-pending",
       "record": "artifacts/provenance/run-record.json",
       "supersedes": null
+    },
+    {
+      "event_id": "R0-GW150914-E002",
+      "event_type": "reproduction-failed",
+      "date": "2026-08-27",
+      "status": "ci-portability-failure",
+      "platform": "GitHub Actions ubuntu-latest x86_64",
+      "record": "https://github.com/oshaughnessy-junior/trust-and-review-papers/actions/runs/33076876407",
+      "affected_scope": "The registered evidence and negative-test JSON matched, but exact string equality over the full derived correlation curve failed across numerical platforms.",
+      "claim_disposition": "R0-GW150914-C001 remains bounded; cross-platform clean replay is not passed until a declared numerical tolerance is verified.",
+      "supersedes": null
     }
   ],
   "next_freshness_check_by": "2026-11-27",

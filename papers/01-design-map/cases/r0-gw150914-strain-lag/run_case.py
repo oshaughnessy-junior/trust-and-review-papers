@@ -347,11 +347,34 @@ def verify_committed() -> None:
     curve_path = ARTIFACTS / "derived/lag-correlation.csv"
     with curve_path.open(encoding="utf-8", newline="") as stream:
         committed_rows = list(csv.reader(stream))
-    expected_rows = [["lag_seconds", "normalized_correlation"]] + [
-        [str(lag), str(value)] for lag, value in observed["curve"]
+    if not committed_rows or committed_rows[0] != ["lag_seconds", "normalized_correlation"]:
+        raise CaseError("committed lag-correlation product has the wrong header")
+    committed_curve = committed_rows[1:]
+    observed_curve = observed["curve"]
+    if len(committed_curve) != len(observed_curve):
+        raise CaseError("committed lag-correlation product has the wrong length")
+    tolerances = json.loads(CLAIM_MANIFEST.read_text(encoding="utf-8"))["workflow_configuration"][
+        "clean_replay_tolerances"
     ]
-    if committed_rows != expected_rows:
-        raise CaseError("committed lag-correlation product differs from a clean replay")
+    lag_tolerance = float(tolerances["lag_seconds_absolute"])
+    correlation_tolerance = float(tolerances["normalized_correlation_absolute"])
+    for row_number, (committed, observed_row) in enumerate(zip(committed_curve, observed_curve), start=2):
+        if len(committed) != 2:
+            raise CaseError(f"committed lag-correlation row {row_number} has the wrong width")
+        try:
+            committed_lag, committed_correlation = map(float, committed)
+        except ValueError as error:
+            raise CaseError(f"committed lag-correlation row {row_number} is not numeric") from error
+        observed_lag, observed_correlation = observed_row
+        if not math.isclose(committed_lag, observed_lag, rel_tol=0.0, abs_tol=lag_tolerance):
+            raise CaseError(f"committed lag at row {row_number} exceeds clean-replay tolerance")
+        if not math.isclose(
+            committed_correlation,
+            observed_correlation,
+            rel_tol=0.0,
+            abs_tol=correlation_tolerance,
+        ):
+            raise CaseError(f"committed correlation at row {row_number} exceeds clean-replay tolerance")
 
 
 def main() -> int:

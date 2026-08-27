@@ -65,6 +65,12 @@ cross-correlation over ±40 ms. The claim requires an absolute recovered lag no
 larger than 10 ms and absolute correlation of at least 0.30. The physical bound is
 necessary, not sufficient, for a common astrophysical signal.
 
+Clean replay requires identical registered claim evidence and negative-test
+decisions. Individual samples in the full derived correlation curve are compared
+with declared absolute tolerances of 1 ps in lag and `1e-10` in normalized
+correlation, accommodating platform-level floating-point variation without
+weakening the 10 ms and 0.30 scientific decision thresholds.
+
 The main adversarial fixture zero-pads a +25 ms L1 window shift; it must move the
 best correlation outside the physical bound. Source-registry tests also reject a
 v1 label or altered digest before analysis. The exact algorithms that create the

@@ -35,6 +35,10 @@
     "lag_search_half_width_seconds": 0.04,
     "physical_lag_bound_seconds": 0.01,
     "minimum_absolute_correlation": 0.3,
+    "clean_replay_tolerances": {
+      "lag_seconds_absolute": 1e-12,
+      "normalized_correlation_absolute": 1e-10
+    },
     "randomness": "none"
   }
 }

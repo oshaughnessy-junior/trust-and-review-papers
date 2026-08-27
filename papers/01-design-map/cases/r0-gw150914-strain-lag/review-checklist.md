@@ -10,7 +10,8 @@ promote a pending scientific judgment.
 - [x] Source identity is checked before HDF5 interpretation or computation.
 - [x] Workflow configuration and lack of randomness declared.
 - [x] Environment locked for the two declared laptop platforms.
-- [x] Clean replay reproduces the committed claim evidence within declared tolerance.
+- [x] Clean replay reproduces exact claim/negative-test decisions and the full
+  correlation curve within the declared numerical tolerances.
 - [x] Scientific lag and correlation decision rules are machine evaluated.
 - [x] A +25 ms adversarial shift fails the 10 ms necessary physical bound.
 - [x] Version-label and content-digest mutations fail before analysis.

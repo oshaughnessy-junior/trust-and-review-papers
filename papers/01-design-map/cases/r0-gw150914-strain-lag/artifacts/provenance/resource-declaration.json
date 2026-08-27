@@ -10,8 +10,8 @@
     },
     "compute": {
       "accelerator": "none",
-      "cpu_seconds_observed": 0.024274000000000018,
-      "peak_rss_bytes_observed": 134987776,
+      "cpu_seconds_observed": 0.024986000000000064,
+      "peak_rss_bytes_observed": 132988928,
       "processes": 1
     },
     "freshness": {
@@ -35,11 +35,11 @@
       "requirement": "Pixi-supported contemporary macOS arm64 or Linux x86_64; no scheduler"
     },
     "storage": {
-      "artifact_bytes_observed": 16190,
+      "artifact_bytes_observed": 16439,
       "registered_input_bytes": 2048012
     },
     "wall_clock": {
-      "seconds_observed": 0.03365300002042204
+      "seconds_observed": 0.030841332976706326
     }
   },
   "schema": "trustandreview.resource-declaration.v0.1"
