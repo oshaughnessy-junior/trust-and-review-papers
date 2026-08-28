@@ -48,7 +48,7 @@
     "The architecture improves peer-review quality.",
     "Plural trust views outperform global reputation.",
     "Per-case personas guarantee anonymity.",
-    "Both worked cases have been implemented or independently reviewed; only the bounded public R0 implementation observation currently exists, without human scientific sign-off or independent replay.",
+    "Both worked cases have been implemented or independently scientifically reviewed; only the bounded public R0 implementation and separate-agent clean-checkout observations currently exist, without human scientific sign-off or independent scientific replication.",
     "Machine checks establish scientific validity.",
     "This is the first system to combine provenance, review, and reputation."
   ]

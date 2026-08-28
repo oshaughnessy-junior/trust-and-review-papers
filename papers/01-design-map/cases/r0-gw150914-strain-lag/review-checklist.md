@@ -31,11 +31,12 @@ promote a pending scientific judgment.
 
 ## Independent replay / custody
 
-- [ ] Re-execute from a clean checkout under independent custody.
-- [ ] Record platform identities, elapsed resources, and any numerical deviation.
-- [ ] Determine which conclusions remain dependent on shared GWOSC products and
+- [x] Re-execute from a fresh detached checkout under separate agent custody
+  (not organizational or human-review independence).
+- [x] Record platform identities, elapsed resources, and any numerical deviation.
+- [x] Determine which conclusions remain dependent on shared GWOSC products and
   shared scientific libraries.
-- [ ] Attach a separate report without overwriting the author/agent record.
+- [x] Attach a separate report without overwriting the author/agent record.
 
 ## Release and archival control
 

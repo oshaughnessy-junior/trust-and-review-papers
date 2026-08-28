@@ -1,8 +1,9 @@
 {
   "axes": {
     "access": {
-      "rerun_requires_network": false,
-      "upstream_access": "public CC BY 4.0; no account"
+      "bundled_input_replay_requires_network": false,
+      "cold_environment_materialization": "network access or a pre-populated package cache/mirror is required; packages are locked but not vendored",
+      "upstream_data_access": "public CC BY 4.0; no account"
     },
     "agent_capability": {
       "case_authoring_support": "Codex; recorded separately from human review",
@@ -10,8 +11,8 @@
     },
     "compute": {
       "accelerator": "none",
-      "cpu_seconds_observed": 0.024986000000000064,
-      "peak_rss_bytes_observed": 132988928,
+      "cpu_seconds_observed": 0.02482799999999996,
+      "peak_rss_bytes_observed": 135053312,
       "processes": 1
     },
     "freshness": {
@@ -35,11 +36,11 @@
       "requirement": "Pixi-supported contemporary macOS arm64 or Linux x86_64; no scheduler"
     },
     "storage": {
-      "artifact_bytes_observed": 16439,
+      "artifacts_excluding_resource_declaration_bytes_observed": 15151,
       "registered_input_bytes": 2048012
     },
     "wall_clock": {
-      "seconds_observed": 0.030841332976706326
+      "seconds_observed": 0.03725962492171675
     }
   },
   "schema": "trustandreview.resource-declaration.v0.1"

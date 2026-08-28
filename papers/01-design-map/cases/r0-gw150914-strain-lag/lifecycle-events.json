@@ -35,6 +35,18 @@
       "remediation": "Retain exact identity and claim/negative-test decisions, while comparing the full derived curve under declared absolute tolerances of 1e-12 s in lag and 1e-10 in normalized correlation.",
       "claim_disposition": "Bounded computational repeatability passes on the two declared platforms; human scientific sign-off remains pending.",
       "supersedes": "R0-GW150914-E002"
+    },
+    {
+      "event_id": "R0-GW150914-E004",
+      "event_type": "separate-executor-replay-reviewed",
+      "date": "2026-08-28",
+      "status": "pass-with-record-discrepancies-remediation-pending",
+      "record": "independent-replay-report.json",
+      "target_commit": "ca447e3a08261a477d0c712c9e7f2c7eb87ce9d4",
+      "affected_scope": "Fresh clone, detached commit, locked environment, packet identity, clean replay, resource schema, and two additional adversarial checks.",
+      "claim_disposition": "Separate execution custody supports bounded computational repeatability but not independent implementation, input, institution, human scientific judgment, or scientific replication.",
+      "discrepancies": ["IR-D001", "IR-D002", "IR-D003", "IR-D004"],
+      "supersedes": null
     }
   ],
   "next_freshness_check_by": "2026-11-27",

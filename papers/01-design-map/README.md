@@ -128,9 +128,11 @@ malformed page break. `git diff --check` passed.
 1. **G2 evidence:** the GW150914-v2 public R0 release candidate now has registered
    source digests, a locked portable environment, a recorded run, eight positive
    and adversarial checks, a ten-axis resource declaration, claim-scoped evidence,
-   trust boundaries, and an append-only freshness policy. Close G2 only after
-   separate human gravitational-wave sign-off and an independent clean-checkout
-   replay; archival identity and repository licensing also remain human-gated.
+   trust boundaries, an append-only freshness policy, and a bounded separate-agent
+   clean-checkout replay with explicit independence dimensions. Close G2 only
+   after separate human gravitational-wave sign-off; stronger organizational or
+   implementation independence remains a distinct possible evidence path.
+   Archival identity and repository licensing also remain human-gated.
 2. **G3 evidence:** instantiate a public/sanitized HPC case packet with runs,
    negative tests, resource measurements, and bounded sign-offs.
 3. **G4 independent review:** obtain separate scholarly-communication,

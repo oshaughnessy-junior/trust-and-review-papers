@@ -8,7 +8,7 @@
   },
   "claim": {
     "id": "R0-GW150914-C001",
-    "assertion": "For the registered GWOSC GW150914-v2 32-second 4096-Hz H1/L1 strain files, the declared 35–350 Hz zero-phase filter and 0.2-second event-window correlation recover an absolute intersite lag no larger than 10 ms.",
+    "assertion": "For the registered GWOSC GW150914-v2 32-second 4096-Hz H1/L1 strain files, the declared 35–350 Hz zero-phase filter and 820-sample (approximately 0.2002-second) event-window correlation recover an absolute intersite lag no larger than 10 ms.",
     "scope": "Exact registered inputs and frozen workflow configuration only.",
     "evidence": [
       "artifacts/evidence/claim-evidence.json",
@@ -32,6 +32,7 @@
     "filter_order": 4,
     "filter_phase": "scipy.signal.sosfiltfilt zero-phase forward-backward",
     "event_window_half_width_seconds": 0.1,
+    "expected_event_window_samples_per_detector": 820,
     "lag_search_half_width_seconds": 0.04,
     "physical_lag_bound_seconds": 0.01,
     "minimum_absolute_correlation": 0.3,

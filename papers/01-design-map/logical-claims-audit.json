@@ -169,7 +169,21 @@
       "evidence": "Registered GWOSC-v2 source identities, frozen workflow configuration, clean replay, eight passing conformance/adversarial tests, recorded claim evidence, and ten-axis resource observation",
       "citation": "gwosc-gw150914-data-2016; local immutable-source-bound case packet",
       "caveat": "Human domain sign-off, independent clean-checkout replay, archive minting, and validation of accepted external products and libraries are pending.",
-      "unresolved_question": "Will an independent executor and a qualified gravitational-wave reviewer accept the preprocessing, boundary declarations, and conclusion strength?",
+      "unresolved_question": "Will a qualified gravitational-wave reviewer accept the preprocessing, boundary declarations, and conclusion strength?",
+      "action": "keep"
+    },
+    {
+      "id": "LA-013",
+      "text": "A fresh-context detached-checkout replay supplies separate computational custody but not independent implementation, input, institution, scientific judgment, or replication.",
+      "rhetorical_role": "decompose independence and prevent a clean rerun from being inflated into replication",
+      "logic_type": "paper-description",
+      "consequence_level": "low",
+      "ledger_claim_id": "P01-C016",
+      "support_status": "verified",
+      "evidence": "Independent replay report IR001, clean checkout, locked replay, packet audit, adversarial mutations, discrepancy list, and explicit independence-dimension vector",
+      "citation": "local independent-replay-report.json",
+      "caveat": "The executor is a fresh-context agent commissioned within the same private activity and has no human gravitational-wave authority.",
+      "unresolved_question": "Which additional organizational, implementation, data, or scientific-independence dimensions should a relying domain require?",
       "action": "keep"
     }
   ]

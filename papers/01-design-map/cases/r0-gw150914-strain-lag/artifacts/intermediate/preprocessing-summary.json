@@ -60,6 +60,7 @@
     },
     "event_gps": 1126259462.4,
     "event_window_half_width_seconds": 0.1,
+    "expected_event_window_samples_per_detector": 820,
     "filter_order": 4,
     "filter_phase": "scipy.signal.sosfiltfilt zero-phase forward-backward",
     "lag_search_half_width_seconds": 0.04,

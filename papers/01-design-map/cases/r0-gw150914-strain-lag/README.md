@@ -16,8 +16,9 @@ release: no DOI has been minted and repository licensing remains human-gated.
 
 Requirements: Pixi and a contemporary macOS arm64 or Linux x86-64 laptop. The lock
 file pins Python, NumPy, SciPy, and h5py for both platforms. The approximately 2 MB
-inputs are bundled, so replay needs no network, account, scheduler, accelerator, or
-external service.
+scientific inputs are bundled, so analysis needs no data service, account,
+scheduler, or accelerator. A cold environment still needs network access or a
+pre-populated package cache/mirror because locked dependencies are not vendored.
 
 ```bash
 make verify
@@ -56,12 +57,15 @@ make verify
   the index itself).
 - `review-signoff.json`: machine and agent scopes; human scientific sign-off is
   explicitly pending rather than fabricated.
+- `independent-replay-report.json`: fresh-context detached-checkout execution,
+  adversarial audit, discrepancies, and decomposed independence limits.
 
 ## Scientific scope
 
 The registered workflow uses a fourth-order 35–350 Hz Butterworth bandpass applied
-forward and backward, a 0.2 s window centered at GPS 1126259462.4, and normalized
-cross-correlation over ±40 ms. The claim requires an absolute recovered lag no
+forward and backward, an 820-sample window (0.2001953125 s at 4096 Hz) centered at
+GPS 1126259462.4, and normalized cross-correlation over ±40 ms. The claim requires
+an absolute recovered lag no
 larger than 10 ms and absolute correlation of at least 0.30. The physical bound is
 necessary, not sufficient, for a common astrophysical signal.
 

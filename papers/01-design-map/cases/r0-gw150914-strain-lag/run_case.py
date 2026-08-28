@@ -179,6 +179,11 @@ def evaluate(
         detector: filtered[detector][event_index - half_window : event_index + half_window]
         for detector in ("H1", "L1")
     }
+    expected_window_samples = int(configuration["expected_event_window_samples_per_detector"])
+    if any(window.size != expected_window_samples for window in windows.values()):
+        raise CaseError(
+            f"event-window geometry differs from registered {expected_window_samples}-sample configuration"
+        )
     if negative_shift_seconds:
         windows["L1"] = zero_padded_shift(
             windows["L1"], int(round(negative_shift_seconds * sample_rate))
@@ -299,8 +304,15 @@ def execute(write: bool) -> dict[str, Any]:
         "schema": "trustandreview.resource-declaration.v0.1",
         "axes": {
             "compute": {"processes": 1, "cpu_seconds_observed": cpu, "peak_rss_bytes_observed": peak_rss, "accelerator": "none"},
-            "storage": {"registered_input_bytes": sum(item["bytes"] for item in records), "artifact_bytes_observed": 0},
-            "access": {"rerun_requires_network": False, "upstream_access": "public CC BY 4.0; no account"},
+            "storage": {
+                "registered_input_bytes": sum(item["bytes"] for item in records),
+                "artifacts_excluding_resource_declaration_bytes_observed": 0,
+            },
+            "access": {
+                "bundled_input_replay_requires_network": False,
+                "cold_environment_materialization": "network access or a pre-populated package cache/mirror is required; packages are locked but not vendored",
+                "upstream_data_access": "public CC BY 4.0; no account",
+            },
             "platform": {"requirement": "Pixi-supported contemporary macOS arm64 or Linux x86_64; no scheduler"},
             "wall_clock": {"seconds_observed": elapsed},
             "human_expertise": {"execution": "basic CLI", "scientific_signoff": "GW strain/data-quality interpretation; pending"},
@@ -328,9 +340,10 @@ def execute(write: bool) -> dict[str, Any]:
             writer.writerows(curve)
         write_json(ARTIFACTS / "provenance/run-record.json", run_record)
         resource_path = ARTIFACTS / "provenance/resource-declaration.json"
-        write_json(resource_path, resources)
-        resources["axes"]["storage"]["artifact_bytes_observed"] = sum(
-            path.stat().st_size for path in ARTIFACTS.rglob("*") if path.is_file()
+        resources["axes"]["storage"]["artifacts_excluding_resource_declaration_bytes_observed"] = sum(
+            path.stat().st_size
+            for path in ARTIFACTS.rglob("*")
+            if path.is_file() and path != resource_path
         )
         write_json(resource_path, resources)
     return {"evidence": evidence, "negative_tests": negative_tests, "curve": curve}

@@ -247,6 +247,26 @@
       "human_required": false,
       "human_verifier": null,
       "notes": "Verification is of the implementation observation only. Human gravitational-wave review, independent custody, archival identity, calibration, original-search reproduction, astrophysical interpretation, replication, and scientific validity remain explicitly unwarranted."
+    },
+    {
+      "id": "P01-C016",
+      "claim": "A fresh-context separate executor cloned detached commit ca447e3, materialized the unchanged dual-platform lock, verified all 20 indexed identities and all ten resource axes, passed eight checks and clean replay, and made isolated curve and manifest/lock mutations fail as required; this establishes bounded fresh-checkout execution custody, not independent scientific replication.",
+      "claim_type": "fact",
+      "consequence_level": "low",
+      "sources": [
+        "artifact:cases/r0-gw150914-strain-lag/independent-replay-report.json",
+        "artifact:cases/r0-gw150914-strain-lag/review-signoff.json",
+        "artifact:cases/r0-gw150914-strain-lag/lifecycle-events.json"
+      ],
+      "identity_status": "verified",
+      "support_status": "supported",
+      "source_locator": "Attached separate-executor report IR001 and append-only lifecycle event E004",
+      "evidence": "The report records the exact commit, clean detached checkout, locked versions, 8/8 tests, replayed lag/correlation, 20/20 packet identities, exact ten-axis set, and two isolated adversarial failures. It also records four accepted record discrepancies and nine decomposed independence dimensions.",
+      "disposition": "verified",
+      "reviewer": "daily-paper-progress-agent",
+      "human_required": false,
+      "human_verifier": null,
+      "notes": "Implementation observation only. Shared code, inputs, libraries, host/institutional context, and absence of human GW authority remain explicit; human scientific sign-off remains pending."
     }
   ]
 }

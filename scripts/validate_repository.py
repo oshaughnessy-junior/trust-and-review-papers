@@ -82,6 +82,7 @@ def main() -> int:
         "lifecycle-events.json",
         "review-signoff.json",
         "review-checklist.md",
+        "independent-replay-report.json",
         "packet-index.json",
         "artifacts/evidence/claim-evidence.json",
         "artifacts/evidence/negative-tests.json",
@@ -108,6 +109,21 @@ def main() -> int:
     signoff = json.loads((CASE / "review-signoff.json").read_text())
     if signoff.get("human_scientific_review", {}).get("status") != "pending":
         errors.append("R0 case human scientific review must remain explicitly pending")
+    replay = json.loads((CASE / "independent-replay-report.json").read_text())
+    if replay.get("actor", {}).get("human_gravitational_wave_authority") is not False:
+        errors.append("R0 separate-executor report must not claim human GW authority")
+    dimensions = replay.get("independence_dimensions", {})
+    if dimensions.get("fresh_checkout_custody") != "yes":
+        errors.append("R0 separate-executor report lacks fresh-checkout custody")
+    for shared_dimension in [
+        "independent_implementation",
+        "independent_scientific_libraries",
+        "independent_input_or_calibration",
+        "independent_institution_or_governance",
+        "independent_human_scientific_judgment",
+    ]:
+        if not str(dimensions.get(shared_dimension, "")).startswith("no"):
+            errors.append(f"R0 replay overstates independence dimension: {shared_dimension}")
     resources = json.loads((CASE / "artifacts/provenance/resource-declaration.json").read_text())
     if set(resources.get("axes", {})) != RESOURCE_AXES:
         errors.append("R0 case resource declaration must contain exactly the ten canonical axes")
