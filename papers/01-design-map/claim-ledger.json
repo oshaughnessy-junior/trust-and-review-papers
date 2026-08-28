@@ -250,7 +250,7 @@
     },
     {
       "id": "P01-C016",
-      "claim": "A fresh-context separate executor cloned detached commit ca447e3, materialized the unchanged dual-platform lock, verified all 20 indexed identities and all ten resource axes, passed eight checks and clean replay, and made isolated curve and manifest/lock mutations fail as required; this establishes bounded fresh-checkout execution custody, not independent scientific replication.",
+      "claim": "A fresh-context separate executor cloned detached commits ca447e3 and superseding 2c9b4ee, materialized the unchanged dual-platform lock, verified the complete packet index and all ten resource axes, passed eight checks and clean replay, made isolated curve and manifest/lock mutations fail as required, and verified remediation of four record discrepancies; this establishes bounded fresh-checkout execution custody, not independent scientific replication.",
       "claim_type": "fact",
       "consequence_level": "low",
       "sources": [

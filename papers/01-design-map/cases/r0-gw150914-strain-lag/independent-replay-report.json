@@ -2,7 +2,7 @@
   "schema": "trustandreview.independent-replay-report.v0.1",
   "report_id": "R0-GW150914-IR001",
   "report_date": "2026-08-28",
-  "status": "pass-with-record-discrepancies-remediation-pending",
+  "status": "bounded-pass",
   "actor": {
     "executor_id": "fresh-context-agent-executor-R0-IR-01",
     "actor_class": "Codex subagent with no inherited conversation context",
@@ -12,7 +12,7 @@
   },
   "target": {
     "repository": "oshaughnessy-junior/trust-and-review-papers",
-    "commit": "ca447e3a08261a477d0c712c9e7f2c7eb87ce9d4",
+    "commit": "2c9b4eea319e1d6a8fbb3a5a434082cf34f3fdd6",
     "checkout": "fresh clone at detached HEAD in a temporary directory",
     "source_checkout_clean_after_review": true
   },
@@ -35,15 +35,13 @@
     "lag_seconds": 0.00537109375,
     "correlation": -0.400196295324,
     "outer_process_resources": {
-      "real_seconds": 22.12,
-      "user_seconds": 2.02,
-      "system_seconds": 0.58,
-      "maximum_resident_bytes": 194461696,
+      "real_seconds": 36.37,
+      "maximum_resident_bytes": 196673536,
       "scope": "Pixi task orchestration plus verification, not only the scientific process"
     }
   },
   "identity_audit": {
-    "packet_index_entries_checked": 20,
+    "packet_index_entries_checked": 21,
     "missing_entries": 0,
     "extra_entries": 0,
     "digest_mismatches": 0,
@@ -80,24 +78,38 @@
     {
       "id": "IR-D001",
       "finding": "No-network wording did not distinguish bundled data replay from cold dependency materialization.",
-      "disposition": "accepted-for-remediation"
+      "disposition": "remediated-and-verified-at-2c9b4ee"
     },
     {
       "id": "IR-D002",
       "finding": "Artifact byte accounting included a self-rewritten resource record and was four bytes low.",
-      "disposition": "accepted-for-remediation"
+      "disposition": "remediated-and-verified-at-2c9b4ee"
     },
     {
       "id": "IR-D003",
       "finding": "The nominal 0.2-second window is 820 samples, or 0.2001953125 seconds, after registered rounding.",
-      "disposition": "accepted-for-remediation"
+      "disposition": "remediated-and-verified-at-2c9b4ee"
     },
     {
       "id": "IR-D004",
       "finding": "Packet-index wording said a repository commit remained pending although an exact containing commit was audited.",
-      "disposition": "accepted-for-remediation"
+      "disposition": "remediated-and-verified-at-2c9b4ee"
     }
   ],
+  "superseding_replay": {
+    "target_commit": "2c9b4eea319e1d6a8fbb3a5a434082cf34f3fdd6",
+    "fresh_detached_checkout": true,
+    "source_checkout_clean_after_review": true,
+    "locked_clean_environment_tests": "8/8 passed plus clean replay",
+    "packet_index_entries_checked": 21,
+    "packet_index_complete_and_hash_consistent": true,
+    "ten_resource_axes_exact": true,
+    "recorded_artifacts_excluding_resource_declaration_bytes": 15151,
+    "observed_artifacts_excluding_resource_declaration_bytes": 15151,
+    "registered_event_window_samples_per_detector": 820,
+    "corrections_verified": ["IR-D001", "IR-D002", "IR-D003", "IR-D004"],
+    "new_bounded_finding": "The packet-index generated_on date and remediation status records required this attestation-only wrapper update."
+  },
   "strongest_warranted_conclusion": "Under separate fresh-checkout execution custody, the exact registered commit, inputs, and same locked scientific stack reproduce the claim evidence, negative decisions, and one necessary H1/L1 lag invariant on macOS arm64.",
   "explicitly_unwarranted": [
     "independent scientific replication",

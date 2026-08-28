@@ -13,9 +13,9 @@
     "limitations": "No independent custody and no human domain authority."
   },
   "separate_executor_clean_checkout_replay": {
-    "status": "pass-with-record-discrepancies-remediation-pending",
+    "status": "bounded-pass",
     "report": "independent-replay-report.json",
-    "target_commit": "ca447e3a08261a477d0c712c9e7f2c7eb87ce9d4",
+    "target_commit": "2c9b4eea319e1d6a8fbb3a5a434082cf34f3fdd6",
     "scope": "Fresh clone, detached commit identity, locked environment materialization, packet/source identity audit, clean replay, and isolated beyond-tolerance and lock-mismatch adversarial checks.",
     "limitations": "Fresh execution custody is distinct from independent implementation, input, institution, human domain judgment, or scientific replication."
   },

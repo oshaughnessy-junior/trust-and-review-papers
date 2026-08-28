@@ -47,6 +47,18 @@
       "claim_disposition": "Separate execution custody supports bounded computational repeatability but not independent implementation, input, institution, human scientific judgment, or scientific replication.",
       "discrepancies": ["IR-D001", "IR-D002", "IR-D003", "IR-D004"],
       "supersedes": null
+    },
+    {
+      "event_id": "R0-GW150914-E005",
+      "event_type": "remediated",
+      "date": "2026-08-28",
+      "status": "separate-executor-superseding-replay-pass",
+      "record": "independent-replay-report.json",
+      "target_commit": "2c9b4eea319e1d6a8fbb3a5a434082cf34f3fdd6",
+      "remediation": "Correct cold dependency-access wording, use non-self-referential artifact accounting, register and enforce the exact 820-sample window, and correct packet commit-identity wording.",
+      "verified_discrepancies": ["IR-D001", "IR-D002", "IR-D003", "IR-D004"],
+      "claim_disposition": "Separate fresh-checkout execution custody is a bounded pass; human scientific sign-off and independent scientific replication remain pending.",
+      "supersedes": "R0-GW150914-E004"
     }
   ],
   "next_freshness_check_by": "2026-11-27",
