@@ -3,8 +3,16 @@
   "case_id": "r0-gw150914-v2-strain-lag-v0.1-rc1",
   "prepared_on": "2026-08-29",
   "purpose": "Prepare a qualified gravitational-wave reviewer to make bounded scientific judgments without treating machine checks as scientific validation.",
-  "review_status": "ready-for-human-review",
-  "human_disposition": null,
+  "review_status": "human-reviewed",
+  "human_disposition": {
+    "status": "accepted",
+    "reviewer": "R. O'Shaughnessy",
+    "recorded_by": "Codex (OpenAI), on behalf of R. O'Shaughnessy",
+    "review_target_commit": "2495989a78a66fd286a154f6b9735e87cf782b42",
+    "date": "2026-08-29",
+    "completed_review": "scientific-review-completed-2026-08-29.md",
+    "rationale_provenance": "Blanket human approval supplied in the current thread; no separate itemized rationale was supplied or inferred."
+  },
   "sources": [
     {
       "id": "SRC-GW150914-DISCOVERY",
@@ -167,5 +175,5 @@
     "scientific validity"
   ],
   "required_human_record": "scientific-review-form.md",
-  "integrity_rule": "The prepared dossier may be machine-checked for completeness, but only a named qualified human can supply the scientific disposition."
+  "integrity_rule": "The dossier may be machine-checked for completeness, but only a named qualified human can supply the scientific disposition; the recorder must preserve whether rationale was supplied or absent."
 }

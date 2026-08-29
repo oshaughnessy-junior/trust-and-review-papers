@@ -25,10 +25,11 @@ The manuscript includes:
 - transitive trust boundaries, threat cases, anti-patterns, limitations,
   falsifiers, downgrade rules, and first unmet gates.
 
-Case A now includes a bounded public R0 implementation observation; its human
-scientific sign-off and independent replay remain pending. Case B remains a design
-walkthrough. Neither case is evidence of scientific validity or review-system
-effectiveness.
+Case A now includes a bounded public R0 implementation observation, separate-agent
+clean-checkout replay, and non-independent human GW scientific acceptance for the
+registered candidate conclusion. Case B remains a design walkthrough. Neither
+case is evidence of independent scientific replication, broader scientific
+validity, or review-system effectiveness.
 
 ## Source and claim artifacts
 
@@ -125,19 +126,21 @@ malformed page break. `git diff --check` passed.
 
 ## First unmet gates
 
-1. **G2 evidence:** the GW150914-v2 public R0 release candidate now has registered
+1. **G2 evidence complete at the bounded case level:** the GW150914-v2 public R0 release candidate now has registered
    source digests, a locked portable environment, a recorded run, eight positive
    and adversarial checks, a ten-axis resource declaration, claim-scoped evidence,
    trust boundaries, an append-only freshness policy, and a bounded separate-agent
    clean-checkout replay with explicit independence dimensions, plus a
-   source-bounded six-decision scientific-review dossier and unsigned review form.
-   Close G2 only after separate human gravitational-wave sign-off; dossier
-   preparation is not approval. Stronger organizational or
-   implementation independence remains a distinct possible evidence path.
+   source-bounded six-decision scientific-review dossier, reusable blank form, and
+   human acceptance for exact commit `2495989`, recorded by Codex on behalf of
+   R. O'Shaughnessy. The sign-off is not independent and supplies no release
+   authorization. Stronger organizational or implementation independence remains
+   a distinct possible evidence path.
    Archival identity and repository licensing also remain human-gated.
 2. **G3 evidence:** instantiate a public/sanitized HPC case packet with runs,
    negative tests, resource measurements, and bounded sign-offs.
 3. **G4 independent review:** obtain separate scholarly-communication,
    computational-science, and governance/privacy close reads.
-4. **G5 human release:** resolve authorship responsibility, AI disclosure,
-   privacy/security review, venue, license, fees, and explicit release approval.
+4. **G5 human release:** resolve AI disclosure, privacy/security review, venue,
+   license, fees, and explicit release approval; the requested manuscript byline is
+   now recorded.

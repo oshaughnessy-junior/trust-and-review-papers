@@ -72,6 +72,19 @@
       "affected_scope": "Source-bounded scientific questions for filtering, window geometry, public quality/injection flags, lag/sign conventions, decision rules, accepted boundaries, and conclusion strength.",
       "claim_disposition": "The review interface is complete enough to request qualified human judgment; no human disposition, scientific validation, or independent replication is supplied.",
       "supersedes": null
+    },
+    {
+      "event_id": "R0-GW150914-E007",
+      "event_type": "human-scientific-review-recorded",
+      "date": "2026-08-29",
+      "status": "bounded-human-scientific-review-accepted",
+      "record": "scientific-review-completed-2026-08-29.md",
+      "review_target_commit": "2495989a78a66fd286a154f6b9735e87cf782b42",
+      "reviewer": "R. O'Shaughnessy",
+      "recorded_by": "Codex (OpenAI), on behalf of R. O'Shaughnessy",
+      "rationale_provenance": "Blanket human approval supplied in the current thread; no separate itemized rationale was supplied or inferred.",
+      "claim_disposition": "The strongest bounded computational-repeatability and necessary-invariant conclusion is human-accepted for the exact review target. Independent replication, calibration revalidation, astrophysical inference, scientific validity beyond that bounded conclusion, licensing, archive minting, and release approval remain unwarranted or open.",
+      "supersedes": null
     }
   ],
   "next_freshness_check_by": "2026-11-27",

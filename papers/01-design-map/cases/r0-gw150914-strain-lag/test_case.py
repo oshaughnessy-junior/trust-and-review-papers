@@ -56,9 +56,11 @@ class R0StrainLagTests(unittest.TestCase):
     def test_committed_evidence_clean_replay(self) -> None:
         run_case.verify_committed()
 
-    def test_human_scientific_signoff_remains_pending(self) -> None:
+    def test_human_scientific_signoff_is_recorded_without_machine_validity_claim(self) -> None:
         signoff = json.loads((run_case.ROOT / "review-signoff.json").read_text(encoding="utf-8"))
-        self.assertEqual(signoff["human_scientific_review"]["status"], "pending")
+        self.assertEqual(signoff["human_scientific_review"]["status"], "accepted")
+        self.assertEqual(signoff["human_scientific_review"]["reviewer"], "R. O'Shaughnessy")
+        self.assertFalse(signoff["human_scientific_review"]["independent_review"])
         self.assertFalse(signoff["machine_checks"]["scientific_validity_proven"])
 
 

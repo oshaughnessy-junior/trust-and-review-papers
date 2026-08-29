@@ -85,6 +85,7 @@ def main() -> int:
         "independent-replay-report.json",
         "scientific-review-dossier.json",
         "scientific-review-form.md",
+        "scientific-review-completed-2026-08-29.md",
         "packet-index.json",
         "artifacts/evidence/claim-evidence.json",
         "artifacts/evidence/negative-tests.json",
@@ -109,13 +110,18 @@ def main() -> int:
     if claim_manifest.get("release", {}).get("archive_status") != "UNMINTED":
         errors.append("R0 case must remain UNMINTED until human archival approval")
     signoff = json.loads((CASE / "review-signoff.json").read_text())
-    if signoff.get("human_scientific_review", {}).get("status") != "pending":
-        errors.append("R0 case human scientific review must remain explicitly pending")
+    if signoff.get("human_scientific_review", {}).get("status") != "accepted":
+        errors.append("R0 case human scientific review must record the authorized acceptance")
     dossier = json.loads((CASE / "scientific-review-dossier.json").read_text())
-    if dossier.get("review_status") != "ready-for-human-review":
-        errors.append("R0 case scientific review dossier is not marked ready")
-    if dossier.get("human_disposition") is not None:
-        errors.append("R0 case dossier must not fabricate a human disposition")
+    if dossier.get("review_status") != "human-reviewed":
+        errors.append("R0 case scientific review dossier is not marked human-reviewed")
+    human_disposition = dossier.get("human_disposition", {})
+    if human_disposition.get("status") != "accepted":
+        errors.append("R0 case dossier lacks the authorized human acceptance")
+    if human_disposition.get("reviewer") != "R. O'Shaughnessy":
+        errors.append("R0 case dossier has the wrong approving human identity")
+    if human_disposition.get("recorded_by") != "Codex (OpenAI), on behalf of R. O'Shaughnessy":
+        errors.append("R0 case dossier has the wrong requested recorder attribution")
     determination_ids = {
         item.get("id") for item in dossier.get("required_human_determinations", [])
     }
@@ -128,6 +134,8 @@ def main() -> int:
         errors.append("R0 case dossier must prohibit machine answers to scientific determinations")
     if signoff.get("human_scientific_review", {}).get("dossier") != "scientific-review-dossier.json":
         errors.append("R0 case sign-off record does not point to the scientific review dossier")
+    if signoff.get("human_scientific_review", {}).get("completed_review") != "scientific-review-completed-2026-08-29.md":
+        errors.append("R0 case sign-off record does not point to the completed human review")
     replay = json.loads((CASE / "independent-replay-report.json").read_text())
     if replay.get("actor", {}).get("human_gravitational_wave_authority") is not False:
         errors.append("R0 separate-executor report must not claim human GW authority")

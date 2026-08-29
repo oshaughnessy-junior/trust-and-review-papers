@@ -168,8 +168,8 @@
       "support_status": "verified",
       "evidence": "Registered GWOSC-v2 source identities, frozen workflow configuration, clean replay, eight passing conformance/adversarial tests, recorded claim evidence, and ten-axis resource observation",
       "citation": "gwosc-gw150914-data-2016; local immutable-source-bound case packet",
-      "caveat": "Human domain sign-off, independent clean-checkout replay, archive minting, and validation of accepted external products and libraries are pending.",
-      "unresolved_question": "Will a qualified gravitational-wave reviewer accept the preprocessing, boundary declarations, and conclusion strength?",
+      "caveat": "A bounded human domain sign-off is now recorded, but independent replication, archive minting, and validation of accepted external products and libraries remain open.",
+      "unresolved_question": "Which stronger independence dimensions, if any, should a relying domain require beyond the accepted bounded conclusion?",
       "action": "keep"
     },
     {
@@ -194,10 +194,24 @@
       "consequence_level": "low",
       "ledger_claim_id": "P01-C017",
       "support_status": "verified",
-      "evidence": "Scientific-review dossier with six source records, four machine observations, six machine-prohibited human determinations, a null human disposition, and an unsigned qualification/conflict/disposition form",
+      "evidence": "Scientific-review dossier with six source records, four machine observations, six machine-prohibited human determinations, an unchanged blank form, and a separately attached completed human disposition",
       "citation": "abbott-gw150914-discovery-2016; abbott-lvc-data-guide-2020; abbott-gw150914-noise-2016; gwosc-gw150914-data-2016; gwosc-technical-details-2026; gwosc-o1-data-2018; local scientific-review-dossier.json",
-      "caveat": "Dossier completeness is an implementation observation. It does not establish reviewer qualification, filter validity, boundary completeness, scientific validity, or independent replication.",
-      "unresolved_question": "Will a qualified human gravitational-wave reviewer accept, conditionally accept, or reject each of HD-01 through HD-06?",
+      "caveat": "Dossier completeness is an implementation observation. The later human acceptance is separately attributed and does not establish independent replication or broader scientific validity.",
+      "unresolved_question": "Would an independent reviewer agree, and what itemized rationale or sensitivity analysis would that relying domain require?",
+      "action": "keep"
+    },
+    {
+      "id": "LA-015",
+      "text": "A named human supplied blanket acceptance of the six bounded GW determinations, and the recorder preserved both the exact review target and the absence of separately supplied itemized rationale.",
+      "rhetorical_role": "record authorized human scientific disposition without inflating its independence or evidentiary scope",
+      "logic_type": "paper-description",
+      "consequence_level": "medium",
+      "ledger_claim_id": "P01-C018",
+      "support_status": "human-asserted",
+      "evidence": "Explicit approving-human instruction, completed review record, review-signoff record, and append-only lifecycle event E007",
+      "citation": "local scientific-review-completed-2026-08-29.md; human instruction dated 2026-08-29",
+      "caveat": "The approving human is the sponsoring PI, not an independent reviewer; blanket approval does not supply independently auditable itemized reasoning.",
+      "unresolved_question": "Will a separate independent GW reviewer concur, and will a target venue require more detailed sign-off rationale?",
       "action": "keep"
     }
   ]

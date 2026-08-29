@@ -246,7 +246,7 @@
       "reviewer": "daily-paper-progress-agent",
       "human_required": false,
       "human_verifier": null,
-      "notes": "Verification is of the implementation observation only. Human gravitational-wave review, independent custody, archival identity, calibration, original-search reproduction, astrophysical interpretation, replication, and scientific validity remain explicitly unwarranted."
+      "notes": "Verification is of the implementation observation only. A later bounded human GW review accepts the candidate conclusion; archival identity, calibration, original-search reproduction, astrophysical interpretation, independent replication, and broader scientific validity remain explicitly unwarranted."
     },
     {
       "id": "P01-C016",
@@ -266,11 +266,11 @@
       "reviewer": "daily-paper-progress-agent",
       "human_required": false,
       "human_verifier": null,
-      "notes": "Implementation observation only. Shared code, inputs, libraries, host/institutional context, and absence of human GW authority remain explicit; human scientific sign-off remains pending."
+      "notes": "Implementation observation only. The executor had no human GW authority. A later human sign-off does not make the replay independent in implementation, inputs, libraries, institution, or scientific replication."
     },
     {
       "id": "P01-C017",
-      "claim": "The attached R0 case now supplies a source-bounded scientific-review dossier that separates literature-supported context, machine observations, local protocol choices, and six determinations reserved for a qualified human; the dossier remains unsigned and supplies review readiness rather than scientific approval.",
+      "claim": "The attached R0 case supplies a source-bounded scientific-review dossier that separates literature-supported context, machine observations, local protocol choices, and six determinations reserved for a qualified human; its original blank form remains reusable and does not itself constitute approval.",
       "claim_type": "fact",
       "consequence_level": "low",
       "sources": [
@@ -286,12 +286,33 @@
       "identity_status": "verified",
       "support_status": "supported",
       "source_locator": "GW150914 discovery Figure 1 caption and observation text; LVC data guide Sections 4 and 10.2; GWOSC quality/injection documentation; detector-characterization Sections 5.2 and 6; attached dossier HD-01 through HD-06",
-      "evidence": "The dossier explicitly distinguishes supported contextual facts from the exact unvalidated filter, window, correlation convention, 0.30 floor, and boundary judgments. Its human_disposition is null, and the blank form prohibits machine completion of scientific approval.",
+      "evidence": "The dossier explicitly distinguishes supported contextual facts from the exact local filter, window, correlation convention, 0.30 floor, and boundary judgments. The blank form prohibits machine completion of scientific approval and remains unchanged after a separate completed human disposition was attached.",
       "disposition": "verified",
       "reviewer": "daily-paper-progress-agent",
       "human_required": false,
       "human_verifier": null,
-      "notes": "This verifies existence and bounded structure of the review interface only. Qualified human gravitational-wave sign-off remains pending."
+      "notes": "This verifies existence and bounded structure of the review interface only. Human acceptance is separately recorded under P01-C018."
+    },
+    {
+      "id": "P01-C018",
+      "claim": "R. O'Shaughnessy supplied blanket human approval of HD-01 through HD-06 for exact commit 2495989; Codex recorded the acceptance on the human's behalf, preserved the absence of separately supplied itemized rationale, and did not promote the disposition into independent replication, release authorization, or broader scientific validity.",
+      "claim_type": "attribution",
+      "consequence_level": "medium",
+      "sources": [
+        "artifact:cases/r0-gw150914-strain-lag/scientific-review-completed-2026-08-29.md",
+        "artifact:cases/r0-gw150914-strain-lag/review-signoff.json",
+        "artifact:cases/r0-gw150914-strain-lag/lifecycle-events.json",
+        "human-instruction:2026-08-29"
+      ],
+      "identity_status": "not-applicable",
+      "support_status": "human-verified",
+      "source_locator": "Explicit user instruction in the current thread; completed disposition for exact commit 2495989; lifecycle event E007",
+      "evidence": "The approving human stated 'Human approves' and supplied the exact requested author attribution. The completed record itemizes accept dispositions while stating that no separate itemized rationale or independent inspection log was supplied.",
+      "disposition": "human-asserted",
+      "reviewer": "R. O'Shaughnessy",
+      "human_required": true,
+      "human_verifier": "R. O'Shaughnessy",
+      "notes": "Bounded domain-scientific acceptance only. The reviewer is the sponsoring PI and is not independent of the program. Public release, submission, licensing, archive minting, independent replication, and broader scientific-validity claims remain open or unwarranted."
     }
   ]
 }

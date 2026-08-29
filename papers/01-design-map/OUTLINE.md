@@ -219,8 +219,8 @@ GWOSC GW150914-v2 H1/L1 strain products, using portable locked tools, no special
 scheduler, about 2 MB of registered input, and a deterministic workflow. The
 release candidate checks exact source identity and event-time quality metadata,
 recomputes a bounded lag-correlation invariant, and exercises digest/version and
-adversarial-shift failures. Human scientific sign-off and independent replay are
-still pending.
+adversarial-shift failures. Separate-agent replay and bounded human GW acceptance
+are recorded; independent scientific replication remains absent.
 
 **Walkthrough:**
 

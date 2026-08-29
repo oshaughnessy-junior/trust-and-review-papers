@@ -55,14 +55,17 @@ make verify
   archival controls.
 - `packet-index.json`: SHA-256 inventory of the release-candidate packet (excluding
   the index itself).
-- `review-signoff.json`: machine and agent scopes; human scientific sign-off is
-  explicitly pending rather than fabricated.
+- `review-signoff.json`: machine, agent, replay, and bounded human-scientific
+  scopes, with independent-replication and release limits preserved.
 - `independent-replay-report.json`: fresh-context detached-checkout execution,
   adversarial audit, discrepancies, and decomposed independence limits.
 - `scientific-review-dossier.json`: primary-source context, local machine
   observations, unsupported protocol choices, and six mandatory human decisions.
 - `scientific-review-form.md`: blank qualification, conflict, decision, and
   sign-off template; an agent may not complete the scientific disposition.
+- `scientific-review-completed-2026-08-29.md`: human approval for exact commit
+  `2495989`, recorded by Codex on behalf of R. O'Shaughnessy with the absence of
+  separate itemized rationale made explicit.
 
 ## Scientific scope
 
@@ -96,8 +99,10 @@ paper supports a 35--350 Hz visualization context, an approximately 0.2-second
 signal duration, the observed intersite delay and 10 ms propagation bound, and
 the detector-orientation inversion. It does not validate this case's exact
 bandpass-only implementation, 820-sample window, absolute-correlation convention,
-or registered 0.30 floor. Those remain named human determinations, and the blank
-form carries no disposition.
+or registered 0.30 floor. R. O'Shaughnessy accepted those named determinations for
+the bounded candidate conclusion on exact commit `2495989`; the blank form remains
+unchanged as a template, and the completed record preserves the approval's
+non-independent status and lack of separately supplied itemized rationale.
 
 ## Freshness and later failure
 
@@ -111,4 +116,6 @@ correlation curve failed despite matching claim and negative-test records. The
 failure and remediation are retained in `lifecycle-events.json`. Declared
 scientifically negligible floating-point tolerances replaced undeclared bytewise
 numeric equality; subsequent Linux and macOS checks passed without changing the
-claim thresholds or pending human-review disposition.
+claim thresholds. The run-time resource record predates the later human approval
+and therefore retains its historical `scientific_signoff: pending` observation;
+lifecycle event E007 and `review-signoff.json` carry the current disposition.

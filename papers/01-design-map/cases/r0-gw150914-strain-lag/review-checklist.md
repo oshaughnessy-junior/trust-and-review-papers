@@ -1,7 +1,7 @@
 # Bounded review checklist
 
 The boxes are evidence states, not a single badge. A checked machine item does not
-promote a pending scientific judgment.
+promote or substitute for a separately attributed scientific judgment.
 
 ## Machine-verifiable record
 
@@ -24,18 +24,20 @@ promote a pending scientific judgment.
   machine observations, local protocol choices, and six required human decisions.
 - [x] Provide a blank qualification/conflict/disposition form that an agent is
   prohibited from completing as the scientific reviewer.
-- [ ] Confirm that the 35--350 Hz filter, event window, and correlation convention
+- [x] Confirm that the 35--350 Hz filter, event window, and correlation convention
   are appropriate for this deliberately bounded demonstration.
-- [ ] Confirm that the selected data-quality and injection-mask bits support the
+- [x] Confirm that the selected data-quality and injection-mask bits support the
   stated preprocessing scope.
-- [ ] Confirm that 10 ms is used only as a necessary intersite bound, not evidence
+- [x] Confirm that 10 ms is used only as a necessary intersite bound, not evidence
   of astrophysical origin.
-- [ ] Confirm that the exclusions and accepted external boundaries are complete.
-- [ ] Sign `review-signoff.json` with reviewer identity, role, date, and conclusion.
+- [x] Confirm that the exclusions and accepted external boundaries are complete.
+- [x] Record reviewer identity, date, conclusion, conflict/independence limits, and
+  rationale provenance in `review-signoff.json` and the completed review record.
 
-The prepared dossier is review infrastructure, not sign-off. Its source crosswalk
-explicitly leaves the exact filter implementation, window, correlation convention,
-0.30 floor, and boundary completeness to qualified human judgment.
+The prepared dossier remains reusable review infrastructure. R. O'Shaughnessy
+accepted HD-01 through HD-06 for exact commit `2495989`; Codex recorded the
+blanket approval on the human's behalf. No separate itemized rationale was supplied,
+and the approval is neither independent replication nor public-release authority.
 
 ## Independent replay / custody
 
@@ -51,5 +53,5 @@ explicitly leaves the exact filter implementation, window, correlation conventio
 - [ ] Resolve repository software/document licensing.
 - [ ] Mint or attach an immutable archival identifier only after approval.
 - [ ] Record the archive digest and relation to the source-data DOI.
-- [ ] Do not label the packet scientifically reviewed while human sign-off remains
-  pending.
+- [x] Attribute the bounded human scientific review without calling it independent
+  replication, archival approval, or public-release authorization.

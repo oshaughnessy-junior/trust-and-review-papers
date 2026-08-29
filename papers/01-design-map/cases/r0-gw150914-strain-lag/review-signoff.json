@@ -20,13 +20,19 @@
     "limitations": "Fresh execution custody is distinct from independent implementation, input, institution, human domain judgment, or scientific replication."
   },
   "human_scientific_review": {
-    "status": "pending",
+    "status": "accepted",
     "required_scope": "Confirm preprocessing choices, the 10 ms necessary-bound interpretation, quality/injection policy, accepted boundaries, and conclusion strength.",
     "dossier": "scientific-review-dossier.json",
     "blank_review_form": "scientific-review-form.md",
-    "dossier_status": "ready-for-qualified-human-review",
-    "reviewer": null,
-    "signed_at": null
+    "dossier_status": "human-reviewed",
+    "completed_review": "scientific-review-completed-2026-08-29.md",
+    "review_target_commit": "2495989a78a66fd286a154f6b9735e87cf782b42",
+    "reviewer": "R. O'Shaughnessy",
+    "recorded_by": "Codex (OpenAI), on behalf of R. O'Shaughnessy",
+    "rationale_provenance": "Blanket human approval supplied in the current thread; no separate itemized rationale was supplied or inferred.",
+    "signed_at": "2026-08-29",
+    "strongest_warranted_conclusion": "bounded computational repeatability of the registered processing path and satisfaction of one necessary intersite-lag invariant",
+    "independent_review": false
   },
-  "disposition": "machine-verified; human-scientific-signoff-pending"
+  "disposition": "machine-verified; bounded-human-scientific-review-accepted; independent-replication-not-established"
 }
