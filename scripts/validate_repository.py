@@ -83,6 +83,8 @@ def main() -> int:
         "review-signoff.json",
         "review-checklist.md",
         "independent-replay-report.json",
+        "scientific-review-dossier.json",
+        "scientific-review-form.md",
         "packet-index.json",
         "artifacts/evidence/claim-evidence.json",
         "artifacts/evidence/negative-tests.json",
@@ -109,6 +111,23 @@ def main() -> int:
     signoff = json.loads((CASE / "review-signoff.json").read_text())
     if signoff.get("human_scientific_review", {}).get("status") != "pending":
         errors.append("R0 case human scientific review must remain explicitly pending")
+    dossier = json.loads((CASE / "scientific-review-dossier.json").read_text())
+    if dossier.get("review_status") != "ready-for-human-review":
+        errors.append("R0 case scientific review dossier is not marked ready")
+    if dossier.get("human_disposition") is not None:
+        errors.append("R0 case dossier must not fabricate a human disposition")
+    determination_ids = {
+        item.get("id") for item in dossier.get("required_human_determinations", [])
+    }
+    if determination_ids != {f"HD-{index:02d}" for index in range(1, 7)}:
+        errors.append("R0 case dossier must contain exactly human determinations HD-01 through HD-06")
+    if not all(
+        item.get("machine_answer_prohibited") is True
+        for item in dossier.get("required_human_determinations", [])
+    ):
+        errors.append("R0 case dossier must prohibit machine answers to scientific determinations")
+    if signoff.get("human_scientific_review", {}).get("dossier") != "scientific-review-dossier.json":
+        errors.append("R0 case sign-off record does not point to the scientific review dossier")
     replay = json.loads((CASE / "independent-replay-report.json").read_text())
     if replay.get("actor", {}).get("human_gravitational_wave_authority") is not False:
         errors.append("R0 separate-executor report must not claim human GW authority")

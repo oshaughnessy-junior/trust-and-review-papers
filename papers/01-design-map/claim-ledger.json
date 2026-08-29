@@ -267,6 +267,31 @@
       "human_required": false,
       "human_verifier": null,
       "notes": "Implementation observation only. Shared code, inputs, libraries, host/institutional context, and absence of human GW authority remain explicit; human scientific sign-off remains pending."
+    },
+    {
+      "id": "P01-C017",
+      "claim": "The attached R0 case now supplies a source-bounded scientific-review dossier that separates literature-supported context, machine observations, local protocol choices, and six determinations reserved for a qualified human; the dossier remains unsigned and supplies review readiness rather than scientific approval.",
+      "claim_type": "fact",
+      "consequence_level": "low",
+      "sources": [
+        "doi:10.1103/PhysRevLett.116.061102",
+        "doi:10.1088/0264-9381/33/13/134001",
+        "doi:10.1088/1361-6382/ab685e",
+        "doi:10.7935/K5MW2F23",
+        "url:https://gwosc.org/techdetails/",
+        "url:https://gwosc.org/O1/",
+        "artifact:cases/r0-gw150914-strain-lag/scientific-review-dossier.json",
+        "artifact:cases/r0-gw150914-strain-lag/scientific-review-form.md"
+      ],
+      "identity_status": "verified",
+      "support_status": "supported",
+      "source_locator": "GW150914 discovery Figure 1 caption and observation text; LVC data guide Sections 4 and 10.2; GWOSC quality/injection documentation; detector-characterization Sections 5.2 and 6; attached dossier HD-01 through HD-06",
+      "evidence": "The dossier explicitly distinguishes supported contextual facts from the exact unvalidated filter, window, correlation convention, 0.30 floor, and boundary judgments. Its human_disposition is null, and the blank form prohibits machine completion of scientific approval.",
+      "disposition": "verified",
+      "reviewer": "daily-paper-progress-agent",
+      "human_required": false,
+      "human_verifier": null,
+      "notes": "This verifies existence and bounded structure of the review interface only. Qualified human gravitational-wave sign-off remains pending."
     }
   ]
 }

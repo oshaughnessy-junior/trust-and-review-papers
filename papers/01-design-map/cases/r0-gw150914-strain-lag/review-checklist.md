@@ -20,6 +20,10 @@ promote a pending scientific judgment.
 
 ## Human scientific review
 
+- [x] Prepare a source-bounded dossier separating literature-supported context,
+  machine observations, local protocol choices, and six required human decisions.
+- [x] Provide a blank qualification/conflict/disposition form that an agent is
+  prohibited from completing as the scientific reviewer.
 - [ ] Confirm that the 35--350 Hz filter, event window, and correlation convention
   are appropriate for this deliberately bounded demonstration.
 - [ ] Confirm that the selected data-quality and injection-mask bits support the
@@ -28,6 +32,10 @@ promote a pending scientific judgment.
   of astrophysical origin.
 - [ ] Confirm that the exclusions and accepted external boundaries are complete.
 - [ ] Sign `review-signoff.json` with reviewer identity, role, date, and conclusion.
+
+The prepared dossier is review infrastructure, not sign-off. Its source crosswalk
+explicitly leaves the exact filter implementation, window, correlation convention,
+0.30 floor, and boundary completeness to qualified human judgment.
 
 ## Independent replay / custody
 

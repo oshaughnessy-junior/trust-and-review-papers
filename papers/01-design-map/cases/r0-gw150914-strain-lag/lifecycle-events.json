@@ -59,6 +59,19 @@
       "verified_discrepancies": ["IR-D001", "IR-D002", "IR-D003", "IR-D004"],
       "claim_disposition": "Separate fresh-checkout execution custody is a bounded pass; human scientific sign-off and independent scientific replication remain pending.",
       "supersedes": "R0-GW150914-E004"
+    },
+    {
+      "event_id": "R0-GW150914-E006",
+      "event_type": "human-review-packet-prepared",
+      "date": "2026-08-29",
+      "status": "ready-for-qualified-human-review-signoff-pending",
+      "records": [
+        "scientific-review-dossier.json",
+        "scientific-review-form.md"
+      ],
+      "affected_scope": "Source-bounded scientific questions for filtering, window geometry, public quality/injection flags, lag/sign conventions, decision rules, accepted boundaries, and conclusion strength.",
+      "claim_disposition": "The review interface is complete enough to request qualified human judgment; no human disposition, scientific validation, or independent replication is supplied.",
+      "supersedes": null
     }
   ],
   "next_freshness_check_by": "2026-11-27",

@@ -129,8 +129,10 @@ malformed page break. `git diff --check` passed.
    source digests, a locked portable environment, a recorded run, eight positive
    and adversarial checks, a ten-axis resource declaration, claim-scoped evidence,
    trust boundaries, an append-only freshness policy, and a bounded separate-agent
-   clean-checkout replay with explicit independence dimensions. Close G2 only
-   after separate human gravitational-wave sign-off; stronger organizational or
+   clean-checkout replay with explicit independence dimensions, plus a
+   source-bounded six-decision scientific-review dossier and unsigned review form.
+   Close G2 only after separate human gravitational-wave sign-off; dossier
+   preparation is not approval. Stronger organizational or
    implementation independence remains a distinct possible evidence path.
    Archival identity and repository licensing also remain human-gated.
 2. **G3 evidence:** instantiate a public/sanitized HPC case packet with runs,

@@ -20,7 +20,9 @@
     "../../shared/research/reviewer-trust-governance-landscape.md",
     "../../shared/research/scaling-mcrp-to-a-peer-review-corpus.md",
     "../../shared/protocol/reviewer-trust-domains-v0.1-draft.md",
-    "../../shared/references.bib"
+    "../../shared/references.bib",
+    "cases/r0-gw150914-strain-lag/scientific-review-dossier.json",
+    "cases/r0-gw150914-strain-lag/scientific-review-form.md"
   ],
   "retrieval_capability": "bounded local evidence corpus plus citation identity tools; no independent exhaustive corpus search performed in this drafting pass",
   "claim_ledger": "claim-ledger.json",

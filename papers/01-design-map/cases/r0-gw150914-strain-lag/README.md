@@ -59,6 +59,10 @@ make verify
   explicitly pending rather than fabricated.
 - `independent-replay-report.json`: fresh-context detached-checkout execution,
   adversarial audit, discrepancies, and decomposed independence limits.
+- `scientific-review-dossier.json`: primary-source context, local machine
+  observations, unsupported protocol choices, and six mandatory human decisions.
+- `scientific-review-form.md`: blank qualification, conflict, decision, and
+  sign-off template; an agent may not complete the scientific disposition.
 
 ## Scientific scope
 
@@ -86,6 +90,14 @@ establish independent replication or scientific validity. GWOSC calibration,
 quality flags, event curation, and HDF5 construction; Pixi/conda-forge; CPython;
 NumPy; SciPy; h5py/HDF5; the OS; and CPU math libraries are declared transitive
 trust boundaries rather than silently treated as reviewed here.
+
+The qualified-review dossier makes a further boundary explicit. The discovery
+paper supports a 35--350 Hz visualization context, an approximately 0.2-second
+signal duration, the observed intersite delay and 10 ms propagation bound, and
+the detector-orientation inversion. It does not validate this case's exact
+bandpass-only implementation, 820-sample window, absolute-correlation convention,
+or registered 0.30 floor. Those remain named human determinations, and the blank
+form carries no disposition.
 
 ## Freshness and later failure
 

@@ -185,6 +185,20 @@
       "caveat": "The executor is a fresh-context agent commissioned within the same private activity and has no human gravitational-wave authority.",
       "unresolved_question": "Which additional organizational, implementation, data, or scientific-independence dimensions should a relying domain require?",
       "action": "keep"
+    },
+    {
+      "id": "LA-014",
+      "text": "A source-bounded dossier can make the remaining human GW decisions reviewable without converting cited context or machine observations into scientific approval.",
+      "rhetorical_role": "advance human-review readiness while preserving the machine/human boundary",
+      "logic_type": "paper-description",
+      "consequence_level": "low",
+      "ledger_claim_id": "P01-C017",
+      "support_status": "verified",
+      "evidence": "Scientific-review dossier with six source records, four machine observations, six machine-prohibited human determinations, a null human disposition, and an unsigned qualification/conflict/disposition form",
+      "citation": "abbott-gw150914-discovery-2016; abbott-lvc-data-guide-2020; abbott-gw150914-noise-2016; gwosc-gw150914-data-2016; gwosc-technical-details-2026; gwosc-o1-data-2018; local scientific-review-dossier.json",
+      "caveat": "Dossier completeness is an implementation observation. It does not establish reviewer qualification, filter validity, boundary completeness, scientific validity, or independent replication.",
+      "unresolved_question": "Will a qualified human gravitational-wave reviewer accept, conditionally accept, or reject each of HD-01 through HD-06?",
+      "action": "keep"
     }
   ]
 }

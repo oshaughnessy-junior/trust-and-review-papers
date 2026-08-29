@@ -22,6 +22,9 @@
   "human_scientific_review": {
     "status": "pending",
     "required_scope": "Confirm preprocessing choices, the 10 ms necessary-bound interpretation, quality/injection policy, accepted boundaries, and conclusion strength.",
+    "dossier": "scientific-review-dossier.json",
+    "blank_review_form": "scientific-review-form.md",
+    "dossier_status": "ready-for-qualified-human-review",
     "reviewer": null,
     "signed_at": null
   },
