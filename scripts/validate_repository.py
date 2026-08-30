@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CASE = ROOT / "papers/01-design-map/cases/r0-gw150914-strain-lag"
+HPC_CASE = ROOT / "papers/01-design-map/cases/hpc-sanitized-partitioned-inference"
 RESOURCE_AXES = {
     "compute",
     "storage",
@@ -162,6 +163,75 @@ def main() -> int:
         indexed = CASE / entry["path"]
         if not indexed.is_file() or sha256(indexed) != entry["sha256"]:
             errors.append(f"R0 case packet-index mismatch: {entry['path']}")
+
+    hpc_case_files = [
+        "README.md",
+        "Makefile",
+        "run_case.py",
+        "test_case.py",
+        "claim-manifest.json",
+        "source-manifest.json",
+        "resource-declaration.json",
+        "assessment-modes.json",
+        "trust-boundaries.json",
+        "freshness-policy.json",
+        "lifecycle-events.json",
+        "restricted-attestation-template.json",
+        "review-checklist.md",
+        "packet-index.json",
+        "artifacts/partition-digests.json",
+        "artifacts/aggregate-posterior.json",
+        "artifacts/claim-evidence.json",
+        "artifacts/run-record.json",
+    ]
+    for path in hpc_case_files:
+        require(str((HPC_CASE / path).relative_to(ROOT)), errors)
+
+    hpc_claim = json.loads((HPC_CASE / "claim-manifest.json").read_text())
+    if hpc_claim.get("archive_status") != "UNMINTED":
+        errors.append("sanitized HPC case must remain UNMINTED until human archival approval")
+    hpc_sources = json.loads((HPC_CASE / "source-manifest.json").read_text())
+    for record in hpc_sources.get("sources", []):
+        source = HPC_CASE / record["path"]
+        if not source.is_file() or sha256(source) != record["sha256"]:
+            errors.append(f"sanitized HPC source identity mismatch: {record.get('partition_id')}")
+    hpc_resources = json.loads((HPC_CASE / "resource-declaration.json").read_text())
+    if set(hpc_resources.get("axes", {})) != RESOURCE_AXES:
+        errors.append("sanitized HPC case resource declaration must contain exactly the ten canonical axes")
+    hpc_run = json.loads((HPC_CASE / "artifacts/run-record.json").read_text())
+    if hpc_resources.get("axes", {}).get("wall_clock", {}).get("downselect_observed_seconds") != hpc_run.get("wall_clock_seconds"):
+        errors.append("sanitized HPC observed wall-clock declaration must match the run record")
+    hpc_evidence = json.loads((HPC_CASE / "artifacts/claim-evidence.json").read_text())
+    if hpc_evidence.get("machine_disposition") != "verified-for-sanitized-downselect-only":
+        errors.append("sanitized HPC claim evidence must retain its bounded machine disposition")
+    hpc_modes = json.loads((HPC_CASE / "assessment-modes.json").read_text()).get("modes", [])
+    expected_modes = {
+        "full-independent-execution",
+        "bounded-recomputation",
+        "digest-audit",
+        "restricted-platform-attestation",
+        "frozen-output-inspection",
+        "independent-evidence-path",
+    }
+    if {item.get("id") for item in hpc_modes} != expected_modes:
+        errors.append("sanitized HPC case must declare exactly the six canonical assessment modes")
+    if sum(str(item.get("status", "")).startswith("performed") for item in hpc_modes) != 3:
+        errors.append("sanitized HPC case must record exactly three performed assessment modes")
+    if next((item.get("status") for item in hpc_modes if item.get("id") == "full-independent-execution"), None) != "not-performed":
+        errors.append("sanitized HPC case must not report full independent execution")
+    if next((item.get("status") for item in hpc_modes if item.get("id") == "independent-evidence-path"), None) != "not-performed":
+        errors.append("sanitized HPC case must not report an independent evidence path")
+    attestation = json.loads((HPC_CASE / "restricted-attestation-template.json").read_text())
+    if attestation.get("status") != "TEMPLATE_ONLY_NOT_AN_ATTESTATION":
+        errors.append("sanitized HPC attestation must remain an unexecuted template")
+    hpc_lifecycle = json.loads((HPC_CASE / "lifecycle-events.json").read_text())
+    if hpc_lifecycle.get("append_only") is not True:
+        errors.append("sanitized HPC case lifecycle must be append-only")
+    hpc_packet_index = json.loads((HPC_CASE / "packet-index.json").read_text())
+    for entry in hpc_packet_index.get("entries", []):
+        indexed = HPC_CASE / entry["path"]
+        if not indexed.is_file() or sha256(indexed) != entry["sha256"]:
+            errors.append(f"sanitized HPC packet-index mismatch: {entry['path']}")
 
     packet = json.loads(require("science-writing/writing-packet.json", errors).read_text())
     if packet.get("schema") != "openclaw.scientific-writing.packet.v1":

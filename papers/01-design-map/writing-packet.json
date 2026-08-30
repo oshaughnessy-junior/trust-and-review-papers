@@ -22,7 +22,11 @@
     "../../shared/protocol/reviewer-trust-domains-v0.1-draft.md",
     "../../shared/references.bib",
     "cases/r0-gw150914-strain-lag/scientific-review-dossier.json",
-    "cases/r0-gw150914-strain-lag/scientific-review-form.md"
+    "cases/r0-gw150914-strain-lag/scientific-review-form.md",
+    "cases/hpc-sanitized-partitioned-inference/claim-manifest.json",
+    "cases/hpc-sanitized-partitioned-inference/artifacts/claim-evidence.json",
+    "cases/hpc-sanitized-partitioned-inference/resource-declaration.json",
+    "cases/hpc-sanitized-partitioned-inference/assessment-modes.json"
   ],
   "retrieval_capability": "bounded local evidence corpus plus citation identity tools; no independent exhaustive corpus search performed in this drafting pass",
   "claim_ledger": "claim-ledger.json",
@@ -36,7 +40,7 @@
   "human_questions": [
     "Authorship is attributed to Codex (OpenAI), on behalf of R. O'Shaughnessy; what exact AI-assistance disclosure and venue policy language is required before release?",
     "Which exact venue and article type should govern final length and style?",
-    "Which public or sanitized HPC workflow can support the second case without exposing restricted material?",
+    "Which public or sanitizable production workflow can test whether the synthetic HPC downselect is representative without exposing restricted material?",
     "What evidence would justify promoting the plural-trust architecture from design profile to empirical recommendation?"
   ],
   "constraints": [
@@ -50,7 +54,7 @@
     "The architecture improves peer-review quality.",
     "Plural trust views outperform global reputation.",
     "Per-case personas guarantee anonymity.",
-    "Both worked cases have been implemented or independently scientifically reviewed; only the bounded public R0 implementation, separate-agent clean-checkout observations, and non-independent human GW sign-off currently exist, without an HPC case or independent scientific replication.",
+    "Both worked cases have been independently scientifically reviewed; the portable case has bounded non-independent human GW sign-off, while the synthetic HPC downselect has no independent inspection, production representativeness evidence, restricted attestation, or human domain sign-off.",
     "Machine checks establish scientific validity.",
     "This is the first system to combine provenance, review, and reputation."
   ]

@@ -62,16 +62,16 @@
     },
     {
       "id": "LA-005",
-      "text": "The worked cases are design walkthroughs, not implementation results.",
-      "rhetorical_role": "prevent mock-result prose",
+      "text": "The worked cases contain bounded implementation results whose distinct assessment modes and exclusions prevent a downselect from being reported as a full rerun.",
+      "rhetorical_role": "prevent bounded implementation observations from becoming broad effectiveness or validity claims",
       "logic_type": "paper-description",
       "consequence_level": "high",
       "ledger_claim_id": "P01-C008",
       "support_status": "verified",
-      "evidence": "No executable case artifacts are present; evidence gates say so explicitly.",
+      "evidence": "Executable portable and synthetic downselect packets with explicit mode status, exclusions, and remaining evidence gates.",
       "citation": "local artifact state",
-      "caveat": "Representational coverage remains untested.",
-      "unresolved_question": "Which public fixtures will be instantiated?",
+      "caveat": "Independent representational coverage remains untested, and the HPC fixture is synthetic rather than production evidence.",
+      "unresolved_question": "Can independent reviewers map a representative production workflow without ad hoc fields or mode inflation?",
       "action": "keep"
     },
     {
@@ -212,6 +212,20 @@
       "citation": "local scientific-review-completed-2026-08-29.md; human instruction dated 2026-08-29",
       "caveat": "The approving human is the sponsoring PI, not an independent reviewer; blanket approval does not supply independently auditable itemized reasoning.",
       "unresolved_question": "Will a separate independent GW reviewer concur, and will a target venue require more detailed sign-off rationale?",
+      "action": "keep"
+    },
+    {
+      "id": "LA-016",
+      "text": "The sanitized partitioned-inference fixture regenerates sampled digests and bounded aggregate evidence while recording only three of six assessment modes as performed.",
+      "rhetorical_role": "replace the HPC placeholder with a measured downselect without inflating it into production or full-rerun evidence",
+      "logic_type": "paper-description",
+      "consequence_level": "low",
+      "ledger_claim_id": "P01-C019",
+      "support_status": "verified",
+      "evidence": "Four identity-checked synthetic partitions, executable digest and aggregate algorithms, committed claim evidence, nine passing checks, exact six-mode status vector, and ten-axis resource declaration",
+      "citation": "local hpc-sanitized-partitioned-inference case packet",
+      "caveat": "The full-scale resource shape is illustrative; production representativeness, full execution, restricted attestation, independent evidence, and human domain judgment are absent.",
+      "unresolved_question": "Can an independent reviewer validate the downselect against a representative public or sanitizable production workflow?",
       "action": "keep"
     }
   ]

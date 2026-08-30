@@ -1,0 +1,20 @@
+{
+  "configuration_sha256": "f057ec3b53b23a906a936febec102185f88eada778930e95d10a6c787224dd35",
+  "implementation_sha256": "c8ad201e75c3c4822e90ad60c8f72e98157ad1d51e93bd7d992017fcdb83cd19",
+  "input_digests": {
+    "partition-000": "31472415bf9bd5f4bfe6af7eddcd1cbf0fee66b001f033c3b3f8bdd3e31ec948",
+    "partition-001": "fed56ad1e2d86705449caa549317e4d09139c734713f97a3322ed110f1133816",
+    "partition-002": "84d06161e46b46a1b5165b31a3f3fd4290d923add837e266f57240d6b44eff68",
+    "partition-003": "4c3cfe95af47b50eb5035a8ff9d4c9edb88de7c9b564c88acfb4164e7276d931"
+  },
+  "platform": {
+    "machine": "arm64",
+    "python": "3.14.5",
+    "system": "Darwin"
+  },
+  "randomness": "none",
+  "result": "pass",
+  "schema": "trustandreview.hpc-downselect.run-record.v0.1",
+  "wall_clock_seconds": 0.001118333,
+  "workflow": "run_case.py"
+}

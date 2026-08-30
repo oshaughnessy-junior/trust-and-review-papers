@@ -123,12 +123,12 @@
       "identity_status": "not-applicable",
       "support_status": "unsupported",
       "source_locator": "Sections 8 and 9",
-      "evidence": "Only narrative design walkthroughs exist in this draft; executable case packets and independent annotation are absent.",
+      "evidence": "Two executable case packets now preserve distinct resource and epistemic ceilings, but independent annotation of their representational coverage is absent.",
       "disposition": "blocked",
       "reviewer": "latex-paper01-agent",
       "human_required": true,
       "human_verifier": null,
-      "notes": "Manuscript explicitly calls the cases walkthroughs and marks evidence gates."
+      "notes": "The manuscript marks exact performed and unperformed modes and retains evidence gates; independent validation of the representation remains required."
     },
     {
       "id": "P01-C009",
@@ -313,6 +313,28 @@
       "human_required": true,
       "human_verifier": "R. O'Shaughnessy",
       "notes": "Bounded domain-scientific acceptance only. The reviewer is the sponsoring PI and is not independent of the program. Public release, submission, licensing, archive minting, independent replication, and broader scientific-validity claims remain open or unwarranted."
+    },
+    {
+      "id": "P01-C019",
+      "claim": "The attached sanitized partitioned-inference case regenerates digests from four exact synthetic likelihood partitions, constructs an aggregate posterior with MAP theta 2, central probability 1.0 on theta 1 through 3, and zero split-half posterior-mean difference, and passes nine checks while reporting only three of six assessment modes as performed.",
+      "claim_type": "fact",
+      "consequence_level": "low",
+      "sources": [
+        "artifact:cases/hpc-sanitized-partitioned-inference/claim-manifest.json",
+        "artifact:cases/hpc-sanitized-partitioned-inference/artifacts/aggregate-posterior.json",
+        "artifact:cases/hpc-sanitized-partitioned-inference/artifacts/claim-evidence.json",
+        "artifact:cases/hpc-sanitized-partitioned-inference/assessment-modes.json",
+        "artifact:cases/hpc-sanitized-partitioned-inference/artifacts/run-record.json"
+      ],
+      "identity_status": "verified",
+      "support_status": "supported",
+      "source_locator": "Attached source manifest, executable transformation, recorded evidence, and passing conformance/adversarial suite",
+      "evidence": "Clean replay verifies all four source identities and regenerated digests; committed aggregate evidence records MAP 2, central probability 1.0, split-half difference 0.0, and all invariants passing; the test suite records nine passes.",
+      "disposition": "verified",
+      "reviewer": "daily-paper-progress-agent",
+      "human_required": false,
+      "human_verifier": null,
+      "notes": "Synthetic implementation observation only. The illustrative full-scale resource shape is not measured production evidence; representativeness, full execution, restricted attestation, independent evidence, human domain sign-off, replication, and scientific validity remain unwarranted."
     }
   ]
 }

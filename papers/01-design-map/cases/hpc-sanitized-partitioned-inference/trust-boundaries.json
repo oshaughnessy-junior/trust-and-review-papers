@@ -1,0 +1,11 @@
+{
+  "schema": "trustandreview.trust-boundaries.v0.1",
+  "reviewed_here": ["sample partition identities","digest algorithm","aggregate normalization","registered invariants","negative fixtures","six-mode disposition","ten-axis declaration"],
+  "accepted_external_or_unexecuted": [
+    {"component":"production or restricted inputs","status":"not included","risk":"sanitized partitions may be unrepresentative"},
+    {"component":"HTCondor, CUDA, GPU kernels, distributed retries","status":"declared full-scale boundary; not executed","risk":"scheduler, numerical, and recovery behavior untested"},
+    {"component":"production calibration and scientific model","status":"not represented by this synthetic fixture","risk":"no production scientific conclusion available"},
+    {"component":"restricted facility and export control","status":"attestation template only","risk":"attestor honesty and custody unverified"}
+  ],
+  "independence_limits": ["same released digest implementation","synthetic rather than production inputs","no independent institution or method","no human domain sign-off for production use"]
+}

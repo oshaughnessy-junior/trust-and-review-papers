@@ -1,0 +1,5 @@
+{
+  "schema":"trustandreview.lifecycle-events.v0.1",
+  "append_only":true,
+  "events":[{"event_id":"HPC-SAN-E001","event_type":"sanitized-downselect-release-candidate-recorded","date":"2026-08-30","status":"machine-pass-human-production-signoff-not-applicable","claim_disposition":"Only the sanitized sampled-partition claim is evaluated; full-scale and restricted-platform conclusions remain not performed."}]
+}

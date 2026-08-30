@@ -1,0 +1,29 @@
+{
+  "schema": "trustandreview.packet-index.v0.1",
+  "case_id": "hpc-sanitized-partitioned-inference-v0.1-rc1",
+  "hash_algorithm": "sha256",
+  "self_excluded": true,
+  "entries": [
+    {"path":"Makefile","sha256":"04b0a0b6c89ead343fc48ef6d588567d552cb1e7eb50b2b8954942c29cba052c"},
+    {"path":"README.md","sha256":"66aee5fe7ac795b9c8a4c8f21f758b34159a4ee0acff0d1a6b94ffc41e6b4c0d"},
+    {"path":"artifacts/aggregate-posterior.json","sha256":"94fed9724705de69aa133cf3b5a4c3db7fb856f6239256884e9a4594a80de737"},
+    {"path":"artifacts/claim-evidence.json","sha256":"6fb34d1b6b050ca43b16ebf9b443271c2e7e9c4c3f227521fb723422d3a336e7"},
+    {"path":"artifacts/partition-digests.json","sha256":"935076b76b533483911474baaacbd906213c71c5b7df63fc97ed7a5dafa4f428"},
+    {"path":"artifacts/run-record.json","sha256":"78be1f351b4ec64ee1b13ec6a4519150469719ddddba0f19ed57bf720cf57baf"},
+    {"path":"assessment-modes.json","sha256":"d417872bc53f5ffb622782089cd56ae32b5fddc8780296efb3a4ecfc4db5baec"},
+    {"path":"claim-manifest.json","sha256":"f057ec3b53b23a906a936febec102185f88eada778930e95d10a6c787224dd35"},
+    {"path":"data/sampled-partitions/partition-000.json","sha256":"31472415bf9bd5f4bfe6af7eddcd1cbf0fee66b001f033c3b3f8bdd3e31ec948"},
+    {"path":"data/sampled-partitions/partition-001.json","sha256":"fed56ad1e2d86705449caa549317e4d09139c734713f97a3322ed110f1133816"},
+    {"path":"data/sampled-partitions/partition-002.json","sha256":"84d06161e46b46a1b5165b31a3f3fd4290d923add837e266f57240d6b44eff68"},
+    {"path":"data/sampled-partitions/partition-003.json","sha256":"4c3cfe95af47b50eb5035a8ff9d4c9edb88de7c9b564c88acfb4164e7276d931"},
+    {"path":"freshness-policy.json","sha256":"7270ff960c97eaaebf39ad275b303a6740d3ae32e2bc9ef6d7fdd9aab5828f2d"},
+    {"path":"lifecycle-events.json","sha256":"32ef6a94abe807de36459b55de53236ff8d3cfdd702e10459c58fd1a554fc6ef"},
+    {"path":"resource-declaration.json","sha256":"e476a3945d202c4d06e4d69bb35be9fb631d6b8a88c45ad8bca4864cda9a7238"},
+    {"path":"restricted-attestation-template.json","sha256":"b084c51ef689532c36c70da6e58ed77f57c5521ed9c91f3c815dc9c732348062"},
+    {"path":"review-checklist.md","sha256":"935f7d4e20c42d8c07fbfa346705cd7ffe191bbf7dd372ff007615b07ca3aea4"},
+    {"path":"run_case.py","sha256":"c8ad201e75c3c4822e90ad60c8f72e98157ad1d51e93bd7d992017fcdb83cd19"},
+    {"path":"source-manifest.json","sha256":"40261583a37bdec4769ab8075524fa4fe01d46a71852e3db94b95f7441d15be5"},
+    {"path":"test_case.py","sha256":"c38047e6e504df8af3fc615010897b450ed748ed33c4786e088e87fb27db40a7"},
+    {"path":"trust-boundaries.json","sha256":"b29873fc818387d646b54c664599a11e6c17f569f6161e701ca3c1dd24d8d132"}
+  ]
+}

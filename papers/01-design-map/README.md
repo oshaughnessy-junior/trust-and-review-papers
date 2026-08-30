@@ -27,9 +27,12 @@ The manuscript includes:
 
 Case A now includes a bounded public R0 implementation observation, separate-agent
 clean-checkout replay, and non-independent human GW scientific acceptance for the
-registered candidate conclusion. Case B remains a design walkthrough. Neither
-case is evidence of independent scientific replication, broader scientific
-validity, or review-system effectiveness.
+registered candidate conclusion. Case B now includes a synthetic partitioned-
+inference downselect with registered inputs, regenerated digests, nine checks,
+six explicitly non-equivalent assessment modes, and a ten-axis distinction between
+local and illustrative full-scale resources. It is not representative production
+evidence. Neither case is evidence of independent scientific replication, broader
+scientific validity, or review-system effectiveness.
 
 ## Source and claim artifacts
 
@@ -46,7 +49,7 @@ validity, or review-system effectiveness.
   specifications;
 - `writing-packet.json`: audience, evidence inputs, constraints, exclusions,
   and human questions;
-- `claim-ledger.json`: 14 consequential claims with identity/support posture;
+- `claim-ledger.json`: 19 consequential claims with identity/support posture;
 - `logical-claims-audit.json`: rhetorical and logical-strength audit.
 
 The local bibliography identity command could not reach external metadata
@@ -124,6 +127,19 @@ fatal errors. Render inspection covered manuscript pages 6–8 and bibliography
 pages 18–21; the added section and new references are readable with no clipping or
 malformed page break. `git diff --check` passed.
 
+## Verification update — 2026-08-30
+
+The sanitized HPC downselect passed nine unit and adversarial checks plus clean
+replay. Its 21-entry packet index, four source identities, exact ten-axis resource
+declaration, and exact six-mode status vector passed repository validation.
+Scientific-writing validation passed for 19 ledger claims and 16 logical claims.
+The manuscript compiled to a 22-page letter-size PDF with no critical LaTeX errors,
+summarized warnings, overfull boxes, unresolved citations, or unresolved references.
+Rendered inspection of pages 11–14 covered the case transition, full assessment-
+mode table, remaining-evidence gate, and threat-table transition with no clipping or
+malformed page break. No external source was added, so bibliography identity and
+support artifacts were unchanged and no new bibliography audit was required.
+
 ## First unmet gates
 
 1. **G2 evidence complete at the bounded case level:** the GW150914-v2 public R0 release candidate now has registered
@@ -137,8 +153,13 @@ malformed page break. `git diff --check` passed.
    authorization. Stronger organizational or implementation independence remains
    a distinct possible evidence path.
    Archival identity and repository licensing also remain human-gated.
-2. **G3 evidence:** instantiate a public/sanitized HPC case packet with runs,
-   negative tests, resource measurements, and bounded sign-offs.
+2. **G3 evidence partially advanced:** the synthetic HPC downselect now has exact
+   source identities, executable digest generation and aggregate inference, nine
+   positive/adversarial checks, all ten resource axes, all six assessment modes,
+   explicit trust boundaries, freshness rules, and bounded machine evidence.
+   Independent inspection, representative public or sanitized production mapping,
+   measured full-scale resources, and any genuine restricted attestation or
+   domain sign-off remain open.
 3. **G4 independent review:** obtain separate scholarly-communication,
    computational-science, and governance/privacy close reads.
 4. **G5 human release:** resolve AI disclosure, privacy/security review, venue,

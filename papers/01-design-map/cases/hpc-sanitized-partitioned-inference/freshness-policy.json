@@ -1,0 +1,6 @@
+{
+  "schema":"trustandreview.freshness-policy.v0.1",
+  "review_by":"2026-11-30",
+  "drift_checks":["input digests","Python major/minor","algorithm digest","claim configuration","artifact index"],
+  "on_failure":"append a stale or reproduction-failed lifecycle event with affected claim scope and a superseding packet; never edit a failed record into a pass"
+}

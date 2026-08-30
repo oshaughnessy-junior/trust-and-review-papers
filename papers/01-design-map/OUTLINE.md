@@ -240,7 +240,7 @@ of the record, and implementation of the ten-axis/lifecycle representation.
 astrophysical origin, independent replication, general scientific validity,
 security of identity services, or scalability to HPC.
 
-### 6. Worked case B: HPC/GPU/restricted-data workflow with downselects
+### 6. Worked case B: sanitized partitioned-inference downselect for HPC/GPU/restricted workflows
 
 **Scenario:** a RIFT-like scientific inference workflow needing a specialty scheduler, GPUs, substantial compute/storage, domain calibrations, and possibly restricted or too-large raw inputs. The published case must use public or sanitized material and disclose that it is representative rather than an internal collaboration audit.
 
@@ -248,7 +248,10 @@ security of identity services, or scalability to HPC.
 
 1. Decompose claim evidence into acquisition/calibration, preprocessing, expensive inference, reduced posterior or likelihood products, diagnostics, and final claims.
 2. Declare the full resource vector, including scheduler, accelerator class, software stack, storage tiers, wall time, monetary/allocative cost, operator support, domain expertise, and agent assistance.
-3. Provide several explicitly labeled assessment modes:
+3. Provide six explicitly labeled assessment modes; the fixture records bounded
+   recomputation, digest audit, and frozen-output inspection as performed, leaves
+   full independent execution and an independent evidence path unperformed, and
+   keeps restricted-platform attestation as a template only:
    - full rerun for a suitably resourced independent site;
    - reviewer-controlled reduced-scale rerun with convergence/scaling checks;
    - sampled regeneration of digested products from accessible partitions;
