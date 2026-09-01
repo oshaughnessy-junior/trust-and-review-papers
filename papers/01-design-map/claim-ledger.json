@@ -316,7 +316,7 @@
     },
     {
       "id": "P01-C019",
-      "claim": "The attached sanitized partitioned-inference case regenerates digests from four exact synthetic likelihood partitions, constructs an aggregate posterior with MAP theta 2, central probability 1.0 on theta 1 through 3, and zero split-half posterior-mean difference, and passes nine checks while reporting only three of six assessment modes as performed.",
+      "claim": "The attached sanitized partitioned-inference case regenerates digests from four exact synthetic likelihood partitions, constructs an aggregate posterior with MAP theta 2, central probability at least 0.99 on theta 1 through 3, and split-half posterior-mean difference at most 0.01, and passes eleven checks while reporting only three of six assessment modes as performed.",
       "claim_type": "fact",
       "consequence_level": "low",
       "sources": [
@@ -329,7 +329,7 @@
       "identity_status": "verified",
       "support_status": "supported",
       "source_locator": "Attached source manifest, executable transformation, recorded evidence, and passing conformance/adversarial suite",
-      "evidence": "Clean replay verifies all four source identities and regenerated digests; committed aggregate evidence records MAP 2, central probability 1.0, split-half difference 0.0, and all invariants passing; the test suite records nine passes.",
+      "evidence": "Clean replay verifies all four source identities and regenerated digests; committed aggregate evidence records MAP 2 and comfortably passes the registered central-probability and split-half thresholds; the serialized 1.0 and 0.0 values are rounded to 12 decimals; the corrected suite records eleven passes.",
       "disposition": "verified",
       "reviewer": "daily-paper-progress-agent",
       "human_required": false,

@@ -21,14 +21,16 @@ partition fails identity before aggregation.
 
 The unexecuted full-scale scenario declares 8192 partitions, HTCondor, 16 GPUs,
 about 1800 GPU-hours, 6 TB scratch storage, 30 TB retained products, restricted
-input access, operator support, and domain sign-off. These are a realistic resource
+input access, operator support, and domain sign-off. These are an illustrative resource
 shape, not measured production claims.
 
 Only three modes are performed here: bounded recomputation of four sanitized
 partitions, digest audit over those partitions, and inspection of the resulting
 frozen evidence. Full independent execution and an independent evidence path are
 `not-performed`. Restricted-platform attestation is `template-only`. The six modes
-remain non-equivalent in `assessment-modes.json`.
+remain non-equivalent in `assessment-modes.json`. This bounded recomputation has
+named identity, MAP, central-mass, split-half, and adversarial checks but no scaling,
+convergence, or representativeness evidence.
 
 ## Strongest conclusion
 
@@ -37,3 +39,13 @@ aggregate invariants for the exact accessible downselect. It does not support
 full-scale equivalence, partition representativeness, production convergence,
 scheduler/GPU/storage behavior, attestor honesty, independent replication, or
 scientific validity.
+
+## Independent inspection history
+
+IR001 inspected exact commit `a75d671f730ade7a0c42bf1d2cdd0aee2ae23000`
+from a fresh detached same-host clone and returned a hold. It confirmed material
+regeneration and honest exclusions but found that standalone replay could accept a
+coherently failed record and repository validation could accept an omitted index
+entry. The hold, five probes, eight independence dimensions, and required corrections
+are preserved in `independent-review-2026-08-31.json`; a superseding exact-commit
+reinspection is required before clearance.

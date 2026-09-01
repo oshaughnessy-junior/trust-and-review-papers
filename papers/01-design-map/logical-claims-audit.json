@@ -222,7 +222,7 @@
       "consequence_level": "low",
       "ledger_claim_id": "P01-C019",
       "support_status": "verified",
-      "evidence": "Four identity-checked synthetic partitions, executable digest and aggregate algorithms, committed claim evidence, nine passing checks, exact six-mode status vector, and ten-axis resource declaration",
+      "evidence": "Four identity-checked synthetic partitions, executable digest and aggregate algorithms, committed claim evidence, eleven passing checks, exact six-mode status vector, and ten-axis resource declaration",
       "citation": "local hpc-sanitized-partitioned-inference case packet",
       "caveat": "The full-scale resource shape is illustrative; production representativeness, full execution, restricted attestation, independent evidence, and human domain judgment are absent.",
       "unresolved_question": "Can an independent reviewer validate the downselect against a representative public or sanitizable production workflow?",

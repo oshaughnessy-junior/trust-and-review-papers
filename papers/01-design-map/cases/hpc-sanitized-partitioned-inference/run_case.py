@@ -161,6 +161,8 @@ def execute(record: bool) -> dict:
 
 def verify() -> None:
     observed = execute(record=False)
+    if not observed["aggregate"]["passed"]:
+        raise CaseError("registered sanitized invariant failed during replay")
     for key, filename in [
         ("partition_digests", "partition-digests.json"),
         ("aggregate", "aggregate-posterior.json"),

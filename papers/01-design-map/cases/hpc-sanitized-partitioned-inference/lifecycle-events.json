@@ -1,5 +1,9 @@
 {
   "schema":"trustandreview.lifecycle-events.v0.1",
   "append_only":true,
-  "events":[{"event_id":"HPC-SAN-E001","event_type":"sanitized-downselect-release-candidate-recorded","date":"2026-08-30","status":"machine-pass-human-production-signoff-not-applicable","claim_disposition":"Only the sanitized sampled-partition claim is evaluated; full-scale and restricted-platform conclusions remain not performed."}]
+  "events":[
+    {"event_id":"HPC-SAN-E001","event_type":"sanitized-downselect-release-candidate-recorded","date":"2026-08-30","status":"machine-pass-human-production-signoff-not-applicable","claim_disposition":"Only the sanitized sampled-partition claim is evaluated; full-scale and restricted-platform conclusions remain not performed."},
+    {"event_id":"HPC-SAN-E002","event_type":"independent-fresh-context-review-hold","date":"2026-08-31","reviewed_commit":"a75d671f730ade7a0c42bf1d2cdd0aee2ae23000","status":"hold-pending-verifier-corrections","finding_ids":["D1","D2","D3","D4","D5"]},
+    {"event_id":"HPC-SAN-E003","event_type":"verifier-and-record-corrections-prepared","date":"2026-09-01","status":"reinspection-required","corrections":["standalone replay requires passing invariants","packet index requires exact unique coverage","bounded-recomputation scope narrowed","rounded values qualified","resource language changed to illustrative and unmeasured"]}
+  ]
 }

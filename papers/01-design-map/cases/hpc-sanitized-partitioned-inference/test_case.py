@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 import copy
+import hashlib
 import json
+import shutil
+import subprocess
+import tempfile
 import unittest
+from pathlib import Path
 
 import run_case
 
@@ -53,6 +58,44 @@ class SanitizedHPCDownselectTests(unittest.TestCase):
 
     def test_committed_evidence_clean_replay(self):
         run_case.verify()
+
+    def test_coherent_failed_artifacts_are_rejected_by_standalone_replay(self):
+        with tempfile.TemporaryDirectory() as directory:
+            copied = Path(directory) / "case"
+            shutil.copytree(run_case.ROOT, copied, ignore=shutil.ignore_patterns("__pycache__"))
+            source_path = copied / "data/sampled-partitions/partition-000.json"
+            source = json.loads(source_path.read_text())
+            source["log_likelihood"][4] = 50.0
+            source_path.write_text(json.dumps(source, separators=(",", ":")) + "\n")
+            digest = hashlib.sha256(source_path.read_bytes()).hexdigest()
+            manifest_path = copied / "source-manifest.json"
+            manifest = json.loads(manifest_path.read_text())
+            manifest["sources"][0]["sha256"] = digest
+            manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
+            recorded = subprocess.run(
+                ["python3", "run_case.py", "--record"], cwd=copied,
+                text=True, capture_output=True, check=False,
+            )
+            replayed = subprocess.run(
+                ["python3", "run_case.py", "--verify"], cwd=copied,
+                text=True, capture_output=True, check=False,
+            )
+            self.assertNotEqual(recorded.returncode, 0)
+            self.assertNotEqual(replayed.returncode, 0)
+            self.assertIn("registered sanitized invariant failed during replay", replayed.stderr)
+
+    def test_packet_index_is_complete_and_unique(self):
+        index = run_case.read_json(run_case.ROOT / "packet-index.json")
+        paths = [entry["path"] for entry in index["entries"]]
+        actual = {
+            str(path.relative_to(run_case.ROOT))
+            for path in run_case.ROOT.rglob("*")
+            if path.is_file()
+            and path.name != "packet-index.json"
+            and "__pycache__" not in path.parts
+        }
+        self.assertEqual(len(paths), len(set(paths)))
+        self.assertEqual(set(paths), actual)
 
 
 if __name__ == "__main__":

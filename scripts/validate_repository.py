@@ -228,7 +228,24 @@ def main() -> int:
     if hpc_lifecycle.get("append_only") is not True:
         errors.append("sanitized HPC case lifecycle must be append-only")
     hpc_packet_index = json.loads((HPC_CASE / "packet-index.json").read_text())
-    for entry in hpc_packet_index.get("entries", []):
+    hpc_entries = hpc_packet_index.get("entries", [])
+    hpc_indexed_paths = [entry.get("path") for entry in hpc_entries]
+    hpc_actual_paths = {
+        str(path.relative_to(HPC_CASE))
+        for path in HPC_CASE.rglob("*")
+        if path.is_file()
+        and path.name != "packet-index.json"
+        and "__pycache__" not in path.parts
+    }
+    if hpc_packet_index.get("self_excluded") is not True:
+        errors.append("sanitized HPC packet index must explicitly exclude itself")
+    if len(hpc_indexed_paths) != len(set(hpc_indexed_paths)):
+        errors.append("sanitized HPC packet index contains duplicate paths")
+    if set(hpc_indexed_paths) != hpc_actual_paths:
+        missing = sorted(hpc_actual_paths - set(hpc_indexed_paths))
+        unexpected = sorted(set(hpc_indexed_paths) - hpc_actual_paths)
+        errors.append(f"sanitized HPC packet-index coverage mismatch: missing={missing}, unexpected={unexpected}")
+    for entry in hpc_entries:
         indexed = HPC_CASE / entry["path"]
         if not indexed.is_file() or sha256(indexed) != entry["sha256"]:
             errors.append(f"sanitized HPC packet-index mismatch: {entry['path']}")
