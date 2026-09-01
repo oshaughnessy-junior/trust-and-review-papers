@@ -48,4 +48,8 @@ regeneration and honest exclusions but found that standalone replay could accept
 coherently failed record and repository validation could accept an omitted index
 entry. The hold, five probes, eight independence dimensions, and required corrections
 are preserved in `independent-review-2026-08-31.json`; a superseding exact-commit
-reinspection is required before clearance.
+reinspection was required before clearance. IR001-R1 then reviewed exact correction
+commit `5f26da1e5995ff5a0b11fff664dbc82dbc430aa1` in a new detached clone,
+passed 11 checks, and made coherent-failure, index-omission, and duplicate-index
+probes fail. It clears the robustness hold only for this sanitized packet; every
+production and scientific-independence exclusion remains.

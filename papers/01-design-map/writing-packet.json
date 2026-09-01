@@ -26,7 +26,9 @@
     "cases/hpc-sanitized-partitioned-inference/claim-manifest.json",
     "cases/hpc-sanitized-partitioned-inference/artifacts/claim-evidence.json",
     "cases/hpc-sanitized-partitioned-inference/resource-declaration.json",
-    "cases/hpc-sanitized-partitioned-inference/assessment-modes.json"
+    "cases/hpc-sanitized-partitioned-inference/assessment-modes.json",
+    "cases/hpc-sanitized-partitioned-inference/independent-review-2026-08-31.json",
+    "cases/hpc-sanitized-partitioned-inference/independent-remediation-review-2026-09-01.json"
   ],
   "retrieval_capability": "bounded local evidence corpus plus citation identity tools; no independent exhaustive corpus search performed in this drafting pass",
   "claim_ledger": "claim-ledger.json",

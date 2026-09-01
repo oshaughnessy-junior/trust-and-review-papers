@@ -178,6 +178,10 @@ def main() -> int:
         "lifecycle-events.json",
         "restricted-attestation-template.json",
         "review-checklist.md",
+        "independent-review-2026-08-31.json",
+        "independent-review-2026-08-31.md",
+        "independent-remediation-review-2026-09-01.json",
+        "independent-remediation-review-2026-09-01.md",
         "packet-index.json",
         "artifacts/partition-digests.json",
         "artifacts/aggregate-posterior.json",
@@ -227,6 +231,14 @@ def main() -> int:
     hpc_lifecycle = json.loads((HPC_CASE / "lifecycle-events.json").read_text())
     if hpc_lifecycle.get("append_only") is not True:
         errors.append("sanitized HPC case lifecycle must be append-only")
+    hpc_initial_review = json.loads((HPC_CASE / "independent-review-2026-08-31.json").read_text())
+    if hpc_initial_review.get("bounded_disposition") != "HOLD_PENDING_VERIFIER_CORRECTIONS":
+        errors.append("sanitized HPC initial independent review hold must remain preserved")
+    hpc_remediation_review = json.loads((HPC_CASE / "independent-remediation-review-2026-09-01.json").read_text())
+    if hpc_remediation_review.get("reviewed_commit") != "5f26da1e5995ff5a0b11fff664dbc82dbc430aa1":
+        errors.append("sanitized HPC remediation review target mismatch")
+    if hpc_remediation_review.get("disposition") != "IR001_ROBUSTNESS_HOLD_CLEARED_FOR_EXACT_SANITIZED_DOWNSELECT_ONLY":
+        errors.append("sanitized HPC remediation review lacks bounded clearance")
     hpc_packet_index = json.loads((HPC_CASE / "packet-index.json").read_text())
     hpc_entries = hpc_packet_index.get("entries", [])
     hpc_indexed_paths = [entry.get("path") for entry in hpc_entries]

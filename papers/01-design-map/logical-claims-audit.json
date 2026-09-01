@@ -227,6 +227,20 @@
       "caveat": "The full-scale resource shape is illustrative; production representativeness, full execution, restricted attestation, independent evidence, and human domain judgment are absent.",
       "unresolved_question": "Can an independent reviewer validate the downselect against a representative public or sanitizable production workflow?",
       "action": "keep"
+    },
+    {
+      "id": "LA-017",
+      "text": "A fresh-context review can preserve an initial verifier hold, require remediation, and clear only the exact packet-robustness defect without becoming scientific or production validation.",
+      "rhetorical_role": "demonstrate the PR-style review lifecycle while preserving decomposed independence and claim scope",
+      "logic_type": "paper-description",
+      "consequence_level": "low",
+      "ledger_claim_id": "P01-C020",
+      "support_status": "verified",
+      "evidence": "IR001 and IR001-R1 exact-commit reports, five adversarial findings/corrections, and append-only lifecycle events E002 through E004",
+      "citation": "local independent review and remediation reports",
+      "caveat": "Same-host fresh context supplies limited custody and executor separation only; production and scientific independence remain absent.",
+      "unresolved_question": "Can qualified external domain reviewers validate a representative production mapping under a separately governed custody path?",
+      "action": "keep"
     }
   ]
 }

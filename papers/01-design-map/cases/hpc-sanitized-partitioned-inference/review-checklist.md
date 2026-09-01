@@ -22,4 +22,4 @@
 - [ ] Obtain a real restricted-platform attestation if a relying domain accepts that boundary.
 - [ ] Execute a different method or implementation for independent evidence.
 - [ ] Resolve licensing and archival identity before release.
-- [ ] Reinspect the corrections at an exact detached commit before clearing IR001.
+- [x] Reinspect corrections at exact commit `5f26da1e5995ff5a0b11fff664dbc82dbc430aa1`; IR001 robustness hold cleared only for the sanitized packet.

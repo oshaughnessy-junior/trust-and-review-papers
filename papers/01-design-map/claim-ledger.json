@@ -335,6 +335,26 @@
       "human_required": false,
       "human_verifier": null,
       "notes": "Synthetic implementation observation only. The illustrative full-scale resource shape is not measured production evidence; representativeness, full execution, restricted attestation, independent evidence, human domain sign-off, replication, and scientific validity remain unwarranted."
+    },
+    {
+      "id": "P01-C020",
+      "claim": "A separate fresh-context same-host review placed the sanitized HPC packet on hold after exposing two verifier false-assurance paths; a second detached review of exact correction commit 5f26da1 verified all five corrections, eleven passing checks, and rejection of coherent-failure, index-omission, and duplicate-index probes, clearing only the packet-robustness hold.",
+      "claim_type": "fact",
+      "consequence_level": "low",
+      "sources": [
+        "artifact:cases/hpc-sanitized-partitioned-inference/independent-review-2026-08-31.json",
+        "artifact:cases/hpc-sanitized-partitioned-inference/independent-remediation-review-2026-09-01.json",
+        "artifact:cases/hpc-sanitized-partitioned-inference/lifecycle-events.json"
+      ],
+      "identity_status": "verified",
+      "support_status": "supported",
+      "source_locator": "IR001 initial exact-commit report, IR001-R1 remediation report, and append-only events E002 through E004",
+      "evidence": "IR001 records a standalone coherent-failure replay false-positive and packet-index omission false-positive at a75d671. IR001-R1 records both corrected at 5f26da1, plus duplicate-index rejection, 11/11 tests, root validation, and narrow arithmetic cross-check.",
+      "disposition": "verified",
+      "reviewer": "daily-paper-progress-agent",
+      "human_required": false,
+      "human_verifier": null,
+      "notes": "Fresh checkout custody and executor context were only limited forms of separation. This is not independent implementation, inputs, libraries, institution, method, scientific judgment, production representativeness, replication, or validity."
     }
   ]
 }

@@ -49,7 +49,7 @@ scientific validity, or review-system effectiveness.
   specifications;
 - `writing-packet.json`: audience, evidence inputs, constraints, exclusions,
   and human questions;
-- `claim-ledger.json`: 19 consequential claims with identity/support posture;
+- `claim-ledger.json`: 20 consequential claims with identity/support posture;
 - `logical-claims-audit.json`: rhetorical and logical-strength audit.
 
 The local bibliography identity command could not reach external metadata
@@ -127,7 +127,7 @@ fatal errors. Render inspection covered manuscript pages 6–8 and bibliography
 pages 18–21; the added section and new references are readable with no clipping or
 malformed page break. `git diff --check` passed.
 
-## Verification update — 2026-08-30
+## Verification update — 2026-08-30 (predecessor `a75d671`)
 
 The sanitized HPC downselect passed nine unit and adversarial checks plus clean
 replay. Its 21-entry packet index, four source identities, exact ten-axis resource
@@ -139,6 +139,19 @@ Rendered inspection of pages 11–14 covered the case transition, full assessmen
 mode table, remaining-evidence gate, and threat-table transition with no clipping or
 malformed page break. No external source was added, so bibliography identity and
 support artifacts were unchanged and no new bibliography audit was required.
+
+## Verification update — 2026-09-01
+
+IR001 independently inspected predecessor `a75d671`, confirmed material
+regeneration, and returned a hold after two verifier false-positive probes. The
+correction target `5f26da1` passed 11 checks and a 23-entry packet audit; a second
+fresh detached inspection made coherent-failure, index-omission, and duplicate-
+index mutations fail and cleared only the packet-robustness hold. This wrapper has
+25 indexed non-self files because it adds both remediation-review records. Twenty
+ledger claims and 17 logical claims validate. Production representativeness,
+qualified domain judgment, full execution, real restricted attestation, and an
+independent evidence path remain absent. No external source was added, so no new
+bibliography audit was required.
 
 ## First unmet gates
 
@@ -154,12 +167,14 @@ support artifacts were unchanged and no new bibliography audit was required.
    a distinct possible evidence path.
    Archival identity and repository licensing also remain human-gated.
 2. **G3 evidence partially advanced:** the synthetic HPC downselect now has exact
-   source identities, executable digest generation and aggregate inference, nine
+   source identities, executable digest generation and aggregate inference, eleven
    positive/adversarial checks, all ten resource axes, all six assessment modes,
    explicit trust boundaries, freshness rules, and bounded machine evidence.
-   Independent inspection, representative public or sanitized production mapping,
-   measured full-scale resources, and any genuine restricted attestation or
-   domain sign-off remain open.
+   A fresh-context same-host review preserved an initial verifier hold, and a
+   second detached inspection cleared all five corrections at exact commit
+   `5f26da1`. Representative public or sanitized production mapping, qualified
+   domain inspection, measured full-scale resources, and any genuine restricted
+   attestation or domain sign-off remain open.
 3. **G4 independent review:** obtain separate scholarly-communication,
    computational-science, and governance/privacy close reads.
 4. **G5 human release:** resolve AI disclosure, privacy/security review, venue,
