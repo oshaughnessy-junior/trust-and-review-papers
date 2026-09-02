@@ -355,6 +355,28 @@
       "human_required": false,
       "human_verifier": null,
       "notes": "Fresh checkout custody and executor context were only limited forms of separation. This is not independent implementation, inputs, libraries, institution, method, scientific judgment, production representativeness, replication, or validity."
+    },
+    {
+      "id": "P01-C021",
+      "claim": "Public RIFT sources expose initial-grid, parallel ILE, likelihood-consolidation, CIP/posterior, iterative-convergence, HTCondor/log, output-product, and GPU review surfaces; the attached mapping records only documentary correspondences between those surfaces and the sanitized fixture.",
+      "claim_type": "fact",
+      "consequence_level": "low",
+      "sources": [
+        "doi:10.48550/arXiv.1805.10457",
+        "doi:10.1103/PhysRevD.99.084026",
+        "url:https://rift-documentation.readthedocs.io/en/latest/overview.html",
+        "url:https://rift-documentation.readthedocs.io/en/latest/using-pipeline.html",
+        "artifact:cases/hpc-sanitized-partitioned-inference/public-production-mapping-rift-v0.1.json"
+      ],
+      "identity_status": "verified",
+      "support_status": "supported",
+      "source_locator": "RIFT paper abstracts; project Overview Basic Workflow; Using the pipeline Basics, Understanding ILE and CIP, Initialization, and dependency sections; attached mapping correspondences and blocked assertions",
+      "evidence": "The sources identify RIFT's algorithm and GPU path and document its public workflow artifacts. The local mapping pairs each layer with a narrow fixture analogue and an explicit critical difference, while preserving all six assessment-mode statuses.",
+      "disposition": "verified",
+      "reviewer": "daily-paper-progress-agent",
+      "human_required": false,
+      "human_verifier": null,
+      "notes": "Documentary mapping only. No RIFT execution, fixture representativeness, measured RIFT resource requirement, restricted evidence, qualified domain sign-off, replication, or scientific-validity conclusion is warranted."
     }
   ]
 }

@@ -27,6 +27,7 @@
     "cases/hpc-sanitized-partitioned-inference/artifacts/claim-evidence.json",
     "cases/hpc-sanitized-partitioned-inference/resource-declaration.json",
     "cases/hpc-sanitized-partitioned-inference/assessment-modes.json",
+    "cases/hpc-sanitized-partitioned-inference/public-production-mapping-rift-v0.1.json",
     "cases/hpc-sanitized-partitioned-inference/independent-review-2026-08-31.json",
     "cases/hpc-sanitized-partitioned-inference/independent-remediation-review-2026-09-01.json"
   ],
@@ -42,7 +43,7 @@
   "human_questions": [
     "Authorship is attributed to Codex (OpenAI), on behalf of R. O'Shaughnessy; what exact AI-assistance disclosure and venue policy language is required before release?",
     "Which exact venue and article type should govern final length and style?",
-    "Which public or sanitizable production workflow can test whether the synthetic HPC downselect is representative without exposing restricted material?",
+    "Can a public RIFT example be executed under separately recorded custody, or can a qualified reviewer inspect the documentary mapping with measured resource and lineage evidence?",
     "What evidence would justify promoting the plural-trust architecture from design profile to empirical recommendation?"
   ],
   "constraints": [
@@ -56,7 +57,7 @@
     "The architecture improves peer-review quality.",
     "Plural trust views outperform global reputation.",
     "Per-case personas guarantee anonymity.",
-    "Both worked cases have been independently scientifically reviewed; the portable case has bounded non-independent human GW sign-off, while the synthetic HPC downselect has no independent inspection, production representativeness evidence, restricted attestation, or human domain sign-off.",
+    "Both worked cases have been independently scientifically reviewed; the portable case has bounded non-independent human GW sign-off, while the synthetic HPC downselect has a limited fresh-context packet-robustness inspection and documentary RIFT mapping but no production representativeness evidence, restricted attestation, or human production-domain sign-off.",
     "Machine checks establish scientific validity.",
     "This is the first system to combine provenance, review, and reputation."
   ]

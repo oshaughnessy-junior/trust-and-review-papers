@@ -28,10 +28,11 @@ The manuscript includes:
 Case A now includes a bounded public R0 implementation observation, separate-agent
 clean-checkout replay, and non-independent human GW scientific acceptance for the
 registered candidate conclusion. Case B now includes a synthetic partitioned-
-inference downselect with registered inputs, regenerated digests, nine checks,
+inference downselect with registered inputs, regenerated digests, eleven checks,
 six explicitly non-equivalent assessment modes, and a ten-axis distinction between
-local and illustrative full-scale resources. It is not representative production
-evidence. Neither case is evidence of independent scientific replication, broader
+local and illustrative full-scale resources. A source-bounded public RIFT mapping
+now names the production layers the fixture omits without claiming RIFT execution
+or representativeness. Neither case is evidence of independent scientific replication, broader
 scientific validity, or review-system effectiveness.
 
 ## Source and claim artifacts
@@ -49,7 +50,7 @@ scientific validity, or review-system effectiveness.
   specifications;
 - `writing-packet.json`: audience, evidence inputs, constraints, exclusions,
   and human questions;
-- `claim-ledger.json`: 20 consequential claims with identity/support posture;
+- `claim-ledger.json`: 21 consequential claims with identity/support posture;
 - `logical-claims-audit.json`: rhetorical and logical-strength audit.
 
 The local bibliography identity command could not reach external metadata
@@ -153,6 +154,21 @@ qualified domain judgment, full execution, real restricted attestation, and an
 independent evidence path remain absent. No external source was added, so no new
 bibliography audit was required.
 
+## Verification update — 2026-09-02
+
+The source-bounded public RIFT mapping records seven scientific or operational
+correspondences and a critical difference for each. It changes none of the six
+assessment modes and blocks RIFT execution, representativeness, measured-resource,
+restricted-evidence, and domain-sign-off claims. The mapping is included in the
+case packet with a targeted DOI audit for two primary papers and manual source
+locators for two mutable public documentation pages. Twenty-one ledger claims and
+18 logical claims validate. The case passes 11 tests, clean replay, a complete
+27-entry non-self packet index, and root repository validation. The manuscript
+compiles to 23 letter-size pages with no summarized LaTeX warnings, overfull
+boxes, unresolved citations, or unresolved references. Rendered pages 12--14 and
+20--23 show the changed case text and bibliography without clipping, overlap, or
+malformed page breaks.
+
 ## First unmet gates
 
 1. **G2 evidence complete at the bounded case level:** the GW150914-v2 public R0 release candidate now has registered
@@ -172,8 +188,11 @@ bibliography audit was required.
    explicit trust boundaries, freshness rules, and bounded machine evidence.
    A fresh-context same-host review preserved an initial verifier hold, and a
    second detached inspection cleared all five corrections at exact commit
-   `5f26da1`. Representative public or sanitized production mapping, qualified
-   domain inspection, measured full-scale resources, and any genuine restricted
+   `5f26da1`. A public RIFT documentary mapping now identifies the larger workflow's
+   grid, ILE, consolidation, CIP, iteration/convergence, scheduler/log, output, and
+   GPU surfaces without claiming execution or representativeness. Public RIFT
+   execution under separate custody, qualified domain inspection, measured
+   full-scale resources, and any genuine restricted
    attestation or domain sign-off remain open.
 3. **G4 independent review:** obtain separate scholarly-communication,
    computational-science, and governance/privacy close reads.

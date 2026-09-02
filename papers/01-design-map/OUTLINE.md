@@ -242,7 +242,7 @@ security of identity services, or scalability to HPC.
 
 ### 6. Worked case B: sanitized partitioned-inference downselect for HPC/GPU/restricted workflows
 
-**Scenario:** a RIFT-like scientific inference workflow needing a specialty scheduler, GPUs, substantial compute/storage, domain calibrations, and possibly restricted or too-large raw inputs. The published case must use public or sanitized material and disclose that it is representative rather than an internal collaboration audit.
+**Scenario:** a sanitized scientific inference fixture compared against the public RIFT workflow, which needs a specialty scheduler and can use GPUs while relying on substantial scientific and operational context. The public mapping is documentary only: it identifies RIFT's grid, ILE, consolidation, CIP, iteration/convergence, HTCondor, log, product, and accelerator review surfaces but does not claim a RIFT run, production representativeness, or access to internal collaboration material.
 
 **Walkthrough:**
 

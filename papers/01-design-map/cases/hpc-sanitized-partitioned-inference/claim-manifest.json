@@ -11,9 +11,15 @@
       "execution or validation of the declared 8192-partition full-scale workload",
       "representativeness of the four sanitized partitions for restricted or production data",
       "full-scale convergence, scheduler behavior, GPU numerical equivalence, or storage integrity",
+      "execution of RIFT or representativeness of the fixture for RIFT ILE, CIP, convergence, or production resource behavior",
       "truthfulness of a restricted-platform attestor",
       "independent replication or scientific validity"
     ]
+  },
+  "public_production_mapping": {
+    "artifact": "public-production-mapping-rift-v0.1.json",
+    "status": "documentary-only",
+    "claim_effect": "No machine disposition or assessment-mode status changes."
   },
   "configuration": {
     "theta_grid": [0, 1, 2, 3, 4],

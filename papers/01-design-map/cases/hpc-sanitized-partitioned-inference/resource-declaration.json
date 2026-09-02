@@ -2,16 +2,17 @@
   "schema": "trustandreview.resource-declaration.v0.1",
   "case_id": "hpc-sanitized-partitioned-inference-v0.1-rc1",
   "axes": {
-    "compute": {"full_scale_declared":"16 GPUs, 1800 GPU-hours; not executed","downselect_observed":"one CPU process"},
-    "storage": {"full_scale_declared":"6 TB scratch, 30 TB retained products; not provisioned","downselect_declared":"less than 1 MB inputs and artifacts"},
+    "compute": {"full_scale_declared":"illustrative protocol stress shape: 16 GPUs, 1800 GPU-hours; not executed, measured, or sourced as a RIFT requirement","downselect_observed":"one CPU process"},
+    "storage": {"full_scale_declared":"illustrative protocol stress shape: 6 TB scratch, 30 TB retained products; not provisioned, measured, or sourced as a RIFT requirement","downselect_declared":"less than 1 MB inputs and artifacts"},
     "access": {"full_scale_declared":"restricted inputs inside approved facility","downselect":"sanitized bundled partitions"},
-    "platform": {"full_scale_declared":"HTCondor plus CUDA-capable workers","downselect":"contemporary Python 3, no scheduler or accelerator"},
-    "wall_clock": {"full_scale_declared":"multi-day queue and execution latency","downselect_observed_seconds":0.001762417},
+    "platform": {"full_scale_declared":"illustrative HTCondor plus CUDA-capable workers; public RIFT documentation describes HTCondor and recommends CUDA/CuPy, but this fixture does not measure or execute them","downselect":"contemporary Python 3, no scheduler or accelerator"},
+    "wall_clock": {"full_scale_declared":"illustrative multi-day queue and execution latency; not measured or sourced as a RIFT requirement","downselect_observed_seconds":0.001365541},
     "human_expertise": {"full_scale":"domain scientist for model/calibration/convergence sign-off","downselect":"basic statistical and Python review"},
     "agent_capability": {"required":false,"authoring_support":"Codex; not scientific approver"},
     "operator_support": {"full_scale":"scheduler, storage, failed-job recovery, and export review","downselect":"none beyond local CLI"},
     "monetary_allocative_cost": {"full_scale_declared":"allocation required; monetary equivalent not asserted","downselect":"unmeasured; no separately allocated charge is claimed"},
     "freshness": {"review_by":"2026-11-30","on_failure":"append stale or reproduction-failed event; do not overwrite prior evidence"}
   },
+  "public_production_mapping": {"artifact":"public-production-mapping-rift-v0.1.json","status":"documentary-only","effect_on_measured_values":"none"},
   "non_substitutability": "The ten axes are descriptive and not reducible to a scalar; expert judgment, restricted access, storage, and GPU-hours are not interchangeable."
 }

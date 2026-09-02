@@ -14,10 +14,13 @@
 - [x] Packet-index validation requires complete and unique non-self coverage.
 - [x] Bounded recomputation names checks and excludes scaling, convergence, and representativeness.
 - [x] Rounded values and illustrative/unmeasured resource language are explicit.
+- [x] Public RIFT stages are source-bounded and mapped as documentary analogies only.
+- [x] The mapping changes no assessment mode and blocks RIFT execution, representativeness, and measured-resource claims.
 
 ## Human or independent work still required
 
 - [ ] Determine whether the sanitized partitions represent any intended production claim.
+- [ ] Execute a public RIFT example under separately recorded custody or obtain qualified inspection of the documentary mapping.
 - [ ] Inspect production calibration, model, convergence, scheduler, GPU, retry, and storage behavior.
 - [ ] Obtain a real restricted-platform attestation if a relying domain accepts that boundary.
 - [ ] Execute a different method or implementation for independent evidence.

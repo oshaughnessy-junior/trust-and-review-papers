@@ -178,6 +178,8 @@ def main() -> int:
         "lifecycle-events.json",
         "restricted-attestation-template.json",
         "review-checklist.md",
+        "public-production-mapping-rift-v0.1.json",
+        "public-production-mapping-rift-v0.1.md",
         "independent-review-2026-08-31.json",
         "independent-review-2026-08-31.md",
         "independent-remediation-review-2026-09-01.json",
@@ -225,6 +227,19 @@ def main() -> int:
         errors.append("sanitized HPC case must not report full independent execution")
     if next((item.get("status") for item in hpc_modes if item.get("id") == "independent-evidence-path"), None) != "not-performed":
         errors.append("sanitized HPC case must not report an independent evidence path")
+    hpc_mapping = json.loads((HPC_CASE / "public-production-mapping-rift-v0.1.json").read_text())
+    if hpc_mapping.get("status") != "documentary-only":
+        errors.append("sanitized HPC public RIFT mapping must remain documentary-only")
+    if hpc_mapping.get("assessment_mode_effect", {}).get("changed_modes") != []:
+        errors.append("sanitized HPC public RIFT mapping must not change an assessment mode")
+    preserved_statuses = hpc_mapping.get("assessment_mode_effect", {}).get("preserved_statuses", {})
+    observed_statuses = {item.get("id"): item.get("status") for item in hpc_modes}
+    if preserved_statuses != observed_statuses:
+        errors.append("sanitized HPC public RIFT mapping must preserve exact six-mode statuses")
+    blocked_text = " ".join(hpc_mapping.get("blocked_assertions", [])).lower()
+    for required_boundary in ["executes rift", "representative", "measured or sourced rift", "restricted data"]:
+        if required_boundary not in blocked_text:
+            errors.append(f"sanitized HPC public RIFT mapping lacks blocked boundary: {required_boundary}")
     attestation = json.loads((HPC_CASE / "restricted-attestation-template.json").read_text())
     if attestation.get("status") != "TEMPLATE_ONLY_NOT_AN_ATTESTATION":
         errors.append("sanitized HPC attestation must remain an unexecuted template")

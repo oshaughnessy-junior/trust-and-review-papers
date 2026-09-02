@@ -241,6 +241,20 @@
       "caveat": "Same-host fresh context supplies limited custody and executor separation only; production and scientific independence remain absent.",
       "unresolved_question": "Can qualified external domain reviewers validate a representative production mapping under a separately governed custody path?",
       "action": "keep"
+    },
+    {
+      "id": "LA-018",
+      "text": "A public RIFT mapping can identify the scientific and operational layers omitted by a sanitized downselect without promoting that downselect to a RIFT run or production-representativeness result.",
+      "rhetorical_role": "advance the production-mapping gate while preserving the distinction between documentary correspondence and execution evidence",
+      "logic_type": "paper-description",
+      "consequence_level": "low",
+      "ledger_claim_id": "P01-C021",
+      "support_status": "verified",
+      "evidence": "Primary RIFT algorithm and GPU papers, public project workflow documentation, and an attached layer-by-layer mapping with critical differences and unchanged assessment modes",
+      "citation": "lange-rift-2018; wysocki-rift-gpu-2019; rift-docs-overview-2026; rift-docs-pipeline-2026; local public-production-mapping-rift-v0.1.json",
+      "caveat": "Documentation is mutable and no RIFT code, data, DAG, ILE/CIP stage, convergence test, scheduler, or GPU path was executed.",
+      "unresolved_question": "Can a public RIFT example be executed under separately recorded custody, or can a qualified reviewer supply measured resource and lineage evidence?",
+      "action": "keep"
     }
   ]
 }
