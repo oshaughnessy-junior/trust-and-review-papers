@@ -148,3 +148,21 @@ material amendment and one counterexample. Let useful objections determine which
 additional machinery is worth building. A proposal that can be narrowed, simplified
 or rejected through a cheap reproducible example is ready to seed a serious
 protocol conversation.
+
+## Agent-first launch cycle
+
+The maintainer subsequently authorized deployment and repository publication.
+The [launch record](../publication/launch.md) supersedes earlier pending-release
+status without changing the scientific limits in this review. A new blue lane
+added the local JSON interface and four agent task fixtures; the [new adversarial
+report](agent-launch-red/REPORT.md) challenges identity, versioning, authority,
+capacity and input bounds. The interface is independently executable but does
+not authenticate callers or perform the claimed scientific checks.
+
+This cycle changed the demonstrations to offer genuinely corrected content while
+retaining old pending reliance. It also binds the complete offered profile, so
+a new dependency or coverage contract can create a distinct version without
+fabricating a data change. Agent aliases map through trusted local policy to a
+shared principal ledger. Undisclosed common control and real shared capacity
+remain external premises. The current test total is in the final validation
+manifest; earlier counts describe earlier versions.

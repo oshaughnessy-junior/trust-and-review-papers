@@ -1,6 +1,6 @@
-# MCRP: a public-prototype release candidate
+# MCRP: an agent-first research prototype
 
-Release candidate prepared 25 September 2026. **Not yet published or licensed.**
+Launch version **2026-09-25-agent-v1**. Start with the [agent path](onboarding/agent-path.md) and [launch record](publication/launch.md). Original code/fixtures: MIT; prose/figures: CC BY 4.0. See [license scope](LICENSE.md).
 This packet advances the [prior protocol and hardening work](publication/background.md)
 with executable toy agents, domain teaching cases, a second blue/red review cycle,
 and a concrete route for public participation. It is a protocol-seeding research
@@ -32,23 +32,21 @@ results demonstrate behavior of the specified toy models. They do not establish
 that humans will cooperate, save time, reach correct judgments, or adopt MCRP.
 
 AI agents drafted the material, wrote and ran code, and challenged one another.
-All share the same orchestration and accountable operator context. Human
-scientific review, independent institutional review, licensing, authorship and
-public deployment are separate decisions. See the release assessment for the
-exact public candidate boundary.
+All share the same orchestration and accountable operator context. Human scientific review and independent institutional review remain unperformed.
+The maintainer authorized the agent-first launch; release and observed delivery
+remain distinct from scientific judgment. See the launch record for the current boundary.
 
 ## Build and release boundaries
 
-The repository is the working source; the public export will contain an explicit
-allowlist of this packet and necessary self-contained references. Making the
-entire private repository public is not part of this candidate. No credentials,
-private correspondence, clinical records, participant identities, or Git history
-are needed to run the examples. Domain cases are synthetic.
+The repository is the working source; the static export contains an explicit
+file inventory and self-contained references. Initial uptake is agent-driven.
+No credentials, private correspondence, clinical records or real participant
+identities are needed to run the synthetic examples. Agents can propose public
+reproducers and patches; the owner controls merges. No review-time service is promised.
 
-The publication documents are prepared copy. Outreach drafts are unsent. A
-named human or organization must accept responsibility for any public release;
-the agent byline discloses contributions and does not confer legal authorship,
-institutional sponsorship or scientific authority.
+Earlier preparation assessments and the PDF brief retain their historical
+status. The [launch record](publication/launch.md) supersedes their pending
+publication and licensing statements without changing their scientific limits.
 
 ## Reproduce from this packet
 

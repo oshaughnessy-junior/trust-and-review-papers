@@ -19,6 +19,6 @@ test_coverage_unavailable (test_protocol.SelectionTests) ... ok
 test_seedwise_group_distribution_invariance (test_protocol.SelectionTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 19 tests in 0.009s
+Ran 19 tests in 0.010s
 
 OK

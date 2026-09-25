@@ -1,5 +1,7 @@
 # Put the candidate on publication surfaces without changing its meaning
 
+**Historical preparation plan.** See [the later launch decision](launch.md) for the authorized agent-first deployment and adopted packet licenses.
+
 Prepared integration plan for the existing outward-facing Jekyll research site.
 No site file, public repository, deployment setting or external account was changed
 by this packet. Paths below are proposed placements, not existing public URLs.

@@ -31,8 +31,8 @@ def shell(title, content, prefix="", toc=""):
 <body><header><a href="{prefix}index.html">MCRP / Research prototype</a>
 <nav aria-label="Main"><a href="{prefix}publication/blog-introduction.html">Introduction</a>
 <a href="{prefix}domains/README.html">Domain cases</a><a href="{prefix}reviews/COLLECTIVE.html">Red-team review</a></nav></header>
-<main>{content}</main><footer>Release candidate · Synthetic models · Substantial AI contribution disclosed.
-No external peer review or operational certification. <a href="{prefix}publication/release-assessment.html">Release assessment</a> ·
+<main>{content}</main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="{prefix}publication/launch.html">Launch and contribution terms</a> ·
 <a href="{prefix}export-manifest.json">File manifest</a></footer></body></html>'''
 
 
@@ -88,14 +88,14 @@ def _build_staged(output):
     (output / "source-manifest.json").write_text(json.dumps({
         "schema": "mcrp.public-candidate-source.v1", "source_files_sha256": source_hashes,
         "rendering": "Pandoc MathML; relative Markdown links rewritten to HTML; private-history links mapped to public background",
-        "transformed_markdown": transforms, "license_status": "proposed, not adopted",
-        "public_release_status": "not published; exact candidate approval pending"}, indent=2) + "\n")
+        "transformed_markdown": transforms, "license_status": "MIT code/fixtures; CC BY 4.0 original prose/figures; retained third-party terms; see LICENSE.md",
+        "public_release_status": "maintainer-authorized agent-first launch; live delivery observation recorded separately"}, indent=2) + "\n")
     (output / ".nojekyll").write_bytes(b"")
     created.update({"index.html", "source-manifest.json", ".nojekyll"})
     files = {name: sha((output / name).read_bytes()) for name in sorted(created)}
     content_digest = sha(json.dumps(files, sort_keys=True, separators=(",", ":")).encode())
     (output / "export-manifest.json").write_text(json.dumps({
-        "schema": "mcrp.public-candidate-export.v1", "release_candidate": "2026-09-25-rc1",
+        "schema": "mcrp.public-candidate-export.v1", "release_candidate": "2026-09-25-agent-v1",
         "files": files, "file_map_sha256": content_digest,
         "scope": "Integrity inventory, not a signature or approval; excludes this manifest and download ZIP"}, indent=2) + "\n")
     # Zip has fixed metadata; no private Git history, absolute paths or symlinks.

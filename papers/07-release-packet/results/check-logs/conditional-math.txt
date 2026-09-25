@@ -21,6 +21,6 @@ test_completion_envelope_is_tight_and_monotone (test_protocol_math.RetryTests) .
 test_finite_tree_oracle (test_protocol_math.RetryTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 21 tests in 0.007s
+Ran 21 tests in 0.008s
 
 OK

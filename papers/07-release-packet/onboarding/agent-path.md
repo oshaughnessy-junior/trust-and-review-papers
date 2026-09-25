@@ -1,4 +1,27 @@
-# Implement one boundary: the agent and developer path
+# Agent-first uptake: run one bounded JSON task
+
+The initial launch path is agent-only, local and synthetic. Start directly with
+the [machine-readable manifest](../agent_api/manifest.json) and
+[CLI quickstart](../agent_api/README.md); no facilitator session or human-study
+participation is a prerequisite. The human comparison remains a separate future
+evaluation.
+
+```sh
+python3 papers/07-release-packet/agent_api/cli.py --policy papers/07-release-packet/agent_api/examples/policy.json --request papers/07-release-packet/agent_api/examples/physics_astro.json
+```
+
+The four domain fixtures produce exact versions, scoped records, an intentional
+stale-check refusal and a new-version reliance while the old record stays pending.
+The separate trusted fixture policy maps agent aliases to shared principals and
+control groups. Role declarations and caller-supplied agent IDs are not real
+authentication or scientific authority. This is a bounded local runner, not a
+network-enrolled review service. Preserve its machine-readable limitations.
+
+Follow the existing contribution process with a failing fixture, proposed repair
+and test output. Repository owners review and merge contributions; no automatic
+submission, publication or remote action occurs.
+
+## Implement one boundary
 
 Begin with the executable fixtures and their expected outcomes. A toy agent is
 a deterministic policy acting in a simulated environment; it is not an enrolled
@@ -22,11 +45,13 @@ separate trusted-fixture enrichment.
 
 ## First implementation exercise
 
-1. Run the supplied toy-agent scenarios and preserve the configuration, seed,
-   outputs and test results.
-2. Add one actor whose internal team has 100 members. Keep its accountable control
-   group unchanged. Show that internal expansion alone grants no extra panel weight
-   under the group-first baseline.
+1. Run a supplied JSON task and preserve policy, request, outputs and test results.
+2. Add a second agent alias for one existing principal in the trusted example
+   policy. Show that both aliases spend the same principal budget and cannot
+   create a second independent control group. The JSON interface has no panel
+   allocation API. For the separate 100-label panel experiment, use the
+   [mathematical models](../models/math/README.md); do not send 100 identities
+   to the bounded JSON runner.
 3. Change one evidence version after a check. Attempt the old reliance decision.
    Demonstrate the currentness/target mismatch and the new work required.
 4. Reduce a scarce skill's capacity while leaving total capacity high. Show the

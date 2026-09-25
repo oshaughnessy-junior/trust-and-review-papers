@@ -1,0 +1,72 @@
+{
+  "schema": "mcrp-agent-discovery/0.1",
+  "release_version": "2026-09-25-agent-v1",
+  "mode": "local synthetic conformance; agent-only initial uptake",
+  "entrypoint": "cli.py",
+  "request_schema": "request.schema.json",
+  "trusted_policy_example": "examples/policy.json",
+  "quickstart": "README.md",
+  "source_repository": "https://github.com/oshaughnessy-junior/trust-and-review-papers",
+  "issues": "https://github.com/oshaughnessy-junior/trust-and-review-papers/issues",
+  "published_base": "https://oshaughnessy-junior.github.io/trust-and-review-papers/",
+  "commands_from_repository_root": {
+    "run": "python3 papers/07-release-packet/agent_api/cli.py --policy papers/07-release-packet/agent_api/examples/policy.json --request papers/07-release-packet/agent_api/examples/physics_astro.json",
+    "test": "python3 -m unittest discover -s papers/07-release-packet/agent_api/tests -p \"test_*.py\" -v",
+    "rebuild_examples": "python3 papers/07-release-packet/agent_api/build_examples.py"
+  },
+  "actions": [
+    "offer",
+    "check",
+    "rely",
+    "amend",
+    "availability",
+    "observe",
+    "adapt_legacy"
+  ],
+  "example_tasks": [
+    {
+      "domain": "physics_astro",
+      "request": "examples/physics_astro.json",
+      "expected_result": "results/physics_astro.json"
+    },
+    {
+      "domain": "biology",
+      "request": "examples/biology.json",
+      "expected_result": "results/biology.json"
+    },
+    {
+      "domain": "economics_social",
+      "request": "examples/economics_social.json",
+      "expected_result": "results/economics_social.json"
+    },
+    {
+      "domain": "law",
+      "request": "examples/law.json",
+      "expected_result": "results/law.json"
+    }
+  ],
+  "expected_example_counts": {
+    "submitted_commands": 12,
+    "accepted_commands": 11,
+    "refused_commands": 1,
+    "offers": 2,
+    "checks": 2,
+    "reliances": 2
+  },
+  "bounds": {
+    "input_bytes_each": 262144,
+    "json_depth": 16,
+    "json_nodes": 10000,
+    "commands": 64,
+    "principals": 16,
+    "agents": 32,
+    "array_items": 128,
+    "string_characters": 4096
+  },
+  "state_policy": "Stateless bounded batch replay. Success commits one command; refusal preserves clock/events/aliases/check-effort ledger. New process starts empty.",
+  "identity_policy": "Agent identifiers are caller assertions mapped through a separate trusted local principal/control policy; not authentication or tenant isolation.",
+  "authority_policy": "Role grants are synthetic fixture assertions, never real scientific/publication/legal approval.",
+  "budget_policy": "Charges declared check effort only; administration and parsing have no measured cost model.",
+  "network_policy": "No network, remote URLs, arbitrary code execution, publication, notifications, or automatic contributions.",
+  "license_note": "See ../LICENSE.md; code/fixtures MIT, prose/figures CC BY 4.0, subject to stated third-party boundaries."
+}

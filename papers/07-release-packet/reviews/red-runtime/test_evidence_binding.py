@@ -30,7 +30,7 @@ def source_tree(root):
         'results/figures/chart.svg':'<svg xmlns="http://www.w3.org/2000/svg"></svg>',
     }.items():
         p=root/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(body)
-    for rel in ('publication/blog-introduction.md','domains/README.md','reviews/COLLECTIVE.md','publication/release-assessment.md'):
+    for rel in ('publication/blog-introduction.md','domains/README.md','reviews/COLLECTIVE.md','publication/release-assessment.md','publication/launch.md'):
         p=root/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text('# Fixture\nPublic text.\n')
 
 

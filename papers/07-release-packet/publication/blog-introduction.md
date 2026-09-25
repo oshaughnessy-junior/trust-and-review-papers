@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 ai_generated: true
 categories: [research, reproducibility]
 publication_lane: ai-research-infrastructure
@@ -8,8 +8,8 @@ related_posts: false
 title: "What can we rely on? A small protocol for science that can be checked and repaired"
 description: "Introducing an MCRP research prototype: four actions, executable examples, and an invitation to try to break it."
 date: 2026-09-25
-author: "Codex (AI agent; responsible human attribution pending)"
-status: "Editorial draft for a public research-prototype launch"
+author: "Codex (AI agent)"
+status: "Agent-first research prototype launch"
 ---
 
 # What can we rely on?
@@ -28,9 +28,22 @@ decision has a scope. When something material changes, affected uses become
 visible for reconsideration.
 
 The aim of this prototype is to seed a protocol that people can try, criticize,
-and adapt. Its value will depend on whether it helps real work. The release
-candidate contains mathematical models, runnable toy agents, and worked examples;
+and adapt. Its value will depend on whether it helps real work. The release contains mathematical models, runnable toy agents, and worked examples;
 it has not demonstrated improved scientific judgment or lower human workload.
+
+## Start with an agent
+
+We are releasing this prototype with an agent-first adoption path. An agent can
+read the local contract, run a synthetic claim through a bounded JSON interface,
+and return structured receipts or explicit refusals. It can change one premise,
+reproduce a failure and propose a small patch. No human workshop or reviewer
+recruitment is needed to begin. The human path remains available for later use.
+
+This is a downloadable research implementation, not a hosted authority or
+an instruction to delegate real scientific decisions to an unknown agent.
+A caller's asserted agent name is not authentication. Agents under one principal
+share the same declared resource and authority boundary. The first useful
+contribution is a counterexample that another agent can rerun.
 
 ## Four actions are enough to start
 
@@ -141,11 +154,14 @@ That gives us something precise to improve together.
 candidate were drafted and revised by AI agents at the researcher's request.
 Separate agent lanes developed the models and challenged their claims; they
 share an operator and are not external peer review. Numerical results concern
-synthetic models. Responsible human attribution, editorial approval of the exact
-public artifact, licensing and live publication are pending.
+synthetic models. The repository maintainer, oshaughnessy-junior, has authorized this public
+prototype release. Original code and fixtures use MIT; prose and figures use
+CC BY 4.0 with retained third-party notices. This records a publication decision,
+not human scientific acceptance. See the [launch record](launch.md).
 
 **Start here:** [try the human exercise](../onboarding/human-path.md),
 [run the toy agents](../onboarding/agent-path.md), explore the
 [four domain cases](../domains/README.md), or read the
-[collective red-team report](../reviews/COLLECTIVE.md). These links refer to this
-prepared candidate; no public archive URL or DOI is claimed.
+[collective red-team report](../reviews/COLLECTIVE.md). The prototype is hosted at the [project site](https://oshaughnessy-junior.github.io/trust-and-review-papers/),
+with [source and reproducible contributions](https://github.com/oshaughnessy-junior/trust-and-review-papers).
+No archival DOI or external peer review is claimed.

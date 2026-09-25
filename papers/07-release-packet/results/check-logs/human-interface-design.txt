@@ -8,6 +8,6 @@ test_potential_outcome_family_effect (test_allocation.DesignTests) ... ok
 test_test_is_exact_under_sharp_null (test_allocation.DesignTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.004s
+Ran 8 tests in 0.005s
 
 OK

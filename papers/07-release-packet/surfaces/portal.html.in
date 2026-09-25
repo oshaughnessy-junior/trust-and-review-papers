@@ -1,9 +1,9 @@
 <section aria-labelledby="hero-title">
-<p class="eyebrow">Minimum Credible Reproducibility Protocol / Release candidate</p>
+<p class="eyebrow">Minimum Credible Reproducibility Protocol / Agent-first prototype</p>
 <h1 id="hero-title">What can we rely on?<br>And what should change our mind?</h1>
-<p class="lead">A small record for claims, checks, scoped decisions and repair. Explore a research prototype built for people, collaborations and agent teams.</p>
-<p><a class="button" href="onboarding/human-path.html">Try one claim</a> <a class="button secondary" href="onboarding/agent-path.html">Run the toy agents</a></p>
-<p class="note">Synthetic models. Substantial AI drafting and adversarial-agent review. No field-efficacy claim. This is a prepared public candidate, not a live service.</p>
+<p class="lead">A small record for claims, checks, scoped decisions and repair. Run a research prototype for agent-driven collaboration. The same small boundary can later support people and larger teams.</p>
+<p><a class="button" href="onboarding/agent-path.html">Start with an agent</a> <a class="button secondary" href="onboarding/human-path.html">Read the human path</a></p>
+<p class="note">Synthetic models. Substantial AI drafting and adversarial-agent review. No field-efficacy claim. Initial uptake is agent-driven. Run local synthetic cases; no hosted review or dispute service is provided.</p>
 </section>
 <section class="four" aria-label="Four participant actions">
 <div class="step"><strong>Offer</strong><p>One claim, a version, its evidence and limits.</p></div>
@@ -11,6 +11,7 @@
 <div class="step"><strong>Rely</strong><p>A responsible decision for a particular use.</p></div>
 <div class="step"><strong>Amend</strong><p>A material change and the uses that need reconsideration.</p></div>
 </section>
+<section><h2>Agents: read the contract, run one case</h2><p><a href="agent_api/manifest.json">Machine-readable entry manifest</a> · <a href="onboarding/agent-path.html">CLI quickstart</a> · <a href="agent_api/README.html">Bounded JSON contract</a></p><p>Use the supplied local policy and synthetic requests. Agent aliases share their declared principal ledger. Request text cannot grant new roles or expand policy.</p></section>
 <section><h2>Start where your work lives</h2><div class="grid">
 <div class="card"><p class="eyebrow">Physics / astronomy</p><h3>A shared calibration is not independent evidence</h3><p>Follow a changed calibration through an estimate and its downstream use. Find the dependency a graph cannot discover on its own.</p><a href="domains/physics-astro.html">Work through the astronomy case →</a></div>
 <div class="card"><p class="eyebrow">Biology</p><h3>A reproducible contrast can remain confounded</h3><p>Separate a correct rerun from an identified treatment effect. Introduce crossed evidence and see what it does—and does not—resolve.</p><a href="domains/biology.html">Work through the biology case →</a></div>
@@ -42,13 +43,13 @@
 <figure><img src="results/figures/ecology-tradeoffs.svg" alt="Under overload bounded credit improves minimum group coverage relative to uniform while slightly reducing correct checks per offer. Shared blindness leaves fewer than half of defects detected."><figcaption>Eight seeds per policy; whiskers show the retained minimum and maximum, not confidence intervals. <a href="manuscripts/local-rules.html">Read the ecology and correction-credit counterexample.</a></figcaption></figure>
 </section>
 <section class="grid"><div><h2>Read the argument. Keep the objections.</h2><p>The mathematical claims are conditional. The red team preserves failures and distinguishes repairs to a specification from operational evidence.</p><ul>
-<li><a href="publication/blog-introduction.html">Introductory blog draft</a></li><li><a href="manuscripts/synthesis.html">The proposal and its assumption boundaries</a></li><li><a href="publication/positioning-and-adoption.html">How it fits existing review and provenance work</a></li><li><a href="manuscripts/math-foundations.html">Mathematical foundations and proofs</a></li><li><a href="manuscripts/funded-audits.html">From promised inspection to delivered inspection</a></li>
+<li><a href="publication/blog-introduction.html">Introduction</a></li><li><a href="manuscripts/synthesis.html">The proposal and its assumption boundaries</a></li><li><a href="publication/positioning-and-adoption.html">How it fits existing review and provenance work</a></li><li><a href="manuscripts/math-foundations.html">Mathematical foundations and proofs</a></li><li><a href="manuscripts/funded-audits.html">From promised inspection to delivered inspection</a></li>
 <li><a href="reviews/COLLECTIVE.html">Collective red-team assessment</a></li><li><a href="publication/release-assessment.html">Public-release assessment</a></li></ul></div>
-<div><h2>Bring one counterexample</h2><p>A short exercise is enough to contribute. An implementation can begin with runnable fixtures. Both paths should explain the same boundary in plain language.</p><ul>
+<div><h2>Bring one counterexample</h2><p>An agent can begin with local fixtures and return one reproducible failure or patch. Human exercises remain available for later uptake. Both paths expose the same boundary.</p><ul>
 <li><a href="onboarding/facilitator-guide.html">Run a domain clinic</a></li><li><a href="publication/dissemination.html">Publication and engagement routes</a></li>
-<li><a href="results/mcrp-release-brief.pdf">Read the eight-page research brief (PDF)</a></li>
+<li><a href="results/mcrp-release-brief.pdf">Read the pre-launch research brief (PDF)</a></li>
 <li><a href="onboarding/evaluation-plan.html">Explore the pre-results human evaluation plan</a></li>
-<li><a href="mcrp-prototype-source.zip">Download the candidate source and reading pages</a></li></ul><p class="note">Licensing and responsible attribution remain pending release decisions. Downloading this candidate is not evidence of an adopted open-source license.</p></div></section>
+<li><a href="mcrp-prototype-source.zip">Download source and reading pages</a></li></ul><p class="note">Original code and fixtures: MIT. Prose and figures: CC BY 4.0. <a href="LICENSE.html">License scope</a> · <a href="publication/launch.html">Launch record and public contribution path</a>.</p></div></section>
 <script id="recorded-trace" type="application/json">__TRACE_JSON__</script>
 <script src="surfaces/equations.js"></script><script>
 (function(){"use strict";

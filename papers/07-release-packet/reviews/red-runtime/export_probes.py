@@ -37,7 +37,7 @@ def probe(archived=True):
         (source/'surfaces/portal.html.in').write_text('<p>Synthetic fixture __TRACE_JSON__</p>')
         (source/'surfaces/site.css').write_text('body { color: black; }')
         # Stub files ensure static header links resolve in the tiny fixture.
-        for rel in ('publication/blog-introduction.md','domains/README.md','reviews/COLLECTIVE.md','publication/release-assessment.md'):
+        for rel in ('publication/blog-introduction.md','domains/README.md','reviews/COLLECTIVE.md','publication/release-assessment.md','publication/launch.md'):
             p=source/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text('# Fixture\nPublic sentinel only.\n')
         builder.ROOT=source
         output.mkdir()

@@ -1,0 +1,623 @@
+{
+  "schema": "mcrp-agent-result/0.1",
+  "task_id": "biology-bounded-cycle",
+  "mode": "local synthetic conformance only",
+  "policy_id": "four-domain-local-fixture-v1",
+  "policy_digest": "sha256:bde04157ac5b2bb2f3c1de6bf7204e2ddf295229a05ab24b9621b919391092f3",
+  "request_digest": "sha256:5ba3b75b8c176f9c3aa09d36641f0799ce0076158321caa5ccbdf5067346bb1d",
+  "state_digest": "sha256:bb0a5d58144d8ba1d07235f6ab3f76fda139f45a49beb16d8185433820458686",
+  "status": "completed_with_refusals",
+  "counts": {
+    "submitted_commands": 12,
+    "accepted_commands": 11,
+    "refused_commands": 1,
+    "offers": 2,
+    "checks": 2,
+    "reliances": 2
+  },
+  "receipts": [
+    {
+      "command_id": "offer",
+      "action": "offer",
+      "asserted_agent_id": "author-agent",
+      "principal_id": "author-principal",
+      "declared_control_group": "author-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "offer",
+      "record_id": "offer-0001",
+      "record": {
+        "record_id": "offer-0001",
+        "target": {
+          "claim_id": "toy-biology",
+          "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+          "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+        },
+        "author_id": "author-principal",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "dependencies": [],
+        "required_groups": 1
+      },
+      "claim": "Synthetic assay mean is5 for observations4 and6; no biological efficacy claim.",
+      "evidence": {
+        "observations": [
+          4,
+          6
+        ],
+        "mean": 5,
+        "scope": "arithmetic only"
+      },
+      "version_basis": "canonical claim/evidence/scope/resolved-dependencies/required-groups offer profile"
+    },
+    {
+      "command_id": "check",
+      "action": "check",
+      "asserted_agent_id": "review-agent",
+      "principal_id": "reviewer-principal",
+      "declared_control_group": "reviewer-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "check",
+      "record_id": "check-0002",
+      "record": {
+        "record_id": "check-0002",
+        "offer_id": "offer-0001",
+        "reviewer_id": "reviewer-principal",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "method": "Caller asserts a manual synthetic fixture check; not executed by this interface",
+        "outcome": "support",
+        "limits": "Only the disclosed toy calculation; no empirical or institutional validation",
+        "generations": [
+          [
+            {
+              "claim_id": "toy-biology",
+              "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+              "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+            },
+            0
+          ]
+        ],
+        "completed_at": 1
+      }
+    },
+    {
+      "command_id": "rely",
+      "action": "rely",
+      "asserted_agent_id": "decision-agent",
+      "principal_id": "decision-principal",
+      "declared_control_group": "decision-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "reliance",
+      "record_id": "rely-0003",
+      "record": {
+        "record_id": "rely-0003",
+        "offer_id": "offer-0001",
+        "decision_maker": "decision-principal",
+        "check_ids": [
+          "check-0002"
+        ],
+        "purpose": "synthetic local demonstration only",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "kind": "scientific",
+        "expires": 20,
+        "issued_at": 2,
+        "required_groups": 1,
+        "generations": [
+          [
+            {
+              "claim_id": "toy-biology",
+              "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+              "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+            },
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "command_id": "observe-before",
+      "action": "observe",
+      "asserted_agent_id": "decision-agent",
+      "principal_id": "decision-principal",
+      "declared_control_group": "decision-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "observation",
+      "record_id": null,
+      "reliance": "rely-0003",
+      "currentness": "current_under_toy_policy",
+      "now": 2,
+      "observed_at": 2,
+      "observation_basis": "caller-supplied synthetic clock, not live evidence observation"
+    },
+    {
+      "command_id": "amend",
+      "action": "amend",
+      "asserted_agent_id": "author-agent",
+      "principal_id": "author-principal",
+      "declared_control_group": "author-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "amendment",
+      "record_id": null,
+      "target": {
+        "claim_id": "toy-biology",
+        "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+        "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+      },
+      "affected": [
+        {
+          "claim_id": "toy-biology",
+          "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+          "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+        }
+      ]
+    },
+    {
+      "command_id": "observe-after",
+      "action": "observe",
+      "asserted_agent_id": "decision-agent",
+      "principal_id": "decision-principal",
+      "declared_control_group": "decision-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "observation",
+      "record_id": null,
+      "reliance": "rely-0003",
+      "currentness": "reconsideration_pending",
+      "now": 3,
+      "observed_at": 3,
+      "observation_basis": "caller-supplied synthetic clock, not live evidence observation"
+    },
+    {
+      "command_id": "stale-check-refusal",
+      "action": "rely",
+      "asserted_agent_id": "decision-agent",
+      "principal_id": "decision-principal",
+      "declared_control_group": "decision-control",
+      "status": "refused",
+      "code": "BOUNDED_POLICY_REFUSAL",
+      "reason": "checks mismatch target, outcome, current generation or time"
+    },
+    {
+      "command_id": "offer-updated",
+      "action": "offer",
+      "asserted_agent_id": "author-agent",
+      "principal_id": "author-principal",
+      "declared_control_group": "author-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "offer",
+      "record_id": "offer-0005",
+      "record": {
+        "record_id": "offer-0005",
+        "target": {
+          "claim_id": "toy-biology",
+          "version": "sha256:c5677774d1ae8515c6a9623269ca3de18f858de5678c5feb42e33cc89618a5af",
+          "evidence_digest": "sha256:fc906e8279dc7ea3336781222a9d4d47bb88606b24461edab7991a55b3b1a1df"
+        },
+        "author_id": "author-principal",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "dependencies": [],
+        "required_groups": 1
+      },
+      "claim": "Synthetic assay mean is7 for observations4 and10; no biological efficacy claim.",
+      "evidence": {
+        "observations": [
+          4,
+          10
+        ],
+        "mean": 7,
+        "scope": "arithmetic only"
+      },
+      "version_basis": "canonical claim/evidence/scope/resolved-dependencies/required-groups offer profile"
+    },
+    {
+      "command_id": "recheck",
+      "action": "check",
+      "asserted_agent_id": "review-team-child",
+      "principal_id": "reviewer-principal",
+      "declared_control_group": "reviewer-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "check",
+      "record_id": "check-0006",
+      "record": {
+        "record_id": "check-0006",
+        "offer_id": "offer-0005",
+        "reviewer_id": "reviewer-principal",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "method": "Caller asserts a manual synthetic fixture check; not executed by this interface",
+        "outcome": "support",
+        "limits": "Only the disclosed toy calculation; no empirical or institutional validation",
+        "generations": [
+          [
+            {
+              "claim_id": "toy-biology",
+              "version": "sha256:c5677774d1ae8515c6a9623269ca3de18f858de5678c5feb42e33cc89618a5af",
+              "evidence_digest": "sha256:fc906e8279dc7ea3336781222a9d4d47bb88606b24461edab7991a55b3b1a1df"
+            },
+            0
+          ]
+        ],
+        "completed_at": 5
+      }
+    },
+    {
+      "command_id": "renew",
+      "action": "rely",
+      "asserted_agent_id": "decision-agent",
+      "principal_id": "decision-principal",
+      "declared_control_group": "decision-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "reliance",
+      "record_id": "rely-0007",
+      "record": {
+        "record_id": "rely-0007",
+        "offer_id": "offer-0005",
+        "decision_maker": "decision-principal",
+        "check_ids": [
+          "check-0006"
+        ],
+        "purpose": "synthetic local demonstration only",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "kind": "scientific",
+        "expires": 20,
+        "issued_at": 6,
+        "required_groups": 1,
+        "generations": [
+          [
+            {
+              "claim_id": "toy-biology",
+              "version": "sha256:c5677774d1ae8515c6a9623269ca3de18f858de5678c5feb42e33cc89618a5af",
+              "evidence_digest": "sha256:fc906e8279dc7ea3336781222a9d4d47bb88606b24461edab7991a55b3b1a1df"
+            },
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "command_id": "observe-renewed",
+      "action": "observe",
+      "asserted_agent_id": "decision-agent",
+      "principal_id": "decision-principal",
+      "declared_control_group": "decision-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "observation",
+      "record_id": null,
+      "reliance": "rely-0007",
+      "currentness": "current_under_toy_policy",
+      "now": 6,
+      "observed_at": 6,
+      "observation_basis": "caller-supplied synthetic clock, not live evidence observation"
+    },
+    {
+      "command_id": "observe-original",
+      "action": "observe",
+      "asserted_agent_id": "decision-agent",
+      "principal_id": "decision-principal",
+      "declared_control_group": "decision-control",
+      "status": "accepted_under_synthetic_policy",
+      "kind": "observation",
+      "record_id": null,
+      "reliance": "rely-0003",
+      "currentness": "reconsideration_pending",
+      "now": 6,
+      "observed_at": 6,
+      "observation_basis": "caller-supplied synthetic clock, not live evidence observation"
+    }
+  ],
+  "state": {
+    "clock": 6,
+    "aliases": {
+      "offer": {
+        "kind": "offer",
+        "record_id": "offer-0001"
+      },
+      "check": {
+        "kind": "check",
+        "record_id": "check-0002"
+      },
+      "rely": {
+        "kind": "reliance",
+        "record_id": "rely-0003"
+      },
+      "offer-updated": {
+        "kind": "offer",
+        "record_id": "offer-0005"
+      },
+      "recheck": {
+        "kind": "check",
+        "record_id": "check-0006"
+      },
+      "renew": {
+        "kind": "reliance",
+        "record_id": "rely-0007"
+      }
+    },
+    "events": [
+      {
+        "action": "offer",
+        "id": "offer-0001",
+        "target": {
+          "claim_id": "toy-biology",
+          "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+          "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+        }
+      },
+      {
+        "action": "check",
+        "id": "check-0002",
+        "outcome": "support",
+        "now": 1
+      },
+      {
+        "action": "rely",
+        "id": "rely-0003",
+        "kind": "scientific",
+        "now": 2
+      },
+      {
+        "action": "amend",
+        "target": {
+          "claim_id": "toy-biology",
+          "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+          "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+        },
+        "reason": "An input is corrected from6 to10: recompute the mean; no health inference.",
+        "now": 3,
+        "affected": [
+          {
+            "claim_id": "toy-biology",
+            "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+            "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+          }
+        ]
+      },
+      {
+        "action": "offer",
+        "id": "offer-0005",
+        "target": {
+          "claim_id": "toy-biology",
+          "version": "sha256:c5677774d1ae8515c6a9623269ca3de18f858de5678c5feb42e33cc89618a5af",
+          "evidence_digest": "sha256:fc906e8279dc7ea3336781222a9d4d47bb88606b24461edab7991a55b3b1a1df"
+        }
+      },
+      {
+        "action": "check",
+        "id": "check-0006",
+        "outcome": "support",
+        "now": 5
+      },
+      {
+        "action": "rely",
+        "id": "rely-0007",
+        "kind": "scientific",
+        "now": 6
+      }
+    ],
+    "ledger": [
+      {
+        "principal_id": "author-principal",
+        "capacity_units": 12,
+        "charged_units": 0,
+        "skills": {}
+      },
+      {
+        "principal_id": "decision-principal",
+        "capacity_units": 12,
+        "charged_units": 0,
+        "skills": {}
+      },
+      {
+        "principal_id": "reviewer-principal",
+        "capacity_units": 12,
+        "charged_units": 2,
+        "skills": {
+          "assay-arithmetic": {
+            "capacity": 12,
+            "charged": 2
+          },
+          "calibration-arithmetic": {
+            "capacity": 12,
+            "charged": 0
+          },
+          "selection-accounting": {
+            "capacity": 12,
+            "charged": 0
+          },
+          "timeline-accounting": {
+            "capacity": 12,
+            "charged": 0
+          }
+        }
+      },
+      {
+        "principal_id": "second-reviewer-principal",
+        "capacity_units": 12,
+        "charged_units": 0,
+        "skills": {
+          "assay-arithmetic": {
+            "capacity": 12,
+            "charged": 0
+          },
+          "calibration-arithmetic": {
+            "capacity": 12,
+            "charged": 0
+          },
+          "selection-accounting": {
+            "capacity": 12,
+            "charged": 0
+          },
+          "timeline-accounting": {
+            "capacity": 12,
+            "charged": 0
+          }
+        }
+      }
+    ],
+    "offers": {
+      "offer-0001": {
+        "record_id": "offer-0001",
+        "target": {
+          "claim_id": "toy-biology",
+          "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+          "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+        },
+        "author_id": "author-principal",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "dependencies": [],
+        "required_groups": 1
+      },
+      "offer-0005": {
+        "record_id": "offer-0005",
+        "target": {
+          "claim_id": "toy-biology",
+          "version": "sha256:c5677774d1ae8515c6a9623269ca3de18f858de5678c5feb42e33cc89618a5af",
+          "evidence_digest": "sha256:fc906e8279dc7ea3336781222a9d4d47bb88606b24461edab7991a55b3b1a1df"
+        },
+        "author_id": "author-principal",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "dependencies": [],
+        "required_groups": 1
+      }
+    },
+    "checks": {
+      "check-0002": {
+        "record_id": "check-0002",
+        "offer_id": "offer-0001",
+        "reviewer_id": "reviewer-principal",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "method": "Caller asserts a manual synthetic fixture check; not executed by this interface",
+        "outcome": "support",
+        "limits": "Only the disclosed toy calculation; no empirical or institutional validation",
+        "generations": [
+          [
+            {
+              "claim_id": "toy-biology",
+              "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+              "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+            },
+            0
+          ]
+        ],
+        "completed_at": 1
+      },
+      "check-0006": {
+        "record_id": "check-0006",
+        "offer_id": "offer-0005",
+        "reviewer_id": "reviewer-principal",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "method": "Caller asserts a manual synthetic fixture check; not executed by this interface",
+        "outcome": "support",
+        "limits": "Only the disclosed toy calculation; no empirical or institutional validation",
+        "generations": [
+          [
+            {
+              "claim_id": "toy-biology",
+              "version": "sha256:c5677774d1ae8515c6a9623269ca3de18f858de5678c5feb42e33cc89618a5af",
+              "evidence_digest": "sha256:fc906e8279dc7ea3336781222a9d4d47bb88606b24461edab7991a55b3b1a1df"
+            },
+            0
+          ]
+        ],
+        "completed_at": 5
+      }
+    },
+    "reliances": {
+      "rely-0003": {
+        "record_id": "rely-0003",
+        "offer_id": "offer-0001",
+        "decision_maker": "decision-principal",
+        "check_ids": [
+          "check-0002"
+        ],
+        "purpose": "synthetic local demonstration only",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "kind": "scientific",
+        "expires": 20,
+        "issued_at": 2,
+        "required_groups": 1,
+        "generations": [
+          [
+            {
+              "claim_id": "toy-biology",
+              "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+              "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+            },
+            0
+          ]
+        ]
+      },
+      "rely-0007": {
+        "record_id": "rely-0007",
+        "offer_id": "offer-0005",
+        "decision_maker": "decision-principal",
+        "check_ids": [
+          "check-0006"
+        ],
+        "purpose": "synthetic local demonstration only",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "kind": "scientific",
+        "expires": 20,
+        "issued_at": 6,
+        "required_groups": 1,
+        "generations": [
+          [
+            {
+              "claim_id": "toy-biology",
+              "version": "sha256:c5677774d1ae8515c6a9623269ca3de18f858de5678c5feb42e33cc89618a5af",
+              "evidence_digest": "sha256:fc906e8279dc7ea3336781222a9d4d47bb88606b24461edab7991a55b3b1a1df"
+            },
+            0
+          ]
+        ]
+      }
+    },
+    "target_state": [
+      {
+        "target": {
+          "claim_id": "toy-biology",
+          "version": "sha256:9691ea1bf886186d243a0fe20e1ccd09378455f7e2095442b17f380a60b6a013",
+          "evidence_digest": "sha256:7bc66b8945f3c21562d20c8adfb8a3cfac241bd8d475e65c97badab2887a2255"
+        },
+        "generation": 1,
+        "available": true
+      },
+      {
+        "target": {
+          "claim_id": "toy-biology",
+          "version": "sha256:c5677774d1ae8515c6a9623269ca3de18f858de5678c5feb42e33cc89618a5af",
+          "evidence_digest": "sha256:fc906e8279dc7ea3336781222a9d4d47bb88606b24461edab7991a55b3b1a1df"
+        },
+        "generation": 0,
+        "available": true
+      }
+    ]
+  },
+  "boundaries": {
+    "identity": "asserted agent ID resolved through trusted local policy; not authenticated",
+    "authority": "fixture role declarations only; no human, scientific or publication approval",
+    "capacity": "all aliases of one principal share its declared unit budget; overlapping real principals unmodeled",
+    "execution": "check methods/results are assertions; no arbitrary code or scientific validation executed",
+    "currentness": "simulation state and supplied times only; no remote notification or live observation"
+  }
+}

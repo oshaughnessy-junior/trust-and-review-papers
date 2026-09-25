@@ -18,6 +18,6 @@ test_shared_roles_reserve_worst_case_and_never_self_audit (test_model.FundedTest
 test_utility_exact_finite_best_response_condition (test_model.FundedTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 18 tests in 0.039s
+Ran 18 tests in 0.041s
 
 OK

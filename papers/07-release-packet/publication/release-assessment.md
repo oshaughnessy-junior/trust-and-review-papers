@@ -1,5 +1,7 @@
 # Public release assessment
 
+**Preparation-stage assessment.** The later [agent-first launch decision](launch.md) supersedes pending publication and license choices below; scientific limits remain.
+
 Assessment date: 25 September 2026. Scope: the curated research-prototype export,
 not the entire private repository, a live Commons service, or a journal submission.
 

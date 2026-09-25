@@ -76,3 +76,20 @@ Stop an extended claim when its needed premise is missing. Prefer a simpler
 structured record or uniform assignment if the additional mechanism has no
 worthwhile advantage. Those are research and design stopping rules, not penalties
 for contributors who refuse work or disclose an honest correction.
+
+## Agent-first release extension
+
+The [agent entry contract](agent_api/README.md) adds a bounded local JSON interface
+and machine-readable discovery. This is an implementation result (I) and design
+choice (D), not evidence of agent identity, real independence or human efficacy.
+The full offered profile binds claim/evidence, scope, resolved dependencies and
+required coverage; a metadata-only change therefore has a distinct version.
+Aliases resolve through a separately loaded trusted policy to one principal's
+ledger. Conditional alias invariance requires correct principal mapping and
+does not discover undisclosed common control.
+
+Author and independent adversarial suites exercise those boundaries. Four domain
+traces preserve old pending reliance while establishing reliance on a changed
+version. The [agent launch critique](reviews/agent-launch-red/REPORT.md) records
+its own findings and limitations. The integration runner includes these suites,
+input fixtures and regenerated outputs in its validation inventory.

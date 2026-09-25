@@ -24,6 +24,6 @@ test_tampered_delivery_requires_new_release_and_new_decision (test_publication_s
 test_unpublished_wrong_metadata_does_not_poison_correct_receipt (test_publication_semantics.PublicationSequenceTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 0.139s
+Ran 24 tests in 0.153s
 
 OK

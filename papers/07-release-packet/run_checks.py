@@ -27,6 +27,8 @@ def source_input_inventory(root=ROOT):
         fixture = root / name
         if fixture.is_file():
             paths.add(fixture)
+    paths.update(p for p in (root / "agent_api").glob("*.json") if p.is_file())
+    paths.update(p for p in (root / "agent_api/examples").glob("*.json") if p.is_file())
     if any(p.is_symlink() for p in paths):
         raise ValueError("source/input symlink is not a frozen input")
     return {str(p.relative_to(root)): sha(p) for p in sorted(paths)}
@@ -35,7 +37,7 @@ def source_input_inventory(root=ROOT):
 def evidence_inventory(root=ROOT):
     """Bind saved evidence, without treating a hash as proof of its meaning."""
     paths = set()
-    for folder in ("toy_agents", "models", "domains/fixtures", "adapters", "results"):
+    for folder in ("toy_agents", "models", "domains/fixtures", "adapters", "agent_api", "results"):
         for p in (root / folder).rglob("*"):
             if p.is_file() and p.suffix in {".json", ".csv", ".svg", ".png", ".pdf"} and p != root / "results/validation.json":
                 paths.add(p)
@@ -53,6 +55,8 @@ def main():
         ("domain-cases", "domains/fixtures", "test_*.py"),
         ("runtime-red-regressions", "reviews/red-runtime", "test_*.py"),
         ("legacy-adapter", "adapters/tests", "test_*.py"),
+        ("agent-entry", "agent_api/tests", "test_*.py"),
+        ("agent-entry-red", "reviews/agent-launch-red", "test_*.py"),
     ]
     for name, folder in [("coupled-agents", "models/coupled"), ("local-rule-ecology", "models/ecology/tests"), ("human-interface-design", "models/human_pilot"), ("funded-audit-delivery", "models/funded_audits")]:
         if (ROOT / folder).is_dir():
@@ -62,6 +66,7 @@ def main():
     commands.append(("ecology-sweeps", ["-m", "models.ecology.run"], None))
     commands.append(("correction-game", ["-m", "models.ecology.correction_game"], None))
     commands.append(("legacy-adapter-demo", ["-m", "adapters.demo"], None))
+    commands.append(("agent-entry-examples", ["agent_api/build_examples.py"], None))
     if (ROOT / "models/human_pilot/run_design.py").is_file():
         commands.append(("human-design-calculations", ["models/human_pilot/run_design.py"], None))
     commands += [
