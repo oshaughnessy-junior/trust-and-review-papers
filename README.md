@@ -1,6 +1,6 @@
 # TrustAndReview papers
 
-Private working repository for a coordinated publication program on machine-verifiable scientific records and scalable, plural peer-review trust.
+Research repository for a coordinated publication program on machine-verifiable scientific records and scalable, plural peer-review trust.
 
 This repository is a research workspace, not a claim that every planned paper is ready. Each paper has its own maturity gate. Outlines separate established prior work, proposed synthesis, implementation claims, and claims that require new theory or empirical evidence.
 
@@ -24,6 +24,16 @@ The recommended interface is **offer, check, rely, amend**; complex trust routin
 must justify itself against simpler constrained assignment. This is a working
 research dossier, not an adopted protocol, field evaluation, or public release.
 
+## Agent-first public prototype
+
+The [release packet](papers/07-release-packet/README.md) extends the merged dossier
+with a blog introduction, self-contained mathematical manuscripts, coupled toy
+agents, four domain teaching cases, human and agent onboarding, an executable
+legacy-review adapter, and a further collective adversarial pass. Its [agent-first launch](papers/07-release-packet/publication/launch.md) provides
+a static protocol seed and runnable implementation exercises. The original release
+packet has explicit MIT code and CC BY 4.0 prose/figure licenses, retaining third-party notices. This is a cross-cutting packet for the
+existing publication sequence, not evidence that all five papers passed their gates.
+
 ## Shared controls
 
 - [SCIENCE_WRITING_PACKET.md](SCIENCE_WRITING_PACKET.md): claim discipline, evidence standards, review gates, and manuscript checks.
@@ -33,6 +43,6 @@ research dossier, not an adopted protocol, field evaluation, or public release.
 
 ## Provenance and release posture
 
-The seed material is derived from the private `oshaughnessy-junior/mcrp-protocol-paper` worktree at commit `666e897` and earlier reviewed commits recorded there. Copied files retain their original text; new manuscripts must cite primary sources rather than cite the internal packet as authority.
+The seed material is derived from the `oshaughnessy-junior/mcrp-protocol-paper` worktree at commit `666e897` and earlier reviewed commits recorded there. Copied files retain their original text; new manuscripts must cite primary sources rather than cite the internal packet as authority.
 
-No submission, preprint, public release, or license grant is implied. Authorship, AI-assistance disclosure, venue, and repository licensing require human decisions before release.
+The maintainer authorized public repository access and an agent-first prototype deployment on 25 September 2026 after confidentiality review. The original release packet has its own scoped license; older materials retain their notices and draft maturity. No journal submission, external peer review or scientific acceptance is implied. Historical private/draft labels in earlier records describe their preparation state.

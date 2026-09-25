@@ -1,0 +1,51 @@
+{
+  "configuration": {
+    "bandpass_hz": [
+      35.0,
+      350.0
+    ],
+    "clean_replay_tolerances": {
+      "lag_seconds_absolute": 1e-12,
+      "normalized_correlation_absolute": 1e-10
+    },
+    "event_gps": 1126259462.4,
+    "event_window_half_width_seconds": 0.1,
+    "expected_event_window_samples_per_detector": 820,
+    "filter_order": 4,
+    "filter_phase": "scipy.signal.sosfiltfilt zero-phase forward-backward",
+    "lag_search_half_width_seconds": 0.04,
+    "minimum_absolute_correlation": 0.3,
+    "physical_lag_bound_seconds": 0.01,
+    "randomness": "none"
+  },
+  "ended_at": "2026-08-28T13:13:28.556466+00:00",
+  "environment": {
+    "h5py": "3.14.0",
+    "machine": "arm64",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "release": "25.6.0",
+    "scipy": "1.16.3",
+    "system": "Darwin"
+  },
+  "external_services_during_run": [],
+  "identities": {
+    "H1_sha256": "6e6976e932074a3b4e4a398ed02c62e30fcaa2781811762caea04937133583f6",
+    "L1_sha256": "56706e68c811b15548f1d7ed69d7c48d5fcc62aeb21fbaf131355f3cc5c07189",
+    "claim_manifest_sha256": "8dad3338321e81859c27668ef6527bfc51b1141f9878dbbda6779dcfb07ef6a5",
+    "environment_lock_sha256": "0dab6c042b55f185b39b5c578a9b3a9cc4bc4dde865b48d9bce666b969065b48",
+    "implementation_sha256": "7846f6e3fc50dbf2c5529124b305e4939cf57f57e9b148092e7a8579977f2565",
+    "source_manifest_sha256": "327ce26cf627acc79bfeb498a2dff79e90584b60d6dc6e2eb94f5a48cafcda70"
+  },
+  "outputs": {
+    "claim_evidence": "artifacts/evidence/claim-evidence.json",
+    "lag_curve": "artifacts/derived/lag-correlation.csv",
+    "negative_tests": "artifacts/evidence/negative-tests.json"
+  },
+  "randomness": "none",
+  "result": "pass",
+  "run_id": "r0-gw150914-v2-20260828T131328Z",
+  "schema": "trustandreview.r0.run-record.v0.1",
+  "started_at": "2026-08-28T13:13:28.519198+00:00",
+  "workflow": "run_case.py"
+}

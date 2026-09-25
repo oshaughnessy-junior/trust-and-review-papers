@@ -1,0 +1,23 @@
+{
+  "RM1": "expected-cost semantics and hard-count scheme separately stated",
+  "RM2": "8956 unresolved; accounting reconciles",
+  "RM3": "exact interval endpoints consumable; strict above-cap rejection",
+  "exact_endpoint_cases": 495,
+  "independent_utility_inequality_checks": 832,
+  "singleton_interval": {
+    "feasible": true,
+    "minimum_audit": 0.8333333333333334,
+    "maximum_audit": 0.8333333333333333,
+    "minimum_audit_exact": "5/6",
+    "maximum_audit_exact": "5/6",
+    "maximum_audit_count": 5,
+    "budget_kind": "hard identical-cost audit count cap",
+    "numeric_semantics": "exact fields authoritative; decimal floats interpreted via str",
+    "reason": "nonempty weak best-response interval"
+  },
+  "coupled_zero_hold_repair_confirmed": true,
+  "source_sha256": {
+    "models/math/protocol_math.py": "7089c361ac1a3649ae2272bc8aa5a80446ff0ca44ea0e9d95ed1d8ae84b24da7",
+    "models/coupled/simulator.py": "0829563f34334132c0b3fdac18395ccde7ff76dea8ff7a92e8f12b623ae3a792"
+  }
+}

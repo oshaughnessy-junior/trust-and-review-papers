@@ -1,0 +1,56 @@
+[
+  {
+    "n": 1,
+    "title": "ANSI/NISO Z39.106-2023: Standard Terminology for Peer Review",
+    "authors": ["National Information Standards Organization"],
+    "year": "2023",
+    "doi": "10.3789/ansi.niso.z39.106-2023",
+    "venue": "ANSI/NISO Standard",
+    "kind": "article"
+  },
+  {
+    "n": 2,
+    "title": "Event Notifications in Value-Adding Networks",
+    "authors": ["Hochstenbach, Patrick", "Van de Sompel, Herbert", "Vander Sande, Miel", "Dedecker, Ruben", "Verborgh, Ruben"],
+    "year": "2022",
+    "doi": "10.1007/978-3-031-16802-4_11",
+    "venue": "Theory and Practice of Digital Libraries",
+    "kind": "article"
+  },
+  {
+    "n": 3,
+    "title": "NISO RP-8-2008, Journal Article Versions (JAV): Recommendations of the NISO/ALPSP JAV Technical Working Group",
+    "authors": ["National Information Standards Organization"],
+    "year": "2008",
+    "doi": "10.3789/niso-rp-8-2008",
+    "venue": "NISO Recommended Practice",
+    "kind": "article"
+  },
+  {
+    "n": 4,
+    "title": "NISO RP-45-2024: Communication of Retractions, Removals, and Expressions of Concern (CREC)",
+    "authors": ["National Information Standards Organization"],
+    "year": "2024",
+    "doi": "10.3789/niso-rp-45-2024",
+    "venue": "NISO Recommended Practice",
+    "kind": "article"
+  },
+  {
+    "n": 5,
+    "title": "ANSI/NISO Z39.96-2024: JATS: Journal Article Tag Suite, Version 1.4",
+    "authors": ["National Information Standards Organization"],
+    "year": "2024",
+    "doi": "10.3789/ansi.niso.z39.96-2024",
+    "venue": "ANSI/NISO Standard",
+    "kind": "article"
+  },
+  {
+    "n": 6,
+    "title": "DataCite Metadata Schema Documentation for the Publication and Citation of Research Data and Other Research Outputs, Version 4.7",
+    "authors": ["DataCite Metadata Working Group"],
+    "year": "2026",
+    "doi": "10.14454/qdd3-ps68",
+    "venue": "DataCite",
+    "kind": "article"
+  }
+]

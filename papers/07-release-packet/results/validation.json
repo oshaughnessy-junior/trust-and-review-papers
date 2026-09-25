@@ -1,0 +1,571 @@
+{
+  "schema": "mcrp.release-packet-validation.v1",
+  "passed": true,
+  "python": "3.9.6",
+  "test_methods": 210,
+  "check_groups": [
+    {
+      "name": "toy-protocol",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "toy_agents/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 19,
+      "log": "results/check-logs/toy-protocol.txt",
+      "log_sha256": "492164f5e087763d56909147b1a093a835222af93f9ca71964487cef9a0511ed"
+    },
+    {
+      "name": "release-cycle",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "models",
+        "-p",
+        "test_release_cycle.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 9,
+      "log": "results/check-logs/release-cycle.txt",
+      "log_sha256": "86b05d36d390712ecc8aca8c7eccc97beb9895c3f7eb388c5f52fc34f3b39ac2"
+    },
+    {
+      "name": "conditional-math",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "models/math",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 21,
+      "log": "results/check-logs/conditional-math.txt",
+      "log_sha256": "39d7ba3ffdda82796853f2ed8f656437f22f30f3ed5931d410599046ddf41743"
+    },
+    {
+      "name": "domain-cases",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "domains/fixtures",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 20,
+      "log": "results/check-logs/domain-cases.txt",
+      "log_sha256": "de442fa6094f976a0e018ff6910daec0692b1fab44ef482d1fd9369544579263"
+    },
+    {
+      "name": "runtime-red-regressions",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "reviews/red-runtime",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 24,
+      "log": "results/check-logs/runtime-red-regressions.txt",
+      "log_sha256": "9551fc77239c03566c99bef372f8578084f17c2d74229e579688dde867ddcc00"
+    },
+    {
+      "name": "legacy-adapter",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "adapters/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 19,
+      "log": "results/check-logs/legacy-adapter.txt",
+      "log_sha256": "22987da77650ee1072a2874867e3d2853dbc8197dd1149c84203e81b063b337a"
+    },
+    {
+      "name": "agent-entry",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "agent_api/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 17,
+      "log": "results/check-logs/agent-entry.txt",
+      "log_sha256": "a2828cd52894516c81fdea35ffa108b97ce5fdb9ef61ef83f3be9033ac991f34"
+    },
+    {
+      "name": "agent-entry-red",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "reviews/agent-launch-red",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 23,
+      "log": "results/check-logs/agent-entry-red.txt",
+      "log_sha256": "775550a8e8cdaf92a0f22f48e1778f641073b285ea0cc5ee604d9d9d5dd37054"
+    },
+    {
+      "name": "coupled-agents",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "models/coupled",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 14,
+      "log": "results/check-logs/coupled-agents.txt",
+      "log_sha256": "cba008d4152145060996625039bf089e2276e17aa5a9aecd913d9d7676d17784"
+    },
+    {
+      "name": "local-rule-ecology",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "models/ecology/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 18,
+      "log": "results/check-logs/local-rule-ecology.txt",
+      "log_sha256": "74db8d25474d7011be1f2dd01a1a55f2cb9926c9e394d93e8e3b8574ac5fd19a"
+    },
+    {
+      "name": "human-interface-design",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "models/human_pilot",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 8,
+      "log": "results/check-logs/human-interface-design.txt",
+      "log_sha256": "6dd326af29bf1e92b9bdec303cff649b521aca8284700c24e4147b54ce886e42"
+    },
+    {
+      "name": "funded-audit-delivery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "models/funded_audits",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "passed": true,
+      "test_methods": 18,
+      "log": "results/check-logs/funded-audit-delivery.txt",
+      "log_sha256": "11d96514d9e3219f7100287b341175db25fcd440df38bf7b498cf4f87059c77f"
+    },
+    {
+      "name": "ecology-sweeps",
+      "args": [
+        "-m",
+        "models.ecology.run"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/ecology-sweeps.txt",
+      "log_sha256": "c30834e426390448ca8f4b1a04d9001a6559f0a5c8ee2d000189db552237eb29"
+    },
+    {
+      "name": "correction-game",
+      "args": [
+        "-m",
+        "models.ecology.correction_game"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/correction-game.txt",
+      "log_sha256": "7ffb50be7c243bb510be17353e9160b7bddcbb3ab59f92ed177f48d4771224bc"
+    },
+    {
+      "name": "legacy-adapter-demo",
+      "args": [
+        "-m",
+        "adapters.demo"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/legacy-adapter-demo.txt",
+      "log_sha256": "2501d444433ab097d283f8ffd96d62d10fdd267ca0353734026301dba9feb523"
+    },
+    {
+      "name": "agent-entry-examples",
+      "args": [
+        "agent_api/build_examples.py"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/agent-entry-examples.txt",
+      "log_sha256": "26f0f359170626d3b6c89731002d05490d34e1355ce7a5967b0ce8533b7bb65d"
+    },
+    {
+      "name": "human-design-calculations",
+      "args": [
+        "models/human_pilot/run_design.py"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/human-design-calculations.txt",
+      "log_sha256": "32046c7a52c18381932c404cb211469e46bc0982c763edeeec4255035178f3f0"
+    },
+    {
+      "name": "toy-traces",
+      "args": [
+        "-m",
+        "toy_agents.run"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/toy-traces.txt",
+      "log_sha256": "f444a33f5f854c8a6109453d029057e446fa4c7e5cb4abbb8fc7fcd4644f2739"
+    },
+    {
+      "name": "release-trace",
+      "args": [
+        "models/release_cycle.py",
+        "--output",
+        "results/release-cycle.json"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/release-trace.txt",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "math-sweeps",
+      "args": [
+        "models/math/run_experiments.py"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/math-sweeps.txt",
+      "log_sha256": "f3a9ed862a77057152721e69605947e5036685f9b4c71f7aaf9211db6a766076"
+    },
+    {
+      "name": "domain-oracles",
+      "args": [
+        "domains/fixtures/domain_models.py"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/domain-oracles.txt",
+      "log_sha256": "32212bfe4d7bca00e6cf68601ea3be5a577ab348618956740c69c06da0e10e78"
+    },
+    {
+      "name": "domain-replays",
+      "args": [
+        "domains/fixtures/replay_receipts.py"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/domain-replays.txt",
+      "log_sha256": "42d1adfdf98553e61a572c1cae116abbdd3f09d184f27e1232df8ed80a7dbc31"
+    },
+    {
+      "name": "adversarial-math",
+      "args": [
+        "reviews/red-math/probes.py"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/adversarial-math.txt",
+      "log_sha256": "7e5072a633fc54a448b12bf9e57c4dfa765abe2c52e4023c2baf2d4b98572013"
+    },
+    {
+      "name": "adversarial-domain",
+      "args": [
+        "reviews/red-domains-law/counterexamples.py"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/adversarial-domain.txt",
+      "log_sha256": "afd1051a420a894059636b73e32fa0d3fe1d7fe7d0300808982b3e5c43f9585c"
+    },
+    {
+      "name": "coupled-sweeps",
+      "args": [
+        "models/coupled/run_experiments.py"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/coupled-sweeps.txt",
+      "log_sha256": "3a3e727eda9d2b3a3da151f637b49401b6dd66d612497267f379c6e55befa64b"
+    },
+    {
+      "name": "funded-audit-sweeps",
+      "args": [
+        "models/funded_audits/run_experiments.py"
+      ],
+      "passed": true,
+      "test_methods": 0,
+      "log": "results/check-logs/funded-audit-sweeps.txt",
+      "log_sha256": "58341b1a4be1378f2920ab27a997cec7c5f3053b38b60f0e5bf726ea416df22c"
+    }
+  ],
+  "source_sha256": {
+    "adapters/__init__.py": "f7855c05cf3220d93a320864d43e38d373384645898c2da6bc42af57bb2026ba",
+    "adapters/demo.py": "445332bc0b4e7ca0fb7e35316b9c4610d2ca50d374efe076c18f7803f7648c02",
+    "adapters/legacy.py": "dcf4ff6598466caa727c7abab37b9fbbf0eb934f65b8c576458f2fe8a66259b0",
+    "adapters/tests/test_legacy.py": "f6ed6777c772af28c48e9f61691f7e54766c0b8eaee5930e90d0ebbadf3e6e97",
+    "agent_api/build_examples.py": "ef695768f89407fdb74d2168c9ad90f3842d91c5080ae204d2a1434d63bbb182",
+    "agent_api/cli.py": "f426fe9023123a2f5b4d1b3a3f4f5fc2cf1fa14b7bed6988c6672a929b96115d",
+    "agent_api/interface.py": "1897c7fed8beb787de5b900bc333e8f714e9002779c4bd8767fcc420d26c7d8e",
+    "agent_api/tests/test_interface.py": "5bcc0b6d054aba2be0b9ff695d1eac9cf8eec843e439e655dde36ddd53f805f0",
+    "domains/fixtures/domain_models.py": "e4443c76a275945d359ac8fd9aaf45ac1cc9bc34033fdc2136173ad0a9ab87fe",
+    "domains/fixtures/replay_receipts.py": "793d836698c0cc152985b4cae44c725f89cd7fd89e94cdb226c67e5109133103",
+    "domains/fixtures/test_domain_models.py": "153a644e98548eb7d0de9f242bd1f8c95915e759382f9bf06bd45d27cccef105",
+    "models/coupled/run_experiments.py": "14156e7c0a4f5181e9f9fba41e0280bf7c732f34daf7a839ac2f83af7df6138d",
+    "models/coupled/simulator.py": "0829563f34334132c0b3fdac18395ccde7ff76dea8ff7a92e8f12b623ae3a792",
+    "models/coupled/test_simulator.py": "bccb4d794d5c0381dbcae6727d2a3242829f394f26993b0ce9985ca8a1545197",
+    "models/ecology/correction_game.py": "d3b163a9e81fd0a5e7b8c9bcd97fbf6b8a0b86221a8172852651a945c5f6a53a",
+    "models/ecology/ecology.py": "ac7f23347506edd58c0cd8823dcfa42850cfb0b0af4c6e4b3880003f1f7ee986",
+    "models/ecology/run.py": "2319e4ad062046133cb42fa3f913537171fa5d0359e776a98f8fb1926d6800a1",
+    "models/ecology/tests/test_correction_game.py": "adade200ae4ded0481be0920412dd356015141c8dc83b035828b1e300f329070",
+    "models/ecology/tests/test_ecology.py": "ccd160c97aefb1f0b1942da08bf0fdbd45cb3e14cc587a20f20fc79e81eaff65",
+    "models/funded_audits/model.py": "fb26b2da939c468a4ce00f539d06957cb3230ba6bda9ae751386bb487c520091",
+    "models/funded_audits/run_experiments.py": "0f904d786d4c8178da39b0a89126ebd1cb30ea92bf5e303a16f8ddacaadb6bee",
+    "models/funded_audits/test_model.py": "e3e517f8f8a423bceaaa9f17ad06b0308ac31ed1a089fe56f98e0cf5cebd25b8",
+    "models/human_pilot/allocation.py": "75e81457b8e2c50b21d02dc94376a8a29cdca3164a89baf8401664813d5963aa",
+    "models/human_pilot/run_design.py": "c45a2abcf4ce35e008a25a45fb4be41358ce4da30b1c3c63715e7ca0206e9ac9",
+    "models/human_pilot/test_allocation.py": "9163d78ab5ef1ec4c98b45cb825209cc3b0aa2121f0d67a0920b086c2182dd56",
+    "models/math/protocol_math.py": "7089c361ac1a3649ae2272bc8aa5a80446ff0ca44ea0e9d95ed1d8ae84b24da7",
+    "models/math/run_experiments.py": "d95da5c4aee1be462541fac5a204c45d50145e19fe9501616159feb75815f766",
+    "models/math/test_protocol_math.py": "5e7b0e518e174062e37b8424ec23e3a4bb5a6122b5f56b0aa1666f6b3ca5731d",
+    "models/release_cycle.py": "1f279b2ff85e96231be1d57dd65586f965543372f436413f2dfec86093de8723",
+    "models/test_release_cycle.py": "8da85581961bc44b55a888fe2a1a9d2a0a5aec9ccc171d3c071527efd1bc5665",
+    "reviews/agent-launch-red/test_agent_interface.py": "c554e52fc9e2b5d96e75b15b2e30488edb4ba137aaeaa930b19524b57477949e",
+    "reviews/red-domains-law/counterexamples.py": "281ce71e9ab07ec78f30b61c7a3fe8163ad57f14abe7b694fa93e14d10d03b2a",
+    "reviews/red-math/correction_game_review.py": "9748f158172b1dfe0930ec5ad38073daa2ff8f2ef0197768140e60698a9a9a33",
+    "reviews/red-math/ecology_review.py": "4aa9c21260c3b67c9b1c04269b6e033a9b07f2cb28aa8508d7e72c0b19d3bd44",
+    "reviews/red-math/funded_review.py": "dab818786066f27de225fb3ac870a8cea58a5a43ee738048e773a660ab8f1805",
+    "reviews/red-math/human_pilot_review.py": "3443fe4d815a561326deeab8aaa2e0df48e6f44d6c5c2d5c43cba00a46cc56b9",
+    "reviews/red-math/probes.py": "8bc83db9bf0c5065fa962b9c32b90a66943662ba90a46c385394117323e7aa3e",
+    "reviews/red-math/second_wave.py": "5f024e63346f58f93353e6070fd49d881ab9e102894d2b9d2db4985eba87df75",
+    "reviews/red-math/verify_repairs.py": "3ba1221772eeaeecb267b2b8b74aa6fec07ba82b33582ea839cc2bc78a445b9b",
+    "reviews/red-runtime/baseline_export_builder.py": "1b68e78fcabe3f0fe5fbaae879a754791860cdf8a855fe12622cc1cfda4e52d3",
+    "reviews/red-runtime/baseline_export_verifier.py": "67583a3323b93f6c01270d7bcb7880e5d0720ba1324ecbeb90e81e0fea5806b9",
+    "reviews/red-runtime/coupled_runtime_probe.py": "ec55d011dc4b40c57da9178136d273971a425a3488405e3eb76af5f74e828d03",
+    "reviews/red-runtime/export_probes.py": "9e9b143b57c8d2b39646505edf2848457b72b36cdb4499086a37ffbb9462f466",
+    "reviews/red-runtime/probes.py": "1cd7dcdeb5de595368773ff55a5c132517fde5ae0dc6618280a42a1976e7d311",
+    "reviews/red-runtime/test_adapter_boundary.py": "c064bf43ee03bb57feaf3f65766f86c17e0b266e71ba2733d317605b1a9d8aa7",
+    "reviews/red-runtime/test_adversarial_runtime.py": "7f6f82a5fb12571290d37cdbf6819aa60a97abd7a05b557579026fd115523496",
+    "reviews/red-runtime/test_coupled_boundaries.py": "f3f8832a692eedbf12b3ecf76d1673ad1fa845b4b0e8acb806e0853e4e950c7b",
+    "reviews/red-runtime/test_evidence_binding.py": "97299464fc6e792a5a9411cea583346dcfa3f6fd46b890cb57fbc164253d1f4e",
+    "reviews/red-runtime/test_export_boundaries.py": "265b0cd33da211df0601a83b1f98c01ca47fe6507741146f28c138059486f900",
+    "reviews/red-runtime/test_publication_semantics.py": "09dacc75401995747390c0b3e18d05cc73ce51089db96bbfd02924a40b2b0ef0",
+    "run_checks.py": "55fbf8bb9a3d8a6637d5149c509676d09d993ae39aaa225bde7de0a2f9ce92d7",
+    "surfaces/build.py": "e4f03252866b7dac37d35e237a9e56cfbac8dbfd084aaed43ab8ebdbf3ac000f",
+    "surfaces/build_brief.py": "738c0d1256c541ae0c919071b1bee953ac77befc41ba1a937009a7cb22f2558d",
+    "surfaces/make_figures.py": "1bd901383dfef95ec3fdec4ea5c6bf71e9d74b4e2af6a2297d5b801d96f9eae6",
+    "surfaces/verify_export.py": "8aaffdc032f4eaba6e3988d264d2b0744ccd6a6c699c90c59964e7ef3bcf7b5c",
+    "toy_agents/__init__.py": "2ebaf4878f14632d467bf24710a5d97b43d00a995fc162c6f079afa529831c8f",
+    "toy_agents/protocol.py": "0a1a6b48f5fc4075c00f1819ee85103907c49169fd9f2d1b76ec86de236ddeff",
+    "toy_agents/run.py": "671fed4d5444b53652b001e6fa7d828614e6cf3b1e5d3b6502b2da1060b5cbeb",
+    "toy_agents/scenarios.py": "5b77fddd3a5fcdd8a998d40b7cbb90effd324b867dfd309edb1ed5e97278c5b7",
+    "toy_agents/tests/test_protocol.py": "a76abb03617767fd4df9454185d9a2d92bb6d6230700ece86e260d9d068ec3af"
+  },
+  "table_sha256": {
+    "models/coupled/results/policy-sweep.csv": "a0d84148a0d22a67f18b5931fcfcf7feec23a6651262dd2a852849ded02a07d3",
+    "models/ecology/results/sweep.csv": "cc58e9276514158b5be2ffd2ef191b2106a4b7104752d6239a80d5787c931c77",
+    "models/funded_audits/results/audit-delivery.csv": "c1009ff4095e02f3bf179eafff27672fc8b8c935a970f020a6091a2c4162cfcd",
+    "models/human_pilot/results/finite-power.csv": "f1e55375ae127da9b8a22a023476eee752a073a98bb0493b652c07a4f09192ca",
+    "models/math/results/audit-participation.csv": "62d6bcc2c7678c401d8defea5ed47cc9533465fcc704aec85f2550266e14c3de",
+    "models/math/results/clone-invariance.csv": "dbebce94594ac5b905cb47ab6a413ef9950e9d0d169155f6a21a2459e507b1cc",
+    "models/math/results/completion-retry.csv": "6bf4ba815a5b9b50283b85dceec7c09aa928cccc71fbf4ac5fdc131c3aeefc2f",
+    "models/math/results/repair-switching.csv": "462855a25f2b3974aef9aebbe7b2dc7716a9f7151060d4235eb4055a734c2312"
+  },
+  "tested_inputs_sha256": {
+    "adapters/__init__.py": "f7855c05cf3220d93a320864d43e38d373384645898c2da6bc42af57bb2026ba",
+    "adapters/demo.py": "445332bc0b4e7ca0fb7e35316b9c4610d2ca50d374efe076c18f7803f7648c02",
+    "adapters/fixtures/evidence.txt": "3e68a3b0d5a22edbe1707a99ef18ada6358aa10b033dbe125b50f7fc8027a4d4",
+    "adapters/fixtures/review-issue.json": "12b19b812d7e67ea7cba5bddf4ce02f56bc1c83e98908b29fe74f1a9b5f737d5",
+    "adapters/fixtures/trusted-enrichment.json": "182667b752bd4e5ebf990e313fe6f0add2371e29cd45affd37b63594bfafef0c",
+    "adapters/legacy.py": "dcf4ff6598466caa727c7abab37b9fbbf0eb934f65b8c576458f2fe8a66259b0",
+    "adapters/tests/test_legacy.py": "f6ed6777c772af28c48e9f61691f7e54766c0b8eaee5930e90d0ebbadf3e6e97",
+    "agent_api/build_examples.py": "ef695768f89407fdb74d2168c9ad90f3842d91c5080ae204d2a1434d63bbb182",
+    "agent_api/cli.py": "f426fe9023123a2f5b4d1b3a3f4f5fc2cf1fa14b7bed6988c6672a929b96115d",
+    "agent_api/examples/biology.json": "28e6f05566576e4e0093d7246f3df973bf5064d995fea6b6c3bacbe6dc2e8ebf",
+    "agent_api/examples/economics_social.json": "1b409115f7e847b42a5c1f3b5254bcd3377ed72a97fbaeb33bd621840e8ffdd3",
+    "agent_api/examples/law.json": "f48ceabfa8ebc430c7e5c6c13519d436bdd0996a0a6b7dee0e42c74bbb14119b",
+    "agent_api/examples/physics_astro.json": "7a399d8ea2231ba5925a76c5be855daf0e8d55bd9cdeb4d780411f49ebade882",
+    "agent_api/examples/policy.json": "5cc01850286f638d7eca5e361737007faa8074129f3076eab832a8dce15af830",
+    "agent_api/interface.py": "1897c7fed8beb787de5b900bc333e8f714e9002779c4bd8767fcc420d26c7d8e",
+    "agent_api/manifest.json": "1a4f30acc230d0393097006e0c3bffa7badb9be3194089638b6acb579204deea",
+    "agent_api/request.schema.json": "c3f0b960a44bcd4c2cf3dcdf8ebb6b6636b5f8d5ad3cb4993eaa4a7bad46fcd7",
+    "agent_api/tests/test_interface.py": "5bcc0b6d054aba2be0b9ff695d1eac9cf8eec843e439e655dde36ddd53f805f0",
+    "domains/fixtures/domain_models.py": "e4443c76a275945d359ac8fd9aaf45ac1cc9bc34033fdc2136173ad0a9ab87fe",
+    "domains/fixtures/replay_receipts.py": "793d836698c0cc152985b4cae44c725f89cd7fd89e94cdb226c67e5109133103",
+    "domains/fixtures/scenarios.json": "c201067e0291a976e2eecae248860f089f75332cb8d63bf89e20bbc105d32edd",
+    "domains/fixtures/test_domain_models.py": "153a644e98548eb7d0de9f242bd1f8c95915e759382f9bf06bd45d27cccef105",
+    "models/coupled/run_experiments.py": "14156e7c0a4f5181e9f9fba41e0280bf7c732f34daf7a839ac2f83af7df6138d",
+    "models/coupled/simulator.py": "0829563f34334132c0b3fdac18395ccde7ff76dea8ff7a92e8f12b623ae3a792",
+    "models/coupled/test_simulator.py": "bccb4d794d5c0381dbcae6727d2a3242829f394f26993b0ce9985ca8a1545197",
+    "models/ecology/correction_game.py": "d3b163a9e81fd0a5e7b8c9bcd97fbf6b8a0b86221a8172852651a945c5f6a53a",
+    "models/ecology/ecology.py": "ac7f23347506edd58c0cd8823dcfa42850cfb0b0af4c6e4b3880003f1f7ee986",
+    "models/ecology/run.py": "2319e4ad062046133cb42fa3f913537171fa5d0359e776a98f8fb1926d6800a1",
+    "models/ecology/tests/test_correction_game.py": "adade200ae4ded0481be0920412dd356015141c8dc83b035828b1e300f329070",
+    "models/ecology/tests/test_ecology.py": "ccd160c97aefb1f0b1942da08bf0fdbd45cb3e14cc587a20f20fc79e81eaff65",
+    "models/funded_audits/model.py": "fb26b2da939c468a4ce00f539d06957cb3230ba6bda9ae751386bb487c520091",
+    "models/funded_audits/run_experiments.py": "0f904d786d4c8178da39b0a89126ebd1cb30ea92bf5e303a16f8ddacaadb6bee",
+    "models/funded_audits/test_model.py": "e3e517f8f8a423bceaaa9f17ad06b0308ac31ed1a089fe56f98e0cf5cebd25b8",
+    "models/human_pilot/allocation.py": "75e81457b8e2c50b21d02dc94376a8a29cdca3164a89baf8401664813d5963aa",
+    "models/human_pilot/run_design.py": "c45a2abcf4ce35e008a25a45fb4be41358ce4da30b1c3c63715e7ca0206e9ac9",
+    "models/human_pilot/test_allocation.py": "9163d78ab5ef1ec4c98b45cb825209cc3b0aa2121f0d67a0920b086c2182dd56",
+    "models/math/protocol_math.py": "7089c361ac1a3649ae2272bc8aa5a80446ff0ca44ea0e9d95ed1d8ae84b24da7",
+    "models/math/run_experiments.py": "d95da5c4aee1be462541fac5a204c45d50145e19fe9501616159feb75815f766",
+    "models/math/test_protocol_math.py": "5e7b0e518e174062e37b8424ec23e3a4bb5a6122b5f56b0aa1666f6b3ca5731d",
+    "models/release_cycle.py": "1f279b2ff85e96231be1d57dd65586f965543372f436413f2dfec86093de8723",
+    "models/test_release_cycle.py": "8da85581961bc44b55a888fe2a1a9d2a0a5aec9ccc171d3c071527efd1bc5665",
+    "reviews/agent-launch-red/test_agent_interface.py": "c554e52fc9e2b5d96e75b15b2e30488edb4ba137aaeaa930b19524b57477949e",
+    "reviews/red-domains-law/counterexamples.py": "281ce71e9ab07ec78f30b61c7a3fe8163ad57f14abe7b694fa93e14d10d03b2a",
+    "reviews/red-math/correction_game_review.py": "9748f158172b1dfe0930ec5ad38073daa2ff8f2ef0197768140e60698a9a9a33",
+    "reviews/red-math/ecology_review.py": "4aa9c21260c3b67c9b1c04269b6e033a9b07f2cb28aa8508d7e72c0b19d3bd44",
+    "reviews/red-math/funded_review.py": "dab818786066f27de225fb3ac870a8cea58a5a43ee738048e773a660ab8f1805",
+    "reviews/red-math/human_pilot_review.py": "3443fe4d815a561326deeab8aaa2e0df48e6f44d6c5c2d5c43cba00a46cc56b9",
+    "reviews/red-math/original_completion.json": "6b2beb1657073c54fc8676c3f91dcdec19f09fbea5036d0ee2258c4e111e7bd6",
+    "reviews/red-math/probes.py": "8bc83db9bf0c5065fa962b9c32b90a66943662ba90a46c385394117323e7aa3e",
+    "reviews/red-math/second_wave.py": "5f024e63346f58f93353e6070fd49d881ab9e102894d2b9d2db4985eba87df75",
+    "reviews/red-math/verify_repairs.py": "3ba1221772eeaeecb267b2b8b74aa6fec07ba82b33582ea839cc2bc78a445b9b",
+    "reviews/red-runtime/baseline_export_builder.py": "1b68e78fcabe3f0fe5fbaae879a754791860cdf8a855fe12622cc1cfda4e52d3",
+    "reviews/red-runtime/baseline_export_verifier.py": "67583a3323b93f6c01270d7bcb7880e5d0720ba1324ecbeb90e81e0fea5806b9",
+    "reviews/red-runtime/coupled_runtime_probe.py": "ec55d011dc4b40c57da9178136d273971a425a3488405e3eb76af5f74e828d03",
+    "reviews/red-runtime/export_probes.py": "9e9b143b57c8d2b39646505edf2848457b72b36cdb4499086a37ffbb9462f466",
+    "reviews/red-runtime/probes.py": "1cd7dcdeb5de595368773ff55a5c132517fde5ae0dc6618280a42a1976e7d311",
+    "reviews/red-runtime/test_adapter_boundary.py": "c064bf43ee03bb57feaf3f65766f86c17e0b266e71ba2733d317605b1a9d8aa7",
+    "reviews/red-runtime/test_adversarial_runtime.py": "7f6f82a5fb12571290d37cdbf6819aa60a97abd7a05b557579026fd115523496",
+    "reviews/red-runtime/test_coupled_boundaries.py": "f3f8832a692eedbf12b3ecf76d1673ad1fa845b4b0e8acb806e0853e4e950c7b",
+    "reviews/red-runtime/test_evidence_binding.py": "97299464fc6e792a5a9411cea583346dcfa3f6fd46b890cb57fbc164253d1f4e",
+    "reviews/red-runtime/test_export_boundaries.py": "265b0cd33da211df0601a83b1f98c01ca47fe6507741146f28c138059486f900",
+    "reviews/red-runtime/test_publication_semantics.py": "09dacc75401995747390c0b3e18d05cc73ce51089db96bbfd02924a40b2b0ef0",
+    "run_checks.py": "55fbf8bb9a3d8a6637d5149c509676d09d993ae39aaa225bde7de0a2f9ce92d7",
+    "surfaces/build.py": "e4f03252866b7dac37d35e237a9e56cfbac8dbfd084aaed43ab8ebdbf3ac000f",
+    "surfaces/build_brief.py": "738c0d1256c541ae0c919071b1bee953ac77befc41ba1a937009a7cb22f2558d",
+    "surfaces/make_figures.py": "1bd901383dfef95ec3fdec4ea5c6bf71e9d74b4e2af6a2297d5b801d96f9eae6",
+    "surfaces/verify_export.py": "8aaffdc032f4eaba6e3988d264d2b0744ccd6a6c699c90c59964e7ef3bcf7b5c",
+    "toy_agents/__init__.py": "2ebaf4878f14632d467bf24710a5d97b43d00a995fc162c6f079afa529831c8f",
+    "toy_agents/protocol.py": "0a1a6b48f5fc4075c00f1819ee85103907c49169fd9f2d1b76ec86de236ddeff",
+    "toy_agents/run.py": "671fed4d5444b53652b001e6fa7d828614e6cf3b1e5d3b6502b2da1060b5cbeb",
+    "toy_agents/scenarios.py": "5b77fddd3a5fcdd8a998d40b7cbb90effd324b867dfd309edb1ed5e97278c5b7",
+    "toy_agents/tests/test_protocol.py": "a76abb03617767fd4df9454185d9a2d92bb6d6230700ece86e260d9d068ec3af"
+  },
+  "inputs_changed_during_run": [],
+  "evidence_sha256": {
+    "adapters/fixtures/review-issue.json": "12b19b812d7e67ea7cba5bddf4ce02f56bc1c83e98908b29fe74f1a9b5f737d5",
+    "adapters/fixtures/trusted-enrichment.json": "182667b752bd4e5ebf990e313fe6f0add2371e29cd45affd37b63594bfafef0c",
+    "adapters/results/demo.json": "bc861d0428c4bb8f7941586ddfd89632021ad45fda632ca50ea0a19592f641cc",
+    "agent_api/examples/biology.json": "28e6f05566576e4e0093d7246f3df973bf5064d995fea6b6c3bacbe6dc2e8ebf",
+    "agent_api/examples/economics_social.json": "1b409115f7e847b42a5c1f3b5254bcd3377ed72a97fbaeb33bd621840e8ffdd3",
+    "agent_api/examples/law.json": "f48ceabfa8ebc430c7e5c6c13519d436bdd0996a0a6b7dee0e42c74bbb14119b",
+    "agent_api/examples/physics_astro.json": "7a399d8ea2231ba5925a76c5be855daf0e8d55bd9cdeb4d780411f49ebade882",
+    "agent_api/examples/policy.json": "5cc01850286f638d7eca5e361737007faa8074129f3076eab832a8dce15af830",
+    "agent_api/manifest.json": "1a4f30acc230d0393097006e0c3bffa7badb9be3194089638b6acb579204deea",
+    "agent_api/request.schema.json": "c3f0b960a44bcd4c2cf3dcdf8ebb6b6636b5f8d5ad3cb4993eaa4a7bad46fcd7",
+    "agent_api/results/biology.json": "141d2d61746391b4009bc7b60fd395a4911701023217ff82fa9904e3eb258284",
+    "agent_api/results/economics_social.json": "737255bc5acbde80745fb73a2233541cad0323c8f8df21b65c9d30766a71a5f2",
+    "agent_api/results/law.json": "0854d6f3f35da8bf1e3a50b78c1ba24737ae8c3540313a9dabddc97dd54c2431",
+    "agent_api/results/manifest.json": "f441960607aed4be71ace52980dd5c00aac174cfed60b23af81971ba5ce98740",
+    "agent_api/results/physics_astro.json": "3952a8812ad919f67c2adb9027deda3b0ecd90a09bab75af90b6b2aff9ed554e",
+    "domains/fixtures/oracle-results.json": "32212bfe4d7bca00e6cf68601ea3be5a577ab348618956740c69c06da0e10e78",
+    "domains/fixtures/replay-results.json": "42d1adfdf98553e61a572c1cae116abbdd3f09d184f27e1232df8ed80a7dbc31",
+    "domains/fixtures/run-manifest.json": "9301455580cbf205421e10aabc0c793ac530bdc91baa7b260aa8a4cb5c653a2c",
+    "domains/fixtures/scenarios.json": "c201067e0291a976e2eecae248860f089f75332cb8d63bf89e20bbc105d32edd",
+    "models/coupled/results/group_first_plentiful.json": "0e8be82a82885b032964b08e71657066f243583d340b059454c057e706a27ec7",
+    "models/coupled/results/group_first_scarce.json": "177517f3d3d5b9724107e9bc2b2e83fc5484755d7e427e950b996e7a7de1b2bb",
+    "models/coupled/results/hidden_control.json": "c712be39f1185d1168b8d9d6331af3b89a18c8784e560af43d96cb017697627e",
+    "models/coupled/results/naive_scarce.json": "8034bd7b9676fdcd37e88c810c619a21c34d99cf203fbc22ee860c72177780c8",
+    "models/coupled/results/policy-sweep.csv": "a0d84148a0d22a67f18b5931fcfcf7feec23a6651262dd2a852849ded02a07d3",
+    "models/coupled/results/selective_reliance.json": "474ea629ccee32815aa50fe6df062774736aa68634f13316c84f28e4c5d06b0f",
+    "models/coupled/results/summary.json": "1656c25f5e96d3bf5e4057e4fb5fe3dee1aae0f2d162f52cfe0153484c4bc5fe",
+    "models/ecology/results/correction-game.json": "7c32a1a1fd496b8b070a21dfb2af22b3a208a8281a94c8c19db9c5c0771a0c25",
+    "models/ecology/results/example-trajectory.json": "e298bb5f79853f4fa8275bbdd5f926739e36884d9ad68ad092b4f28cf17c11ee",
+    "models/ecology/results/summary.json": "69191e9dd661e7e3edaf11a5d265523400a5777d97314e02876e80d3a55cfc03",
+    "models/ecology/results/sweep.csv": "cc58e9276514158b5be2ffd2ef191b2106a4b7104752d6239a80d5787c931c77",
+    "models/funded_audits/results/audit-delivery.csv": "c1009ff4095e02f3bf179eafff27672fc8b8c935a970f020a6091a2c4162cfcd",
+    "models/funded_audits/results/broken_promise.json": "f0ed94d185146affede76543145d0dd1752f1b918c32b94064cbbf7e65fd19d9",
+    "models/funded_audits/results/concealed_funded.json": "2e58d6276ba7846dbb2ead66d56bb8394c5fc294348338aa82048de078e4651f",
+    "models/funded_audits/results/corrected_disclosure_of_delivery_probability.json": "10f3a98543f0f4c00056ad801ca6ae2137c971428779205bda3a8d1c7c7d9983",
+    "models/funded_audits/results/false_positive_exclusion.json": "c2f89905db3cf4d4d874259a73e2555870b8304e2fc701fb8614bda91ccc21c0",
+    "models/funded_audits/results/insufficient_collateral.json": "5b19f5b015829507e938a88c4d417d5b9bb7d08ce1977d1872572b58eb62228c",
+    "models/funded_audits/results/insufficient_shared_capacity.json": "2ea4da6e4440531ada614890e275d776f8ccdbfe5af994de276035ca13f0c66e",
+    "models/funded_audits/results/no_audit.json": "8c4dc08148e94c521ebfa71285435a1ed540f80b26725acb1c05952b2810381e",
+    "models/funded_audits/results/partial_refusal_unused_slots.json": "96969d86d3ec5cb694ba91e04fb8daad046ab869af6c7578849540f99d2dd765",
+    "models/funded_audits/results/selection_disclosed_before_effort.json": "db10ce61a7274f0b4a879469c2da885bb69a5f3cd7f0b6c11b0febb95c637ef0",
+    "models/funded_audits/results/self_audit_unavailable.json": "0796789b92fddb9076d09d489b183bc396cf11639d2ebd3e3b4d62a1b4122002",
+    "models/funded_audits/results/shared_cross_roles.json": "c4c2bfd2363da8e7a8a85cecf46195a581c72c7b3c861a55a6a6a82bc3073e59",
+    "models/funded_audits/results/summary.json": "802387c072b832a5019a3a8e69b4068c585617d9487cc6cad7bb67c5e296f890",
+    "models/human_pilot/results/finite-power.csv": "f1e55375ae127da9b8a22a023476eee752a073a98bb0493b652c07a4f09192ca",
+    "models/human_pilot/results/mock-allocation.json": "b521349a7bf15644676cd1e390f8543b079de10e5a9603f1f0a99b01ba0a7c02",
+    "models/human_pilot/results/summary.json": "900771838a1292bce158dac930ad8e3f15511b4fa0888f586914b5d71dda86ec",
+    "models/math/results/audit-participation.csv": "62d6bcc2c7678c401d8defea5ed47cc9533465fcc704aec85f2550266e14c3de",
+    "models/math/results/clone-invariance.csv": "dbebce94594ac5b905cb47ab6a413ef9950e9d0d169155f6a21a2459e507b1cc",
+    "models/math/results/completion-retry.csv": "6bf4ba815a5b9b50283b85dceec7c09aa928cccc71fbf4ac5fdc131c3aeefc2f",
+    "models/math/results/repair-switching.csv": "462855a25f2b3974aef9aebbe7b2dc7716a9f7151060d4235eb4055a734c2312",
+    "models/math/results/summary.json": "4247c12d9a9f7f360943fa45ed40e751f9a4d40f5d856d4ecdc5f403ea9fecca",
+    "models/math/source-map.json": "982a5719d9ea6be4c52c65d5bdfd95ad44a2aaceb6a061222272225c1a044b07",
+    "results/adversarial-domain.json": "afd1051a420a894059636b73e32fa0d3fe1d7fe7d0300808982b3e5c43f9585c",
+    "results/adversarial-math.json": "ae93591c990405c48192c4dbc7dd0e8eb583593f9c55b98110e0f93e18007694",
+    "results/brief-manifest.json": "baa6e4f9095b9dffd708fe5f2b21fe3f80ce069491cae4ba9b2d5f6342a7879d",
+    "results/figures/ecology-tradeoffs.png": "93d561ce4f44308ae591d03b6426177ec2eb597488ab2c967f8536193470b839",
+    "results/figures/ecology-tradeoffs.svg": "d027ad68fa351cfe336d2832b574f74b409b95e1da52f2dd148d864e2266c097",
+    "results/figures/manifest.json": "47d015fdc7f1ea33a31dae167a257a240d5d2680ebe5210e9117bbdefdab212b",
+    "results/figures/selection-through-stages.png": "4511c92e3477b48214c8020d6aa7ea29b913c159497286ecb620ba25d580d744",
+    "results/figures/selection-through-stages.svg": "0303939cdb841a2585df19f1e58799ffb5f4b7c47f93ba50e822f59a3a2cc8ae",
+    "results/mcrp-release-brief.pdf": "6e45e1107a2a7fc649fc9972a9e6d2b58f37f0c417a854d18d6277f09e2d8b3b",
+    "results/release-cycle.json": "8e9bf06107bfe2c355d4d751e20c1aa6de07904d8de77349e80af6ea1b548fe0",
+    "toy_agents/results/demo.json": "57c042813cf2f1c5e509efb6facacf9e185aa57826a4a8bcb5204880e61104cd"
+  },
+  "scope": "Synthetic/model tests and adversarial probes; no live service or human efficacy validation"
+}

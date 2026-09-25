@@ -1,0 +1,115 @@
+{
+  "interpretation": "Independent reconstruction of conditional one-step payoffs; not equilibrium verification",
+  "checked_outcomes": 18,
+  "all_outcomes": [
+    {
+      "case": "credible_enforcement",
+      "policy": "author_and_repairer",
+      "author_gain": -17.730247627283678,
+      "coalition_gain": -7.4604952545673555
+    },
+    {
+      "case": "credible_enforcement",
+      "policy": "no_correction_credit",
+      "author_gain": -28.0,
+      "coalition_gain": -28.0
+    },
+    {
+      "case": "credible_enforcement",
+      "policy": "repairer_only",
+      "author_gain": -44.108451467146054,
+      "coalition_gain": -11.891548532853946
+    },
+    {
+      "case": "default",
+      "policy": "author_and_repairer",
+      "author_gain": 7.269752372716322,
+      "coalition_gain": 17.539504745432644
+    },
+    {
+      "case": "default",
+      "policy": "no_correction_credit",
+      "author_gain": -3.0,
+      "coalition_gain": -3.0
+    },
+    {
+      "case": "default",
+      "policy": "repairer_only",
+      "author_gain": -19.108451467146054,
+      "coalition_gain": 13.108451467146054
+    },
+    {
+      "case": "full_exploration",
+      "policy": "author_and_repairer",
+      "author_gain": -3.0,
+      "coalition_gain": -3.0
+    },
+    {
+      "case": "full_exploration",
+      "policy": "no_correction_credit",
+      "author_gain": -3.0,
+      "coalition_gain": -3.0
+    },
+    {
+      "case": "full_exploration",
+      "policy": "repairer_only",
+      "author_gain": -3.0,
+      "coalition_gain": -3.0
+    },
+    {
+      "case": "full_internalization",
+      "policy": "author_and_repairer",
+      "author_gain": -10.730247627283678,
+      "coalition_gain": -0.4604952545673555
+    },
+    {
+      "case": "full_internalization",
+      "policy": "no_correction_credit",
+      "author_gain": -21.0,
+      "coalition_gain": -21.0
+    },
+    {
+      "case": "full_internalization",
+      "policy": "repairer_only",
+      "author_gain": -37.108451467146054,
+      "coalition_gain": -4.891548532853946
+    },
+    {
+      "case": "insufficient_independent_capacity",
+      "policy": "author_and_repairer",
+      "author_gain": 7.269752372716322,
+      "coalition_gain": 17.539504745432644
+    },
+    {
+      "case": "insufficient_independent_capacity",
+      "policy": "no_correction_credit",
+      "author_gain": -3.0,
+      "coalition_gain": -3.0
+    },
+    {
+      "case": "insufficient_independent_capacity",
+      "policy": "repairer_only",
+      "author_gain": -19.108451467146054,
+      "coalition_gain": 13.108451467146054
+    },
+    {
+      "case": "verified_clean_baseline",
+      "policy": "author_and_repairer",
+      "author_gain": -24.947150561575786,
+      "coalition_gain": 1.431053278286595
+    },
+    {
+      "case": "verified_clean_baseline",
+      "policy": "no_correction_credit",
+      "author_gain": -35.21690293429211,
+      "coalition_gain": -19.108451467146054
+    },
+    {
+      "case": "verified_clean_baseline",
+      "policy": "repairer_only",
+      "author_gain": -51.32535440143816,
+      "coalition_gain": -3.0
+    }
+  ],
+  "source_sha256": "d3b163a9e81fd0a5e7b8c9bcd97fbf6b8a0b86221a8172852651a945c5f6a53a"
+}

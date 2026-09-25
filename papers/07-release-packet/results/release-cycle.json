@@ -1,0 +1,88 @@
+{
+  "schema": "mcrp.toy-release-cycle.v1",
+  "synthetic": true,
+  "authentication": "trusted fixture identities; no signatures",
+  "before_delivery": "unobserved",
+  "failed_attempt": "delivery_failed",
+  "missing_observation": "missing",
+  "delivery": "delivered_unobserved",
+  "duplicate_attempt": "already_delivered",
+  "observation": "matches",
+  "old_after_amendment": "superseded",
+  "new_without_approval": "no decision for exact candidate and delegation",
+  "new_after_revocation": "authorization_revoked",
+  "events": [
+    {
+      "type": "verified",
+      "binding": "9c986e14d2dbfc69b8019b910beddd931b18ab7e6738aad272d841e7c25ac937",
+      "verifier": "verifier",
+      "at": 1
+    },
+    {
+      "type": "delivery_failed",
+      "at": 3,
+      "release_id": "release-1"
+    },
+    {
+      "type": "observation",
+      "release_id": "release-1",
+      "expected_binding": "9c986e14d2dbfc69b8019b910beddd931b18ab7e6738aad272d841e7c25ac937",
+      "actual_binding": "9c986e14d2dbfc69b8019b910beddd931b18ab7e6738aad272d841e7c25ac937",
+      "status": "missing",
+      "expected_digest": "1bd09cecfadaa36a30f7388d1ad82f31be303a21acbd66d208ddf46d1ad1f1c0",
+      "actual_digest": null,
+      "observer": "observer",
+      "at": 4
+    },
+    {
+      "type": "delivered_unobserved",
+      "at": 5,
+      "release_id": "release-1"
+    },
+    {
+      "type": "observation",
+      "release_id": "release-1",
+      "expected_binding": "9c986e14d2dbfc69b8019b910beddd931b18ab7e6738aad272d841e7c25ac937",
+      "actual_binding": "9c986e14d2dbfc69b8019b910beddd931b18ab7e6738aad272d841e7c25ac937",
+      "status": "matches",
+      "expected_digest": "1bd09cecfadaa36a30f7388d1ad82f31be303a21acbd66d208ddf46d1ad1f1c0",
+      "actual_digest": "1bd09cecfadaa36a30f7388d1ad82f31be303a21acbd66d208ddf46d1ad1f1c0",
+      "observer": "observer",
+      "at": 7
+    },
+    {
+      "type": "amendment",
+      "old": "release-1",
+      "new": "release-2",
+      "new_binding": "f977d738d81b55103e616428ed630e377d1fdef6092bf329200d9a499f8aa754",
+      "at": 8
+    },
+    {
+      "type": "verified",
+      "binding": "f977d738d81b55103e616428ed630e377d1fdef6092bf329200d9a499f8aa754",
+      "verifier": "verifier",
+      "at": 11
+    },
+    {
+      "type": "delivered_unobserved",
+      "at": 12,
+      "release_id": "release-2"
+    },
+    {
+      "type": "observation",
+      "release_id": "release-2",
+      "expected_binding": "f977d738d81b55103e616428ed630e377d1fdef6092bf329200d9a499f8aa754",
+      "actual_binding": "f977d738d81b55103e616428ed630e377d1fdef6092bf329200d9a499f8aa754",
+      "status": "matches",
+      "expected_digest": "84c3127c07a0f385554bb8406d033a07faf59bd60658404baf889eca7df9c819",
+      "actual_digest": "84c3127c07a0f385554bb8406d033a07faf59bd60658404baf889eca7df9c819",
+      "observer": "observer",
+      "at": 13
+    },
+    {
+      "type": "delegation_revoked",
+      "id": "delegation-1",
+      "at": 14
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "trustandreview.hpc-downselect-remediation-review.v0.1",
+  "review_id": "HPC-SAN-IR001-R1",
+  "review_date": "2026-09-01",
+  "reviewed_commit": "5f26da1e5995ff5a0b11fff664dbc82dbc430aa1",
+  "parent_reviewed_commit": "a75d671f730ade7a0c42bf1d2cdd0aee2ae23000",
+  "custody": {
+    "new_fresh_detached_clone": true,
+    "same_host_and_source_limit": true,
+    "network_contact": false
+  },
+  "disposition": "IR001_ROBUSTNESS_HOLD_CLEARED_FOR_EXACT_SANITIZED_DOWNSELECT_ONLY",
+  "corrections": [
+    {"id":"D1","status":"corrected-and-adversarially-verified","observation":"coherently failed record and standalone replay both exited nonzero"},
+    {"id":"D2","status":"corrected-and-adversarially-verified","observation":"23 exact unique entries; omission and duplicate mutations both rejected"},
+    {"id":"D3","status":"corrected","observation":"bounded mode requires named checks and does not inherit scaling, convergence, or representativeness"},
+    {"id":"D4","status":"corrected","observation":"registered inequalities replace exact-looking rounded claims"},
+    {"id":"D5","status":"corrected","observation":"resource shape is illustrative and monetary cost unmeasured"}
+  ],
+  "baseline": {
+    "tests_passed": 11,
+    "clean_replay": "pass",
+    "root_validator": "pass",
+    "packet_index_entries_at_reviewed_commit": 23,
+    "resource_axes": 10,
+    "assessment_modes": 6,
+    "performed_modes": 3
+  },
+  "independent_probes": [
+    {"id":"R1-coherent-failure","result":"record exit 1; standalone replay exit 1"},
+    {"id":"R2-index-omission","result":"validator exit 1 with README coverage mismatch"},
+    {"id":"R3-index-duplicate","result":"validator exit 1 with duplicate Makefile path"},
+    {"id":"R4-independent-arithmetic","result":"MAP 2; central probability 0.9999999999999748; split difference 2.220446049250313e-16"}
+  ],
+  "independence_dimensions": {
+    "fresh_checkout_custody": "limited yes; new detached no-hardlinks clone on same host",
+    "executor_context": "limited yes; separate remediation task in same Codex/OpenAI environment",
+    "implementation": "no independent implementation",
+    "inputs": "no; same synthetic partitions",
+    "libraries": "no; same Python standard-library runtime",
+    "institution_or_governance": "no",
+    "scientific_or_domain_judgment": "no",
+    "method": "no alternative method"
+  },
+  "explicitly_not_supported": [
+    "production representativeness",
+    "full-scale or full independent execution",
+    "restricted-platform attestation",
+    "independent replication or independent evidence path",
+    "scientific or domain validity",
+    "external institutional custody or governance independence"
+  ],
+  "repository_modified_by_reviewer": false
+}

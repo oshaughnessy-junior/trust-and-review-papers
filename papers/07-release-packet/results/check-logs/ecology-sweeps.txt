@@ -1,0 +1,9 @@
+light_load
+default
+overload
+strong_feedback
+high_exploration
+expensive_repair
+blind_common_cause
+biased_verification
+no_verification

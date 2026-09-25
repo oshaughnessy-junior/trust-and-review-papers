@@ -1,0 +1,29 @@
+test_integer_immutable_flag_cannot_be_upgraded_in_projection (test_adapter_boundary.AdapterRedTests) ... ok
+test_already_delivered_correction_can_be_observed_after_revocation (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_amendment_must_preserve_intended_successor_binding (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_declared_offer_floor_cannot_be_weakened (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_expired_currentness_query_cannot_be_rolled_back (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_later_contradiction_cannot_leave_direct_reliance_current (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_observer_checks_metadata_even_with_identical_content (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_publication_invalid_calls_leave_runtime_state_unchanged (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_zero_capacity_cannot_be_minted_by_multiple_zero_holds (test_coupled_boundaries.CoupledBoundaryTests) ... ok
+test_changed_figure_rebuild_does_not_inherit_pass (test_evidence_binding.EvidenceBindingTests) ... ok
+test_changed_result_json_rebuild_does_not_inherit_pass (test_evidence_binding.EvidenceBindingTests) ... ok
+test_evidence_text_is_in_frozen_input_inventory (test_evidence_binding.EvidenceBindingTests) ... ok
+test_fixture_changed_during_commands_fails_validation (test_evidence_binding.EvidenceBindingTests) ... ok
+test_historical_probe_fixture_changed_during_commands_fails_validation (test_evidence_binding.EvidenceBindingTests) ... ok
+test_source_changed_during_commands_fails_validation (test_evidence_binding.EvidenceBindingTests) ... ok
+test_extra_traversal_zip_member_is_rejected (test_export_boundaries.ExportBoundaryTests) ... ok
+test_source_symlink_not_dereferenced (test_export_boundaries.ExportBoundaryTests) ... ok
+test_symlink_zip_metadata_is_rejected (test_export_boundaries.ExportBoundaryTests) ... ok
+test_unmanifested_destination_file_is_rejected (test_export_boundaries.ExportBoundaryTests) ... ok
+test_untracked_destination_file_not_published (test_export_boundaries.ExportBoundaryTests) ... ok
+test_expired_authority_cannot_be_revived_by_matching_observation (test_publication_semantics.PublicationSequenceTests) ... ok
+test_observed_missing_stays_historical_until_new_observation (test_publication_semantics.PublicationSequenceTests) ... ok
+test_tampered_delivery_requires_new_release_and_new_decision (test_publication_semantics.PublicationSequenceTests) ... ok
+test_unpublished_wrong_metadata_does_not_poison_correct_receipt (test_publication_semantics.PublicationSequenceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.153s
+
+OK

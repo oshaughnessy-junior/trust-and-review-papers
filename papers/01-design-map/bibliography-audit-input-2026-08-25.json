@@ -1,0 +1,59 @@
+[
+  {
+    "n": 1,
+    "title": "Jupyter Notebooks—a publishing format for reproducible computational workflows",
+    "authors": ["Kluyver, Thomas", "Ragan-Kelley, Benjamin", "Pérez, Fernando", "Granger, Brian"],
+    "authors_truncated": true,
+    "year": "2016",
+    "doi": "10.3233/978-1-61499-649-1-87",
+    "venue": "Positioning and Power in Academic Publishing",
+    "kind": "article"
+  },
+  {
+    "n": 2,
+    "title": "Reproducibility of computational workflows is automated using continuous analysis",
+    "authors": ["Beaulieu-Jones, Brett K.", "Greene, Casey S."],
+    "year": "2017",
+    "doi": "10.1038/nbt.3780",
+    "venue": "Nature Biotechnology",
+    "kind": "article"
+  },
+  {
+    "n": 3,
+    "title": "Computing environments for reproducibility: Capturing the Whole Tale",
+    "authors": ["Brinckman, Adam", "Chard, Kyle", "Gaffney, Niall", "Hategan, Mihael"],
+    "authors_truncated": true,
+    "year": "2019",
+    "doi": "10.1016/j.future.2017.12.029",
+    "venue": "Future Generation Computer Systems",
+    "kind": "article"
+  },
+  {
+    "n": 4,
+    "title": "The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2018 update",
+    "authors": ["Afgan, Enis", "Baker, Dannon", "Batut, Bérénice", "van den Beek, Marius"],
+    "authors_truncated": true,
+    "year": "2018",
+    "doi": "10.1093/nar/gky379",
+    "venue": "Nucleic Acids Research",
+    "kind": "article"
+  },
+  {
+    "n": 5,
+    "title": "ReproZip: Computational Reproducibility With Ease",
+    "authors": ["Chirigati, Fernando", "Rampin, Rémi", "Shasha, Dennis", "Freire, Juliana"],
+    "year": "2016",
+    "doi": "10.1145/2882903.2899401",
+    "venue": "Proceedings of the 2016 International Conference on Management of Data",
+    "kind": "article"
+  },
+  {
+    "n": 6,
+    "title": "Archiving and Referencing Source Code with Software Heritage",
+    "authors": ["Di Cosmo, Roberto"],
+    "year": "2020",
+    "doi": "10.1007/978-3-030-52200-1_36",
+    "venue": "Mathematical Software—ICMS 2020",
+    "kind": "article"
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "axes": {
+    "access": {
+      "bundled_input_replay_requires_network": false,
+      "cold_environment_materialization": "network access or a pre-populated package cache/mirror is required; packages are locked but not vendored",
+      "upstream_data_access": "public CC BY 4.0; no account"
+    },
+    "agent_capability": {
+      "case_authoring_support": "Codex; recorded separately from human review",
+      "required_for_rerun": false
+    },
+    "compute": {
+      "accelerator": "none",
+      "cpu_seconds_observed": 0.02482799999999996,
+      "peak_rss_bytes_observed": 135053312,
+      "processes": 1
+    },
+    "freshness": {
+      "on_failure": "append reproduction-failed or stale event; never overwrite this run",
+      "reexecute_by": "2026-11-27",
+      "source_retrieved": "2026-08-27"
+    },
+    "human_expertise": {
+      "execution": "basic CLI",
+      "scientific_signoff": "GW strain/data-quality interpretation; pending"
+    },
+    "monetary_allocative_cost": {
+      "allocation_required": false,
+      "marginal_cost_usd_observed": 0
+    },
+    "operator_support": {
+      "required_for_rerun": false,
+      "setup": "Pixi environment resolution and approximately 2 MB local input"
+    },
+    "platform": {
+      "requirement": "Pixi-supported contemporary macOS arm64 or Linux x86_64; no scheduler"
+    },
+    "storage": {
+      "artifacts_excluding_resource_declaration_bytes_observed": 15151,
+      "registered_input_bytes": 2048012
+    },
+    "wall_clock": {
+      "seconds_observed": 0.03725962492171675
+    }
+  },
+  "schema": "trustandreview.resource-declaration.v0.1"
+}

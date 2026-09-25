@@ -1,0 +1,4 @@
+# Preserve generated scientific SVG bytes and the verbatim third-party notice.
+# Their hashes are part of the release evidence; upstream whitespace is intentional.
+papers/07-release-packet/results/figures/*.svg -whitespace
+papers/07-release-packet/publication/notices/bitstream-vera-license.txt -whitespace

@@ -1,0 +1,1085 @@
+{
+  "evidence_class": "T/I conditional one-step model",
+  "results": {
+    "credible_enforcement": {
+      "author_and_repairer": {
+        "author_attention_gain": 10.26975237271633,
+        "author_deviation_gain_if_repaired": -17.73024762728367,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 28.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 20.53950474543266,
+        "coalition_deviation_gain_if_repaired": -7.460495254567341,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 28.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 50,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.5,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.4360308570604966,
+          0.4360308570604966,
+          0.1279382858790068
+        ],
+        "manufactured_scores_if_repaired": [
+          0.4,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "author_and_repairer",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "no_correction_credit": {
+        "author_attention_gain": 0.0,
+        "author_deviation_gain_if_repaired": -28.0,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 28.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 0.0,
+        "coalition_deviation_gain_if_repaired": -28.0,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 28.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 50,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.5,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "no_correction_credit",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "repairer_only": {
+        "author_attention_gain": -16.108451467146057,
+        "author_deviation_gain_if_repaired": -44.108451467146054,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 28.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 16.10845146714605,
+        "coalition_deviation_gain_if_repaired": -11.89154853285395,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 28.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 50,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.5,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.17224881866187275,
+          0.6555023626762544,
+          0.17224881866187275
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "repairer_only",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      }
+    },
+    "default": {
+      "author_and_repairer": {
+        "author_attention_gain": 10.26975237271633,
+        "author_deviation_gain_if_repaired": 7.269752372716329,
+        "author_manufacture_profitable": true,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 20.53950474543266,
+        "coalition_deviation_gain_if_repaired": 17.53950474543266,
+        "coalition_manufacture_profitable": true,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.4360308570604966,
+          0.4360308570604966,
+          0.1279382858790068
+        ],
+        "manufactured_scores_if_repaired": [
+          0.4,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "author_and_repairer",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "no_correction_credit": {
+        "author_attention_gain": 0.0,
+        "author_deviation_gain_if_repaired": -3.0,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 0.0,
+        "coalition_deviation_gain_if_repaired": -3.0,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "no_correction_credit",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "repairer_only": {
+        "author_attention_gain": -16.108451467146057,
+        "author_deviation_gain_if_repaired": -19.108451467146057,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 16.10845146714605,
+        "coalition_deviation_gain_if_repaired": 13.10845146714605,
+        "coalition_manufacture_profitable": true,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.17224881866187275,
+          0.6555023626762544,
+          0.17224881866187275
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "repairer_only",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      }
+    },
+    "full_exploration": {
+      "author_and_repairer": {
+        "author_attention_gain": 0.0,
+        "author_deviation_gain_if_repaired": -3.0,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 0.0,
+        "coalition_deviation_gain_if_repaired": -3.0,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 1,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "manufactured_scores_if_repaired": [
+          0.4,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "author_and_repairer",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "no_correction_credit": {
+        "author_attention_gain": 0.0,
+        "author_deviation_gain_if_repaired": -3.0,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 0.0,
+        "coalition_deviation_gain_if_repaired": -3.0,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 1,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "no_correction_credit",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "repairer_only": {
+        "author_attention_gain": 0.0,
+        "author_deviation_gain_if_repaired": -3.0,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 0.0,
+        "coalition_deviation_gain_if_repaired": -3.0,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 1,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "repairer_only",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      }
+    },
+    "full_internalization": {
+      "author_and_repairer": {
+        "author_attention_gain": 10.26975237271633,
+        "author_deviation_gain_if_repaired": -10.73024762728367,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 21.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 20.53950474543266,
+        "coalition_deviation_gain_if_repaired": -0.4604952545673413,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 21.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.4360308570604966,
+          0.4360308570604966,
+          0.1279382858790068
+        ],
+        "manufactured_scores_if_repaired": [
+          0.4,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "author_and_repairer",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "no_correction_credit": {
+        "author_attention_gain": 0.0,
+        "author_deviation_gain_if_repaired": -21.0,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 21.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 0.0,
+        "coalition_deviation_gain_if_repaired": -21.0,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 21.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "no_correction_credit",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "repairer_only": {
+        "author_attention_gain": -16.108451467146057,
+        "author_deviation_gain_if_repaired": -37.108451467146054,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 21.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 16.10845146714605,
+        "coalition_deviation_gain_if_repaired": -4.89154853285395,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 21.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.17224881866187275,
+          0.6555023626762544,
+          0.17224881866187275
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "repairer_only",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      }
+    },
+    "insufficient_independent_capacity": {
+      "author_and_repairer": {
+        "author_attention_gain": 10.26975237271633,
+        "author_deviation_gain_if_repaired": 7.269752372716329,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 20.53950474543266,
+        "coalition_deviation_gain_if_repaired": 17.53950474543266,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 15,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": false,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.4360308570604966,
+          0.4360308570604966,
+          0.1279382858790068
+        ],
+        "manufactured_scores_if_repaired": [
+          0.4,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "author_and_repairer",
+        "remaining_repair_capacity_if_completed": null,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "no_correction_credit": {
+        "author_attention_gain": 0.0,
+        "author_deviation_gain_if_repaired": -3.0,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 0.0,
+        "coalition_deviation_gain_if_repaired": -3.0,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 15,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": false,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "no_correction_credit",
+        "remaining_repair_capacity_if_completed": null,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "repairer_only": {
+        "author_attention_gain": -16.108451467146057,
+        "author_deviation_gain_if_repaired": -19.108451467146057,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "clean_scores": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 16.10845146714605,
+        "coalition_deviation_gain_if_repaired": 13.10845146714605,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 0.0,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 15,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": false,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.17224881866187275,
+          0.6555023626762544,
+          0.17224881866187275
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "repairer_only",
+        "remaining_repair_capacity_if_completed": null,
+        "scarce_repair_units_if_completed": 20.0
+      }
+    },
+    "verified_clean_baseline": {
+      "author_and_repairer": {
+        "author_attention_gain": -21.94715056157578,
+        "author_deviation_gain_if_repaired": -24.94715056157578,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.6555023626762544,
+          0.17224881866187275,
+          0.17224881866187275
+        ],
+        "clean_scores": [
+          0.4,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 4.431053278286607,
+        "coalition_deviation_gain_if_repaired": 1.4310532782866066,
+        "coalition_manufacture_profitable": true,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 1,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.4360308570604966,
+          0.4360308570604966,
+          0.1279382858790068
+        ],
+        "manufactured_scores_if_repaired": [
+          0.4,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "author_and_repairer",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "no_correction_credit": {
+        "author_attention_gain": -32.21690293429211,
+        "author_deviation_gain_if_repaired": -35.21690293429211,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.6555023626762544,
+          0.17224881866187275,
+          0.17224881866187275
+        ],
+        "clean_scores": [
+          0.4,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": -16.10845146714605,
+        "coalition_deviation_gain_if_repaired": -19.10845146714605,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 1,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "no_correction_credit",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      },
+      "repairer_only": {
+        "author_attention_gain": -48.32535440143816,
+        "author_deviation_gain_if_repaired": -51.32535440143816,
+        "author_manufacture_profitable": false,
+        "author_private_cost": 3.0,
+        "clean_probabilities": [
+          0.6555023626762544,
+          0.17224881866187275,
+          0.17224881866187275
+        ],
+        "clean_scores": [
+          0.4,
+          0.0,
+          0.0
+        ],
+        "coalition_attention_gain": 0.0,
+        "coalition_deviation_gain_if_repaired": -3.0,
+        "coalition_manufacture_profitable": false,
+        "coalition_private_cost": 3.0,
+        "config": {
+          "attention_value": 100.0,
+          "author": 0,
+          "author_repair_share": 0.1,
+          "beta": 4.0,
+          "clean_credit": 1,
+          "coalition_repair_share": 0.1,
+          "effort_utility_per_unit": 1.0,
+          "enforceable_loss": 0.0,
+          "exploration": 0.15,
+          "intent_detection_probability": 0.0,
+          "manufacture_cost": 1.0,
+          "memory": 0.4,
+          "repair_capacity": 20.0,
+          "repair_units": 20.0,
+          "repairer": 1,
+          "scores": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "temporary_harm": 5.0
+        },
+        "feasible_completed_repair": true,
+        "incremental_social_cost_proxy_if_repaired": 26.0,
+        "manufactured_probabilities_if_repaired": [
+          0.17224881866187275,
+          0.6555023626762544,
+          0.17224881866187275
+        ],
+        "manufactured_scores_if_repaired": [
+          0.0,
+          0.4,
+          0.0
+        ],
+        "note": "Conditional completed-repair payoffs only. Infeasibility blocks this path, not every deviation. Intent detection is not ordinary defect detection.",
+        "policy": "repairer_only",
+        "remaining_repair_capacity_if_completed": 0.0,
+        "scarce_repair_units_if_completed": 20.0
+      }
+    }
+  },
+  "schema": "mcrp-correction-game/0.1",
+  "source_sha256": {
+    "correction_game.py": "d3b163a9e81fd0a5e7b8c9bcd97fbf6b8a0b86221a8172852651a945c5f6a53a",
+    "ecology.py": "ac7f23347506edd58c0cd8823dcfa42850cfb0b0af4c6e4b3880003f1f7ee986",
+    "tests/test_correction_game.py": "adade200ae4ded0481be0920412dd356015141c8dc83b035828b1e300f329070"
+  }
+}

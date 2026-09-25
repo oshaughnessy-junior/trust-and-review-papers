@@ -1,0 +1,50 @@
+{
+  "dimensions": {
+    "populations": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "quotas": "every integer 0..N",
+    "review_and_audit_hours": [
+      0.1,
+      0.5,
+      1.0
+    ],
+    "role_modes": [
+      "dedicated",
+      "shared_cross",
+      "self_audit"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "selection_disclosed": [
+      false,
+      true
+    ]
+  },
+  "executed_cases_checked": 2160,
+  "expected_preflight_rejections_checked": 900,
+  "independent_checks": [
+    "rational best response including refusal-first ties",
+    "actor audit matches selected participating slots",
+    "no self-audit execution",
+    "person hours reconstructed without ResourceLedger calls",
+    "reserved/used/capacity rational ordering",
+    "rewards and audits reconstructed from actor decisions",
+    "penalty/escrow conservation",
+    "offered/completed/refused and selected/executed/unused denominators"
+  ],
+  "passed": true,
+  "reviewer_scope": "Same-orchestration agent; did not author funded runtime; independent arithmetic reconstruction from outputs",
+  "schema": "independent-funded-accounting-sweep/1",
+  "source_sha256": "fb26b2da939c468a4ce00f539d06957cb3230ba6bda9ae751386bb487c520091",
+  "synthetic_only": true,
+  "total_config_seed_cases": 3060
+}

@@ -13,3 +13,23 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/validate_repository.py
+      - uses: prefix-dev/setup-pixi@v0.10.0
+        with:
+          working-directory: papers/01-design-map/cases/r0-gw150914-strain-lag
+          run-install: true
+          frozen: true
+          cache: true
+      - run: pixi run verify
+        working-directory: papers/01-design-map/cases/r0-gw150914-strain-lag
+
+  release-packet-models:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Reproduce synthetic models and adversarial regressions
+        run: python papers/07-release-packet/run_checks.py

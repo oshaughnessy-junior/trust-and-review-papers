@@ -1,0 +1,1276 @@
+{
+  "config": {
+    "policy": "group_first",
+    "retry": "reroll",
+    "clones": 1,
+    "capacity": 20,
+    "requests": 12,
+    "attempts": 3,
+    "reliance_filter": "A_only",
+    "hidden_control": false,
+    "reserve_repair": false
+  },
+  "seed": 70017,
+  "counts": {
+    "A_completed_panels": 10,
+    "A_initial_panels": 9,
+    "A_relied_panels": 10,
+    "A_reserved_panels": 12,
+    "A_selected_panels": 12,
+    "accepted_actors": 29,
+    "accepted_panels": 11,
+    "accepted_requests": 11,
+    "completed_actors": 29,
+    "completed_not_selected_for_reliance": 1,
+    "completed_panels": 11,
+    "completed_requests": 11,
+    "completed_without_reliance": 1,
+    "eligible_requests": 12,
+    "full_effort_completed_panels": 2,
+    "honest_actors": 17,
+    "incomplete_panels": 7,
+    "initial_panels": 12,
+    "invited_actors": 36,
+    "invited_panels": 18,
+    "invited_requests": 12,
+    "noticed_affected_reliances": 3,
+    "offered_requests": 12,
+    "oracle_affected_reliances": 10,
+    "pending_repairs": 0,
+    "refuse_actors": 7,
+    "relied_panels": 10,
+    "relied_requests": 10,
+    "repaired_reliances": 3,
+    "reservation_failures": 0,
+    "reserved_panels": 18,
+    "reserved_requests": 12,
+    "retry_attempts": 6,
+    "selected_panels": 18,
+    "selected_requests": 12,
+    "selection_attempts": 18,
+    "shallow_actors": 12,
+    "still_unresolved_reliances": 3,
+    "true_independent_completed_panels": 11,
+    "unnoticed_affected_reliances": 7,
+    "unresolved_requests": 1
+  },
+  "ledger": [
+    {
+      "person": "A",
+      "capacity": 20,
+      "used": 12.75,
+      "held": 0.0,
+      "remaining": 7.25,
+      "lanes": {
+        "check_and_invitation": 11.25,
+        "repair": 1.5
+      }
+    },
+    {
+      "person": "B",
+      "capacity": 20,
+      "used": 1.1,
+      "held": 0.0,
+      "remaining": 18.9,
+      "lanes": {
+        "check_and_invitation": 1.1
+      }
+    },
+    {
+      "person": "C",
+      "capacity": 20,
+      "used": 9.5,
+      "held": 0.0,
+      "remaining": 10.5,
+      "lanes": {
+        "check_and_invitation": 8.0,
+        "repair": 1.5
+      }
+    },
+    {
+      "person": "steward",
+      "capacity": 20,
+      "used": 4.060000000000001,
+      "held": 0.0,
+      "remaining": 15.939999999999998,
+      "lanes": {
+        "check_and_invitation": 1.8000000000000005,
+        "intake": 0.6,
+        "reliance": 0.9999999999999999,
+        "repair": 0.30000000000000004,
+        "reservation_triage": 0.36000000000000004
+      }
+    }
+  ],
+  "receipts": [
+    {
+      "request": 0,
+      "target": "claim-0:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "C"
+      ],
+      "oracle_full_effort": true,
+      "oracle_independent": true,
+      "currentness": "unresolved_material_change",
+      "repair": "check_completed"
+    },
+    {
+      "request": 1,
+      "target": "claim-1:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "B"
+      ],
+      "oracle_full_effort": false,
+      "oracle_independent": true,
+      "currentness": "unresolved_material_change",
+      "repair": "check_completed"
+    },
+    {
+      "request": 2,
+      "target": "claim-2:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "C"
+      ],
+      "oracle_full_effort": false,
+      "oracle_independent": true,
+      "currentness": "unresolved_material_change",
+      "repair": "check_completed"
+    },
+    {
+      "request": 4,
+      "target": "claim-4:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "C"
+      ],
+      "oracle_full_effort": false,
+      "oracle_independent": true,
+      "currentness": "as_recorded",
+      "repair": "undiscovered_dependency"
+    },
+    {
+      "request": 5,
+      "target": "claim-5:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "C"
+      ],
+      "oracle_full_effort": false,
+      "oracle_independent": true,
+      "currentness": "as_recorded",
+      "repair": "undiscovered_dependency"
+    },
+    {
+      "request": 6,
+      "target": "claim-6:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "C"
+      ],
+      "oracle_full_effort": true,
+      "oracle_independent": true,
+      "currentness": "as_recorded",
+      "repair": "undiscovered_dependency"
+    },
+    {
+      "request": 7,
+      "target": "claim-7:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "C"
+      ],
+      "oracle_full_effort": false,
+      "oracle_independent": true,
+      "currentness": "as_recorded",
+      "repair": "undiscovered_dependency"
+    },
+    {
+      "request": 8,
+      "target": "claim-8:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "C"
+      ],
+      "oracle_full_effort": false,
+      "oracle_independent": true,
+      "currentness": "as_recorded",
+      "repair": "undiscovered_dependency"
+    },
+    {
+      "request": 10,
+      "target": "claim-10:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "B"
+      ],
+      "oracle_full_effort": false,
+      "oracle_independent": true,
+      "currentness": "as_recorded",
+      "repair": "undiscovered_dependency"
+    },
+    {
+      "request": 11,
+      "target": "claim-11:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "C"
+      ],
+      "oracle_full_effort": false,
+      "oracle_independent": true,
+      "currentness": "as_recorded",
+      "repair": "undiscovered_dependency"
+    }
+  ],
+  "events": [
+    {
+      "sequence": 0,
+      "event": "offer",
+      "request": 0,
+      "target": "claim-0:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 1,
+      "event": "select",
+      "request": 0,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 2,
+      "event": "actor_response",
+      "request": 0,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.672,
+        "shallow": 0.48,
+        "refuse": 0.10070831224343661
+      }
+    },
+    {
+      "sequence": 3,
+      "event": "actor_response",
+      "request": 0,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.562,
+        "shallow": 0.48,
+        "refuse": 0.3384714856145513
+      }
+    },
+    {
+      "sequence": 4,
+      "event": "rely",
+      "request": 0,
+      "target": "claim-0:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 5,
+      "event": "offer",
+      "request": 1,
+      "target": "claim-1:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 6,
+      "event": "select",
+      "request": 1,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 7,
+      "event": "actor_response",
+      "request": 1,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.62,
+        "shallow": 0.48,
+        "refuse": 0.27650989148634825
+      }
+    },
+    {
+      "sequence": 8,
+      "event": "actor_response",
+      "request": 1,
+      "attempt": 0,
+      "group": "B",
+      "true_person": "B",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.31200000000000006,
+        "shallow": 0.48,
+        "refuse": 0.4351635557737018
+      }
+    },
+    {
+      "sequence": 9,
+      "event": "rely",
+      "request": 1,
+      "target": "claim-1:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 10,
+      "event": "offer",
+      "request": 2,
+      "target": "claim-2:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 11,
+      "event": "select",
+      "request": 2,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 12,
+      "event": "actor_response",
+      "request": 2,
+      "attempt": 0,
+      "group": "B",
+      "true_person": "B",
+      "action": "refuse",
+      "reported_complete": false,
+      "hours": 0.05,
+      "utilities": {
+        "honest": 0.269,
+        "shallow": 0.48,
+        "refuse": 0.5951734416934652
+      }
+    },
+    {
+      "sequence": 13,
+      "event": "actor_response",
+      "request": 2,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.47000000000000003,
+        "shallow": 0.48,
+        "refuse": 0.23726922143855125
+      }
+    },
+    {
+      "sequence": 14,
+      "event": "select",
+      "request": 2,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 15,
+      "event": "actor_response",
+      "request": 2,
+      "attempt": 1,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.5680000000000001,
+        "shallow": 0.48,
+        "refuse": 0.21773894901359647
+      }
+    },
+    {
+      "sequence": 16,
+      "event": "actor_response",
+      "request": 2,
+      "attempt": 1,
+      "group": "B",
+      "true_person": "B",
+      "action": "refuse",
+      "reported_complete": false,
+      "hours": 0.05,
+      "utilities": {
+        "honest": 0.26839999999999997,
+        "shallow": 0.48,
+        "refuse": 0.6464558244564691
+      }
+    },
+    {
+      "sequence": 17,
+      "event": "select",
+      "request": 2,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 18,
+      "event": "actor_response",
+      "request": 2,
+      "attempt": 2,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.556,
+        "shallow": 0.48,
+        "refuse": 0.26398387320548405
+      }
+    },
+    {
+      "sequence": 19,
+      "event": "actor_response",
+      "request": 2,
+      "attempt": 2,
+      "group": "C",
+      "true_person": "C",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.467,
+        "shallow": 0.48,
+        "refuse": 0.3187521154255421
+      }
+    },
+    {
+      "sequence": 20,
+      "event": "rely",
+      "request": 2,
+      "target": "claim-2:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 21,
+      "event": "offer",
+      "request": 3,
+      "target": "claim-3:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 22,
+      "event": "select",
+      "request": 3,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 23,
+      "event": "actor_response",
+      "request": 3,
+      "attempt": 0,
+      "group": "B",
+      "true_person": "B",
+      "action": "refuse",
+      "reported_complete": false,
+      "hours": 0.05,
+      "utilities": {
+        "honest": 0.34780000000000005,
+        "shallow": 0.48,
+        "refuse": 0.5111195708090811
+      }
+    },
+    {
+      "sequence": 24,
+      "event": "actor_response",
+      "request": 3,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.544,
+        "shallow": 0.48,
+        "refuse": 0.27775045522027075
+      }
+    },
+    {
+      "sequence": 25,
+      "event": "select",
+      "request": 3,
+      "attempt": 1,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 26,
+      "event": "actor_response",
+      "request": 3,
+      "attempt": 1,
+      "group": "B",
+      "true_person": "B",
+      "action": "refuse",
+      "reported_complete": false,
+      "hours": 0.05,
+      "utilities": {
+        "honest": 0.3472,
+        "shallow": 0.48,
+        "refuse": 0.5510879968842368
+      }
+    },
+    {
+      "sequence": 27,
+      "event": "actor_response",
+      "request": 3,
+      "attempt": 1,
+      "group": "C",
+      "true_person": "C",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.532,
+        "shallow": 0.48,
+        "refuse": 0.2587567182207703
+      }
+    },
+    {
+      "sequence": 28,
+      "event": "select",
+      "request": 3,
+      "attempt": 2,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 29,
+      "event": "actor_response",
+      "request": 3,
+      "attempt": 2,
+      "group": "B",
+      "true_person": "B",
+      "action": "refuse",
+      "reported_complete": false,
+      "hours": 0.05,
+      "utilities": {
+        "honest": 0.3466,
+        "shallow": 0.48,
+        "refuse": 0.5977843336904107
+      }
+    },
+    {
+      "sequence": 30,
+      "event": "actor_response",
+      "request": 3,
+      "attempt": 2,
+      "group": "C",
+      "true_person": "C",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.52,
+        "shallow": 0.48,
+        "refuse": 0.322162121885775
+      }
+    },
+    {
+      "sequence": 31,
+      "event": "offer",
+      "request": 4,
+      "target": "claim-4:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 32,
+      "event": "select",
+      "request": 4,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 33,
+      "event": "actor_response",
+      "request": 4,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.5840000000000001,
+        "shallow": 0.48,
+        "refuse": 0.17250164242030902
+      }
+    },
+    {
+      "sequence": 34,
+      "event": "actor_response",
+      "request": 4,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.468,
+        "shallow": 0.48,
+        "refuse": 0.2498134755961092
+      }
+    },
+    {
+      "sequence": 35,
+      "event": "rely",
+      "request": 4,
+      "target": "claim-4:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 36,
+      "event": "offer",
+      "request": 5,
+      "target": "claim-5:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 37,
+      "event": "select",
+      "request": 5,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 38,
+      "event": "actor_response",
+      "request": 5,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.532,
+        "shallow": 0.48,
+        "refuse": 0.2720765593849466
+      }
+    },
+    {
+      "sequence": 39,
+      "event": "actor_response",
+      "request": 5,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.42500000000000004,
+        "shallow": 0.48,
+        "refuse": 0.29017300452591105
+      }
+    },
+    {
+      "sequence": 40,
+      "event": "rely",
+      "request": 5,
+      "target": "claim-5:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 41,
+      "event": "offer",
+      "request": 6,
+      "target": "claim-6:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 42,
+      "event": "select",
+      "request": 6,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 43,
+      "event": "actor_response",
+      "request": 6,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.6000000000000001,
+        "shallow": 0.48,
+        "refuse": 0.28484019244999853
+      }
+    },
+    {
+      "sequence": 44,
+      "event": "actor_response",
+      "request": 6,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.502,
+        "shallow": 0.48,
+        "refuse": 0.26728307690323627
+      }
+    },
+    {
+      "sequence": 45,
+      "event": "rely",
+      "request": 6,
+      "target": "claim-6:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 46,
+      "event": "offer",
+      "request": 7,
+      "target": "claim-7:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 47,
+      "event": "select",
+      "request": 7,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 48,
+      "event": "actor_response",
+      "request": 7,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.548,
+        "shallow": 0.48,
+        "refuse": 0.19390351531881844
+      }
+    },
+    {
+      "sequence": 49,
+      "event": "actor_response",
+      "request": 7,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.45,
+        "shallow": 0.48,
+        "refuse": 0.1803339077600737
+      }
+    },
+    {
+      "sequence": 50,
+      "event": "rely",
+      "request": 7,
+      "target": "claim-7:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 51,
+      "event": "offer",
+      "request": 8,
+      "target": "claim-8:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 52,
+      "event": "select",
+      "request": 8,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 53,
+      "event": "actor_response",
+      "request": 8,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.496,
+        "shallow": 0.48,
+        "refuse": 0.0740020822908345
+      }
+    },
+    {
+      "sequence": 54,
+      "event": "actor_response",
+      "request": 8,
+      "attempt": 0,
+      "group": "B",
+      "true_person": "B",
+      "action": "refuse",
+      "reported_complete": false,
+      "hours": 0.05,
+      "utilities": {
+        "honest": 0.266,
+        "shallow": 0.48,
+        "refuse": 0.6305155369996082
+      }
+    },
+    {
+      "sequence": 55,
+      "event": "select",
+      "request": 8,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 56,
+      "event": "actor_response",
+      "request": 8,
+      "attempt": 1,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.48400000000000004,
+        "shallow": 0.48,
+        "refuse": 0.18563354371655322
+      }
+    },
+    {
+      "sequence": 57,
+      "event": "actor_response",
+      "request": 8,
+      "attempt": 1,
+      "group": "C",
+      "true_person": "C",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.40700000000000003,
+        "shallow": 0.48,
+        "refuse": 0.15610213438063514
+      }
+    },
+    {
+      "sequence": 58,
+      "event": "rely",
+      "request": 8,
+      "target": "claim-8:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 59,
+      "event": "offer",
+      "request": 9,
+      "target": "claim-9:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 60,
+      "event": "select",
+      "request": 9,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 61,
+      "event": "actor_response",
+      "request": 9,
+      "attempt": 0,
+      "group": "B",
+      "true_person": "B",
+      "action": "refuse",
+      "reported_complete": false,
+      "hours": 0.05,
+      "utilities": {
+        "honest": 0.34540000000000004,
+        "shallow": 0.48,
+        "refuse": 0.5661649082863487
+      }
+    },
+    {
+      "sequence": 62,
+      "event": "actor_response",
+      "request": 9,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.48400000000000004,
+        "shallow": 0.48,
+        "refuse": 0.1912206705864044
+      }
+    },
+    {
+      "sequence": 63,
+      "event": "select",
+      "request": 9,
+      "attempt": 1,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 64,
+      "event": "actor_response",
+      "request": 9,
+      "attempt": 1,
+      "group": "B",
+      "true_person": "B",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.34480000000000005,
+        "shallow": 0.48,
+        "refuse": 0.401630338197855
+      }
+    },
+    {
+      "sequence": 65,
+      "event": "actor_response",
+      "request": 9,
+      "attempt": 1,
+      "group": "C",
+      "true_person": "C",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.47200000000000003,
+        "shallow": 0.48,
+        "refuse": 0.15453475419622006
+      }
+    },
+    {
+      "sequence": 66,
+      "event": "offer",
+      "request": 10,
+      "target": "claim-10:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 67,
+      "event": "select",
+      "request": 10,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 68,
+      "event": "actor_response",
+      "request": 10,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.512,
+        "shallow": 0.48,
+        "refuse": 0.21720143010969628
+      }
+    },
+    {
+      "sequence": 69,
+      "event": "actor_response",
+      "request": 10,
+      "attempt": 0,
+      "group": "B",
+      "true_person": "B",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.30180000000000007,
+        "shallow": 0.48,
+        "refuse": 0.4139383038274572
+      }
+    },
+    {
+      "sequence": 70,
+      "event": "rely",
+      "request": 10,
+      "target": "claim-10:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 71,
+      "event": "offer",
+      "request": 11,
+      "target": "claim-11:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 72,
+      "event": "select",
+      "request": 11,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 73,
+      "event": "actor_response",
+      "request": 11,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.46,
+        "shallow": 0.48,
+        "refuse": 0.05602736683343211
+      }
+    },
+    {
+      "sequence": 74,
+      "event": "actor_response",
+      "request": 11,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.389,
+        "shallow": 0.48,
+        "refuse": 0.13188153696478175
+      }
+    },
+    {
+      "sequence": 75,
+      "event": "rely",
+      "request": 11,
+      "target": "claim-11:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 76,
+      "event": "amend",
+      "target": "claim-0:v1",
+      "known_affected": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sequence": 77,
+      "event": "repair_check",
+      "request": 0,
+      "renewal_required": true
+    },
+    {
+      "sequence": 78,
+      "event": "repair_check",
+      "request": 1,
+      "renewal_required": true
+    },
+    {
+      "sequence": 79,
+      "event": "repair_check",
+      "request": 2,
+      "renewal_required": true
+    }
+  ],
+  "graphs": {
+    "true_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "declared_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        11
+      ]
+    ]
+  },
+  "total_hours": 27.410000000000004,
+  "limitation": "Synthetic utilities, declared controls, known toy skills; no authenticated authority, real audit delivery, independent review, human calibration or live currentness."
+}

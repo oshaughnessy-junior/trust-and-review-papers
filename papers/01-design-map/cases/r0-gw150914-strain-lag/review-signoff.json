@@ -1,0 +1,38 @@
+{
+  "schema": "trustandreview.review-signoff.v0.1",
+  "review_target": "r0-gw150914-v2-strain-lag-v0.1-rc1",
+  "machine_checks": {
+    "status": "passed",
+    "scope": "source identity/version, HDF5 geometry, quality/injection policy, deterministic processing, lag invariant, adversarial failures, and clean replay",
+    "scientific_validity_proven": false
+  },
+  "agent_reproducibility_review": {
+    "status": "bounded-pass",
+    "scope": "portable execution, identity/provenance completeness for the declared path, resource reporting, and conclusion strength",
+    "reviewer": "Codex daily-paper-progress agent",
+    "limitations": "No independent custody and no human domain authority."
+  },
+  "separate_executor_clean_checkout_replay": {
+    "status": "bounded-pass",
+    "report": "independent-replay-report.json",
+    "target_commit": "2c9b4eea319e1d6a8fbb3a5a434082cf34f3fdd6",
+    "scope": "Fresh clone, detached commit identity, locked environment materialization, packet/source identity audit, clean replay, and isolated beyond-tolerance and lock-mismatch adversarial checks.",
+    "limitations": "Fresh execution custody is distinct from independent implementation, input, institution, human domain judgment, or scientific replication."
+  },
+  "human_scientific_review": {
+    "status": "accepted",
+    "required_scope": "Confirm preprocessing choices, the 10 ms necessary-bound interpretation, quality/injection policy, accepted boundaries, and conclusion strength.",
+    "dossier": "scientific-review-dossier.json",
+    "blank_review_form": "scientific-review-form.md",
+    "dossier_status": "human-reviewed",
+    "completed_review": "scientific-review-completed-2026-08-29.md",
+    "review_target_commit": "2495989a78a66fd286a154f6b9735e87cf782b42",
+    "reviewer": "R. O'Shaughnessy",
+    "recorded_by": "Codex (OpenAI), on behalf of R. O'Shaughnessy",
+    "rationale_provenance": "Blanket human approval supplied in the current thread; no separate itemized rationale was supplied or inferred.",
+    "signed_at": "2026-08-29",
+    "strongest_warranted_conclusion": "bounded computational repeatability of the registered processing path and satisfaction of one necessary intersite-lag invariant",
+    "independent_review": false
+  },
+  "disposition": "machine-verified; bounded-human-scientific-review-accepted; independent-replication-not-established"
+}

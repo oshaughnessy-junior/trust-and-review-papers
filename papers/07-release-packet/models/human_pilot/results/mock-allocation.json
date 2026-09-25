@@ -1,0 +1,46 @@
+{
+  "status": "ARTIFICIAL NOT A REAL STUDY ALLOCATION",
+  "seed": 9252026,
+  "records": [
+    {
+      "boundary": "novice-toy-0",
+      "block": 0,
+      "arm": "card"
+    },
+    {
+      "boundary": "novice-toy-1",
+      "block": 0,
+      "arm": "template"
+    },
+    {
+      "boundary": "novice-toy-2",
+      "block": 0,
+      "arm": "card"
+    },
+    {
+      "boundary": "novice-toy-3",
+      "block": 0,
+      "arm": "template"
+    },
+    {
+      "boundary": "collaboration_delegate-toy-0",
+      "block": 1,
+      "arm": "template"
+    },
+    {
+      "boundary": "collaboration_delegate-toy-1",
+      "block": 1,
+      "arm": "card"
+    },
+    {
+      "boundary": "collaboration_delegate-toy-2",
+      "block": 1,
+      "arm": "template"
+    },
+    {
+      "boundary": "collaboration_delegate-toy-3",
+      "block": 1,
+      "arm": "card"
+    }
+  ]
+}

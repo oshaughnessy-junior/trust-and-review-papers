@@ -1,0 +1,19 @@
+test_atomic_failed_reservation_preserves_every_person (test_simulator.CoupledTests) ... ok
+test_conservation_across_policies_capacity_and_hidden_control (test_simulator.CoupledTests) ... ok
+test_dependency_oracle_and_repair_do_not_renew_authority (test_simulator.CoupledTests) ... ok
+test_exact_group_probability_and_enumeration_oracle (test_simulator.CoupledTests) ... ok
+test_exact_single_request_retry_oracle (test_simulator.CoupledTests) ... ok
+test_fixed_panel_retries_do_not_reroll (test_simulator.CoupledTests) ... ok
+test_full_trace_clone_invariance_for_group_first (test_simulator.CoupledTests) ... ok
+test_hidden_control_shares_actual_capacity (test_simulator.CoupledTests) ... ok
+test_input_validation (test_simulator.CoupledTests) ... ok
+test_invalid_behavior_cannot_complete_a_refusal (test_simulator.CoupledTests) ... ok
+test_invalid_settlement_retains_hold (test_simulator.CoupledTests) ... ok
+test_partial_use_refund_and_shared_lanes (test_simulator.CoupledTests) ... ok
+test_reliance_filter_never_upgrades_completion (test_simulator.CoupledTests) ... ok
+test_runtime_deterministic_oracle_all_complete (test_simulator.CoupledTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.042s
+
+OK

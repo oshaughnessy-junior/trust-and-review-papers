@@ -1,0 +1,45 @@
+{
+  "claim_id": "HPC-SAN-C001",
+  "full_scale_disposition": "not-performed",
+  "machine_disposition": "verified-for-sanitized-downselect-only",
+  "restricted_attestation_disposition": "template-only",
+  "result": {
+    "aggregate_log_likelihood": [
+      -32.0,
+      -8.0,
+      0.0,
+      -8.0,
+      -32.0
+    ],
+    "central_probability": 1.0,
+    "invariants": {
+      "central_probability_above_floor": true,
+      "map_theta_matches_registered": true,
+      "split_half_mean_difference_below_ceiling": true
+    },
+    "map_theta": 2,
+    "passed": true,
+    "posterior_mean": 2.0,
+    "posterior_probability": [
+      0.0,
+      0.000335237708,
+      0.999329524583,
+      0.000335237708,
+      0.0
+    ],
+    "split_half_mean_difference": 0.0,
+    "split_half_posterior_means": [
+      2.0,
+      2.0
+    ],
+    "theta": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "schema": "trustandreview.hpc-downselect.evidence.v0.1",
+  "strongest_warranted_conclusion": "sampled lineage and digest-generation behavior plus bounded aggregate invariants for the accessible downselect"
+}

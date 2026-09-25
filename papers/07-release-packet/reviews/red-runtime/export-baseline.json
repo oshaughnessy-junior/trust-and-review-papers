@@ -1,0 +1,22 @@
+{
+  "preexisting_untracked": {
+    "build": "accepted",
+    "included_in_zip": true
+  },
+  "source_symlink": {
+    "build": "accepted",
+    "dereferenced_into_export": true
+  },
+  "extra_traversal_zip_member": {
+    "verifier_passed": true,
+    "errors": []
+  },
+  "symlink_zip_metadata": {
+    "verifier_passed": true,
+    "errors": []
+  },
+  "unmanifested_output": {
+    "verifier_passed": true,
+    "errors": []
+  }
+}

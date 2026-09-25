@@ -1,0 +1,14 @@
+test_author_cannot_approve_and_verifier_cannot_publish (test_release_cycle.ReleaseBoundaryTests) ... ok
+test_bound_component_mutations_need_new_decision (test_release_cycle.ReleaseBoundaryTests) ... ok
+test_checks_require_literal_success_and_full_coverage (test_release_cycle.ReleaseBoundaryTests) ... ok
+test_clock_cannot_roll_back_to_restore_authority (test_release_cycle.ReleaseBoundaryTests) ... ok
+test_delegation_expansion_does_not_inherit_decision (test_release_cycle.ReleaseBoundaryTests) ... ok
+test_observation_is_historical_even_after_approval_expires (test_release_cycle.ReleaseBoundaryTests) ... ok
+test_retry_idempotence_and_amendment_trace (test_release_cycle.ReleaseBoundaryTests) ... ok
+test_revocation_and_expiry_checked_immediately_before_publish (test_release_cycle.ReleaseBoundaryTests) ... ok
+test_transport_success_is_not_observation_and_tamper_is_visible (test_release_cycle.ReleaseBoundaryTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK

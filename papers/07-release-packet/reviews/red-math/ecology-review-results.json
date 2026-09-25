@@ -1,0 +1,30 @@
+{
+  "interpretation": "Reproduction and hypothetical incentive counterexample, no strategic behavior fitted",
+  "reproduced_runs": 216,
+  "summary_and_paired_metric_checks": 351,
+  "meanfield_finite_difference": {
+    "observed": 0.9283333333304222,
+    "predicted": 0.9283333333333333
+  },
+  "correction_credit_boundary": {
+    "clean_final_scores": [
+      0.042391158275216244,
+      0.0,
+      0.0
+    ],
+    "defective_final_scores": [
+      0.6027749989623822,
+      0.2755922226791748,
+      0.46656409452167924
+    ],
+    "clean_repairs": 0,
+    "defective_repairs": 22,
+    "meaning": "Defect production can generate correction credit; actors do not choose defect rates in present model, so no strategic equilibrium claim."
+  },
+  "shared_blindness": {
+    "completed": 6,
+    "accuracy": 0.0,
+    "repair_backlog": 0
+  },
+  "source_sha256": "ac7f23347506edd58c0cd8823dcfa42850cfb0b0af4c6e4b3880003f1f7ee986"
+}

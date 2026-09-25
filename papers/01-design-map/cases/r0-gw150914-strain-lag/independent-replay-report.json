@@ -1,0 +1,122 @@
+{
+  "schema": "trustandreview.independent-replay-report.v0.1",
+  "report_id": "R0-GW150914-IR001",
+  "report_date": "2026-08-28",
+  "status": "bounded-pass",
+  "actor": {
+    "executor_id": "fresh-context-agent-executor-R0-IR-01",
+    "actor_class": "Codex subagent with no inherited conversation context",
+    "human_gravitational_wave_authority": false,
+    "organizational_independence": false,
+    "oversight_relation": "commissioned by the same private TrustAndReview activity"
+  },
+  "target": {
+    "repository": "oshaughnessy-junior/trust-and-review-papers",
+    "commit": "2c9b4eea319e1d6a8fbb3a5a434082cf34f3fdd6",
+    "checkout": "fresh clone at detached HEAD in a temporary directory",
+    "source_checkout_clean_after_review": true
+  },
+  "platform": {
+    "operating_system": "macOS 26.6.1 build 25G76",
+    "kernel": "Darwin 25.6.0",
+    "architecture": "arm64",
+    "pixi": "0.67.2",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "h5py": "3.14.0"
+  },
+  "execution": {
+    "environment_command": "pixi install --locked --no-progress",
+    "verification_command": "pixi run --locked --clean-env verify",
+    "tests_passed": 8,
+    "tests_failed": 0,
+    "clean_replay": "passed",
+    "lag_seconds": 0.00537109375,
+    "correlation": -0.400196295324,
+    "outer_process_resources": {
+      "real_seconds": 36.37,
+      "maximum_resident_bytes": 196673536,
+      "scope": "Pixi task orchestration plus verification, not only the scientific process"
+    }
+  },
+  "identity_audit": {
+    "packet_index_entries_checked": 21,
+    "missing_entries": 0,
+    "extra_entries": 0,
+    "digest_mismatches": 0,
+    "source_and_run_identities_consistent": true,
+    "ten_resource_axes_exact": true,
+    "lock_sha256": "0dab6c042b55f185b39b5c578a9b3a9cc4bc4dde865b48d9bce666b969065b48"
+  },
+  "additional_adversarial_checks": [
+    {
+      "mutation": "add 1e-6 to the first committed correlation-curve value in an isolated copy",
+      "expected": "fail beyond the declared 1e-10 correlation tolerance",
+      "observed": "FAIL: committed correlation at row 2 exceeds clean-replay tolerance",
+      "passed": true
+    },
+    {
+      "mutation": "change the NumPy constraint to 2.2.* while retaining the registered lock in an isolated copy",
+      "expected": "locked installation rejects a manifest/lock mismatch",
+      "observed": "lock-file not up-to-date with the workspace",
+      "passed": true
+    }
+  ],
+  "independence_dimensions": {
+    "fresh_checkout_custody": "yes",
+    "detached_exact_commit": "yes",
+    "fresh_agent_context": "yes",
+    "distinct_hardware_or_operating_system_from_author_run": "no; same host class and macOS arm64",
+    "independent_implementation": "no; same source code",
+    "independent_scientific_libraries": "no; same lock-selected stack",
+    "independent_input_or_calibration": "no; same GWOSC products",
+    "independent_institution_or_governance": "no",
+    "independent_human_scientific_judgment": "no"
+  },
+  "discrepancies": [
+    {
+      "id": "IR-D001",
+      "finding": "No-network wording did not distinguish bundled data replay from cold dependency materialization.",
+      "disposition": "remediated-and-verified-at-2c9b4ee"
+    },
+    {
+      "id": "IR-D002",
+      "finding": "Artifact byte accounting included a self-rewritten resource record and was four bytes low.",
+      "disposition": "remediated-and-verified-at-2c9b4ee"
+    },
+    {
+      "id": "IR-D003",
+      "finding": "The nominal 0.2-second window is 820 samples, or 0.2001953125 seconds, after registered rounding.",
+      "disposition": "remediated-and-verified-at-2c9b4ee"
+    },
+    {
+      "id": "IR-D004",
+      "finding": "Packet-index wording said a repository commit remained pending although an exact containing commit was audited.",
+      "disposition": "remediated-and-verified-at-2c9b4ee"
+    }
+  ],
+  "superseding_replay": {
+    "target_commit": "2c9b4eea319e1d6a8fbb3a5a434082cf34f3fdd6",
+    "fresh_detached_checkout": true,
+    "source_checkout_clean_after_review": true,
+    "locked_clean_environment_tests": "8/8 passed plus clean replay",
+    "packet_index_entries_checked": 21,
+    "packet_index_complete_and_hash_consistent": true,
+    "ten_resource_axes_exact": true,
+    "recorded_artifacts_excluding_resource_declaration_bytes": 15151,
+    "observed_artifacts_excluding_resource_declaration_bytes": 15151,
+    "registered_event_window_samples_per_detector": 820,
+    "corrections_verified": ["IR-D001", "IR-D002", "IR-D003", "IR-D004"],
+    "new_bounded_finding": "The packet-index generated_on date and remediation status records required this attestation-only wrapper update."
+  },
+  "strongest_warranted_conclusion": "Under separate fresh-checkout execution custody, the exact registered commit, inputs, and same locked scientific stack reproduce the claim evidence, negative decisions, and one necessary H1/L1 lag invariant on macOS arm64.",
+  "explicitly_unwarranted": [
+    "independent scientific replication",
+    "independent implementation or calibration",
+    "validation of GWOSC curation or quality semantics",
+    "astrophysical origin or original-search significance",
+    "parameter estimation or scientific validity",
+    "human gravitational-wave scientific sign-off"
+  ]
+}

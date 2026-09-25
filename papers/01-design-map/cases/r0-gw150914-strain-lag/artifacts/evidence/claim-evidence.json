@@ -1,0 +1,25 @@
+{
+  "claim_id": "R0-GW150914-C001",
+  "input_event": "GW150914-v2",
+  "machine_disposition": "verified-under-declared-workflow",
+  "result": {
+    "absolute_correlation": 0.400196295324,
+    "absolute_lag_seconds": 0.00537109375,
+    "correlation": -0.400196295324,
+    "event_window_samples_per_detector": 820,
+    "invariants": {
+      "absolute_correlation_above_declared_floor": true,
+      "absolute_lag_within_h1_l1_physical_bound": true,
+      "matching_detector_time_grids": true,
+      "no_cbc_or_burst_hardware_injection_at_event": true,
+      "registered_v2_input_identity": true,
+      "required_event_quality_bits": true
+    },
+    "lag_seconds": 0.00537109375,
+    "negative_shift_seconds": 0.0,
+    "sample_rate_hz": 4096.0
+  },
+  "schema": "trustandreview.r0.claim-evidence.v0.1",
+  "scientific_validity_disposition": "not-assessed",
+  "strongest_warranted_conclusion": "bounded computational repeatability of the registered processing path and satisfaction of one necessary intersite-lag invariant"
+}
