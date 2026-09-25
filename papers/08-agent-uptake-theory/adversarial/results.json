@@ -1,0 +1,57 @@
+{
+  "interpretation": "Synthetic conditional false-clear probabilities, not posterior truth probabilities.",
+  "common_blindspot": [
+    {
+      "checks": 1,
+      "false_clear": 0.28,
+      "independence_misstatement": 0.28
+    },
+    {
+      "checks": 2,
+      "false_clear": 0.136,
+      "independence_misstatement": 0.0784
+    },
+    {
+      "checks": 5,
+      "false_clear": 0.100288,
+      "independence_misstatement": 0.0017210368
+    },
+    {
+      "checks": 10,
+      "false_clear": 0.10000009216,
+      "independence_misstatement": 2.96196766695424e-06
+    },
+    {
+      "checks": 100,
+      "false_clear": 0.1,
+      "independence_misstatement": 5.197603356578054e-56
+    }
+  ],
+  "six_check_allocation": {
+    "allocation": [
+      3,
+      3
+    ],
+    "false_clear": 0.01149184,
+    "all_one_family": 0.1000576,
+    "premise": "Independent family-level blind spots; each check costs one unit."
+  },
+  "shopping": {
+    "single_trial": 0.1,
+    "trials": 50,
+    "at_least_one_clear": 0.9948462247926799,
+    "premise": "Independent fresh panels and all attempts counted."
+  },
+  "transcript_indistinguishability": {
+    "good": [
+      0.9,
+      0.1
+    ],
+    "bad": [
+      0.8,
+      0.2
+    ],
+    "tv": 0.1,
+    "false_accept_lower_bound_if_good_accepts_90_percent": 0.8
+  }
+}

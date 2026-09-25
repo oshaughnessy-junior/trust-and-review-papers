@@ -1,0 +1,24 @@
+{
+  "kind": "stipulated_exact_decision_example",
+  "not_empirical": true,
+  "scenarios": [
+    {
+      "prevalence": "1/1000",
+      "baseline_false_clear": "7/25",
+      "new_false_clear": "1567/15625",
+      "new_false_alarm": "30024751/312500000",
+      "net_benefit": "-35127776249/62500000000",
+      "net_benefit_decimal": -0.562044419984,
+      "invalid_given_clear": "31340000/282224113751"
+    },
+    {
+      "prevalence": "1/20",
+      "baseline_false_clear": "7/25",
+      "new_false_clear": "1567/15625",
+      "new_false_alarm": "30024751/312500000",
+      "net_benefit": "421479731/1250000000",
+      "net_benefit_decimal": 0.3371837848,
+      "invalid_given_clear": "31340000/5398369731"
+    }
+  ]
+}

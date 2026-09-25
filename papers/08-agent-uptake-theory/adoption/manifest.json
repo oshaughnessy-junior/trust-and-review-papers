@@ -1,0 +1,10 @@
+{
+  "kind": "synthetic exact adoption theory",
+  "files": {
+    "MANUSCRIPT.md": "a19ac3482db732a7d5ae264eec169285adb6204cba829b65de19fb20cfb8609f",
+    "model.py": "4c2e212e6b89795e1537f1610dae2eb954d94eb7d853a87ab929fe339373bfb8",
+    "test_model.py": "263be973f04b2e83411c2fa1102ef5833328c80b3891de68bf168cfbdf7a290f",
+    "results.json": "9277c26eb8462c31656d4b88e86651a3231c1c77553937c5199a131562866424",
+    "REVIEW_OF_ADVERSARIAL.md": "6cf45772bf8f7512f4a986f19d6be5fa7ba35ba88256dfc68d9d25cdb6ec0db1"
+  }
+}
