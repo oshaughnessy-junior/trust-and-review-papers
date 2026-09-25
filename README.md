@@ -46,3 +46,10 @@ existing publication sequence, not evidence that all five papers passed their ga
 The seed material is derived from the `oshaughnessy-junior/mcrp-protocol-paper` worktree at commit `666e897` and earlier reviewed commits recorded there. Copied files retain their original text; new manuscripts must cite primary sources rather than cite the internal packet as authority.
 
 The maintainer authorized public repository access and an agent-first prototype deployment on 25 September 2026 after confidentiality review. The original release packet has its own scoped license; older materials retain their notices and draft maturity. No journal submission, external peer review or scientific acceptance is implied. Historical private/draft labels in earlier records describe their preparation state.
+
+## aiXiv mathematical-paper revision
+
+The [review 1588 response packet](papers/09-review-1588/README.md) adds explicit
+expected-budget and hard-cap results, exact sensitivity examples and constrained
+panel construction, with a further internal blue/red pass. Its revised PDF and
+source are a research prototype; toy tests do not establish real-world efficacy.

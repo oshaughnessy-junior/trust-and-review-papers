@@ -2,3 +2,6 @@
 # Their hashes are part of the release evidence; upstream whitespace is intentional.
 papers/07-release-packet/results/figures/*.svg -whitespace
 papers/07-release-packet/publication/notices/bitstream-vera-license.txt -whitespace
+
+# Generated submission PDFs are binary publication artifacts.
+*.pdf binary

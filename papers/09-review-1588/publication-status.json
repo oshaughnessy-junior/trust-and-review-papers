@@ -1,0 +1,21 @@
+{
+  "paper": "aixiv.260925.000007",
+  "review_id": 1588,
+  "reviewed_version": "1.0",
+  "prepared_version": "1.1",
+  "pdf_sha256": "2d19728bca3db1e6bbb95e55e5731fa0f33010ed630ff07ebb7d11e0f78b8422",
+  "pdf_pages": 10,
+  "source_tag": "aixiv-review-1588",
+  "status": "source and PDF prepared; aiXiv upload pending manual selection",
+  "unit_tests": {
+    "original": 21,
+    "formal_revision": 11,
+    "sensitivity": 11
+  },
+  "same_author_directed_team": true,
+  "independent_internal_oracle_comparisons": [
+    4320,
+    5616
+  ],
+  "license": "CC-BY-4.0"
+}

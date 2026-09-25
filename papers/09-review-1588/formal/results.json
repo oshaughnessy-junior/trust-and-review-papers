@@ -1,0 +1,40 @@
+{
+  "budget_example": {
+    "N": 3,
+    "audit_cost": "1",
+    "budget": "3/2",
+    "expected_interval": [
+      "5/39",
+      "1/2"
+    ],
+    "hard_interval": [
+      "5/39",
+      "1/3"
+    ]
+  },
+  "hard_q_quarter_distribution": [
+    {
+      "audited": [],
+      "probability": "1/4"
+    },
+    {
+      "audited": [
+        0
+      ],
+      "probability": "1/4"
+    },
+    {
+      "audited": [
+        1
+      ],
+      "probability": "1/4"
+    },
+    {
+      "audited": [
+        2
+      ],
+      "probability": "1/4"
+    }
+  ],
+  "interpretation": "Exact weak best-response feasibility; not empirical uptake or realized honesty."
+}

@@ -1,0 +1,7 @@
+{
+  "method": "Direct rational utility inequalities and identical-cost count cap versus returned exact interval; no sampling",
+  "parameter_cases": 432,
+  "q_grid_points_checked": 5616,
+  "passed": true,
+  "limits": "finite grid, same author-directed team, no empirical validation"
+}
