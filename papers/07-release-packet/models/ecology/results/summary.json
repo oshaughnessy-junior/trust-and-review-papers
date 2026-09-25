@@ -1,0 +1,2378 @@
+{
+  "aggregate": [
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.00853115104583839,
+        "attention_hhi": -0.00042505360434896833,
+        "completed": 0.125,
+        "completion_coverage": 0.0011160714285714246,
+        "correct_checks_per_offer": 0.009586894289081632,
+        "defect_detection_fraction": -0.013315217391304326,
+        "labor": -18.625,
+        "largest_attention_share": -0.00043235199485198994,
+        "mean_queue_age": -0.125,
+        "minimum_group_coverage": 0.017857142857142863,
+        "offered": 0,
+        "repair_backlog": -0.75,
+        "unresolved_offers": -0.125
+      },
+      "policy": "prestige",
+      "regime": "light_load",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9469026548672567,
+          "mean": 0.9236577855032793,
+          "min": 0.8870967741935484
+        },
+        "attention_hhi": {
+          "max": 0.279786680541103,
+          "mean": 0.24587062370891383,
+          "min": 0.21325084188268464
+        },
+        "completed": {
+          "max": 146,
+          "mean": 122.25,
+          "min": 109
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 1.0,
+          "min": 1.0
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9469026548672567,
+          "mean": 0.9236577855032793,
+          "min": 0.8870967741935484
+        },
+        "defect_detection_fraction": {
+          "max": 0.9565217391304348,
+          "mean": 0.8882077649900539,
+          "min": 0.8
+        },
+        "labor": {
+          "max": 2412,
+          "mean": 2018.5,
+          "min": 1772
+        },
+        "largest_attention_share": {
+          "max": 0.4596774193548387,
+          "mean": 0.39920120046360885,
+          "min": 0.336283185840708
+        },
+        "mean_queue_age": {
+          "max": 0,
+          "mean": 0,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 1.0,
+          "min": 1.0
+        },
+        "offered": {
+          "max": 146,
+          "mean": 122.25,
+          "min": 109
+        },
+        "repair_backlog": {
+          "max": 8,
+          "mean": 5.625,
+          "min": 4
+        },
+        "unresolved_offers": {
+          "max": 0,
+          "mean": 0,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.004778235405007811,
+        "attention_hhi": 0.0,
+        "completed": 0,
+        "completion_coverage": 0.0,
+        "correct_checks_per_offer": 0.004778235405007811,
+        "defect_detection_fraction": 0.004629629629629636,
+        "labor": -2,
+        "largest_attention_share": 0.0,
+        "mean_queue_age": 0.0,
+        "minimum_group_coverage": 0.0,
+        "offered": 0,
+        "repair_backlog": 0,
+        "unresolved_offers": 0
+      },
+      "policy": "bounded",
+      "regime": "light_load",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9459459459459459,
+          "mean": 0.9199048698624487,
+          "min": 0.8790322580645161
+        },
+        "attention_hhi": {
+          "max": 0.279786680541103,
+          "mean": 0.2462956773132628,
+          "min": 0.21325084188268464
+        },
+        "completed": {
+          "max": 146,
+          "mean": 122.125,
+          "min": 109
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9988839285714286,
+          "min": 0.9910714285714286
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9380530973451328,
+          "mean": 0.9188491266192054,
+          "min": 0.8790322580645161
+        },
+        "defect_detection_fraction": {
+          "max": 0.95,
+          "mean": 0.906152612010988,
+          "min": 0.8695652173913043
+        },
+        "labor": {
+          "max": 2532,
+          "mean": 2035.125,
+          "min": 1798
+        },
+        "largest_attention_share": {
+          "max": 0.4596774193548387,
+          "mean": 0.3996335524584609,
+          "min": 0.336283185840708
+        },
+        "mean_queue_age": {
+          "max": 1.0,
+          "mean": 0.125,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9821428571428571,
+          "min": 0.8571428571428571
+        },
+        "offered": {
+          "max": 146,
+          "mean": 122.25,
+          "min": 109
+        },
+        "repair_backlog": {
+          "max": 9,
+          "mean": 6.375,
+          "min": 4
+        },
+        "unresolved_offers": {
+          "max": 1,
+          "mean": 0.125,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0,
+        "attention_hhi": 0.0,
+        "completed": 0,
+        "completion_coverage": 0.0,
+        "correct_checks_per_offer": 0.0,
+        "defect_detection_fraction": 0.0,
+        "labor": 0,
+        "largest_attention_share": 0.0,
+        "mean_queue_age": 0.0,
+        "minimum_group_coverage": 0.0,
+        "offered": 0,
+        "repair_backlog": 0,
+        "unresolved_offers": 0
+      },
+      "policy": "uniform",
+      "regime": "light_load",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9459459459459459,
+          "mean": 0.9151266344574409,
+          "min": 0.8790322580645161
+        },
+        "attention_hhi": {
+          "max": 0.279786680541103,
+          "mean": 0.2462956773132628,
+          "min": 0.21325084188268464
+        },
+        "completed": {
+          "max": 146,
+          "mean": 122.125,
+          "min": 109
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9988839285714286,
+          "min": 0.9910714285714286
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9380530973451328,
+          "mean": 0.9140708912141976,
+          "min": 0.8790322580645161
+        },
+        "defect_detection_fraction": {
+          "max": 0.95,
+          "mean": 0.9015229823813583,
+          "min": 0.8695652173913043
+        },
+        "labor": {
+          "max": 2532,
+          "mean": 2037.125,
+          "min": 1778
+        },
+        "largest_attention_share": {
+          "max": 0.4596774193548387,
+          "mean": 0.3996335524584609,
+          "min": 0.336283185840708
+        },
+        "mean_queue_age": {
+          "max": 1.0,
+          "mean": 0.125,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9821428571428571,
+          "min": 0.8571428571428571
+        },
+        "offered": {
+          "max": 146,
+          "mean": 122.25,
+          "min": 109
+        },
+        "repair_backlog": {
+          "max": 9,
+          "mean": 6.375,
+          "min": 3
+        },
+        "unresolved_offers": {
+          "max": 1,
+          "mean": 0.125,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.012599163386354195,
+        "attention_hhi": 0.00025997684723548867,
+        "completed": 0.5,
+        "completion_coverage": 0.0013926076549632266,
+        "correct_checks_per_offer": 0.013819910132455246,
+        "defect_detection_fraction": 0.006484421886964256,
+        "labor": -117.125,
+        "largest_attention_share": 0.0007884145994030839,
+        "mean_queue_age": -0.375,
+        "minimum_group_coverage": 0.00745668566897581,
+        "offered": 0,
+        "repair_backlog": -1.5,
+        "unresolved_offers": -0.5
+      },
+      "policy": "prestige",
+      "regime": "default",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.927027027027027,
+          "mean": 0.9163002684006023,
+          "min": 0.8928571428571429
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.24121420042541925,
+          "min": 0.22214755295836378
+        },
+        "completed": {
+          "max": 386,
+          "mean": 359,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.997596189385647,
+          "min": 0.9943342776203966
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9265536723163842,
+          "mean": 0.9140962674346284,
+          "min": 0.8928571428571429
+        },
+        "defect_detection_fraction": {
+          "max": 0.9076923076923077,
+          "mean": 0.8874198740249295,
+          "min": 0.864406779661017
+        },
+        "labor": {
+          "max": 6703,
+          "mean": 6087,
+          "min": 5763
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.4012411048858876,
+          "min": 0.36486486486486486
+        },
+        "mean_queue_age": {
+          "max": 1.0,
+          "mean": 0.625,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9904454141082049,
+          "min": 0.972972972972973
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 24,
+          "mean": 17.375,
+          "min": 15
+        },
+        "unresolved_offers": {
+          "max": 2,
+          "mean": 0.875,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.006152774359859378,
+        "attention_hhi": 0.0002234639647474418,
+        "completed": -0.125,
+        "completion_coverage": -0.00031062673428770837,
+        "correct_checks_per_offer": 0.005848442264452844,
+        "defect_detection_fraction": 0.014758957517578206,
+        "labor": -25,
+        "largest_attention_share": 0.0007950485273485811,
+        "mean_queue_age": -0.20833333333333334,
+        "minimum_group_coverage": -0.002762637480379415,
+        "offered": 0,
+        "repair_backlog": -0.875,
+        "unresolved_offers": 0.125
+      },
+      "policy": "bounded",
+      "regime": "default",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9219653179190751,
+          "mean": 0.9098538793741074,
+          "min": 0.8967391304347826
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.2411776875429312,
+          "min": 0.22185137051039702
+        },
+        "completed": {
+          "max": 385,
+          "mean": 358.375,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9958929549963961,
+          "min": 0.9919137466307277
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9193083573487032,
+          "mean": 0.906124799566626,
+          "min": 0.889487870619946
+        },
+        "defect_detection_fraction": {
+          "max": 0.9365079365079365,
+          "mean": 0.8956944096555435,
+          "min": 0.8076923076923077
+        },
+        "labor": {
+          "max": 6550,
+          "mean": 6179.125,
+          "min": 5946
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.40124773881383313,
+          "min": 0.36684782608695654
+        },
+        "mean_queue_age": {
+          "max": 1.3333333333333333,
+          "mean": 0.7916666666666666,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9802260909588496,
+          "min": 0.961038961038961
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 24,
+          "mean": 18,
+          "min": 11
+        },
+        "unresolved_offers": {
+          "max": 3,
+          "mean": 1.5,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0,
+        "attention_hhi": 0.0,
+        "completed": 0,
+        "completion_coverage": 0.0,
+        "correct_checks_per_offer": 0.0,
+        "defect_detection_fraction": 0.0,
+        "labor": 0,
+        "largest_attention_share": 0.0,
+        "mean_queue_age": 0.0,
+        "minimum_group_coverage": 0.0,
+        "offered": 0,
+        "repair_backlog": 0,
+        "unresolved_offers": 0
+      },
+      "policy": "uniform",
+      "regime": "default",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9281609195402298,
+          "mean": 0.903701105014248,
+          "min": 0.8808290155440415
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.24095422357818375,
+          "min": 0.22004098089761384
+        },
+        "completed": {
+          "max": 386,
+          "mean": 358.5,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9962035817306838,
+          "min": 0.9915014164305949
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9255014326647565,
+          "mean": 0.9002763573021731,
+          "min": 0.8762886597938144
+        },
+        "defect_detection_fraction": {
+          "max": 0.9230769230769231,
+          "mean": 0.8809354521379653,
+          "min": 0.8076923076923077
+        },
+        "labor": {
+          "max": 6848,
+          "mean": 6204.125,
+          "min": 5785
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.40045269028648456,
+          "min": 0.3604336043360434
+        },
+        "mean_queue_age": {
+          "max": 2.0,
+          "mean": 1.0,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.982988728439229,
+          "min": 0.9655172413793104
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 24,
+          "mean": 18.875,
+          "min": 13
+        },
+        "unresolved_offers": {
+          "max": 3,
+          "mean": 1.375,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": -0.0021512555905298936,
+        "attention_hhi": 0.11958979293879739,
+        "completed": 5.5,
+        "completion_coverage": 0.008133153848924782,
+        "correct_checks_per_offer": 0.005712862922723438,
+        "defect_detection_fraction": 0.08379699236759473,
+        "labor": 30,
+        "largest_attention_share": 0.23748865301549227,
+        "mean_queue_age": -4.517382770335422,
+        "minimum_group_coverage": 0.06568427648560085,
+        "offered": 0,
+        "repair_backlog": 15.5,
+        "unresolved_offers": -5.5
+      },
+      "policy": "prestige",
+      "regime": "overload",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9247104247104247,
+          "mean": 0.9094468407680318,
+          "min": 0.8833652007648184
+        },
+        "attention_hhi": {
+          "max": 0.31293807144876984,
+          "mean": 0.3030076397258403,
+          "min": 0.29309189441174766
+        },
+        "completed": {
+          "max": 530,
+          "mean": 518.875,
+          "min": 511
+        },
+        "completion_coverage": {
+          "max": 0.789865871833085,
+          "mean": 0.7616681879437608,
+          "min": 0.7448979591836735
+        },
+        "correct_checks_per_offer": {
+          "max": 0.7149253731343284,
+          "mean": 0.6926701126077055,
+          "min": 0.6618075801749271
+        },
+        "defect_detection_fraction": {
+          "max": 0.826530612244898,
+          "mean": 0.6972360349559498,
+          "min": 0.6153846153846154
+        },
+        "labor": {
+          "max": 10441,
+          "mean": 10403,
+          "min": 10372
+        },
+        "largest_attention_share": {
+          "max": 0.5087378640776699,
+          "mean": 0.49457802416648966,
+          "min": 0.48282442748091603
+        },
+        "mean_queue_age": {
+          "max": 15.285714285714286,
+          "mean": 14.329199938482661,
+          "min": 12.917808219178083
+        },
+        "minimum_group_coverage": {
+          "max": 0.6212121212121212,
+          "mean": 0.551606540338492,
+          "min": 0.44776119402985076
+        },
+        "offered": {
+          "max": 692,
+          "mean": 681.375,
+          "min": 670
+        },
+        "repair_backlog": {
+          "max": 34,
+          "mean": 31,
+          "min": 27
+        },
+        "unresolved_offers": {
+          "max": 176,
+          "mean": 162.5,
+          "min": 141
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0002811703939239879,
+        "attention_hhi": 0.023432996459804692,
+        "completed": -3.625,
+        "completion_coverage": -0.005312305170608017,
+        "correct_checks_per_offer": -0.004600417813891103,
+        "defect_detection_fraction": 0.03902780764510483,
+        "labor": 31.375,
+        "largest_attention_share": 0.07138037597444168,
+        "mean_queue_age": -5.11119381710218,
+        "minimum_group_coverage": 0.12718259216493633,
+        "offered": 0,
+        "repair_backlog": 4.25,
+        "unresolved_offers": 3.625
+      },
+      "policy": "bounded",
+      "regime": "overload",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.92,
+          "mean": 0.9118792667524857,
+          "min": 0.899009900990099
+        },
+        "attention_hhi": {
+          "max": 0.2193233560090703,
+          "mean": 0.20685084324684763,
+          "min": 0.19928710827244717
+        },
+        "completed": {
+          "max": 525,
+          "mean": 509.75,
+          "min": 493
+        },
+        "completion_coverage": {
+          "max": 0.7749627421758569,
+          "mean": 0.7482227289242279,
+          "min": 0.7186588921282799
+        },
+        "correct_checks_per_offer": {
+          "max": 0.7108792846497765,
+          "mean": 0.682356831871091,
+          "min": 0.6559766763848397
+        },
+        "defect_detection_fraction": {
+          "max": 0.7345132743362832,
+          "mean": 0.6524668502334598,
+          "min": 0.6
+        },
+        "labor": {
+          "max": 10439,
+          "mean": 10404.375,
+          "min": 10356
+        },
+        "largest_attention_share": {
+          "max": 0.36,
+          "mean": 0.3284697471254391,
+          "min": 0.3089108910891089
+        },
+        "mean_queue_age": {
+          "max": 15.295336787564766,
+          "mean": 13.735388891715903,
+          "min": 12.452380952380953
+        },
+        "minimum_group_coverage": {
+          "max": 0.6764705882352942,
+          "mean": 0.6131048560178275,
+          "min": 0.5714285714285714
+        },
+        "offered": {
+          "max": 692,
+          "mean": 681.375,
+          "min": 670
+        },
+        "repair_backlog": {
+          "max": 23,
+          "mean": 19.75,
+          "min": 15
+        },
+        "unresolved_offers": {
+          "max": 193,
+          "mean": 171.625,
+          "min": 151
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0,
+        "attention_hhi": 0.0,
+        "completed": 0,
+        "completion_coverage": 0.0,
+        "correct_checks_per_offer": 0.0,
+        "defect_detection_fraction": 0.0,
+        "labor": 0,
+        "largest_attention_share": 0.0,
+        "mean_queue_age": 0.0,
+        "minimum_group_coverage": 0.0,
+        "offered": 0,
+        "repair_backlog": 0,
+        "unresolved_offers": 0
+      },
+      "policy": "uniform",
+      "regime": "overload",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9227799227799228,
+          "mean": 0.9115980963585617,
+          "min": 0.8986615678776291
+        },
+        "attention_hhi": {
+          "max": 0.18752744174779332,
+          "mean": 0.18341784678704293,
+          "min": 0.18055986111972225
+        },
+        "completed": {
+          "max": 524,
+          "mean": 513.375,
+          "min": 501
+        },
+        "completion_coverage": {
+          "max": 0.7820895522388059,
+          "mean": 0.7535350340948359,
+          "min": 0.7383040935672515
+        },
+        "correct_checks_per_offer": {
+          "max": 0.7179104477611941,
+          "mean": 0.6869572496849821,
+          "min": 0.6652046783625731
+        },
+        "defect_detection_fraction": {
+          "max": 0.6460176991150443,
+          "mean": 0.6134390425883551,
+          "min": 0.5794392523364486
+        },
+        "labor": {
+          "max": 10413,
+          "mean": 10373,
+          "min": 10293
+        },
+        "largest_attention_share": {
+          "max": 0.28793774319066145,
+          "mean": 0.2570893711509974,
+          "min": 0.2495049504950495
+        },
+        "mean_queue_age": {
+          "max": 20.318471337579616,
+          "mean": 18.846582708818083,
+          "min": 17.156976744186046
+        },
+        "minimum_group_coverage": {
+          "max": 0.5421245421245421,
+          "mean": 0.4859222638528911,
+          "min": 0.45323741007194246
+        },
+        "offered": {
+          "max": 692,
+          "mean": 681.375,
+          "min": 670
+        },
+        "repair_backlog": {
+          "max": 22,
+          "mean": 15.5,
+          "min": 7
+        },
+        "unresolved_offers": {
+          "max": 179,
+          "mean": 168,
+          "min": 146
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0010412242761188434,
+        "attention_hhi": 0.0007023649329461756,
+        "completed": 0,
+        "completion_coverage": -1.476227526607532e-05,
+        "correct_checks_per_offer": 0.001016683695922213,
+        "defect_detection_fraction": 0.023257336533198586,
+        "labor": 3.125,
+        "largest_attention_share": 0.001345284183127772,
+        "mean_queue_age": 0.041666666666666685,
+        "minimum_group_coverage": -0.007472023701393549,
+        "offered": 0,
+        "repair_backlog": 1,
+        "unresolved_offers": 0
+      },
+      "policy": "prestige",
+      "regime": "strong_feedback",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9195402298850575,
+          "mean": 0.9047423292903669,
+          "min": 0.8914728682170543
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.24165658851112992,
+          "min": 0.22330747869386192
+        },
+        "completed": {
+          "max": 387,
+          "mean": 358.5,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9961888194554177,
+          "min": 0.9915014164305949
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9169054441260746,
+          "mean": 0.9012930409980954,
+          "min": 0.8891752577319587
+        },
+        "defect_detection_fraction": {
+          "max": 0.96,
+          "mean": 0.9041927886711639,
+          "min": 0.8253968253968254
+        },
+        "labor": {
+          "max": 6918,
+          "mean": 6207.25,
+          "min": 5936
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.4017979744696123,
+          "min": 0.36684782608695654
+        },
+        "mean_queue_age": {
+          "max": 2.3333333333333335,
+          "mean": 1.0416666666666667,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9755167047378355,
+          "min": 0.9302325581395349
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 26,
+          "mean": 19.875,
+          "min": 13
+        },
+        "unresolved_offers": {
+          "max": 3,
+          "mean": 1.375,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.008327334019049962,
+        "attention_hhi": 0.0007196898956405261,
+        "completed": -0.25,
+        "completion_coverage": -0.0006590921721732895,
+        "correct_checks_per_offer": 0.007710397948144376,
+        "defect_detection_fraction": 0.014484747832205463,
+        "labor": -47.125,
+        "largest_attention_share": 0.0015952925726710476,
+        "mean_queue_age": -0.041666666666666685,
+        "minimum_group_coverage": -0.006079527308897159,
+        "offered": 0,
+        "repair_backlog": -0.75,
+        "unresolved_offers": 0.25
+      },
+      "policy": "bounded",
+      "regime": "strong_feedback",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9403409090909091,
+          "mean": 0.912028439033298,
+          "min": 0.8913043478260869
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.24167391347382428,
+          "min": 0.22282608695652178
+        },
+        "completed": {
+          "max": 385,
+          "mean": 358.25,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9955444895585105,
+          "min": 0.9915014164305949
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9376770538243626,
+          "mean": 0.9079867552503175,
+          "min": 0.8840970350404312
+        },
+        "defect_detection_fraction": {
+          "max": 0.9661016949152542,
+          "mean": 0.8954201999701707,
+          "min": 0.8307692307692308
+        },
+        "labor": {
+          "max": 6662,
+          "mean": 6157,
+          "min": 5855
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.4020479828591556,
+          "min": 0.36684782608695654
+        },
+        "mean_queue_age": {
+          "max": 1.3333333333333333,
+          "mean": 0.9583333333333333,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9769092011303319,
+          "min": 0.9534883720930233
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 24,
+          "mean": 18.125,
+          "min": 14
+        },
+        "unresolved_offers": {
+          "max": 3,
+          "mean": 1.625,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0,
+        "attention_hhi": 0.0,
+        "completed": 0,
+        "completion_coverage": 0.0,
+        "correct_checks_per_offer": 0.0,
+        "defect_detection_fraction": 0.0,
+        "labor": 0,
+        "largest_attention_share": 0.0,
+        "mean_queue_age": 0.0,
+        "minimum_group_coverage": 0.0,
+        "offered": 0,
+        "repair_backlog": 0,
+        "unresolved_offers": 0
+      },
+      "policy": "uniform",
+      "regime": "strong_feedback",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9281609195402298,
+          "mean": 0.903701105014248,
+          "min": 0.8808290155440415
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.24095422357818375,
+          "min": 0.22004098089761384
+        },
+        "completed": {
+          "max": 386,
+          "mean": 358.5,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9962035817306838,
+          "min": 0.9915014164305949
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9255014326647565,
+          "mean": 0.9002763573021731,
+          "min": 0.8762886597938144
+        },
+        "defect_detection_fraction": {
+          "max": 0.9230769230769231,
+          "mean": 0.8809354521379653,
+          "min": 0.8076923076923077
+        },
+        "labor": {
+          "max": 6848,
+          "mean": 6204.125,
+          "min": 5785
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.40045269028648456,
+          "min": 0.3604336043360434
+        },
+        "mean_queue_age": {
+          "max": 2.0,
+          "mean": 1.0,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.982988728439229,
+          "min": 0.9655172413793104
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 24,
+          "mean": 18.875,
+          "min": 13
+        },
+        "unresolved_offers": {
+          "max": 3,
+          "mean": 1.375,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.008360856010775256,
+        "attention_hhi": 0.00022728155450035814,
+        "completed": 0.25,
+        "completion_coverage": 0.0007187532075238756,
+        "correct_checks_per_offer": 0.008970795977263371,
+        "defect_detection_fraction": 0.002701773841458227,
+        "labor": -108.625,
+        "largest_attention_share": 0.0007114388355116338,
+        "mean_queue_age": -0.33333333333333337,
+        "minimum_group_coverage": 0.006417446027921089,
+        "offered": 0,
+        "repair_backlog": -0.5,
+        "unresolved_offers": -0.25
+      },
+      "policy": "prestige",
+      "regime": "high_exploration",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9346590909090909,
+          "mean": 0.9120619610250233,
+          "min": 0.8956043956043956
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.2411815051326841,
+          "min": 0.22284085538752368
+        },
+        "completed": {
+          "max": 386,
+          "mean": 358.75,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9969223349382077,
+          "min": 0.9919137466307277
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9320113314447592,
+          "mean": 0.9092471532794365,
+          "min": 0.8956043956043956
+        },
+        "defect_detection_fraction": {
+          "max": 0.9491525423728814,
+          "mean": 0.8836372259794235,
+          "min": 0.8307692307692308
+        },
+        "labor": {
+          "max": 6500,
+          "mean": 6095.5,
+          "min": 5829
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.40116412912199617,
+          "min": 0.36684782608695654
+        },
+        "mean_queue_age": {
+          "max": 1.3333333333333333,
+          "mean": 0.6666666666666666,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9894061744671501,
+          "min": 0.972972972972973
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 22,
+          "mean": 18.375,
+          "min": 11
+        },
+        "unresolved_offers": {
+          "max": 3,
+          "mean": 1.125,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0004124997392426222,
+        "attention_hhi": -0.000229733811251763,
+        "completed": -0.25,
+        "completion_coverage": -0.000652612802486352,
+        "correct_checks_per_offer": -0.00020085906189722114,
+        "defect_detection_fraction": 0.0024542160223048476,
+        "labor": 31.5,
+        "largest_attention_share": -0.0001208037643030957,
+        "mean_queue_age": -0.15625,
+        "minimum_group_coverage": 0.0015544609295417705,
+        "offered": 0,
+        "repair_backlog": -1.25,
+        "unresolved_offers": 0.25
+      },
+      "policy": "bounded",
+      "regime": "high_exploration",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9219653179190751,
+          "mean": 0.9041136047534907,
+          "min": 0.8757062146892656
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.24072448976693198,
+          "min": 0.22204485889716308
+        },
+        "completed": {
+          "max": 385,
+          "mean": 358.25,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9955509689281974,
+          "min": 0.9892183288409704
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9193083573487032,
+          "mean": 0.9000754982402759,
+          "min": 0.8757062146892656
+        },
+        "defect_detection_fraction": {
+          "max": 0.96,
+          "mean": 0.8833896681602702,
+          "min": 0.7777777777777778
+        },
+        "labor": {
+          "max": 6724,
+          "mean": 6235.625,
+          "min": 5879
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.40033188652218143,
+          "min": 0.3651226158038147
+        },
+        "mean_queue_age": {
+          "max": 1.5,
+          "mean": 0.84375,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9845431893687707,
+          "min": 0.9534883720930233
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 21,
+          "mean": 17.625,
+          "min": 14
+        },
+        "unresolved_offers": {
+          "max": 4,
+          "mean": 1.625,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0,
+        "attention_hhi": 0.0,
+        "completed": 0,
+        "completion_coverage": 0.0,
+        "correct_checks_per_offer": 0.0,
+        "defect_detection_fraction": 0.0,
+        "labor": 0,
+        "largest_attention_share": 0.0,
+        "mean_queue_age": 0.0,
+        "minimum_group_coverage": 0.0,
+        "offered": 0,
+        "repair_backlog": 0,
+        "unresolved_offers": 0
+      },
+      "policy": "uniform",
+      "regime": "high_exploration",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9281609195402298,
+          "mean": 0.903701105014248,
+          "min": 0.8808290155440415
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.24095422357818375,
+          "min": 0.22004098089761384
+        },
+        "completed": {
+          "max": 386,
+          "mean": 358.5,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9962035817306838,
+          "min": 0.9915014164305949
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9255014326647565,
+          "mean": 0.9002763573021731,
+          "min": 0.8762886597938144
+        },
+        "defect_detection_fraction": {
+          "max": 0.9230769230769231,
+          "mean": 0.8809354521379653,
+          "min": 0.8076923076923077
+        },
+        "labor": {
+          "max": 6848,
+          "mean": 6204.125,
+          "min": 5785
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.40045269028648456,
+          "min": 0.3604336043360434
+        },
+        "mean_queue_age": {
+          "max": 2.0,
+          "mean": 1.0,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.982988728439229,
+          "min": 0.9655172413793104
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 24,
+          "mean": 18.875,
+          "min": 13
+        },
+        "unresolved_offers": {
+          "max": 3,
+          "mean": 1.375,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.002901665725544872,
+        "attention_hhi": 0.0014765105229612406,
+        "completed": 0.25,
+        "completion_coverage": 0.0007474432787696605,
+        "correct_checks_per_offer": 0.003587341500553759,
+        "defect_detection_fraction": 0.008098989052378866,
+        "labor": 4.875,
+        "largest_attention_share": 0.002846496007699366,
+        "mean_queue_age": 0.12321428571428572,
+        "minimum_group_coverage": -0.01346766562484289,
+        "offered": 0,
+        "repair_backlog": -0.75,
+        "unresolved_offers": -0.25
+      },
+      "policy": "prestige",
+      "regime": "expensive_repair",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9209809264305178,
+          "mean": 0.9075278368773697,
+          "min": 0.8846153846153846
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.2419352939741786,
+          "min": 0.22330747869386192
+        },
+        "completed": {
+          "max": 383,
+          "mean": 358,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9949025804909037,
+          "min": 0.9871134020618557
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9180790960451978,
+          "mean": 0.9028927543608325,
+          "min": 0.8846153846153846
+        },
+        "defect_detection_fraction": {
+          "max": 0.98,
+          "mean": 0.8876454506108218,
+          "min": 0.8269230769230769
+        },
+        "labor": {
+          "max": 7267,
+          "mean": 6555.5,
+          "min": 6155
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.40230962375195234,
+          "min": 0.3678474114441417
+        },
+        "mean_queue_age": {
+          "max": 3.0,
+          "mean": 1.3375,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9679160213171841,
+          "min": 0.9069767441860465
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 43,
+          "mean": 37.625,
+          "min": 31
+        },
+        "unresolved_offers": {
+          "max": 5,
+          "mean": 1.875,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": -0.0022480232687040885,
+        "attention_hhi": 0.0014586551654088842,
+        "completed": -0.5,
+        "completion_coverage": -0.0012965570091483664,
+        "correct_checks_per_offer": -0.003399220707885453,
+        "defect_detection_fraction": 0.011555039787798413,
+        "labor": 60.875,
+        "largest_attention_share": 0.003007173704994398,
+        "mean_queue_age": 0.14880952380952378,
+        "minimum_group_coverage": -0.013750971599808842,
+        "offered": 0,
+        "repair_backlog": -0.375,
+        "unresolved_offers": 0.5
+      },
+      "policy": "bounded",
+      "regime": "expensive_repair",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9202279202279202,
+          "mean": 0.9023781478831208,
+          "min": 0.8778409090909091
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.24191743861662623,
+          "min": 0.22399008085292782
+        },
+        "completed": {
+          "max": 381,
+          "mean": 357.25,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 0.9972527472527473,
+          "mean": 0.9928585802029857,
+          "min": 0.9819587628865979
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9150141643059491,
+          "mean": 0.8959061921523932,
+          "min": 0.8728813559322034
+        },
+        "defect_detection_fraction": {
+          "max": 0.9230769230769231,
+          "mean": 0.8911015013462413,
+          "min": 0.8615384615384616
+        },
+        "labor": {
+          "max": 7250,
+          "mean": 6611.5,
+          "min": 5930
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.40247030144924734,
+          "min": 0.3678474114441417
+        },
+        "mean_queue_age": {
+          "max": 3.0,
+          "mean": 1.3630952380952381,
+          "min": 1.0
+        },
+        "minimum_group_coverage": {
+          "max": 0.9933333333333333,
+          "mean": 0.9676327153422182,
+          "min": 0.9069767441860465
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 45,
+          "mean": 38,
+          "min": 34
+        },
+        "unresolved_offers": {
+          "max": 7,
+          "mean": 2.625,
+          "min": 1
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0,
+        "attention_hhi": 0.0,
+        "completed": 0,
+        "completion_coverage": 0.0,
+        "correct_checks_per_offer": 0.0,
+        "defect_detection_fraction": 0.0,
+        "labor": 0,
+        "largest_attention_share": 0.0,
+        "mean_queue_age": 0.0,
+        "minimum_group_coverage": 0.0,
+        "offered": 0,
+        "repair_backlog": 0,
+        "unresolved_offers": 0
+      },
+      "policy": "uniform",
+      "regime": "expensive_repair",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9202279202279202,
+          "mean": 0.9046261711518248,
+          "min": 0.886685552407932
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.24045878345121735,
+          "min": 0.21890472165197442
+        },
+        "completed": {
+          "max": 386,
+          "mean": 357.75,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.994155137212134,
+          "min": 0.9811320754716981
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9150141643059491,
+          "mean": 0.8993054128602787,
+          "min": 0.884180790960452
+        },
+        "defect_detection_fraction": {
+          "max": 0.92,
+          "mean": 0.8795464615584428,
+          "min": 0.8307692307692308
+        },
+        "labor": {
+          "max": 7217,
+          "mean": 6550.625,
+          "min": 6120
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.39946312774425297,
+          "min": 0.35714285714285715
+        },
+        "mean_queue_age": {
+          "max": 2.7142857142857144,
+          "mean": 1.2142857142857144,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9813836869420269,
+          "min": 0.9534883720930233
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 44,
+          "mean": 38.375,
+          "min": 30
+        },
+        "unresolved_offers": {
+          "max": 7,
+          "mean": 2.125,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0008893125953494674,
+        "attention_hhi": 0.0007910724711237202,
+        "completed": 0.625,
+        "completion_coverage": 0.001759483397006642,
+        "correct_checks_per_offer": 0.0024038495424742456,
+        "defect_detection_fraction": 0.00913472777952614,
+        "labor": -52.625,
+        "largest_attention_share": 0.0013769166633169697,
+        "mean_queue_age": -0.25,
+        "minimum_group_coverage": 0.0021886210258303257,
+        "offered": 0,
+        "repair_backlog": 0.875,
+        "unresolved_offers": -0.625
+      },
+      "policy": "prestige",
+      "regime": "blind_common_cause",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.8850574712643678,
+          "mean": 0.864549445052741,
+          "min": 0.8497409326424871
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.2413358760330704,
+          "min": 0.2215691545397084
+        },
+        "completed": {
+          "max": 386,
+          "mean": 359.25,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9982831657177054,
+          "min": 0.9948453608247423
+        },
+        "correct_checks_per_offer": {
+          "max": 0.8825214899713467,
+          "mean": 0.8630648684845197,
+          "min": 0.845360824742268
+        },
+        "defect_detection_fraction": {
+          "max": 0.66,
+          "mean": 0.4921376628923385,
+          "min": 0.423728813559322
+        },
+        "labor": {
+          "max": 5900,
+          "mean": 5461.25,
+          "min": 5116
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.4013116493062988,
+          "min": 0.3638814016172507
+        },
+        "mean_queue_age": {
+          "max": 2.0,
+          "mean": 0.625,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9915964590964591,
+          "min": 0.9722222222222222
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 14,
+          "mean": 8,
+          "min": 4
+        },
+        "unresolved_offers": {
+          "max": 2,
+          "mean": 0.625,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": -0.005526648880613244,
+        "attention_hhi": 0.00036700231100187525,
+        "completed": 0.125,
+        "completion_coverage": 0.0004008126242628779,
+        "correct_checks_per_offer": -0.005143714935010077,
+        "defect_detection_fraction": -0.004558495842101905,
+        "labor": 13.125,
+        "largest_attention_share": 0.0005824474268119953,
+        "mean_queue_age": -0.20833333333333334,
+        "minimum_group_coverage": -0.000879629629629633,
+        "offered": 0,
+        "repair_backlog": 0.75,
+        "unresolved_offers": -0.125
+      },
+      "policy": "bounded",
+      "regime": "blind_common_cause",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.8968481375358166,
+          "mean": 0.8581334835767783,
+          "min": 0.8389610389610389
+        },
+        "attention_hhi": {
+          "max": 0.25776937618147444,
+          "mean": 0.24091180587294858,
+          "min": 0.22080350620891162
+        },
+        "completed": {
+          "max": 385,
+          "mean": 358.75,
+          "min": 345
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9969244949449616,
+          "min": 0.9922680412371134
+        },
+        "correct_checks_per_offer": {
+          "max": 0.8968481375358166,
+          "mean": 0.8555173040070354,
+          "min": 0.8324742268041238
+        },
+        "defect_detection_fraction": {
+          "max": 0.66,
+          "mean": 0.47844443927071045,
+          "min": 0.38461538461538464
+        },
+        "labor": {
+          "max": 5916,
+          "mean": 5527,
+          "min": 5334
+        },
+        "largest_attention_share": {
+          "max": 0.4289855072463768,
+          "mean": 0.40051718006979387,
+          "min": 0.3621621621621622
+        },
+        "mean_queue_age": {
+          "max": 1.3333333333333333,
+          "mean": 0.6666666666666666,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9885282084409991,
+          "min": 0.9722222222222222
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 10,
+          "mean": 7.875,
+          "min": 5
+        },
+        "unresolved_offers": {
+          "max": 3,
+          "mean": 1.125,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0,
+        "attention_hhi": 0.0,
+        "completed": 0,
+        "completion_coverage": 0.0,
+        "correct_checks_per_offer": 0.0,
+        "defect_detection_fraction": 0.0,
+        "labor": 0,
+        "largest_attention_share": 0.0,
+        "mean_queue_age": 0.0,
+        "minimum_group_coverage": 0.0,
+        "offered": 0,
+        "repair_backlog": 0,
+        "unresolved_offers": 0
+      },
+      "policy": "uniform",
+      "regime": "blind_common_cause",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.8882521489971347,
+          "mean": 0.8636601324573916,
+          "min": 0.8423772609819121
+        },
+        "attention_hhi": {
+          "max": 0.25776937618147444,
+          "mean": 0.24054480356194669,
+          "min": 0.22004098089761384
+        },
+        "completed": {
+          "max": 387,
+          "mean": 358.625,
+          "min": 345
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9965236823206988,
+          "min": 0.9942363112391931
+        },
+        "correct_checks_per_offer": {
+          "max": 0.8882521489971347,
+          "mean": 0.8606610189420455,
+          "min": 0.8402061855670103
+        },
+        "defect_detection_fraction": {
+          "max": 0.62,
+          "mean": 0.4830029351128124,
+          "min": 0.42857142857142855
+        },
+        "labor": {
+          "max": 5976,
+          "mean": 5513.875,
+          "min": 5360
+        },
+        "largest_attention_share": {
+          "max": 0.4289855072463768,
+          "mean": 0.39993473264298185,
+          "min": 0.3604336043360434
+        },
+        "mean_queue_age": {
+          "max": 2.0,
+          "mean": 0.875,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9894078380706288,
+          "min": 0.9767441860465116
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 11,
+          "mean": 7.125,
+          "min": 3
+        },
+        "unresolved_offers": {
+          "max": 2,
+          "mean": 1.25,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.005760013252292723,
+        "attention_hhi": 0.0008109229235713639,
+        "completed": -0.25,
+        "completion_coverage": -0.0007015727825183393,
+        "correct_checks_per_offer": 0.005100098018972779,
+        "defect_detection_fraction": -0.01645236703682057,
+        "labor": 48,
+        "largest_attention_share": 0.0012851749919145714,
+        "mean_queue_age": 0.08333333333333334,
+        "minimum_group_coverage": -0.006823218608628612,
+        "offered": 0,
+        "repair_backlog": -2.25,
+        "unresolved_offers": 0.25
+      },
+      "policy": "prestige",
+      "regime": "biased_verification",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9322493224932249,
+          "mean": 0.915210527472536,
+          "min": 0.9033149171270718
+        },
+        "attention_hhi": {
+          "max": 0.25776937618147444,
+          "mean": 0.24089632668812813,
+          "min": 0.22137763383053885
+        },
+        "completed": {
+          "max": 384,
+          "mean": 357.875,
+          "min": 345
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9945015070440943,
+          "min": 0.9886685552407932
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9272237196765498,
+          "mean": 0.9101853389308884,
+          "min": 0.8943298969072165
+        },
+        "defect_detection_fraction": {
+          "max": 0.9655172413793104,
+          "mean": 0.9076147498517457,
+          "min": 0.8615384615384616
+        },
+        "labor": {
+          "max": 7048,
+          "mean": 6392.75,
+          "min": 6123
+        },
+        "largest_attention_share": {
+          "max": 0.4289855072463768,
+          "mean": 0.40041278160793026,
+          "min": 0.36314363143631434
+        },
+        "mean_queue_age": {
+          "max": 1.75,
+          "mean": 1.03125,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9802643234789135,
+          "min": 0.9655172413793104
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 24,
+          "mean": 18.25,
+          "min": 13
+        },
+        "unresolved_offers": {
+          "max": 4,
+          "mean": 2,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.001536275375218013,
+        "attention_hhi": -0.00027122937096089525,
+        "completed": -0.625,
+        "completion_coverage": -0.0017513572104356362,
+        "correct_checks_per_offer": -6.827662066793971e-05,
+        "defect_detection_fraction": -0.009163200264895185,
+        "labor": -5.75,
+        "largest_attention_share": -0.0007080026723610272,
+        "mean_queue_age": 0.3125,
+        "minimum_group_coverage": -0.005674263836028551,
+        "offered": 0,
+        "repair_backlog": -2,
+        "unresolved_offers": 0.625
+      },
+      "policy": "bounded",
+      "regime": "biased_verification",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9296875,
+          "mean": 0.9109867895954613,
+          "min": 0.8892045454545454
+        },
+        "attention_hhi": {
+          "max": 0.25776937618147444,
+          "mean": 0.23981417439359587,
+          "min": 0.21928166351606806
+        },
+        "completed": {
+          "max": 384,
+          "mean": 357.5,
+          "min": 345
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9934517226161771,
+          "min": 0.9886685552407932
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9283667621776505,
+          "mean": 0.9050169642912477,
+          "min": 0.884180790960452
+        },
+        "defect_detection_fraction": {
+          "max": 0.96,
+          "mean": 0.9149039166236712,
+          "min": 0.8846153846153846
+        },
+        "labor": {
+          "max": 6741,
+          "mean": 6339,
+          "min": 5942
+        },
+        "largest_attention_share": {
+          "max": 0.4289855072463768,
+          "mean": 0.39841960394365467,
+          "min": 0.358695652173913
+        },
+        "mean_queue_age": {
+          "max": 2.3333333333333335,
+          "mean": 1.2604166666666667,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9814132782515136,
+          "min": 0.9696969696969697
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 22,
+          "mean": 18.5,
+          "min": 15
+        },
+        "unresolved_offers": {
+          "max": 4,
+          "mean": 2.375,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0,
+        "attention_hhi": 0.0,
+        "completed": 0,
+        "completion_coverage": 0.0,
+        "correct_checks_per_offer": 0.0,
+        "defect_detection_fraction": 0.0,
+        "labor": 0,
+        "largest_attention_share": 0.0,
+        "mean_queue_age": 0.0,
+        "minimum_group_coverage": 0.0,
+        "offered": 0,
+        "repair_backlog": 0,
+        "unresolved_offers": 0
+      },
+      "policy": "uniform",
+      "regime": "biased_verification",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9230769230769231,
+          "mean": 0.9094505142202433,
+          "min": 0.8932291666666666
+        },
+        "attention_hhi": {
+          "max": 0.25776937618147444,
+          "mean": 0.24008540376455675,
+          "min": 0.22004098089761384
+        },
+        "completed": {
+          "max": 384,
+          "mean": 358.125,
+          "min": 345
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9952030798266127,
+          "min": 0.9896907216494846
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9178470254957507,
+          "mean": 0.9050852409119157,
+          "min": 0.884020618556701
+        },
+        "defect_detection_fraction": {
+          "max": 0.9615384615384616,
+          "mean": 0.9240671168885664,
+          "min": 0.8813559322033898
+        },
+        "labor": {
+          "max": 7031,
+          "mean": 6344.75,
+          "min": 5943
+        },
+        "largest_attention_share": {
+          "max": 0.4289855072463768,
+          "mean": 0.3991276066160157,
+          "min": 0.3604336043360434
+        },
+        "mean_queue_age": {
+          "max": 2.0,
+          "mean": 0.9479166666666666,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9870875420875421,
+          "min": 0.9733333333333334
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 24,
+          "mean": 20.5,
+          "min": 15
+        },
+        "unresolved_offers": {
+          "max": 4,
+          "mean": 1.75,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.00241696479069059,
+        "attention_hhi": 0.0005452591145593856,
+        "completed": -0.25,
+        "completion_coverage": -0.0006712137526998507,
+        "correct_checks_per_offer": 0.0018009247742550166,
+        "defect_detection_fraction": -0.0039589983365553305,
+        "labor": -56.25,
+        "largest_attention_share": 0.0009267640640327063,
+        "mean_queue_age": 0.375,
+        "minimum_group_coverage": -0.005760368104118105,
+        "offered": 0,
+        "repair_backlog": 0.375,
+        "unresolved_offers": 0.25
+      },
+      "policy": "prestige",
+      "regime": "no_verification",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9348441926345609,
+          "mean": 0.9150867713613645,
+          "min": 0.90625
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.24166097318680388,
+          "min": 0.2227583522447691
+        },
+        "completed": {
+          "max": 385,
+          "mean": 358.75,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9969380975175661,
+          "min": 0.9922680412371134
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9322033898305084,
+          "mean": 0.9122866394275513,
+          "min": 0.8994845360824743
+        },
+        "defect_detection_fraction": {
+          "max": 0.864406779661017,
+          "mean": 0.8475279221071156,
+          "min": 0.8153846153846154
+        },
+        "labor": {
+          "max": 6036,
+          "mean": 5535.25,
+          "min": 5294
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.4018264396667585,
+          "min": 0.36585365853658536
+        },
+        "mean_queue_age": {
+          "max": 2.0,
+          "mean": 1.0,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9843852958525214,
+          "min": 0.96875
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 20,
+          "mean": 17,
+          "min": 11
+        },
+        "unresolved_offers": {
+          "max": 3,
+          "mean": 1.125,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": -0.007633287443635367,
+        "attention_hhi": 0.00010015785592322468,
+        "completed": -0.125,
+        "completion_coverage": -0.0003575898528109245,
+        "correct_checks_per_offer": -0.007945126374711023,
+        "defect_detection_fraction": 0.005077249200568901,
+        "labor": 14.5,
+        "largest_attention_share": 0.00018690877735590833,
+        "mean_queue_age": 0.0625,
+        "minimum_group_coverage": -0.00411929947363586,
+        "offered": 0,
+        "repair_backlog": 2.125,
+        "unresolved_offers": 0.125
+      },
+      "policy": "bounded",
+      "regime": "no_verification",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9159420289855073,
+          "mean": 0.9050365191270385,
+          "min": 0.8968481375358166
+        },
+        "attention_hhi": {
+          "max": 0.2598025624868725,
+          "mean": 0.2412158719281677,
+          "min": 0.2215691545397084
+        },
+        "completed": {
+          "max": 385,
+          "mean": 358.875,
+          "min": 345
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.9972517214174551,
+          "min": 0.9922680412371134
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9121813031161473,
+          "mean": 0.9025405882785853,
+          "min": 0.8943298969072165
+        },
+        "defect_detection_fraction": {
+          "max": 0.9482758620689655,
+          "mean": 0.8565641696442398,
+          "min": 0.7692307692307693
+        },
+        "labor": {
+          "max": 6232,
+          "mean": 5606,
+          "min": 5236
+        },
+        "largest_attention_share": {
+          "max": 0.4318840579710145,
+          "mean": 0.4010865843800817,
+          "min": 0.3638814016172507
+        },
+        "mean_queue_age": {
+          "max": 1.5,
+          "mean": 0.6875,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9860263644830037,
+          "min": 0.9642857142857143
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 26,
+          "mean": 18.75,
+          "min": 12
+        },
+        "unresolved_offers": {
+          "max": 3,
+          "mean": 1,
+          "min": 0
+        }
+      }
+    },
+    {
+      "paired_difference_from_uniform": {
+        "accuracy_among_completed": 0.0,
+        "attention_hhi": 0.0,
+        "completed": 0,
+        "completion_coverage": 0.0,
+        "correct_checks_per_offer": 0.0,
+        "defect_detection_fraction": 0.0,
+        "labor": 0,
+        "largest_attention_share": 0.0,
+        "mean_queue_age": 0.0,
+        "minimum_group_coverage": 0.0,
+        "offered": 0,
+        "repair_backlog": 0,
+        "unresolved_offers": 0
+      },
+      "policy": "uniform",
+      "regime": "no_verification",
+      "summaries": {
+        "accuracy_among_completed": {
+          "max": 0.9350282485875706,
+          "mean": 0.9126698065706739,
+          "min": 0.8928571428571429
+        },
+        "attention_hhi": {
+          "max": 0.2587624043569781,
+          "mean": 0.2411157140722445,
+          "min": 0.22140701081807568
+        },
+        "completed": {
+          "max": 386,
+          "mean": 359,
+          "min": 346
+        },
+        "completion_coverage": {
+          "max": 1.0,
+          "mean": 0.997609311270266,
+          "min": 0.9946091644204852
+        },
+        "correct_checks_per_offer": {
+          "max": 0.9350282485875706,
+          "mean": 0.9104857146532963,
+          "min": 0.8928571428571429
+        },
+        "defect_detection_fraction": {
+          "max": 0.896551724137931,
+          "mean": 0.8514869204436709,
+          "min": 0.8076923076923077
+        },
+        "labor": {
+          "max": 6182,
+          "mean": 5591.5,
+          "min": 5256
+        },
+        "largest_attention_share": {
+          "max": 0.430635838150289,
+          "mean": 0.4008996756027258,
+          "min": 0.36314363143631434
+        },
+        "mean_queue_age": {
+          "max": 1.0,
+          "mean": 0.625,
+          "min": 0
+        },
+        "minimum_group_coverage": {
+          "max": 1.0,
+          "mean": 0.9901456639566395,
+          "min": 0.9722222222222222
+        },
+        "offered": {
+          "max": 388,
+          "mean": 359.875,
+          "min": 347
+        },
+        "repair_backlog": {
+          "max": 20,
+          "mean": 16.625,
+          "min": 13
+        },
+        "unresolved_offers": {
+          "max": 2,
+          "mean": 0.875,
+          "min": 0
+        }
+      }
+    }
+  ],
+  "interpretation": "Exploratory synthetic sensitivity; min/max are seed ranges, not inferential confidence intervals.",
+  "periods": 80,
+  "python": "3.9.6",
+  "regimes": {
+    "biased_verification": {
+      "audit_bias": 0.95,
+      "audit_probability": 0.8
+    },
+    "blind_common_cause": {
+      "blind_probability": 0.7
+    },
+    "default": {},
+    "expensive_repair": {
+      "repair_multiplier": 2.0
+    },
+    "high_exploration": {
+      "exploration": 0.7
+    },
+    "light_load": {
+      "arrival": 0.15
+    },
+    "no_verification": {
+      "audit_probability": 0.0
+    },
+    "overload": {
+      "arrival": 0.85
+    },
+    "strong_feedback": {
+      "exploration": 0.02,
+      "reinforcement": 8.0
+    }
+  },
+  "rows": 216,
+  "schema": "mcrp-ecology/0.1",
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "source_sha256": {
+    "correction_game.py": "d3b163a9e81fd0a5e7b8c9bcd97fbf6b8a0b86221a8172852651a945c5f6a53a",
+    "ecology.py": "ac7f23347506edd58c0cd8823dcfa42850cfb0b0af4c6e4b3880003f1f7ee986",
+    "run.py": "2319e4ad062046133cb42fa3f913537171fa5d0359e776a98f8fb1926d6800a1",
+    "tests/test_correction_game.py": "adade200ae4ded0481be0920412dd356015141c8dc83b035828b1e300f329070",
+    "tests/test_ecology.py": "ccd160c97aefb1f0b1942da08bf0fdbd45cb3e14cc587a20f20fc79e81eaff65"
+  },
+  "sweep_sha256": "cc58e9276514158b5be2ffd2ef191b2106a4b7104752d6239a80d5787c931c77"
+}

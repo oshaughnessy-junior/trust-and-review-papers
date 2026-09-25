@@ -1,0 +1,213 @@
+{
+  "original_failures": {
+    "zero_capacity_spend": [
+      {
+        "person": "A",
+        "capacity_hours": 0,
+        "reserved_hours": 0,
+        "spent_hours": 1e-12,
+        "released_hours": -1e-12,
+        "lanes": {
+          "audit": 1e-12
+        }
+      }
+    ],
+    "tiny_program_status": "executed",
+    "honest_shallow_tie_original_actions": {
+      "accepted": 8,
+      "audited": 1,
+      "completed": 8,
+      "detected_shallow": 1,
+      "false_sanctions": 0,
+      "honest": 0,
+      "offered": 8,
+      "planned_population": 8,
+      "refused": 0,
+      "sanctioned": 1,
+      "selected_audit_slots": 1,
+      "shallow": 8,
+      "unused_refused_audit_slots": 0
+    },
+    "honest_refusal_tie_original_actions": {
+      "accepted": 8,
+      "audited": 8,
+      "completed": 8,
+      "detected_shallow": 0,
+      "false_sanctions": 0,
+      "honest": 8,
+      "offered": 8,
+      "planned_population": 8,
+      "refused": 0,
+      "sanctioned": 0,
+      "selected_audit_slots": 8,
+      "shallow": 0,
+      "unused_refused_audit_slots": 0
+    }
+  },
+  "cases": {
+    "concealed": {
+      "enumerated_nonzero_outcome_paths": 1120,
+      "exact_expectations": {
+        "utility_0": "7/25",
+        "utility_1": "7/25",
+        "utility_2": "7/25",
+        "utility_3": "7/25",
+        "utility_4": "7/25",
+        "utility_5": "7/25",
+        "utility_6": "7/25",
+        "utility_7": "7/25",
+        "audits": "4",
+        "honest": "8",
+        "shallow": "0",
+        "refused": "0",
+        "sanctions": "2/25"
+      }
+    },
+    "partial_refusal": {
+      "enumerated_nonzero_outcome_paths": 321,
+      "exact_expectations": {
+        "utility_0": "1",
+        "utility_1": "1",
+        "utility_2": "1",
+        "utility_3": "1",
+        "utility_4": "7/25",
+        "utility_5": "7/25",
+        "utility_6": "7/25",
+        "utility_7": "7/25",
+        "audits": "2",
+        "honest": "4",
+        "shallow": "0",
+        "refused": "4",
+        "sanctions": "1/25"
+      }
+    },
+    "early_disclosure": {
+      "enumerated_nonzero_outcome_paths": 1120,
+      "exact_expectations": {
+        "utility_0": "43/100",
+        "utility_1": "43/100",
+        "utility_2": "43/100",
+        "utility_3": "43/100",
+        "utility_4": "43/100",
+        "utility_5": "43/100",
+        "utility_6": "43/100",
+        "utility_7": "43/100",
+        "audits": "4",
+        "honest": "4",
+        "shallow": "4",
+        "refused": "0",
+        "sanctions": "2/25"
+      }
+    },
+    "false_sanction_all_refuse": {
+      "enumerated_nonzero_outcome_paths": 70,
+      "exact_expectations": {
+        "utility_0": "1/10",
+        "utility_1": "1/10",
+        "utility_2": "1/10",
+        "utility_3": "1/10",
+        "utility_4": "1/10",
+        "utility_5": "1/10",
+        "utility_6": "1/10",
+        "utility_7": "1/10",
+        "audits": "0",
+        "honest": "0",
+        "shallow": "0",
+        "refused": "8",
+        "sanctions": "0"
+      }
+    },
+    "certain_false_sanction": {
+      "enumerated_nonzero_outcome_paths": 70,
+      "exact_expectations": {
+        "utility_0": "2",
+        "utility_1": "2",
+        "utility_2": "2",
+        "utility_3": "2",
+        "utility_4": "2",
+        "utility_5": "2",
+        "utility_6": "2",
+        "utility_7": "2",
+        "audits": "4",
+        "honest": "8",
+        "shallow": "0",
+        "refused": "0",
+        "sanctions": "4"
+      }
+    },
+    "honest_shallow_tie": {
+      "enumerated_nonzero_outcome_paths": 16,
+      "exact_expectations": {
+        "utility_0": "21/40",
+        "utility_1": "21/40",
+        "utility_2": "21/40",
+        "utility_3": "21/40",
+        "utility_4": "21/40",
+        "utility_5": "21/40",
+        "utility_6": "21/40",
+        "utility_7": "21/40",
+        "audits": "1",
+        "honest": "8",
+        "shallow": "0",
+        "refused": "0",
+        "sanctions": "1/10"
+      }
+    },
+    "honest_refusal_tie": {
+      "enumerated_nonzero_outcome_paths": 1,
+      "exact_expectations": {
+        "utility_0": "3/10",
+        "utility_1": "3/10",
+        "utility_2": "3/10",
+        "utility_3": "3/10",
+        "utility_4": "3/10",
+        "utility_5": "3/10",
+        "utility_6": "3/10",
+        "utility_7": "3/10",
+        "audits": "0",
+        "honest": "0",
+        "shallow": "0",
+        "refused": "8",
+        "sanctions": "0"
+      }
+    },
+    "shared_cross_roles": {
+      "enumerated_nonzero_outcome_paths": 1120,
+      "exact_expectations": {
+        "utility_0": "7/25",
+        "utility_1": "7/25",
+        "utility_2": "7/25",
+        "utility_3": "7/25",
+        "utility_4": "7/25",
+        "utility_5": "7/25",
+        "utility_6": "7/25",
+        "utility_7": "7/25",
+        "audits": "4",
+        "honest": "8",
+        "shallow": "0",
+        "refused": "0",
+        "sanctions": "2/25"
+      }
+    },
+    "no_inspections": {
+      "enumerated_nonzero_outcome_paths": 1,
+      "exact_expectations": {
+        "utility_0": "3/5",
+        "utility_1": "3/5",
+        "utility_2": "3/5",
+        "utility_3": "3/5",
+        "utility_4": "3/5",
+        "utility_5": "3/5",
+        "utility_6": "3/5",
+        "utility_7": "3/5",
+        "audits": "0",
+        "honest": "0",
+        "shallow": "8",
+        "refused": "0",
+        "sanctions": "0"
+      }
+    }
+  },
+  "source_sha256": "fb26b2da939c468a4ce00f539d06957cb3230ba6bda9ae751386bb487c520091",
+  "exact_hour_guards": "PASS"
+}

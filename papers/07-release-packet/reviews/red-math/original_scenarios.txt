@@ -1,0 +1,125 @@
+"""Reproducible successes AND negative controls. No external dependencies."""
+from __future__ import annotations
+from dataclasses import asdict
+from itertools import combinations
+import random
+from .protocol import Actor, Target, Protocol, PolicyAgent, Rejected, sample_panel, Ledger
+
+
+def fixture(capacity=12):
+    actors = [Actor('author', 'author-control', frozenset({'numerics'}), internal_size=100),
+              Actor('reviewer-a', 'lab-a', frozenset({'numerics'})),
+              Actor('reviewer-b', 'lab-b', frozenset({'numerics'})),
+              Actor('editor', 'journal', frozenset(), frozenset({'publication'})),
+              Actor('scientist', 'institution', frozenset(), frozenset({'scientific'}))]
+    return Protocol(actors, {a.actor_id:capacity for a in actors},
+                    {(a.actor_id, s):capacity for a in actors for s in a.skills})
+
+
+def attempt(call):
+    try:
+        return {'accepted':True, 'value':call()}
+    except Rejected as error:
+        return {'accepted':False, 'reason':str(error)}
+
+
+def release_cycle(seed=17):
+    p = fixture()
+    t = Target('calibration', 'v1', 'fixture:calibration-1')
+    o = p.offer(t, 'author', {'numerics'})
+    downstream = Target('inference', 'v1', 'fixture:inference-1')
+    d = p.offer(downstream, 'author', {'numerics'}, (t,))
+    panel = sample_panel(p.actors.values(), 'numerics', 2, {'author-control'}, seed)
+    checks = p.check_panel([dict(offer_id=d, reviewer_id=a, scope={'numerics'},
+          method='toy arithmetic', outcome='support', limits='calibration truth untested') for a in panel])
+    unauthorized = attempt(lambda:p.rely(d, 'reviewer-a', checks, 'scientific use', {'numerics'}, 'scientific', 20))
+    r = p.rely(d, 'scientist', checks, 'synthetic illustration', {'numerics'}, 'scientific', 20, required_groups=2)
+    state_before = p.currentness(r, 1, 1, 1)
+    p.amend(t, 'synthetic changed calibration', now=2)
+    state_after = p.currentness(r, 2, 2, 1)
+    old_check_reuse = attempt(lambda:p.rely(d, 'scientist', checks, 'renewal', {'numerics'}, 'scientific', 20, now=2))
+    new_checks = tuple(PolicyAgent(a).act(p, d, {'numerics'}, now=3) for a in panel)
+    renewed = p.rely(d, 'scientist', new_checks, 'synthetic rechecked use', {'numerics'}, 'scientific', 20, now=3, required_groups=2)
+    renewal_state = p.currentness(renewed, 3, 3, 1)
+    p.enter_degraded('protected repair capacity needed')
+    blocked = attempt(lambda:p.offer(Target('new', 'v1', 'fixture:new'), 'author', {'numerics'}))
+    p.amend(t, 'correction intake remains open', now=4)
+    return {'seed':seed, 'panel':panel, 'before':state_before, 'after':state_after,
+        'unauthorized_decision':unauthorized, 'old_check_reuse':old_check_reuse,
+        'renewal':renewal_state, 'degraded_new_offer':blocked,
+        'degraded_amendment_retained':p.events[-1]['action']=='amend',
+        'historical_receipt_unchanged':p.reliances[r].issued_at==0,
+        'person_effort':p.ledger.totals()[0], 'events':p.events}
+
+
+def capacity_failure():
+    ledger = Ledger({'expert':4}, {('expert','science'):4, ('expert','appeal'):4})
+    ledger.reserve('review', [('expert','science',3)]); ledger.consume('review')
+    rejected = attempt(lambda:ledger.reserve('appeal', [('expert','appeal',2)]))
+    return {'capacity':4, 'review':3, 'appeal_request':2, 'result':rejected,
+            'charged_after_rejection':ledger.totals()[0]['expert'],
+            'naive_separate_lane_accounting_would_accept':True}
+
+
+def selection_attack(seed=17, draws=3000, clones=100):
+    actors = [Actor(f'a-{i}', 'A', frozenset({'x'})) for i in range(clones)] + [
+              Actor('b','B',frozenset({'x'})), Actor('c','C',frozenset({'x'}))]
+    # Negative control still constrains one seat/group but samples representative pairs.
+    representative_panels = [(a,b) for a,b in combinations(actors,2) if a.control_group!=b.control_group]
+    rng = random.Random(seed)
+    naive, canonical = 0,0
+    mapping = {a.actor_id:a.control_group for a in actors}
+    for _ in range(draws):
+        naive += any(a.control_group=='A' for a in rng.choice(representative_panels))
+        canonical += any(mapping[a]=='A' for a in sample_panel(actors,'x',2,seed=rng.randrange(2**32)))
+    return {'seed':seed, 'draws':draws, 'clones':clones,
+            'naive_A_fraction':naive/draws, 'canonical_A_fraction':canonical/draws,
+            'naive_exact':2*clones/(2*clones+1), 'canonical_exact':2/3,
+            'premise':'declared control groups correct; static qualified pool'}
+
+
+def completion_bias(seed=17, offers=10000):
+    rng = random.Random(seed)
+    counts = {k:0 for k in ['offered','eligible','invited','accepted','completed','refused','unresolved','relied','retries','risky_offered','risky_completed']}
+    # Every invitation consumes one synthetic intake unit; accepted work another.
+    spent = 0
+    for _ in range(offers):
+        risky = rng.random()<.1
+        for stage in ['offered','eligible','invited']:
+            counts[stage]+=1
+        counts['risky_offered']+=risky
+        spent+=1
+        accepted = risky or rng.random()<.01
+        if accepted:
+            for stage in ['accepted','completed']:
+                counts[stage]+=1
+            spent+=1
+            counts['risky_completed']+=risky
+        else:
+            counts['refused']+=1
+    return {'seed':seed, 'counts':counts, 'intake_and_check_units':spent,
+            'offered_risky_fraction':counts['risky_offered']/offers,
+            'completed_risky_fraction':counts['risky_completed']/counts['completed'],
+            'conditional_exact':.1/(.1+.9*.01),
+            'limitation':'No real refusals; scripted completion probabilities; no retries or reliance issued.'}
+
+
+def hidden_dependency():
+    p = fixture()
+    source = Target('batch','v1','fixture:batch')
+    p.offer(source,'author',{'numerics'})
+    target = Target('result','v1','fixture:result')
+    offer = p.offer(target,'author',{'numerics'})  # deliberate missing dependency
+    c = PolicyAgent('reviewer-a').act(p,offer,{'numerics'})
+    r = p.rely(offer,'scientist',[c],'toy use',{'numerics'},'scientific',10)
+    p.amend(source,'changed hidden common cause',1)
+    state = p.currentness(r,1,1,1)
+    return {'reported_state':state, 'omniscient_fixture_should_reconsider':True,
+            'failure_exposed':state=='current_under_toy_policy',
+            'lesson':'Declared dependency traversal cannot discover missing scientific dependencies.'}
+
+
+def run_demo(seed=17):
+    return {'release_cycle':release_cycle(seed), 'shared_capacity':capacity_failure(),
+            'control_group_clones':selection_attack(seed), 'completion_bias':completion_bias(seed),
+            'hidden_dependency':hidden_dependency()}

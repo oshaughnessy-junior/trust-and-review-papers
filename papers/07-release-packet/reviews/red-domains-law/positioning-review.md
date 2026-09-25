@@ -1,0 +1,81 @@
+# Adversarial appendix: prior work and the proposed bridge
+
+25 September 2026. Independently read the new positioning memo and source ledger,
+then retrieved selected primary specifications rather than assuming the author's
+16-page inspection established every proposed mapping. This review verified the
+key distinctions below; it did not audit all implementations, recheck all 16
+sources or demonstrate network interoperability.
+
+## Semantic crosswalk survives with explicit boundaries
+
+- [COAR Announce Endorsement 1.0.1](https://coar-notify.net/specification/1.0.1/announce-endorsement/)
+  points to an endorsement resource and the endorsed resource separately. The
+  memo correctly restricts this mapping to genuine endorsements. A local choice
+  to use a calculation or an institution's legal decision cannot silently become
+  scholarly endorsement because a transport pattern exists.
+- [COAR Undo Offer](https://coar-notify.net/specification/1.0.1/undo-offer/)
+  acts on the earlier offer. The memo correctly refuses to treat it as automatic
+  retraction, downstream amendment resolution or revocation of every use. Its
+  instruction to report unsupported transport semantics is preferable to a lossy
+  universal mapping.
+- [PROV-O](https://www.w3.org/TR/prov-o/)
+  already provides responsible agents, qualified associations, revisions and
+  invalidation. The memo acknowledges these rather than inventing a provenance
+  gap. PROV invalidation concerns an entity becoming unavailable for use; a
+  disputed interpretation or one expired reliance does not automatically imply
+  invalidation of every underlying evidence entity. Choosing the correct entity
+  granularity remains an adapter design decision.
+- [RO-Crate profiles](https://www.researchobject.org/ro-crate/specification/1.3/profiles.html)
+  provide a genuine route for domain conventions. Its
+  [provenance guidance](https://www.researchobject.org/ro-crate/specification/1.3/provenance.html)
+  already records workflow changes, responsible human authorization and old/new
+  files. The direct provenance request initially failed; following the official
+  profile page's link retrieved the relevant text. No present MCRP conformance
+  follows, and the memo explicitly says no such adapter has been demonstrated.
+- [PCI's FAQ](https://peercommunityin.org/faq/)
+  and its [version-controlled Registered Reports account](https://peercommunityin.org/?p=6218)
+  substantiate existing editorial decisions, archived review records and
+  version-aware workflows. The latter is an explanatory account, not a finding
+  about this packet's current eligibility or acceptance. The memo correctly
+  treats these as prior capabilities, not empty spaces awaiting MCRP.
+
+The proposed round-trip projection is an explicit future oracle, not an existing
+theorem. Even a successful semantic round trip does not transfer the originating
+institution's authority to its recipient. Neither a persistent identifier nor
+contributor role establishes independent control or appointment.
+
+## Concrete repairs applied, coordinated with the author
+
+1. **Public reading path:** the physics row referred readers to private dossier
+   06. It now links to the public packet's mathematical foundations and coupled
+   allocation manuscripts. This makes the promised next step available in the
+   release being assessed.
+2. **Human outcome framing:** the biology row proposed improvement “at matched
+   effort.” It now uses the same information and comparable declared support,
+   reports actual total labor, and includes appropriately retained supported uses.
+   This matches the prospective design and avoids rewarding blanket refusal.
+3. **Existing records are not automatically shareable:** PCI's FAQ explicitly
+   distinguishes public recommended-review material from rejected reports that
+   are not published. The invitation to bring an existing record and keep it
+   available could otherwise encourage disclosure of confidential peer review.
+   The memo now limits public examples to synthetic or permission-cleared records,
+   preserves the permitted audience and instructs an adapter to expose or reject
+   incompatible access restrictions. A person's permission to read is not a
+   permission to republish.
+
+Only positioning prose changed; no code, tests, models, licenses or deployment
+instructions were modified. The paper's narrower contribution claim remains:
+a particular cross-system use profile and executable failure suite, offered for
+testing against existing practice. The three cases where no additional layer is
+needed are an important falsifiability condition, not a concession to remove.
+
+## Judgment
+
+Support inclusion in the curated public seed. No unsupported priority claim,
+standards-conformance assertion, legal-authority transfer or demonstrated adoption
+was found in the repaired memo. A complete prior-art survey may find closer work;
+the memo says so. The next substantive test is an independently implemented,
+permission-respecting adapter with semantic loss and total labor measured—not
+another vocabulary table presented as interoperability. The final export must
+be rebuilt to include these new documents and repairs; an earlier ZIP's successful
+reproduction does not attest to their bytes.

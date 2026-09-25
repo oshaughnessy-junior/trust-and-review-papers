@@ -1,0 +1,9 @@
+# First collective red-team exchange
+
+The runtime reviewer and mathematical reviewer exchanged their independently found defects before this note. The runtime reviewer reported repairs to later-contradiction currentness, clock rollback/poisoning, observation metadata matching and amendment binding, while emphasizing that the model preserves an author-chosen group floor rather than independently authorizing a scientifically sound contract. This mathematics review did not independently re-audit those runtime fixes.
+
+Our shared conclusion is that **preserving a chosen policy does not establish that the policy is sound**, and locally correct stage constraints do not automatically compose into a distributional or scientific guarantee. The mathematical sampler's group invariance has a fixed eligible group set. Resource rejection, strategic completion and discretionary reliance each introduce another selection. The independently executable code may pass all component tests and still have a very different relied-upon population.
+
+The most useful next blue implementation is one coupled pipeline that reports offered, reserved, accepted, completed and relied outcomes, together with failed reservations, refusals, retries and actual person-hour costs. A fixed one-person ledger and true-versus-declared group map must span every lane. Its expected result includes deliberately adverse outcomes, rather than asserting that a portable record format fixes them.
+
+The two mathematical release corrections remain RM-1 (expected versus hard audit budget) and RM-2 (unresolved denominator). Original failures are preserved. RM-2's source change was visible after the initial review; fresh outputs and regression checks should be assessed during the repair round. RM-1 was still awaiting the author lane when this note was written. A final qualified verdict must follow that repair verification.

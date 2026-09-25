@@ -1,0 +1,31 @@
+{
+  "preexisting_untracked": {
+    "build": "rejected",
+    "reason": "nonempty output lacks a regular prior export manifest"
+  },
+  "source_symlink": {
+    "build": "rejected",
+    "reason": "symlink in source packet: linked.json"
+  },
+  "extra_traversal_zip_member": {
+    "verifier_passed": false,
+    "errors": [
+      "ZIP member inventory mismatch",
+      "unsafe ZIP member: ../PUBLIC-EXTRA.txt"
+    ]
+  },
+  "symlink_zip_metadata": {
+    "verifier_passed": false,
+    "errors": [
+      "nonregular ZIP member: mcrp-prototype/domains/README.html"
+    ]
+  },
+  "unmanifested_output": {
+    "verifier_passed": false,
+    "errors": [
+      "ZIP member inventory mismatch",
+      "unmanifested file: unexpected.bin",
+      "unsafe ZIP member: ../PUBLIC-EXTRA.txt"
+    ]
+  }
+}

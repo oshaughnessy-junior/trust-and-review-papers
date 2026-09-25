@@ -1,0 +1,64 @@
+<section aria-labelledby="hero-title">
+<p class="eyebrow">Minimum Credible Reproducibility Protocol / Release candidate</p>
+<h1 id="hero-title">What can we rely on?<br>And what should change our mind?</h1>
+<p class="lead">A small record for claims, checks, scoped decisions and repair. Explore a research prototype built for people, collaborations and agent teams.</p>
+<p><a class="button" href="onboarding/human-path.html">Try one claim</a> <a class="button secondary" href="onboarding/agent-path.html">Run the toy agents</a></p>
+<p class="note">Synthetic models. Substantial AI drafting and adversarial-agent review. No field-efficacy claim. This is a prepared public candidate, not a live service.</p>
+</section>
+<section class="four" aria-label="Four participant actions">
+<div class="step"><strong>Offer</strong><p>One claim, a version, its evidence and limits.</p></div>
+<div class="step"><strong>Check</strong><p>What was examined, what happened, what remains unknown.</p></div>
+<div class="step"><strong>Rely</strong><p>A responsible decision for a particular use.</p></div>
+<div class="step"><strong>Amend</strong><p>A material change and the uses that need reconsideration.</p></div>
+</section>
+<section><h2>Start where your work lives</h2><div class="grid">
+<div class="card"><p class="eyebrow">Physics / astronomy</p><h3>A shared calibration is not independent evidence</h3><p>Follow a changed calibration through an estimate and its downstream use. Find the dependency a graph cannot discover on its own.</p><a href="domains/physics-astro.html">Work through the astronomy case →</a></div>
+<div class="card"><p class="eyebrow">Biology</p><h3>A reproducible contrast can remain confounded</h3><p>Separate a correct rerun from an identified treatment effect. Introduce crossed evidence and see what it does—and does not—resolve.</p><a href="domains/biology.html">Work through the biology case →</a></div>
+<div class="card"><p class="eyebrow">Economics / social science</p><h3>Fair invitations can lead to skewed outcomes</h3><p>Compare offered, completed and relied-upon work. Follow incentives, selective participation and scarce attention through the protocol.</p><a href="domains/economics-social-science.html">Work through the economics case →</a></div>
+<div class="card"><p class="eyebrow">Law</p><h3>A checked citation does not confer authority</h3><p>Distinguish evidence, institutional decisions and operational obligations. A deadline can fail even when total workload fits.</p><a href="domains/law.html">Work through the legal case →</a></div>
+</div></section>
+<section><h2>Three small models you can change</h2><p>These controls evaluate the displayed mathematical examples. They do not run a review service or infer facts about people.</p>
+<div class="grid">
+<div class="card"><h3>Labels can buy attention</h3><p class="note">Three declared groups, two seats. A has extra interchangeable labels; B and C each have one. All are eligible.</p>
+<label for="clones">Labels controlled by A: <output id="clones-n">100</output></label><input id="clones" type="range" min="1" max="100" value="100">
+<div class="comparison" aria-live="polite"><div>Representative-first<div class="metric" id="naive-p"></div><div class="bar adverse"><span id="naive-bar"></span></div></div><div>Group-first<div class="metric" id="group-p"></div><div class="bar"><span id="group-bar"></span></div></div></div>
+<p class="note">Probability A receives a seat: 2n/(2n+1) versus 2/3. Known control and fixed eligibility are premises. Hidden common control defeats this repair.</p></div>
+<div class="card"><h3>Completion changes the sample</h3><p class="note">Adverse offers complete with probability 1. Others may refuse. One invitation per request; no retries.</p>
+<label for="offered">Adverse share of offers: <output id="offered-n">10%</output></label><input id="offered" type="range" min="0" max="100" value="10">
+<label for="safe">Other offers' completion probability: <output id="safe-n">1%</output></label><input id="safe" type="range" min="0" max="100" value="1">
+<div aria-live="polite"><div class="metric" id="completed-risk"></div><p>Adverse share among completions</p><p class="note" id="unresolved"></p></div>
+<p class="note">ε / [ε + (1−ε)c]. Completion is not correctness. Further selection at reliance can change the distribution again.</p></div>
+<div class="card"><h3>Stable snapshots can still amplify repair</h3><p class="note">Alternate two two-type maps, each with spectral radius zero. Each active type produces two tasks of the other type.</p>
+<label for="generations">Generations: <output id="generations-n">10</output></label><input id="generations" type="range" min="0" max="15" value="10">
+<div aria-live="polite"><div class="metric" id="repair-count"></div><p>Tasks in the last generation</p><p class="note" id="repair-total"></p></div>
+<p class="note">This planted switching sequence doubles each generation. A common weighted envelope is a stronger, conditional requirement; an average is insufficient.</p></div>
+<div class="card"><h3>Inspect the actual toy trace</h3><p class="note">Recorded output from the Python fixture. The amendment changes currentness and forces a new scoped decision. Actor roles are trusted labels.</p>
+<ol class="trace" id="trace"></ol><details><summary>View complete recorded output</summary><pre id="trace-json"></pre></details>
+<a href="toy_agents/README.html">Run and change the fixture →</a></div>
+</div></section>
+<section><h2>Follow the work beyond the invitation</h2>
+<p>The simulations connect selection, scarce effort, completion and repair. These saved scientific figures expose the retained outcomes; they are not estimates of human behavior.</p>
+<figure><img src="results/figures/selection-through-stages.svg" alt="Group-first initial selection remains near two thirds, but later completion and selective reliance increase group A's representation."><figcaption>One hundred synthetic replicates per policy; pooled stage shares. <a href="manuscripts/coupled-agents.html">Read the coupled model and its assumptions.</a></figcaption></figure>
+<figure><img src="results/figures/ecology-tradeoffs.svg" alt="Under overload bounded credit improves minimum group coverage relative to uniform while slightly reducing correct checks per offer. Shared blindness leaves fewer than half of defects detected."><figcaption>Eight seeds per policy; whiskers show the retained minimum and maximum, not confidence intervals. <a href="manuscripts/local-rules.html">Read the ecology and correction-credit counterexample.</a></figcaption></figure>
+</section>
+<section class="grid"><div><h2>Read the argument. Keep the objections.</h2><p>The mathematical claims are conditional. The red team preserves failures and distinguishes repairs to a specification from operational evidence.</p><ul>
+<li><a href="publication/blog-introduction.html">Introductory blog draft</a></li><li><a href="manuscripts/synthesis.html">The proposal and its assumption boundaries</a></li><li><a href="publication/positioning-and-adoption.html">How it fits existing review and provenance work</a></li><li><a href="manuscripts/math-foundations.html">Mathematical foundations and proofs</a></li><li><a href="manuscripts/funded-audits.html">From promised inspection to delivered inspection</a></li>
+<li><a href="reviews/COLLECTIVE.html">Collective red-team assessment</a></li><li><a href="publication/release-assessment.html">Public-release assessment</a></li></ul></div>
+<div><h2>Bring one counterexample</h2><p>A short exercise is enough to contribute. An implementation can begin with runnable fixtures. Both paths should explain the same boundary in plain language.</p><ul>
+<li><a href="onboarding/facilitator-guide.html">Run a domain clinic</a></li><li><a href="publication/dissemination.html">Publication and engagement routes</a></li>
+<li><a href="results/mcrp-release-brief.pdf">Read the eight-page research brief (PDF)</a></li>
+<li><a href="onboarding/evaluation-plan.html">Explore the pre-results human evaluation plan</a></li>
+<li><a href="mcrp-prototype-source.zip">Download the candidate source and reading pages</a></li></ul><p class="note">Licensing and responsible attribution remain pending release decisions. Downloading this candidate is not evidence of an adopted open-source license.</p></div></section>
+<script id="recorded-trace" type="application/json">__TRACE_JSON__</script>
+<script src="surfaces/equations.js"></script><script>
+(function(){"use strict";
+const el=id=>document.getElementById(id), pct=x=>(100*x).toFixed(1)+"%";
+function update(){const n=Number(el("clones").value),p=MCRPEquations.clones(n);el("clones-n").textContent=n;
+el("naive-p").textContent=pct(p.representativeFirst);el("group-p").textContent=pct(p.groupFirst);el("naive-bar").style.width=pct(p.representativeFirst);el("group-bar").style.width=pct(p.groupFirst);
+const e=Number(el("offered").value)/100,c=Number(el("safe").value)/100,r=MCRPEquations.completion(e,1,c);el("offered-n").textContent=pct(e);el("safe-n").textContent=pct(c);
+el("completed-risk").textContent=r.adverseAmongCompleted===null?"No completions":pct(r.adverseAmongCompleted);el("unresolved").textContent=pct(r.unresolved)+" of all requests unresolved; "+pct(r.completed)+" complete.";
+const g=Number(el("generations").value),w=MCRPEquations.repair(2,g);el("generations-n").textContent=g;el("repair-count").textContent=w.lastGeneration.toLocaleString();el("repair-total").textContent=w.cumulative.toLocaleString()+" cumulative tasks, including the initial one.";}
+["clones","offered","safe","generations"].forEach(id=>el(id).addEventListener("input",update));update();
+const data=JSON.parse(el("recorded-trace").textContent);el("trace-json").textContent=JSON.stringify(data,null,2);
+[["Before amendment",data.before],["After amendment",data.after],["After new checks and decision",data.renewal]].forEach(([label,value])=>{const li=document.createElement("li");li.textContent=label;const c=document.createElement("code");c.textContent=value;li.appendChild(c);el("trace").appendChild(li);});
+})();</script>

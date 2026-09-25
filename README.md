@@ -24,6 +24,16 @@ The recommended interface is **offer, check, rely, amend**; complex trust routin
 must justify itself against simpler constrained assignment. This is a working
 research dossier, not an adopted protocol, field evaluation, or public release.
 
+## Public-prototype release preparation
+
+The [release packet](papers/07-release-packet/README.md) extends the merged dossier
+with a blog introduction, self-contained mathematical manuscripts, coupled toy
+agents, four domain teaching cases, human and agent onboarding, an executable
+legacy-review adapter, and a further collective adversarial pass. Its static
+export is prepared for a public protocol seed; publication, attribution and rights
+remain separate explicit release decisions. This is a cross-cutting packet for the
+existing publication sequence, not evidence that all five papers passed their gates.
+
 ## Shared controls
 
 - [SCIENCE_WRITING_PACKET.md](SCIENCE_WRITING_PACKET.md): claim discipline, evidence standards, review gates, and manuscript checks.

@@ -1,0 +1,9 @@
+{
+  "toy_agents/protocol.py": "0a1a6b48f5fc4075c00f1819ee85103907c49169fd9f2d1b76ec86de236ddeff",
+  "models/release_cycle.py": "1f279b2ff85e96231be1d57dd65586f965543372f436413f2dfec86093de8723",
+  "models/agent-framework.md": "dec02261dfd02b80654a19df644e5896dc30b477d9d803cd12a23adf2b746d5b",
+  "models/release-cycle.md": "0e638ab83f5765b22838594d84d88ce90c6a7344d37aecad59bbc1a94afd5a17",
+  "publication/blog-introduction.md": "17e53ffac8fd162d6657d4bf583d117240cba5db2e1e03cc0df42a6a8bb1f715",
+  "reviews/red-runtime/probes.py": "1cd7dcdeb5de595368773ff55a5c132517fde5ae0dc6618280a42a1976e7d311",
+  "reviews/red-runtime/test_adversarial_runtime.py": "7f6f82a5fb12571290d37cdbf6819aa60a97abd7a05b557579026fd115523496"
+}

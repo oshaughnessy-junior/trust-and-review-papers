@@ -1,0 +1,25 @@
+test_all_replays_amend_then_support_a_new_version (test_domain_models.DomainModels) ... ok
+test_amended_receipts_bind_recomputed_domain_results (test_domain_models.DomainModels) ... ok
+test_biology_and_law_unsafe_authority_upgrades_rejected (test_domain_models.DomainModels) ... ok
+test_digest_stable_under_mapping_order_but_changes_with_content (test_domain_models.DomainModels) ... ok
+test_distinct_biological_explanations_are_observationally_equal (test_domain_models.DomainModels) ... ok
+test_equal_aggregate_work_different_deadline_outcomes (test_domain_models.DomainModels) ... ok
+test_equal_completion_preserves_offered_share (test_domain_models.DomainModels) ... ok
+test_final_reliance_can_select_again_after_completion (test_domain_models.DomainModels) ... ok
+test_hidden_dependency_is_a_recorded_known_failure (test_domain_models.DomainModels) ... ok
+test_interaction_is_not_mislabeled_as_an_exact_additive_effect (test_domain_models.DomainModels) ... ok
+test_missing_target_support_refused (test_domain_models.DomainModels) ... ok
+test_more_repeats_cannot_remove_shared_floor (test_domain_models.DomainModels) ... ok
+test_no_completions_is_undefined_not_zero (test_domain_models.DomainModels) ... ok
+test_no_reliance_is_undefined_not_zero_adverse_share (test_domain_models.DomainModels) ... ok
+test_same_crossed_observations_can_have_zero_causal_effect (test_domain_models.DomainModels) ... ok
+test_scheduler_cannot_drop_a_job_to_claim_success (test_domain_models.DomainModels) ... ok
+test_shared_variance_exact_hand_calculation (test_domain_models.DomainModels) ... ok
+test_transport_changes_estimand (test_domain_models.DomainModels) ... ok
+test_unconditional_error_mean_does_not_supply_conditional_exogeneity (test_domain_models.DomainModels) ... ok
+test_zero_shared_error_recovers_independent_formula (test_domain_models.DomainModels) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.004s
+
+OK

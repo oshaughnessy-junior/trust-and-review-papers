@@ -1,0 +1,26 @@
+test_budget_and_participation_can_conflict (test_protocol_math.AuditTests) ... ok
+test_exact_singleton_feasibility_survives_float_display (test_protocol_math.AuditTests) ... ok
+test_fixed_size_exact_marginal_oracle (test_protocol_math.AuditTests) ... ok
+test_hard_cap_nonintegral_budget (test_protocol_math.AuditTests) ... ok
+test_hard_endpoint_is_consumable_without_cap_tolerance (test_protocol_math.AuditTests) ... ok
+test_interior_interval_agrees_with_utilities (test_protocol_math.AuditTests) ... ok
+test_wilson_bounds (test_protocol_math.AuditTests) ... ok
+test_zero_effort_negative_discrimination_only_zero_audit (test_protocol_math.AuditTests) ... ok
+test_clone_pushforward_invariance (test_protocol_math.PanelTests) ... ok
+test_hidden_control_breaks_declared_group_claim (test_protocol_math.PanelTests) ... ok
+test_invalid_coverage_and_counts (test_protocol_math.PanelTests) ... ok
+test_naive_matches_independent_representative_enumeration (test_protocol_math.PanelTests) ... ok
+test_arbitrary_switching_bound_by_exhaustive_sequences (test_protocol_math.RepairTests) ... ok
+test_failed_witness_does_not_prove_instability (test_protocol_math.RepairTests) ... ok
+test_input_shapes_and_nonnegative_entries (test_protocol_math.RepairTests) ... ok
+test_single_hour_single_ledger (test_protocol_math.RepairTests) ... ok
+test_stable_snapshots_unstable_switching (test_protocol_math.RepairTests) ... ok
+test_accounting_and_bounds (test_protocol_math.RetryTests) ... ok
+test_bias_persists_under_retry (test_protocol_math.RetryTests) ... ok
+test_completion_envelope_is_tight_and_monotone (test_protocol_math.RetryTests) ... ok
+test_finite_tree_oracle (test_protocol_math.RetryTests) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.007s
+
+OK

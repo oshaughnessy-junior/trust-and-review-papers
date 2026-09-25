@@ -1,0 +1,24 @@
+test_absent_empty_null_distinguished (test_legacy.LegacyTests) ... ok
+test_boolean_integer_projection_bypass_rejected (test_legacy.LegacyTests) ... ok
+test_contradiction_cannot_be_overridden_by_accept (test_legacy.LegacyTests) ... ok
+test_control_conflict_and_missing_typed_authority_rejected (test_legacy.LegacyTests) ... ok
+test_envelope_nonfinite_injection_rejected (test_legacy.LegacyTests) ... ok
+test_fabricated_evidence_digest_only_format_not_verification (test_legacy.LegacyTests) ... ok
+test_fixture_evidence_hash_matches_actual_synthetic_file (test_legacy.LegacyTests) ... ok
+test_missing_result_is_not_accept (test_legacy.LegacyTests) ... ok
+test_mutable_url_is_not_exact_version (test_legacy.LegacyTests) ... ok
+test_names_urls_teams_recommendation_never_grant_authority (test_legacy.LegacyTests) ... ok
+test_nested_numeric_token_types_are_distinct (test_legacy.LegacyTests) ... ok
+test_nonempty_dependency_not_silently_dropped (test_legacy.LegacyTests) ... ok
+test_nonjson_or_nonfinite_input_rejected (test_legacy.LegacyTests) ... ok
+test_projection_tampering_rejected (test_legacy.LegacyTests) ... ok
+test_roundtrip_preserves_unknown_extension_and_values (test_legacy.LegacyTests) ... ok
+test_scope_cannot_be_widened_by_enrichment (test_legacy.LegacyTests) ... ok
+test_source_authority_or_control_not_overwritten (test_legacy.LegacyTests) ... ok
+test_source_tampering_rejected (test_legacy.LegacyTests) ... ok
+test_successful_cycle_retains_loss_and_enrichment (test_legacy.LegacyTests) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.007s
+
+OK

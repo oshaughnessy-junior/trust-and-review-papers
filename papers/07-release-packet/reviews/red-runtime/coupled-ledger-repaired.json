@@ -1,0 +1,17 @@
+{
+  "settlements": [
+    "actual exceeds reservation",
+    "actual exceeds reservation",
+    "actual exceeds reservation"
+  ],
+  "ledger": [
+    {
+      "person": "A",
+      "capacity": 0,
+      "used": 0.0,
+      "held": 0.0,
+      "remaining": 0.0,
+      "lanes": {}
+    }
+  ]
+}

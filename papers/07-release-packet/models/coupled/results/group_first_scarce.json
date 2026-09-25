@@ -1,0 +1,1090 @@
+{
+  "config": {
+    "policy": "group_first",
+    "retry": "reroll",
+    "clones": 100,
+    "capacity": 3,
+    "requests": 12,
+    "attempts": 3,
+    "reliance_filter": "all",
+    "hidden_control": false,
+    "reserve_repair": false
+  },
+  "seed": 70017,
+  "counts": {
+    "A_completed_panels": 2,
+    "A_initial_panels": 6,
+    "A_relied_panels": 2,
+    "A_reserved_panels": 3,
+    "A_selected_panels": 18,
+    "accepted_actors": 7,
+    "accepted_panels": 2,
+    "accepted_requests": 2,
+    "completed_actors": 7,
+    "completed_panels": 2,
+    "completed_requests": 2,
+    "completed_without_reliance": 0,
+    "eligible_requests": 12,
+    "full_effort_completed_panels": 1,
+    "honest_actors": 5,
+    "incomplete_panels": 3,
+    "initial_panels": 12,
+    "invited_actors": 10,
+    "invited_panels": 5,
+    "invited_requests": 4,
+    "noticed_affected_reliances": 2,
+    "offered_requests": 12,
+    "oracle_affected_reliances": 2,
+    "pending_repairs": 2,
+    "refuse_actors": 3,
+    "relied_panels": 2,
+    "relied_requests": 2,
+    "repaired_reliances": 0,
+    "reservation_failures": 27,
+    "reserved_panels": 5,
+    "reserved_requests": 4,
+    "retry_attempts": 20,
+    "selected_panels": 32,
+    "selected_requests": 12,
+    "selection_attempts": 32,
+    "shallow_actors": 2,
+    "still_unresolved_reliances": 2,
+    "true_independent_completed_panels": 2,
+    "unnoticed_affected_reliances": 0,
+    "unresolved_requests": 10
+  },
+  "ledger": [
+    {
+      "person": "A",
+      "capacity": 3,
+      "used": 3.0,
+      "held": 0.0,
+      "remaining": 0.0,
+      "lanes": {
+        "check_and_invitation": 3.0
+      }
+    },
+    {
+      "person": "B",
+      "capacity": 3,
+      "used": 0.39999999999999997,
+      "held": 0.0,
+      "remaining": 2.6,
+      "lanes": {
+        "check_and_invitation": 0.39999999999999997
+      }
+    },
+    {
+      "person": "C",
+      "capacity": 3,
+      "used": 2.25,
+      "held": 0.0,
+      "remaining": 0.75,
+      "lanes": {
+        "check_and_invitation": 2.25
+      }
+    },
+    {
+      "person": "steward",
+      "capacity": 3,
+      "used": 1.940000000000001,
+      "held": 0.0,
+      "remaining": 1.059999999999999,
+      "lanes": {
+        "check_and_invitation": 0.5,
+        "intake": 0.6,
+        "reliance": 0.2,
+        "reservation_triage": 0.6400000000000002
+      }
+    }
+  ],
+  "receipts": [
+    {
+      "request": 0,
+      "target": "claim-0:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "C"
+      ],
+      "oracle_full_effort": true,
+      "oracle_independent": true,
+      "currentness": "unresolved_material_change",
+      "repair": "capacity_unavailable"
+    },
+    {
+      "request": 1,
+      "target": "claim-1:v1",
+      "scope": "toy numerical decision only",
+      "decision_actor": "synthetic steward",
+      "declared_groups": [
+        "A",
+        "B"
+      ],
+      "oracle_full_effort": false,
+      "oracle_independent": true,
+      "currentness": "unresolved_material_change",
+      "repair": "capacity_unavailable"
+    }
+  ],
+  "events": [
+    {
+      "sequence": 0,
+      "event": "offer",
+      "request": 0,
+      "target": "claim-0:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 1,
+      "event": "select",
+      "request": 0,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 2,
+      "event": "actor_response",
+      "request": 0,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.672,
+        "shallow": 0.48,
+        "refuse": 0.10070831224343661
+      }
+    },
+    {
+      "sequence": 3,
+      "event": "actor_response",
+      "request": 0,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.562,
+        "shallow": 0.48,
+        "refuse": 0.3384714856145513
+      }
+    },
+    {
+      "sequence": 4,
+      "event": "rely",
+      "request": 0,
+      "target": "claim-0:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 5,
+      "event": "offer",
+      "request": 1,
+      "target": "claim-1:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 6,
+      "event": "select",
+      "request": 1,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 7,
+      "event": "actor_response",
+      "request": 1,
+      "attempt": 0,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.62,
+        "shallow": 0.48,
+        "refuse": 0.27650989148634825
+      }
+    },
+    {
+      "sequence": 8,
+      "event": "actor_response",
+      "request": 1,
+      "attempt": 0,
+      "group": "B",
+      "true_person": "B",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.31200000000000006,
+        "shallow": 0.48,
+        "refuse": 0.4351635557737018
+      }
+    },
+    {
+      "sequence": 9,
+      "event": "rely",
+      "request": 1,
+      "target": "claim-1:v1",
+      "scope": "toy numerical decision only"
+    },
+    {
+      "sequence": 10,
+      "event": "offer",
+      "request": 2,
+      "target": "claim-2:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 11,
+      "event": "select",
+      "request": 2,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 12,
+      "event": "actor_response",
+      "request": 2,
+      "attempt": 0,
+      "group": "B",
+      "true_person": "B",
+      "action": "refuse",
+      "reported_complete": false,
+      "hours": 0.05,
+      "utilities": {
+        "honest": 0.269,
+        "shallow": 0.48,
+        "refuse": 0.5951734416934652
+      }
+    },
+    {
+      "sequence": 13,
+      "event": "actor_response",
+      "request": 2,
+      "attempt": 0,
+      "group": "C",
+      "true_person": "C",
+      "action": "shallow",
+      "reported_complete": true,
+      "hours": 0.25,
+      "utilities": {
+        "honest": 0.47000000000000003,
+        "shallow": 0.48,
+        "refuse": 0.23726922143855125
+      }
+    },
+    {
+      "sequence": 14,
+      "event": "select",
+      "request": 2,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 15,
+      "event": "actor_response",
+      "request": 2,
+      "attempt": 1,
+      "group": "A",
+      "true_person": "A",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.5680000000000001,
+        "shallow": 0.48,
+        "refuse": 0.21773894901359647
+      }
+    },
+    {
+      "sequence": 16,
+      "event": "actor_response",
+      "request": 2,
+      "attempt": 1,
+      "group": "B",
+      "true_person": "B",
+      "action": "refuse",
+      "reported_complete": false,
+      "hours": 0.05,
+      "utilities": {
+        "honest": 0.26839999999999997,
+        "shallow": 0.48,
+        "refuse": 0.6464558244564691
+      }
+    },
+    {
+      "sequence": 17,
+      "event": "select",
+      "request": 2,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 18,
+      "event": "reservation_failed",
+      "request": 2,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 19,
+      "event": "offer",
+      "request": 3,
+      "target": "claim-3:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 20,
+      "event": "select",
+      "request": 3,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 21,
+      "event": "reservation_failed",
+      "request": 3,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 22,
+      "event": "select",
+      "request": 3,
+      "attempt": 1,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 23,
+      "event": "actor_response",
+      "request": 3,
+      "attempt": 1,
+      "group": "B",
+      "true_person": "B",
+      "action": "refuse",
+      "reported_complete": false,
+      "hours": 0.05,
+      "utilities": {
+        "honest": 0.34780000000000005,
+        "shallow": 0.48,
+        "refuse": 0.5987521154255422
+      }
+    },
+    {
+      "sequence": 24,
+      "event": "actor_response",
+      "request": 3,
+      "attempt": 1,
+      "group": "C",
+      "true_person": "C",
+      "action": "honest",
+      "reported_complete": true,
+      "hours": 1.0,
+      "utilities": {
+        "honest": 0.547,
+        "shallow": 0.48,
+        "refuse": 0.14823571377375433
+      }
+    },
+    {
+      "sequence": 25,
+      "event": "select",
+      "request": 3,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 26,
+      "event": "reservation_failed",
+      "request": 3,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 27,
+      "event": "offer",
+      "request": 4,
+      "target": "claim-4:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 28,
+      "event": "select",
+      "request": 4,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 29,
+      "event": "reservation_failed",
+      "request": 4,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 30,
+      "event": "select",
+      "request": 4,
+      "attempt": 1,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 31,
+      "event": "reservation_failed",
+      "request": 4,
+      "attempt": 1,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 32,
+      "event": "select",
+      "request": 4,
+      "attempt": 2,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 33,
+      "event": "reservation_failed",
+      "request": 4,
+      "attempt": 2,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 34,
+      "event": "offer",
+      "request": 5,
+      "target": "claim-5:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 35,
+      "event": "select",
+      "request": 5,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 36,
+      "event": "reservation_failed",
+      "request": 5,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 37,
+      "event": "select",
+      "request": 5,
+      "attempt": 1,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 38,
+      "event": "reservation_failed",
+      "request": 5,
+      "attempt": 1,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 39,
+      "event": "select",
+      "request": 5,
+      "attempt": 2,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 40,
+      "event": "reservation_failed",
+      "request": 5,
+      "attempt": 2,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 41,
+      "event": "offer",
+      "request": 6,
+      "target": "claim-6:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 42,
+      "event": "select",
+      "request": 6,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 43,
+      "event": "reservation_failed",
+      "request": 6,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 44,
+      "event": "select",
+      "request": 6,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 45,
+      "event": "reservation_failed",
+      "request": 6,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 46,
+      "event": "select",
+      "request": 6,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 47,
+      "event": "reservation_failed",
+      "request": 6,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 48,
+      "event": "offer",
+      "request": 7,
+      "target": "claim-7:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 49,
+      "event": "select",
+      "request": 7,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 50,
+      "event": "reservation_failed",
+      "request": 7,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 51,
+      "event": "select",
+      "request": 7,
+      "attempt": 1,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 52,
+      "event": "reservation_failed",
+      "request": 7,
+      "attempt": 1,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 53,
+      "event": "select",
+      "request": 7,
+      "attempt": 2,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 54,
+      "event": "reservation_failed",
+      "request": 7,
+      "attempt": 2,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 55,
+      "event": "offer",
+      "request": 8,
+      "target": "claim-8:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 56,
+      "event": "select",
+      "request": 8,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 57,
+      "event": "reservation_failed",
+      "request": 8,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 58,
+      "event": "select",
+      "request": 8,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 59,
+      "event": "reservation_failed",
+      "request": 8,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 60,
+      "event": "select",
+      "request": 8,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 61,
+      "event": "reservation_failed",
+      "request": 8,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 62,
+      "event": "offer",
+      "request": 9,
+      "target": "claim-9:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 63,
+      "event": "select",
+      "request": 9,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 64,
+      "event": "reservation_failed",
+      "request": 9,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 65,
+      "event": "select",
+      "request": 9,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 66,
+      "event": "reservation_failed",
+      "request": 9,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 67,
+      "event": "select",
+      "request": 9,
+      "attempt": 2,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 68,
+      "event": "reservation_failed",
+      "request": 9,
+      "attempt": 2,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 69,
+      "event": "offer",
+      "request": 10,
+      "target": "claim-10:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 70,
+      "event": "select",
+      "request": 10,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 71,
+      "event": "reservation_failed",
+      "request": 10,
+      "attempt": 0,
+      "panel": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sequence": 72,
+      "event": "select",
+      "request": 10,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 73,
+      "event": "reservation_failed",
+      "request": 10,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 74,
+      "event": "select",
+      "request": 10,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 75,
+      "event": "reservation_failed",
+      "request": 10,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 76,
+      "event": "offer",
+      "request": 11,
+      "target": "claim-11:v1",
+      "scope": "synthetic numerical check"
+    },
+    {
+      "sequence": 77,
+      "event": "select",
+      "request": 11,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 78,
+      "event": "reservation_failed",
+      "request": 11,
+      "attempt": 0,
+      "panel": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "sequence": 79,
+      "event": "select",
+      "request": 11,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 80,
+      "event": "reservation_failed",
+      "request": 11,
+      "attempt": 1,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 81,
+      "event": "select",
+      "request": 11,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 82,
+      "event": "reservation_failed",
+      "request": 11,
+      "attempt": 2,
+      "panel": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "sequence": 83,
+      "event": "amend",
+      "target": "claim-0:v1",
+      "known_affected": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "sequence": 84,
+      "event": "repair_pending",
+      "request": 0
+    },
+    {
+      "sequence": 85,
+      "event": "repair_pending",
+      "request": 1
+    }
+  ],
+  "graphs": {
+    "true_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        11
+      ]
+    ],
+    "declared_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        11
+      ]
+    ]
+  },
+  "total_hours": 7.590000000000002,
+  "limitation": "Synthetic utilities, declared controls, known toy skills; no authenticated authority, real audit delivery, independent review, human calibration or live currentness."
+}

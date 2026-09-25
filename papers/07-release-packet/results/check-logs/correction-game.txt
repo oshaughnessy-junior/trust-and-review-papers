@@ -1,0 +1,1 @@
+Wrote correction-game.json; one-step incentives, not equilibrium or human behavior.

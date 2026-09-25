@@ -1,0 +1,23 @@
+test_actual_penalty_transfer_conserves_collateral (test_model.FundedTests) ... ok
+test_all_actions_commit_before_audit_disclosure (test_model.FundedTests) ... ok
+test_atomic_failure_and_overdraw (test_model.FundedTests) ... ok
+test_broken_promise_changes_best_response (test_model.FundedTests) ... ok
+test_concealed_funding_delivers_selected_audits (test_model.FundedTests) ... ok
+test_decimal_debits_exactly_fill_without_tolerance (test_model.FundedTests) ... ok
+test_disclosure_changes_information_and_action (test_model.FundedTests) ... ok
+test_exact_honest_refusal_tie_prefers_refusal (test_model.FundedTests) ... ok
+test_exact_honest_shallow_tie_uses_stated_preference (test_model.FundedTests) ... ok
+test_exact_quota_marginals (test_model.FundedTests) ... ok
+test_false_positives_can_induce_refusal (test_model.FundedTests) ... ok
+test_independent_capacity_funding_and_collateral_gates (test_model.FundedTests) ... ok
+test_invalid_configuration (test_model.FundedTests) ... ok
+test_no_epsilon_capacity_can_fund_positive_work (test_model.FundedTests) ... ok
+test_partial_refusal_preserves_marginal_without_reallocation (test_model.FundedTests) ... ok
+test_refusal_does_not_redistribute_slots (test_model.FundedTests) ... ok
+test_shared_roles_reserve_worst_case_and_never_self_audit (test_model.FundedTests) ... ok
+test_utility_exact_finite_best_response_condition (test_model.FundedTests) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.039s
+
+OK

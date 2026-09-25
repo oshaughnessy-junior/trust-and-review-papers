@@ -1,0 +1,55 @@
+{
+  "amendment_chain_and_target_binding": {
+    "cycle": "amendment successor must be a new release identifier",
+    "intended_binding": "358fc42ac3252577cd5a700236fdc7f2e76ff1e46e8a4e658600c6d252dfa130",
+    "other_bound_replacement": "amendment successor binding mismatch",
+    "published_alternative_binding": "dbe05b3b7fa4d79239b0f54152914a966990750440d83efa7e8cda4ff1c93996",
+    "successor_overwrite": "old release already superseded"
+  },
+  "author_contract_weakening": {
+    "offer_floor": 2,
+    "reliance_requests": {
+      "1": "reliance cannot weaken offered coverage contract",
+      "2": "insufficient independent scope coverage"
+    },
+    "scope_limit": "author chooses offer floor; external approval of its adequacy is not modeled"
+  },
+  "contradiction_after_reliance": {
+    "identical_new_reliance": "current contradictory check requires explicit amendment/recheck",
+    "old_reliance": "contradiction_pending"
+  },
+  "currentness_clock": {
+    "query_at_10": "expired",
+    "subsequent_query_at_2": "backdated action or historical query unsupported"
+  },
+  "failed_future_action_advances_clock": {
+    "clock": 2,
+    "invalid_future_attempt": "delegation outside validity interval",
+    "subsequent_valid_attempt": "delivered_unobserved"
+  },
+  "hidden_person_aliases": {
+    "charged_actor_totals": {
+      "r1": 1,
+      "r2": 1
+    },
+    "classification": "known excluded capacity-key premise violation; not fixed by control-group labels",
+    "declared_upstream_person_capacity": 1,
+    "if_both_labels_are_one_person_total_work": 2
+  },
+  "observation_metadata_rebinding": {
+    "bindings_differ": true,
+    "currentness": "release_binding_mismatch",
+    "other_candidate_observation": {
+      "actual_binding": "9c986e14d2dbfc69b8019b910beddd931b18ab7e6738aad272d841e7c25ac937",
+      "actual_digest": "1bd09cecfadaa36a30f7388d1ad82f31be303a21acbd66d208ddf46d1ad1f1c0",
+      "at": 4,
+      "expected_binding": "676fc5f060f2fd4f07aa878922a0d88c505afd4c9045785230957543d48676d0",
+      "expected_digest": "1bd09cecfadaa36a30f7388d1ad82f31be303a21acbd66d208ddf46d1ad1f1c0",
+      "observer": "observer",
+      "release_id": "release-1",
+      "status": "binding_mismatch",
+      "type": "observation"
+    },
+    "publish": "release identifier cannot be rebound"
+  }
+}

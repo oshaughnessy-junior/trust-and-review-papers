@@ -1,0 +1,11 @@
+test_already_delivered_correction_can_be_observed_after_revocation (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_amendment_must_preserve_intended_successor_binding (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_expired_currentness_query_cannot_be_rolled_back (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_later_contradiction_cannot_leave_direct_reliance_current (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_observer_checks_metadata_even_with_identical_content (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_publication_invalid_calls_leave_runtime_state_unchanged (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

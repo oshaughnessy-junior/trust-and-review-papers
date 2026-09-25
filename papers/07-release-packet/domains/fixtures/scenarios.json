@@ -1,0 +1,195 @@
+{
+  "schema": "mcrp-domain-teaching-scenarios/1",
+  "status": "synthetic semantic fixtures; not wire conformance vectors",
+  "date": "2026-09-25",
+  "time_unit": "logical ticks; not statutory or wall-clock time",
+  "effort_unit": "declared tokens; not calibrated human hours",
+  "digest_method": "sha256 of evidence object encoded as UTF-8 JSON with sorted keys, compact separators, ensure_ascii=true, allow_nan=false",
+  "cases": [
+    {
+      "domain": "physics",
+      "target": {
+        "claim_id": "astro-amplitude",
+        "version": "1"
+      },
+      "scope": [
+        "numerical_reconstruction"
+      ],
+      "dependency": "astro-calibration@1",
+      "evidence": {
+        "n": 16,
+        "shared_sd": "0.5",
+        "individual_sd": "0.2",
+        "raw": "10.5",
+        "old_gain": "1.00",
+        "new_gain": "1.05"
+      },
+      "limits": "Synthetic scalar response, not frequency-dependent physical calibration or astrophysical inference",
+      "expected": {
+        "shared_variance": "101/400",
+        "mistaken_variance": "29/1600",
+        "old_amplitude": "21/2",
+        "new_amplitude": "10"
+      },
+      "attack": "Erase calibration dependency or count internal agents as independent calibration evidence",
+      "repair": "Preserve numerical check scope and mark declared dependent current use pending on calibration amendment"
+    },
+    {
+      "domain": "biology",
+      "target": {
+        "claim_id": "bio-assay-contrast",
+        "version": "1"
+      },
+      "scope": [
+        "arithmetic",
+        "additive_model_identification"
+      ],
+      "dependency": "bio-batch-map@1",
+      "evidence": {
+        "confounded_rows": [
+          [
+            0,
+            0,
+            9
+          ],
+          [
+            0,
+            0,
+            11
+          ],
+          [
+            1,
+            1,
+            11
+          ],
+          [
+            1,
+            1,
+            13
+          ]
+        ],
+        "crossed_rows": [
+          [
+            0,
+            0,
+            10
+          ],
+          [
+            1,
+            0,
+            11
+          ],
+          [
+            0,
+            1,
+            12
+          ],
+          [
+            1,
+            1,
+            13
+          ]
+        ]
+      },
+      "limits": "Synthetic additive-model identification; no patient, assay, clinical or laboratory validation",
+      "expected": {
+        "confounded_mean_difference": "2",
+        "rss_treatment_explanation": "4",
+        "rss_batch_explanation": "4",
+        "crossed_additive_effect": "1"
+      },
+      "attack": "Upgrade reproducible arithmetic to causal identification despite identical treatment and batch columns",
+      "repair": "Record unknown identification and refuse broader reliance; separately check crossed version"
+    },
+    {
+      "domain": "economics",
+      "target": {
+        "claim_id": "econ-trial-ate",
+        "version": "1"
+      },
+      "scope": [
+        "arithmetic",
+        "estimand_alignment"
+      ],
+      "dependency": "econ-plan@1",
+      "evidence": {
+        "effects": {
+          "A": "2",
+          "B": "0"
+        },
+        "trial_weights": {
+          "A": "0.8",
+          "B": "0.2"
+        },
+        "target_weights": {
+          "A": "0.2",
+          "B": "0.8"
+        },
+        "adverse_offer_share": "0.1",
+        "adverse_completion": "1",
+        "other_completion": "0.01",
+        "reliance_selection": {
+          "completed_adverse": 10,
+          "completed_other": 90,
+          "relied_adverse": 10,
+          "relied_other": 0
+        }
+      },
+      "limits": "Stipulated effects and conditional transport; no empirical causal estimation or equilibrium model",
+      "expected": {
+        "trial_effect": "8/5",
+        "target_effect_conditional_on_transport": "2/5",
+        "adverse_completed_share": "100/109"
+      },
+      "attack": "Conflate trial and target populations; report invitation cap as completed-review cap",
+      "repair": "Separate estimands, expose transport assumptions, preserve stage denominators"
+    },
+    {
+      "domain": "law",
+      "target": {
+        "claim_id": "law-memo",
+        "version": "1"
+      },
+      "scope": [
+        "citation_accuracy"
+      ],
+      "dependency": "law-fictional-policy@1",
+      "evidence": {
+        "policy_text": "Fictional classroom policy: an appointed officer decides permitted institutional reuse.",
+        "quotation": "an appointed officer decides permitted institutional reuse",
+        "feasible_jobs": [
+          {
+            "id": "A",
+            "effort": 3,
+            "deadline": 4
+          },
+          {
+            "id": "B",
+            "effort": 1,
+            "deadline": 1
+          }
+        ],
+        "infeasible_jobs": [
+          {
+            "id": "C",
+            "effort": 2,
+            "deadline": 1
+          },
+          {
+            "id": "D",
+            "effort": 2,
+            "deadline": 4
+          }
+        ]
+      },
+      "limits": "Fictional policy and scheduling; no legal operational authority, real notices, statutory calendar or legal compliance",
+      "expected": {
+        "fifo_misses": 1,
+        "deadline_order_misses": 0,
+        "infeasible_earliest_first_misses": 1
+      },
+      "attack": "Upgrade citation agreement to legal power or hide missed deadline inside acceptable total workload",
+      "repair": "Reject unsupported legal authority kind and expose explicit schedule infeasibility"
+    }
+  ]
+}

@@ -29,3 +29,18 @@ Paper 01 supplies the conceptual map and terminology. Paper 02 may proceed in pa
 - Stop anonymity claims unless the threat model and unlinkability mechanism are explicit.
 - Stop governance-effectiveness claims without evidence from independent actors.
 - Stop venue work if fees are not waived and no no-fee route is available.
+
+## September 2026 public-prototype sequence
+
+The cross-cutting [release packet](papers/07-release-packet/README.md) supports
+Papers 01-04 with standalone arguments, conditional models, a tested toy boundary,
+domain examples and a pre-results interface evaluation design. It does not move
+those papers through their separate gates by association. Paper 05 remains deferred.
+
+The near-term sequence is an accessible introduction and curated versioned
+prototype, followed by bounded domain exercises and substantive human criticism.
+A scholarly submission should then be rebuilt around the specific contribution
+and the venue's current eligibility, disclosure and rights requirements. The
+[dissemination assessment](papers/07-release-packet/publication/dissemination.md)
+records verified routes and limitations, including the current OSF restriction
+relevant to this AI-heavy candidate.

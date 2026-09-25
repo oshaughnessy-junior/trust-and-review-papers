@@ -1,0 +1,23 @@
+test_attention_is_zero_sum (test_correction_game.CorrectionGameTests) ... ok
+test_author_credit_profitable_despite_social_loss (test_correction_game.CorrectionGameTests) ... ok
+test_capacity_and_enforcement_bounds (test_correction_game.CorrectionGameTests) ... ok
+test_independent_closed_form_oracle (test_correction_game.CorrectionGameTests) ... ok
+test_invalid_parameters (test_correction_game.CorrectionGameTests) ... ok
+test_no_credit_baseline (test_correction_game.CorrectionGameTests) ... ok
+test_pure_exploration_removes_this_reward_channel (test_correction_game.CorrectionGameTests) ... ok
+test_repairer_only_blocks_author_not_coalition (test_correction_game.CorrectionGameTests) ... ok
+test_blind_common_cause_negative_control (test_ecology.EcologyTests) ... ok
+test_bounded_score_invariant (test_ecology.EcologyTests) ... ok
+test_budget_conservation_independent_trajectory_sum (test_ecology.EcologyTests) ... ok
+test_exogenous_streams_match_under_all_policies (test_ecology.EcologyTests) ... ok
+test_invalid_inputs (test_ecology.EcologyTests) ... ok
+test_no_capacity_no_completed_work (test_ecology.EcologyTests) ... ok
+test_reproducibility (test_ecology.EcologyTests) ... ok
+test_softmax_floor_and_shift_invariance (test_ecology.EcologyTests) ... ok
+test_uniform_endpoints (test_ecology.EcologyTests) ... ok
+test_zero_offers (test_ecology.EcologyTests) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.007s
+
+OK

@@ -1,0 +1,456 @@
+{
+  "schema": "mcrp-funded-audit.v1",
+  "config": {
+    "offered_population": 8,
+    "promised_quota": 4,
+    "delivered_quota": 4,
+    "reward": 0.6,
+    "loss": 2.0,
+    "false_positive": 0.02,
+    "detection": 0.8,
+    "audit_token_cost": 1.0,
+    "audit_token_budget": 4.0,
+    "reward_token_budget": 4.8,
+    "actor_escrow": 2.0,
+    "review_hours": 1.0,
+    "audit_hours": 0.5,
+    "role_mode": "dedicated",
+    "review_capacity": 8.0,
+    "audit_capacity": 2.0,
+    "shared_person_capacity": 6.0,
+    "disclose_selection": false,
+    "allow_broken_promise": false
+  },
+  "seed": 60,
+  "offered_effort_utilities": [
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3
+  ],
+  "offered_outside_utilities": [
+    1,
+    1,
+    1,
+    1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "status": "executed",
+  "promised_q_if_participating_concealed": 0.5,
+  "delivered_selection_marginal": 0.5,
+  "counts": {
+    "accepted": 4,
+    "audited": 2,
+    "completed": 4,
+    "detected_shallow": 0,
+    "false_sanctions": 0,
+    "honest": 4,
+    "offered": 8,
+    "planned_population": 8,
+    "refuse": 4,
+    "refused": 4,
+    "sanctioned": 0,
+    "selected_audit_slots": 4,
+    "shallow": 0,
+    "unused_refused_audit_slots": 2
+  },
+  "actors": [
+    {
+      "actor": 0,
+      "review_person": "reviewer",
+      "audit_person": "auditor",
+      "action": "refuse",
+      "decision_q": 0.5,
+      "audit_slot_selected": false,
+      "audited": false,
+      "sanctioned": false,
+      "advertised_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 1.0
+      },
+      "actual_expected_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 1.0
+      },
+      "exact_advertised_utilities": {
+        "honest": "7/25",
+        "shallow": "-1/5",
+        "refuse": "1"
+      },
+      "closing_escrow": 2.0,
+      "reward_received": 0.0,
+      "realized_utility": 1
+    },
+    {
+      "actor": 1,
+      "review_person": "reviewer",
+      "audit_person": "auditor",
+      "action": "refuse",
+      "decision_q": 0.5,
+      "audit_slot_selected": true,
+      "audited": false,
+      "sanctioned": false,
+      "advertised_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 1.0
+      },
+      "actual_expected_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 1.0
+      },
+      "exact_advertised_utilities": {
+        "honest": "7/25",
+        "shallow": "-1/5",
+        "refuse": "1"
+      },
+      "closing_escrow": 2.0,
+      "reward_received": 0.0,
+      "realized_utility": 1
+    },
+    {
+      "actor": 2,
+      "review_person": "reviewer",
+      "audit_person": "auditor",
+      "action": "refuse",
+      "decision_q": 0.5,
+      "audit_slot_selected": true,
+      "audited": false,
+      "sanctioned": false,
+      "advertised_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 1.0
+      },
+      "actual_expected_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 1.0
+      },
+      "exact_advertised_utilities": {
+        "honest": "7/25",
+        "shallow": "-1/5",
+        "refuse": "1"
+      },
+      "closing_escrow": 2.0,
+      "reward_received": 0.0,
+      "realized_utility": 1
+    },
+    {
+      "actor": 3,
+      "review_person": "reviewer",
+      "audit_person": "auditor",
+      "action": "refuse",
+      "decision_q": 0.5,
+      "audit_slot_selected": false,
+      "audited": false,
+      "sanctioned": false,
+      "advertised_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 1.0
+      },
+      "actual_expected_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 1.0
+      },
+      "exact_advertised_utilities": {
+        "honest": "7/25",
+        "shallow": "-1/5",
+        "refuse": "1"
+      },
+      "closing_escrow": 2.0,
+      "reward_received": 0.0,
+      "realized_utility": 1
+    },
+    {
+      "actor": 4,
+      "review_person": "reviewer",
+      "audit_person": "auditor",
+      "action": "honest",
+      "decision_q": 0.5,
+      "audit_slot_selected": true,
+      "audited": true,
+      "sanctioned": false,
+      "advertised_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 0.1
+      },
+      "actual_expected_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 0.1
+      },
+      "exact_advertised_utilities": {
+        "honest": "7/25",
+        "shallow": "-1/5",
+        "refuse": "1/10"
+      },
+      "closing_escrow": 2.0,
+      "reward_received": 0.6,
+      "realized_utility": 0.3
+    },
+    {
+      "actor": 5,
+      "review_person": "reviewer",
+      "audit_person": "auditor",
+      "action": "honest",
+      "decision_q": 0.5,
+      "audit_slot_selected": false,
+      "audited": false,
+      "sanctioned": false,
+      "advertised_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 0.1
+      },
+      "actual_expected_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 0.1
+      },
+      "exact_advertised_utilities": {
+        "honest": "7/25",
+        "shallow": "-1/5",
+        "refuse": "1/10"
+      },
+      "closing_escrow": 2.0,
+      "reward_received": 0.6,
+      "realized_utility": 0.3
+    },
+    {
+      "actor": 6,
+      "review_person": "reviewer",
+      "audit_person": "auditor",
+      "action": "honest",
+      "decision_q": 0.5,
+      "audit_slot_selected": false,
+      "audited": false,
+      "sanctioned": false,
+      "advertised_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 0.1
+      },
+      "actual_expected_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 0.1
+      },
+      "exact_advertised_utilities": {
+        "honest": "7/25",
+        "shallow": "-1/5",
+        "refuse": "1/10"
+      },
+      "closing_escrow": 2.0,
+      "reward_received": 0.6,
+      "realized_utility": 0.3
+    },
+    {
+      "actor": 7,
+      "review_person": "reviewer",
+      "audit_person": "auditor",
+      "action": "honest",
+      "decision_q": 0.5,
+      "audit_slot_selected": true,
+      "audited": true,
+      "sanctioned": false,
+      "advertised_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 0.1
+      },
+      "actual_expected_utilities": {
+        "honest": 0.28,
+        "shallow": -0.2,
+        "refuse": 0.1
+      },
+      "exact_advertised_utilities": {
+        "honest": "7/25",
+        "shallow": "-1/5",
+        "refuse": "1/10"
+      },
+      "closing_escrow": 2.0,
+      "reward_received": 0.6,
+      "realized_utility": 0.3
+    }
+  ],
+  "events": [
+    {
+      "event": "decision_commit",
+      "actor": 0,
+      "action": "refuse",
+      "decision_q": 0.5,
+      "selection_disclosed": false
+    },
+    {
+      "event": "decision_commit",
+      "actor": 1,
+      "action": "refuse",
+      "decision_q": 0.5,
+      "selection_disclosed": false
+    },
+    {
+      "event": "decision_commit",
+      "actor": 2,
+      "action": "refuse",
+      "decision_q": 0.5,
+      "selection_disclosed": false
+    },
+    {
+      "event": "decision_commit",
+      "actor": 3,
+      "action": "refuse",
+      "decision_q": 0.5,
+      "selection_disclosed": false
+    },
+    {
+      "event": "decision_commit",
+      "actor": 4,
+      "action": "honest",
+      "decision_q": 0.5,
+      "selection_disclosed": false
+    },
+    {
+      "event": "decision_commit",
+      "actor": 5,
+      "action": "honest",
+      "decision_q": 0.5,
+      "selection_disclosed": false
+    },
+    {
+      "event": "decision_commit",
+      "actor": 6,
+      "action": "honest",
+      "decision_q": 0.5,
+      "selection_disclosed": false
+    },
+    {
+      "event": "decision_commit",
+      "actor": 7,
+      "action": "honest",
+      "decision_q": 0.5,
+      "selection_disclosed": false
+    },
+    {
+      "event": "refuse",
+      "actor": 0,
+      "selected_slot_unused": false
+    },
+    {
+      "event": "refuse",
+      "actor": 1,
+      "selected_slot_unused": true
+    },
+    {
+      "event": "refuse",
+      "actor": 2,
+      "selected_slot_unused": true
+    },
+    {
+      "event": "refuse",
+      "actor": 3,
+      "selected_slot_unused": false
+    },
+    {
+      "event": "complete",
+      "actor": 4,
+      "action": "honest",
+      "person": "reviewer",
+      "hours": 1.0
+    },
+    {
+      "event": "audit",
+      "actor": 4,
+      "person": "auditor",
+      "hours": 0.5,
+      "sanctioned": false
+    },
+    {
+      "event": "complete",
+      "actor": 5,
+      "action": "honest",
+      "person": "reviewer",
+      "hours": 1.0
+    },
+    {
+      "event": "complete",
+      "actor": 6,
+      "action": "honest",
+      "person": "reviewer",
+      "hours": 1.0
+    },
+    {
+      "event": "complete",
+      "actor": 7,
+      "action": "honest",
+      "person": "reviewer",
+      "hours": 1.0
+    },
+    {
+      "event": "audit",
+      "actor": 7,
+      "person": "auditor",
+      "hours": 0.5,
+      "sanctioned": false
+    }
+  ],
+  "person_ledger": [
+    {
+      "person": "auditor",
+      "capacity_hours": 2.0,
+      "reserved_hours": 2.0,
+      "spent_hours": 1.0,
+      "released_hours": 1.0,
+      "exact_hours": {
+        "capacity": "2",
+        "reserved": "2",
+        "spent": "1"
+      },
+      "lanes": {
+        "audit": 1.0
+      }
+    },
+    {
+      "person": "reviewer",
+      "capacity_hours": 8.0,
+      "reserved_hours": 8.0,
+      "spent_hours": 4.0,
+      "released_hours": 4.0,
+      "exact_hours": {
+        "capacity": "8",
+        "reserved": "8",
+        "spent": "4"
+      },
+      "lanes": {
+        "review": 4.0
+      }
+    }
+  ],
+  "tokens": {
+    "audit_spent": 2.0,
+    "audit_reserved": 4.0,
+    "audit_budget_remaining": 2.0,
+    "reward_spent": 2.4,
+    "reward_reserved": 4.8,
+    "reward_budget_remaining": 2.4,
+    "penalties_quarantined": 0.0,
+    "escrow_opening_total": 16.0,
+    "escrow_closing_total": 16.0,
+    "penalties_recycled_into_budget": false
+  },
+  "aggregate_expected_utility_regret_under_actual_information": 0.0,
+  "interpretation": "Synthetic funded delivery with fixed actors and fully collateralized token losses; no real assets, consent, identity verification, legal authority or cooperation equilibrium"
+}
