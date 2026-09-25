@@ -1,0 +1,1755 @@
+{
+  "status": "synthetic sensitivity runs complete; deterministic assertions passed",
+  "environment": {
+    "python": "3.9.6",
+    "dependencies": "standard library only"
+  },
+  "scope": "No empirical reviewer behavior, legal compliance, calibrated utility, or validated superiority claim",
+  "configuration": {
+    "allocation": {
+      "n": 80,
+      "seeds": [
+        42000,
+        42001,
+        42002,
+        42003,
+        42004,
+        42005,
+        42006,
+        42007,
+        42008,
+        42009,
+        42010,
+        42011,
+        42012,
+        42013,
+        42014,
+        42015,
+        42016,
+        42017,
+        42018,
+        42019,
+        42020,
+        42021,
+        42022,
+        42023,
+        42024,
+        42025,
+        42026,
+        42027,
+        42028,
+        42029
+      ],
+      "H": [
+        20,
+        80
+      ],
+      "potential_lognormal": [
+        0,
+        1
+      ],
+      "productivity_lognormal": [
+        -0.2,
+        0.5
+      ],
+      "baseline_blindspot": 0.1,
+      "ignored_blindspot_underserved": 0.8,
+      "underserved_fraction": 0.25,
+      "reserve_fraction": 0.2,
+      "coverage_threshold_hours": 0.25
+    },
+    "queue": {
+      "seeds": [
+        71000,
+        71001,
+        71002,
+        71003,
+        71004,
+        71005,
+        71006,
+        71007,
+        71008,
+        71009,
+        71010,
+        71011,
+        71012,
+        71013,
+        71014,
+        71015,
+        71016,
+        71017,
+        71018,
+        71019,
+        71020,
+        71021,
+        71022,
+        71023,
+        71024,
+        71025,
+        71026,
+        71027,
+        71028,
+        71029
+      ],
+      "days": 365,
+      "capacity_hours_day": 8,
+      "arrival": "Poisson; lambda=baseline_primary_load*8/2*arrival_multiplier",
+      "primary_service": "Exponential mean 2*primary_cost_multiplier hours",
+      "appeal_probability": 0.1,
+      "appeal_hours": "min(8, .5*Pareto(shape=1.5))",
+      "admission": "one-day estimated work reservation, subtracting actual current backlog; rejected tasks not queued"
+    }
+  },
+  "uncertainty": "Across-seed standard errors and descriptive normal-approximate intervals; not simultaneous confidence coverage or population inference",
+  "rows": {
+    "allocation": 1440,
+    "queues": 1620
+  },
+  "allocation_summary": [
+    {
+      "scenario": "known",
+      "hours": 20,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 25.92905937609449,
+      "mean_underserved_hours": 5.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "known",
+      "hours": 20,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 25.92905937609449,
+        "mc_se": 1.6977619538901871,
+        "normal_approx_low": 22.601445946469724,
+        "normal_approx_high": 29.256672805719255
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 5.185198856709986,
+      "mean_lots_covered": 19.933333333333334
+    },
+    {
+      "scenario": "known",
+      "hours": 20,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 23.866529821499768,
+        "mc_se": 1.6492369875415895,
+        "normal_approx_low": 20.634025325918252,
+        "normal_approx_high": 27.099034317081284
+      },
+      "mean_regret": 2.062529554594719,
+      "mean_underserved_hours": 7.406973370648532,
+      "mean_lots_covered": 17.4
+    },
+    {
+      "scenario": "known",
+      "hours": 20,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 25.92905937609449,
+        "mc_se": 1.6977619538901871,
+        "normal_approx_low": 22.601445946469724,
+        "normal_approx_high": 29.256672805719255
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 5.185198856709986,
+      "mean_lots_covered": 19.933333333333334
+    },
+    {
+      "scenario": "known",
+      "hours": 80,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 19.465353796041242,
+      "mean_underserved_hours": 20.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "known",
+      "hours": 80,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 19.465353796041242,
+        "mc_se": 1.1691956609770564,
+        "normal_approx_low": 17.173730300526213,
+        "normal_approx_high": 21.75697729155627
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 20.427074158041467,
+      "mean_lots_covered": 53.266666666666666
+    },
+    {
+      "scenario": "known",
+      "hours": 80,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 18.43564585361398,
+        "mc_se": 1.156442995277498,
+        "normal_approx_low": 16.169017582870083,
+        "normal_approx_high": 20.702274124357878
+      },
+      "mean_regret": 1.0297079424272626,
+      "mean_underserved_hours": 25.25018273808488,
+      "mean_lots_covered": 57.9
+    },
+    {
+      "scenario": "known",
+      "hours": 80,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 19.465353796041242,
+        "mc_se": 1.1691956609770564,
+        "normal_approx_low": 17.173730300526213,
+        "normal_approx_high": 21.75697729155627
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 20.427074158041467,
+      "mean_lots_covered": 53.266666666666666
+    },
+    {
+      "scenario": "noise_05",
+      "hours": 20,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 25.92905937609449,
+      "mean_underserved_hours": 5.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "noise_05",
+      "hours": 20,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 21.096621699815362,
+        "mc_se": 1.638597257638361,
+        "normal_approx_low": 17.884971074844174,
+        "normal_approx_high": 24.30827232478655
+      },
+      "mean_regret": 4.832437676279126,
+      "mean_underserved_hours": 4.806755720782674,
+      "mean_lots_covered": 20.133333333333333
+    },
+    {
+      "scenario": "noise_05",
+      "hours": 20,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 19.47638599970025,
+        "mc_se": 1.5904383322797884,
+        "normal_approx_low": 16.359126868431865,
+        "normal_approx_high": 22.593645130968632
+      },
+      "mean_regret": 6.452673376394238,
+      "mean_underserved_hours": 7.117333991734666,
+      "mean_lots_covered": 17.666666666666668
+    },
+    {
+      "scenario": "noise_05",
+      "hours": 20,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 25.92905937609449,
+        "mc_se": 1.6977619538901871,
+        "normal_approx_low": 22.601445946469724,
+        "normal_approx_high": 29.256672805719255
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 5.185198856709986,
+      "mean_lots_covered": 19.933333333333334
+    },
+    {
+      "scenario": "noise_05",
+      "hours": 80,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 19.465353796041242,
+      "mean_underserved_hours": 20.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "noise_05",
+      "hours": 80,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 14.664573606934114,
+        "mc_se": 1.11305761041937,
+        "normal_approx_low": 12.48298069051215,
+        "normal_approx_high": 16.84616652335608
+      },
+      "mean_regret": 4.80078018910713,
+      "mean_underserved_hours": 19.903579601994874,
+      "mean_lots_covered": 51.2
+    },
+    {
+      "scenario": "noise_05",
+      "hours": 80,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 13.902402784426412,
+        "mc_se": 1.0980600985168383,
+        "normal_approx_low": 11.750204991333408,
+        "normal_approx_high": 16.054600577519416
+      },
+      "mean_regret": 5.56295101161483,
+      "mean_underserved_hours": 25.126384662604796,
+      "mean_lots_covered": 56.6
+    },
+    {
+      "scenario": "noise_05",
+      "hours": 80,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 19.465353796041242,
+        "mc_se": 1.1691956609770564,
+        "normal_approx_low": 17.173730300526213,
+        "normal_approx_high": 21.75697729155627
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 20.427074158041467,
+      "mean_lots_covered": 53.266666666666666
+    },
+    {
+      "scenario": "noise_10",
+      "hours": 20,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 25.92905937609449,
+      "mean_underserved_hours": 5.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "noise_10",
+      "hours": 20,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 12.145709315894496,
+        "mc_se": 1.3941641849222213,
+        "normal_approx_low": 9.413147513446942,
+        "normal_approx_high": 14.87827111834205
+      },
+      "mean_regret": 13.783350060199993,
+      "mean_underserved_hours": 4.807073369037255,
+      "mean_lots_covered": 18.1
+    },
+    {
+      "scenario": "noise_10",
+      "hours": 20,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 11.461953082558656,
+        "mc_se": 1.3819899997444902,
+        "normal_approx_low": 8.753252683059456,
+        "normal_approx_high": 14.170653482057856
+      },
+      "mean_regret": 14.467106293535831,
+      "mean_underserved_hours": 7.127681342436085,
+      "mean_lots_covered": 16.1
+    },
+    {
+      "scenario": "noise_10",
+      "hours": 20,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 25.92905937609449,
+        "mc_se": 1.6977619538901871,
+        "normal_approx_low": 22.601445946469724,
+        "normal_approx_high": 29.256672805719255
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 5.185198856709986,
+      "mean_lots_covered": 19.933333333333334
+    },
+    {
+      "scenario": "noise_10",
+      "hours": 80,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 19.465353796041242,
+      "mean_underserved_hours": 20.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "noise_10",
+      "hours": 80,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 3.1241702971692877,
+        "mc_se": 1.15592882277653,
+        "normal_approx_low": 0.8585498045272888,
+        "normal_approx_high": 5.389790789811286
+      },
+      "mean_regret": 16.341183498871956,
+      "mean_underserved_hours": 19.11534583948761,
+      "mean_lots_covered": 44.46666666666667
+    },
+    {
+      "scenario": "noise_10",
+      "hours": 80,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 3.811937080244109,
+        "mc_se": 1.1432683929008205,
+        "normal_approx_low": 1.5711310301585009,
+        "normal_approx_high": 6.052743130329717
+      },
+      "mean_regret": 15.653416715797134,
+      "mean_underserved_hours": 25.64251412804839,
+      "mean_lots_covered": 51.4
+    },
+    {
+      "scenario": "noise_10",
+      "hours": 80,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 19.465353796041242,
+        "mc_se": 1.1691956609770564,
+        "normal_approx_low": 17.173730300526213,
+        "normal_approx_high": 21.75697729155627
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 20.427074158041467,
+      "mean_lots_covered": 53.266666666666666
+    },
+    {
+      "scenario": "noise_20",
+      "hours": 20,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 25.92905937609449,
+      "mean_underserved_hours": 5.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "noise_20",
+      "hours": 20,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": -2.407841998551576,
+        "mc_se": 1.4930137246339772,
+        "normal_approx_low": -5.334148898834171,
+        "normal_approx_high": 0.5184649017310194
+      },
+      "mean_regret": 28.336901374646065,
+      "mean_underserved_hours": 5.428758513768258,
+      "mean_lots_covered": 12.2
+    },
+    {
+      "scenario": "noise_20",
+      "hours": 20,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": -1.2930359795696804,
+        "mc_se": 1.2779117697890405,
+        "normal_approx_low": -3.7977430483561996,
+        "normal_approx_high": 1.211671089216839
+      },
+      "mean_regret": 27.22209535566417,
+      "mean_underserved_hours": 7.864512861661088,
+      "mean_lots_covered": 11.166666666666666
+    },
+    {
+      "scenario": "noise_20",
+      "hours": 20,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 25.92905937609449,
+        "mc_se": 1.6977619538901871,
+        "normal_approx_low": 22.601445946469724,
+        "normal_approx_high": 29.256672805719255
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 5.185198856709986,
+      "mean_lots_covered": 19.933333333333334
+    },
+    {
+      "scenario": "noise_20",
+      "hours": 80,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 19.465353796041242,
+      "mean_underserved_hours": 20.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "noise_20",
+      "hours": 80,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": -22.43727448342801,
+        "mc_se": 2.169890188044286,
+        "normal_approx_low": -26.69025925199481,
+        "normal_approx_high": -18.184289714861208
+      },
+      "mean_regret": 41.902628279469255,
+      "mean_underserved_hours": 18.05296648517031,
+      "mean_lots_covered": 28.266666666666666
+    },
+    {
+      "scenario": "noise_20",
+      "hours": 80,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": -17.081595612012567,
+        "mc_se": 1.883115230282591,
+        "normal_approx_low": -20.772501463366446,
+        "normal_approx_high": -13.390689760658688
+      },
+      "mean_regret": 36.54694940805381,
+      "mean_underserved_hours": 27.434260927423576,
+      "mean_lots_covered": 39.7
+    },
+    {
+      "scenario": "noise_20",
+      "hours": 80,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 19.465353796041242,
+        "mc_se": 1.1691956609770564,
+        "normal_approx_low": 17.173730300526213,
+        "normal_approx_high": 21.75697729155627
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 20.427074158041467,
+      "mean_lots_covered": 53.266666666666666
+    },
+    {
+      "scenario": "biased_underserved",
+      "hours": 20,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 25.92905937609449,
+      "mean_underserved_hours": 5.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "biased_underserved",
+      "hours": 20,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 20.253836157853666,
+        "mc_se": 1.7405868666519757,
+        "normal_approx_low": 16.842285899215792,
+        "normal_approx_high": 23.66538641649154
+      },
+      "mean_regret": 5.6752232182408235,
+      "mean_underserved_hours": 0.3208875203067704,
+      "mean_lots_covered": 19.233333333333334
+    },
+    {
+      "scenario": "biased_underserved",
+      "hours": 20,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 20.305155826064087,
+        "mc_se": 1.6336194684452179,
+        "normal_approx_low": 17.10326166791146,
+        "normal_approx_high": 23.507049984216714
+      },
+      "mean_regret": 5.6239035500304,
+      "mean_underserved_hours": 4.216087586123761,
+      "mean_lots_covered": 16.166666666666668
+    },
+    {
+      "scenario": "biased_underserved",
+      "hours": 20,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 25.92905937609449,
+        "mc_se": 1.6977619538901871,
+        "normal_approx_low": 22.601445946469724,
+        "normal_approx_high": 29.256672805719255
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 5.185198856709986,
+      "mean_lots_covered": 19.933333333333334
+    },
+    {
+      "scenario": "biased_underserved",
+      "hours": 80,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 19.465353796041242,
+      "mean_underserved_hours": 20.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "biased_underserved",
+      "hours": 80,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 12.055876745300484,
+        "mc_se": 1.144218332248108,
+        "normal_approx_low": 9.813208814094192,
+        "normal_approx_high": 14.298544676506776
+      },
+      "mean_regret": 7.409477050740759,
+      "mean_underserved_hours": 3.124700346382645,
+      "mean_lots_covered": 47.833333333333336
+    },
+    {
+      "scenario": "biased_underserved",
+      "hours": 80,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 15.403125488536412,
+        "mc_se": 1.107063864796537,
+        "normal_approx_low": 13.2332803135352,
+        "normal_approx_high": 17.572970663537625
+      },
+      "mean_regret": 4.06222830750483,
+      "mean_underserved_hours": 16.99365602877749,
+      "mean_lots_covered": 61.36666666666667
+    },
+    {
+      "scenario": "biased_underserved",
+      "hours": 80,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 19.465353796041242,
+        "mc_se": 1.1691956609770564,
+        "normal_approx_low": 17.173730300526213,
+        "normal_approx_high": 21.75697729155627
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 20.427074158041467,
+      "mean_lots_covered": 53.266666666666666
+    },
+    {
+      "scenario": "blindspot_ignored",
+      "hours": 20,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 22.4449812218295,
+      "mean_underserved_hours": 5.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "blindspot_ignored",
+      "hours": 20,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 19.755430481154615,
+        "mc_se": 1.4289481799195232,
+        "normal_approx_low": 16.95469204851235,
+        "normal_approx_high": 22.55616891379688
+      },
+      "mean_regret": 2.6895507406748846,
+      "mean_underserved_hours": 5.185198856709985,
+      "mean_lots_covered": 19.933333333333334
+    },
+    {
+      "scenario": "blindspot_ignored",
+      "hours": 20,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 17.208179068972306,
+        "mc_se": 1.348034222354478,
+        "normal_approx_low": 14.56603199315753,
+        "normal_approx_high": 19.850326144787083
+      },
+      "mean_regret": 5.236802152857194,
+      "mean_underserved_hours": 7.406973370648532,
+      "mean_lots_covered": 17.4
+    },
+    {
+      "scenario": "blindspot_ignored",
+      "hours": 20,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 22.4449812218295,
+        "mc_se": 1.3718332537508013,
+        "normal_approx_low": 19.75618804447793,
+        "normal_approx_high": 25.13377439918107
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 0.6527198111225947,
+      "mean_lots_covered": 19.4
+    },
+    {
+      "scenario": "blindspot_ignored",
+      "hours": 80,
+      "policy": "uniform",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 0.0,
+        "mc_se": 0.0,
+        "normal_approx_low": 0.0,
+        "normal_approx_high": 0.0
+      },
+      "mean_regret": 17.58374180849597,
+      "mean_underserved_hours": 20.0,
+      "mean_lots_covered": 80
+    },
+    {
+      "scenario": "blindspot_ignored",
+      "hours": 80,
+      "policy": "estimated_waterfill",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 14.974137144192703,
+        "mc_se": 0.9162495974284316,
+        "normal_approx_low": 13.178287933232976,
+        "normal_approx_high": 16.76998635515243
+      },
+      "mean_regret": 2.609604664303265,
+      "mean_underserved_hours": 20.427074158041464,
+      "mean_lots_covered": 53.266666666666666
+    },
+    {
+      "scenario": "blindspot_ignored",
+      "hours": 80,
+      "policy": "reserve_20",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 13.36326335494459,
+        "mc_se": 0.8618083027625626,
+        "normal_approx_low": 11.674119081529966,
+        "normal_approx_high": 15.052407628359212
+      },
+      "mean_regret": 4.220478453551378,
+      "mean_underserved_hours": 25.25018273808488,
+      "mean_lots_covered": 57.9
+    },
+    {
+      "scenario": "blindspot_ignored",
+      "hours": 80,
+      "policy": "latent_oracle",
+      "seeds": 30,
+      "paired_gain_vs_uniform": {
+        "mean": 17.58374180849597,
+        "mc_se": 0.9107623328575548,
+        "normal_approx_low": 15.798647636095161,
+        "normal_approx_high": 19.368835980896776
+      },
+      "mean_regret": 0.0,
+      "mean_underserved_hours": 4.960514463113806,
+      "mean_lots_covered": 49.7
+    }
+  ],
+  "queue_summary": [
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 1,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.53125,
+      "final_backlog_hours": {
+        "mean": 1.7410516688876003,
+        "mc_se": 0.7509324580849217,
+        "normal_approx_low": 0.2692240510411539,
+        "normal_approx_high": 3.2128792867340468
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 1560.751447555237,
+      "mean_admitted": 728.4666666666667
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 1,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.53125,
+      "final_backlog_hours": {
+        "mean": 0.22543303376365725,
+        "mc_se": 0.13111263931582365,
+        "normal_approx_low": -0.03154773929535709,
+        "normal_approx_high": 0.4824138068226716
+      },
+      "mean_rejected": 101.56666666666666,
+      "mean_completed_hours": 1345.81495123091,
+      "mean_admitted": 626.9
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.75,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.40625,
+      "final_backlog_hours": {
+        "mean": 0.3955861171904303,
+        "mc_se": 0.2501189051414921,
+        "normal_approx_low": -0.09464693688689418,
+        "normal_approx_high": 0.8858191712677548
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 1194.4604241453594,
+      "mean_admitted": 728.4666666666667
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.75,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.40625,
+      "final_backlog_hours": {
+        "mean": 0.02240724846437079,
+        "mc_se": 0.018234754008830765,
+        "normal_approx_low": -0.013332869392937506,
+        "normal_approx_high": 0.058147366321679085
+      },
+      "mean_rejected": 35.63333333333333,
+      "mean_completed_hours": 1136.217859228027,
+      "mean_admitted": 692.8333333333334
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.5,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.28125,
+      "final_backlog_hours": {
+        "mean": 0.007920870845457747,
+        "mc_se": 0.007920870845457745,
+        "normal_approx_low": -0.007604036011639434,
+        "normal_approx_high": 0.02344577770255493
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 827.2116004301287,
+      "mean_admitted": 728.4666666666667
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.5,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.28125,
+      "final_backlog_hours": {
+        "mean": 0.007920870845457747,
+        "mc_se": 0.007920870845457745,
+        "normal_approx_low": -0.007604036011639434,
+        "normal_approx_high": 0.02344577770255493
+      },
+      "mean_rejected": 1.5333333333333334,
+      "mean_completed_hours": 825.3648779300515,
+      "mean_admitted": 726.9333333333333
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 1,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 1.0625,
+      "final_backlog_hours": {
+        "mean": 225.07167636616646,
+        "mc_se": 18.371633724901844,
+        "normal_approx_low": 189.06327426535884,
+        "normal_approx_high": 261.0800784669741
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2895.1810922380173,
+      "mean_admitted": 1467.3333333333333
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 1,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 1.0625,
+      "final_backlog_hours": {
+        "mean": 0.8915959267355276,
+        "mc_se": 0.3627319514135478,
+        "normal_approx_low": 0.18064130196497385,
+        "normal_approx_high": 1.6025505515060812
+      },
+      "mean_rejected": 569.7333333333333,
+      "mean_completed_hours": 1903.10070697981,
+      "mean_admitted": 897.6
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.75,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.8125,
+      "final_backlog_hours": {
+        "mean": 5.64107931185099,
+        "mc_se": 1.2617617164480548,
+        "normal_approx_low": 3.1680263476128023,
+        "normal_approx_high": 8.114132276089178
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2379.2270385834768,
+      "mean_admitted": 1467.3333333333333
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.75,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.8125,
+      "final_backlog_hours": {
+        "mean": 0.8226440049692502,
+        "mc_se": 0.3092786375648706,
+        "normal_approx_low": 0.2164578753421038,
+        "normal_approx_high": 1.4288301345963965
+      },
+      "mean_rejected": 341.76666666666665,
+      "mean_completed_hours": 1826.4373239769568,
+      "mean_admitted": 1125.5666666666666
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.5,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.5625,
+      "final_backlog_hours": {
+        "mean": 0.652510277222677,
+        "mc_se": 0.2926515579194814,
+        "normal_approx_low": 0.07891322370049347,
+        "normal_approx_high": 1.2261073307448604
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 1648.8309569092487,
+      "mean_admitted": 1467.3333333333333
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.5,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.5625,
+      "final_backlog_hours": {
+        "mean": 0.5170658383404202,
+        "mc_se": 0.2675004530251362,
+        "normal_approx_low": -0.007235049588846798,
+        "normal_approx_high": 1.041366726269687
+      },
+      "mean_rejected": 62.8,
+      "mean_completed_hours": 1577.576738722961,
+      "mean_admitted": 1404.5333333333333
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 1,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 2.125,
+      "final_backlog_hours": {
+        "mean": 3281.5578498050377,
+        "mc_se": 29.586835104460313,
+        "normal_approx_low": 3223.5676530002956,
+        "normal_approx_high": 3339.5480466097797
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2919.682450590105,
+      "mean_admitted": 2919.2
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 1,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 2.125,
+      "final_backlog_hours": {
+        "mean": 1.146445585785701,
+        "mc_se": 0.5672992647723124,
+        "normal_approx_low": 0.034539026831968744,
+        "normal_approx_high": 2.2583521447394332
+      },
+      "mean_rejected": 1932.6,
+      "mean_completed_hours": 2081.822784414421,
+      "mean_admitted": 986.6
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.75,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 1.625,
+      "final_backlog_hours": {
+        "mean": 1822.7234836113544,
+        "mc_se": 22.4356908974137,
+        "normal_approx_low": 1778.7495294524235,
+        "normal_approx_high": 1866.6974377702852
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2919.0364650651345,
+      "mean_admitted": 2919.2
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.75,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 1.625,
+      "final_backlog_hours": {
+        "mean": 1.1363746509658805,
+        "mc_se": 0.5041374699528959,
+        "normal_approx_low": 0.14826520985820457,
+        "normal_approx_high": 2.1244840920735566
+      },
+      "mean_rejected": 1589.8,
+      "mean_completed_hours": 2141.240151149225,
+      "mean_admitted": 1329.4
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.5,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 1.125,
+      "final_backlog_hours": {
+        "mean": 368.4556754822482,
+        "mc_se": 15.629529235493647,
+        "normal_approx_low": 337.8217981806806,
+        "normal_approx_high": 399.08955278381575
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2913.8239214755868,
+      "mean_admitted": 2919.2
+    },
+    {
+      "baseline_primary_load": 0.5,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.5,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 1.125,
+      "final_backlog_hours": {
+        "mean": 0.9381237309220719,
+        "mc_se": 0.36783837438493816,
+        "normal_approx_low": 0.2171605171275931,
+        "normal_approx_high": 1.6590869447165506
+      },
+      "mean_rejected": 856.0666666666667,
+      "mean_completed_hours": 2318.1660185276737,
+      "mean_admitted": 2063.133333333333
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 1,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.7437499999999999,
+      "final_backlog_hours": {
+        "mean": 5.541039223657485,
+        "mc_se": 1.5782354220490298,
+        "normal_approx_low": 2.447697796441387,
+        "normal_approx_high": 8.634380650873583
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2174.295166529605,
+      "mean_admitted": 1012.7
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 1,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.7437499999999999,
+      "final_backlog_hours": {
+        "mean": 0.6237304598328067,
+        "mc_se": 0.2847131527598567,
+        "normal_approx_low": 0.06569268042348764,
+        "normal_approx_high": 1.1817682392421258
+      },
+      "mean_rejected": 244.26666666666668,
+      "mean_completed_hours": 1651.8984390955059,
+      "mean_admitted": 768.4333333333333
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.75,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.56875,
+      "final_backlog_hours": {
+        "mean": 1.5003130640915552,
+        "mc_se": 0.6671719993313332,
+        "normal_approx_low": 0.19265594540214215,
+        "normal_approx_high": 2.807970182780968
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 1665.0764670747546,
+      "mean_admitted": 1012.7
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.75,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.56875,
+      "final_backlog_hours": {
+        "mean": 0.3449114733815874,
+        "mc_se": 0.3001631415847138,
+        "normal_approx_low": -0.24340828412445165,
+        "normal_approx_high": 0.9332312308876265
+      },
+      "mean_rejected": 112.83333333333333,
+      "mean_completed_hours": 1479.1278896909987,
+      "mean_admitted": 899.8666666666667
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.5,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.39375,
+      "final_backlog_hours": {
+        "mean": 0.06776548110526666,
+        "mc_se": 0.05494447796597436,
+        "normal_approx_low": -0.039925695708043094,
+        "normal_approx_high": 0.1754566579185764
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 1153.2495890433245,
+      "mean_admitted": 1012.7
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.5,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.39375,
+      "final_backlog_hours": {
+        "mean": 0.02263244907980043,
+        "mc_se": 0.02263244907980043,
+        "normal_approx_low": -0.02172715111660841,
+        "normal_approx_high": 0.06699204927620928
+      },
+      "mean_rejected": 10.033333333333333,
+      "mean_completed_hours": 1141.2962532437848,
+      "mean_admitted": 1002.6666666666666
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 1,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 1.4874999999999998,
+      "final_backlog_hours": {
+        "mean": 1423.0631500282557,
+        "mc_se": 21.1969125078564,
+        "normal_approx_low": 1381.5172015128571,
+        "normal_approx_high": 1464.6090985436542
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2916.483892559056,
+      "mean_admitted": 2035.7333333333333
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 1,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 1.4874999999999998,
+      "final_backlog_hours": {
+        "mean": 0.2954201922126069,
+        "mc_se": 0.12554195783114144,
+        "normal_approx_low": 0.04935795486356967,
+        "normal_approx_high": 0.5414824295616442
+      },
+      "mean_rejected": 1077.3,
+      "mean_completed_hours": 2050.254436005187,
+      "mean_admitted": 958.4333333333333
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.75,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 1.1375,
+      "final_backlog_hours": {
+        "mean": 404.29423217589624,
+        "mc_se": 16.654622964991017,
+        "normal_approx_low": 371.65117116451387,
+        "normal_approx_high": 436.9372931872786
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2912.497834735529,
+      "mean_admitted": 2035.7333333333333
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.75,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 1.1375,
+      "final_backlog_hours": {
+        "mean": 0.13990823712278727,
+        "mc_se": 0.05750710214532217,
+        "normal_approx_low": 0.02719431691795582,
+        "normal_approx_high": 0.2526221573276187
+      },
+      "mean_rejected": 772.3,
+      "mean_completed_hours": 2058.2979286758673,
+      "mean_admitted": 1263.4333333333334
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.5,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.7875,
+      "final_backlog_hours": {
+        "mean": 2.3844071840846603,
+        "mc_se": 0.6619262121405723,
+        "normal_approx_low": 1.0870318082891386,
+        "normal_approx_high": 3.6817825598801823
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2291.6526840514543,
+      "mean_admitted": 2035.7333333333333
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.5,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.7875,
+      "final_backlog_hours": {
+        "mean": 0.2534330847642294,
+        "mc_se": 0.11387402803132447,
+        "normal_approx_low": 0.030239989822833407,
+        "normal_approx_high": 0.4766261797056254
+      },
+      "mean_rejected": 260.46666666666664,
+      "mean_completed_hours": 2005.0380059731867,
+      "mean_admitted": 1775.2666666666667
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 1,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 2.9749999999999996,
+      "final_backlog_hours": {
+        "mean": 5733.3507044874605,
+        "mc_se": 30.504103281938626,
+        "normal_approx_low": 5673.562662054861,
+        "normal_approx_high": 5793.13874692006
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2919.8725382739244,
+      "mean_admitted": 4063.1666666666665
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 1,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 2.9749999999999996,
+      "final_backlog_hours": {
+        "mean": 2.0370898094698062,
+        "mc_se": 0.5567443589613338,
+        "normal_approx_low": 0.9458708659055921,
+        "normal_approx_high": 3.1283087530340206
+      },
+      "mean_rejected": 3075.6666666666665,
+      "mean_completed_hours": 2103.1628629658235,
+      "mean_admitted": 987.5
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.75,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 2.275,
+      "final_backlog_hours": {
+        "mean": 3696.8639645671165,
+        "mc_se": 23.051333483229396,
+        "normal_approx_low": 3651.6833509399867,
+        "normal_approx_high": 3742.0445781942462
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2919.642680351464,
+      "mean_admitted": 4063.1666666666665
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.75,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 2.275,
+      "final_backlog_hours": {
+        "mean": 1.4386795139793318,
+        "mc_se": 0.4017707261952009,
+        "normal_approx_low": 0.6512088906367381,
+        "normal_approx_high": 2.2261501373219255
+      },
+      "mean_rejected": 2722.266666666667,
+      "mean_completed_hours": 2175.7755481778913,
+      "mean_admitted": 1340.9
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.5,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 1.575,
+      "final_backlog_hours": {
+        "mean": 1660.9886547389567,
+        "mc_se": 15.712226596624841,
+        "normal_approx_low": 1630.192690609572,
+        "normal_approx_high": 1691.7846188683413
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2918.801392336818,
+      "mean_admitted": 4063.1666666666665
+    },
+    {
+      "baseline_primary_load": 0.7,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.5,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 1.575,
+      "final_backlog_hours": {
+        "mean": 1.0825654573985324,
+        "mc_se": 0.31982224750249594,
+        "normal_approx_low": 0.45571385229364036,
+        "normal_approx_high": 1.7094170625034244
+      },
+      "mean_rejected": 1899.9333333333334,
+      "mean_completed_hours": 2440.758428026367,
+      "mean_admitted": 2163.233333333333
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 1,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.95625,
+      "final_backlog_hours": {
+        "mean": 35.234406560080124,
+        "mc_se": 6.373813934678149,
+        "normal_approx_low": 22.741731248110952,
+        "normal_approx_high": 47.7270818720493
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2787.3420021824463,
+      "mean_admitted": 1321.8666666666666
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 1,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.95625,
+      "final_backlog_hours": {
+        "mean": 0.520728179941096,
+        "mc_se": 0.3070113708848723,
+        "normal_approx_low": -0.08101410699325373,
+        "normal_approx_high": 1.1224704668754457
+      },
+      "mean_rejected": 453.96666666666664,
+      "mean_completed_hours": 1845.3381324300758,
+      "mean_admitted": 867.9
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.75,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.7312500000000001,
+      "final_backlog_hours": {
+        "mean": 2.428765270300417,
+        "mc_se": 0.7819567893996625,
+        "normal_approx_low": 0.8961299630770785,
+        "normal_approx_high": 3.9614005775237553
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2156.245051547415,
+      "mean_admitted": 1321.8666666666666
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.75,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.7312500000000001,
+      "final_backlog_hours": {
+        "mean": 0.164431404612154,
+        "mc_se": 0.1434688266856822,
+        "normal_approx_low": -0.11676749569178313,
+        "normal_approx_high": 0.4456303049160911
+      },
+      "mean_rejected": 253.73333333333332,
+      "mean_completed_hours": 1741.1934638381108,
+      "mean_admitted": 1068.1333333333334
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.5,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 0.50625,
+      "final_backlog_hours": {
+        "mean": 0.34369179783293174,
+        "mc_se": 0.1943740277443445,
+        "normal_approx_low": -0.0372812965459835,
+        "normal_approx_high": 0.724664892211847
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 1494.427533095072,
+      "mean_admitted": 1321.8666666666666
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 1,
+      "primary_cost_multiplier": 0.5,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 0.50625,
+      "final_backlog_hours": {
+        "mean": 0.3245133244417879,
+        "mc_se": 0.18387220937590412,
+        "normal_approx_low": -0.035876205934984196,
+        "normal_approx_high": 0.68490285481856
+      },
+      "mean_rejected": 36.06666666666667,
+      "mean_completed_hours": 1452.5522465383417,
+      "mean_admitted": 1285.8
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 1,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 1.9125,
+      "final_backlog_hours": {
+        "mean": 2646.410691107138,
+        "mc_se": 28.19826929691764,
+        "normal_approx_low": 2591.1420832851795,
+        "normal_approx_high": 2701.6792989290966
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2919.081634583466,
+      "mean_admitted": 2617.1666666666665
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 1,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 1.9125,
+      "final_backlog_hours": {
+        "mean": 0.6386537153844325,
+        "mc_se": 0.38084949286086867,
+        "normal_approx_low": -0.10781129062287009,
+        "normal_approx_high": 1.385118721391735
+      },
+      "mean_rejected": 1637.8333333333333,
+      "mean_completed_hours": 2088.7915846394126,
+      "mean_admitted": 979.3333333333334
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.75,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 1.4625000000000001,
+      "final_backlog_hours": {
+        "mean": 1338.4033325375738,
+        "mc_se": 21.436675792544033,
+        "normal_approx_low": 1296.3874479841875,
+        "normal_approx_high": 1380.41921709096
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2917.321449768094,
+      "mean_admitted": 2617.1666666666665
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.75,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 1.4625000000000001,
+      "final_backlog_hours": {
+        "mean": 0.6053974612590142,
+        "mc_se": 0.3567636275356257,
+        "normal_approx_low": -0.0938592487108122,
+        "normal_approx_high": 1.3046541712288406
+      },
+      "mean_rejected": 1304.2666666666667,
+      "mean_completed_hours": 2135.738773424047,
+      "mean_admitted": 1312.9
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.5,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 1.0125,
+      "final_backlog_hours": {
+        "mean": 71.70690691511328,
+        "mc_se": 10.544183865980429,
+        "normal_approx_low": 51.040306537791636,
+        "normal_approx_high": 92.37350729243492
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2874.2503320056185,
+      "mean_admitted": 2617.1666666666665
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 2,
+      "primary_cost_multiplier": 0.5,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 1.0125,
+      "final_backlog_hours": {
+        "mean": 0.8426355106977316,
+        "mc_se": 0.3543010071031544,
+        "normal_approx_low": 0.14820553677554904,
+        "normal_approx_high": 1.537065484619914
+      },
+      "mean_rejected": 619.6666666666666,
+      "mean_completed_hours": 2248.0145227401376,
+      "mean_admitted": 1997.5
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 1,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 3.825,
+      "final_backlog_hours": {
+        "mean": 8299.319302085994,
+        "mc_se": 33.9905993931014,
+        "normal_approx_low": 8232.697727275516,
+        "normal_approx_high": 8365.940876896473
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2919.8737709876345,
+      "mean_admitted": 5267.866666666667
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 1,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 3.825,
+      "final_backlog_hours": {
+        "mean": 0.6876037796818433,
+        "mc_se": 0.2937699584596631,
+        "normal_approx_low": 0.11181466110090366,
+        "normal_approx_high": 1.263392898262783
+      },
+      "mean_rejected": 4284.6,
+      "mean_completed_hours": 2100.8291805078934,
+      "mean_admitted": 983.2666666666667
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.75,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 2.9250000000000003,
+      "final_backlog_hours": {
+        "mean": 5662.327766824431,
+        "mc_se": 25.852205738650156,
+        "normal_approx_low": 5611.657443576677,
+        "normal_approx_high": 5712.998090072185
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2919.8176512185914,
+      "mean_admitted": 5267.866666666667
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.75,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 2.9250000000000003,
+      "final_backlog_hours": {
+        "mean": 0.5843010567424011,
+        "mc_se": 0.2619735238399682,
+        "normal_approx_low": 0.07083295001606338,
+        "normal_approx_high": 1.0977691634687388
+      },
+      "mean_rejected": 3930.133333333333,
+      "mean_completed_hours": 2175.4138485048106,
+      "mean_admitted": 1337.7333333333333
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.5,
+      "policy": "unbounded",
+      "seeds": 30,
+      "expected_total_load": 2.025,
+      "final_backlog_hours": {
+        "mean": 3025.489995420458,
+        "mc_se": 17.86969520505721,
+        "normal_approx_low": 2990.4653928185458,
+        "normal_approx_high": 3060.51459802237
+      },
+      "mean_rejected": 0,
+      "mean_completed_hours": 2919.6077675919537,
+      "mean_admitted": 5267.866666666667
+    },
+    {
+      "baseline_primary_load": 0.9,
+      "arrival_multiplier": 4,
+      "primary_cost_multiplier": 0.5,
+      "policy": "one_day_reservation",
+      "seeds": 30,
+      "expected_total_load": 2.025,
+      "final_backlog_hours": {
+        "mean": 0.7658103303504554,
+        "mc_se": 0.19692196261166658,
+        "normal_approx_low": 0.3798432836315889,
+        "normal_approx_high": 1.151777377069322
+      },
+      "mean_rejected": 3084.3,
+      "mean_completed_hours": 2458.1857463982765,
+      "mean_admitted": 2183.5666666666666
+    }
+  ],
+  "source_sha256": "55f01f734b6bf02331679b3aa29117379b7d2af6eca7a9a9b0f11b8a909cabfa",
+  "data_sha256": {
+    "allocation.csv": "2131e38143b62501cfb6555a8a6e049e1eeb22cb3d8e12c3365aba0b1c72790f",
+    "queues.csv": "4dc254a5feba71d5ad3a8faca15c074c48e773bc48e472039cb415208755201b"
+  }
+}

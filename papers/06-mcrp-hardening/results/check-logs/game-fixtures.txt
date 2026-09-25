@@ -1,0 +1,68 @@
+{
+  "status": "all deterministic assertions passed",
+  "interpretation": "Synthetic mathematical fixtures only; no real scientific, human or deployment outcomes.",
+  "python": "3.9.6",
+  "script_sha256": "9550dbd97c280f4c4ba318f8a1f19037d7154dfe49ad680bd14342b24078ceb5",
+  "randomness": "none",
+  "results": {
+    "effort_benchmark": {
+      "gap": 16.806722689075617,
+      "deterrence_bound": 3.033613445378149
+    },
+    "low_detection_bound": 0.15966386554621836,
+    "bellman_with_false_positives": {
+      "V": 8.98214285714286,
+      "W": 1.0000000000000002,
+      "residual": 0.0
+    },
+    "raw_capacity_normalization": {
+      "raw_capacity": 1e-06,
+      "actual_leakage": 1.0,
+      "actual_stationary_adverse": 0.85,
+      "invalid_raw_bound": 5.666634555737516e-06
+    },
+    "softmax_multiplicity": {
+      "stationary_adverse_total": 0.01,
+      "adverse_candidates": 1000,
+      "beta": 1,
+      "actual_assignment_adverse": 0.9973160155989723
+    },
+    "softmax_count_sweep": [
+      {
+        "adverse_candidates": 1,
+        "share": 0.2728917836588705
+      },
+      {
+        "adverse_candidates": 10,
+        "share": 0.7881124532881318
+      },
+      {
+        "adverse_candidates": 100,
+        "share": 0.973795500384456
+      },
+      {
+        "adverse_candidates": 1000,
+        "share": 0.9973160155989723
+      }
+    ],
+    "frontier_reuse": {
+      "independent_candidate_maxflows": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sum_of_independent_results": 7,
+      "simultaneous_maxflow": 1
+    },
+    "eligibility_conditioning": {
+      "unconditional_adverse": 0.01,
+      "conditional_adverse": 1.0,
+      "cap_policy_response": "infeasible if adverse cap < 1; do not silently renormalize"
+    },
+    "common_mode": 0.1009
+  }
+}

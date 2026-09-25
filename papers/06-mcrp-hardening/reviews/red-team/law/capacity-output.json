@@ -1,0 +1,93 @@
+{
+  "status": "synthetic arithmetic; no empirical service data",
+  "python": "3.9.6",
+  "units": "staff minutes per week except counts/probabilities",
+  "randomness": "none",
+  "configuration": {
+    "initial_cost": 30,
+    "appeal_cost": 30,
+    "appeal_probability": 0.5,
+    "total_capacity": 600,
+    "reserved_capacity": 120,
+    "overhead": 30
+  },
+  "ordinary_load_sweep": [
+    {
+      "cases_per_week": 4,
+      "utilization": 0.4375
+    },
+    {
+      "cases_per_week": 8,
+      "utilization": 0.8125
+    },
+    {
+      "cases_per_week": 10,
+      "utilization": 1.0
+    },
+    {
+      "cases_per_week": 12,
+      "utilization": 1.1875
+    },
+    {
+      "cases_per_week": 20,
+      "utilization": 1.9375
+    }
+  ],
+  "one_appeal_expected_minutes": 45.0,
+  "recursive_appeal_expected_minutes_p_095": 599.9999999999994,
+  "one_appeal_expected_minutes_p_095": 58.5,
+  "sustained_overload_backlog": [
+    120,
+    240,
+    360,
+    480,
+    600,
+    720,
+    840,
+    960
+  ],
+  "burst_backlog": [
+    920,
+    440,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "deterministic_critical_load": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "refused_intake_flood": {
+    "attempts": 10000,
+    "minutes_per_attempt": 0.1,
+    "utilization_with_fixed_overhead": 0.4375,
+    "utilization_with_attempted_intake": 2.5208333333333335
+  },
+  "sequential_new_evidence": {
+    "epochs": 8,
+    "minutes_per_update": 30,
+    "updates_per_epoch": 3,
+    "case_epoch_budget": 60,
+    "unresolved_work": [
+      30,
+      60,
+      90,
+      120,
+      150,
+      180,
+      210,
+      240
+    ]
+  },
+  "limits": [
+    "No latency distribution",
+    "No abuse-classifier model",
+    "Reserved capacity is not guaranteed sufficient",
+    "Distinct rights claims can overwhelm any finite capacity"
+  ]
+}

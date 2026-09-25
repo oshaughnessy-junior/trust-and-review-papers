@@ -1,0 +1,10 @@
+test_active_set_example (test_allocation.AllocationTests) ... ok
+test_flat_and_mixed_objective (test_allocation.AllocationTests) ... ok
+test_high_budget_log_price (test_allocation.AllocationTests) ... ok
+test_invalid_inputs (test_allocation.AllocationTests) ... ok
+test_priority_reversal_negative_control (test_allocation.AllocationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

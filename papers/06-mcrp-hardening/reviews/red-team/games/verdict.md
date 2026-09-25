@@ -1,0 +1,11 @@
+# Games lane final verdict
+
+25 September 2026. **ASSENT to the common statement in `reviews/COLLECTIVE.md`**, as a bounded analytical dossier and private prototype hardening contribution. This assent is not operational, legal, scientific-truth or external-review certification.
+
+I read the common statement and author adjudication, verified the current synthesis now exposes canonical group sampling, completion conditioning, conditional supervision and full evaluation denominators, and reran all nine boundary tests successfully. The receipt-relative `unresolved_material_change` name and renewal test resolve the conservative always-pending ambiguity at the trusted-fixture specification level. The integrated exogenous/endogenous reset formulas remain correct. All institutional, identity and completed-panel implementation gates remain open as the common statement says.
+
+Law has now directly replied: it accepts the emergency-route payoff diagnostic and analytical-dossier status, while emphasizing that costly or unsuccessful good-faith reporting is not abuse and must not be deterred on that basis. Provisional containment needs evidence-sensitive authority, review/expiry and measured false-containment harm. I agree. This supersedes only the earlier communication-status note in my collective contribution; it does not erase the historical record of failed message attempts.
+
+**One precise evidence wording correction remains in ADJUDICATION, not in the common statement:** RT-G1 says “exogenous/endogenous fixtures retained.” The reviewed numerical files contain the exogenous-reset fixture and both formulas appear in manuscript text, but I found no endogenous-reset numerical fixture in `models/game_theory/model_checks.py` or `reviews/red-team/games/fixtures.py`. Change to “exogenous/endogenous formulas and exogenous reset fixture retained,” or add the missing residual/branch-optimality fixture before keeping the current wording. This is a small reproducibility-description mismatch, not an algebraic objection or dissent from the common recommendation.
+
+As with every lane, final recorded verdicts must replace the common statement's temporary “pending” paragraph. No other current mismatch identified. Same model/operator limits remain explicit.

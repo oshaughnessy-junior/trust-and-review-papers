@@ -1,0 +1,65 @@
+{
+  "target_sha256": "655dc1d9ed554ca2e9fd27c23687466bbb43e8b1f41a40023b307fe8f0b2aa18",
+  "checks": {
+    "normal": {
+      "returned": [
+        2.380365229465562,
+        1.5418546340629224,
+        0.07778013647151594
+      ]
+    },
+    "zero_productivity": {
+      "exception": "ZeroDivisionError",
+      "message": "float division by zero"
+    },
+    "mixed_zero_productivity": {
+      "exception": "ValueError",
+      "message": "math domain error"
+    },
+    "zero_value": {
+      "exception": "ValueError",
+      "message": "math domain error"
+    },
+    "length_mismatch": {
+      "returned": [
+        1.0
+      ]
+    },
+    "negative_lower": {
+      "returned": [
+        0.5,
+        0.5
+      ]
+    },
+    "long_horizon": {
+      "exception": "AssertionError",
+      "message": ""
+    },
+    "subnormal_scale": {
+      "exception": "ZeroDivisionError",
+      "message": "float division by zero"
+    }
+  },
+  "inverted_priority": {
+    "estimated_assignment": [
+      1.0,
+      0.0
+    ],
+    "true_benefit": 0.6321205588285577,
+    "uniform_benefit": 39.74040336902402,
+    "oracle_benefit": 63.212055882855765
+  },
+  "penalty_cap_counterexample": {
+    "claimed_incentive_margin": 1.5000000000000004,
+    "actual_incentive_margin": -1.965,
+    "actual_U_honest": 7.995,
+    "actual_U_shirk": 9.96
+  },
+  "specialist_displacement": {
+    "specialist_hours": 4,
+    "common_hours_required": 4,
+    "funded_campaign_hours_required": 4,
+    "joint_demand": 8,
+    "shortfall": 4
+  }
+}

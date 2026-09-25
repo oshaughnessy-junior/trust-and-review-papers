@@ -1,0 +1,14 @@
+{
+  "alpha085_ingress001": 0.05362776025236592,
+  "raw_capacity_counterexample": {
+    "raw_edge": 0.001,
+    "normalized_ingress": 1,
+    "stationary_external": 0.85
+  },
+  "n20_rho02_effective_n": 4.166666666666666,
+  "feedback_k2_beta4_chi1_zeta01": [
+    0.9197229074882372,
+    0.08027709251175837
+  ],
+  "cascade_b2_q02": 1.6666666666666667
+}

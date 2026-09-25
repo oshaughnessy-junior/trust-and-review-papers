@@ -14,6 +14,16 @@ This repository is a research workspace, not a claim that every planned paper is
 
 See [PUBLICATION_PROGRAM.md](PUBLICATION_PROGRAM.md) for gates, venue hypotheses, and dependencies.
 
+## September 2026 hardening dossier
+
+[MCRP hardening and modeling](papers/06-mcrp-hardening/README.md) develops the
+publication/trust model through economics, game theory, legal operations, and
+scientific dynamics. It includes specialist manuscripts, executable synthetic
+models, dedicated adversarial reviews, and a collective red-team assessment.
+The recommended interface is **offer, check, rely, amend**; complex trust routing
+must justify itself against simpler constrained assignment. This is a working
+research dossier, not an adopted protocol, field evaluation, or public release.
+
 ## Shared controls
 
 - [SCIENCE_WRITING_PACKET.md](SCIENCE_WRITING_PACKET.md): claim discipline, evidence standards, review gates, and manuscript checks.

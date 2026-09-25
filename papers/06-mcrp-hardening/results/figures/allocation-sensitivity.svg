@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="190" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 190" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="190"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-190)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="0" y="177" style="font-family: Helvetica-Bold; font-size: 11px;fill: rgb(7%,17%,26%); stroke:none;" transform="translate(0,354) scale(1,-1)">Optimizing the wrong priorities can lose to uniform effort</text>
+			<path d="M 44,30 L 459,30 Z" style="stroke: rgb(87%,90%,92%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="17" y="27.0" style="font-family: Times-Roman; font-size: 8px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,54) scale(1,-1)">-30</text>
+			<path d="M 44,61.5 L 459,61.5 Z" style="stroke: rgb(87%,90%,92%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="17" y="58.5" style="font-family: Times-Roman; font-size: 8px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,117) scale(1,-1)">-15</text>
+			<path d="M 44,93 L 459,93 Z" style="stroke: rgb(87%,90%,92%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="17" y="90.0" style="font-family: Times-Roman; font-size: 8px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,180) scale(1,-1)">0</text>
+			<path d="M 44,124.5 L 459,124.5 Z" style="stroke: rgb(87%,90%,92%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="17" y="121.5" style="font-family: Times-Roman; font-size: 8px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,243) scale(1,-1)">15</text>
+			<path d="M 44,156 L 459,156 Z" style="stroke: rgb(87%,90%,92%); stroke-linecap: butt; stroke-width: 0.5;"/>
+			<text x="17" y="153.0" style="font-family: Times-Roman; font-size: 8px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,306) scale(1,-1)">30</text>
+			<rect x="74" y="93.0" width="40" height="40.8772429716866" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,49%,50%); fill-rule: evenodd;"/>
+			<path d="M 94,129.064834 L 94,138.689652 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 89,129.064834 L 99,129.064834 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 89,138.689652 L 99,138.689652 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="72" y="14" style="font-family: Times-Roman; font-size: 9px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,28) scale(1,-1)">Known</text>
+			<rect x="172" y="93.0" width="40" height="30.795604574561636" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,49%,50%); fill-rule: evenodd;"/>
+			<path d="M 192,119.214259 L 192,128.37695 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 187,119.214259 L 197,119.214259 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 187,128.37695 L 197,128.37695 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="170" y="14" style="font-family: Times-Roman; font-size: 9px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,28) scale(1,-1)">Noise .5</text>
+			<rect x="270" y="93.0" width="40" height="6.560757624055512" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,49%,50%); fill-rule: evenodd;"/>
+			<path d="M 290,94.802955 L 290,104.318561 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 285,94.802955 L 295,94.802955 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 285,104.318561 L 295,104.318561 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="268" y="14" style="font-family: Times-Roman; font-size: 9px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,28) scale(1,-1)">Noise 1</text>
+			<rect x="368" y="45.88172358480118" width="40" height="47.11827641519882" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(75%,34%,23%); fill-rule: evenodd;"/>
+			<path d="M 388,36.950456 L 388,54.812992 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 383,36.950456 L 393,36.950456 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 383,54.812992 L 393,54.812992 Z" style="stroke: rgb(7%,17%,26%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="366" y="14" style="font-family: Times-Roman; font-size: 9px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,28) scale(1,-1)">Noise 2</text>
+			<text x="44" y="159" style="font-family: Times-Roman; font-size: 8px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,318) scale(1,-1)">Paired gain in synthetic loss units; 80-hour budget</text>
+		</g>
+	</g>
+</svg>
