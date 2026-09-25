@@ -1,0 +1,107 @@
+{
+  "schema": "trustandreview.lifecycle-events.v0.1",
+  "case_id": "r0-gw150914-v2-strain-lag-v0.1-rc1",
+  "append_only": true,
+  "events": [
+    {
+      "event_id": "R0-GW150914-E001",
+      "event_type": "release-candidate-recorded",
+      "date": "2026-08-27",
+      "status": "machine-pass-human-signoff-pending",
+      "record": "artifacts/provenance/run-record.json",
+      "supersedes": null
+    },
+    {
+      "event_id": "R0-GW150914-E002",
+      "event_type": "reproduction-failed",
+      "date": "2026-08-27",
+      "status": "ci-portability-failure",
+      "platform": "GitHub Actions ubuntu-latest x86_64",
+      "record": "https://github.com/oshaughnessy-junior/trust-and-review-papers/actions/runs/33076876407",
+      "affected_scope": "The registered evidence and negative-test JSON matched, but exact string equality over the full derived correlation curve failed across numerical platforms.",
+      "claim_disposition": "R0-GW150914-C001 remains bounded; cross-platform clean replay is not passed until a declared numerical tolerance is verified.",
+      "supersedes": null
+    },
+    {
+      "event_id": "R0-GW150914-E003",
+      "event_type": "remediated",
+      "date": "2026-08-27",
+      "status": "cross-platform-ci-pass",
+      "platform": "GitHub Actions ubuntu-latest x86_64 and local macOS arm64",
+      "records": [
+        "https://github.com/oshaughnessy-junior/trust-and-review-papers/actions/runs/33077335398",
+        "https://github.com/oshaughnessy-junior/trust-and-review-papers/actions/runs/33077340529"
+      ],
+      "remediation": "Retain exact identity and claim/negative-test decisions, while comparing the full derived curve under declared absolute tolerances of 1e-12 s in lag and 1e-10 in normalized correlation.",
+      "claim_disposition": "Bounded computational repeatability passes on the two declared platforms; human scientific sign-off remains pending.",
+      "supersedes": "R0-GW150914-E002"
+    },
+    {
+      "event_id": "R0-GW150914-E004",
+      "event_type": "separate-executor-replay-reviewed",
+      "date": "2026-08-28",
+      "status": "pass-with-record-discrepancies-remediation-pending",
+      "record": "independent-replay-report.json",
+      "target_commit": "ca447e3a08261a477d0c712c9e7f2c7eb87ce9d4",
+      "affected_scope": "Fresh clone, detached commit, locked environment, packet identity, clean replay, resource schema, and two additional adversarial checks.",
+      "claim_disposition": "Separate execution custody supports bounded computational repeatability but not independent implementation, input, institution, human scientific judgment, or scientific replication.",
+      "discrepancies": ["IR-D001", "IR-D002", "IR-D003", "IR-D004"],
+      "supersedes": null
+    },
+    {
+      "event_id": "R0-GW150914-E005",
+      "event_type": "remediated",
+      "date": "2026-08-28",
+      "status": "separate-executor-superseding-replay-pass",
+      "record": "independent-replay-report.json",
+      "target_commit": "2c9b4eea319e1d6a8fbb3a5a434082cf34f3fdd6",
+      "remediation": "Correct cold dependency-access wording, use non-self-referential artifact accounting, register and enforce the exact 820-sample window, and correct packet commit-identity wording.",
+      "verified_discrepancies": ["IR-D001", "IR-D002", "IR-D003", "IR-D004"],
+      "claim_disposition": "Separate fresh-checkout execution custody is a bounded pass; human scientific sign-off and independent scientific replication remain pending.",
+      "supersedes": "R0-GW150914-E004"
+    },
+    {
+      "event_id": "R0-GW150914-E006",
+      "event_type": "human-review-packet-prepared",
+      "date": "2026-08-29",
+      "status": "ready-for-qualified-human-review-signoff-pending",
+      "records": [
+        "scientific-review-dossier.json",
+        "scientific-review-form.md"
+      ],
+      "affected_scope": "Source-bounded scientific questions for filtering, window geometry, public quality/injection flags, lag/sign conventions, decision rules, accepted boundaries, and conclusion strength.",
+      "claim_disposition": "The review interface is complete enough to request qualified human judgment; no human disposition, scientific validation, or independent replication is supplied.",
+      "supersedes": null
+    },
+    {
+      "event_id": "R0-GW150914-E007",
+      "event_type": "human-scientific-review-recorded",
+      "date": "2026-08-29",
+      "status": "bounded-human-scientific-review-accepted",
+      "record": "scientific-review-completed-2026-08-29.md",
+      "review_target_commit": "2495989a78a66fd286a154f6b9735e87cf782b42",
+      "reviewer": "R. O'Shaughnessy",
+      "recorded_by": "Codex (OpenAI), on behalf of R. O'Shaughnessy",
+      "rationale_provenance": "Blanket human approval supplied in the current thread; no separate itemized rationale was supplied or inferred.",
+      "claim_disposition": "The strongest bounded computational-repeatability and necessary-invariant conclusion is human-accepted for the exact review target. Independent replication, calibration revalidation, astrophysical inference, scientific validity beyond that bounded conclusion, licensing, archive minting, and release approval remain unwarranted or open.",
+      "supersedes": null
+    }
+  ],
+  "next_freshness_check_by": "2026-11-27",
+  "later_failure_policy": {
+    "required_event_types": [
+      "stale",
+      "reproduction-failed",
+      "remediated",
+      "superseded"
+    ],
+    "rule": "Append the failure and a new run or release identity; never edit this passing event into a pass for a changed packet.",
+    "minimum_failure_record": [
+      "time and executor",
+      "input, source, environment, and platform identities",
+      "failed check and logs",
+      "affected claim scope",
+      "disposition and any superseding release"
+    ]
+  }
+}

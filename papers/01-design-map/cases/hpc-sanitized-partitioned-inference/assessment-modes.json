@@ -1,0 +1,12 @@
+{
+  "schema": "trustandreview.assessment-modes.v0.1",
+  "case_id": "hpc-sanitized-partitioned-inference-v0.1-rc1",
+  "modes": [
+    {"id":"full-independent-execution","status":"not-performed","requires":"restricted inputs, HTCondor, GPUs, storage allocation, operator and domain support","could_warrant":"repeatability of executed full-scale claims under independent custody","does_not_warrant":"independence of shared calibrations, models, or libraries"},
+    {"id":"bounded-recomputation","status":"performed-sanitized-fixture-without-scaling-or-representativeness","requires":"four registered partitions, CPU Python, and named MAP, central-mass, split-half, identity, and adversarial checks","could_warrant":"behavior and registered invariants for the tested partition subset","does_not_warrant":"scaling, convergence, full-scale equivalence, or representativeness"},
+    {"id":"digest-audit","status":"performed-sampled-partitions","requires":"released digest algorithm and accessible partitions","could_warrant":"sampled lineage and digest-generation behavior","does_not_warrant":"unobserved partitions or attestor honesty"},
+    {"id":"restricted-platform-attestation","status":"template-only","requires":"authorized facility, signed input commitment, execution log, export review","could_warrant":"named checks ran under declared controls","does_not_warrant":"independent custody or unrestricted inspection"},
+    {"id":"frozen-output-inspection","status":"performed-on-committed-evidence","requires":"preserved digests, aggregate posterior, invariants, logs, provenance","could_warrant":"internal consistency of preserved outputs and declarations","does_not_warrant":"fresh execution or upstream correctness"},
+    {"id":"independent-evidence-path","status":"not-performed","requires":"different implementation, method, dataset, or experiment","could_warrant":"bounded replication evidence for a named claim","does_not_warrant":"equivalence outside the tested scope"}
+  ]
+}

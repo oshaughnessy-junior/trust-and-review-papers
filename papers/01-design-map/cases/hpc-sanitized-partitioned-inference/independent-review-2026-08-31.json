@@ -1,0 +1,79 @@
+{
+  "schema": "trustandreview.independent-hpc-downselect-review.v0.1",
+  "review_id": "HPC-SAN-IR001",
+  "review_date": "2026-08-31",
+  "reviewed_commit": "a75d671f730ade7a0c42bf1d2cdd0aee2ae23000",
+  "custody": {
+    "fresh_detached_clone": true,
+    "clone_method": "git clone --no-hardlinks from the named local source followed by detached checkout",
+    "same_host_and_source_limit": true,
+    "network_contact": false
+  },
+  "bounded_disposition": "HOLD_PENDING_VERIFIER_CORRECTIONS",
+  "supported": [
+    "four exact synthetic partition identities at the reviewed commit",
+    "material regeneration of partition digests and aggregate posterior",
+    "MAP and registered threshold invariants for the exact synthetic downselect",
+    "structural presence of exactly ten resource axes and six distinct assessment modes",
+    "baseline complete 21-entry non-self packet coverage and matching hashes",
+    "baseline nine-test suite and clean replay"
+  ],
+  "not_supported": [
+    "production representativeness",
+    "full-scale or full independent execution",
+    "restricted-platform attestation",
+    "independent replication or an independent evidence path",
+    "scientific or domain validity",
+    "external institutional custody or governance independence"
+  ],
+  "material_discrepancies": [
+    {
+      "id": "D1",
+      "finding": "Standalone replay could report PASS after coherently failed artifacts were recorded because it compared equality without requiring aggregate.passed.",
+      "required_correction": "Require the registered aggregate invariants to pass during standalone replay and add a regression test."
+    },
+    {
+      "id": "D2",
+      "finding": "Repository validation checked hashes only for listed entries and accepted an omitted README entry.",
+      "required_correction": "Require exact unique coverage of every non-self, non-ephemeral case file and add omission/duplicate regression checks."
+    }
+  ],
+  "other_discrepancies": [
+    {
+      "id": "D3",
+      "finding": "Performed bounded-recomputation terminology exceeded the manuscript definition because scaling and representativeness were not tested."
+    },
+    {
+      "id": "D4",
+      "finding": "Serialized central probability 1.0 and split-half difference 0.0 were rounded to 12 decimals; independent arithmetic observed 0.9999999999999748 and approximately 2.22e-16."
+    },
+    {
+      "id": "D5",
+      "finding": "Realistic resource-shape and observed zero-cost language lacked an evidentiary basis."
+    }
+  ],
+  "adversarial_observations": [
+    {"id":"M1","mutation":"unregistered partition byte change","result":"rejected by source identity"},
+    {"id":"M2","mutation":"missing registered partition","result":"rejected by partition-count check"},
+    {"id":"M3","mutation":"re-registered high-tail scientific-decision change","result":"record and make verify failed; standalone replay false-positive exposed D1"},
+    {"id":"M4","mutation":"indexed README content change","result":"repository validator rejected hash mismatch"},
+    {"id":"M5","mutation":"packet-index README entry omission","result":"repository validator incorrectly accepted omission, exposing D2"}
+  ],
+  "independence_dimensions": {
+    "fresh_checkout_custody": "limited yes; fresh detached no-hardlinks clone on same host",
+    "executor_context": "limited yes; separate task context in same Codex/OpenAI environment",
+    "implementation": "no independent implementation; narrow reviewer arithmetic cross-check only",
+    "inputs": "no; same synthetic partitions",
+    "libraries": "no; same Python standard-library runtime",
+    "institution_or_governance": "no",
+    "scientific_or_domain_judgment": "no",
+    "method": "no alternative method"
+  },
+  "unrounded_crosscheck": {
+    "aggregate_log_likelihood": [-32.0, -8.0, 0.0, -8.0, -32.0],
+    "map_theta": 2,
+    "central_probability": 0.9999999999999748,
+    "split_half_mean_difference": 2.220446049250313e-16
+  },
+  "repository_modified_by_reviewer": false
+}

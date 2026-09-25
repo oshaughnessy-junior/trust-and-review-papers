@@ -1,0 +1,47 @@
+Paper 03 bibliography identity audit
+Date: 2026-08-24
+Profile: general; style checking disabled because plainnat owns output style
+
+Automated audit summary
+-----------------------
+- 16 entries inspected.
+- 11 resolved cleanly through Crossref, OpenAlex, arXiv search, or an authoritative record.
+- 0 fabricated identifiers.
+- 0 authoritative identifier mismatches.
+- 2 metadata checks:
+  * PeerReview4All: arXiv title fallback found a 2018 preprint, while the cited
+    JMLR article is the official 2021 version. The JMLR page directly verifies
+    authors, volume 22, issue/article 163, pages 1--66, and year 2021.
+  * RO-Crate 1.2: DataCite verified DOI 10.5281/zenodo.13751027. The BibTeX entry
+    intentionally abbreviates the 84-author specification list with "and others";
+    the official specification page identifies the full author list, publication
+    date 2025-06-04, status Recommendation, and the same DOI.
+- 3 official web documentation entries were not found in scholarly-article
+  metadata indexes and were manually verified against their authoritative pages:
+  * COAR Notify protocol: https://coar-notify.net/
+  * DocMaps Framework release 7:
+    https://docmaps.knowledgefutures.org/pub/sgkf1pqa/release/7
+  * Crossref peer-review metadata requirements:
+    https://www.crossref.org/documentation/schema-library/required-recommended-elements/
+
+DOI minimum verification
+------------------------
+The cite-and-verify MVF queried seven DOI identities. Crossref verified six with
+no title mismatch:
+- 10.1177/0165551506062327
+- 10.1145/775152.775242
+- 10.1007/11909033_5
+- 10.1016/j.ipm.2021.102724
+- 10.3789/ansi.niso.z39.106-2023
+- 10.3233/DS-210053
+
+Crossref returned 404 for 10.5281/zenodo.13751027 because the record is in
+DataCite, not Crossref. The bibliography auditor subsequently resolved that DOI
+through DataCite, and the official RO-Crate 1.2 page states the same identifier.
+
+Support gate
+------------
+Source identity and semantic support remain separate. Consequential support
+decisions and locators are recorded in claim-ledger.json. The official standards
+support only the bounded functions attributed to them; no standards round-trip or
+TDRG implementation claim is inferred from their existence.

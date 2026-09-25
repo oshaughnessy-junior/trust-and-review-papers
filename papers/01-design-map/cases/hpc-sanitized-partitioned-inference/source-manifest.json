@@ -1,0 +1,12 @@
+{
+  "schema":"trustandreview.source-manifest.v0.1",
+  "source_kind":"sanitized synthetic likelihood partitions",
+  "license":"CC0-1.0 for the generated fixture; repository license remains pending",
+  "production_data_relation":"none; these values are synthetic and contain no private or restricted material",
+  "sources":[
+    {"partition_id":"partition-000","path":"data/sampled-partitions/partition-000.json","sha256":"31472415bf9bd5f4bfe6af7eddcd1cbf0fee66b001f033c3b3f8bdd3e31ec948"},
+    {"partition_id":"partition-001","path":"data/sampled-partitions/partition-001.json","sha256":"fed56ad1e2d86705449caa549317e4d09139c734713f97a3322ed110f1133816"},
+    {"partition_id":"partition-002","path":"data/sampled-partitions/partition-002.json","sha256":"84d06161e46b46a1b5165b31a3f3fd4290d923add837e266f57240d6b44eff68"},
+    {"partition_id":"partition-003","path":"data/sampled-partitions/partition-003.json","sha256":"4c3cfe95af47b50eb5035a8ff9d4c9edb88de7c9b564c88acfb4164e7276d931"}
+  ]
+}

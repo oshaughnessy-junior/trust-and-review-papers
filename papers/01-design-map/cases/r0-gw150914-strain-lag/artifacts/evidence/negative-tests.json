@@ -1,0 +1,19 @@
+{
+  "schema": "trustandreview.r0.negative-tests.v0.1",
+  "tests": [
+    {
+      "expected": "absolute recovered lag exceeds the declared H1-L1 physical bound",
+      "id": "NEG-LAG-025S",
+      "mutation": "zero-padded +25 ms shift of the L1 event window",
+      "observed_absolute_lag_seconds": 0.01953125,
+      "passed": true
+    },
+    {
+      "expected": "reject before HDF5 ingestion",
+      "id": "NEG-VERSION-IDENTITY",
+      "mutation": "substitute a non-v2 filename or unregistered digest",
+      "observed": "covered by source-registry conformance tests",
+      "passed": true
+    }
+  ]
+}

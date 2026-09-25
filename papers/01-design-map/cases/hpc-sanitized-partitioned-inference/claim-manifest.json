@@ -1,0 +1,33 @@
+{
+  "schema": "trustandreview.hpc-downselect.claim-manifest.v0.1",
+  "case_id": "hpc-sanitized-partitioned-inference-v0.1-rc1",
+  "archive_status": "UNMINTED",
+  "claim": {
+    "id": "HPC-SAN-C001",
+    "assertion": "For the four registered sanitized likelihood partitions, the released digest algorithm regenerates each partition digest and the aggregate posterior has MAP theta 2, at least 0.99 probability mass on theta 1 through 3, and split-half posterior means differing by at most 0.01.",
+    "scope": "Four exact sanitized partitions and the declared CPU downselect only.",
+    "strongest_warranted_conclusion": "sampled lineage and digest-generation behavior plus bounded aggregate invariants for the accessible downselect",
+    "explicit_exclusions": [
+      "execution or validation of the declared 8192-partition full-scale workload",
+      "representativeness of the four sanitized partitions for restricted or production data",
+      "full-scale convergence, scheduler behavior, GPU numerical equivalence, or storage integrity",
+      "execution of RIFT or representativeness of the fixture for RIFT ILE, CIP, convergence, or production resource behavior",
+      "truthfulness of a restricted-platform attestor",
+      "independent replication or scientific validity"
+    ]
+  },
+  "public_production_mapping": {
+    "artifact": "public-production-mapping-rift-v0.1.json",
+    "status": "documentary-only",
+    "claim_effect": "No machine disposition or assessment-mode status changes."
+  },
+  "configuration": {
+    "theta_grid": [0, 1, 2, 3, 4],
+    "required_partition_count": 4,
+    "expected_map_theta": 2,
+    "central_theta_range": [1, 3],
+    "minimum_central_probability": 0.99,
+    "maximum_split_half_mean_difference": 0.01,
+    "randomness": "none"
+  }
+}

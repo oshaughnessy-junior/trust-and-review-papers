@@ -1,0 +1,14 @@
+[workspace]
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64"]
+
+[dependencies]
+python = "3.12.*"
+numpy = "2.3.*"
+scipy = "1.16.*"
+h5py = "3.14.*"
+
+[tasks]
+run = "python run_case.py --write"
+test = "python -m unittest -v test_case.py"
+verify = { depends-on = ["test"], cmd = "python run_case.py --verify" }

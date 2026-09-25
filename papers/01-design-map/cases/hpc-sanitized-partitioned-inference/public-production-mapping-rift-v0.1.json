@@ -1,0 +1,116 @@
+{
+  "schema": "trustandreview.public-production-mapping.v0.1",
+  "case_id": "hpc-sanitized-partitioned-inference-v0.1-rc1",
+  "mapping_id": "RIFT-PUBLIC-MAP-001",
+  "recorded_on": "2026-09-02",
+  "status": "documentary-only",
+  "system": {
+    "name": "RIFT",
+    "expansion": "Rapid parameter Inference on gravitational wave sources via Iterative Fitting",
+    "public_sources": [
+      {
+        "id": "RIFT-S1",
+        "type": "primary-paper",
+        "identifier": "doi:10.48550/arXiv.1805.10457",
+        "locator": "abstract",
+        "supports": "RIFT identity, iterative-fitting purpose, validation against LALInference, and use with costly waveform models"
+      },
+      {
+        "id": "RIFT-S2",
+        "type": "primary-paper",
+        "identifier": "doi:10.1103/PhysRevD.99.084026",
+        "locator": "abstract",
+        "supports": "GPU translation of parts of RIFT and reported cost/latency acceleration"
+      },
+      {
+        "id": "RIFT-S3",
+        "type": "authoritative-project-documentation",
+        "url": "https://rift-documentation.readthedocs.io/en/latest/overview.html",
+        "accessed": "2026-09-02",
+        "locator": "Basic Workflow, steps 1 through 3",
+        "supports": "initial-grid, ILE, CIP, iterative feedback, and convergence-test structure",
+        "freshness_boundary": "Mutable latest-version documentation; recheck at the case freshness date."
+      },
+      {
+        "id": "RIFT-S4",
+        "type": "authoritative-project-documentation",
+        "url": "https://rift-documentation.readthedocs.io/en/latest/using-pipeline.html",
+        "accessed": "2026-09-02",
+        "locator": "Basics; Understanding ILE and CIP; Initialization: PSDs and grids; Strongly recommended dependencies",
+        "supports": "HTCondor DAG and submit files, parallel ILE workers, consolidation, CIP/posterior outputs, iteration logs, PSD/grid inputs, and recommended CUDA/CuPy support",
+        "freshness_boundary": "Mutable latest-version documentation; recheck at the case freshness date."
+      }
+    ]
+  },
+  "correspondences": [
+    {
+      "rift_stage": "input and initialization",
+      "public_evidence": "RIFT-S3 describes an initial intrinsic grid; RIFT-S4 describes grids, PSDs, configuration, and external dependencies.",
+      "fixture_analogue": "The fixture registers a five-point parameter grid, exact synthetic likelihood-partition identities, and fixed configuration.",
+      "strength": "structural-analogy-only",
+      "critical_difference": "The fixture has no strain data, PSD, calibration, event configuration, waveform model, or RIFT initialization."
+    },
+    {
+      "rift_stage": "pipeline construction and scheduling",
+      "public_evidence": "RIFT-S4 documents generated ILE/CIP submit files, iteration directories, logs, a top-level DAG, and HTCondor submission.",
+      "fixture_analogue": "The fixture exposes one local make target and a direct Python execution path.",
+      "strength": "boundary-marker-only",
+      "critical_difference": "The fixture does not construct or execute a RIFT DAG, exercise HTCondor, recover jobs, or inspect scheduler and log lineage."
+    },
+    {
+      "rift_stage": "parallel ILE marginalized-likelihood evaluation",
+      "public_evidence": "RIFT-S3 and RIFT-S4 describe parallel ILE jobs that evaluate marginalized likelihoods at intrinsic-parameter points.",
+      "fixture_analogue": "Four bundled files contain synthetic log-likelihood values over a common parameter grid.",
+      "strength": "data-shape-analogy-only",
+      "critical_difference": "The files are not ILE outputs and the fixture performs no Monte Carlo marginalization or waveform-data comparison."
+    },
+    {
+      "rift_stage": "likelihood consolidation and provenance",
+      "public_evidence": "RIFT-S4 describes consolidated composite likelihood files and associated provenance.",
+      "fixture_analogue": "The fixture regenerates a per-partition argmax/log-sum-exp digest and verifies its source digest.",
+      "strength": "audit-pattern-analogy-only",
+      "critical_difference": "The fixture digest is a deliberately small audit example, not a RIFT composite file or production digest algorithm."
+    },
+    {
+      "rift_stage": "CIP fitting, posterior sampling, and iterative feedback",
+      "public_evidence": "RIFT-S3 and RIFT-S4 describe fitting ILE training data, drawing posterior samples, and feeding new points into successive iterations.",
+      "fixture_analogue": "The fixture sums synthetic partition likelihoods and normalizes a posterior on a fixed five-point grid.",
+      "strength": "conceptual-analogy-only",
+      "critical_difference": "The fixture does not run CIP, fit a likelihood surface, draw posterior samples, adapt a grid, or iterate."
+    },
+    {
+      "rift_stage": "convergence and diagnostic products",
+      "public_evidence": "RIFT-S3 describes repeated iterations until a convergence test passes; RIFT-S4 lists iteration logs, output grids, and posterior-sample products.",
+      "fixture_analogue": "The fixture checks MAP, central-mass, split-half, source-identity, and corrupted-tail invariants.",
+      "strength": "review-mechanism-analogy-only",
+      "critical_difference": "The fixture invariants are not RIFT convergence diagnostics and establish no production convergence or output-format fidelity."
+    },
+    {
+      "rift_stage": "accelerated execution",
+      "public_evidence": "RIFT-S2 reports GPU acceleration; RIFT-S4 strongly recommends CUDA and CuPy and exposes GPU configuration options.",
+      "fixture_analogue": "The resource declaration has separate full-scale and local platform fields.",
+      "strength": "resource-boundary-only",
+      "critical_difference": "No GPU code ran; numerical equivalence, accelerator configuration, throughput, and resource consumption remain unmeasured."
+    }
+  ],
+  "assessment_mode_effect": {
+    "changed_modes": [],
+    "reason": "Documentary correspondence is not execution, recomputation, attestation, or an independent evidence path.",
+    "preserved_statuses": {
+      "full-independent-execution": "not-performed",
+      "bounded-recomputation": "performed-sanitized-fixture-without-scaling-or-representativeness",
+      "digest-audit": "performed-sampled-partitions",
+      "restricted-platform-attestation": "template-only",
+      "frozen-output-inspection": "performed-on-committed-evidence",
+      "independent-evidence-path": "not-performed"
+    }
+  },
+  "blocked_assertions": [
+    "The fixture executes RIFT or reproduces a RIFT result.",
+    "The four synthetic partitions are representative of RIFT ILE jobs, events, or production workloads.",
+    "The illustrative 8192-partition, GPU-hour, and storage values are measured or sourced RIFT requirements.",
+    "RIFT full-scale convergence, scheduler behavior, retries, GPU equivalence, storage integrity, calibration, or scientific conclusions were tested.",
+    "Any restricted data, nonpublic workflow, collaboration-internal evidence, or qualified production-domain sign-off was inspected."
+  ],
+  "next_evidence_gate": "Execute a public RIFT example under an independently recorded custody path or obtain qualified domain inspection plus measured resource and lineage evidence; keep any restricted-platform attestation separately governed."
+}

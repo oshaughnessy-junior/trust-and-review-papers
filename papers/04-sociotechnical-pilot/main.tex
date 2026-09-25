@@ -1,0 +1,728 @@
+\documentclass[11pt]{article}
+\input{../../latex/common-preamble.tex}
+
+\usepackage{array}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{url}
+
+\newcommand{\tdrg}{TDRG}
+\newcommand{\mcrp}{MCRP}
+\newcommand{\na}{\textsc{not available}}
+
+\title{Plural Review Governance in Practice:\\
+A Preregistered, Safety-Gated Pilot of Independent Trust Domains}
+\author{Private working draft---human authorship and contribution record pending}
+\date{24 August 2026}
+
+\begin{document}
+\maketitle
+
+\draftstatus{Private Stage-0 protocol first draft. No ethics/IRB determination,
+recruitment authorization, participant enrollment, intervention, data collection,
+field result, or release approval is represented here. Until every applicable gate
+is recorded, work is limited to non-participant protocol development and synthetic
+fixtures. This document must not be used to recruit, deploy, or claim that the
+intervention is useful, safe, fair, anonymous, or effective.}
+
+\begin{abstract}
+Machine-verifiable scientific records can make claims, evidence, provenance, and
+review events inspectable, but protocol conformance alone cannot establish how a
+review system behaves in scientific communities shaped by expertise, hierarchy,
+scarcity, privacy risk, and conflicting institutional authority. We specify a
+preregisterable, safety-gated sociotechnical pilot of Trust-Domain and Review
+Governance (\tdrg{}), a proposed arrangement in which independently governed
+communities interpret a shared claim/evidence record through local, topic- and
+time-scoped trust overlays rather than a universal reviewer score. The first human
+stage, if separately approved, would be a consented shadow pilot: experimental
+routing, private standing, and review explanations would run alongside ordinary
+review but could not determine the official scientific disposition. The protocol
+defines independent-actor and management-control audits, consent and anti-coercion
+protections, an adversary-specific anonymity threat model, appeals, adverse-event
+and stopping rules, mixed-method outcomes, multiaxis resource accounting, and a
+disclosure-safe reproducibility package. Co-primary outcomes, allocation, sample
+size, participating domains, instruments, privacy thresholds, and numerical stop
+bounds remain intentionally unset pending ethics, methods, privacy, and community
+review. No participant results exist. The proposed pilot is designed to decide
+whether measurement is credible and whether a larger operational study could be
+ethical---not to certify \tdrg{} as superior or to rank reviewers as people.
+\end{abstract}
+
+\section{Introduction}
+
+Scientific review is simultaneously epistemic work and organized labor. A review
+may challenge a claim, inspect a workflow, identify a missing calibration, or trace
+a transitive tool; it is also assigned, interpreted, and acted upon by institutions
+whose members differ in authority, security, time, and freedom to dissent. A record
+that perfectly preserves a review does not establish that the reviewer was
+competent, independent, or safe from retaliation. Conversely, an organizational
+decision about reviewer standing does not establish whether the reviewed claim is
+true.
+
+Interventions in peer-review procedure can change different outcomes in different
+directions. In a randomized BMJ study, asking reviewers to be identified to authors
+did not materially change the measured review-quality score or recommendation but
+increased the likelihood that invitees declined to review
+\citep{vanrooyen1999open}. In a controlled conference experiment, reviewers who
+could see author identities exhibited different bidding and recommendation patterns
+associated with author and institutional prestige \citep{tomkins2017bias}. These
+studies do not predict the effect of \tdrg{}, but they demonstrate why acceptance,
+review quality, participation, delay, and burden cannot be treated as one outcome.
+
+The proposed intervention separates a shared, version-addressed claim/evidence and
+review-event record from plural local views. Each view is rooted in a particular
+community and conditioned on domain, topic, capability, role, case, policy, a
+frozen event cut, and a separately declared evaluation clock. Communities may
+import another domain's attestations under an explicit
+bridge, reject them, or fork their policy without rewriting the shared record. A
+reviewer uses a fresh case-scoped persona where the approved deployment supports
+it; scientific feedback, private standing events, official dispositions, and
+conduct or safety events remain distinct event types.
+
+The Minimum Credible Reproducibility Protocol (MCRP) core governs the claim/evidence
+scientific record. The Trust-Domain Review Graph (TDRG) is an optional, separately
+versioned actor-routing and reliance profile; it remains outside MCRP core
+conformance until its privacy, accountability, interoperability, replay, and
+empirical promotion gates pass. Papers~01--03 own the design map, formal model, and
+normative profile respectively; this paper owns only the ethics-gated
+independent-actor pilot protocol.
+
+\designchoice{The intervention has no universal actor score. The pilot will not
+estimate whether a participant is a ``good reviewer'' or a trustworthy person. It
+will estimate predeclared process outcomes for cases, assignments, episodes, and
+domains under named policies and trust boundaries.}
+
+This paper is a Stage-0 protocol and preregistration scaffold. It makes four bounded
+contributions. First, it defines questions and estimands for a safety-first shadow
+evaluation. Second, it operationalizes independence as a control graph rather than
+an institutional label. Third, it specifies protections against coercion,
+management capture, identity exposure, and automatic sanction. Fourth, it defines
+how evidence may later be promoted into empirical claims without exposing
+participants. It reports no observations about field performance.
+
+\begin{evidencegate}[Human-subject gate]
+No interview, survey, recorded tabletop exercise, shadow review, participant-linked
+log, or operational trust decision may be collected for research until the
+responsible ethics/IRB authority has issued a written determination and the approved
+protocol, consent or waiver basis, privacy review, data plan, incident path,
+compensation, and preregistration are recorded. The investigators may not decide
+for themselves that the activity is exempt or outside human-subject regulation.
+\end{evidencegate}
+
+\section{Background and design rationale}
+
+\subsection{Peer review has multiple, non-interchangeable outcomes}
+
+Peer-review research does not supply a universal scalar definition of quality.
+Open-review, blinding, training, assignment, and editorial interventions affect
+participation, recommendations, report content, and timeliness through different
+mechanisms. Systematic mapping of open peer review likewise describes a family of
+practices rather than one intervention \citep{rosshellauer2017open}. The pilot
+therefore avoids treating editor agreement, author satisfaction, majority vote,
+citations, rank, or institutional prestige as ground truth. Material defects and
+evidence gaps will be evaluated by a separate, uncertainty-preserving adjudication
+procedure; process legitimacy, privacy, burden, and harms remain separate outcomes.
+
+\subsection{Precommitment is necessary but not sufficient}
+
+Preregistration and Registered Reports distinguish planned tests from analyses
+chosen after outcomes are known \citep{nosek2018preregistration}. A blinded
+comparison of published Registered Reports with comparison papers found higher
+ratings on several methodological criteria, but the evidence arose from a bounded
+sample and does not establish that preregistration prevents all bias or harm
+\citep{soderberg2021registered}. Here preregistration serves narrower purposes: it
+fixes the intervention, outcome hierarchy, disclosure rules, decision thresholds,
+and amendment process before participant data are observed. Exploratory analyses
+will remain permissible only when clearly labeled and separated from confirmatory
+claims.
+
+\subsection{Institutional power is part of the causal system}
+
+Organizational-silence theory identifies management beliefs and structures as
+conditions that can make speaking up appear unsafe \citep{morrison2000silence}.
+Empirical participatory-design scholarship likewise treats participation and
+decision authority as distinct: attendance does not imply control
+\citep{bratteteig2014participation}. For this pilot, line management, employment,
+funding, compensation, operator custody, agenda control, and authorship are not
+``context'' to be adjusted away. They are measured pathways that may shape
+voluntariness, candor, assignment, appeal, withdrawal, and interpretation.
+
+\subsection{Plural governance is a hypothesis, not an endorsement}
+
+Polycentric governance describes multiple decision centers operating with some
+degree of autonomy under shared rules \citep{ostrom2010polycentric}. It motivates
+the distinction between a shared event record and local governance views, but does
+not prove that such pluralism improves peer review. Forking may localize capture or
+preserve exit; it may also duplicate labor, fragment expertise, strengthen bridge
+brokers, or permit accountability shopping. The pilot must preserve both
+interpretations.
+
+\subsection{Confidentiality and anonymity require named adversaries}
+
+Privacy is an outcome of data processing and organizational practice, not a field
+in a schema. The NIST Privacy Framework provides a risk- and outcome-based approach
+to identifying problematic data actions and their consequences
+\citep{nist2020privacy}. Reidentification research demonstrates that apparently
+anonymous high-dimensional records may be linkable with auxiliary information
+\citep{narayanan2008deanonymizing}; stylometric work shows that text itself can
+carry identifying signals \citep{brennan2012stylometry}. Accordingly, every privacy
+claim in this pilot is conditional on an adversary, accessible data, timing,
+operator and collusion assumptions, attack method, observation window, and residual
+risk. When a preregistered anonymity threshold is not met, the artifact will be
+called \emph{confidential}, not anonymous.
+
+\section{Research objectives and estimands}
+
+The overarching question is: when independently governed scientific communities
+use a shared claim/evidence record with local trust overlays, what changes in
+review process, capture localization, minority and newcomer treatment, participant
+burden, privacy, and institutional power compared with their ordinary review
+process? The answer is unknown. The pilot is intended to determine feasibility,
+safety, measurement quality, and mechanism plausibility.
+
+The preregistration will nominate no more than three co-primary outcomes after
+instrument testing and stakeholder review. Candidate research questions are:
+
+\begin{enumerate}
+  \item Does shadow \tdrg{} change adjudicated material-defect or evidence-gap
+  yield per reviewer-hour relative to the ordinary process?
+  \item Do independently governed domains derive different, inspectable routing
+  or standing decisions from the same event record, and can participants explain
+  those differences without seeing private histories?
+  \item Does a staged governance fault or management-pressure scenario remain
+  localized to the affected domain under the declared control graph?
+  \item Are qualified dissenting reviews retained and discoverable without an
+  automatic adverse standing update while the scientific dispute is unresolved?
+  \item What waiting time, supervision load, false exclusion, progression, and
+  exit patterns occur for newcomers and specialists in small pools?
+  \item Under each declared adversary, what linkage, reidentification,
+  duplicate-prevention, appeal, and authorized-opening outcomes occur?
+  \item How do employment, funding, compensation, workload, and operator control
+  affect reported candor, challenge, withdrawal, and exit?
+  \item What human expertise, agent capability, governance labor, compute,
+  storage, security, and support are required by each intervention function?
+  \item What retaliation, chilling, exclusion, surveillance, gaming, false
+  confidence, burden shifting, confidentiality, or security harms arise?
+\end{enumerate}
+
+\openhypothesis{A local-view architecture may contain some governance faults, but
+shared operators, bridge authorities, funding, infrastructure, or personnel may
+create cross-domain dependence. Localization is therefore an empirical outcome
+conditioned on the audited control graph, not a property inferred from labels.}
+
+Every outcome will name its unit and estimand. Candidate units are review cases,
+review assignments, reviewers, governance episodes, and participating domains.
+For example, a process estimand could be the domain-stratified difference in
+adjudicated material findings per logged reviewer-hour between a shadow-\tdrg{}
+assignment and the ordinary comparator during the same stage. A privacy estimand
+could be adversary-specific linkage precision and recall over eligible case-persona
+pairs. A burden estimand could be additional human and agent hours per completed
+case, disaggregated by role. These examples do not fix the final estimands.
+
+\begin{evidencegate}[Unresolved design parameters]
+Participating domains, allocation unit, comparator details, co-primary outcomes,
+smallest meaningful differences or precision targets, sample size, instruments,
+privacy thresholds, and numerical stop bounds are unset. They must be chosen before
+recruitment with independent statistics, qualitative-methods, domain, ethics, and
+privacy review; placeholders must not be silently converted into analysis choices.
+\end{evidencegate}
+
+\section{Intervention, comparator, and independent actors}
+
+\subsection{Frozen intervention package}
+
+The intervention is the exact future release of the \tdrg{} protocol, evaluator,
+schemas, policy overlays, identity/persona mechanism, and operator procedures
+named in the deployment manifest. The manifest will include source and container
+digests, configuration, randomness, clocks, external services, credential and
+opening authorities, storage jurisdictions, and every transitive service admitted
+inside the trust boundary. Any change is a versioned amendment; changes affecting
+consent, threat assumptions, outcomes, or official disposition trigger review and
+potential reconsent.
+
+Four event types remain separate:
+\begin{enumerate}
+  \item scientific review observations about claims and evidence;
+  \item private standing events used only inside an approved local view;
+  \item official editorial or scientific dispositions made by the ordinary
+  process; and
+  \item conduct, safety, or policy events handled by the approved incident path.
+\end{enumerate}
+No raw vote, graph anomaly, scientific disagreement, or allegation automatically
+creates a sanction or conduct finding.
+
+\subsection{Comparator and shadow separation}
+
+The comparator is each domain's documented ordinary review process, including its
+assignment, conflict, adjudication, and appeal practices. ``Business as usual'' is
+not a sufficient specification: the preregistration will enumerate comparator
+steps and record concurrent changes. In Stage~1 the two processes may share a case
+only under approved access rules, but experimental outputs cannot affect the
+official disposition, employment, funding, publication, authorship, discipline, or
+access to ordinary review.
+
+Where ethical and operational review permits, allocation may occur by case,
+assignment, or sequence and be stratified by domain, topic, case risk, and reviewer
+experience. If randomization is infeasible, a matched, stepped-wedge,
+interrupted-time, or other design may be used only with its identification
+assumptions and causal limitations preregistered. No design will describe a
+before/after association as a causal effect merely because the software changed.
+
+\subsection{Control graph and domain independence}
+
+An ``independent domain'' is not defined by a name, institution, or separate user
+interface. Before deployment, each candidate domain must file a versioned control
+manifest identifying:
+
+\begin{itemize}
+  \item governance roots, charter amendment, appointment, removal, and veto
+  authority;
+  \item line management, supervision, employment, funding, and compensation;
+  \item credential, identity, assignment, hosting, data, model, opening, appeal,
+  and incident operators;
+  \item policy authorship, evaluator custody, infrastructure, and key management;
+  \item overlapping personnel, conflicts, contractual obligations, and legal
+  jurisdiction; and
+  \item an exercisable withdrawal or fork path that preserves permissible
+  scientific records without exporting private histories.
+\end{itemize}
+
+The manifests form a directed, typed control graph. Common controllers and shared
+services are disclosed, not averaged into a nominal independence score. At least
+two participating domains must have distinct governance roots and a credible exit
+or fork path. Independence will be reported dimension by dimension and used in
+sensitivity analysis. If a shared controller can alter both views, the affected
+localization hypothesis is not testable as stated.
+
+\section{Ethics, consent, positionality, and anti-coercion}
+
+The Belmont principles connect respect for persons, beneficence, and justice to
+informed consent, risk--benefit assessment, and participant selection
+\citep{belmont1979}. The U.S. Common Rule supplies regulatory requirements where it
+applies (45~CFR~46; official text at
+\url{https://www.hhs.gov/ohrp/regulations-and-policy/regulations/45-cfr-46/index.html});
+the Menlo Report extends an ethical analysis to ICT
+research in which data, operators, networks, and bystanders create distinctive
+risks \citep{menlo2012}. These sources do not determine this study's regulatory
+classification. The responsible authority must issue the determination.
+
+Before any participant activity, the final protocol must record approval,
+exemption, or other determination; recruitment and consent materials; any waiver
+basis; compensation; inclusion and exclusion criteria; withdrawal; data use and
+retention; incident response; and the responsible investigator. Consent must
+explain the experimental status, ordinary-review fallback, foreseeable identity
+and employment risks, data recipients, automated or agent functions, limits of
+withdrawal after aggregation, and whom to contact outside the supervisory chain.
+
+The following anti-coercion constraints are binding design requirements:
+
+\begin{itemize}
+  \item recruitment and consent occur outside direct supervisory chains wherever
+  possible;
+  \item declining, withdrawing, appealing, challenging, or receiving an adverse
+  private outcome cannot change employment, funding, authorship, publication,
+  ordinary-review access, or standing outside the pilot;
+  \item compensation is not contingent on agreement, favorable review, continued
+  participation, or forgoing an appeal;
+  \item managers cannot request persona linkage, identity opening, assignment
+  overrides, or private histories outside the approved process;
+  \item a nonmanager channel accepts questions, withdrawal, complaints, and
+  adverse-event reports; and
+  \item an independent appeal operator can correct process errors and append
+  provenance-preserving corrections without erasing the original record.
+\end{itemize}
+
+The investigators will publish a positionality and control statement before
+recruitment. It will disclose who designed the protocol and tooling; who employs,
+funds, supervises, or evaluates participants; who controls the domain, repository,
+compute, identity, incident process, and prospective publication venue; and who
+benefits from a positive conclusion. Governance meetings and qualitative sessions
+will preserve role and status differences. Apparent consensus is not treated as
+independent agreement, and a domain's reasoned rejection of \tdrg{} is an
+admissible result.
+
+\begin{evidencegate}[Enforceability gate]
+Written protections are insufficient if management or operators can bypass them.
+Before Stage~1, an independent reviewer must exercise withdrawal, appeal, opening,
+rollback, and ordinary-review fallback against the deployed configuration. Failure
+or conflicted custody is a no-go condition.
+\end{evidencegate}
+
+\section{Staged study design}
+
+\subsection{Stage 0: non-participant readiness}
+
+Stage~0 freezes the intervention, comparator description, data-flow map, operator
+roles, opening procedure, threat model, instruments, synthetic cases, adjudication
+rubric, and analysis code. Synthetic or appropriately sanitized fixtures will test
+malformed events, stale evidence, unauthorized bridge import, cross-topic leakage,
+policy divergence, fork and exit, duplicate attempts, appeals, operator loss,
+identity-linkage attacks, and disclosure suppression. Tabletop exercises involving
+human responses are research activity unless the responsible authority determines
+otherwise; ordinary software tests must not quietly become participant studies.
+
+Stage~0 stops if the tested Paper~03 release, incident operator, privacy controls,
+synthetic reproduction path, or rollback is unavailable. Passing synthetic tests
+establishes only named behavior in named fixtures.
+
+\subsection{Stage 1: consented shadow pilot}
+
+Stage~1 may start only after the full human-subject and preregistration gates. Real
+or realistic review cases are used only under approved access and consent or waiver
+terms. The intervention runs in parallel with the ordinary process. Experimental
+routing recommendations, personas, standing, and explanations are sequestered from
+official decision makers until the ordinary disposition is fixed, except where an
+approved safety procedure requires narrowly scoped disclosure.
+
+The stage begins with a limited sentinel cohort and proceeds in prespecified
+batches. After each batch, an independent safety group reviews only the information
+needed for privacy, coercion, burden, exclusion, and protocol-fidelity decisions.
+Investigators cannot expand enrollment in response to favorable effectiveness
+signals. Any progression pause, amendment, or termination is logged before the
+next batch.
+
+\subsection{Stage 2: bounded operational pilot}
+
+Stage~2 is a different intervention and requires a separate ethics confirmation or
+amendment, domain consent, threat review, and preregistration. Only after Stage~1
+meets all safety and measurement criteria may \tdrg{} receive a narrowly bounded
+operational role with rollback and ordinary-review fallback. No reputation output
+may be used for public ranking, employment, funding, discipline, or automatic
+publication decisions.
+
+\section{Outcomes and measurement plan}
+
+Table~\ref{tab:outcomes} is a candidate measurement catalog, not a commitment to a
+composite success score. Co-primary, secondary, exploratory, and safety outcomes
+will be frozen before recruitment. Severe events are reported individually under
+protected access and cannot be averaged away by review yield or satisfaction.
+
+\begin{longtable}{p{0.17\linewidth}p{0.38\linewidth}p{0.35\linewidth}}
+\caption{Candidate outcome families and interpretation constraints.}\label{tab:outcomes}\\
+\toprule
+Family & Candidate measures & Required interpretation constraint \\
+\midrule
+\endfirsthead
+\toprule
+Family & Candidate measures & Required interpretation constraint \\
+\midrule
+\endhead
+Review process & Adjudicated material defects and evidence gaps; false alarms;
+unresolved findings; later reversals; explanation completeness; reviewer-hours &
+Retain adjudication uncertainty; disaggregate by domain, topic, risk, and
+experience; agreement is not truth. \\
+Timeliness & Invitation, assignment, review, appeal, and revision latency;
+abandonment; backlog & Separate initial learning cost from later batches; report
+censoring and withdrawals. \\
+Routing and capture & Assignment concentration; root and bridge dependence; policy
+overrides; unauthorized-change attempts; staged-fault radius & Condition on the
+typed control graph; do not infer independence from graph distance alone. \\
+Minority and newcomer & Dissent survival; premature adverse updates; waiting time;
+supervision; false exclusion; progression; exit & Protect small specialties and
+vulnerable groups from disclosure and stigmatizing labels. \\
+Privacy and accountability & Effective eligible pool; linkage precision/recall;
+suspected and confirmed reidentification; duplicate attempts; appeal/opening
+frequency and correctness & Report by adversary and operator assumptions; suppress
+small cells; absence of observed incidents is not safety. \\
+Understanding and legitimacy & Comprehension tasks; explanation usability;
+perceived procedural fairness; willingness to challenge, appeal, withdraw, or exit
+& Self-report is not proof of correctness or protection; preserve role and power
+differences. \\
+Labor and resources & Human and agent hours by role; compensation; governance,
+security, and support time; compute; storage; service dependencies & Report who
+bears each cost and who receives benefit, including unpaid and hidden labor. \\
+Adverse effects & Retaliation; coercion; chilling; exclusion; harassment;
+confidentiality breach; false allegation; standing misuse; automation overreliance
+& Do not collapse severity into a mean or trade a severe event against average
+benefit. \\
+\bottomrule
+\end{longtable}
+
+Adjudication will use preconstructed or independently selected cases with known,
+sanitized defects where feasible and a panel blinded to experimental standing and
+participant identity. The panel will classify each finding as material, minor,
+false alarm, unresolved, or outside scope and record disagreement. For live cases,
+later author or editor agreement is evidence about process response, not ground
+truth. Claims whose correctness remains scientifically disputed stay unresolved.
+
+Qualitative work, if approved, will use purposive sampling across domains, roles,
+seniority, employment relationships, experience, dissenting positions, and exit
+status. The analysis plan will freeze the interview guide, coding approach, audit
+trail, reflexivity statement, negative-case search, disagreement process, and
+integration with quantitative evidence. Quotes or paraphrases will undergo
+disclosure review for rare expertise, specialist facts, and stylometry.
+
+\section{Anonymity, privacy, and data governance}
+
+The threat model will treat authors, reviewers, domain members, line managers,
+investigators, platform operators, credential issuers, publishers, analysts,
+trustees, outsiders, and coalitions as distinct adversaries. For each adversary it
+will state accessible content and metadata, timing, auxiliary knowledge, attack
+objective, authority, mitigations, tests, and residual risk.
+
+Minimum attack families are: timing and assignment correlation; rare expertise or
+attribute disclosure; prose stylometry and specialist facts; relationship-graph
+inference; cross-case linkage; operator collusion; small-cell inference; credential
+or opening abuse; legal or safety demands; and linkage through external services.
+Candidate mitigations include batching, delays, access separation, coarse
+credentials, minimum effective pools, fresh case keys, disclosure-limited
+explanations, separation of duties, threshold opening, immutable access logs,
+independent audit, suppression, aggregation, and controlled results. Each mitigation
+has operational costs and may fail.
+
+Civil identity and private trust histories will not enter the public research
+dataset. The identity map, if one is necessary, is held by the minimum set of
+approved operators under a separate retention and destruction schedule. Research
+identifiers do not double as review personas. Public artifacts use synthetic
+identities and disclosure-reviewed aggregates; controlled artifacts use purpose-
+limited access, logging, and expiry. Investigators will document repository and
+compute jurisdictions, backups, model providers, telemetry, and deletion limits.
+
+An authorized opening must have a predeclared purpose, threshold, decision maker,
+minimum disclosure, logging, appeal and correction path, and participant notice
+where legally and ethically permitted. Emergency access does not retroactively
+validate an anonymity claim. Suspected duplicate participation remains a process
+event until adjudicated and cannot automatically become a public conduct finding.
+
+\section{Analysis plan}
+
+Before recruitment, the statistical analysis plan will freeze co-primary
+estimands, smallest meaningful differences or precision targets, sample-size
+rationale, allocation, analysis populations, clustering, repeated observations,
+period and learning effects, covariates, strata, interactions, multiplicity,
+missingness, withdrawal, censoring, late adjudication, and protocol deviations.
+Effect estimates will be accompanied by uncertainty intervals; a nonsignificant
+test will not be described as equivalence unless an equivalence or noninferiority
+design and margin were preregistered.
+
+The default analysis hierarchy is case within domain and period, with reviewer
+cross-classification where assignments recur. Domain-specific estimates are
+reported before any pooled estimate. A pooled model, if used, must state its
+exchangeability assumptions and show sensitivity to excluding each domain and to
+reclassifying common control. Outcome-dependent continuation, optional stopping,
+and data-driven subgroup construction are prohibited for confirmatory claims.
+
+Missing data are typed by mechanism: participant withdrawal, access restriction,
+operator loss, incomplete review, censored appeal, unresolved adjudication,
+instrument failure, and disclosure suppression. Withdrawal does not become a
+negative performance outcome. The preregistration will state which information may
+be retained to honor legal, scientific-integrity, or safety obligations and which
+is destroyed; analysis will report the resulting selection limitations.
+
+No algorithmic reviewer-quality label is an outcome. Where a local standing view
+changes, analysis will decompose the triggering typed events and policy rules. The
+analysis will not use editor agreement, majority vote, author status, citation
+count, rank, or institutional prestige as a correctness label. Agent-produced
+annotations remain separate from human adjudication, and their model, prompt,
+tools, context, and human override are recorded as part of the resource and
+provenance package.
+
+\subsection{Progression analysis}
+
+Stage progression is conjunctive rather than compensatory. Measurement fidelity,
+privacy, retaliation, exclusion, burden, governance integrity, rollback, and appeal
+must each remain within preregistered bounds. A favorable review-yield estimate
+cannot offset a failed safety bound. The independent safety group will return
+\texttt{continue}, \texttt{pause/remediate}, or \texttt{stop}; investigators will
+not receive unblinded effectiveness summaries before a progression decision unless
+the preregistration establishes a scientific necessity.
+
+\section{Adverse events, appeals, and stop rules}
+
+Any participant, operator, domain authority, investigator, or independent safety
+member may invoke a protected pause. The affected function pauses immediately upon:
+
+\begin{itemize}
+  \item unauthorized identity linkage, opening, or private-history access;
+  \item credible retaliation, coercion, harassment, employment or funding threat,
+  or publication penalty;
+  \item material confidentiality or restricted-data breach;
+  \item experimental output affecting official disposition outside approved scope;
+  \item automatic sanction based on a vote, graph anomaly, disagreement, or
+  allegation;
+  \item bypass of assignment, appeal, opening, or ordinary-review fallback;
+  \item burden, distress, exclusion, or uncompensated labor beyond the registered
+  bound;
+  \item defeat of the declared privacy or policy boundary by an ordinary operator;
+  \item absence or conflict of the incident or appeal operator; or
+  \item protocol or tooling drift that invalidates consent, threat assumptions, or
+  preregistration.
+\end{itemize}
+
+The final safety plan will identify the pause recipient, minimum information needed
+for triage, protection against retaliation, investigation process, opening limits,
+remediation, participant communication, regulatory reporting, restart authority,
+and aggregate reporting rule. The appeal record preserves the original event and
+appends a correction, scope change, or reasoned denial. Scientific disagreement is
+not misconduct. A safety stop is a scientifically reportable outcome, not a failed
+result to be hidden.
+
+\section{Disclosure-safe reproducibility}
+
+Reproducibility does not override consent, confidentiality, data-use agreements,
+law, or institutional obligations. The public or broadly shared package will
+include the protocol, preregistration, amendments, releasable consent/waiver basis,
+instrument specifications, code, schemas, environment, configuration, randomness,
+compute description, synthetic fixtures, analysis logs, disclosure rules, and an
+immutable manifest. Every table and figure will map to a claim identifier, analysis
+run, input class, and disclosure decision.
+
+For restricted participant data, the package will publish variable definitions,
+transformations, missingness rules, aggregate consistency checks, and a synthetic
+dataset that exercises every analysis branch without representing a participant.
+Where allowed, an independent analyst will rerun the locked analysis inside the
+controlled environment and sign an attestation naming the code digest, data digest
+or custodian-bound identifier, environment, outputs, deviations, and disclosure
+class. An attestation establishes execution under stated custody; it does not make
+the raw data public or prove scientific validity.
+
+The resource manifest is multiaxis. For every reproducibility or review function it
+records human expertise, agent capability and supervision, governance and support
+labor, compute, accelerator or scheduler requirements, storage, restricted access,
+external services, expected duration, and freshness. A disclosure-safe downselect
+may permit digest audit, bounded recomputation, or provenance-only assessment when
+full rerun is infeasible, but the resulting evidence level and excluded claims are
+explicit. A digest of a prohibited input is not a substitute for independent
+scientific access.
+
+Later reproduction failures create append-only events linked to the affected
+claims. The record states whether failure arose from unavailable data, expired
+authority, environment drift, dependency change, compute loss, undocumented
+operator action, or scientific mismatch. Claims may be narrowed or superseded;
+the original record is not silently overwritten.
+
+\section{Evidence promotion and planned reporting}
+
+This draft contains design choices, background claims, and open hypotheses. It
+contains no implementation or human-subject evidence. A future empirical sentence
+may enter the Results section only when its ledger entry names the estimand,
+population, comparison, uncertainty, data version, analysis run, deviations,
+adversary where relevant, and disclosure class. Qualitative claims must retain
+negative cases and positionality while protecting participants. ``No incidents
+observed'' cannot be promoted to ``safe.'' A failed linkage attack cannot be
+promoted to ``anonymous'' outside its adversary, sample, auxiliary information,
+and observation window.
+
+The future Results architecture is locked as follows, but no result prose may be
+written before data lock:
+
+\begin{enumerate}
+  \item participant and case flow, including refusal and withdrawal;
+  \item implementation fidelity and every protocol deviation;
+  \item all co-primary outcomes with uncertainty;
+  \item domain, role, and preregistered subgroup heterogeneity;
+  \item qualitative themes with negative cases and disagreement;
+  \item privacy attacks, appeals, openings, and adverse events;
+  \item labor and multiaxis resource burden; and
+  \item the preregistered go/no-go decision.
+\end{enumerate}
+
+Null effects, conflicting domain outcomes, excessive cost, failed measurement, and
+a no-go safety conclusion are valid reportable outcomes. No result may be reframed
+as success merely because the system executed as designed.
+
+\section{Limitations and transfer conditions}
+
+The pilot would study a small number of self-selected scientific communities using
+a specific protocol, release, comparator, and institutional arrangement. It cannot
+establish universal reviewer behavior, field-wide fairness, durable anonymity,
+scientific validity, or resistance to adversaries outside the threat model. Shadow
+use may understate harms or workload that appear when outputs acquire operational
+consequences. Conversely, participant attention and investigator support may
+overstate routine performance. Small specialties make privacy and statistical
+inference especially difficult.
+
+Domain independence may be only partial. Shared employment, funding, hosting,
+identity, legal jurisdiction, or personnel can couple nominally separate domains.
+The control graph makes these dependencies inspectable but does not remove them.
+Plural views can preserve disagreement while also reproducing local exclusion or
+allowing strategic forking. Agent assistance may reduce some labor while creating
+new dependence on opaque models, service telemetry, prompt context, and human
+oversight.
+
+A larger or operational study is warranted only if outcomes are measurable without
+equating agreement with truth; participants can exercise withdrawal, appeal, and
+exit; independent domains retain credible control and fork paths; privacy,
+retaliation, exclusion, burden, and governance harms remain within each registered
+bound; and the full resource package is credible. Any unmet condition yields pause,
+redesign, or no-go.
+
+\section{Current gate status}
+
+\begin{tabularx}{\linewidth}{p{0.19\linewidth}X p{0.20\linewidth}}
+\toprule
+Gate & Requirement & Current state \\
+\midrule
+G0 Argument & Bounded feasibility/safety protocol; no superiority narrative &
+Drafted; independent challenge pending \\
+G1 Scholarship & Primary peer-review, power, governance, ethics, privacy, and
+preregistration sources & Initial verified set; systematic gap audit pending \\
+G2 Methods & Statistics, qualitative, domain, privacy/security, and ethics review &
+Not started \\
+G3 Artifact & Frozen intervention, deployment manifest, synthetic reproduction,
+protected-data controls & Not available \\
+G4 Independent review & Reviewer outside protocol authors and participating
+management challenges harms and interpretation & Not started \\
+G5 Human release & Human authors, investigators, ethics/privacy officials, and
+domain authorities approve dissemination as applicable & Not authorized \\
+\bottomrule
+\end{tabularx}
+
+\section{Conclusion}
+
+A machine-verifiable review record can support inspection, but scaling it into a
+peer-review corpus introduces independent actors, plural authority, labor,
+coercion, privacy, and institutional capture. The proposed pilot therefore begins
+in shadow mode and treats governance and safety as measured outcomes rather than
+properties inferred from code. Its central commitment is negative as much as
+positive: no global reviewer score, no automatic sanction, no unqualified anonymity
+claim, no management bypass, no human-subject work before independent determination,
+and no field conclusion before preregistered evidence. Whether localized trust
+domains improve any part of scientific review remains an open empirical question.
+
+\appendix
+\section{Pre-enrollment gate checklist}
+
+The accountable investigator must attach immutable identifiers for every item:
+
+\begin{enumerate}
+  \item written ethics/IRB determination and approved protocol;
+  \item recruitment, consent or waiver basis, compensation, and exit procedure;
+  \item privacy/security assessment, adversary matrix, and breach response;
+  \item domain agreements, typed control graphs, operator conflicts, and fork test;
+  \item data-management, retention, jurisdiction, and disclosure plan;
+  \item preregistration with outcomes, estimands, precision, allocation, analysis,
+  missingness, stop rules, and deviations;
+  \item tested protocol/tool release and deployment manifest;
+  \item independent adjudication, appeal, incident, and safety operators;
+  \item synthetic end-to-end reproduction and rollback evidence; and
+  \item human authorization for authorship, AI disclosure, venue, licensing, and
+  any release.
+\end{enumerate}
+
+If one item is absent or stale, the protocol remains at Stage~0.
+
+\section{Adversary-record template}
+
+For each adversary or coalition, record: identifier; role; authority; accessible
+content and metadata; timing; auxiliary data; attack objective; attack procedure;
+assumed operator honesty; mitigation; residual risk; quantitative threshold;
+observation window; result; incident linkage; disclosure class; and the exact
+language permitted in any privacy claim. Coalition tests must include at least line
+management plus platform operator, investigator plus analyst, and credential issuer
+plus identity/opening operator where those roles are separable.
+
+\section{Evidence-promotion template}
+
+Each proposed empirical statement must include: claim ID; exact text; label
+(implementation observation, human-subject evidence, inference, or implication);
+estimand; unit; population; comparison; data/custodian identifier; code and
+environment digests; run ID; uncertainty; deviations; adjudication status;
+adversary and observation window when applicable; subgroup and disclosure class;
+support locator; falsifier; supersession relation; and required human sign-off.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
