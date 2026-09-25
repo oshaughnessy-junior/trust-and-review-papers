@@ -1,0 +1,22 @@
+{
+  "switching": {
+    "rho_a": 0,
+    "rho_b": 0,
+    "generation_10": [
+      1024.0,
+      0.0
+    ]
+  },
+  "declared_cone": [
+    "A"
+  ],
+  "true_cone": [
+    "A",
+    "B"
+  ],
+  "naive_parent_average_R": 0.5,
+  "actual_R": 2.0,
+  "shared_capacity": 8.0,
+  "combined_demand": 9.0,
+  "all_adversarial_assertions_passed": true
+}

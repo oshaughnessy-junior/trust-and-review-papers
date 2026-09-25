@@ -1,0 +1,79 @@
+{
+  "schema": "mcrp-scientist-second-round.v1",
+  "interpretation": "Synthetic first-moment counterexamples; no human calibration",
+  "environment": {
+    "python": "3.9.6"
+  },
+  "hidden_specialty": {
+    "offspring_matrix": [
+      [
+        0.2,
+        0.01
+      ],
+      [
+        0.01,
+        1.2
+      ]
+    ],
+    "mean_row_sum": 0.71,
+    "naive_scalar_total": 3.4482758620689653,
+    "spectral_radius": 1.2000999900019993
+  },
+  "stable_specialties": {
+    "offspring_matrix": [
+      [
+        0.2,
+        0.1
+      ],
+      [
+        0.05,
+        0.6
+      ]
+    ],
+    "spectral_radius": 0.6121320343559643,
+    "initial": [
+      1,
+      0
+    ],
+    "expected_items": [
+      1.2698412698412698,
+      0.31746031746031744
+    ],
+    "hours_per_item": [
+      1,
+      8
+    ],
+    "expected_hours_per_root": 3.8095238095238093,
+    "roots_per_day": 2,
+    "workload_hours_per_day": [
+      2.5396825396825395,
+      5.079365079365079
+    ],
+    "capacity_hours_per_day": [
+      4,
+      4
+    ],
+    "global_load_feasible": true,
+    "specialist_load_feasible": false,
+    "series_inverse_max_difference": 5.551115123125783e-17
+  },
+  "unreachable_supercritical_block": {
+    "global_spectral_radius": 1.2,
+    "root_reachable_expected_items": [
+      1.25,
+      0.0
+    ]
+  },
+  "diamond_dag": {
+    "path_counts": [
+      1.0,
+      1.0,
+      1.0,
+      2.0
+    ],
+    "total_path_visits": 5.0,
+    "distinct_claims": 4
+  },
+  "checks": "6 conceptual assertions plus inverse/series numerical comparison passed",
+  "source_sha256": "83f3d7d715bb32f7bd0adaa0f940263d6ecb48d5f46a52c654e67a649b1e632e"
+}

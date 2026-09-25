@@ -3,6 +3,14 @@
 Status: candidate formalization; assumptions and results are not yet validated  
 Purpose: make the Paper 02 claims precise enough for mathematical analysis and reproducible simulation
 
+**2026-09-25 research extension:** the [hardening dossier](../06-mcrp-hardening/README.md)
+checks the conditional influence lemma, exhibits raw-capacity/normalization and
+assignment counterexamples, derives a simplified feedback threshold, and adds
+resource, incentive and multitype repair models. It does not implement or validate
+the full A4 composite below. In particular, a raw max-flow capacity bound does not
+automatically establish the normalized transition premise, and a graph-mass bound
+does not automatically survive final panel assignment or completion selection.
+
 ## 1. Objects and scopes
 
 Let:

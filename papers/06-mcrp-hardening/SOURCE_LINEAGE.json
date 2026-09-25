@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-25",
+  "upstream_commits": {
+    "outward-facing-web": "a8474c29731941b1eb2ca486778351f0c6a7375a",
+    "mcrp-protocol-paper": "ff49fc3ce63f34914005d0f499afeaeaaf1db26e",
+    "trust-and-review-papers": "18deff4993fca5a30cc2aff2e4f6e4433c6ff391",
+    "trust-and-review-tooling": "9da0cd433147d925bac4ae1e1f94186cc4166e7b"
+  },
+  "document_sha256": {
+    "outward-policy": "2cc1a2b2971351532a38407642fac402862187b4dd82df39b1d13c51b091ceb6",
+    "commons-readme": "2dbdf284b89d4406f9bdb5358321bc7232b76636d496487aadac35768a10353b",
+    "commons-threat-model": "775850d58e16d6c504c2f15445159cd89b98cf30e19d18228ef2b35c38dbe5e9"
+  },
+  "boundary": "Documentary review, not hosted deployment verification. Private business and user data excluded.",
+  "review_process": "Four specialist perspectives plus root synthesis; four dedicated adversarial lanes; collective cross-critique. Same model/operator context, not external peer review.",
+  "publication_status": "Private unapproved working draft"
+}

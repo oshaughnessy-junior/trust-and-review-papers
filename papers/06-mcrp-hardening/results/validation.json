@@ -1,0 +1,180 @@
+{
+  "schema": "mcrp-hardening.validation.v1",
+  "environment": {
+    "python": "3.9.6"
+  },
+  "status": "passed",
+  "unit_test_methods": 25,
+  "scope": "Synthetic model checks; original-economics-defects reproduces rejected original solver behavior, not a passing implementation",
+  "checks": [
+    {
+      "name": "science-boundary-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "models",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/science-boundary-tests.txt",
+      "sha256": "40e0736a7f0bc17059afd55df2c309f5b4accf2527c702085e598a518d5c4ca5"
+    },
+    {
+      "name": "economics-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "models/economics",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/economics-tests.txt",
+      "sha256": "0d49511a42d95717a3800a0f22cc89ac5d87f33d7c7064f675ed403bec0f53d4"
+    },
+    {
+      "name": "legal-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "models/legal",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/legal-tests.txt",
+      "sha256": "2ed1f328178335231c9596e2e23248c959ba131a5d5739d577d81fcc28760e9f"
+    },
+    {
+      "name": "science-sweeps",
+      "command": [
+        "python3",
+        "models/run_experiments.py"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/science-sweeps.txt",
+      "sha256": "dcb0b3572bde4d4f9fa9190de7e49b2fcdac6ad885d6520c05d09d807bf1aa64"
+    },
+    {
+      "name": "economic-sweeps",
+      "command": [
+        "python3",
+        "models/economics/run.py"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/economic-sweeps.txt",
+      "sha256": "68f3815978affc94c843704c9d66f039f9a0137f9527a70906303a08e0778d7d"
+    },
+    {
+      "name": "game-fixtures",
+      "command": [
+        "python3",
+        "models/game_theory/model_checks.py"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/game-fixtures.txt",
+      "sha256": "87deb3e51e2d6aeda141e7173587fd1fd7736feb306c84f8d3e8b95f3d67a19d"
+    },
+    {
+      "name": "compositional-science",
+      "command": [
+        "python3",
+        "models/science/model_checks.py"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/compositional-science.txt",
+      "sha256": "e77fa1d79415dd8be8a6f45a3a90f2d51c85772ff1005ca3fe7683f365ee13f2"
+    },
+    {
+      "name": "legal-capacity",
+      "command": [
+        "python3",
+        "models/legal/capacity_model.py"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/legal-capacity.txt",
+      "sha256": "c51d5d9fb01119d3d4371630199ef85d0f4679c00551322f56d5e29c974b7ecf"
+    },
+    {
+      "name": "adversarial-science",
+      "command": [
+        "python3",
+        "reviews/red-team/science/fixtures.py"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/adversarial-science.txt",
+      "sha256": "8140a1dc6bba5e996a4d20f184bd28f2c13291481096cacaa1b0ebb95c5ad80e"
+    },
+    {
+      "name": "adversarial-games",
+      "command": [
+        "python3",
+        "reviews/red-team/games/fixtures.py"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/adversarial-games.txt",
+      "sha256": "f90273940b3eaa3b84225cf963a1edb3948e6a0816b10e10610d29e2548fdf41"
+    },
+    {
+      "name": "adversarial-law",
+      "command": [
+        "python3",
+        "reviews/red-team/law/fixtures.py"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/adversarial-law.txt",
+      "sha256": "4f4339cbb734d89082fd00c1d632aded039b13f6675aff41a19ff04e206a90c1"
+    },
+    {
+      "name": "original-economics-defects",
+      "command": [
+        "python3",
+        "reviews/red-team/economics/checks.py"
+      ],
+      "returncode": 0,
+      "log": "results/check-logs/original-economics-defects.txt",
+      "sha256": "a8cdfc8ffff53c63402bf9bcbb9fbc68e6296efbd56c62b24b2c6e370a8f4555"
+    }
+  ],
+  "source_sha256": {
+    "models/boundary.py": "4d37c9ff65cfaf468e7ba0504d4fe2a492a90d8ee329ac65cac654c5aa83b3bf",
+    "models/dynamics.py": "47d461956144de38f6af55a0293342b6bd603a7c674c8e2e35124f6c47af6c2a",
+    "models/economics/run.py": "55f01f734b6bf02331679b3aa29117379b7d2af6eca7a9a9b0f11b8a909cabfa",
+    "models/economics/test_allocation.py": "a005282fee835a9781cb5b6f34262a2432991e5d18f61b6018509a9cba45c8bb",
+    "models/game_theory/model_checks.py": "9550dbd97c280f4c4ba318f8a1f19037d7154dfe49ad680bd14342b24078ceb5",
+    "models/legal/capacity_model.py": "acf5b544e6a736be4e80ab56470fabcd1a544d73449c38a93c3536da92f8eb11",
+    "models/legal/test_capacity_model.py": "7406b13526dcca281f23622911aae20d838470e5db9a862d54d69975fa56d81f",
+    "models/run_experiments.py": "2e7b437eea6a5156d50415ca7d8323ba4c909706bc269017d8b9a64c37faaab0",
+    "models/science/model_checks.py": "83f3d7d715bb32f7bd0adaa0f940263d6ecb48d5f46a52c654e67a649b1e632e",
+    "models/test_boundary.py": "50f98373c655edd5c8a98a0e3a8b9ef9dfe9d8b8388a259b2f032c502cdb8ec9",
+    "models/test_dynamics.py": "c1fd6177eab4a948fd901732f97051d215660e4292493dd175d253b623c03cb4",
+    "rendering/build_reading_copy.py": "3ec1052c2375662ae7ad5489670cbe4fa83573b2fa1b9df16138049c6ce1f296",
+    "reviews/red-team/economics/checks.py": "bbb7b5c4425ac807573c4d602bcd5223a2d27d8a37bc8f8bb3083a7c225d53ab",
+    "reviews/red-team/economics/original_allocation.py": "655dc1d9ed554ca2e9fd27c23687466bbb43e8b1f41a40023b307fe8f0b2aa18",
+    "reviews/red-team/games/fixtures.py": "c8a1237c641694f995ddaf53e220db35396aa6d1a30213a444e009a058f2e225",
+    "reviews/red-team/law/fixtures.py": "7e3ff6bd12e95904ef49fae0cb997926b5591d4be736f6ac7424336e1f9ac2ee",
+    "reviews/red-team/science/fixtures.py": "c1bd936e07977a4c3b6aca17c701eadef985f673d4d25e4dcbe4546f9042755d",
+    "run_checks.py": "2d4b0e4fa1b13b05aaccccffb49b0bc39e58323685099f3e2b24e97a355d56f7"
+  },
+  "table_sha256": {
+    "results/cascade.csv": "668e223ac351a74d59f96de5ab4cebcbf17f1e442d10be9ec8a71d68b99ff5cc",
+    "results/correlation.csv": "8ed1f114ae02a6fb9e02b28dcddcf450bad63f621a7733f55d57878784136358",
+    "results/economics/allocation.csv": "2131e38143b62501cfb6555a8a6e049e1eeb22cb3d8e12c3365aba0b1c72790f",
+    "results/economics/queues.csv": "4dc254a5feba71d5ad3a8faca15c074c48e773bc48e472039cb415208755201b",
+    "results/feedback.csv": "a785adfb33761e2c38b178732a008f396d24fcc3058b8f26d423ab66873def47",
+    "results/influence.csv": "2dc0eda76197c87a3193dfa98991d34e05a62f67a9ddd54473ae44a7762a2c09"
+  }
+}

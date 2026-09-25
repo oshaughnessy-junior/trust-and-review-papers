@@ -1,0 +1,54 @@
+{
+  "status": "conceptual specification witnesses; not deployed defects",
+  "deadline_blindness": {
+    "identical_scalar_backlog": [
+      0
+    ],
+    "ordinary_first": {
+      "ordinary": {
+        "completed": 50,
+        "deadline": 100,
+        "late": false
+      },
+      "rights": {
+        "completed": 60,
+        "deadline": 15,
+        "late": true
+      }
+    },
+    "rights_first": {
+      "rights": {
+        "completed": 10,
+        "deadline": 15,
+        "late": false
+      },
+      "ordinary": {
+        "completed": 60,
+        "deadline": 100,
+        "late": false
+      }
+    },
+    "repeated_low_load_end_epoch_backlog": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "emergency_triage_flood": {
+    "attempts": 1300,
+    "triage_minutes_per_attempt": 0.1,
+    "reserved_minutes": 120,
+    "substantive_admissions": 0,
+    "pending_minutes": [
+      10.0
+    ]
+  },
+  "write_set_is_not_information_flow": {
+    "permitted_coordinate_change": [
+      "V"
+    ],
+    "sensitive_export_still_exists": true
+  },
+  "invalid_numeric_inputs_rejected": 5
+}

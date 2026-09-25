@@ -1,0 +1,21 @@
+test_bad_binding_and_future_rejected (test_boundary.BoundaryTests) ... ok
+test_current_projection_still_has_no_truth_claim (test_boundary.BoundaryTests) ... ok
+test_cycles_and_diamonds_deduplicated (test_boundary.BoundaryTests) ... ok
+test_joint_capacity_not_three_independent_budgets (test_boundary.BoundaryTests) ... ok
+test_new_reliance_can_resolve_prior_material_change (test_boundary.BoundaryTests) ... ok
+test_offline_expired_unknown (test_boundary.BoundaryTests) ... ok
+test_old_authentic_receipt_does_not_imply_currentness (test_boundary.BoundaryTests) ... ok
+test_visibility_and_amendment_do_not_rewrite_science (test_boundary.BoundaryTests) ... ok
+test_withheld_graph_finds_missing_and_spurious_edges (test_boundary.BoundaryTests) ... ok
+test_block_formula_against_iteration (test_dynamics.ModelTests) ... ok
+test_feedback_jacobian (test_dynamics.ModelTests) ... ok
+test_feedback_stability_and_symmetry_breaking (test_dynamics.ModelTests) ... ok
+test_invalid_inputs (test_dynamics.ModelTests) ... ok
+test_multinode_row_cap_bound (test_dynamics.ModelTests) ... ok
+test_review_and_cascade_limits (test_dynamics.ModelTests) ... ok
+test_small_raw_capacity_is_not_transition_cap (test_dynamics.ModelTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.081s
+
+OK

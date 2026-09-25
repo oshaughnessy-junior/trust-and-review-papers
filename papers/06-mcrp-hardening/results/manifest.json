@@ -1,0 +1,51 @@
+{
+  "schema": "mcrp-hardening.synthetic-models.v1",
+  "interpretation": "Toy analytical model checks, not observed human or agent behavior",
+  "environment": {
+    "python": "3.9.6",
+    "implementation": "CPython"
+  },
+  "randomness": "No stochastic draws in these sweeps; randomized tests use explicit fixed seeds",
+  "sweep_rows": {
+    "influence": 21,
+    "feedback": 432,
+    "correlation": 30,
+    "cascade": 48
+  },
+  "integration": {
+    "method": "Euler convex update",
+    "steps": 12000,
+    "dt": 0.02,
+    "two_step_size_max_difference": 2.7755575615628914e-15,
+    "step_size_check_scope": "Only K=2 beta=4 chi=1 zeta=.1 near-uniform start",
+    "max_sweep_residual": 8.445972072299024e-05,
+    "warning": "Finite-horizon trajectories; residuals reported, no claim all rows converged"
+  },
+  "highlight": {
+    "alpha085_ingress001": 0.05362776025236592,
+    "raw_capacity_counterexample": {
+      "raw_edge": 0.001,
+      "normalized_ingress": 1,
+      "stationary_external": 0.85
+    },
+    "n20_rho02_effective_n": 4.166666666666666,
+    "feedback_k2_beta4_chi1_zeta01": [
+      0.9197229074882372,
+      0.08027709251175837
+    ],
+    "cascade_b2_q02": 1.6666666666666667
+  },
+  "source_sha256": {
+    "boundary.py": "4d37c9ff65cfaf468e7ba0504d4fe2a492a90d8ee329ac65cac654c5aa83b3bf",
+    "dynamics.py": "47d461956144de38f6af55a0293342b6bd603a7c674c8e2e35124f6c47af6c2a",
+    "run_experiments.py": "2e7b437eea6a5156d50415ca7d8323ba4c909706bc269017d8b9a64c37faaab0",
+    "test_boundary.py": "50f98373c655edd5c8a98a0e3a8b9ef9dfe9d8b8388a259b2f032c502cdb8ec9",
+    "test_dynamics.py": "c1fd6177eab4a948fd901732f97051d215660e4292493dd175d253b623c03cb4"
+  },
+  "data_sha256": {
+    "cascade.csv": "668e223ac351a74d59f96de5ab4cebcbf17f1e442d10be9ec8a71d68b99ff5cc",
+    "correlation.csv": "8ed1f114ae02a6fb9e02b28dcddcf450bad63f621a7733f55d57878784136358",
+    "feedback.csv": "a785adfb33761e2c38b178732a008f396d24fcc3058b8f26d423ab66873def47",
+    "influence.csv": "2dc0eda76197c87a3193dfa98991d34e05a62f67a9ddd54473ae44a7762a2c09"
+  }
+}
