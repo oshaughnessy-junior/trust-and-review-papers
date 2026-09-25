@@ -5,8 +5,8 @@
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "CLAIMS.html": "41823fc76e3d95f86268d56ba5df828bde7c511bf8d196e6229c06f22fe03ba0",
     "CLAIMS.md": "3518528adbb212c9997ee9cd5ab7d73e49c78aaf1034d83ec944000ff719193d",
-    "LICENSE.html": "80f5a7d17f76f47459964b021fb714aa7d8d41b6fc54f2fb5500ffe28f5c22b2",
-    "LICENSE.md": "ba2099cc709f1b6236b964d91a385ad8e6d573e25e55652c22a0fb54db0abaf4",
+    "LICENSE.html": "f8ab3cf79270e699a81b4a9b3de831602d6b13fd2160dda83b3eb1ccda649e2d",
+    "LICENSE.md": "4d1fb542295891936c46deb87d291164e5d91c965b4532632a6e7dde8def2d07",
     "LICENSES/MIT.txt": "ddd29280f568f70208e436194c467f73419b464e5498cf1a1e432e5e4c9895ae",
     "README.html": "f04ebb2f1a1fc4a4b0a9227f47eedeb51ee0680063d2541a97f30c6653c74fc7",
     "README.md": "7350865de5e172fb8a3e50d904df35fb236bd36a29081232e4f649eee4a5dc0b",
@@ -313,7 +313,7 @@
     "reviews/red-runtime/third-wave-test-log.txt": "72583cc6a48ddff937cfa4daeca1b59d5e8989c360a9949181d31042ce17777d",
     "reviews/red-runtime/toy-author-tests-independent-run.txt": "cd7f16f95ecad812700e02ae30c117bb78dc536fa89a1240e17847c3fe0b69fd",
     "run_checks.py": "55fbf8bb9a3d8a6637d5149c509676d09d993ae39aaa225bde7de0a2f9ce92d7",
-    "source-manifest.json": "a2648ecf8a5388f8c9165a3744fef236419d629498dfb70d23e357971608e737",
+    "source-manifest.json": "8e4a38b1946b04d02b1617db323f9a2e498e500da72ca87ed93eb86a9a900bef",
     "surfaces/build.py": "e4f03252866b7dac37d35e237a9e56cfbac8dbfd084aaed43ab8ebdbf3ac000f",
     "surfaces/build_brief.py": "738c0d1256c541ae0c919071b1bee953ac77befc41ba1a937009a7cb22f2558d",
     "surfaces/equations.js": "60170799e77417aee56304496672b3ab077afc93ed1f9d6df7a49d08c7483e05",
@@ -330,6 +330,6 @@
     "toy_agents/scenarios.py": "5b77fddd3a5fcdd8a998d40b7cbb90effd324b867dfd309edb1ed5e97278c5b7",
     "toy_agents/tests/test_protocol.py": "a76abb03617767fd4df9454185d9a2d92bb6d6230700ece86e260d9d068ec3af"
   },
-  "file_map_sha256": "353dd2ef643f9194a208a387bf871284f42631c776e25b85df3ca4e743e3930f",
+  "file_map_sha256": "6a3959cbeb2ae7608e630e885fcfd7ac3c75860c79b7c78c6f96bd5a03d3922d",
   "scope": "Integrity inventory, not a signature or approval; excludes this manifest and download ZIP"
 }

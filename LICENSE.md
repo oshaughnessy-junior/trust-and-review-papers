@@ -4,8 +4,7 @@ For the original material in this release packet, the repository maintainer
 publishes software, executable examples, JSON fixtures and synthetic data under
 the [MIT License](LICENSES/MIT.txt), and research prose and original figures under
 [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
-The CC BY legal terms are available at
-https://creativecommons.org/licenses/by/4.0/legalcode.en.
+Read the [full CC BY legal terms](https://creativecommons.org/licenses/by/4.0/legalcode.en).
 
 Attribution: **MCRP contributors, maintained by oshaughnessy-junior; substantial
 AI drafting, implementation and adversarial review by Codex agents.** Identify

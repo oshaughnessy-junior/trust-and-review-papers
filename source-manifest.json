@@ -2,7 +2,7 @@
   "schema": "mcrp.public-candidate-source.v1",
   "source_files_sha256": {
     "CLAIMS.md": "3518528adbb212c9997ee9cd5ab7d73e49c78aaf1034d83ec944000ff719193d",
-    "LICENSE.md": "ba2099cc709f1b6236b964d91a385ad8e6d573e25e55652c22a0fb54db0abaf4",
+    "LICENSE.md": "4d1fb542295891936c46deb87d291164e5d91c965b4532632a6e7dde8def2d07",
     "LICENSES/MIT.txt": "ddd29280f568f70208e436194c467f73419b464e5498cf1a1e432e5e4c9895ae",
     "README.md": "7350865de5e172fb8a3e50d904df35fb236bd36a29081232e4f649eee4a5dc0b",
     "adapters/README.md": "c4411af4d095199f16a3bd8f14bbd3bf14c2afca00855157af98aa3736500466",
