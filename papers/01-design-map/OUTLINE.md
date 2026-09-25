@@ -214,7 +214,13 @@ A review action references exact claim IDs, evidence IDs, release digests, reque
 
 ### 5. Worked case A: portable Level-0 computational analysis
 
-**Scenario:** a contemporary laptop-scale analysis using public data, portable tools, no specialty scheduler, modest storage, and a deterministic or explicitly seeded workflow.
+**Instantiated scenario:** a contemporary laptop-scale analysis of the public
+GWOSC GW150914-v2 H1/L1 strain products, using portable locked tools, no specialty
+scheduler, about 2 MB of registered input, and a deterministic workflow. The
+release candidate checks exact source identity and event-time quality metadata,
+recomputes a bounded lag-correlation invariant, and exercises digest/version and
+adversarial-shift failures. Separate-agent replay and bounded human GW acceptance
+are recorded; independent scientific replication remains absent.
 
 **Walkthrough:**
 
@@ -226,19 +232,26 @@ A review action references exact claim IDs, evidence IDs, release digests, reque
 6. Record reviewer-controlled execution, discrepancies, responses, and human sign-off.
 7. Schedule a freshness run and append a failure/supersession event if dependency drift later breaks execution.
 
-**What the case can establish:** representational completeness, conformance of the record, and feasibility of the review lifecycle for this fixture.
+**What the case can establish now:** bounded computational repeatability of the
+registered path, satisfaction of one necessary lag invariant, machine conformance
+of the record, and implementation of the ten-axis/lifecycle representation.
 
-**What it cannot establish:** independent replication, general scientific validity, security of identity services, or scalability to HPC.
+**What it cannot establish:** the original search, calibration validity,
+astrophysical origin, independent replication, general scientific validity,
+security of identity services, or scalability to HPC.
 
-### 6. Worked case B: HPC/GPU/restricted-data workflow with downselects
+### 6. Worked case B: sanitized partitioned-inference downselect for HPC/GPU/restricted workflows
 
-**Scenario:** a RIFT-like scientific inference workflow needing a specialty scheduler, GPUs, substantial compute/storage, domain calibrations, and possibly restricted or too-large raw inputs. The published case must use public or sanitized material and disclose that it is representative rather than an internal collaboration audit.
+**Scenario:** a sanitized scientific inference fixture compared against the public RIFT workflow, which needs a specialty scheduler and can use GPUs while relying on substantial scientific and operational context. The public mapping is documentary only: it identifies RIFT's grid, ILE, consolidation, CIP, iteration/convergence, HTCondor, log, product, and accelerator review surfaces but does not claim a RIFT run, production representativeness, or access to internal collaboration material.
 
 **Walkthrough:**
 
 1. Decompose claim evidence into acquisition/calibration, preprocessing, expensive inference, reduced posterior or likelihood products, diagnostics, and final claims.
 2. Declare the full resource vector, including scheduler, accelerator class, software stack, storage tiers, wall time, monetary/allocative cost, operator support, domain expertise, and agent assistance.
-3. Provide several explicitly labeled assessment modes:
+3. Provide six explicitly labeled assessment modes; the fixture records bounded
+   recomputation, digest audit, and frozen-output inspection as performed, leaves
+   full independent execution and an independent evidence path unperformed, and
+   keeps restricted-platform attestation as a template only:
    - full rerun for a suitably resourced independent site;
    - reviewer-controlled reduced-scale rerun with convergence/scaling checks;
    - sampled regeneration of digested products from accessible partitions;
@@ -384,4 +397,3 @@ Each case packet must include:
 ## Venue posture
 
 First assess the diamond-open-access **Journal of Electronic Publishing** and the no-author-fee **Information Research** against the finished manuscript's scope. Treat JASIST/ARIST-style synthesis as a possible non-APC or RIT-supported route only after current terms are verified. Venue and agreement claims are time-sensitive: recheck the exact journal, article type, corresponding-author eligibility, annual caps, repository rights, and license immediately before submission. Do not submit, post a preprint, or incur a charge without G5 approval.
-

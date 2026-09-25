@@ -1,0 +1,59 @@
+{
+  "schema": "openclaw.scientific-writing.packet.v1",
+  "artifact_id": "trustandreview-paper03-draft-2026-08-24",
+  "purpose": "Produce a coherent private first draft that specifies the TDRG protocol/evaluation contract and sharply separates verified v0.1 implementation evidence from the TM-01--TM-18 roadmap.",
+  "audience": "Researchers in scholarly communication, peer-review governance, network trust, privacy, research software, and reproducibility; protocol implementers and scientific reviewers.",
+  "section_type": "full protocol and evaluation manuscript",
+  "target_latex_fragments": [
+    "main.tex"
+  ],
+  "outline": [
+    "Problem, positioning, and novelty boundary",
+    "Terminology and evidence boundary",
+    "Threat model and protocol objects",
+    "Exact reference-implementation evidence",
+    "TM-01--TM-18 conformance and adversarial contract",
+    "A0--A4 frozen comparative evaluation",
+    "Privacy, interoperability, reproducibility, and stop rules"
+  ],
+  "evidence_packets": [
+    "../../shared/protocol/reviewer-trust-domains-v0.1-draft.md",
+    "../../shared/research/reviewer-trust-domain-experiments.md",
+    "../../shared/research/reviewer-trust-closest-work-matrix.md",
+    "repository:trust-and-review-tooling@9da0cd433147d925bac4ae1e1f94186cc4166e7b",
+    "citation-verification-report.json",
+    "bibliography-audit.txt",
+    "verification.md"
+  ],
+  "claim_ledger": "claim-ledger.json",
+  "bibliography_inputs": [
+    "references.bib",
+    "primary-source pages and papers named in claim-ledger.json"
+  ],
+  "figures_tables": [
+    "Table 1 threat-to-test map",
+    "Table 2 exact 11-test v0.1 evidence",
+    "Table 3 TM-01--TM-18 roadmap",
+    "Table 4 A0--A4 arms"
+  ],
+  "human_questions": [
+    "Who will own normative protocol authorship and independent security review?",
+    "Which venue and article type determine the final length and formatting?",
+    "What frozen statistical precision, subgroup-harm, and privacy thresholds should govern TM-18?",
+    "Which license and archival identifier are authorized for paper and tooling releases?"
+  ],
+  "constraints": [
+    "Private draft; no submission, publication, or external contact.",
+    "Current implementation evidence is limited to revision 9da0cd4 and the 11 locally rerun tests.",
+    "No mock empirical result prose.",
+    "Every implemented subtest is reported below the TM-row level.",
+    "Official standards pages are treated as web standards sources, not as indexed journal articles.",
+    "Retrieval capability: web primary-source retrieval plus local evidence packets; no specialized research corpus was available."
+  ],
+  "excluded_claims": [
+    "Novel invention of decentralized peer review, graph routing, local trust, anonymous reputation, fair assignment, or immutable review records.",
+    "Cryptographic signatures, identity uniqueness, Sybil resistance, collusion resistance, anonymity, unlinkability, appeals/opening, or fork reconciliation in v0.1.",
+    "A0--A4 comparative benefit, attack resistance, field efficacy, reviewer competence, or scientific validity.",
+    "Complete JSON Schema conformance or cross-platform byte-identical replay."
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "n": 1,
+    "title": "Observation of Gravitational Waves from a Binary Black Hole Merger",
+    "authors": ["B. P. Abbott"],
+    "authors_truncated": true,
+    "year": "2016",
+    "doi": "10.1103/PhysRevLett.116.061102",
+    "venue": "Physical Review Letters",
+    "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102",
+    "kind": "article",
+    "raw": "Abbott, B. P. et al. Observation of Gravitational Waves from a Binary Black Hole Merger. Physical Review Letters 116, 061102 (2016). doi:10.1103/PhysRevLett.116.061102."
+  },
+  {
+    "n": 2,
+    "title": "Characterization of Transient Noise in Advanced LIGO Relevant to Gravitational Wave Signal GW150914",
+    "authors": ["B. P. Abbott"],
+    "authors_truncated": true,
+    "year": "2016",
+    "doi": "10.1088/0264-9381/33/13/134001",
+    "venue": "Classical and Quantum Gravity",
+    "url": "https://arxiv.org/abs/1602.03844",
+    "kind": "article",
+    "raw": "Abbott, B. P. et al. Characterization of Transient Noise in Advanced LIGO Relevant to Gravitational Wave Signal GW150914. Classical and Quantum Gravity 33, 134001 (2016). doi:10.1088/0264-9381/33/13/134001."
+  },
+  {
+    "n": 3,
+    "title": "A Guide to LIGO-Virgo Detector Noise and Extraction of Transient Gravitational-Wave Signals",
+    "authors": ["B. P. Abbott"],
+    "authors_truncated": true,
+    "year": "2020",
+    "doi": "10.1088/1361-6382/ab685e",
+    "venue": "Classical and Quantum Gravity",
+    "url": "https://dcc.ligo.org/LIGO-P1900004/public",
+    "kind": "article",
+    "raw": "Abbott, B. P. et al. A Guide to LIGO-Virgo Detector Noise and Extraction of Transient Gravitational-Wave Signals. Classical and Quantum Gravity 37, 055002 (2020). doi:10.1088/1361-6382/ab685e."
+  }
+]

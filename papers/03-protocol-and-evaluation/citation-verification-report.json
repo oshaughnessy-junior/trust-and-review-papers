@@ -1,0 +1,102 @@
+{
+  "report_type": "VerificationReport",
+  "generated_at": "2026-08-24T10:32:27.975929",
+  "stats": {
+    "total": 7,
+    "verified": 6,
+    "mismatch": 0,
+    "not_found": 1,
+    "error": 0,
+    "skipped": 0
+  },
+  "citations": [
+    {
+      "status": "verified",
+      "source": "crossref",
+      "identifier": "10.1177/0165551506062327",
+      "title": "The convergence of digital libraries and the peer-review process",
+      "container": "Journal of Information Science",
+      "published": 2006,
+      "confidence": 0.95,
+      "_cached_at": "2026-08-24T10:32:26.602834",
+      "expected_title": "The Convergence of Digital Libraries and the Peer-Review Process",
+      "title_match_score": 1.0,
+      "label": "10.1177/0165551506062327"
+    },
+    {
+      "status": "verified",
+      "source": "crossref",
+      "identifier": "10.1145/775152.775242",
+      "title": "The Eigentrust algorithm for reputation management in P2P networks",
+      "container": "Proceedings of the twelfth international conference on World Wide Web  - WWW '03",
+      "published": 2003,
+      "confidence": 0.95,
+      "_cached_at": "2026-08-24T10:32:26.779605",
+      "expected_title": "The EigenTrust Algorithm for Reputation Management in P2P Networks",
+      "title_match_score": 1.0,
+      "label": "10.1145/775152.775242"
+    },
+    {
+      "status": "verified",
+      "source": "crossref",
+      "identifier": "10.1007/11909033_5",
+      "title": "A Fair Anonymous Submission and Review System",
+      "container": "Lecture Notes in Computer Science",
+      "published": 2006,
+      "confidence": 0.95,
+      "_cached_at": "2026-08-24T10:32:27.069235",
+      "expected_title": "A Fair Anonymous Submission and Review System",
+      "title_match_score": 1.0,
+      "label": "10.1007/11909033_5"
+    },
+    {
+      "status": "verified",
+      "source": "crossref",
+      "identifier": "10.1016/j.ipm.2021.102724",
+      "title": "Decentralizing science: Towards an interoperable open peer review ecosystem using blockchain",
+      "container": "Information Processing &amp; Management",
+      "published": 2021,
+      "confidence": 0.95,
+      "_cached_at": "2026-08-24T10:32:27.338026",
+      "expected_title": "Decentralizing science: Towards an interoperable open peer review ecosystem using blockchain",
+      "title_match_score": 1.0,
+      "label": "10.1016/j.ipm.2021.102724"
+    },
+    {
+      "status": "verified",
+      "source": "crossref",
+      "identifier": "10.3789/ansi.niso.z39.106-2023",
+      "title": "ANSI/NISO Z39.106-2023, Standard Terminology for Peer Review",
+      "container": null,
+      "published": null,
+      "confidence": 0.95,
+      "_cached_at": "2026-08-24T10:32:27.586852",
+      "expected_title": "ANSI/NISO Z39.106-2023 Standard Terminology for Peer Review",
+      "title_match_score": 1.0,
+      "label": "10.3789/ansi.niso.z39.106-2023"
+    },
+    {
+      "status": "verified",
+      "source": "crossref",
+      "identifier": "10.3233/DS-210053",
+      "title": "Packaging research artefacts with RO-Crate",
+      "container": "Data Science",
+      "published": 2022,
+      "confidence": 0.95,
+      "_cached_at": "2026-08-24T10:32:27.814581",
+      "expected_title": "Packaging research artefacts with RO-Crate",
+      "title_match_score": 1.0,
+      "label": "10.3233/DS-210053"
+    },
+    {
+      "status": "not_found",
+      "source": "crossref",
+      "identifier": "10.5281/zenodo.13751027",
+      "label": "10.5281/zenodo.13751027"
+    }
+  ],
+  "config": {
+    "ads_configured": true,
+    "cache_dir": "<local-cache>/citation_mvf"
+  }
+}

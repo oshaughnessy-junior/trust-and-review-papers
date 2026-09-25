@@ -1,0 +1,15 @@
+{
+  "schema": "trustandreview.restricted-attestation.v0.1",
+  "status": "TEMPLATE_ONLY_NOT_AN_ATTESTATION",
+  "required_fields": [
+    "facility and authorized executor identity",
+    "reviewed conflict and role declaration",
+    "input commitment and access-control policy identifier",
+    "source, container, environment, workflow, and configuration digests",
+    "scheduler, accelerator, storage, wall-clock, and failure/retry records",
+    "named checks with pass/fail outputs",
+    "export-review policy and exported artifact digests",
+    "signature, timestamp, validity interval, and revocation endpoint"
+  ],
+  "prohibited_inference": "Completing this template does not itself establish independent custody, input correctness, calibration validity, or scientific truth."
+}

@@ -1,0 +1,770 @@
+\documentclass[11pt]{article}
+\input{../../latex/common-preamble.tex}
+
+\usepackage{array}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{url}
+\newcommand{\tdrg}{TDRG}
+\newcommand{\mcrp}{MCRP}
+\newcommand{\testid}[1]{\texttt{#1}}
+\newcommand{\roadmap}{\textsf{Roadmap}}
+\newcommand{\verifiedslice}{\textsf{Verified v0.1 slice}}
+
+\title{Plural Trust Without a Global Reviewer Score:\\
+A Conformance Profile and Adversarial Evaluation Plan for Machine-Verifiable Scientific Review}
+\author{Private working draft---authors and contribution record pending}
+\date{24 August 2026}
+
+\begin{document}
+\maketitle
+
+\draftstatus{Protocol/evaluation first draft. The only implementation evidence admitted here is local execution of 11 tests at tooling revision \texttt{9da0cd4}. TM-01--TM-18 are otherwise a roadmap. This draft is not approved for submission or public release.}
+
+\begin{abstract}
+Machine-verifiable scientific records can preserve claims, evidence, workflows,
+and review events, but they do not answer a separate governance question: whose
+review should a particular community solicit or rely upon? A single reviewer
+reputation score collapses topic, capability, policy, time, and relying-party
+context into a common failure domain. We specify the Trust-Domain and
+Review-Governance profile (\tdrg{}), a draft composition of prior mechanisms that
+keeps a shared scientific and review event record separate from community-relative
+routing views. The profile defines typed events, root- and topic-scoped views,
+importer-approved bridges, forkable policy overlays, explicit authority boundaries,
+and evidence-promotion rules. We also define 18 stable conformance and adversarial
+test families and a frozen comparison among five routing arms. A deliberately
+small Python reference artifact currently demonstrates only local-view evaluation,
+event-type exclusion, exact topic and bridge checks, time filtering, root relativity,
+two malformed-input rejections, and a multiaxis reproduction-resource classifier;
+11 unit tests passed in a recorded local rerun. The artifact does not implement
+signatures, uniqueness, Sybil or collusion defenses, case-persona anonymity,
+appeals, fork reconciliation, standards round trips, or comparative attack
+experiments. Conformance is therefore a statement about named behavior in named
+fixtures, not evidence of reviewer competence, anonymity, scientific correctness,
+or social benefit.
+\end{abstract}
+
+\section{Introduction}
+
+Scientific reproducibility and scientific review are related but non-equivalent.
+A reproducibility record can bind a claim to data, code, configuration, environment,
+compute, and validation evidence. It can record who or what executed a workflow and
+which review object challenged a claim. None of those facts, by itself, determines
+which future reviewer is competent, independent, available, or trusted by a given
+community. Conversely, a reviewer-routing system cannot establish that a scientific
+claim is true. Treating either record as a substitute for the other turns
+administrative standing into scientific authority.
+
+Existing work already supplies many of the relevant parts. Repository-centered
+peer review and graph-based reviewer discovery predate the present proposal
+\citep{rodriguez2006convergence}. Fair and randomized reviewer assignment have
+formal and empirical foundations \citep{stelmakh2021peerreview4all,jecmen2020mitigating}.
+Global recursive reputation, root-relative attack-resistant trust, and local trust
+metrics are established ideas \citep{kamvar2003eigentrust,levien1998attack,massa2005controversial}.
+Anonymous credentials and anonymous reputation have also been applied to review or
+reputation settings \citep{naessens2006fair,zhai2016anonrep}. Decentralized open-review
+architectures explicitly address interoperability and governance
+\citep{tenoriofornes2021decentralizing}. The contribution claimed here is therefore
+not invention of these mechanisms.
+
+The narrower problem is compositional. A machine-verifiable scientific record needs
+to remain usable when communities disagree about roots, competency criteria,
+conflicts, privacy policy, or sanctions. It also needs to prevent an evaluation of a
+review from silently becoming a scientific disposition, a conduct finding, or a
+portable score on the reviewer. A protocol must expose the trust assumptions on
+which a local routing view depends, while allowing communities to fork their policy
+without rewriting the underlying scientific and review history.
+
+This paper makes three bounded contributions. First, it defines \tdrg{} as a
+governance and conformance profile over a shared event record and plural policy
+views. Second, it supplies a threat-driven test contract with stable identifiers
+\testid{TM-01}--\testid{TM-18}, including a preregisterable A0--A4 comparative
+design. Third, it records the exact behavior of a small reference implementation
+and separates that evidence from the unimplemented roadmap. The current evidence
+is intentionally modest: 11 local unit tests on a synthetic fixture. The design is
+useful only if its future claims can fail visibly.
+
+The Minimum Credible Reproducibility Protocol (MCRP) core governs the claim/evidence
+scientific record. \tdrg{} is optional and separately versioned; it remains outside
+MCRP core conformance until its privacy, accountability, interoperability, replay,
+and empirical promotion gates pass. Paper~01 maps the literature and cross-layer
+interfaces, Paper~02 owns the formal model and A0--A4 research program, and this
+paper owns the proposed normative exchange objects and conformance contract.
+
+\designchoice{The protocol has no universal actor score and no global
+\texttt{trusted=true}. A view is an artifact produced for a relying party under a
+declared domain version, topic, capability, role, policy, evidence snapshot, and
+time.}
+
+The remainder of the paper first fixes terminology and the novelty boundary,
+then states the threat model and protocol objects. It next distinguishes the
+verified v0.1 implementation slice from the test roadmap, defines conformance and
+comparative evaluation, addresses privacy and standards interoperability, and
+closes with reproducibility obligations and stop rules.
+
+\section{Positioning and novelty boundary}
+
+\subsection{Routing, reputation, and review infrastructure are prior art}
+
+The phrase ``decentralized peer review'' covers several different functions:
+transporting review requests, selecting reviewers, publishing review objects,
+aggregating feedback, rewarding participants, and governing an editorial service.
+\citet{rodriguez2006convergence} described a repository-centric model with review
+metadata and social-network-based reviewer selection. \citet{tenoriofornes2021decentralizing}
+later developed an interoperable decentralized open-review architecture and
+evaluated prototypes and operating costs. These works preclude a broad novelty
+claim based merely on moving review outside a journal or using a graph.
+
+Assignment is also its own mature problem. PeerReview4All optimizes the quality of
+the worst-served paper and studies statistical accuracy under explicit models
+\citep{stelmakh2021peerreview4all}. Randomized assignment can constrain the
+probability of specific reviewer--paper matches and address manipulation and
+assignment-based deanonymization under its model \citep{jecmen2020mitigating}.
+\tdrg{} should consume an appropriate assignment method after eligibility is
+computed; it should not rebrand routing randomization as a trust innovation.
+
+The trust literature gives equally strong warnings against novelty inflation.
+EigenTrust produces a global recursive score using pre-trusted peers
+\citep{kamvar2003eigentrust}. \citet{levien1998attack} analyze root-relative
+certificate-graph trust and a capacity-constrained max-flow construction under
+explicit node- and edge-attack models. \citet{massa2005controversial} compare local
+and global trust for controversial users in a recommender setting. These results
+motivate comparison arms; they do not prove that the same mechanisms improve
+scientific review.
+
+Privacy mechanisms are likewise established. \citet{naessens2006fair} combine
+anonymous credentials, topic-specific reputation, and accountability in a submission
+and review system. AnonRep demonstrates anonymous reputation under an explicit
+multi-provider trust model \citep{zhai2016anonrep}. Consequently, a fresh case
+persona is a protocol choice to be threat-tested, not a claim that anonymous
+reputation is new or solved.
+
+\subsection{Residual contribution}
+
+The proposed residual contribution is a constrained synthesis:
+
+\begin{enumerate}
+  \item scientific and review events remain shared, immutable inputs rather than
+  being duplicated inside a reputation system;
+  \item routing views are relative to declared roots, topics, capabilities,
+  policies, evidence snapshots, and times;
+  \item review evaluation, future reliance, scientific disposition, allegation,
+  and conduct adjudication are distinct event types;
+  \item cross-domain authority requires an explicit, attenuated bridge accepted by
+  the importing domain; and
+  \item governance forks create new overlays without deleting common scientific or
+  review objects.
+\end{enumerate}
+
+This contribution survives only as far as the profile is precise, interoperable,
+and empirically distinguishable from simpler baselines. If A4 does not provide a
+useful frontier over A0--A3, \tdrg{} should be reported as an interoperability
+vocabulary and governance checklist, not promoted as a superior review mechanism.
+
+\section{Terminology and evidence boundary}
+
+We distinguish five properties that are often compressed into ``reproducible.''
+\emph{Rerenderability} rebuilds presentation artifacts from supplied derived data.
+\emph{Computational repeatability} repeats a declared computation with fixed inputs
+and a sufficiently equivalent environment. \emph{Computational reproducibility}
+recovers claim-relevant findings while independently reconstructing a meaningful
+portion of the computational chain. \emph{Independent replication} obtains new
+evidence through an independently implemented or newly observed route.
+\emph{Scientific validity} is the substantive judgment that the inference is
+adequate for its claim. A Makefile can contribute to the first two without reaching
+the latter three.
+
+The same discipline applies to review governance. A \emph{review event} records
+an evaluation of a scientific object. A \emph{reliance event} expresses willingness
+to route work to, supervise, or otherwise rely on an actor under a scope. A
+\emph{scientific disposition} records what a decision process did with a claim. An
+\emph{adverse event} records an allegation or routing precaution. A
+\emph{conduct finding} is the result of an authorized process. These events may
+refer to one another, but one must not be silently manufactured from another.
+
+We use three evidence labels throughout:
+
+\begin{description}
+  \item[\verifiedslice] behavior exercised by a named test in tooling revision
+  \texttt{9da0cd4\ldots} and rerun locally on 24 August 2026;
+  \item[\roadmap] a specified object, test, or comparison without admissible result;
+  \item[open hypothesis] a falsifiable comparative proposition awaiting frozen
+  inputs, execution, uncertainty analysis, and adverse-result reporting.
+\end{description}
+
+\implementationobservation{The v0.1 tooling repository contains a Python
+standard-library evaluator, one documentary JSON Schema, one synthetic
+gravitational-wave-inspired view fixture, a resource-profile classifier, and 11
+unit tests. All 11 tests passed in the local rerun recorded for this draft.}
+
+This observation supports only the precise behaviors listed in
+Section~\ref{sec:implementation}. It does not promote an entire test-matrix row
+merely because one subcase is present.
+
+\section{Requirements and threat model}
+\label{sec:threat}
+
+\subsection{Adversaries and failure domains}
+
+The protocol must be interpretable under malicious, negligent, poorly calibrated,
+coerced, and conflicted behavior. The relevant adversary is not limited to a
+pseudonymous outsider. It may include a credentialed review ring, a captured trust
+root, a line manager pressuring reviewers, a registrar colluding with a publisher,
+an assignment service manipulating exposure, or an evaluator accepting malicious
+input. Staleness and operational failure are also adversarial in effect even when
+no actor is malicious.
+
+Table~\ref{tab:threats} maps representative threats to the property under test and
+the residual claim boundary. ``Trusted operator'' means an actor whose correct or
+non-colluding behavior is assumed for that property; naming it exposes, rather than
+eliminates, the trust boundary.
+
+\begin{table}[H]
+\centering
+\caption{Threat-to-test map. Each row names a residual risk; no row is a claim that
+the current implementation supplies the control.}
+\label{tab:threats}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.19\textwidth} X p{0.16\textwidth} p{0.13\textwidth}}
+\toprule
+Threat & Protected property and assumed boundary & Test family & Residual risk \\
+\midrule
+Sybils and real-person collusion & Scoped influence; honest credential and control metadata & TM-07, TM-08, TM-18 & Colluding real people can pass uniqueness checks \\
+Bad-mouthing and review rings & Typed, nontransitive adverse information; qualified dissent remains visible & TM-04, TM-05, TM-18 & Biased ground truth or captured adjudication \\
+Cross-topic laundering & Importer consent, exact scope, attenuation, expiry & TM-06 & Ontology mismatch and legitimate multidisciplinary exclusion \\
+Captured roots or boards & View binds roots; policy can fork without rewriting records & TM-07, TM-14 & A captured relying party may still choose bad roots \\
+Management pressure & Separation of assignment, opening, conduct, and line authority & TM-12, TM-13 & Informal coercion outside recorded channels \\
+Deanonymization & Declared adversary, measured linkage, claim downgrade & TM-10--TM-12 & Prose, timing, rare attributes, and small pools \\
+Rollback and stale state & Explicit clocks, expiry, version binding, adverse freshness status & TM-15 & Partitions or compromised clock and evaluator sources \\
+Malicious documents & Data cannot acquire policy or execution authority & TM-17 & Parser, model, and tool-chain vulnerabilities \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Security anti-claims}
+
+A signature can bind bytes to a key under a chosen verification procedure. It does
+not establish that the key belongs to one person, that the person is competent or
+independent, that the signed statement is honest, or that the underlying science is
+correct. Similarly, a graph path records a relation under a policy; it does not make
+the endpoint a valid reviewer for every case. These distinctions are conformance
+requirements because otherwise a technically valid artifact can carry an
+epistemically invalid implication.
+
+\begin{evidencegate}[Security and privacy promotion gate]
+No signature, uniqueness, Sybil-resistance, case-persona unlinkability, opening, or
+collusion-resistance result is admissible until a versioned implementation, declared
+operator coalition, attack fixture, and report are available. The current artifact
+contains none of these mechanisms.
+\end{evidencegate}
+
+\section{The \tdrg{} protocol profile}
+\label{sec:protocol}
+
+\subsection{Shared records and local views}
+
+The profile separates two planes. The \emph{record plane} contains scientific
+claims, evidence, execution provenance, reviews, responses, challenges,
+supersessions, and governance events. The \emph{view plane} contains derived,
+recomputable routing or supervision views. A view refers to immutable record-plane
+objects and a frozen policy snapshot; it must not mutate its inputs.
+
+Formally, a local view is represented as
+\begin{equation}
+V(S,d,z,c,r,q,P,E_{\leq\tau},t_{\mathrm{eval}})
+ = F(S,d,z,c,r,q,P,E_{\leq\tau},t_{\mathrm{eval}}),
+\end{equation}
+where $S$ is the relying root set, $d$ is the domain-manifest version, $z$ is the
+topic scope, $c$ is capability, $r$ is review role, $q$ is the case or reliance
+question, $P$ is evaluator policy, $E_{\leq\tau}$ is the frozen typed-event cut,
+and $t_{\mathrm{eval}}$ is the evaluation clock with
+$\tau\leq t_{\mathrm{eval}}$. The distinct cut and clock permit historical replay
+under explicitly selected historical or current freshness and expiry rules. This
+equation is an interface, not a claim that one aggregation function is socially
+optimal.
+
+\designchoice{A conforming view reports every input binding and the policy-defined
+reason that an event was included or excluded. Absence of a path remains
+``unknown'' and must not become adverse evidence.}
+
+\subsection{Versioned domain manifest}
+
+A domain manifest identifies governance parentage, included and excluded topics,
+capabilities, roles, recognized issuers, roots, evaluator and parameters, bridge
+policy, staleness rules, assignment and newcomer policy, authority separation,
+privacy claims, appeals, compensation, and fork/exit conditions. Material policy
+change creates a new version. A mutable landing page is not sufficient because a
+later observer must be able to recover the exact policy under which a view was
+computed.
+
+The manifest does not prove that its controllers are legitimate. It makes the
+controller and claimed boundary inspectable. Independent actors may reject the
+manifest, recognize only part of it, or import nothing.
+
+\subsection{Identity scopes and authority separation}
+
+The draft distinguishes an identity record, a domain account, and a review-case
+persona. The public persona is intended to be fresh for the tuple consisting of
+domain version, scientific-record digest, request, round, role, and policy version.
+Private services may need to detect duplicate participation or process a qualified
+appeal, but routine public linkage across cases is prohibited by design.
+
+This division creates an explicit operator problem. Registrar, eligibility service,
+assignment authority, publisher, reputation custodian, policy evaluator, conduct
+adjudicator, and exceptional-opening trustees are separate roles. Combining roles
+does not automatically make a deployment nonconforming, but the manifest must
+state the combination and downgrade any privacy or independence claim that the
+combination defeats.
+
+\begin{evidencegate}[Persona gate]
+The current implementation has no identity, credential, signature, case-persona,
+duplicate-prevention, opening, or appeal code. This subsection specifies desired
+semantics only; it makes no anonymity claim.
+\end{evidencegate}
+
+\subsection{Typed events and scientific disposition}
+
+At minimum, the event vocabulary distinguishes:
+
+\begin{itemize}
+  \item a review object evaluating a claim, evidence item, workflow, or release;
+  \item an evaluation of that review object;
+  \item a scoped reliance delegation for future routing or supervision;
+  \item a scientific disposition such as accepted, challenged, or unresolved;
+  \item an allegation or precautionary routing event;
+  \item an authorized conduct finding and any later correction; and
+  \item a challenge, appeal, or supersession event.
+\end{itemize}
+
+Policies may read relationships among these types, but a conversion must be an
+explicit, reviewable rule with an issuing authority and appeal path. In particular,
+disagreement with a scientific conclusion cannot automatically produce a conduct
+finding or an identity-opening request.
+
+\subsection{Root-relative views}
+
+The v0.1 prototype uses a deliberately simple reference function: among eligible
+explicit positive trust events it computes the maximum product of edge weight and
+exponential time-decay along paths up to a declared depth. For a path
+$p=(e_1,\ldots,e_k)$ evaluated at time $t$,
+\begin{equation}
+s(p,t)=\prod_{e\in p} w_e\,2^{-\Delta t_e/h}, \qquad
+S_R(x,t)=\max_{p:R\leadsto x}s(p,t),
+\end{equation}
+where $h$ is the declared half-life. The score is local to the root, topic, allowed
+bridges, clock, and input events. Maximum-path semantics were chosen for
+inspectability, not because evidence shows they are the best governance rule.
+
+This prototype rule is neither EigenTrust nor the capacity-constrained max-flow
+metric of \citet{levien1998attack}. Those mechanisms belong in comparison arms.
+The prototype also has no negative-edge propagation because negative standing is
+not implemented at all.
+
+\subsection{Bridges and nested domains}
+
+A bridge is an import authorization, not a declaration of global equivalence. It
+names the exporting domain, importing domain, topic and capability scope,
+attenuation or maximum authority, supervision requirement, issue and expiry time,
+and policy version. The importer must approve it. A parent domain's recognition of
+a child does not automatically export standing upward, downward, or sideways.
+An ordinary bridge may map credential, capability, review-event, and evidence
+vocabularies and may reference an MCRP claim identifier, but it cannot rewrite or
+promote that claim. Scientific dispositions, sanctions, and negative standing do
+not transfer by default; each requires a separately authorized typed-event mapping.
+
+Nested domains have at most one normative governance parent but may recognize many
+peer domains or competency imports. This separates constitutional inheritance from
+multidisciplinary evidence. An exact topic match in the prototype is only a minimal
+mechanism demonstration; production interoperability will require versioned
+ontologies and explicit loss handling.
+
+\subsection{Forks and fission}
+
+A fork creates new roots, policy, and derived views while retaining identifiers for
+the shared scientific and public review record. Private identity mappings, private
+standing, and restricted evidence are not copied without an independent access
+basis and consent. Reconciliation is represented by later recognition or bridge
+events, not by erasing the divergence.
+
+\designchoice{Forkability is a declared dependency-separation mechanism, not a
+demonstrated containment of institutional capture or a guarantee that the
+better-governed branch wins. It separates evaluator inputs only to the extent that
+record identity, export, and independent operation remain available.}
+
+\section{Reference implementation and exact evidence}
+\label{sec:implementation}
+
+\subsection{Artifact boundary}
+
+The inspected prototype is private repository \texttt{trust-and-review-tooling},
+revision \texttt{9da0cd4} (full digest recorded in the claim ledger). It uses the Python
+standard library and contains three relevant components:
+
+\begin{enumerate}
+  \item a manual manifest validator and deterministic local-view evaluator;
+  \item a documentary Draft 2020-12 JSON Schema for the view input; and
+  \item a resource-profile validator/classifier with R0--R3 technical-access
+  burden labels and four downselect modes.
+\end{enumerate}
+
+The JSON Schema is documentary in v0.1; no independent schema-engine validation
+was run. The local command
+\begin{quote}\ttfamily\small
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v
+\end{quote}
+reported 11 tests run and 11 passing on 24 August 2026. The run was fast and uses
+synthetic inputs. It is a local verification observation, not an immutable archival
+release or independent reproduction.
+
+\subsection{Subtest-level coverage}
+
+Table~\ref{tab:implemented} is the complete admitted implementation result. A
+partial mapping to a TM row does not mean the row passed.
+
+\begin{longtable}{p{0.23\textwidth}p{0.17\textwidth}p{0.49\textwidth}}
+\caption{Exact v0.1 test evidence. All observations are scoped to the named unit
+test and revision.}\label{tab:implemented}\\
+\toprule
+Test & Matrix relation & Verified observation \\
+\midrule
+\endfirsthead
+\toprule Test & Matrix relation & Verified observation \\
+\midrule
+\endhead
+\path{test_expected_local_view_and_audit_reasons} & TM-04/06/15 partial & One fixture excludes a review-rating event as non-trust, denies one unapproved bridge, rejects one wrong-topic edge, and excludes one expired and one revoked edge; the expected actors and score ordering are present. \\
+\path{test_bridge_is_importer_approved_and_topic_specific} & TM-06 partial & Removing the allowed bridge removes the bridged specialist from one view. \\
+\path{test_view_is_root_relative} & TM-07 partial & Changing the root changes reachability in one fixture. No frontier-capacity or capture bound is tested. \\
+\path{test_view_is_topic_colored} & TM-06 partial & Changing the exact topic changes included actors in one fixture. \\
+\path{test_future_revocation_does_not_apply} & TM-15 partial & A revocation issued after the view clock does not remove its target in one fixture. \\
+\path{test_output_is_deterministic_under_event_reordering} & TM-02 partial & Reversing event input order yields equal Python result objects in one process and fixture. This is not a cross-platform byte-identity result. \\
+\path{test_malformed_and_negative_weight_are_rejected} & TM-01/17 partial & One negative weight raises \texttt{ProtocolError}. No document or agent prompt-injection path is tested. \\
+\path{test_duplicate_event_ids_are_rejected} & TM-01/17 partial & One duplicate event identifier raises \texttt{ProtocolError}. \\
+\path{test_hpc_profile_preserves_axes_and_labels_burden} & Reproducibility profile & One synthetic profile is classified R2; human-expert hours remain visible; a downselect is not labeled full reproduction. \\
+\path{test_nonfull_mode_must_declare_excluded_claims} & Result promotion & One non-full mode with an empty excluded-claims list raises \texttt{ProtocolError}. \\
+\path{test_portable_profile_is_level_zero} & Reproducibility profile & One modified lightweight profile is classified R0. \\
+\bottomrule
+\end{longtable}
+
+\subsection{What the result does not support}
+
+The current artifact does not supply or test: cryptographic signatures or
+attestations; personhood or uniqueness; Sybil or collusion resistance; negative
+edge containment; capacity bounds; control diversity; fair assignment; workload or
+newcomer policy; case personas; anonymity or confidentiality measurement;
+authority-collusion constraints; appeals or opening; forks or reconciliation;
+standards projections; stale-evaluator rollback; sandboxing of malicious documents;
+or A0--A4 experiments. It also does not validate a scientific claim or demonstrate
+field efficacy. These omissions are not failed tests; they are absent mechanisms.
+
+\begin{evidencegate}[Archival result gate]
+Before the local observation becomes an archival implementation claim, create a
+tagged release that binds protocol and schema digests, code revision, environment,
+fixture set, clock, command, platform, test output, and artifact digest. Independent
+rerun and license review remain required.
+\end{evidencegate}
+
+\section{Conformance and adversarial test contract}
+\label{sec:tests}
+
+Conformance is a tuple, not a badge:
+\begin{equation}
+C=(v_{protocol},v_{schema},v_{code},E,P,t,H,T,O),
+\end{equation}
+where $E$ is the frozen event set, $P$ the policy, $t$ the clock, $H$ the execution
+environment and hardware class, $T$ the named tests, and $O$ their outputs. A claim
+must point to the exact tuple and list exclusions.
+
+Table~\ref{tab:matrix} defines stable test-family semantics. Rows may be split into
+subtests but not silently redefined. Except for the explicit partial mappings in
+Table~\ref{tab:implemented}, all entries are roadmap items.
+
+\begin{longtable}{p{0.10\textwidth}p{0.27\textwidth}p{0.53\textwidth}}
+\caption{TDRG conformance and adversarial roadmap.}\label{tab:matrix}\\
+\toprule ID & Property & Minimum passing evidence \\
+\midrule
+\endfirsthead
+\toprule ID & Property & Minimum passing evidence \\
+\midrule
+\endhead
+TM-01 & Object/schema conformance & Valid objects accepted and minimally mutated invalid objects rejected with stable reasons for every normative type. \\
+TM-02 & Deterministic replay & Frozen inputs repeated in clean environments produce canonical byte-identical output or a documented semantic digest equivalence. \\
+TM-03 & Policy sensitivity & Changing exactly one declared policy input produces an attributable and explainable delta. \\
+TM-04 & Event-type separation & Votes, review evaluations, dispositions, allegations, and findings cannot undergo forbidden automatic conversion. \\
+TM-05 & Negative-edge containment & Adverse events do not propagate transitively or create enemy-of-enemy positive trust. \\
+TM-06 & Topic/capability isolation & Transfer occurs only through accepted, unexpired, attenuated bridges with declared supervision. \\
+TM-07 & Root relativity/frontier bounds & Outputs bind roots and malicious influence respects the declared capacity rule. \\
+TM-08 & Control diversity & Employer, supervisor, funding, and infrastructure control are reported separately from graph-path diversity. \\
+TM-09 & Fair routing/newcomers & Workload and newcomer policy are enforced without deterministic top-rank selection. \\
+TM-10 & Case persona/replay & Cases use distinct public personas, preserve allowed within-case continuity, and reject duplicates. \\
+TM-11 & Anonymity downgrade & Declared linkage attacks are measured and the claim downgrades when its threshold is missed. \\
+TM-12 & Authority collusion & Capability and privacy loss under named operator coalitions match the manifest. \\
+TM-13 & Appeals/opening & Appeals preserve the required privacy, corrections append, and unauthorized opening is rejected. \\
+TM-14 & Fork/bridge governance & Shared identifiers survive policy divergence; private state is not copied without authority. \\
+TM-15 & Staleness/rollback & Expiry, revocation delay, partitions, clocks, and old evaluators produce distinct, declared statuses. \\
+TM-16 & Standards projection & Export/reimport preserves identity and claim scope, challenges, supersession, and policy meaning. \\
+TM-17 & Agent-input safety & Untrusted content remains data and cannot change policy or execution authority in the declared environment. \\
+TM-18 & A0--A4 comparison & Matched synthetic scenarios produce a complete bundle including uncertainty, subgroups, cost, and adverse outcomes. \\
+\bottomrule
+\end{longtable}
+
+Passing TM-01--TM-17 would establish only tested implementation behavior for a
+release and fixture set. TM-18 could support synthetic comparative claims. Neither
+establishes benefit in an independently governed community or validity of any
+reviewed science.
+
+\section{Comparative evaluation}
+\label{sec:evaluation}
+
+\subsection{Frozen arms}
+
+The comparison must hold actors, cases, planted defects, harmless deviations, false
+alarms, unresolved disputes, event order, and adjudications fixed across arms. Once
+an arm determines eligibility, the same fair or randomized assignment procedure
+should be used so that assignment quality is not misattributed to the trust model.
+
+\begin{table}[H]
+\centering
+\caption{A0--A4 routing arms. These are preregistration definitions, not implemented
+comparisons.}
+\label{tab:arms}
+\small
+\begin{tabularx}{\textwidth}{p{0.08\textwidth}p{0.32\textwidth}X}
+\toprule Arm & Mechanism & Interpretive purpose \\
+\midrule
+A0 & Eligibility plus uniform random routing & Non-reputation baseline \\
+A1 & Raw feedback average or vote count & Deliberately weak popularity baseline \\
+A2 & Global EigenTrust/PageRank-like recursive score & Global recursive baseline \\
+A3 & Topic-scoped personalized restart walk & Root-relative local baseline \\
+A4 & A3 with frontier-capacity bounds, then control-diversity, workload, and newcomer constraints & Full proposed routing composition \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Implementations of A2--A4 must be published precisely enough that an observed
+difference is not an artifact of unequal tuning. A2 should be faithful to a named
+global recursive method; A4's capacity component should state how it relates to,
+and differs from, established max-flow trust models
+\citep{kamvar2003eigentrust,levien1998attack}. The assignment layer should be
+separately identified \citep{stelmakh2021peerreview4all,jecmen2020mitigating}.
+
+\subsection{Scenarios and outcome measures}
+
+The synthetic population should include overlapping topic layers, a
+multidisciplinary case, sparse specialties, newcomers, narrow experts, calibrated
+reviewers, sincere but systematically mistaken reviewers, qualified dissenters,
+Sybils, coordinated credentialed humans, shared-control clusters, honest and
+captured roots, and operator capture. Attack intensity, graph sparsity, bridge
+coverage, and outcome delay should be varied on a frozen grid.
+
+Primary outcomes are capture radius; false eligibility and exclusion; confirmed
+material-defect yield per reviewer-hour; survival of qualified dissent; cross-topic
+leakage; control concentration; newcomer wait and supervision burden; appeal and
+correction outcomes; measured persona linkage; deterministic replay; fork
+localization; and the multiaxis resource vector. Distributions and topic,
+newcomer, and minority-view subgroups are mandatory because a global average can
+hide capture of a small specialty.
+
+\subsection{Open hypotheses and promotion rules}
+
+\openhypothesis{H1: A3 and A4 reduce capture radius relative to A2 when malicious
+influence enters through a bounded frontier.}
+
+\openhypothesis{H2: A4 reduces dense-ring capture relative to A3, with a measurable
+coverage cost in sparse domains.}
+
+\openhypothesis{H3: explicit topic/capability scoping and importer-approved bridges
+reduce cross-topic false eligibility relative to A2 without unacceptable loss of
+legitimate multidisciplinary coverage.}
+
+\openhypothesis{H4: delayed typed outcomes preserve qualified dissent better than
+standing derived from raw votes.}
+
+\openhypothesis{H5: forked overlays localize a captured root or policy while
+preserving common record identifiers.}
+
+\openhypothesis{H6: brokered per-case personas enforce case-scoped duplicate limits
+and private appeals, while declared linkage attacks force privacy-claim downgrade in
+some regimes.}
+
+Before outcome inspection, freeze the data-generating process, seed count and its
+precision rationale, primary contrasts, multiplicity handling, subgroup harm bounds,
+privacy thresholds, failed-run treatment, sensitivity grid, and stop rules. A
+hypothesis becomes a result only when the immutable report contains the complete
+planned analysis, including null and adverse findings. A synthetic result remains
+synthetic.
+
+\begin{evidencegate}[Comparative-result gate]
+No A0--A4 code, dataset, seed manifest, or report was present in the inspected v0.1
+artifact. This draft therefore contains no comparative result prose.
+\end{evidencegate}
+
+\section{Privacy, accountability, and governance limits}
+
+Anonymity is never an unqualified field in the profile. A privacy claim must name
+the protected linkage, adversary, operator coalition, auxiliary information,
+minimum effective set, attack suite, measurement, and expiry. Timing, rare
+attributes, graph topology, prose stylometry, and small pools can defeat a system
+whose cryptographic identifiers are otherwise fresh. The correct output under a
+failed threshold may be ``confidential under named operators,'' not ``anonymous.''
+
+Accountability creates a second boundary. Duplicate prevention, qualified appeals,
+and exceptional opening can require private linkage or credentials. The protocol
+therefore specifies narrow purposes and separated roles rather than claiming that
+accountability and anonymity coexist automatically. Routine management curiosity,
+scientific disagreement, criticism of a senior actor, or an unadjudicated allegation
+must not be an opening cause. Corrective events append to history; they do not erase
+the original allegation or finding.
+
+Prior anonymous review and reputation systems demonstrate that sophisticated
+privacy mechanisms are possible under explicit assumptions
+\citep{naessens2006fair,zhai2016anonrep}. \tdrg{} does not reproduce those
+mechanisms. A later implementation must either adopt and analyze a suitable
+credential/accountability construction or narrow its claim to ordinary
+confidentiality. Privacy review must be external to the drafting and implementation
+team before a participant pilot.
+
+The graph also cannot regulate actors by itself. Roots, policy authorities,
+registrars, evaluators, and appeals bodies are governed institutions. Their funding,
+control, conflicts, and replacement procedures belong in the manifest. A local
+view can help communities separate from a captured or incompatible domain, but it
+cannot make governance costless or guarantee that actors select a trustworthy fork.
+
+\section{Standards interoperability}
+
+\tdrg{} is not a replacement scholarly metadata universe. NISO Z39.106-2023
+standardizes terminology for peer-review practices \citep{niso2023peerreview}.
+COAR Notify defines interoperable notifications between repositories and review
+services using Web protocols and JSON-LD patterns \citep{coar2024notify}.
+DocMaps provides machine-readable descriptions of editorial and review processes
+\citep{docmaps2021framework}. Crossref accepts metadata for peer-review objects and
+relations such as \texttt{isReviewOf} \citep{crossref2026peerreview}. These
+infrastructures cover terminology, transport, event description, and registration;
+\tdrg{} should profile them rather than duplicate them.
+
+The scientific-record side can reuse general provenance and research-object
+standards. PROV-O represents entities, activities, agents, and their provenance
+relations for interchange \citep{lebo2013provo}. RO-Crate packages research
+artifacts and contextual metadata, including workflows and provenance
+\citep{soilandreyes2022rocrate,rocrate2025spec}. These representations do not by
+themselves encode the entire trust-domain policy, but they provide established
+substrates for artifact identity and lineage.
+
+The normative interoperability requirement is semantic preservation. A projection
+must state its source and target versions, extension fields, access restrictions,
+and loss boundary. Round-trip fixtures should compare identity scope, claim scope,
+review target, challenge and supersession links, and policy meaning. If a public
+standard cannot carry a private field, the projection should retain a commitment or
+access-class marker rather than disclose the field or silently drop its significance.
+
+\begin{evidencegate}[Interoperability gate]
+The v0.1 tooling has no COAR Notify, DocMaps, Crossref, NISO, PROV-O, or RO-Crate
+projection and no round-trip fixture. TM-16 is wholly unimplemented.
+\end{evidencegate}
+
+\section{Reproducibility and release contract}
+\label{sec:repro}
+
+The protocol should be evaluated under the same machine-verifiable record discipline
+that it asks of scientific papers. Each result bundle must bind protocol and schema
+versions, code revision, environment, configuration, seed stream, input snapshot,
+clock, platform, resource vector, command, outputs, test status, and reviewer
+sign-off. Public artifacts should have immutable identifiers when permitted;
+restricted artifacts should disclose identity commitments, access class, and the
+procedure by which an authorized reviewer can inspect them.
+
+\subsection{Multiaxis resources and downselect modes}
+
+Technical burden is represented by R0--R3 for convenience, but the canonical
+ten-axis resource vector is authoritative: compute, storage, access, platform,
+wall time, human intelligence, agent intelligence, operational support, monetary
+or allocative cost, and freshness. Implementations may retain finer subfields such
+as memory, CPU versus accelerator time, working versus archival storage, required
+roles, and scheduler/facility dependence. Intelligence is therefore a declared
+resource rather than an invisible free input, and no additive or fungible scale is
+assumed.
+
+R0 denotes documented operation with contemporary portable tools on lightweight
+compute and no specialty scheduler. R1 permits a larger workstation or local
+accelerator. R2 requires managed HPC, a specialty scheduler, substantial accelerator
+use, or comparable support. R3 includes restricted facilities/data, facility-specific
+services, or prohibitive working storage. These labels describe access burden, not
+scientific quality.
+
+The canonical assessment modes are full execution, bounded recomputation, digest
+audit, restricted-platform witnessed attestation, frozen-output inspection, and an
+independent evidence path. Witnessed execution and bounded recomputation remain
+distinct because custody and inferential scope differ. Every non-full mode must map
+included and excluded claims and expose the applicable generator code, input
+identities, versions, scientific invariants, sampling rules, attestations, and
+residual trust boundaries. A digested product is assessable only within that scope.
+No assessment mode is itself an epistemic achievement, and a digest audit must
+never be relabeled as full execution or scientific reproduction.
+
+\subsection{Freshness and adverse status}
+
+Every external standard, dependency, credential, data service, and environment has
+a freshness date and review cadence. Scheduled reruns should record dependency
+drift even when results remain stable. If later execution fails, the original report
+remains in history and a visible adverse-status or supersession event records the
+failure, triage, affected claims, and recovery status. Silent replacement destroys
+the audit trail needed to understand staleness.
+
+The current local 11-test run is R0-like in execution burden, but it is not yet an
+archival reproduction package: it lacks an immutable release identifier, independent
+rerun, finalized licensing, and a signed or otherwise registered attestation. This
+sentence is a limitation, not a request to infer those properties from Git history.
+
+\section{Discussion and stop rules}
+
+The protocol's central wager is that a common record and plural reliance views can
+coexist. This structure may reduce the blast radius of a captured policy because an
+independent community can recompute from different roots or fork its overlay. It may
+also make disagreements legible: two domains can share every review object while
+declaring different routing and reliance rules. Those are design affordances, not
+measured social outcomes.
+
+The costs are substantial. Fine-grained domains may become sparse; bridge governance
+may delay multidisciplinary work; privacy services and appeals require trustworthy
+operators; control metadata can itself be sensitive; and aggressive attack defenses
+may exclude newcomers or minority specialties. Human and agent intelligence,
+governance labor, restricted access, and HPC support must be included in the cost
+comparison. A technically elegant graph that cannot be operated or appealed is not
+a credible governance mechanism.
+
+Promotion should stop if policy replay is not deterministic from frozen inputs; a
+review vote or scientific disagreement can automatically sanction an actor; authority
+crosses topics without importer consent; ordinary operators can violate the declared
+persona boundary; forks destroy shared record identity; or newcomer/minority false
+exclusion exceeds frozen limits. Promotion should also stop if A4 is not materially
+better than a simpler arm after accounting for coverage, privacy, and operational
+cost. In that case, the useful product is the event vocabulary, conformance report,
+and interoperability profile.
+
+The current implementation passes a much smaller test: it makes a local-view rule
+inspectable and exercises 11 bounded behaviors. That is enough to prevent the paper
+from remaining wholly architectural, but not enough to claim security, anonymity,
+fairness, attack resistance, governance quality, or scientific validity. The next
+credible artifact is not stronger prose. It is a versioned conformance release with
+subtest coverage and an adversarial evaluation frozen before outcome inspection.
+
+\section{Conclusion}
+
+Machine-verifiable scientific review needs both durable records and governed actors.
+\tdrg{} proposes to connect them without collapsing all communities, topics, and
+times into one reviewer score. It specifies shared typed events, local rooted views,
+explicit bridges, forkable overlays, authority boundaries, and strict promotion
+rules. Prior work supplies most component mechanisms; the research question is
+whether their constrained composition produces a useful and testable governance
+boundary.
+
+The bounded v0.1 evidence establishes only that 11 unit tests pass for one private
+revision and its synthetic fixtures. Everything else in TM-01--TM-18 remains a
+roadmap unless and until a named artifact passes a named gate. This separation is
+the protocol's most important present result: machine checks can make claims more
+traceable, but they cannot automate the scientific and institutional judgment that
+gives review its meaning.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

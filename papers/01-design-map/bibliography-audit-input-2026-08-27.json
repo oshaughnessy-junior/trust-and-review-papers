@@ -1,0 +1,13 @@
+[
+  {
+    "n": 1,
+    "title": "Data release for event GW150914",
+    "authors": ["LIGO Scientific Collaboration"],
+    "year": "2016",
+    "doi": "10.7935/K5MW2F23",
+    "venue": "Gravitational Wave Open Science Center",
+    "url": "https://gwosc.org/eventapi/html/O1_O2-Preliminary/GW150914/v2/",
+    "kind": "dataset",
+    "raw": "LIGO Scientific Collaboration. Data release for event GW150914. Gravitational Wave Open Science Center, 2016. doi:10.7935/K5MW2F23."
+  }
+]

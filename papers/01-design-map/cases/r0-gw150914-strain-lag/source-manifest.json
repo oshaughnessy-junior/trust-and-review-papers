@@ -1,0 +1,36 @@
+{
+  "schema": "trustandreview.source-manifest.v0.1",
+  "publisher": "Gravitational Wave Open Science Center",
+  "event_version": "GW150914-v2",
+  "release": "O1_O2-Preliminary",
+  "documentation_doi": "10.7935/K5MW2F23",
+  "event_page": "https://gwosc.org/eventapi/html/O1_O2-Preliminary/GW150914/v2/",
+  "retrieved_at": "2026-08-27T09:20:00-04:00",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "version_note": "GWOSC states that v2 corrects a phase error in the 4 kHz files in the previous release.",
+  "sources": [
+    {
+      "detector": "H1",
+      "filename": "H-H1_LOSC_4_V2-1126259446-32.hdf5",
+      "url": "https://gwosc.org/eventapi/json/O1_O2-Preliminary/GW150914/v2/H-H1_LOSC_4_V2-1126259446-32.hdf5",
+      "sha256": "6e6976e932074a3b4e4a398ed02c62e30fcaa2781811762caea04937133583f6",
+      "bytes": 1040592,
+      "sampling_rate_hz": 4096,
+      "duration_seconds": 32,
+      "gps_start": 1126259446
+    },
+    {
+      "detector": "L1",
+      "filename": "L-L1_LOSC_4_V2-1126259446-32.hdf5",
+      "url": "https://gwosc.org/eventapi/json/O1_O2-Preliminary/GW150914/v2/L-L1_LOSC_4_V2-1126259446-32.hdf5",
+      "sha256": "56706e68c811b15548f1d7ed69d7c48d5fcc62aeb21fbaf131355f3cc5c07189",
+      "bytes": 1007420,
+      "sampling_rate_hz": 4096,
+      "duration_seconds": 32,
+      "gps_start": 1126259446
+    }
+  ],
+  "identity_note": "The v2 identity, filenames, sizes, and SHA-256 digests are checked before HDF5 ingestion. No live service is consulted during replay.",
+  "provenance_boundary": "GWOSC calibration, quality masks, event curation, HDF5 construction, and upstream scientific review are accepted external boundaries."
+}

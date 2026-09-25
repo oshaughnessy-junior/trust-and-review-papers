@@ -1,0 +1,9 @@
+[
+  {"type": "doi", "id": "10.1177/0165551506062327", "expected_title": "The Convergence of Digital Libraries and the Peer-Review Process"},
+  {"type": "doi", "id": "10.1145/775152.775242", "expected_title": "The EigenTrust Algorithm for Reputation Management in P2P Networks"},
+  {"type": "doi", "id": "10.1007/11909033_5", "expected_title": "A Fair Anonymous Submission and Review System"},
+  {"type": "doi", "id": "10.1016/j.ipm.2021.102724", "expected_title": "Decentralizing science: Towards an interoperable open peer review ecosystem using blockchain"},
+  {"type": "doi", "id": "10.3789/ansi.niso.z39.106-2023", "expected_title": "ANSI/NISO Z39.106-2023 Standard Terminology for Peer Review"},
+  {"type": "doi", "id": "10.3233/DS-210053", "expected_title": "Packaging research artefacts with RO-Crate"},
+  {"type": "doi", "id": "10.5281/zenodo.13751027", "expected_title": "RO-Crate Metadata Specification 1.2"}
+]

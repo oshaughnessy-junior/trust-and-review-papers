@@ -1,0 +1,33 @@
+{
+  "schema": "trustandreview.packet-index.v0.1",
+  "case_id": "r0-gw150914-v2-strain-lag-v0.1-rc1",
+  "archive_status": "UNMINTED",
+  "generated_on": "2026-08-29",
+  "identity_note": "This index excludes itself. Source and artifact content digests bind this release candidate; containing Git commits identify packet versions, and replay reports name the audited commit. An approved archival identifier remains pending.",
+  "entries": [
+    {"path": "Makefile", "sha256": "f8db80c2ae0884784b309cd645b20dc5556048adc9f584bfa9d82c13d0b236b8"},
+    {"path": "README.md", "sha256": "8c7f46365b625fba92b41cd34ecf43195628e5d2083b24f6a9304b7347039d22"},
+    {"path": "artifacts/derived/lag-correlation.csv", "sha256": "1dc76a3b3ffb8c36fea2c6614c7b831acfba6b3910e8e49563d01b52b41ac10d"},
+    {"path": "artifacts/evidence/claim-evidence.json", "sha256": "5f7de7a9a89bbfe3f4f506b0487ade1d539a161278d511cbf1ac16a861664c1f"},
+    {"path": "artifacts/evidence/negative-tests.json", "sha256": "2203ea20a1cf99bd90953eabbf33c0479f55c2c38b6622b1bfe7091add142eef"},
+    {"path": "artifacts/intermediate/preprocessing-summary.json", "sha256": "ba5b71a8672026ff9db71fadb2cb64ae8dfa1297183b2957267e67d88c555562"},
+    {"path": "artifacts/provenance/resource-declaration.json", "sha256": "88f1e01f6c996dbbec635432e68485d51ebe50bf8e541e4bccc67b1e0252e862"},
+    {"path": "artifacts/provenance/run-record.json", "sha256": "72f4b9b86059f68cf0d5cdce28fdf8a60a9463848f4498a4c71acfed61859b8f"},
+    {"path": "claim-manifest.json", "sha256": "8dad3338321e81859c27668ef6527bfc51b1141f9878dbbda6779dcfb07ef6a5"},
+    {"path": "data/raw/H-H1_LOSC_4_V2-1126259446-32.hdf5", "sha256": "6e6976e932074a3b4e4a398ed02c62e30fcaa2781811762caea04937133583f6"},
+    {"path": "data/raw/L-L1_LOSC_4_V2-1126259446-32.hdf5", "sha256": "56706e68c811b15548f1d7ed69d7c48d5fcc62aeb21fbaf131355f3cc5c07189"},
+    {"path": "independent-replay-report.json", "sha256": "1662c8dd4d053a70857c41cbbfae4f5b224a013eebecc5e4c50e8b60d818b3f2"},
+    {"path": "lifecycle-events.json", "sha256": "394a9e5ccf5f1bece4821fd907a909a1178f344aef4b7378d6117a7082efe8a3"},
+    {"path": "pixi.lock", "sha256": "0dab6c042b55f185b39b5c578a9b3a9cc4bc4dde865b48d9bce666b969065b48"},
+    {"path": "pixi.toml", "sha256": "ed216d6fbb1c36bb9801be62566af25fa17f751140de0460f6f5e3e8b959aa4b"},
+    {"path": "review-checklist.md", "sha256": "248d8ef647317feb170d832e7416f636aa58f1aa94879ddc099757b62bbfdcbc"},
+    {"path": "review-signoff.json", "sha256": "7ecd9e603a8ddbc1fc45748ff23c9e29ae3979196cf639bf4b48a2a7b9515b15"},
+    {"path": "run_case.py", "sha256": "7846f6e3fc50dbf2c5529124b305e4939cf57f57e9b148092e7a8579977f2565"},
+    {"path": "scientific-review-completed-2026-08-29.md", "sha256": "411fedb650c644ce9af1fb4840f0e0dfe80425979042027c7013e647440a6b10"},
+    {"path": "scientific-review-dossier.json", "sha256": "5af8d8d6bd4cc466fdf7bb0ddf0acb750bbf328bbfe68b354fb94847a9de9b77"},
+    {"path": "scientific-review-form.md", "sha256": "f4a26c4ff19078ec9088427e1dadc542a79b9f9fee98cb19a6584043189c10a5"},
+    {"path": "source-manifest.json", "sha256": "327ce26cf627acc79bfeb498a2dff79e90584b60d6dc6e2eb94f5a48cafcda70"},
+    {"path": "test_case.py", "sha256": "bcc1567413f01ba81c2cce590399bbc9d4ba96812b102a2d219d757184e96188"},
+    {"path": "trust-boundaries.json", "sha256": "c135fc7230694446c9d7645607fc29fe59df745d2a637ebfdc520f3a1a5dff35"}
+  ]
+}

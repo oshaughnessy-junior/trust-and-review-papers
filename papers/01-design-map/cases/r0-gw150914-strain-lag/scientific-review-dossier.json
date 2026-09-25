@@ -1,0 +1,179 @@
+{
+  "schema": "trustandreview.scientific-review-dossier.v0.1",
+  "case_id": "r0-gw150914-v2-strain-lag-v0.1-rc1",
+  "prepared_on": "2026-08-29",
+  "purpose": "Prepare a qualified gravitational-wave reviewer to make bounded scientific judgments without treating machine checks as scientific validation.",
+  "review_status": "human-reviewed",
+  "human_disposition": {
+    "status": "accepted",
+    "reviewer": "R. O'Shaughnessy",
+    "recorded_by": "Codex (OpenAI), on behalf of R. O'Shaughnessy",
+    "review_target_commit": "2495989a78a66fd286a154f6b9735e87cf782b42",
+    "date": "2026-08-29",
+    "completed_review": "scientific-review-completed-2026-08-29.md",
+    "rationale_provenance": "Blanket human approval supplied in the current thread; no separate itemized rationale was supplied or inferred."
+  },
+  "sources": [
+    {
+      "id": "SRC-GW150914-DISCOVERY",
+      "type": "primary-paper",
+      "title": "Observation of Gravitational Waves from a Binary Black Hole Merger",
+      "authors": "B. P. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration)",
+      "year": 2016,
+      "doi": "10.1103/PhysRevLett.116.061102",
+      "locator": "Figure 1 caption and observation text",
+      "supports": [
+        "The published visualization uses a 35-350 Hz bandpass plus line-rejection filters.",
+        "GW150914 is visible over approximately 0.2 s, increasing from about 35 to 150 Hz.",
+        "The observed L1-to-H1 delay is approximately 6.9 ms and occurs within the 10 ms intersite propagation time.",
+        "The published visual alignment shifts and inverts one detector because of relative detector orientations."
+      ],
+      "does_not_support": "It does not validate this packet's bandpass-only, unwhitened, unnotched correlation statistic, exact 820-sample window, 0.30 threshold, or use of the maximum absolute correlation."
+    },
+    {
+      "id": "SRC-GWOSC-V2",
+      "type": "official-dataset-release",
+      "title": "Data Release for Event GW150914",
+      "authors": "LIGO Scientific Collaboration",
+      "year": 2016,
+      "doi": "10.7935/K5MW2F23",
+      "url": "https://gwosc.org/eventapi/html/O1_O2-Preliminary/GW150914/v2/",
+      "locator": "Version 2 event page and 4096 Hz H1/L1 strain files",
+      "supports": [
+        "Dataset identity, event time, public access, and CC BY 4.0 status.",
+        "Version 2 corrects a phase error in the earlier 4 kHz files."
+      ],
+      "does_not_support": "The release does not independently validate the local processing choices or result."
+    },
+    {
+      "id": "SRC-GWOSC-QUALITY",
+      "type": "official-documentation",
+      "title": "Technical details for Advanced LIGO and Virgo event data releases",
+      "authors": "Gravitational Wave Open Science Center",
+      "year": null,
+      "url": "https://gwosc.org/techdetails/",
+      "accessed": "2026-08-29",
+      "locator": "Data quality for event data release; Injections for the event data releases",
+      "supports": [
+        "DATA records availability; CAT1, CAT2, and CAT3 identify increasingly broader categories of known data-quality concern.",
+        "A set injection bit means that the named class of hardware injection is absent."
+      ],
+      "does_not_support": "Passing the public bit fields is not a fresh detector-characterization investigation, calibration audit, or proof that no unmodeled noise is present."
+    },
+    {
+      "id": "SRC-O1-QUALITY",
+      "type": "official-documentation",
+      "title": "The O1 Data Release",
+      "authors": "Gravitational Wave Open Science Center",
+      "year": null,
+      "url": "https://gwosc.org/O1/",
+      "accessed": "2026-08-29",
+      "locator": "Data Quality section",
+      "supports": [
+        "Quality categories are analysis-group specific and cumulative within a group.",
+        "GWOSC identifies DATA, CBC_CAT1, and CBC_CAT2 as the general floor for binary-black-hole search use."
+      ],
+      "does_not_support": "It does not establish that this case's combined CBC and burst flag policy is uniquely correct for a correlation demonstration."
+    },
+    {
+      "id": "SRC-LVC-DATA-GUIDE",
+      "type": "primary-paper",
+      "title": "A guide to LIGO-Virgo detector noise and extraction of transient gravitational-wave signals",
+      "authors": "B. P. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration)",
+      "year": 2020,
+      "doi": "10.1088/1361-6382/ab685e",
+      "locator": "Section 4; Section 10.2, Equation 32 and Figures 18-19",
+      "supports": [
+        "An LVC worked visualization uses a zero-phase eighth-order 35-350 Hz Butterworth bandpass after windowing and whitening, and explicitly limits that narrow bandpass to visualization rather than parameter estimation.",
+        "GW150914 correlation results depend materially on the chosen bandpass and time window; the paper compares 0.2 s, 0.1 s, and 0.04 s windows and records an anti-correlation near the expected delay under its convention.",
+        "Correlation timing is a bounded consistency diagnostic and requires a specified statistic, background, and broader detector-validation context for stronger inference."
+      ],
+      "does_not_support": "It does not validate this packet's fourth-order direct-to-strain filter, omission of whitening/window taper/notches, exact window centering, maximum-absolute-correlation rule, or 0.30 threshold."
+    },
+    {
+      "id": "SRC-GW150914-NOISE",
+      "type": "primary-paper",
+      "title": "Characterization of transient noise in Advanced LIGO relevant to gravitational wave signal GW150914",
+      "authors": "B. P. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration)",
+      "year": 2016,
+      "doi": "10.1088/0264-9381/33/13/134001",
+      "locator": "Sections 5.2 and 6",
+      "supports": [
+        "Data-quality vetoes are search- and detector-specific and materially affect transient backgrounds.",
+        "The published scientific assessment used detector-characterization and environmental checks beyond public event-time flags."
+      ],
+      "does_not_support": "The packet does not reproduce those background, environmental, or detector-characterization studies."
+    }
+  ],
+  "machine_observations": [
+    {
+      "id": "OBS-01",
+      "statement": "The exact registered GWOSC-v2 H1 and L1 files pass content, version, geometry, and finite-value checks.",
+      "evidence": ["source-manifest.json", "artifacts/provenance/run-record.json"]
+    },
+    {
+      "id": "OBS-02",
+      "statement": "At the selected event second, DATA, CBC_CAT1, CBC_CAT2, BURST_CAT1, and BURST_CAT2 are set and NO_CBC_HW_INJ and NO_BURST_HW_INJ are set for both detectors.",
+      "evidence": ["artifacts/intermediate/preprocessing-summary.json", "test_case.py"]
+    },
+    {
+      "id": "OBS-03",
+      "statement": "The registered 35-350 Hz fourth-order forward-backward Butterworth path and 820-sample window recover lag 5.37109375 ms and correlation -0.400196295324 by maximizing absolute normalized correlation.",
+      "evidence": ["claim-manifest.json", "artifacts/evidence/claim-evidence.json", "artifacts/derived/lag-correlation.csv"]
+    },
+    {
+      "id": "OBS-04",
+      "statement": "A zero-padded +25 ms L1-window shift produces an absolute lag of 19.53125 ms and fails the registered 10 ms necessary-bound decision.",
+      "evidence": ["artifacts/evidence/negative-tests.json"]
+    }
+  ],
+  "required_human_determinations": [
+    {
+      "id": "HD-01",
+      "question": "Is the 35-350 Hz forward-backward Butterworth filter, without whitening or notch filters, acceptable for this bounded demonstration, and are its differences from the published visualization sufficiently explicit?",
+      "machine_answer_prohibited": true,
+      "allowed_dispositions": ["accept", "accept-with-required-change", "reject"]
+    },
+    {
+      "id": "HD-02",
+      "question": "Is the exact 820-sample window centered at GPS 1126259462.4 an adequate and non-misleading choice for this bounded lag demonstration?",
+      "machine_answer_prohibited": true,
+      "allowed_dispositions": ["accept", "accept-with-required-change", "reject"]
+    },
+    {
+      "id": "HD-03",
+      "question": "Does the event-time DATA/CBC/BURST and transient-injection policy support only the stated preprocessing scope, with detector characterization and calibration still accepted externally?",
+      "machine_answer_prohibited": true,
+      "allowed_dispositions": ["accept", "accept-with-required-change", "reject"]
+    },
+    {
+      "id": "HD-04",
+      "question": "Are lag sign, detector-orientation inversion, and maximum-absolute-correlation conventions disclosed well enough to prevent the negative correlation from being overinterpreted?",
+      "machine_answer_prohibited": true,
+      "allowed_dispositions": ["accept", "accept-with-required-change", "reject"]
+    },
+    {
+      "id": "HD-05",
+      "question": "Is 10 ms used strictly as a necessary geometric bound rather than evidence of astrophysical origin, and is the 0.30 correlation floor correctly labeled as a registered local threshold rather than a literature-derived detection criterion?",
+      "machine_answer_prohibited": true,
+      "allowed_dispositions": ["accept", "accept-with-required-change", "reject"]
+    },
+    {
+      "id": "HD-06",
+      "question": "Are the accepted upstream calibration, event curation, detector-state metadata, library, and platform boundaries and all unwarranted conclusions complete for the strongest stated conclusion?",
+      "machine_answer_prohibited": true,
+      "allowed_dispositions": ["accept", "accept-with-required-change", "reject"]
+    }
+  ],
+  "strongest_candidate_conclusion": "bounded computational repeatability of the registered processing path and satisfaction of one necessary intersite-lag invariant",
+  "conclusions_not_available_from_this_review": [
+    "reproduction of the original search or detection significance",
+    "calibration or detector-characterization revalidation",
+    "proof that the correlation is astrophysical",
+    "parameter estimation",
+    "independent replication",
+    "scientific validity"
+  ],
+  "required_human_record": "scientific-review-form.md",
+  "integrity_rule": "The dossier may be machine-checked for completeness, but only a named qualified human can supply the scientific disposition; the recorder must preserve whether rationale was supplied or absent."
+}
