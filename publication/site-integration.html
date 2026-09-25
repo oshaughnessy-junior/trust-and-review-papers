@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Put the candidate on publication surfaces without changing its meaning · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="put-the-candidate-on-publication-surfaces-without-changing-its-meaning">Put
+the candidate on publication surfaces without changing its meaning</h1>
+<p><strong>Historical preparation plan.</strong> See <a
+href="launch.html">the later launch decision</a> for the authorized
+agent-first deployment and adopted packet licenses.</p>
+<p>Prepared integration plan for the existing outward-facing Jekyll
+research site. No site file, public repository, deployment setting or
+external account was changed by this packet. Paths below are proposed
+placements, not existing public URLs.</p>
+<h2 id="recommended-split">Recommended split</h2>
+<p>Use the existing site for the introductory post and a link to the
+versioned research object. Serve the complete reading/code export as a
+plain static artifact or downloadable ZIP. Keep its source and result
+manifest alongside it. A separate static export repository, if approved,
+should contain only the curated export, not the private research
+repository’s Git history.</p>
+<p>The candidate builder includes <code>.nojekyll</code> for a
+<strong>standalone static export root</strong>. Do not copy that file to
+the existing Jekyll site’s root: doing so would change how that whole
+site builds. The marker is a hosting hint, not an integrity proof; the
+chosen deployment route still needs an actual retrieval check.</p>
+<p>A full export contains Markdown sources, including front matter.
+Copying all of those sources into a Jekyll tree and assuming they will
+be served unchanged is unsafe: the site generator can interpret source
+files or create competing rendered paths. Either serve the curated
+export without that transformation, or publish its ZIP and PDF as static
+downloads while intentionally integrating the blog. The download is the
+canonical self-contained reproduction object.</p>
+<h2 id="prepare-the-site-post">Prepare the site post</h2>
+<p>The editorial source is <a
+href="blog-introduction.md">blog-introduction.md</a>. Its front matter
+includes the current site’s <code>layout</code>,
+<code>categories</code>, <code>publication_lane</code>, AI disclosure
+and related-post conventions, with
+<strong><code>published: false</code></strong>. It is ready for a draft
+integration, not an authorization to turn that flag on.</p>
+<p>A proposed filename is
+<code>_drafts/mcrp-what-can-we-rely-on.md</code>. On a later approved
+publication, choose the actual date and
+<code>_posts/YYYY-MM-DD-...md</code> filename. The site’s layout
+supplies the visible title, so remove the source’s duplicate H1 when
+adapting it. Preserve the contribution disclosure and distinction
+between internal agent review and external human review.</p>
+<p>Resolve all relative links against the <strong>selected public
+export</strong>, including these entry points:</p>
+<table>
+<thead>
+<tr>
+<th>Link in editorial source</th>
+<th>Artifact entry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Human exercise</td>
+<td><code>onboarding/human-path.html</code></td>
+</tr>
+<tr>
+<td>Implementer quickstart</td>
+<td><code>onboarding/agent-path.html</code></td>
+</tr>
+<tr>
+<td>Domain cases</td>
+<td><code>domains/README.html</code></td>
+</tr>
+<tr>
+<td>Collective critique</td>
+<td><code>reviews/COLLECTIVE.html</code></td>
+</tr>
+<tr>
+<td>Positioning comparison</td>
+<td><code>publication/positioning-and-adoption.html</code></td>
+</tr>
+</tbody>
+</table>
+<p>Do not invent a working destination or DOI before one exists. A draft
+can retain clearly labeled unresolved destinations; the publication
+candidate cannot. If the initial surface provides only a ZIP, make the
+download the entry and explain that <code>index.html</code> is its local
+starting page. Do not publish relative links that happen to work only in
+the authoring checkout.</p>
+<h2 id="exact-release-sequence">Exact release sequence</h2>
+<ol type="1">
+<li>Select the responsible attribution, rights disposition, destination
+and feedback owner for a specific source and export inventory. The
+recommendation remains public release of a research seed, with the
+declared synthetic evidence limits.</li>
+<li>Build and inspect the post in the site’s own toolchain. Check
+navigation, intended links, contribution disclosure, mobile layout and
+dark mode. The standalone packet’s browser checks do not substitute for
+this integration check.</li>
+<li>Record the final site-post bytes, exported ZIP digest and public
+path mapping. Site layout changes can alter the rendered post; bind the
+approval to the rendered candidate as well as the editorial source.</li>
+<li>Publish only within the approved scope. Retrieve the public ZIP and
+manifest, compare them with the approved local bytes, and inspect the
+actual public post. A successful build or deployment command is not
+evidence of successful delivery.</li>
+<li>Record a dated observation. Later source changes require a new
+version and a new decision for the affected public artifact. Keep old
+versions identifiable; never silently replace a DOI or download label
+with different evidence.</li>
+</ol>
+<p>These steps make the proposed launch concrete. The current task
+prepares the candidate and its evidence; it does not claim that an
+external page was deployed or observed. A next publication instruction
+can name the exact destination and byline rather than reopen the
+research design.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

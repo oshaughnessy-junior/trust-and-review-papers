@@ -1,0 +1,37 @@
+{
+  "format": "synthetic-review-issue/1",
+  "issue_url": "https://example.invalid/repository/issues/17",
+  "claim": {
+    "id": "synthetic-figure-2",
+    "version_ref": "git:1111111111111111111111111111111111111111",
+    "evidence_ref": "sha256:3e68a3b0d5a22edbe1707a99ef18ada6358aa10b033dbe125b50f7fc8027a4d4",
+    "immutable_refs": true
+  },
+  "author": {
+    "display_name": "Example collaboration",
+    "team_members": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "review": {
+    "display_name": "Example reviewer",
+    "scope": [
+      "numerics"
+    ],
+    "result": "support",
+    "method": "Compare synthetic table entries with declared doubling rule",
+    "limits": [],
+    "recommendation": "accept"
+  },
+  "authorizations": null,
+  "control_groups": {},
+  "extension:editorial_note": {
+    "visible": "synthetic only",
+    "not_protocol_data": [
+      "kept",
+      "verbatim as JSON values"
+    ]
+  }
+}

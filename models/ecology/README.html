@@ -1,0 +1,126 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Local-rule attention ecology · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="local-rule-attention-ecology">Local-rule attention ecology</h1>
+<p>A deliberately small <strong>hypothetical</strong> multi-period agent
+model. Agents are scripted resource/skill/quality profiles, not LLMs or
+sampled humans. It studies whether bounded credit and exploration are
+enough to prevent attention concentration and repair overload. The
+answer is conditional and often negative.</p>
+<p>From <code>papers/07-release-packet</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> models/ecology/tests <span class="at">-v</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> models.ecology.run</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> models.ecology.correction_game</span></code></pre></div>
+<p>Python 3.10+ standard library only. Nine perturbation regimes × three
+policies × eight paired seeds × 80 periods produce 216 rows in
+<code>results/sweep.csv</code>. Every policy receives the same exogenous
+offers, defect states and common blind periods for a given seed/regime;
+policy-dependent choices and observations diverge.
+<code>summary.json</code> records source/test hashes, Python version,
+sweep hash, means and seed ranges, and paired differences against
+uniform group routing. These ranges are descriptive simulation
+variation, not confidence intervals. Full default bounded-policy history
+is retained in <code>example-trajectory.json</code>.</p>
+<h2 id="only-a-few-local-rules">Only a few local rules</h2>
+<ol type="1">
+<li>Each group emits synthetic jobs according to fixed arrival/volume,
+skill and defect parameters. One large team has more volume and
+capacity, but remains one accountable group. The first group also starts
+with a visibility advantage.</li>
+<li>Route an oldest queued offer within a selected active group.
+<strong>Prestige</strong> uses cumulative completed attention plus
+pending-volume multiplication. <strong>Bounded</strong> uses decaying
+capped verified-check/correction credit, with an exploration mixture.
+<strong>Uniform</strong> chooses among active groups uniformly.</li>
+<li>Select an independent qualified reviewer proportional to available
+capacity. Intake costs two tokens, check ten, independent audit five.
+Review quality is a stipulated diligence parameter; blind periods create
+common-mode errors.</li>
+<li>Flagged defects or audit-discovered misses create correction jobs.
+Corrections consume twenty tokens (scaled in stress tests), oldest
+first, from the same independent qualified experts before new checks.
+Completed corrections and favorable audits supply capped credit.</li>
+</ol>
+<p>Budgets reset each period; queue and correction debts persist. The
+simulator records every offered job, completed job, unresolved offer and
+correction debt, all stage labor, refused-capacity attempts and audits
+unavailable for lack of capacity. Invitation/refusal counts are
+<strong>attempts</strong>, so a queued offer may count again next
+period. An inability to find even two intake tokens is counted as a
+capacity refusal without a paid invitation. Routing CPU cost and author
+labor are excluded, not claimed free in a real institution.</p>
+<p>The capacity/skill map is heterogeneous. Low-resource actors can
+perform one check but cannot individually absorb a twenty-token repair.
+Tasks are indivisible within a period; no fractional progress or pooled
+repair team is modeled. Therefore aggregate spare capacity does not
+imply feasible specialized repair. Reviewer and auditor control groups
+differ from the author, and an auditor differs from the reviewer; actual
+independence is a trusted fixture assertion.</p>
+<h2 id="what-the-metrics-mean">What the metrics mean</h2>
+<ul>
+<li><code>correct_checks_per_offer</code>: correct toy judgments divided
+by <strong>all offers</strong>, including work not reached. It is not
+scientific value.</li>
+<li><code>accuracy_among_completed</code>: conditional judgment
+accuracy; can be high while coverage and defect discovery are poor.</li>
+<li><code>defect_detection_fraction</code>: defects found by a check or
+independent audit divided by all actual synthetic offered defects,
+including unresolved work.</li>
+<li><code>attention_hhi</code>: sum of squared shares of completed
+author attention. Unequal offered volume makes this a descriptive
+concentration measure, not a fairness verdict. Compare per-group
+completion coverage too.</li>
+<li><code>minimum_group_coverage</code>: the lowest completion/offered
+ratio, not minimum attention share. Reducing concentration can worsen
+this metric.</li>
+<li><code>repair_backlog</code>: known pending correction jobs. It
+excludes undiscovered defects; a quiet correction queue can be a
+blindness signal rather than success.</li>
+<li><code>labor</code>: intake + checks + audits + repairs over all
+agents, constrained by the same per-period individual capacities. No
+token is spent twice.</li>
+</ul>
+<h2 id="deliberate-limitations-and-negative-controls">Deliberate
+limitations and negative controls</h2>
+<p>Audit truth is a fixture oracle, conditional on access and capacity;
+it is not a real scientific verification mechanism. A
+biased-verification regime gives large team offers much greater audit
+access. Blind checks always return support, so high common-mode
+blindness can produce low observed repair debt while missing most
+defects. A unit test sets all claims defective, full blindness and no
+audits: completed accuracy is zero while the repair backlog is also
+zero.</p>
+<p>The model has no endogenous participation, strategic effort, lying
+about control, staged repair credit, institutional enforcement or
+equilibrium. “Cooperation” here means accomplished check/repair tasks
+under scripted willingness; it is not an emergent motive. For strategic
+honest/shallow/refuse comparisons use the separate
+<code>models/coupled</code> study. Recognition and dominance are
+hypotheses represented by allocation feedback, not asserted explanations
+of human scientific conduct.</p>
+<p>There is no claim that bounded routing beats uniform routing. The
+overload and expensive-repair regimes expose tradeoffs and failures.
+Run-level differences are exploratory, not optimized or preregistered.
+All policies and all regimes are kept. See
+<code>../../manuscripts/local-rules.md</code> for exact equations and
+bounded conclusions.</p>
+<h2 id="correction-credit-incentive-bridge">Correction-credit incentive
+bridge</h2>
+<p>The separate <code>correction_game.py</code> compares clean work with
+deliberately manufactured and then repaired work using the same bounded
+score/attention update. Three credit policies, six parameter cases and
+eight additional tests preserve a unilateral and coalition
+counterexample, a no-allocation-credit baseline, cost internalization,
+credible intent-detection assumptions and scarce independent repair
+capacity. <code>results/correction-game.json</code> records exact
+payoffs and source/test hashes. This is a two-action one-step game, not
+an equilibrium claim about the ecology or humans. The ordinary ecology’s
+original no-audit credit vulnerability remains unchanged. The full tests
+command now runs eighteen methods.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

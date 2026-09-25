@@ -1,0 +1,59 @@
+{
+  "schema": "mcrp-source-map.v1",
+  "verified_at": "2026-09-25",
+  "sources": [
+    {
+      "id": "douceur2002",
+      "title": "The Sybil Attack",
+      "author": "John R. Douceur",
+      "url": "https://www.microsoft.com/en-us/research/publication/the-sybil-attack/",
+      "verification": "Author institution publication page opened; abstract and bibliographic metadata inspected",
+      "use": "Primary identity-multiplicity motivation only. Does not establish this package's group registry or sampler security."
+    },
+    {
+      "id": "lin_antsaklis_author_manuscript",
+      "title": "Stability and Stabilizability of Switched Linear Systems: A Survey of Recent Results",
+      "authors": [
+        "Hai Lin",
+        "Panos J. Antsaklis"
+      ],
+      "url": "https://www3.nd.edu/~pantsakl/Archive/Publications_Through2009/366-TAC08.pdf",
+      "verification": "Author-hosted 15-page manuscript opened; title page and section II discussion of stable subsystems and common Lyapunov functions inspected. Manuscript header says 2008; no publisher metadata substituted.",
+      "use": "Author survey of established switching methods; proposition 3's nonnegative conditional expectation proof is supplied in full locally."
+    },
+    {
+      "id": "horvitz_thompson1952",
+      "title": "A Generalization of Sampling Without Replacement From a Finite Universe",
+      "authors": [
+        "D. G. Horvitz",
+        "D. J. Thompson"
+      ],
+      "url": "https://www.stat.cmu.edu/~brian/905-2008/papers/Horvitz-Thompson-1952-jasa.pdf",
+      "verification": "University-hosted original paper PDF opened; publisher bibliographic result confirms title, journal volume 47 issue 260 and 1952. PDF text extraction limited; no detailed quotation or theorem attribution used.",
+      "use": "Historical unequal-probability estimation context only; package does not implement or validate inverse probability estimation."
+    }
+  ],
+  "local_lineage": [
+    {
+      "path": "papers/06-mcrp-hardening/reviews/COLLECTIVE.md",
+      "use": "Full denominator, shared capacity, dynamic repair and identity requirements"
+    },
+    {
+      "path": "papers/06-mcrp-hardening/reviews/ADJUDICATION.md",
+      "use": "Open group-distribution and completion/retry findings advanced into executable reference models"
+    },
+    {
+      "path": "papers/06-mcrp-hardening/models/science/model_checks.py",
+      "use": "Prior stationary multitype model and capacity counterexamples; new code is separately implemented"
+    },
+    {
+      "path": "papers/07-release-packet/reviews/red-math/adaptive-completion.md",
+      "use": "Reviewer-provided adapted-history completion envelope and independent finite-tree evidence; explicitly credited in manuscript"
+    },
+    {
+      "path": "papers/07-release-packet/reviews/red-math/report.md",
+      "use": "RM-1 corrects expected audit spending vs hard count-cap reservation; original objection retained"
+    }
+  ],
+  "novelty_boundary": "Elementary self-contained deductions and application-specific executable examples; no novelty claimed for conditional probability, group quotienting, Lyapunov arguments or audit incentives."
+}

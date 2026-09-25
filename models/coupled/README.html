@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Coupled allocation, toy behavior, capacity and repair · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="coupled-allocation-toy-behavior-capacity-and-repair">Coupled
+allocation, toy behavior, capacity and repair</h1>
+<p>Read <a
+href="../../manuscripts/coupled-agents.html">coupled-agents.md</a> for
+the model, exact special cases and conditional interpretation.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/models/coupled <span class="at">-p</span> <span class="st">&#39;test_*.py&#39;</span> <span class="at">-v</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/models/coupled/run_experiments.py</span></code></pre></div>
+<p>Standard library only. 14 tests; 74 scenarios x 100 replicate seeds;
+88,800 synthetic requests; 888 metric rows with replicate-mean nominal
+intervals. Five full event traces show scarce capacity, plentiful
+capacity, naive multiplicity, hidden control and selective reliance. No
+claim of real efficacy or protocol conformance is made.</p>
+<p>The shared person ledger covers intake, triage, invitation/check
+work, scoped reliance and repair. It accounts for holds and actual
+debits atomically. Skills and actual-person mappings are fixed toy
+facts; the operator does not thereby learn real identity. Repair checks
+do not automatically renew reliance. Missing dependencies remain
+invisible to the local reliance view and visible to the simulation
+evaluator’s separate oracle.</p>
+<p>Behavior injection:
+<code>run(Config(...), seed=1, trace=True, behavior=fn)</code> accepts a
+function <code>(person, request_index, prior_used_hours, rng)</code>
+returning
+<code>(action, reported_completed, actual_hours, utility_dict)</code>.
+It must honor <code>actual_hours &lt;= 1</code> per invitation and use
+<code>honest</code>, <code>shallow</code> or <code>refuse</code>
+actions. The default model gives actors a perceived audit probability;
+it does not deliver or fund audits. Use the separate math model for
+audit budget experiments.</p>
+<p>Returned simulation receipts are plain records, not signed protocol
+messages. The adjacent runtime has stronger target and authority
+semantics. Connecting the behavior model to that runtime requires an
+explicit adapter and new validation.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

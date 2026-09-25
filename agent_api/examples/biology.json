@@ -1,0 +1,193 @@
+{
+  "schema": "mcrp-agent-task/0.1",
+  "synthetic_fixture": true,
+  "task_id": "biology-bounded-cycle",
+  "commands": [
+    {
+      "id": "offer",
+      "action": "offer",
+      "agent_id": "author-agent",
+      "now": 0,
+      "input": {
+        "claim_id": "toy-biology",
+        "claim": "Synthetic assay mean is5 for observations4 and6; no biological efficacy claim.",
+        "evidence": {
+          "observations": [
+            4,
+            6
+          ],
+          "mean": 5,
+          "scope": "arithmetic only"
+        },
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "dependencies": [],
+        "required_groups": 1
+      }
+    },
+    {
+      "id": "check",
+      "action": "check",
+      "agent_id": "review-agent",
+      "now": 1,
+      "input": {
+        "offer": "offer",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "method": "Caller asserts a manual synthetic fixture check; not executed by this interface",
+        "outcome": "support",
+        "limits": "Only the disclosed toy calculation; no empirical or institutional validation",
+        "units": 1
+      }
+    },
+    {
+      "id": "rely",
+      "action": "rely",
+      "agent_id": "decision-agent",
+      "now": 2,
+      "input": {
+        "offer": "offer",
+        "checks": [
+          "check"
+        ],
+        "purpose": "synthetic local demonstration only",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "kind": "scientific",
+        "expires": 20
+      }
+    },
+    {
+      "id": "observe-before",
+      "action": "observe",
+      "agent_id": "decision-agent",
+      "now": 2,
+      "input": {
+        "reliance": "rely",
+        "observed_at": 2,
+        "max_age": 0
+      }
+    },
+    {
+      "id": "amend",
+      "action": "amend",
+      "agent_id": "author-agent",
+      "now": 3,
+      "input": {
+        "offer": "offer",
+        "reason": "An input is corrected from6 to10: recompute the mean; no health inference."
+      }
+    },
+    {
+      "id": "observe-after",
+      "action": "observe",
+      "agent_id": "decision-agent",
+      "now": 3,
+      "input": {
+        "reliance": "rely",
+        "observed_at": 3,
+        "max_age": 0
+      }
+    },
+    {
+      "id": "stale-check-refusal",
+      "action": "rely",
+      "agent_id": "decision-agent",
+      "now": 3,
+      "input": {
+        "offer": "offer",
+        "checks": [
+          "check"
+        ],
+        "purpose": "synthetic local demonstration only",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "kind": "scientific",
+        "expires": 20
+      }
+    },
+    {
+      "id": "offer-updated",
+      "action": "offer",
+      "agent_id": "author-agent",
+      "now": 4,
+      "input": {
+        "claim_id": "toy-biology",
+        "claim": "Synthetic assay mean is7 for observations4 and10; no biological efficacy claim.",
+        "evidence": {
+          "observations": [
+            4,
+            10
+          ],
+          "mean": 7,
+          "scope": "arithmetic only"
+        },
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "dependencies": [],
+        "required_groups": 1
+      }
+    },
+    {
+      "id": "recheck",
+      "action": "check",
+      "agent_id": "review-team-child",
+      "now": 5,
+      "input": {
+        "offer": "offer-updated",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "method": "Caller asserts a manual synthetic fixture check; not executed by this interface",
+        "outcome": "support",
+        "limits": "Only the disclosed toy calculation; no empirical or institutional validation",
+        "units": 1
+      }
+    },
+    {
+      "id": "renew",
+      "action": "rely",
+      "agent_id": "decision-agent",
+      "now": 6,
+      "input": {
+        "offer": "offer-updated",
+        "checks": [
+          "recheck"
+        ],
+        "purpose": "synthetic local demonstration only",
+        "scope": [
+          "assay-arithmetic"
+        ],
+        "kind": "scientific",
+        "expires": 20
+      }
+    },
+    {
+      "id": "observe-renewed",
+      "action": "observe",
+      "agent_id": "decision-agent",
+      "now": 6,
+      "input": {
+        "reliance": "renew",
+        "observed_at": 6,
+        "max_age": 0
+      }
+    },
+    {
+      "id": "observe-original",
+      "action": "observe",
+      "agent_id": "decision-agent",
+      "now": 6,
+      "input": {
+        "reliance": "rely",
+        "observed_at": 6,
+        "max_age": 0
+      }
+    }
+  ]
+}

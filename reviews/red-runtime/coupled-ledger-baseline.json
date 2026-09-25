@@ -1,0 +1,19 @@
+{
+  "settlements": [
+    "accepted",
+    "accepted",
+    "accepted"
+  ],
+  "ledger": [
+    {
+      "person": "A",
+      "capacity": 0,
+      "used": 3e-12,
+      "held": 0.0,
+      "remaining": -3e-12,
+      "lanes": {
+        "probe": 3e-12
+      }
+    }
+  ]
+}

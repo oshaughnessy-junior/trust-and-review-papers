@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Pre-results human-interface design tools · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="pre-results-human-interface-design-tools">Pre-results
+human-interface design tools</h1>
+<p>These files prepare an evaluation; they do not conduct or authorize a
+study. Read <a
+href="../../onboarding/evaluation-plan.html">evaluation-plan.md</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/models/human_pilot <span class="at">-p</span> <span class="st">&#39;test_*.py&#39;</span> <span class="at">-v</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/models/human_pilot/run_design.py</span></code></pre></div>
+<p>Python 3.9+ standard library only. Eight tests and 15 exact
+finite-design power rows. All IDs and potential outcomes are artificial.
+The fixed published seed is for reproduction, not a concealed allocation
+method for real participants.</p>
+<p><code>balanced_assignment</code> assigns two of four boundary units
+per preformed block. <code>sharp_null_test</code> computes an exact
+two-sided Fisher randomization p-value under the sharp no-effect null,
+not a generally exact test of zero average effect.
+<code>design_power</code> enumerates every permitted assignment for a
+supplied fixed binary potential-outcome table with at most six blocks.
+<code>missing_effect_bounds</code> reports worst-case missing-outcome
+bounds on the realized randomized-arm rate contrast. It does not bound
+the finite-population causal average effect: assignment uncertainty and
+unobserved counterfactual outcomes remain. With unchanged potential
+outcomes <code>(0,0,1,1)</code> in each block, assigning both successes
+to the card can yield complete-data contrast bounds <code>[1,1]</code>
+while the true average causal effect is zero. The regression preserves
+this distinction. These bounds are not confidence intervals.</p>
+<p>The toy power family has baseline adequacy .5, no harms, and selected
+baseline failures improved by the card. It is optimistic and not fitted.
+At the largest tested effect (.5), exact power is 0 for N=8, about .325
+for N=16 and .729 for N=24. No tested design reaches .8; the coarse-grid
+threshold field is null. Do not interpret this as a recommended study
+size or actual minimum detectable effect for a real population.</p>
+<p>Primary source verified 2026-09-25: Jason Wu and Peng Ding,
+<em>Randomization Tests for Weak Null Hypotheses in Randomized
+Experiments</em>, author preprint v5 (2020),
+https://arxiv.org/abs/1809.07419 . Title, authors, abstract and journal
+reference were opened. Used only to substantiate the
+sharp-null/weak-null distinction; local enumeration derivations and
+source code are self-contained.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

@@ -1,0 +1,22 @@
+test_aliases_do_not_multiply_independent_coverage (test_interface.InterfaceTests) ... ok
+test_aliases_share_principal_budget (test_interface.InterfaceTests) ... ok
+test_batch_limit_applies_before_state (test_interface.InterfaceTests) ... ok
+test_boolean_integer_float_distinction (test_interface.InterfaceTests) ... ok
+test_cli_stdout_json_and_meaningful_exit_codes (test_interface.InterfaceTests) ... ok
+test_cross_scope_check_and_publication_upgrade_refused (test_interface.InterfaceTests) ... ok
+test_four_domains_new_content_and_old_reliance_pending (test_interface.InterfaceTests) ... ok
+test_future_failed_action_rolls_back_clock_aliases_and_events (test_interface.InterfaceTests) ... ok
+test_inline_content_binds_version_and_evidence (test_interface.InterfaceTests) ... ok
+test_legacy_projection_does_not_create_authority (test_interface.InterfaceTests) ... ok
+test_parser_rejects_duplicate_keys_nonfinite_huge_depth_and_bytes (test_interface.InterfaceTests) ... ok
+test_profile_metadata_change_gets_new_version_without_false_evidence_change (test_interface.InterfaceTests) ... ok
+test_replay_is_deterministic (test_interface.InterfaceTests) ... ok
+test_request_cannot_grant_agent_or_principal (test_interface.InterfaceTests) ... ok
+test_unavailable_evidence_and_missing_observation_are_explicit (test_interface.InterfaceTests) ... ok
+test_unknown_fields_and_duplicate_aliases_fail_closed (test_interface.InterfaceTests) ... ok
+test_wrong_principal_cannot_amend (test_interface.InterfaceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.098s
+
+OK

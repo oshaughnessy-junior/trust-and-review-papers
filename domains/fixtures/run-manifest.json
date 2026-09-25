@@ -1,0 +1,32 @@
+{
+  "schema": "mcrp-domain-run/2",
+  "synthetic_only": true,
+  "python": "3.9.6",
+  "sha256": {
+    "domains/fixtures/domain_models.py": "e4443c76a275945d359ac8fd9aaf45ac1cc9bc34033fdc2136173ad0a9ab87fe",
+    "domains/fixtures/oracle-results.json": "32212bfe4d7bca00e6cf68601ea3be5a577ab348618956740c69c06da0e10e78",
+    "domains/fixtures/replay-results.json": "42d1adfdf98553e61a572c1cae116abbdd3f09d184f27e1232df8ed80a7dbc31",
+    "domains/fixtures/replay_receipts.py": "793d836698c0cc152985b4cae44c725f89cd7fd89e94cdb226c67e5109133103",
+    "domains/fixtures/scenarios.json": "c201067e0291a976e2eecae248860f089f75332cb8d63bf89e20bbc105d32edd",
+    "domains/fixtures/test_domain_models.py": "153a644e98548eb7d0de9f242bd1f8c95915e759382f9bf06bd45d27cccef105",
+    "toy_agents/protocol.py": "0a1a6b48f5fc4075c00f1819ee85103907c49169fd9f2d1b76ec86de236ddeff"
+  },
+  "commands": [
+    [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "domains/fixtures",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    [
+      "domains/fixtures/domain_models.py"
+    ],
+    [
+      "domains/fixtures/replay_receipts.py"
+    ]
+  ]
+}

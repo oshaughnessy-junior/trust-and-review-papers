@@ -1,0 +1,32 @@
+{
+  "note": "Observed before author repairs through ordinary public methods; compact transcription of reviewer tool outputs. Rerun probes.py for current behavior.",
+  "author_contract_weakening": {
+    "one_group_author_decision": "current_under_toy_policy",
+    "record_preserves_required_groups": false,
+    "two_groups": "insufficient independent scope coverage"
+  },
+  "contradiction_after_reliance": {
+    "old_reliance": "current_under_toy_policy",
+    "identical_new_reliance": "current contradictory check requires explicit amendment/recheck"
+  },
+  "currentness_clock": {
+    "query_at_10": "expired",
+    "subsequent_query_at_2": "current_under_toy_policy"
+  },
+  "failed_future_action_advances_clock": {
+    "clock": 1000000,
+    "invalid_future_attempt": "delegation outside validity interval",
+    "subsequent_valid_attempt": "time must be a monotone integer"
+  },
+  "observation_metadata_rebinding": {
+    "bindings_differ": true,
+    "observation_status": "matches",
+    "currentness": "last_observation_matches",
+    "publish": "release identifier cannot be rebound"
+  },
+  "amendment_chain_and_target_binding": {
+    "cycle": "accepted",
+    "successor_overwrite": "accepted",
+    "note": "Original cycle A\u2192B\u2192A and overwrite A\u2192unpublished-C observed; replacement-binding substitution inferred from discarded new.binding and is tested by current probe."
+  }
+}

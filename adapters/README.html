@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>A legacy review wrapper that refuses to invent authority · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="a-legacy-review-wrapper-that-refuses-to-invent-authority">A
+legacy review wrapper that refuses to invent authority</h1>
+<p>This executable example wraps <strong>synthetic
+repository-issue/review-letter metadata</strong>. It is neither a GitHub
+connector nor a parser for arbitrary referee prose. It claims no W3C
+PROV, RO-Crate, COAR Notify, Crossref, journal or repository-schema
+conformance. It needs no account, network connection, credentials or
+dependencies.</p>
+<p>From the extracted packet root (Python 3.9+ standard library):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> adapters/tests <span class="at">-v</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> adapters.demo</span></code></pre></div>
+<p>Nineteen tests pass after the adversarial adapter revision. The demo
+writes <code>adapters/results/demo.json</code>, including
+source/fixture/test/runtime hashes, the loss report, unchanged legacy
+payload, explicit enrichment, and actual toy-protocol events. No message
+is sent and no real review is imported.</p>
+<h2 id="what-is-preserved-and-what-is-not-inferred">What is preserved,
+and what is not inferred</h2>
+<p><code>adapt(source)</code> retains a deep copy of the entire
+JSON-value tree, fingerprints its canonical JSON representation, and
+maps a small known set of fields. <code>roundtrip</code> checks that the
+envelope still matches that deterministic projection, then returns the
+original JSON values. Envelope comparison uses canonical JSON bytes, not
+Python value equality: Boolean <code>true</code>, integer
+<code>1</code>, and floating token <code>1.0</code> are distinct.
+Nonfinite numbers are rejected. The guarantee covers values, <strong>not
+original byte layout, whitespace, signing bytes or ordering
+fidelity</strong>. It is a one-format self-roundtrip, not an independent
+implementation interoperability test.</p>
+<p>Each mapped field has a status: <code>absent</code>,
+<code>null</code>, <code>explicit_empty</code>, <code>value</code>, or
+<code>blocked_by_nonobject</code>. A missing dependency field,
+<code>null</code>, and <code>[]</code> therefore remain different. Empty
+review limitations do not mean that a check had no limitations. Unknown
+extension fields are preserved in the raw payload and named in the
+semantic loss report; they are not silently upgraded to executable
+protocol assertions.</p>
+<p>The exact claim ID, declared git object reference and declared
+SHA-256 evidence reference are retained. The adapter rejects a mutable
+URL as its only version reference. It validates <strong>reference syntax
+and the source’s explicit immutability assertion</strong>, not the
+existence of a git object, source authenticity or binding to artifact
+bytes. The synthetic evidence file’s digest is separately checked by a
+test. A deliberate negative test shows that a well-shaped fabricated
+digest still passes the adapter: that missing verification is an
+explicit trust boundary.</p>
+<p>The adapter preserves check scope, declared result, method, limits
+and recommendation separately. A recommendation to “accept” never
+supplies a missing result or overrides contradiction. Author names,
+reviewer names, URLs and team members never establish independence,
+skill, consent, authority or dependency completeness. Mapped legacy
+authorization/control fields remain unverified data even when
+present.</p>
+<h2 id="two-executable-paths">Two executable paths</h2>
+<ol type="1">
+<li><strong>Unaugmented input:</strong>
+<code>execute_fixture(envelope)</code> refuses scoped reliance because
+no trusted authority, control or dependency assertions exist. A pretty
+JSON wrapper has not made those facts true.</li>
+<li><strong>Separately enriched synthetic demonstration:</strong> a
+different fixture file explicitly asserts invented control groups,
+reviewer capabilities, decision roles, an empty dependency graph,
+purpose, exact scope, expiry, capacity and limitations. The adapter
+retains that file separately from legacy facts. It passes the
+declaration into the actual <code>toy_agents.Protocol</code>
+offer/check/rely/amend methods. After a synthetic material amendment,
+the old reliance reports <code>reconsideration_pending</code>.</li>
+</ol>
+<p>The enriched run <strong>does not rerun the referee’s scientific
+method</strong>. It records the legacy check declaration under explicit
+fixture assumptions and charges synthetic capacity. Neither the adapter
+nor the fixture turns a historical letter into consent, authentication,
+a real editor’s decision or permission to publish private material.</p>
+<p>This narrow demo handles one target and an explicitly empty enriched
+dependency graph. Nonempty legacy dependencies or nonempty
+authorization/control assertions are refused for reconciliation outside
+the demo; they cannot be overwritten with more convenient fixture
+assertions. Unknown/null dependency metadata can be enriched only by a
+separately visible explicit fixture assumption. Scope widening,
+contradictory checks, shared author-reviewer control and missing
+scientific decision roles are rejected. The runtime’s counterexamples
+and limitations still apply.</p>
+<p>The public test fixture contains invented identities and
+<code>example.invalid</code> URLs. Do not adapt private review letters
+into a public bundle without appropriate authority and consent. This
+example makes no claim to implement those permissions.</p>
+<p>See <code>../onboarding/legacy-adapter.md</code> for the
+corresponding six-question human card.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

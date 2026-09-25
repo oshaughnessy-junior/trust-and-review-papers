@@ -1,0 +1,153 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Read, reproduce and change the candidate · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="read-reproduce-and-change-the-candidate">Read, reproduce and
+change the candidate</h1>
+<p>The portable starting directory contains <code>README.md</code>,
+<code>run_checks.py</code>, <code>models/</code>,
+<code>toy_agents/</code> and <code>domains/</code>. In the working
+repository that directory is <code>papers/07-release-packet</code>. In
+the download it is <code>mcrp-prototype</code>.</p>
+<h2 id="read-without-installing-anything">Read without installing
+anything</h2>
+<p>Open <code>index.html</code> from the extracted download in a
+browser. All reading pages, figures, styles, controls and saved traces
+are local; there are no analytics, remote fonts or network calls.
+Interactive controls evaluate the three stated formulas. They do not
+execute the Python simulation. Saved results are also provided as JSON
+and CSV beside their source code.</p>
+<p>The download includes research fixtures with deliberately vulnerable
+baseline code, clearly labeled in <code>reviews/red-runtime</code>. They
+reconstruct the original packaging counterexamples using public sentinel
+strings. Use <code>surfaces/build.py</code> and
+<code>surfaces/verify_export.py</code> for the repaired packaging
+tools.</p>
+<h2 id="reproduce-the-experiments">Reproduce the experiments</h2>
+<p>Use Python 3.9 or later. From the portable starting directory:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> run_checks.py</span></code></pre></div>
+<p>No third-party Python package, network, credentials, model inference
+or external data is needed for this command. It runs the model suites
+and independent adversarial regressions, then regenerates synthetic
+outputs. The terminal reports each check group and the final total.
+<code>results/validation.json</code> records success, test counts,
+Python version, source/input hashes, saved-result hashes and the full
+log inventory. Inputs are captured before and after execution; a changed
+source or fixture makes the run fail. These checks bind evidence to a
+run, not the scientific truth of its content.</p>
+<p>This is a research run, not a production readiness assessment.
+Successful negative controls mean the specified failure is exposed, not
+that it has been eliminated. Random-number implementation differences
+across Python versions may change sampled trajectories; deterministic
+finite arithmetic and invariant tests are separate.</p>
+<p>Run on a working copy: regenerated timings, logs and environment
+records will change some files. An export’s original manifest describes
+the original snapshot; it is not expected to certify your modified
+reproduction directory afterward. Preserve the original download if you
+want to compare results or verify integrity.</p>
+<h2 id="choose-a-smaller-entry-point">Choose a smaller entry point</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Question</th>
+<th>Command from the portable directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can an existing review record enter the toy runtime honestly?</td>
+<td><code>python3 -m adapters.demo</code></td>
+</tr>
+<tr>
+<td>How much could a tiny human-interface study establish?</td>
+<td><code>python3 models/human_pilot/run_design.py</code></td>
+</tr>
+<tr>
+<td>What happens to a scoped decision after amendment?</td>
+<td><code>python3 -m toy_agents.run</code></td>
+</tr>
+<tr>
+<td>What does publication approval bind in the separate toy cycle?</td>
+<td><code>python3 models/release_cycle.py --output results/release-cycle.json</code></td>
+</tr>
+<tr>
+<td>What are the exact panel, repair and audit bounds?</td>
+<td><code>python3 models/math/run_experiments.py</code></td>
+</tr>
+<tr>
+<td>What changes across allocation, completion and reliance?</td>
+<td><code>python3 models/coupled/run_experiments.py</code></td>
+</tr>
+<tr>
+<td>Does recognition feedback beat uniform routing?</td>
+<td><code>python3 -m models.ecology.run</code></td>
+</tr>
+<tr>
+<td>Do promised inspections actually get funded and delivered?</td>
+<td><code>python3 models/funded_audits/run_experiments.py</code></td>
+</tr>
+<tr>
+<td>Can correction credit reward manufactured work?</td>
+<td><code>python3 -m models.ecology.correction_game</code></td>
+</tr>
+<tr>
+<td>What does the biology or legal example actually calculate?</td>
+<td><code>python3 domains/fixtures/domain_models.py</code></td>
+</tr>
+<tr>
+<td>Can domain examples issue and amend real toy receipts?</td>
+<td><code>python3 domains/fixtures/replay_receipts.py</code></td>
+</tr>
+</tbody>
+</table>
+<p>Change one parameter or one premise, preserve the old result, and
+explain what changed. A failed invariant is useful evidence. A new
+parameter result is not a new theorem. Include the full offered-work and
+unfinished-work denominators.</p>
+<h2 id="optional-figure-and-reading-page-generation">Optional figure and
+reading-page generation</h2>
+<p>The core tests are standard-library-only. Scientific figure
+regeneration additionally uses Matplotlib (the saved figure manifest
+records the version):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> surfaces/make_figures.py</span></code></pre></div>
+<p>When a different environment changes those saved result bytes,
+regenerate figures before building a new export so their input hashes
+agree. Merely reproducing the core models does not require
+Matplotlib.</p>
+<p>Figures read the retained coupled/ecology results. Their manifest
+binds source, input tables and output bytes. The ecology whiskers are
+seed ranges, not confidence intervals. The selection figure shows pooled
+stage shares rather than independent observations from people.</p>
+<p>Reading-page generation additionally requires Pandoc available on
+<code>PATH</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> surfaces/build.py ../mcrp-public-candidate</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> surfaces/verify_export.py ../mcrp-public-candidate</span></code></pre></div>
+<p>The output must be outside the source packet. The builder stages a
+fresh candidate, rejects symlinks and unexpected pre-existing output,
+then replaces only a recognized unchanged prior export. It does not
+publish, deploy or change repository visibility. The verifier checks
+exact file and ZIP membership, hashes, local links/fragments,
+validation-evidence references and four declared disclosure patterns. It
+cannot establish that every private fact or rights issue has been
+discovered.</p>
+<p>The file-map digest and ZIP digest identify a candidate. Neither is a
+signature, license, approval or statement that source claims are true. A
+release decision must identify the responsible maintainer, adopted
+rights terms and destination for those exact bytes.</p>
+<p>The optional eight-page synthesis brief uses ReportLab, Pillow and
+pypdf:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> surfaces/build_brief.py</span></code></pre></div>
+<p>It writes <code>results/mcrp-release-brief.pdf</code> and a manifest
+binding its builder and figure input. Its PDF metadata is fixed for
+reproduction; metadata dates are not release timestamps. The saved PDF
+can be read without these packages.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

@@ -1,0 +1,21 @@
+{
+  "synthetic_fixture": true,
+  "fixture_responsibility": "Synthetic harness author asserts these invented facts solely for this demonstration.",
+  "author_group": "fixture-author",
+  "reviewer_group": "fixture-reviewer",
+  "decision_group": "fixture-institution",
+  "reviewer_skills": [
+    "numerics"
+  ],
+  "decision_roles": [
+    "scientific"
+  ],
+  "dependencies": [],
+  "purpose": "Demonstrate a scoped synthetic numerical reliance only",
+  "scope": [
+    "numerics"
+  ],
+  "expires": 10,
+  "capacity": 3,
+  "limitations": "Fixture-only permission and independence; no calibration, human consent, real institution or hidden-dependency verification."
+}

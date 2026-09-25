@@ -1,0 +1,150 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Four ways to enter MCRP · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="four-ways-to-enter-mcrp">Four ways to enter MCRP</h1>
+<p>These are synthetic teaching cases for a public research prototype,
+dated 2026-09-25. They make no claims about actual people, experiments,
+lawsuits, or institutional endorsement. All numerical data and
+organizations are invented. The proposed common interface is
+<strong>offer → check → rely → amend</strong>. Different communities
+retain their own standards of evidence and decision authority.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Audience</th>
+<th>Start with a question</th>
+<th>Worked case</th>
+<th>Small first contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physics and astronomy</td>
+<td>Which conclusions share this calibration?</td>
+<td><a href="physics-astro.html">Shared calibration</a></td>
+<td>Reconstruct one number and name the untested measurement
+assumption</td>
+</tr>
+<tr>
+<td>Biology</td>
+<td>Did the experiment identify the effect?</td>
+<td><a href="biology.md">Batch, assay, replication</a></td>
+<td>Map sample, batch and treatment before rerunning the statistics</td>
+</tr>
+<tr>
+<td>Economics and social science</td>
+<td>What population and estimand does this estimate concern?</td>
+<td><a href="economics-social-science.html">Identification and
+transport</a></td>
+<td>Compare one preregistered estimand with one reported estimand</td>
+</tr>
+<tr>
+<td>Law</td>
+<td>Who can decide what, by when, with what remedy?</td>
+<td><a href="law.md">Contested interpretation and deadlines</a></td>
+<td>Separate an evidence check from an institution’s decision</td>
+</tr>
+</tbody>
+</table>
+<h2 id="human-entry">Human entry</h2>
+<p>Choose one case, read its opening situation, and fill four sentences
+before seeing JSON: “I offer…”, “I checked…”, “I would rely on this
+for…”, “I would reconsider if…”. A facilitator then introduces the
+planted failure. The exercise succeeds when the participant narrows an
+unsupported use or names missing evidence; it does not require an
+affirmative verdict. Each case contains an answer key and a longer
+clinic. Onboarding time and supervision count as real labor.</p>
+<p>An established collaboration can import its existing release and
+review letter. A lone researcher can contribute a one-claim numerical
+check. Neither must reorganize its internal workflow. Public disclosure,
+authorship, and a relying institution’s authority remain explicit human
+decisions.</p>
+<h2 id="implementer-entry">Implementer entry</h2>
+<p>The independent, standard-library domain oracle is executable
+immediately:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/domains/fixtures/domain_models.py</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/domains/fixtures/replay_receipts.py</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/domains/fixtures <span class="at">-p</span> <span class="st">&#39;test_*.py&#39;</span></span></code></pre></div>
+<p><code>scenarios.json</code> contains semantic scenario fixtures, not
+wire-protocol conformance vectors. Its declared schema separates
+immutable target content, human-readable receipt narratives, expected
+domain calculations, and failure-injection goals. The toy-agent
+framework in <code>../toy_agents/</code> provides a separate receipt
+engine; using both does not turn either into a production scientific or
+legal service. Fixture identifiers and control groups are trusted
+inputs. No identity discovery, signature verification, confidential-data
+handling, or real decision is executed.</p>
+<p>Every adapter must preserve <code>scope</code>, <code>limits</code>,
+exact target identity, and authority kind. An adapter that can represent
+only <code>scientific</code> and <code>publication</code> reliance must
+refuse a legal operational-decision type; it must not relabel that
+decision as scientific to get through the API. Domain-specific semantic
+checks sit beside the receipt engine rather than silently changing its
+contract.</p>
+<h2 id="evidence-and-contribution-boundary">Evidence and contribution
+boundary</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Type</th>
+<th>Contribution here</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P: established practice</td>
+<td>Calibration uncertainty; reproducibility artifacts; trial
+registration; legal authority and procedural duties</td>
+<td>Primary-source links in each case, checked 2026-09-25</td>
+</tr>
+<tr>
+<td>D: protocol design</td>
+<td>Small receipts and two entry paths</td>
+<td>Explicitly proposed templates</td>
+</tr>
+<tr>
+<td>T: mathematical illustration</td>
+<td>Shared-error floor, nonidentifiability, completion selection,
+capacity/deadline counterexample</td>
+<td>Derivations and executable deterministic oracles</td>
+</tr>
+<tr>
+<td>I: implementation</td>
+<td>Four numerical cases and regression tests</td>
+<td>Local command output; no field evidence</td>
+</tr>
+<tr>
+<td>H: human efficacy</td>
+<td>Better scope comprehension at tolerable labor</td>
+<td>Unrun comparative study described in each case</td>
+</tr>
+</tbody>
+</table>
+<p>These cases do not claim new statistical theorems. Their contribution
+is to make well-understood failure modes actionable at the point of
+reliance. Existing artifacts can already carry much of this information.
+The closest comparator is a plain structured claim/evidence/limitation
+template, not unstructured chaos.</p>
+<p>No real participants were recruited. Drafting used AI agents; final
+human authorship and release approval are governed by the release
+packet, not supplied by these examples. Primary sources contextualize
+the cases; they do not endorse MCRP.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

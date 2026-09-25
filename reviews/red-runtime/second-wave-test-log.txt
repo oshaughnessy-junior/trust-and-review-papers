@@ -1,0 +1,18 @@
+test_already_delivered_correction_can_be_observed_after_revocation (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_amendment_must_preserve_intended_successor_binding (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_declared_offer_floor_cannot_be_weakened (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_expired_currentness_query_cannot_be_rolled_back (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_later_contradiction_cannot_leave_direct_reliance_current (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_observer_checks_metadata_even_with_identical_content (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_publication_invalid_calls_leave_runtime_state_unchanged (test_adversarial_runtime.AdversarialRuntimeTests) ... ok
+test_zero_capacity_cannot_be_minted_by_multiple_zero_holds (test_coupled_boundaries.CoupledBoundaryTests) ... ok
+test_extra_traversal_zip_member_is_rejected (test_export_boundaries.ExportBoundaryTests) ... ok
+test_source_symlink_not_dereferenced (test_export_boundaries.ExportBoundaryTests) ... ok
+test_symlink_zip_metadata_is_rejected (test_export_boundaries.ExportBoundaryTests) ... ok
+test_unmanifested_destination_file_is_rejected (test_export_boundaries.ExportBoundaryTests) ... ok
+test_untracked_destination_file_not_published (test_export_boundaries.ExportBoundaryTests) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.040s
+
+OK

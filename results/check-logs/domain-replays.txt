@@ -1,0 +1,486 @@
+{
+  "cases": [
+    {
+      "after_amendment": "reconsideration_pending",
+      "amended_calculation": "10",
+      "amended_scope": [
+        "numerical_reconstruction"
+      ],
+      "before": "current_under_toy_policy",
+      "blocked_upgrade": null,
+      "calculated": {
+        "mistaken_standard_error": 0.1346291201783626,
+        "mistaken_variance": "29/1600",
+        "new_amplitude": "10",
+        "old_amplitude": "21/2",
+        "shared_standard_error": 0.5024937810560445,
+        "shared_variance": "101/400",
+        "variance_floor": "1/4"
+      },
+      "domain": "physics",
+      "events": [
+        {
+          "action": "offer",
+          "id": "offer-0001",
+          "target": {
+            "claim_id": "astro-calibration",
+            "evidence_digest": "sha256:c6aa5c1f88c442f56d3a12983246e2e025d71108c44e4d2f70c9c48463a4c3ab",
+            "version": "1"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0002",
+          "target": {
+            "claim_id": "astro-amplitude",
+            "evidence_digest": "sha256:174a1fdf94a7fe47639a24b74cbe85fe830c0a12673f06ec622b2bab23f4ba0e",
+            "version": "1"
+          }
+        },
+        {
+          "action": "check",
+          "id": "check-0003",
+          "now": 1,
+          "outcome": "support"
+        },
+        {
+          "action": "rely",
+          "id": "rely-0004",
+          "kind": "scientific",
+          "now": 1
+        },
+        {
+          "action": "amend",
+          "affected": [
+            {
+              "claim_id": "astro-amplitude",
+              "evidence_digest": "sha256:174a1fdf94a7fe47639a24b74cbe85fe830c0a12673f06ec622b2bab23f4ba0e",
+              "version": "1"
+            },
+            {
+              "claim_id": "astro-calibration",
+              "evidence_digest": "sha256:c6aa5c1f88c442f56d3a12983246e2e025d71108c44e4d2f70c9c48463a4c3ab",
+              "version": "1"
+            }
+          ],
+          "now": 3,
+          "reason": "Synthetic material change to a declared premise",
+          "target": {
+            "claim_id": "astro-calibration",
+            "evidence_digest": "sha256:c6aa5c1f88c442f56d3a12983246e2e025d71108c44e4d2f70c9c48463a4c3ab",
+            "version": "1"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0006",
+          "target": {
+            "claim_id": "astro-calibration",
+            "evidence_digest": "sha256:c312b85cb254b41481965f2d99900cfa52f25239e43b409a10d9d3e66c243330",
+            "version": "2"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0007",
+          "target": {
+            "claim_id": "astro-amplitude",
+            "evidence_digest": "sha256:26d7d5eb083aa0abcfbf2d5e93d984b5cb3987d7aa1da084c73e2dbdeef92579",
+            "version": "2"
+          }
+        },
+        {
+          "action": "check",
+          "id": "check-0008",
+          "now": 4,
+          "outcome": "support"
+        },
+        {
+          "action": "rely",
+          "id": "rely-0009",
+          "kind": "scientific",
+          "now": 4
+        }
+      ],
+      "limits": "Synthetic scalar response, not frequency-dependent physical calibration or astrophysical inference",
+      "new_version": "current_under_toy_policy"
+    },
+    {
+      "after_amendment": "reconsideration_pending",
+      "amended_calculation": "1",
+      "amended_scope": [
+        "additive_model_identification",
+        "arithmetic"
+      ],
+      "before": "current_under_toy_policy",
+      "blocked_upgrade": "insufficient independent scope coverage",
+      "calculated": {
+        "confounded_mean_difference": "2",
+        "crossed_additive_effect": "1",
+        "crossed_average_contrast": "1",
+        "crossed_exact_additivity": true,
+        "crossed_within_batch_differences": [
+          "1",
+          "1"
+        ],
+        "rss_batch_explanation": "4",
+        "rss_treatment_explanation": "4",
+        "separate_effect_identified_in_confounded_design": false
+      },
+      "domain": "biology",
+      "events": [
+        {
+          "action": "offer",
+          "id": "offer-0001",
+          "target": {
+            "claim_id": "bio-batch-map",
+            "evidence_digest": "sha256:3fb8eee8354e7170e631af1f2a009bf5084aabfe6e97e00bec8351b69454afa1",
+            "version": "1"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0002",
+          "target": {
+            "claim_id": "bio-assay-contrast",
+            "evidence_digest": "sha256:34393964e50a125d88f2ccc93f211590e437675616bb24ff7b527f4f2a229e6a",
+            "version": "1"
+          }
+        },
+        {
+          "action": "check",
+          "id": "check-0003",
+          "now": 1,
+          "outcome": "support"
+        },
+        {
+          "action": "check",
+          "id": "check-0004",
+          "now": 1,
+          "outcome": "unknown"
+        },
+        {
+          "action": "rely",
+          "id": "rely-0005",
+          "kind": "scientific",
+          "now": 1
+        },
+        {
+          "action": "amend",
+          "affected": [
+            {
+              "claim_id": "bio-assay-contrast",
+              "evidence_digest": "sha256:34393964e50a125d88f2ccc93f211590e437675616bb24ff7b527f4f2a229e6a",
+              "version": "1"
+            },
+            {
+              "claim_id": "bio-batch-map",
+              "evidence_digest": "sha256:3fb8eee8354e7170e631af1f2a009bf5084aabfe6e97e00bec8351b69454afa1",
+              "version": "1"
+            }
+          ],
+          "now": 3,
+          "reason": "Synthetic material change to a declared premise",
+          "target": {
+            "claim_id": "bio-batch-map",
+            "evidence_digest": "sha256:3fb8eee8354e7170e631af1f2a009bf5084aabfe6e97e00bec8351b69454afa1",
+            "version": "1"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0007",
+          "target": {
+            "claim_id": "bio-batch-map",
+            "evidence_digest": "sha256:6acd34eaefd1f1f81d4ebb8e842c5656d2ce5b7145c4c3d0f349d07bc689d867",
+            "version": "2"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0008",
+          "target": {
+            "claim_id": "bio-assay-contrast",
+            "evidence_digest": "sha256:7ed27cdc9449456e90a09016e1f9a04826174df553863ec583af502d35357901",
+            "version": "2"
+          }
+        },
+        {
+          "action": "check",
+          "id": "check-0009",
+          "now": 4,
+          "outcome": "support"
+        },
+        {
+          "action": "rely",
+          "id": "rely-0010",
+          "kind": "scientific",
+          "now": 4
+        }
+      ],
+      "limits": "Synthetic additive-model identification; no patient, assay, clinical or laboratory validation",
+      "new_version": "current_under_toy_policy"
+    },
+    {
+      "after_amendment": "reconsideration_pending",
+      "amended_calculation": "2/5",
+      "amended_scope": [
+        "arithmetic"
+      ],
+      "before": "current_under_toy_policy",
+      "blocked_upgrade": null,
+      "calculated": {
+        "adverse_completed_share": "100/109",
+        "adverse_completed_share_float": 0.9174311926605505,
+        "completion_probability": "109/1000",
+        "separate_reliance_example": {
+          "completed_adverse_share": "1/10",
+          "relied_adverse_share": "1"
+        },
+        "target_effect_conditional_on_transport": "2/5",
+        "trial_effect": "8/5"
+      },
+      "domain": "economics",
+      "events": [
+        {
+          "action": "offer",
+          "id": "offer-0001",
+          "target": {
+            "claim_id": "econ-plan",
+            "evidence_digest": "sha256:4f9d261453f49d4091e219355096b05ab4eb436051370a851abcaa4db31744d9",
+            "version": "1"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0002",
+          "target": {
+            "claim_id": "econ-trial-ate",
+            "evidence_digest": "sha256:6d22ea06e7745ff2035f0ac0ff0887ec9eec0dbfd0389393b61c2d138eccbf05",
+            "version": "1"
+          }
+        },
+        {
+          "action": "check",
+          "id": "check-0003",
+          "now": 1,
+          "outcome": "support"
+        },
+        {
+          "action": "rely",
+          "id": "rely-0004",
+          "kind": "scientific",
+          "now": 1
+        },
+        {
+          "action": "amend",
+          "affected": [
+            {
+              "claim_id": "econ-plan",
+              "evidence_digest": "sha256:4f9d261453f49d4091e219355096b05ab4eb436051370a851abcaa4db31744d9",
+              "version": "1"
+            },
+            {
+              "claim_id": "econ-trial-ate",
+              "evidence_digest": "sha256:6d22ea06e7745ff2035f0ac0ff0887ec9eec0dbfd0389393b61c2d138eccbf05",
+              "version": "1"
+            }
+          ],
+          "now": 3,
+          "reason": "Synthetic material change to a declared premise",
+          "target": {
+            "claim_id": "econ-plan",
+            "evidence_digest": "sha256:4f9d261453f49d4091e219355096b05ab4eb436051370a851abcaa4db31744d9",
+            "version": "1"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0006",
+          "target": {
+            "claim_id": "econ-plan",
+            "evidence_digest": "sha256:2ae11245bc0aae0591d65f962cd13cc68a82e5f7f21009b5298a049481d98eeb",
+            "version": "2"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0007",
+          "target": {
+            "claim_id": "econ-trial-ate",
+            "evidence_digest": "sha256:19320eb6ad7d0756b90b38d9b8bd67fc955bdb10640698e1b1a4bdd450d84224",
+            "version": "2"
+          }
+        },
+        {
+          "action": "check",
+          "id": "check-0008",
+          "now": 4,
+          "outcome": "support"
+        },
+        {
+          "action": "rely",
+          "id": "rely-0009",
+          "kind": "scientific",
+          "now": 4
+        }
+      ],
+      "limits": "Stipulated effects and conditional transport; no empirical causal estimation or equilibrium model",
+      "new_version": "current_under_toy_policy"
+    },
+    {
+      "after_amendment": "reconsideration_pending",
+      "amended_calculation": true,
+      "amended_scope": [
+        "citation_accuracy"
+      ],
+      "before": "current_under_toy_policy",
+      "blocked_upgrade": "missing typed decision authority",
+      "calculated": {
+        "all_times_are_synthetic_ticks": true,
+        "deadline_order": [
+          {
+            "deadline": 1,
+            "finish": 1,
+            "id": "B",
+            "missed": false
+          },
+          {
+            "deadline": 4,
+            "finish": 4,
+            "id": "A",
+            "missed": false
+          }
+        ],
+        "fifo": [
+          {
+            "deadline": 4,
+            "finish": 3,
+            "id": "A",
+            "missed": false
+          },
+          {
+            "deadline": 1,
+            "finish": 4,
+            "id": "B",
+            "missed": true
+          }
+        ],
+        "infeasible_earliest_first": [
+          {
+            "deadline": 1,
+            "finish": 2,
+            "id": "C",
+            "missed": true
+          },
+          {
+            "deadline": 4,
+            "finish": 4,
+            "id": "D",
+            "missed": false
+          }
+        ],
+        "statutory_calendar_implemented": false
+      },
+      "domain": "law",
+      "events": [
+        {
+          "action": "offer",
+          "id": "offer-0001",
+          "target": {
+            "claim_id": "law-fictional-policy",
+            "evidence_digest": "sha256:33184c1ada650fa305d250f7d6256f22c2bf062d44e1e465ad94ad08c94a8425",
+            "version": "1"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0002",
+          "target": {
+            "claim_id": "law-memo",
+            "evidence_digest": "sha256:9a7fe5f2daf0267b3491e0f7b7d7f72370dd205fc203bf346dc0c32ebc5054ba",
+            "version": "1"
+          }
+        },
+        {
+          "action": "check",
+          "id": "check-0003",
+          "now": 1,
+          "outcome": "support"
+        },
+        {
+          "action": "rely",
+          "id": "rely-0004",
+          "kind": "publication",
+          "now": 1
+        },
+        {
+          "action": "amend",
+          "affected": [
+            {
+              "claim_id": "law-fictional-policy",
+              "evidence_digest": "sha256:33184c1ada650fa305d250f7d6256f22c2bf062d44e1e465ad94ad08c94a8425",
+              "version": "1"
+            },
+            {
+              "claim_id": "law-memo",
+              "evidence_digest": "sha256:9a7fe5f2daf0267b3491e0f7b7d7f72370dd205fc203bf346dc0c32ebc5054ba",
+              "version": "1"
+            }
+          ],
+          "now": 3,
+          "reason": "Synthetic material change to a declared premise",
+          "target": {
+            "claim_id": "law-fictional-policy",
+            "evidence_digest": "sha256:33184c1ada650fa305d250f7d6256f22c2bf062d44e1e465ad94ad08c94a8425",
+            "version": "1"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0006",
+          "target": {
+            "claim_id": "law-fictional-policy",
+            "evidence_digest": "sha256:e00131ae9d73c282b4fe9edc97b32d9de2e9bbc9b4ee8b6cdcd92a4e81409fad",
+            "version": "2"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0007",
+          "target": {
+            "claim_id": "law-memo",
+            "evidence_digest": "sha256:a96ab314cc8df92ea313d5ace4a4c8837a1f5c45cd17382fe3f465b946206d66",
+            "version": "2"
+          }
+        },
+        {
+          "action": "check",
+          "id": "check-0008",
+          "now": 4,
+          "outcome": "support"
+        },
+        {
+          "action": "rely",
+          "id": "rely-0009",
+          "kind": "publication",
+          "now": 4
+        }
+      ],
+      "limits": "Fictional policy and scheduling; no legal operational authority, real notices, statutory calendar or legal compliance",
+      "new_version": "current_under_toy_policy"
+    }
+  ],
+  "hidden_dependency_negative_control": {
+    "affected_marked_pending": 1,
+    "ground_truth_affected": 2,
+    "interpretation": "Declared-graph success does not imply real dependency completeness",
+    "recall": "1/2",
+    "states": {
+      "declared": "reconsideration_pending",
+      "hidden": "current_under_toy_policy"
+    }
+  },
+  "schema": "mcrp-domain-replay/1",
+  "synthetic_only": true
+}

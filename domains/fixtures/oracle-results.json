@@ -1,0 +1,90 @@
+{
+  "results": {
+    "biology": {
+      "confounded_mean_difference": "2",
+      "crossed_additive_effect": "1",
+      "crossed_average_contrast": "1",
+      "crossed_exact_additivity": true,
+      "crossed_within_batch_differences": [
+        "1",
+        "1"
+      ],
+      "evidence_digest": "sha256:34393964e50a125d88f2ccc93f211590e437675616bb24ff7b527f4f2a229e6a",
+      "rss_batch_explanation": "4",
+      "rss_treatment_explanation": "4",
+      "separate_effect_identified_in_confounded_design": false
+    },
+    "economics": {
+      "adverse_completed_share": "100/109",
+      "adverse_completed_share_float": 0.9174311926605505,
+      "completion_probability": "109/1000",
+      "evidence_digest": "sha256:6d22ea06e7745ff2035f0ac0ff0887ec9eec0dbfd0389393b61c2d138eccbf05",
+      "separate_reliance_example": {
+        "completed_adverse_share": "1/10",
+        "relied_adverse_share": "1"
+      },
+      "target_effect_conditional_on_transport": "2/5",
+      "trial_effect": "8/5"
+    },
+    "law": {
+      "all_times_are_synthetic_ticks": true,
+      "deadline_order": [
+        {
+          "deadline": 1,
+          "finish": 1,
+          "id": "B",
+          "missed": false
+        },
+        {
+          "deadline": 4,
+          "finish": 4,
+          "id": "A",
+          "missed": false
+        }
+      ],
+      "evidence_digest": "sha256:9a7fe5f2daf0267b3491e0f7b7d7f72370dd205fc203bf346dc0c32ebc5054ba",
+      "fifo": [
+        {
+          "deadline": 4,
+          "finish": 3,
+          "id": "A",
+          "missed": false
+        },
+        {
+          "deadline": 1,
+          "finish": 4,
+          "id": "B",
+          "missed": true
+        }
+      ],
+      "infeasible_earliest_first": [
+        {
+          "deadline": 1,
+          "finish": 2,
+          "id": "C",
+          "missed": true
+        },
+        {
+          "deadline": 4,
+          "finish": 4,
+          "id": "D",
+          "missed": false
+        }
+      ],
+      "statutory_calendar_implemented": false
+    },
+    "physics": {
+      "evidence_digest": "sha256:174a1fdf94a7fe47639a24b74cbe85fe830c0a12673f06ec622b2bab23f4ba0e",
+      "mistaken_standard_error": 0.1346291201783626,
+      "mistaken_variance": "29/1600",
+      "new_amplitude": "10",
+      "old_amplitude": "21/2",
+      "shared_standard_error": 0.5024937810560445,
+      "shared_variance": "101/400",
+      "variance_floor": "1/4"
+    }
+  },
+  "scenario_file_sha256": "c201067e0291a976e2eecae248860f089f75332cb8d63bf89e20bbc105d32edd",
+  "schema": "mcrp-domain-oracles/1",
+  "synthetic_only": true
+}

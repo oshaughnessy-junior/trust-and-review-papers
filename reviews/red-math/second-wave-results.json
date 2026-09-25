@@ -1,0 +1,65 @@
+{
+  "interpretation": "Independent adversarial reconstruction; synthetic traces only",
+  "independent_path_oracle": {
+    "fixed_panel": {
+      "completion": "23/32",
+      "unresolved": "9/32",
+      "expected_attempts": "15/8",
+      "risky_completed_share": "101/138"
+    },
+    "reroll": {
+      "completion": "7/8",
+      "unresolved": "1/8",
+      "expected_attempts": "7/4",
+      "risky_completed_share": "5/6"
+    }
+  },
+  "traces": {
+    "group_first_scarce": {
+      "counts_reconstructed": true,
+      "all_person_debits_reconstructed": true,
+      "no_automatic_repair_renewal": true,
+      "completed": 2,
+      "hours": 7.590000000000001
+    },
+    "group_first_plentiful": {
+      "counts_reconstructed": true,
+      "all_person_debits_reconstructed": true,
+      "no_automatic_repair_renewal": true,
+      "completed": 11,
+      "hours": 27.51
+    },
+    "naive_scarce": {
+      "counts_reconstructed": true,
+      "all_person_debits_reconstructed": true,
+      "no_automatic_repair_renewal": true,
+      "completed": 1,
+      "hours": 5.050000000000001
+    },
+    "hidden_control": {
+      "counts_reconstructed": true,
+      "all_person_debits_reconstructed": true,
+      "no_automatic_repair_renewal": true,
+      "completed": 12,
+      "hours": 26.48
+    },
+    "selective_reliance": {
+      "counts_reconstructed": true,
+      "all_person_debits_reconstructed": true,
+      "no_automatic_repair_renewal": true,
+      "completed": 11,
+      "hours": 27.410000000000004
+    }
+  },
+  "sweep_reproduced_runs": 7400,
+  "independent_replicate_interval_checks": 888,
+  "preserved_RM3": {
+    "returned_feasible": true,
+    "returned_maximum": 0.8333333333333334,
+    "sample_error": "marginal exceeds hard audit count cap"
+  },
+  "reviewed_source_sha256": {
+    "models/coupled/simulator.py": "0829563f34334132c0b3fdac18395ccde7ff76dea8ff7a92e8f12b623ae3a792",
+    "models/math/protocol_math.py": "7089c361ac1a3649ae2272bc8aa5a80446ff0ca44ea0e9d95ed1d8ae84b24da7"
+  }
+}

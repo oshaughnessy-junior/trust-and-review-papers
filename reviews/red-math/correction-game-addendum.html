@@ -1,0 +1,95 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Review of the correction-credit deviation bridge · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="review-of-the-correction-credit-deviation-bridge">Review of the
+correction-credit deviation bridge</h1>
+<p>The original ecology vulnerability remains reproducible. The blue
+lane has now added an explicit one-step choice between clean work and
+manufacturing a defect followed by successful repair. This is useful
+progress beyond a purely verbal warning: it exposes exactly which
+private reward and externalized-cost assumptions make the adverse choice
+profitable.</p>
+<h2 id="independent-evidence">Independent evidence</h2>
+<p><code>correction_game_review.py</code> independently reconstructed
+all 18 case/policy outcomes with direct exponential normalization, score
+updates and utility differences. Every recorded probability and payoff
+matched to less than 1e-12. All eight author tests passed.</p>
+<p>The default author-and-repairer credit rule gives author deviation
+gain +7.269752 and coalition gain +17.539505. Repairer-only credit gives
+author gain -19.108451 while coalition gain remains +13.108451. No
+allocation credit gives -3 for both. These are conditional utility
+differences under an assumed valuation of attention, not calibrated
+welfare estimates. The ordinary defect-detection process must not be
+substituted for the separately assumed probability of proving
+intentional manufacture.</p>
+<p>Full private cost internalization removes the positive default
+coalition gain (it becomes about -0.460495). Exogenous clean-author
+credit removes the unilateral gain, but the author-and-repairer
+coalition can still gain about +1.431053. This retained sensitivity is
+useful: apparently intuitive mitigations do not all solve the same
+problem. Nothing here establishes that suppressing correction credit is
+optimal or that genuine repair effort will then be supplied.</p>
+<h2 id="interpretation-clarifications">Interpretation
+clarifications</h2>
+<ol type="1">
+<li><strong>Clean-credit baseline.</strong> The case labeled
+<code>verified_clean_baseline</code> grants exogenous author credit. It
+does not replay the full ecology audit workflow, which can also credit a
+correct checker and consumes audit labor. Describe this as a
+clean-author-credit sensitivity, not a complete funded verification
+intervention. The same update/allocation formula is reused, but the
+whole ecology process is not composed into this two-action game.</li>
+<li><strong>Repair capacity.</strong> The scalar test h&lt;=available
+capacity is a one-case feasibility calculation. Subtracting h once
+correctly gives the remaining capacity for that case. It is not a
+stateful multi-case shared ledger or a schedule. Repeated independent
+calls do not reserve actual common capacity. The coupled simulator
+supplies a separate shared-ledger demonstration.</li>
+<li><strong>Coalition cost.</strong> The default coalition contains the
+credited repairer but internalizes only 10% of repair cost. This
+deliberately assumes substantial externalization or compensation, for
+example an institutional budget or subcontracted effort. If the
+repairer’s entire effort disutility is borne privately and no offset
+exists, the coalition share must reflect that; the full-internalization
+sensitivity illustrates the difference. Attention, effort tokens and
+utility remain separate units until the specified conversion factor is
+applied.</li>
+<li><strong>Completion and attribution.</strong> Profitable-if-feasible
+is conditional on the manufactured defect being successfully repaired
+and credited. The model has no stochastic failure path,
+limited-liability collection, alternative misconduct, detection-cost
+budget or repeated strategic learning. Its two-action comparison should
+not be promoted to incentive compatibility of the protocol.</li>
+<li><strong>Social cost proxy.</strong> The 26-unit quantity
+deliberately assumes a common utility scale and includes manufacture,
+full repair effort and temporary harm. It is a descriptive proxy, not
+comprehensive scientific welfare. Zero-sum redistribution of future
+attention is not counted as new social value.</li>
+</ol>
+<p>These are interpretive boundaries rather than new defects in the
+payoff arithmetic. The manuscript already states many of them
+explicitly. The research seed remains publishable with this narrow
+framing, and the original adversarial example should remain beside the
+added game.</p>
+<h2 id="audit-display-note">Audit display note</h2>
+<p>The exact audit API now correctly preserves a singleton feasible
+interval [5/6,5/6]. Its convenience float lower and upper endpoints can
+display in reversed order because the upper endpoint is conservatively
+rounded down. Exact fields remain authoritative and the sampler accepts
+them. Render user-facing intervals from the rational strings; never
+infer feasibility by re-comparing the convenience floats. This
+documented numerical distinction is sufficient for the research
+interface and does not require weakening any budget comparison.</p>
+<h2 id="updated-assent">Updated assent</h2>
+<p>The mathematical reviewer continues to assent to the curated research
+seed, now including the one-step correction game. No new blocking
+arithmetic defect was found. This addition strengthens the packet by
+making an incentive vulnerability executable while retaining its
+premises and the simple uniform-allocation baseline.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

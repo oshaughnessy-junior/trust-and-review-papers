@@ -1,0 +1,1 @@
+Synthetic adapter: roundtrip preserved; raw reliance refused; enriched cycle pending after amendment.

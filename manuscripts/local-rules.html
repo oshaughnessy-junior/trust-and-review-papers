@@ -1,0 +1,552 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Small rules, unequal resources: an attention ecology for protocol design · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="small-rules-unequal-resources-an-attention-ecology-for-protocol-design">Small
+rules, unequal resources: an attention ecology for protocol design</h1>
+<p><strong>Research question.</strong> Can a small
+recognition-and-correction loop support useful work without turning
+initial visibility into entrenched access to scarce review?</p>
+<p><strong>Bounded answer.</strong> Capping credit and preserving
+exploratory access yield simple mathematical bounds on <em>offered group
+attention</em>. They do not guarantee completed coverage, accurate
+checks, repair capacity or equitable outcomes. A small synthetic ecology
+exhibits those gaps and compares the mechanism against plain uniform
+routing rather than assuming reputation machinery is necessary.</p>
+<h2 id="contribution-and-claim-ledger">Contribution and claim
+ledger</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Label</th>
+<th>Statement</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D</td>
+<td>A four-rule ecology connects offers, scarce checking, recognition
+and persistent repair debt</td>
+<td><code>models/ecology/ecology.py</code></td>
+</tr>
+<tr>
+<td>T</td>
+<td>Capped decayed credit remains in [0,1]; softmax allocation then has
+a conditional ceiling</td>
+<td>Elementary derivation below</td>
+</tr>
+<tr>
+<td>T</td>
+<td>A specified symmetric mean-field map has a local feedback
+threshold</td>
+<td>Jacobian below; separate approximation, not a theorem about the
+simulator</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Shared integer effort is conserved, exogenous offers are paired
+across policies and missing capacity blocks work</td>
+<td>Ten ecology test methods plus eight correction-game methods,
+including independent trajectory labor sums and a closed-form payoff
+oracle</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Exploration/credit changes need not improve group coverage or repair
+backlog</td>
+<td>All 216 exploratory runs retained, including uniform baseline</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Recognition and dominance incentives could promote useful checking
+or entrenchment in humans</td>
+<td>No behavioral data or causal identification here</td>
+</tr>
+</tbody>
+</table>
+<p>The prior mathematical ingredients are ordinary softmax mixtures,
+convex updates, finite resource accounting and queue dynamics. This
+manuscript applies and connects them; it does not claim to invent these
+methods. The earlier dossier’s local-feedback model motivates the
+diagnostic. This study is standalone synthetic evidence, not a fitted or
+externally validated social model. AI agents drafted and internally
+critiqued it under the same orchestration; external and human review
+remain separate.</p>
+<h2 id="four-rules-three-comparison-policies">Four rules, three
+comparison policies</h2>
+<p>Six accountable groups differ in capacity, skill coverage, submission
+volume and stipulated review diligence. A large collaboration has more
+internal capacity and offers but remains one group. Offers contain a
+required skill and a synthetic latent defect. Reviewers are different
+qualified groups. Checks and independent audits consume scarce effort;
+flagged or audit-discovered defects create persistent correction work.
+Oldest corrections get first access to the same experts next period.</p>
+<p>The routing alternatives are: cumulative attention reinforced by
+pending volume (<strong>prestige</strong>); decayed capped
+check/correction credit with exploration (<strong>bounded</strong>); and
+a <strong>uniform active-group</strong> lottery. Each uses the same
+reviewer selection and cost model. Uniform routing is the serious
+simplicity baseline. Prestige intentionally models both feedback and
+volume multiplication; the experiment cannot identify which of those two
+components alone caused a difference.</p>
+<p>The word “trust” here names a proposed interpretation of recognition,
+not a computed probability that a claim is true. “Dominance” names the
+hypothesized advantage of visibility feeding future access, not a
+demonstrated account of human motivation. Agents do not optimize effort
+or voluntarily join; their stipulated diligence creates tasks
+accomplished or missed. The separate coupled study addresses limited
+honest/shallow/refuse responses. Neither model supplies a general
+cooperation theorem.</p>
+<h2 id="a-conditional-bound-not-a-promised-outcome">A conditional bound,
+not a promised outcome</h2>
+<p>For an active group set of integer size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">K\ge1</annotation></semantics></math>,
+finite score
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>i</mi></msub><annotation encoding="application/x-tex">s_i</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>ϵ</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le\epsilon\le1</annotation></semantics></math>
+and finite feedback strength
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta\ge0</annotation></semantics></math>,
+bounded routing uses</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mi>ϵ</mi><mi>K</mi></mfrac><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">)</mo><mfrac><msup><mi>e</mi><mrow><mi>β</mi><msub><mi>s</mi><mi>i</mi></msub></mrow></msup><mrow><munder><mo>∑</mo><mi>j</mi></munder><msup><mi>e</mi><mrow><mi>β</mi><msub><mi>s</mi><mi>j</mi></msub></mrow></msup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">P_i(s)=\frac{\epsilon}{K}+(1-\epsilon)
+\frac{e^{\beta s_i}}{\sum_j e^{\beta s_j}}.</annotation></semantics></math></p>
+<p>At period end, qualifying credit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r_i\ge0</annotation></semantics></math>
+produces</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>μ</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>s</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>μ</mi><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><msub><mi>r</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="1.0em"></mspace><mn>0</mn><mo>≤</mo><mi>μ</mi><mo>≤</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">s_i(t+1)=(1-\mu)s_i(t)+\mu\min(1,r_i(t)),\quad 0\le\mu\le1.</annotation></semantics></math></p>
+<p>Starting in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>,
+scores remain in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>
+because the update is a convex combination of two points in that
+interval. Therefore, while the active set and its declared identity
+partition are fixed,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>ϵ</mi><mi>K</mi></mfrac><mo>≤</mo><msub><mi>P</mi><mi>i</mi></msub><mo>≤</mo><mfrac><mi>ϵ</mi><mi>K</mi></mfrac><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">)</mo><mfrac><msup><mi>e</mi><mi>β</mi></msup><mrow><msup><mi>e</mi><mi>β</mi></msup><mo>+</mo><mi>K</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{\epsilon}{K}\le P_i\le
+\frac{\epsilon}{K}+(1-\epsilon)\frac{e^\beta}{e^\beta+K-1}.</annotation></semantics></math></p>
+<p>The upper bound follows by putting the selected score at one and all
+others at zero. Strong reinforcement can make it close to one despite
+bounded credit. A positive proposal floor is not a completion floor:
+selected work can lack an independent specialist, sufficient indivisible
+capacity or a feasible audit. An actor hidden behind multiple asserted
+groups also violates the fixed-group premise. The prestige comparator
+multiplies weights by queued volume after its mixture, so it does not
+inherit the uniform exploration floor.</p>
+<h2 id="a-local-self-organization-diagnostic">A local self-organization
+diagnostic</h2>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">K\ge2</annotation></semantics></math>,
+to isolate feedback, consider the <em>separate</em> deterministic
+approximation in which expected credit is exactly group attention, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mo>′</mo></msup><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>μ</mi><mo stretchy="false" form="postfix">)</mo><mi>s</mi><mo>+</mo><mi>μ</mi><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">s&#39;=(1-\mu)s+\mu P(s)</annotation></semantics></math>.
+It has a symmetric fixed point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn><mi>/</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">s_i=1/K</annotation></semantics></math>.
+On the zero-sum perturbation subspace the softmax Jacobian acts as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">)</mo><mi>β</mi><mi>/</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">(1-\epsilon)\beta/K</annotation></semantics></math>,
+giving update multiplier</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>μ</mi><mo>+</mo><mi>μ</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">)</mo><mi>β</mi><mi>/</mi><mi>K</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\lambda=1-\mu+\mu(1-\epsilon)\beta/K.</annotation></semantics></math></p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>μ</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;\mu\le1</annotation></semantics></math>
+and nonnegative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>,
+local asymptotic stability holds when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">)</mo><mi>β</mi><mo>&lt;</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">(1-\epsilon)\beta&lt;K</annotation></semantics></math>.
+Equality is inconclusive by this linearization; above it, small
+asymmetries grow locally. The common-score direction has multiplier
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">1-\mu</annotation></semantics></math>.
+This is a local result for the stated map. The actual simulator has
+heterogeneous queues, capacity filters, capped event credit, audit
+access and repair obligations; it is not this symmetric system and no
+threshold transfer is asserted. The calculation explains why feedback
+deserves testing even with a small rule set.</p>
+<h2 id="shared-labor-and-persistent-debt">Shared labor and persistent
+debt</h2>
+<p>A period gives each actor capacity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_i</annotation></semantics></math>.
+The costs are two effort tokens per invitation/intake, ten per completed
+check, five per independent audit and twenty per correction (scaled in a
+stress regime). All draw from the same balance. Thus for every
+actor-period, the implementation preserves</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>L</mi><mi>i</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">k</mi><mi mathvariant="normal">e</mi></mrow></msubsup><mo>+</mo><msubsup><mi>L</mi><mi>i</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">k</mi></mrow></msubsup><mo>+</mo><msubsup><mi>L</mi><mi>i</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi></mrow></msubsup><mo>+</mo><msubsup><mi>L</mi><mi>i</mi><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi></mrow></msubsup><mo>≤</mo><msub><mi>C</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">L_i^{\mathrm{intake}}+L_i^{\mathrm{check}}+L_i^{\mathrm{audit}}+L_i^{\mathrm{repair}}\le C_i.</annotation></semantics></math></p>
+<p>That accounting bound cannot prevent queues from growing. If
+recognized correction arrivals exceed feasible qualified correction
+completions, known debt accumulates. A low-resource specialist may check
+one offer yet be unable to complete an indivisible repair. Spare effort
+elsewhere does not solve that skill/size mismatch. Tasks cannot be
+fractionally carried across periods in this model. This modeling choice
+deliberately exposes indivisibility; it is not a recommended real
+scheduler.</p>
+<p>An even more troubling case is a small correction queue with many
+hidden defects. A shared blind period makes all checks support their
+claims. Without independent audits, defects create no repair requests.
+The negative-control test gives every offer a defect, every period
+blindness and no audits: some work completes, every judgment is wrong,
+and repair debt remains zero. Neither throughput nor a quiet queue
+should be a proxy for scientific reliability.</p>
+<h2 id="exploratory-design-and-honest-denominators">Exploratory design
+and honest denominators</h2>
+<p>Nine regimes perturb arrival load, feedback, exploration, repair
+cost, common-mode blindness, audit access bias and absence of audits.
+Each runs eight seeds for eighty periods under all three policies: 216
+retained runs. Exogenous offers, true defect states and blind periods
+match across policies within each seed/regime, verified by an
+offer-stream hash. Policies induce different processing orders and hence
+different signal draws; this is not pathwise matching of every check
+outcome.</p>
+<p>Outputs include all offers, checks, unresolved work, correctness
+among completed checks, correct checks per offered task, defect
+discovery divided by all offered defects, author-attention
+concentration, every group’s coverage, known repair debt and all charged
+labor. Capacity refusals and invitations count attempts rather than
+unique offers; retrying a pending offer next period is visible in those
+totals. There is no claim to include author drafting labor, routing
+compute or institutional administration. Group concentration must be
+read beside offered volume: equal attention shares and equal per-offer
+service are different objectives.</p>
+<p>The summary reports means and minimum/maximum across seeds, with
+paired differences from uniform routing. These are descriptive
+sensitivity results, not significance tests, inferential confidence
+intervals, real-world predictions or a preregistration. The run manifest
+identifies source/test and CSV hashes. Parameters are illustrative; none
+is estimated from scientific communities.</p>
+<h2
+id="selected-numerical-outcomes-synthetic-implementation-results">Selected
+numerical outcomes (synthetic implementation results)</h2>
+<p>Means over the eight retained seeds; full seed ranges and all regimes
+are in <code>models/ecology/results/summary.json</code>. “Correct/offer”
+includes unresolved offers in its denominator. HHI measures completed
+attention concentration, and debt counts recognized correction tasks
+remaining after eighty periods.</p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr>
+<th>Regime</th>
+<th>Policy</th>
+<th style="text-align: right;">Correct/offer</th>
+<th style="text-align: right;">Defects found</th>
+<th style="text-align: right;">HHI</th>
+<th style="text-align: right;">Lowest group coverage</th>
+<th style="text-align: right;">Repair debt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Default</td>
+<td>Prestige</td>
+<td style="text-align: right;">.914</td>
+<td style="text-align: right;">.887</td>
+<td style="text-align: right;">.241</td>
+<td style="text-align: right;">.990</td>
+<td style="text-align: right;">17.38</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>Bounded</td>
+<td style="text-align: right;">.906</td>
+<td style="text-align: right;">.896</td>
+<td style="text-align: right;">.241</td>
+<td style="text-align: right;">.980</td>
+<td style="text-align: right;">18.00</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>Uniform</td>
+<td style="text-align: right;">.900</td>
+<td style="text-align: right;">.881</td>
+<td style="text-align: right;">.241</td>
+<td style="text-align: right;">.983</td>
+<td style="text-align: right;">18.88</td>
+</tr>
+<tr>
+<td>Overload</td>
+<td>Prestige</td>
+<td style="text-align: right;">.693</td>
+<td style="text-align: right;">.697</td>
+<td style="text-align: right;">.303</td>
+<td style="text-align: right;">.552</td>
+<td style="text-align: right;">31.00</td>
+</tr>
+<tr>
+<td>Overload</td>
+<td>Bounded</td>
+<td style="text-align: right;">.682</td>
+<td style="text-align: right;">.652</td>
+<td style="text-align: right;">.207</td>
+<td style="text-align: right;">.613</td>
+<td style="text-align: right;">19.75</td>
+</tr>
+<tr>
+<td>Overload</td>
+<td>Uniform</td>
+<td style="text-align: right;">.687</td>
+<td style="text-align: right;">.613</td>
+<td style="text-align: right;">.183</td>
+<td style="text-align: right;">.486</td>
+<td style="text-align: right;">15.50</td>
+</tr>
+<tr>
+<td>Expensive repair</td>
+<td>Prestige</td>
+<td style="text-align: right;">.903</td>
+<td style="text-align: right;">.888</td>
+<td style="text-align: right;">.242</td>
+<td style="text-align: right;">.968</td>
+<td style="text-align: right;">37.62</td>
+</tr>
+<tr>
+<td>Expensive repair</td>
+<td>Bounded</td>
+<td style="text-align: right;">.896</td>
+<td style="text-align: right;">.891</td>
+<td style="text-align: right;">.242</td>
+<td style="text-align: right;">.968</td>
+<td style="text-align: right;">38.00</td>
+</tr>
+<tr>
+<td>Expensive repair</td>
+<td>Uniform</td>
+<td style="text-align: right;">.899</td>
+<td style="text-align: right;">.880</td>
+<td style="text-align: right;">.240</td>
+<td style="text-align: right;">.981</td>
+<td style="text-align: right;">38.38</td>
+</tr>
+<tr>
+<td>Common blindness</td>
+<td>Prestige</td>
+<td style="text-align: right;">.863</td>
+<td style="text-align: right;">.492</td>
+<td style="text-align: right;">.241</td>
+<td style="text-align: right;">.992</td>
+<td style="text-align: right;">8.00</td>
+</tr>
+<tr>
+<td>Common blindness</td>
+<td>Bounded</td>
+<td style="text-align: right;">.856</td>
+<td style="text-align: right;">.478</td>
+<td style="text-align: right;">.241</td>
+<td style="text-align: right;">.989</td>
+<td style="text-align: right;">7.88</td>
+</tr>
+<tr>
+<td>Common blindness</td>
+<td>Uniform</td>
+<td style="text-align: right;">.861</td>
+<td style="text-align: right;">.483</td>
+<td style="text-align: right;">.241</td>
+<td style="text-align: right;">.989</td>
+<td style="text-align: right;">7.12</td>
+</tr>
+</tbody>
+</table>
+<p>Under overload, uniform routing has the lowest concentration but also
+the lowest minimum per-group coverage; bounded routing improves that
+coverage metric while slightly reducing correct checks per offer
+relative to uniform. Total charged labor is similar: 10,404 tokens for
+bounded versus 10,373 for uniform out of 10,800 available. This is a
+tradeoff, not domination by the proposed mechanism.</p>
+<p>Known debt persists even under default load because the large team’s
+rare-skill repairs require a different qualified actor; its small
+rare-skill peers each have fifteen tokens, below an indivisible
+twenty-token repair. Uniform or prestige routing cannot create the
+missing independent repair capacity. Doubling repair cost raises debt
+for every policy. Under common blindness, the lower debt is misleading:
+fewer than half of all offered defects are found, even while correct
+checks per offer remain above .85 because most offers are
+nondefective.</p>
+<h2
+id="the-missing-incentive-bridge-manufacturing-work-to-earn-correction-credit">The
+missing incentive bridge: manufacturing work to earn correction
+credit</h2>
+<p>The adversarial replication exposed a structural gap: in a no-audit
+fixture, an all-clean population finishes with total recognition about
+.042, while an all-defective population finishes around 1.344 after 22
+completed repairs. This is an implementation counterexample about the
+reward rule. The agents in the ecology cannot choose their defect rates,
+so those numbers do not establish strategic behavior or an equilibrium.
+They motivate an explicit deviation model instead of a verbal claim that
+correction rewards induce cooperation.</p>
+<p><code>models/ecology/correction_game.py</code> compares <strong>clean
+work</strong> with <strong>deliberately manufacturing one correctable
+defect and obtaining a completed repair</strong>. It uses the actual
+bounded score update and allocation function from the ecology. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mn>0</mn></msup><annotation encoding="application/x-tex">q^0</annotation></semantics></math>
+be the next allocation vector after clean work,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>q</mi><mn>1</mn></msup><annotation encoding="application/x-tex">q^1</annotation></semantics></math>
+after manufactured and repaired work, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+the utility value of one full unit of future attention. The two actions
+concern the same final corrected claim: the manufactured path adds no
+assumed scientific value. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+be manufacture cost,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+repair effort,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℓ</mi><annotation encoding="application/x-tex">\ell</annotation></semantics></math>
+utility cost per effort token,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mi>A</mi></msub><annotation encoding="application/x-tex">\theta_A</annotation></semantics></math>
+the repair cost share borne by the author,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+the probability that intent to manufacture is established, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+a credible enforceable loss conditional on that finding. The one-step
+deviation gain is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>U</mi><mi>A</mi></msub><mo>=</mo><mi>V</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>q</mi><mi>A</mi><mn>1</mn></msubsup><mo>−</mo><msubsup><mi>q</mi><mi>A</mi><mn>0</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>c</mi><mo>−</mo><msub><mi>θ</mi><mi>A</mi></msub><mi>h</mi><mi>ℓ</mi><mo>−</mo><mi>d</mi><mi>F</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\Delta U_A=V(q^1_A-q^0_A)-c-\theta_A h\ell-dF.</annotation></semantics></math></p>
+<p>Within this risk-neutral one-step model, manufacturing a successfully
+repaired defect is strictly preferred <strong>if and only if</strong>
+independent repair is feasible and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>U</mi><mi>A</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta U_A&gt;0</annotation></semantics></math>.
+Equality means indifference. This is a comparison of two specified
+actions, not a complete action set, participation model or repeated-game
+equilibrium. An infeasible repair blocks this particular path; it does
+not prove that other misconduct is unprofitable. Intent detection
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+is a separate strong assumption: finding an ordinary error does not
+establish deliberate manufacture, and ordinary check accuracy cannot be
+substituted for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>.</p>
+<p>For an author–repairer coalition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>A</mi><mo>,</mo><mi>R</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">C=\{A,R\}</annotation></semantics></math>,
+the corresponding comparison is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>U</mi><mi>C</mi></msub><mo>=</mo><mi>V</mi><munder><mo>∑</mo><mrow><mi>i</mi><mo>∈</mo><mi>C</mi></mrow></munder><mo stretchy="false" form="prefix">(</mo><msubsup><mi>q</mi><mi>i</mi><mn>1</mn></msubsup><mo>−</mo><msubsup><mi>q</mi><mi>i</mi><mn>0</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>c</mi><mo>−</mo><msub><mi>θ</mi><mi>C</mi></msub><mi>h</mi><mi>ℓ</mi><mo>−</mo><mi>d</mi><mi>F</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">\Delta U_C=V\sum_{i\in C}(q^1_i-q^0_i)-c-\theta_C h\ell-dF,</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mi>C</mi></msub><mo>≥</mo><msub><mi>θ</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">\theta_C\ge\theta_A</annotation></semantics></math>
+is their joint internalized share and transfers inside the coalition
+cancel. The model assumes a common attention valuation solely to keep
+this counterexample small. Distinct declared control groups can still
+coordinate; declaration-level independence is not
+coalition-proofness.</p>
+<p>Three allocation-credit choices are retained: credit author
+<strong>and</strong> repairer; credit only the independent repairer; and
+no allocation credit for correction. Default parameters are three equal
+zero-score groups,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>=</mo><mn>.15</mn></mrow><annotation encoding="application/x-tex">\epsilon=.15</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\beta=4</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>.4</mn></mrow><annotation encoding="application/x-tex">\mu=.4</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">V=100</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">c=1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">h=20</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ell=1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>θ</mi><mi>A</mi></msub><mo>=</mo><msub><mi>θ</mi><mi>C</mi></msub><mo>=</mo><mn>.1</mn></mrow><annotation encoding="application/x-tex">\theta_A=\theta_C=.1</annotation></semantics></math>,
+and no intent detection. Independent repair capacity is twenty tokens.
+Clean work has zero verified credit in this no-audit fixture. This last
+premise is explicit and important: an exogenous clean-author-credit
+sensitivity is also supplied under the result key
+<code>verified_clean_baseline</code>. It does not replay a complete
+ecology audit, which can also credit the checker and consumes additional
+audit labor.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Correction-credit choice</th>
+<th style="text-align: right;">Author deviation gain</th>
+<th style="text-align: right;">Coalition deviation gain</th>
+<th style="text-align: right;">Added social-cost proxy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Author and repairer</td>
+<td style="text-align: right;">+7.27</td>
+<td style="text-align: right;">+17.54</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr>
+<td>Repairer only</td>
+<td style="text-align: right;">−19.11</td>
+<td style="text-align: right;">+13.11</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr>
+<td>No correction allocation credit</td>
+<td style="text-align: right;">−3.00</td>
+<td style="text-align: right;">−3.00</td>
+<td style="text-align: right;">26</td>
+</tr>
+</tbody>
+</table>
+<p>These values use the exact softmax, not a linearized benefit.
+Repairer-only credit removes this author’s unilateral gain but leaves a
+profitable coordinated path. The no-credit baseline removes this channel
+under the stated utility function; it is <strong>not</strong> asserted
+optimal, since willingness to perform genuine repairs, intrinsic motives
+and useful recognition are absent from this one-step comparison. Full
+exploration removes this attention reward channel. Full cost
+internalization, credible intent detection, verified clean-work credit
+and insufficient independent repair capacity are separate retained
+sensitivity cases.</p>
+<p>The descriptive social-cost proxy is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>+</mo><mi>h</mi><mi>ℓ</mi><mo>+</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">c+h\ell+H</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">H=5</annotation></semantics></math>
+for temporary harm; attention transfer is excluded as a social benefit
+because the opportunity pool is fixed. This is an assumed common utility
+scale, not measured scientific welfare. A twenty-token repair also
+consumes the entire modeled available repair capacity, leaving none for
+another case. Costs borne by a shared sponsor or volunteer pool still
+exist even if a strategic coalition does not internalize them. The
+default coalition includes the credited repairer yet bears only ten
+percent of the cost; this assumes substantial externalization or
+compensation. If the repairer bears the full private effort cost without
+an offset, the coalition share must reflect that, as in the
+full-internalization sensitivity.</p>
+<p>The scalar capacity comparison is for one case. It does not reserve
+capacity across repeated calls or provide a multi-case schedule; the
+separate coupled simulator supplies the stateful shared-ledger
+experiment.</p>
+<p>The design consequence is not to punish ordinary corrections or treat
+disclosed mistakes as misconduct. An honest author who repairs a claim
+has made information more useful and should retain a safe correction
+path. Distinguish recognizing responsible conduct from automatically
+increasing scarce review priority whenever repair volume rises. Whether
+to credit independent repair, baseline clean work, or neither in
+allocation requires testing with genuine repair participation and
+collusion incentives; no choice here has earned an institutional
+recommendation.</p>
+<h2 id="interpretation-and-failure-of-mitigation">Interpretation and
+failure of mitigation</h2>
+<p>The retained runs should decide how much additional mechanism is
+worth exploring. Do not select only the regime in which bounded credit
+looks best. Uniform routing can match or exceed it, high exploration can
+change little when skill constraints bind, and expensive repair can
+defeat every allocation policy. Audit access bias can turn “verified
+credit” into a proxy for privileged access. Even idealized audits cannot
+help when independent expertise or capacity is absent.</p>
+<p>A human-facing protocol can retain four simple actions while machines
+expose these resource and uncertainty states. But complexity inside the
+institution has not been abolished: someone must establish accountable
+control, decide check scope, supply independent auditing and carry
+correction duties. The model helps locate those burdens; it does not
+prove that people will accept them.</p>
+<p>Before a pilot, compare a plain structured-template interface and
+uniform routing against the additional credit mechanism under matched
+total labor. A finding of no material advantage is a reason to omit the
+mechanism. Keep portable receipts, explicit unknowns and inspectable
+correction paths even if recognition feedback fails its test.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

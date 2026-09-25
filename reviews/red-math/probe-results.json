@@ -1,0 +1,46 @@
+{
+  "interpretation": "Exact toy counterexamples and theorem-boundary probes, no empirical validation",
+  "audit": {
+    "iid_expected_cost": 2.0,
+    "budget": 2.0,
+    "iid_probability_cost_exceeds_budget": 0.4405384151266024,
+    "hard_cap_noninteger_example": {
+      "N": 3,
+      "budget": "3/2",
+      "cost": "1",
+      "max_equal_marginal": "1/3",
+      "expected_budget_only_marginal": "1/2"
+    },
+    "fixed_size_marginals": [
+      "2/5",
+      "2/5",
+      "2/5",
+      "2/5",
+      "2/5"
+    ]
+  },
+  "adaptive_completion": {
+    "policies_checked": 20,
+    "maximum_depth": 8,
+    "conditional_bound": "2/5",
+    "max_observed_share": "19/100",
+    "floor_violation_share": "1",
+    "floor_violation_completion": "56953279/100000000",
+    "offered_cap": ".1",
+    "completed_share_before_reliance_filter": "1/10",
+    "relied_share_after_category_filter": "1"
+  },
+  "conditional_repair": {
+    "initial_first_moment_ratio": "1/2",
+    "generation_10_expected_work": "256",
+    "conditional_survivor_ratio": 2,
+    "violates_conditional_envelope": true
+  },
+  "preserved_original_accounting": {
+    "offered": 10000,
+    "completed": 1044,
+    "reported_unresolved": 0,
+    "required_unresolved_if_no_other_terminal_outcome": 8956
+  },
+  "probe_sha256": "8bc83db9bf0c5065fa962b9c32b90a66943662ba90a46c385394117323e7aa3e"
+}

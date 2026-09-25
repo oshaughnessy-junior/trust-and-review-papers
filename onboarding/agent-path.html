@@ -1,0 +1,138 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Agent-first uptake: run one bounded JSON task · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="agent-first-uptake-run-one-bounded-json-task">Agent-first
+uptake: run one bounded JSON task</h1>
+<p>The initial launch path is agent-only, local and synthetic. Start
+directly with the <a href="../agent_api/manifest.json">machine-readable
+manifest</a> and <a href="../agent_api/README.html">CLI quickstart</a>;
+no facilitator session or human-study participation is a prerequisite.
+The human comparison remains a separate future evaluation.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/agent_api/cli.py <span class="at">--policy</span> papers/07-release-packet/agent_api/examples/policy.json <span class="at">--request</span> papers/07-release-packet/agent_api/examples/physics_astro.json</span></code></pre></div>
+<p>The four domain fixtures produce exact versions, scoped records, an
+intentional stale-check refusal and a new-version reliance while the old
+record stays pending. The separate trusted fixture policy maps agent
+aliases to shared principals and control groups. Role declarations and
+caller-supplied agent IDs are not real authentication or scientific
+authority. This is a bounded local runner, not a network-enrolled review
+service. Preserve its machine-readable limitations.</p>
+<p>Follow the existing contribution process with a failing fixture,
+proposed repair and test output. Repository owners review and merge
+contributions; no automatic submission, publication or remote action
+occurs.</p>
+<h2 id="implement-one-boundary">Implement one boundary</h2>
+<p>Begin with the executable fixtures and their expected outcomes. A toy
+agent is a deterministic policy acting in a simulated environment; it is
+not an enrolled reviewer, authenticated service or independently
+responsible organization.</p>
+<h2 id="what-an-adapter-must-preserve">What an adapter must
+preserve</h2>
+<p>The small external vocabulary is offer, check, rely, amend. Existing
+internal workflows can remain complex. An adapter must preserve the
+intended use, exact claim/evidence version, declared dependencies, check
+scope and result, responsible actor, decision authority, resource
+assumptions, and unresolved changes.</p>
+<p>An adapter may carry an existing DOI, repository commit, notebook,
+review letter or institutional decision as a reference. It must not
+infer consent, signatures, reviewer independence or scientific
+acceptance from a URL. Missing metadata stays missing. Map unsupported
+fields to explicit unknowns and report information loss.</p>
+<p>Try the <a href="legacy-adapter.md">runnable legacy-review
+adapter</a> for a concrete bridge from an existing review record to the
+toy runtime, including its loss report and separate trusted-fixture
+enrichment.</p>
+<h2 id="first-implementation-exercise">First implementation
+exercise</h2>
+<ol type="1">
+<li>Run a supplied JSON task and preserve policy, request, outputs and
+test results.</li>
+<li>Add a second agent alias for one existing principal in the trusted
+example policy. Show that both aliases spend the same principal budget
+and cannot create a second independent control group. The JSON interface
+has no panel allocation API. For the separate 100-label panel
+experiment, use the <a href="../models/math/README.html">mathematical
+models</a>; do not send 100 identities to the bounded JSON runner.</li>
+<li>Change one evidence version after a check. Attempt the old reliance
+decision. Demonstrate the currentness/target mismatch and the new work
+required.</li>
+<li>Reduce a scarce skill’s capacity while leaving total capacity high.
+Show the unavailable or delayed outcome. Do not replace it with an
+unqualified checker.</li>
+<li>Add one real workflow adapter using only shareable example data.
+Produce a round-trip report identifying preserved fields, missing fields
+and any lossy translations. Do not claim standards conformance from
+field names alone.</li>
+</ol>
+<p>Consult <a href="../models/agent-framework.md">the toy-agent
+framework</a> and its package README for executable commands and the
+actual API. The prose here is a behavioral contract; it does not
+introduce a second incompatible wire format.</p>
+<h2 id="two-independent-axes-of-success">Two independent axes of
+success</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Record behavior</th>
+<th>Scientific adequacy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exact version survives round trip</td>
+<td>The evidence addresses the intended claim</td>
+</tr>
+<tr>
+<td>Typed check cannot become an authority grant</td>
+<td>The person deciding is competent and authorized</td>
+</tr>
+<tr>
+<td>Amendment reaches declared dependents</td>
+<td>Relevant dependencies were actually declared</td>
+</tr>
+<tr>
+<td>Resource reservation is not double spent</td>
+<td>Capacity estimates represent real available people</td>
+</tr>
+<tr>
+<td>Unknown/stale remains visible</td>
+<td>The recipient notices and responds appropriately</td>
+</tr>
+</tbody>
+</table>
+<p>The first column can be substantially tested in a toy system. The
+second needs external evidence and accountable judgment. Passing one
+does not establish the other.</p>
+<h2 id="contribution-package">Contribution package</h2>
+<p>Supply a minimal scenario, one command, expected and actual outputs,
+source and environment versions, explicit assumptions, a negative
+control, and a short claim ledger. Include the failed case before a
+proposed repair. Report all offered tasks and unfinished work, not
+merely successful completions. Use synthetic identities and local files;
+no network credentials are required for this prototype.</p>
+<p>An implementation may extend the record with domain fields, but it
+should still render the six-question human card. If a person cannot tell
+what a record means without reading the implementation, the adapter has
+failed the onboarding goal.</p>
+<h2 id="toward-a-real-service">Toward a real service</h2>
+<p>Authentication, adversarial identity and common-control discovery,
+concurrency, durable transactions, privacy, external notification, legal
+operations, and actual appointment of decision makers are outside the
+toy runtime. Preserve these as named unimplemented boundaries. A new
+profile should state its own tests and compatibility choices instead of
+silently inheriting production guarantees from this research
+demonstration.</p>
+<p>For the separate future human comparison and immediate synthetic
+conformance exercise, read the <a
+href="evaluation-plan.html">pre-results evaluation plan</a>. Passing
+agent fixtures cannot substitute for its human outcomes.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

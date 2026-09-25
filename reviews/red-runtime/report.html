@@ -1,0 +1,208 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Runtime red-team report · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="runtime-red-team-report">Runtime red-team report</h1>
+<p><strong>Reviewer:</strong> internal AI adversarial lane; same
+operator as authors, not external security audit. <strong>Date:</strong>
+25 September 2026. <strong>Verdict:</strong> acceptable to publish as an
+explicitly synthetic research prototype after the concrete repairs
+below; not evidence that the Commons service is secure or
+institutionally authorized.</p>
+<h2 id="what-was-attacked">What was attacked</h2>
+<p>Reviewed the toy runtime, publication boundary model, their claims
+and tests, agent-framework manuscript, public introduction, and dossier
+06 collective assessment. All probes use ordinary public API methods and
+valid fixture roles. No finding relies on editing runtime dictionaries,
+forging real credentials, pretending supplied group labels were
+authenticated, or executing hostile code inside the trusted Python
+process. Files were changing during review; the baseline and repaired
+observations are distinguished explicitly.</p>
+<p>The red reviewer independently ran the author suites, wrote seven
+additional regression tests, and executed seven diagnostic probes. The
+original author suites passed while the initial semantic counterexamples
+remained possible. Passing unit tests was therefore not accepted as
+dispositive evidence.</p>
+<h2 id="findings-and-disposition">Findings and disposition</h2>
+<p>Severity is relative to <strong>the prototype’s advertised
+semantics</strong>, not CVSS or production exploitability. P2 means
+materially misleading state or ordinary API failure that should be
+repaired before presenting a positive demonstration.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>ID</th>
+<th>Severity</th>
+<th>Counterexample and affected claim</th>
+<th>Disposition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RR-1</td>
+<td>P2</td>
+<td>A support check creates reliance; a later direct overlapping
+contradiction blocks a new identical reliance but leaves the old one
+<code>current_under_toy_policy</code>. A user sees inconsistent
+application of the conservative contradiction policy.</td>
+<td>Repaired. Existing reliance now reports
+<code>contradiction_pending</code>; negative probe and independent
+regression pass. This does not automatically adjudicate science or
+propagate every disputed premise as a material amendment.</td>
+</tr>
+<tr>
+<td>RR-2</td>
+<td>P2</td>
+<td>Query expiry at time 10, then query time 2: toy runtime restores
+<code>current_under_toy_policy</code>. Its original event-only time
+check differed from the publication model’s clock and invited accidental
+historical/current confusion.</td>
+<td>Repaired. Successful currentness queries advance the monotone clock.
+Earlier queries reject. Prior documentation narrowly spoke about timed
+events, so this is semantic hardening, not a falsified theorem about
+historical databases.</td>
+</tr>
+<tr>
+<td>RR-3</td>
+<td>P2</td>
+<td>Deliver candidate A; verify B with the same release ID and bytes but
+different source/evidence metadata; observing B returns
+<code>matches</code>, and its currentness returns
+<code>last_observation_matches</code>, although publishing B rejects
+rebinding.</td>
+<td>Repaired. Observation records actual binding and returns
+<code>binding_mismatch</code>; currentness returns
+<code>release_binding_mismatch</code>. The original publication guard
+itself was not bypassed. The defect was a misleading observer/candidate
+composition.</td>
+</tr>
+<tr>
+<td>RR-4</td>
+<td>P2</td>
+<td>An invalid publication request at time 1,000,000 rejects but
+advances the clock, preventing a valid request at time 2.</td>
+<td>Repaired. Failed validation does not commit time. Independent tests
+cover failed publish, verify, observe and amend calls and compare
+complete pre/post state. External denial of service is not thereby
+solved.</td>
+</tr>
+<tr>
+<td>RR-5</td>
+<td>P2</td>
+<td>Amendment links allow A→B→A and overwrite A’s successor. The
+original link also discards the replacement’s complete binding,
+retaining only its release ID.</td>
+<td>Repaired with deliberately narrower policy: successor must be a new
+release ID; old successors cannot be overwritten; replacement binding is
+recorded and enforced during authorization. Independent probes reject
+cycles, overwrite and differently bound replacement. This is not a
+general branching/merging correction protocol.</td>
+</tr>
+<tr>
+<td>RR-6</td>
+<td>P2 / specification gap</td>
+<td><code>required_groups</code> is supplied at each reliance call and
+originally absent from its stored record. A caller can ask for two
+groups, fail, then choose one.</td>
+<td>Offer now records a minimum floor; reliance cannot weaken it and
+records the actual threshold. Red regression sets an explicit floor of
+two and rejects a one-group call. An earlier stronger <em>one-off
+reliance request</em> should not silently redefine the offer’s policy.
+The author still chooses the offer floor: no external approval of
+contract adequacy is implemented.</td>
+</tr>
+<tr>
+<td>RR-7</td>
+<td>Known excluded premise</td>
+<td>Two actor IDs representing one real person each receive a full
+capacity key. The ledger accepts two units against a real-person
+capacity of one, even when both IDs share a control group.</td>
+<td>Retained negative control. The capacity theorem explicitly assumes
+correct consolidated person keys. Control groups and resource identities
+solve different problems. This is not a discovered arithmetic
+defect.</td>
+</tr>
+</tbody>
+</table>
+<p>The exact baseline observations appear in
+<code>baseline-probes.json</code>. That file is a compact transcription
+of the initial reviewer tool outputs, not a claim that current source
+reproduces unfixed behavior. Its original six-result output file was
+overwritten during a concurrent author repair and rerun; the
+transcription preserves what was observed and labels the inferred
+replacement-binding issue. The contract probe was revised after the
+explicit offer-floor API was introduced.
+<code>repaired-probes.json</code> is generated from the current runnable
+probe. Intermediate hashes describe an intermediate review state only;
+final hashes identify the reviewed source at verdict time.</p>
+<h2 id="independent-verification">Independent verification</h2>
+<p>From the repository root:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/reviews/red-runtime/probes.py</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/reviews/red-runtime <span class="at">-p</span> test_adversarial_runtime.py <span class="at">-v</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/models <span class="at">-p</span> test_release_cycle.py <span class="at">-v</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/domains/fixtures <span class="at">-p</span> test_domain_models.py <span class="at">-v</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="bu">cd</span> papers/07-release-packet <span class="kw">&amp;&amp;</span> <span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> toy_agents/tests <span class="at">-v</span><span class="kw">)</span></span></code></pre></div>
+<p>At verdict: 7 red regression methods, 9 publication methods, 19
+toy-runtime methods and 15 domain methods pass. These 50 methods are a
+subset of the full release’s tests; do not add them to a global count
+twice. Logs are retained in this directory. Source hashes accompany the
+final verdict; generated results are synthetic outputs, not observations
+of a hosted service.</p>
+<h2 id="remaining-boundaries-worth-making-prominent">Remaining
+boundaries worth making prominent</h2>
+<ol type="1">
+<li><strong>Policy validity is separate from policy
+preservation.</strong> A frozen two-group threshold can be enforced, but
+the API does not establish that two groups are enough, independent,
+competent, or appropriate. A person granted both author and decision
+roles by the trusted fixture can decide their own reliance after
+external checks. Typed authority alone is not separation of duty.</li>
+<li><strong>A stage invariant does not automatically survive
+composition.</strong> The static group sampler, shared capacity ledger,
+completed-review population and final reliance selection have different
+distributions. A correct sampler plus a reservation rejection is not a
+fair scheduler. Publish the denominator trace through actual reliance
+and charge refusals, retries and repair.</li>
+<li><strong>Observation is bounded.</strong> Caller-supplied observation
+time is not a signed freshness witness. The synthetic publication
+observer consults an in-memory delivery map, not an independent
+destination with independent credentials. A matching receipt is dated
+evidence, never continuous monitoring.</li>
+<li><strong>Corrections still require judgment and resources.</strong> A
+free-form amendment reason does not establish materiality, resolve a
+dispute, or create recheck labor. Authority over amendment and
+revocation is a trusted fixture-operator decision, not an authenticated
+legal or scientific procedure.</li>
+<li><strong>Negative controls belong in the release.</strong> Hidden
+dependencies, common control and duplicate capacity identities should
+stay visible. Renaming their outputs as bugs fixed by this review would
+misstate the scope of the model.</li>
+</ol>
+<h2 id="collective-contribution">Collective contribution</h2>
+<p>The strongest common conclusion is <strong>small records make
+assumptions inspectable; they do not create the missing
+institution</strong>. The runtime preserves selected contracts, the math
+analyzes conditional behavior, domain fixtures demonstrate specific
+inferential limits, and legal analysis identifies authority and duties.
+None alone establishes the end-to-end result. The next useful experiment
+couples selection, reservations, completion, actual reliance and
+correction under one resource budget, with a plain structured-template
+baseline.</p>
+<p>I support publication of this repaired, candid research seed. I do
+not support claims of production security, externally reviewed
+correctness, legal clearance, autonomous scientific judgment, lower
+human labor, or an operationally validated review commons. Licensing,
+human attribution and the exact export decision remain outside this
+technical assent.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

@@ -1,0 +1,244 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Executable boundary model: states, scarce work, and repair · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="executable-boundary-model-states-scarce-work-and-repair">Executable
+boundary model: states, scarce work, and repair</h1>
+<p><strong>Research question:</strong> Can four participant actions
+expose composition failures without a universal reputation score or a
+large mandatory rule table?</p>
+<p><strong>Bounded answer:</strong> A small deterministic model can
+reject several precisely specified mismatches and exhibit
+counterexamples to broader promises. It cannot establish human
+usability, scientific truth, actual independence or live authority.</p>
+<h2 id="contribution-and-claim-ledger">Contribution and claim
+ledger</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Label</th>
+<th>Claim</th>
+<th>Evidence / limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D</td>
+<td>Offer/check/rely/amend forms a small participant API</td>
+<td><code>toy_agents/protocol.py</code>; proposed semantics, not adopted
+standard</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Joint reservation enforces specified person and skill capacity</td>
+<td>Finite-sum argument below; assumes complete correct capacity
+keys</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Atomic panels, version mismatches, scope gaps, unknown checks,
+unauthorized decisions and stale renewal are handled</td>
+<td><code>toy_agents/tests/test_protocol.py</code>; trusted-process
+synthetic cases</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Canonical group-first sampling is invariant to redundant labels
+within a group</td>
+<td>Elementary pushforward proof below; static eligibility only</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Hidden dependencies escape amendment propagation</td>
+<td>Deliberate negative control <code>hidden_dependency()</code></td>
+</tr>
+<tr>
+<td>H</td>
+<td>Four actions lower total human labor or improve defect
+detection</td>
+<td>Unestablished; compare structured-template baseline in a human
+pilot</td>
+</tr>
+</tbody>
+</table>
+<p>The API is a synthesis and executable illustration of the preceding
+dossier, not a claim that versioned records, graph reachability,
+resource reservations, randomized panels or state machines are newly
+invented. Closest technical basis is the prior bounded-reliance work
+summarized in the <a
+href="../publication/background.html">self-contained background</a>. No
+external interoperability, external peer review or empirical evaluation
+is claimed.</p>
+<h2 id="target-and-authority-composition">Target and authority
+composition</h2>
+<p>Define exact target
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>e</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">t=(c,v,e)</annotation></semantics></math>
+with claim ID, version and evidence identifier. The simulator treats
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+as an opaque fixture identifier; a cryptographic binding would require a
+separately authenticated content layer. An offer gives scope
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>o</mi></msub><annotation encoding="application/x-tex">S_o</annotation></semantics></math>
+and declared prerequisite targets
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">D(t)</annotation></semantics></math>.
+A check
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+gives scope
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>j</mi></msub><annotation encoding="application/x-tex">S_j</annotation></semantics></math>,
+reviewer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>j</mi></msub><annotation encoding="application/x-tex">a_j</annotation></semantics></math>,
+method, limitations, outcome and dependency-generation snapshot.</p>
+<p>For requested scope
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>r</mi></msub><annotation encoding="application/x-tex">S_r</annotation></semantics></math>,
+selected supporting checks
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>,
+and minimum independent groups
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>,
+the implemented coverage condition is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>s</mi><mo>∈</mo><msub><mi>S</mi><mi>r</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mo stretchy="false" form="prefix">{</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>:</mo><mi>j</mi><mo>∈</mo><mi>J</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>s</mi><mo>∈</mo><msub><mi>S</mi><mi>j</mi></msub><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">|</mo></mrow><mo>≥</mo><mi>k</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\forall s\in S_r,\quad \left|\{g(a_j):j\in J,\ s\in S_j\}\right|\ge k.</annotation></semantics></math></p>
+<p>This is stronger than counting distinct groups across the entire
+panel: one group checking calibration and another checking statistics do
+not provide two checks of either. All selected checks must refer to the
+same offer, support the claimed scope, and match the current declared
+dependency snapshot. Current overlapping contradictory checks also block
+a new reliance even if omitted from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>.
+This is a conservative model choice, not a replacement for reasoned
+disagreement or domain adjudication.</p>
+<p>Typed authority is a predicate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>κ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A(a,\kappa)</annotation></semantics></math>
+for decision kind
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>κ</mi><annotation encoding="application/x-tex">\kappa</annotation></semantics></math>.
+The trusted fixture registry may give scientific or publication
+authority separately. The engine never infers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+from a support check, team size or a favorable numerical result. It does
+not validate whether any real institution granted the authority.</p>
+<h2 id="reservation-invariant-and-exact-units">Reservation invariant and
+exact units</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>p</mi><mi>s</mi><mi>ℓ</mi></mrow></msub><mo>∈</mo><msub><mi mathvariant="double-struck">ℕ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">x_{ps\ell}\in\mathbb N_0</annotation></semantics></math>
+be effort reserved or spent by accountable capacity key
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>,
+skill
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+and task
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℓ</mi><annotation encoding="application/x-tex">\ell</annotation></semantics></math>.
+A valid schedule satisfies</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mrow><mi>s</mi><mo>,</mo><mi>ℓ</mi></mrow></munder><msub><mi>x</mi><mrow><mi>p</mi><mi>s</mi><mi>ℓ</mi></mrow></msub><mo>≤</mo><msub><mi>C</mi><mi>p</mi></msub><mo>,</mo><mspace width="2.0em"></mspace><munder><mo>∑</mo><mi>ℓ</mi></munder><msub><mi>x</mi><mrow><mi>p</mi><mi>s</mi><mi>ℓ</mi></mrow></msub><mo>≤</mo><msub><mi>C</mi><mrow><mi>p</mi><mi>s</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">\sum_{s,\ell} x_{ps\ell}\le C_p,\qquad
+  \sum_\ell x_{ps\ell}\le C_{ps}.</annotation></semantics></math></p>
+<p>For a candidate batch
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>,
+the ledger adds its nonnegative integer entries to the full committed
+ledger, validates both inequalities, and commits the entire batch only
+if every inequality holds. Therefore, by induction from the empty
+ledger, every accepted sequence satisfies both bounds. A rejected batch
+changes nothing. Consumption preserves its allocation; cancellation
+removes only unspent work. This is a finite accounting invariant, not
+proof of deadlines, productivity or honest reservations. Independent
+tests compare randomized batch acceptance against a separate
+schedule-summing oracle, including shared skills and partially fitting
+batches. A single person represented by two unknown keys breaks the
+premise.</p>
+<p><code>check_panel</code> uses a detached serial state to expose
+all-or-none behavior. It is not scalable storage and supplies no
+concurrency, crash-recovery or distributed atomicity guarantee. Units
+are synthetic effort tokens per scope skill. A real application must
+price setup, supervision, audit, triage, appeals and repair in measured
+compatible units and preserve commitments across epochs.</p>
+<h2 id="canonical-panels-and-the-label-multiplicity-trap">Canonical
+panels and the label-multiplicity trap</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+be the static qualified, nonconflicted group set. Sample uniformly from
+its
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-subsets,
+then choose an eligible representative inside each chosen group. For
+group panel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>,
+the marginal probability is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>H</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mo stretchy="false" form="prefix">|</mo><mi>G</mi><mo stretchy="false" form="prefix">|</mo></mrow><mi>k</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">P(H)=\binom{|G|}{k}^{-1}.</annotation></semantics></math></p>
+<p>Splitting a representative into redundant labels inside a fixed group
+changes only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mtext mathvariant="normal">representatives</mtext><mo>∣</mo><mi>H</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P(\text{representatives}\mid H)</annotation></semantics></math>,
+whose sum remains one. Thus the pushforward onto group panels is
+unchanged. This is conditional on correct fixed group labels and
+unchanged eligibility, not Sybil resistance or a dynamic completion
+theorem. The executable sampler enumerates subsets, so its cost grows
+combinatorially; small toy pools only. No efficient general constrained
+sampler is claimed.</p>
+<p>Negative control: for groups A, B, C and two seats, give A
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+representatives, B and C one each. Uniform sampling of feasible
+representative pairs has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2m+1</annotation></semantics></math>
+panels; A occupies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">2m</annotation></semantics></math>.
+Its probability is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>m</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">2m/(2m+1)</annotation></semantics></math>
+despite a strict one-seat per-group rule. Group-first sampling instead
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">2/3</annotation></semantics></math>.
+The checked-in run uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">m=100</annotation></semantics></math>
+and 3,000 draws; exact formulas are the claim, frequencies
+illustrations.</p>
+<p>Completion is a different conditioning event. If risky invitations
+have fraction
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+and complete with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>R</mi></msub><annotation encoding="application/x-tex">c_R</annotation></semantics></math>,
+versus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>S</mi></msub><annotation encoding="application/x-tex">c_S</annotation></semantics></math>
+for others, then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo>∣</mo><mtext mathvariant="normal">complete</mtext><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>q</mi><msub><mi>c</mi><mi>R</mi></msub></mrow><mrow><mi>q</mi><msub><mi>c</mi><mi>R</mi></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>c</mi><mi>S</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">P(R\mid\text{complete})=\frac{qc_R}{qc_R+(1-q)c_S}.</annotation></semantics></math></p>
+<p>The demo uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>.1</mn><mo>,</mo><msub><mi>c</mi><mi>R</mi></msub><mo>=</mo><mn>1</mn><mo>,</mo><msub><mi>c</mi><mi>S</mi></msub><mo>=</mo><mn>.01</mn></mrow><annotation encoding="application/x-tex">q=.1,c_R=1,c_S=.01</annotation></semantics></math>,
+giving
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mi>/</mi><mn>109</mn><mo>≈</mo><mn>.9174</mn></mrow><annotation encoding="application/x-tex">100/109\approx.9174</annotation></semantics></math>.
+It records all stage denominators and charged intake. No offered-panel
+probability bound is carried across capacity filtering, retries or
+selective completion.</p>
+<h2 id="amendments-and-bounded-currentness">Amendments and bounded
+currentness</h2>
+<p>Each offered target has generation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">g(t)</annotation></semantics></math>.
+A reliance stores generations of its transitive declared prerequisite
+closure, including itself. Material amendment increments the changed
+target generation. A downstream reliance is pending iff its snapshot
+differs from the current closure snapshot. A new checked and authorized
+reliance can capture the new snapshot without modifying the old one.
+Offer ordering requires prerequisites already exist, so the toy
+dependency graph is a finite DAG; graph-cycle negotiation and undeclared
+future dependencies are outside its scope.</p>
+<p>The currentness view also checks expiry, evidence availability and a
+stated maximum observation age. This is not a statement about scientific
+correctness. An undisclosed dependency is absent from the closure, so
+its amendment cannot change that snapshot. The negative fixture
+intentionally produces <code>current_under_toy_policy</code> when an
+omniscient observer knows the claim needs reconsideration. The failure
+is retained in release evidence.</p>
+<h2 id="evaluation-and-stopping-rule">Evaluation and stopping rule</h2>
+<p>Run the documented tests and deterministic scenario command before
+packaging. Do not suppress a failing negative control to improve the
+number of green tests. Stop any general claim at its first violated
+premise: missing group identity, unknown capacity, incomplete evidence
+graph, absent authority or stale observation. If a structured record
+plus ordinary review performs as well with lower total human labor,
+retain that simpler interface. No human pilot, calibrated error model or
+consequential external action occurred in these experiments.</p>
+<p>AI assistance: this framework was drafted and checked by AI agents
+within the same orchestration. The blue/red record identifies this as
+internal adversarial review; human author approval and external review
+are separate release decisions.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

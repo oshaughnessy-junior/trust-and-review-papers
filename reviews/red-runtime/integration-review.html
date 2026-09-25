@@ -1,0 +1,154 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Second-wave integration review: models, exported evidence and release boundaries · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="second-wave-integration-review-models-exported-evidence-and-release-boundaries">Second-wave
+integration review: models, exported evidence and release
+boundaries</h1>
+<p><strong>Internal AI red team; same operator; not external security
+certification.</strong> This supplements <code>report.md</code> with the
+coupled model and public-export boundary.</p>
+<h2 id="evidence-and-release-implications">Evidence and release
+implications</h2>
+<p>The coupled simulator’s fourteen tests were independently executed
+and passed. It joins allocation, retries, person capacity, reported
+completion, selection for reliance, hidden declared dependencies and
+repair under a single synthetic budget. Its strongest positive semantic
+choices are that reported completion does not establish honest effort
+and completing repair does not silently renew reliance. The manuscript
+explicitly says these receipts are <strong>not conformance</strong> with
+the adjacent stronger target/authority runtime. Keeping that distinction
+prevents an illustrated sequence from becoming an invented end-to-end
+implementation.</p>
+<p>The supposedly static packaging boundary had substantive independent
+defects. The export inventory was computed from every file present in
+the destination, after deleting only paths named by a prior manifest. An
+untracked leftover was therefore promoted into the approved-looking
+inventory and download ZIP. Source file symlinks were followed, copying
+content outside the intended packet. The verifier checked only listed
+files and ignored ZIP content entirely.</p>
+<p><code>export_probes.py</code> demonstrates the original behavior
+without touching private material: a temporary miniature packet, public
+sentinel strings, and a temporary source symlink to another public
+sentinel. The original builder and verifier are archived as
+<code>baseline_export_builder.py</code> and
+<code>baseline_export_verifier.py</code>. <strong>Those are
+intentionally vulnerable research fixtures, not release
+tools.</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>ID</th>
+<th>Severity</th>
+<th>Original API result</th>
+<th>Required boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RR-8</td>
+<td>P1 for release packaging</td>
+<td>Existing <code>untracked.txt</code> is inventoried and zipped
+despite being outside the source suffix allowlist.</td>
+<td>Reject unknown destination entries; build into a clean staging tree;
+inventory explicit generated/copied paths only.</td>
+</tr>
+<tr>
+<td>RR-9</td>
+<td>P1 for release packaging</td>
+<td>Source <code>linked.json</code> dereferences an outside-source file
+and exports its content.</td>
+<td>Reject source and destination symlinks; do not treat a suffix check
+as confinement.</td>
+</tr>
+<tr>
+<td>RR-10</td>
+<td>P2 integrity assurance</td>
+<td>A ZIP with extra <code>../PUBLIC-EXTRA.txt</code> passes
+<code>verify_export</code>; an extra output file also passes.</td>
+<td>Require exact exported-file membership and exact safe ZIP
+membership/content, including duplicate-name rejection.</td>
+</tr>
+<tr>
+<td>RR-11</td>
+<td>P2 reproducibility</td>
+<td>The validation runner names <code>.txt</code> logs and their hashes,
+while the initial export extension allowlist excludes
+<code>.txt</code>.</td>
+<td>Export the intended logs and validate every manifest
+source/table/log reference after packaging.</td>
+</tr>
+</tbody>
+</table>
+<p>RR-10 also covered ZIP metadata: changing a member to a UNIX symlink
+while preserving its name and bytes initially passed the repaired
+verifier. Symlink member metadata is now rejected. RR-12 concerns the
+coupled ledger: three zero-hour holds on zero capacity could each settle
+a positive
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mrow><mi>−</mi><mn>12</mn></mrow></msup><annotation encoding="application/x-tex">10^{-12}</annotation></semantics></math>
+hours because of a per-hold tolerance. Arbitrarily many outstanding
+holds amplified that allowance. Settlement now strictly requires actual
+work not exceed the individual reservation. The default sweep results
+were unaffected. The remaining reservation comparison tolerance is a
+numerical convention, not exact real-number arithmetic.</p>
+<p>These are relevant even for a research prototype: a clean
+mathematical model cannot justify copying unrelated local material into
+its release, and a correct source manifest cannot vouch for a different
+download archive. The findings do not imply actual secret leakage; only
+deliberately public sentinels were used. The narrow disclosure-pattern
+scanner is correctly described as incomplete.</p>
+<h2 id="other-limits-retained">Other limits retained</h2>
+<p>The coupled model knows the true-person mapping for capacity even
+when control labels are hidden. That is a simulation oracle, not
+successful identity recovery. It does not run or fund audits, enforce
+institutional authority, schedule real legal deadlines, measure human
+utility or authenticate receipts. Its claims make those exclusions
+explicit. The initial group lottery, capacity-conditioned panel,
+completed population and relied-on population still require distinct
+denominators.</p>
+<p>Executable instructions must identify their working directory. The
+root <code>run_checks.py</code> is the canonical command from an
+extracted packet; paths beginning <code>papers/07-release-packet/</code>
+are repository-checkout commands. Reproducibility is best checked from
+the actual ZIP, not inferred from a successful repository run. A correct
+export hash is an integrity statement, not adoption of a license,
+authorship responsibility or permission to publish.</p>
+<h2 id="verification-status">Verification status</h2>
+<p>Original results are recorded in <code>export-baseline.json</code>
+and <code>coupled-ledger-baseline.json</code>; repaired outputs are in
+<code>export-repaired.json</code> and
+<code>coupled-ledger-repaired.json</code>. All thirteen runtime red
+regression methods pass: seven original semantic boundaries, five export
+boundaries and one coupled ledger boundary. The test run also passed
+with <code>PATH=/nonexistent</code>, confirming that this suite does not
+accidentally require a Pandoc executable. Packaging unit probes replace
+only their miniature fixture’s renderer with a deterministic stub; they
+do not claim to verify Pandoc or visual layout. Actual rendered export
+verification is separate.</p>
+<p>RR-8, RR-9, RR-10 and RR-12 are repaired and independently
+regression-tested. RR-11’s exporter and validation-reference checks are
+implemented; its final artifact evidence remains conditional on the
+completed export and extracted-ZIP run. The main builder now stages
+generation before replacing a previous candidate. The collective must
+not confuse these integrity checks with approval, signing, legal
+clearance or a comprehensive secret scanner.</p>
+<p>The mathematical lane independently checks coupled distributions,
+event accounting and statistical summaries; this lane focuses on API
+meaning, packaging and evidence binding. Provisional integration
+verdict: public release as a candid, synthetic research seed is
+appropriate after the final exact export passes integrity and
+reproduction checks. No evidence supports treating the three model
+engines as one operational service.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Publication is a decision followed by a separate observation · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="publication-is-a-decision-followed-by-a-separate-observation">Publication
+is a decision followed by a separate observation</h1>
+<p><strong>D/I:</strong> <code>release_cycle.py</code> is an in-memory,
+trusted-input model. Its roles are fixture labels. It does not
+authenticate humans or agents, cryptographically attest decisions,
+enforce process isolation, serve a website, detect private content or
+create legal permission. Required-check booleans model externally
+provided results; the script does not perform those checks itself.</p>
+<p>Let the candidate binding be</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mi>e</mi><mo>,</mo><mi>p</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+b=H(r,s,H(x),e,p,c,u),
+</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+is a release identifier,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+a source revision,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+the bytes,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+the evidence-set digest,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+the policy version,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+a content class and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+the destination. Canonical JSON fixes the encoding in this model. The
+delegation has a separate digest binding publisher, scope, destination,
+policy and validity interval. The verifier’s decision names both digests
+and its expiry.</p>
+<p><strong>T (model invariant):</strong> publication can occur through
+the model’s <code>publish</code> method only if its current
+candidate/delegation pair matches a recorded decision, the publisher
+matches the configured fixture role, required scope and policy match,
+and neither decision nor delegation has expired or been revoked. This
+follows from the guards preceding the only insertion into
+<code>deliveries</code>. It assumes trusted unmodified runtime state and
+use of the public methods; direct mutation of Python dictionaries
+defeats the boundary and is outside the claim. Hash collision resistance
+is assumed when a digest is used as a binding.</p>
+<p>Publication first produces <code>delivered_unobserved</code>. A
+separate observer reports <code>missing</code>,
+<code>binding_mismatch</code>, <code>mismatch</code> or
+<code>matches</code> about retrieved fixture bytes. A matching
+historical receipt remains a valid description of that observation even
+after the authority expires. Currentness is computed separately and
+names the last observation rather than asserting continuous
+monitoring.</p>
+<p>The demo walks through failed delivery, a missing observation,
+successful retry, idempotent repeat, observation, correction requiring a
+new decision, and later revocation. The tests mutate each bound
+component, expand a delegation, reuse expired authority, roll time
+backward, omit checks, substitute a verifier and tamper with the
+delivered bytes.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/models/release_cycle.py</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/models <span class="at">-p</span> <span class="st">&#39;test_release_cycle.py&#39;</span> <span class="at">-v</span></span></code></pre></div>
+<p>This canary closes an explanatory gap in the prior dossier: it
+demonstrates a complete <em>synthetic</em> sequence and several
+failures. It does not close the operational gap between the toy model
+and the hosted Commons or public website. Real deployment needs
+authenticated decisions, independent credentials and observation,
+immutable artifacts, transactional delivery, rights handling and an
+accountable operator.</p>
+<p>Red-team repairs additionally bind amendment successors, reject
+identifier cycles/rebinding, and prevent rejected future-dated calls
+from advancing the toy clock.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

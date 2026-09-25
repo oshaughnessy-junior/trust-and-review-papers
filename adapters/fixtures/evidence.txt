@@ -1,0 +1,1 @@
+Synthetic table only: x=[1,2,3]; y=[2,4,6]. No empirical data.

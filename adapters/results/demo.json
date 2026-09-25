@@ -1,0 +1,238 @@
+{
+  "augmented_demo": {
+    "adapter_envelope": {
+      "adapter": "mcrp-synthetic-legacy/0.1",
+      "loss_report": {
+        "items": [
+          {
+            "effect": "not interpreted as verified protocol assertions; explicit enrichment required",
+            "field": "authorizations",
+            "source_status": "null"
+          },
+          {
+            "effect": "not interpreted as verified protocol assertions; explicit enrichment required",
+            "field": "control_groups",
+            "source_status": "explicit_empty"
+          },
+          {
+            "effect": "not interpreted as verified protocol assertions; explicit enrichment required",
+            "field": "dependencies",
+            "source_status": "absent"
+          },
+          {
+            "effect": "explicitly empty is not a positive assertion of no limitations",
+            "field": "check_limits"
+          },
+          {
+            "effect": "preserved only in raw legacy payload; no protocol authority inferred",
+            "field": "format"
+          },
+          {
+            "effect": "preserved only in raw legacy payload; no protocol authority inferred",
+            "field": "issue_url"
+          },
+          {
+            "effect": "preserved only in raw legacy payload; no protocol authority inferred",
+            "field": "author.display_name"
+          },
+          {
+            "effect": "preserved only in raw legacy payload; no protocol authority inferred",
+            "field": "author.team_members"
+          },
+          {
+            "effect": "preserved only in raw legacy payload; no protocol authority inferred",
+            "field": "review.display_name"
+          },
+          {
+            "effect": "preserved only in raw legacy payload; no protocol authority inferred",
+            "field": "extension:editorial_note.visible"
+          },
+          {
+            "effect": "preserved only in raw legacy payload; no protocol authority inferred",
+            "field": "extension:editorial_note.not_protocol_data"
+          }
+        ],
+        "roundtrip": "lossless JSON-value roundtrip; original bytes/whitespace/key order not certified",
+        "semantic_projection": "partial and deliberately non-authorizing"
+      },
+      "mapped": {
+        "authorizations": {
+          "status": "null",
+          "value": null
+        },
+        "check_limits": {
+          "status": "explicit_empty",
+          "value": []
+        },
+        "check_method": {
+          "status": "value",
+          "value": "Compare synthetic table entries with declared doubling rule"
+        },
+        "check_result": {
+          "status": "value",
+          "value": "support"
+        },
+        "check_scope": {
+          "status": "value",
+          "value": [
+            "numerics"
+          ]
+        },
+        "claim_id": {
+          "status": "value",
+          "value": "synthetic-figure-2"
+        },
+        "control_groups": {
+          "status": "explicit_empty",
+          "value": {}
+        },
+        "dependencies": {
+          "status": "absent"
+        },
+        "evidence_ref": {
+          "status": "value",
+          "value": "sha256:3e68a3b0d5a22edbe1707a99ef18ada6358aa10b033dbe125b50f7fc8027a4d4"
+        },
+        "immutable_refs": {
+          "status": "value",
+          "value": true
+        },
+        "review_recommendation": {
+          "status": "value",
+          "value": "accept"
+        },
+        "version_ref": {
+          "status": "value",
+          "value": "git:1111111111111111111111111111111111111111"
+        }
+      },
+      "protocol_assertions": {
+        "authorization": "unknown",
+        "dependency_completeness": "unknown",
+        "independence": "unknown"
+      },
+      "source": {
+        "author": {
+          "display_name": "Example collaboration",
+          "team_members": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "authorizations": null,
+        "claim": {
+          "evidence_ref": "sha256:3e68a3b0d5a22edbe1707a99ef18ada6358aa10b033dbe125b50f7fc8027a4d4",
+          "id": "synthetic-figure-2",
+          "immutable_refs": true,
+          "version_ref": "git:1111111111111111111111111111111111111111"
+        },
+        "control_groups": {},
+        "extension:editorial_note": {
+          "not_protocol_data": [
+            "kept",
+            "verbatim as JSON values"
+          ],
+          "visible": "synthetic only"
+        },
+        "format": "synthetic-review-issue/1",
+        "issue_url": "https://example.invalid/repository/issues/17",
+        "review": {
+          "display_name": "Example reviewer",
+          "limits": [],
+          "method": "Compare synthetic table entries with declared doubling rule",
+          "recommendation": "accept",
+          "result": "support",
+          "scope": [
+            "numerics"
+          ]
+        }
+      },
+      "source_sha256": "383e49d73705f901f240926876391f6a996e490b7249d337fb814b38553ad193"
+    },
+    "after_amendment": "reconsideration_pending",
+    "before_amendment": "current_under_toy_policy",
+    "check": "check-0002",
+    "events": [
+      {
+        "action": "offer",
+        "id": "offer-0001",
+        "target": {
+          "claim_id": "synthetic-figure-2",
+          "evidence_digest": "sha256:3e68a3b0d5a22edbe1707a99ef18ada6358aa10b033dbe125b50f7fc8027a4d4",
+          "version": "git:1111111111111111111111111111111111111111"
+        }
+      },
+      {
+        "action": "check",
+        "id": "check-0002",
+        "now": 0,
+        "outcome": "support"
+      },
+      {
+        "action": "rely",
+        "id": "rely-0003",
+        "kind": "scientific",
+        "now": 0
+      },
+      {
+        "action": "amend",
+        "affected": [
+          {
+            "claim_id": "synthetic-figure-2",
+            "evidence_digest": "sha256:3e68a3b0d5a22edbe1707a99ef18ada6358aa10b033dbe125b50f7fc8027a4d4",
+            "version": "git:1111111111111111111111111111111111111111"
+          }
+        ],
+        "now": 1,
+        "reason": "Synthetic later material evidence change",
+        "target": {
+          "claim_id": "synthetic-figure-2",
+          "evidence_digest": "sha256:3e68a3b0d5a22edbe1707a99ef18ada6358aa10b033dbe125b50f7fc8027a4d4",
+          "version": "git:1111111111111111111111111111111111111111"
+        }
+      }
+    ],
+    "limitations": "Synthetic declared metadata only; no origin authentication, consent, live connector or dependency discovery.",
+    "offer": "offer-0001",
+    "reliance": "rely-0003",
+    "trusted_fixture_enrichment": {
+      "author_group": "fixture-author",
+      "capacity": 3,
+      "decision_group": "fixture-institution",
+      "decision_roles": [
+        "scientific"
+      ],
+      "dependencies": [],
+      "expires": 10,
+      "fixture_responsibility": "Synthetic harness author asserts these invented facts solely for this demonstration.",
+      "limitations": "Fixture-only permission and independence; no calibration, human consent, real institution or hidden-dependency verification.",
+      "purpose": "Demonstrate a scoped synthetic numerical reliance only",
+      "reviewer_group": "fixture-reviewer",
+      "reviewer_skills": [
+        "numerics"
+      ],
+      "scope": [
+        "numerics"
+      ],
+      "synthetic_fixture": true
+    }
+  },
+  "python": "3.9.6",
+  "roundtrip_equal": true,
+  "runtime_sha256": "0a1a6b48f5fc4075c00f1819ee85103907c49169fd9f2d1b76ec86de236ddeff",
+  "schema": "synthetic-legacy-demo/0.1",
+  "source_sha256": {
+    "__init__.py": "f7855c05cf3220d93a320864d43e38d373384645898c2da6bc42af57bb2026ba",
+    "demo.py": "445332bc0b4e7ca0fb7e35316b9c4610d2ca50d374efe076c18f7803f7648c02",
+    "fixtures/evidence.txt": "3e68a3b0d5a22edbe1707a99ef18ada6358aa10b033dbe125b50f7fc8027a4d4",
+    "fixtures/review-issue.json": "12b19b812d7e67ea7cba5bddf4ce02f56bc1c83e98908b29fe74f1a9b5f737d5",
+    "fixtures/trusted-enrichment.json": "182667b752bd4e5ebf990e313fe6f0add2371e29cd45affd37b63594bfafef0c",
+    "legacy.py": "dcf4ff6598466caa727c7abab37b9fbbf0eb934f65b8c576458f2fe8a66259b0",
+    "tests/test_legacy.py": "f6ed6777c772af28c48e9f61691f7e54766c0b8eaee5930e90d0ebbadf3e6e97"
+  },
+  "unaugmented_attempt": {
+    "reason": "legacy metadata supplies no trusted authority, control or dependency assertions",
+    "status": "refused"
+  }
+}

@@ -1,0 +1,306 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Law: a disputed interpretation is not settled by counting reviewers · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="law-a-disputed-interpretation-is-not-settled-by-counting-reviewers">Law:
+a disputed interpretation is not settled by counting reviewers</h1>
+<p><strong>Research question.</strong> Can the same small interface
+support legal scholarship and operator process without turning a
+scientific review network into a court?</p>
+<p><strong>Bounded answer.</strong> Only if evidence checks, legal
+interpretations, institutional authority, content access, and deadline
+obligations remain different objects. The examples below are invented
+educational cases, not advice for a live dispute or a representation
+that MCRP satisfies any jurisdiction’s requirements.</p>
+<h2 id="the-situation">The situation</h2>
+<p>The invented Alder research commons hosts a scholarly memorandum
+arguing that a fictional institutional policy permits a particular
+reuse. One reviewer finds its citations accurate. Another accepts the
+citations but rejects the interpretation. The institution’s authorized
+officer must decide whether its own staff may rely on the memorandum.
+Separately, the commons receives a rights complaint concerning an
+attached diagram. That complaint may require a different decision maker,
+restricted evidence, and a deadline that no scholarly vote can
+suspend.</p>
+<p>The memorandum, policy and diagram are synthetic fixtures. There is
+no client, legal representation, identifiable complainant, or actual
+contested content. The protocol is useful here if it makes disagreements
+and authority legible, not if it declares the highest-reputation
+interpretation “the law.”</p>
+<h2 id="why-the-interfaces-need-separate-authority">Why the interfaces
+need separate authority</h2>
+<p>An evidence check can say that a cited passage exists and is
+accurately described. A substantive reviewer can offer an interpretation
+with reasons and limits. An authorized institution may adopt a position
+for its own conduct. A court may have authority that neither reviewer
+possesses. Those actions should not be represented as interchangeable
+positive votes.</p>
+<p>For a real-world analogy, the Federal Rules of Evidence govern
+admission or exclusion of evidence in covered federal proceedings,
+subject to the rules’ applicability and exceptions; an MCRP check cannot
+perform that institutional function. The rules and their applicability
+remain with the legal system. <a
+href="https://www.uscourts.gov/forms-rules/current-rules-practice-procedure/federal-rules-evidence">Official
+U.S. Courts overview, checked 2026-09-25</a>.</p>
+<p>Another concrete boundary is conditional U.S. copyright procedure.
+Section 512(g)(2) describes counter-notice forwarding and a 10–14
+business-day replacement window, subject to its conditions and the
+specified notice of a filed action. Section 512(g)(3) requires
+identifying information in a counter-notice. Therefore an
+operator-private submission is not necessarily confidential from the
+notifier. Applicability and other obligations require separate
+assessment; this toy does not calculate statutory deadlines or claim
+safe-harbor eligibility. <a
+href="https://www.copyright.gov/title17/92chap5.html#512">U.S. Copyright
+Office statutory text, §512(g), checked 2026-09-25</a>.</p>
+<p>Those examples motivate a typed design, not a universal legal
+workflow. Other jurisdictions, institutional contracts, procedural
+orders, accessibility needs, retention duties, and protected reporting
+can impose different obligations.</p>
+<h2 id="a-small-authority-model">A small authority model</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo>,</mo><mi>k</mi><mo>,</mo><mi>o</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A(p,k,o)</annotation></semantics></math>
+mean that principal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+has authority of kind
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+over object
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>o</mi><annotation encoding="application/x-tex">o</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">C(r,s)</annotation></semantics></math>
+mean receipt
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+supplies a check of scope
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>.
+A proposed relying action has a policy predicate</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Allow</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo>,</mo><mi>k</mi><mo>,</mo><mi>o</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>A</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo>,</mo><mi>k</mi><mo>,</mo><mi>o</mi><mo stretchy="false" form="postfix">)</mo><mo>∧</mo><mrow><mi mathvariant="normal">Coverage</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>o</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>∧</mo><mrow><mi mathvariant="normal">Current</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>o</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\operatorname{Allow}(p,k,o,s)=A(p,k,o)\land
+\operatorname{Coverage}(o,s)\land\operatorname{Current}(o,s).</annotation></semantics></math></p>
+<p>This is a declared application rule, not a theory of law. In
+particular,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi>r</mi></munder><mn mathvariant="bold">𝟏</mn><mo stretchy="false" form="prefix">{</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>,</mo><mtext mathvariant="normal">citation accuracy</mtext><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">}</mo><mo>&gt;</mo><mn>0</mn><mspace width="1.0em"></mspace><mo>⇏</mo><mspace width="1.0em"></mspace><mi>A</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo>,</mo><mtext mathvariant="normal">legal decision</mtext><mo>,</mo><mi>o</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\sum_r \mathbf 1\{C(r,\text{citation accuracy})\}&gt;0
+\quad\not\Rightarrow\quad A(p,\text{legal decision},o).</annotation></semantics></math></p>
+<p>Increasing the number of correct citation checks does not logically
+grant a reviewer institutional power. The missing authority premise
+cannot be supplied by a reputation score. An implementation must
+establish actual authorization outside this fixture; a JSON
+<code>role</code> string is merely a trusted assertion here.</p>
+<p>The current toy engine models only <code>scientific</code> and
+<code>publication</code> reliance kinds. It deliberately refuses
+<code>legal_operational</code> requests. The legal example uses the
+engine only to check a citation ledger and permit publication of a
+<em>synthetic teaching artifact</em>. The institution’s operational
+decision remains a separately illustrated record, outside the engine.
+This refusal is useful backward compatibility: a partial adapter must
+not invent support for an authority type.</p>
+<h2 id="four-actions-with-a-preserved-disagreement">Four actions with a
+preserved disagreement</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Action</th>
+<th>Concrete record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Offer <code>law-offer-v1</code></td>
+<td>A scholar offers <code>law-memo@1</code>, exact synthetic policy
+text, argument and citation ledger. Requests
+<code>citation_accuracy</code>; explicitly excludes a binding legal
+determination.</td>
+</tr>
+<tr>
+<td>Check <code>law-citations-v1</code></td>
+<td>An external reader verifies the fictional quotations. Another reader
+records a competing interpretation in a separate narrative check;
+neither acquires power to decide the institution’s conduct.</td>
+</tr>
+<tr>
+<td>Rely <code>law-publication-v1</code></td>
+<td>A named publication editor authorizes use of the checked synthetic
+citation ledger in the teaching exercise, with expiry at logical time
+20. It does not adopt the memo’s conclusion as law.</td>
+</tr>
+<tr>
+<td>Rely, separate institutional record</td>
+<td>The fictional officer, under a stated fictional appointment and
+scope, chooses a provisional institutional position with conditions, an
+expiry, and a route to reconsideration. This is a narrative authority
+example; the toy API does not implement it.</td>
+</tr>
+<tr>
+<td>Amend <code>law-amend-v2</code></td>
+<td>A policy revision changes a premise. The prior memo’s use becomes
+pending. A rights notice concerning the diagram is linked but enters the
+operator compliance track, not the scientific-disagreement tally.</td>
+</tr>
+</tbody>
+</table>
+<p>Publication of an accurate quotation ledger can coexist with
+unresolved substantive disagreement. Restricting diagram access can
+coexist with a historically unchanged scholarly disposition. None of
+those records should be overwritten with one global green/red
+status.</p>
+<h2 id="deadline-mathematics-aggregate-capacity-can-lie">Deadline
+mathematics: aggregate capacity can lie</h2>
+<p>Use a deliberately simple, deterministic service model: one handler
+performs one unit of work per logical tick; tasks are nonpreemptive;
+every task in the first example is available at tick 0. These ticks are
+not days or statutory time.</p>
+<table>
+<thead>
+<tr>
+<th>Job</th>
+<th style="text-align: right;">Effort</th>
+<th style="text-align: right;">Deadline</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td>Discretionary scholarly clarification</td>
+</tr>
+<tr>
+<td>B</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td>Synthetic protected-intake acknowledgment</td>
+</tr>
+</tbody>
+</table>
+<p>Total effort is 4 and total capacity over four ticks is 4. FIFO in
+order A→B finishes B at tick 4 and misses its deadline. The order B→A
+finishes B at 1 and A at 4, meeting both. Thus a scalar utilization test
+is insufficient even in this small model. This is an example, not an
+optimality theorem for arbitrary releases, multiple handlers, precedence
+constraints or emergencies.</p>
+<p>An infeasibility negative control uses C with effort 2 due at tick 1
+and D with effort 2 due at tick 4. Aggregate utilization still equals 1,
+but C cannot finish on time at unit service rate. Reordering does not
+repair absent capacity. The appropriate result is a recorded infeasible
+obligation and escalation through the authorized institution, not a
+fabricated “handled” status.</p>
+<p>For multiple skills, a necessary capacity condition is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mrow><mi>j</mi><mo>:</mo><mspace width="0.167em"></mspace><mtext mathvariant="normal">skill</mtext><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>s</mi></mrow></munder><msub><mi>w</mi><mi>j</mi></msub><mo>≤</mo><msub><mi>H</mi><mi>s</mi></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">\sum_{j:\,\text{skill}(j)=s} w_j\le H_s,</annotation></semantics></math></p>
+<p>along with per-person limits. It is not sufficient for deadlines,
+independence or lawful access. A promised alternate needs appointment,
+access, resources and the power to implement reversal. Another agent
+controlled by the same founder does not provide independent
+institutional review.</p>
+<h2 id="failure-and-repair">Failure and repair</h2>
+<p>The failure workflow sends a rights notice into a bounded
+scientific-appeal queue, charges it against a reputation quota, or
+claims that a popular memorandum settles the complaint. Another failure
+exposes counter-notice identity fields in a public receipt while
+promising blanket confidentiality. A third processes easy optional work
+while a protected deadline expires.</p>
+<p>The repaired design has a shared intake front door but separate
+remedy tracks: scientific content, private standing, conduct/opening,
+and operator compliance. An intake classifier may suggest a track, but
+uncertain applicability goes to an authorized handler and must not erase
+the clock-start information. Public receipts contain minimal permitted
+status; restricted records hold sensitive evidence and
+recipient-specific disclosure rules. Removal and retention require their
+own authority; immutable hashes do not require perpetual public
+content.</p>
+<p>When resources fail, pause new discretionary commitments while
+preserving the appropriate existing reporting channel and timestamps. A
+research prototype with no live users need not pretend to run such a
+service. Before admitting real disputes, the operator must establish the
+actual responsibilities it is promising.</p>
+<h2 id="human-onboarding-a-tabletop-not-client-intake">Human onboarding:
+a tabletop, not client intake</h2>
+<p><strong>Ten-minute exercise:</strong> Give participants the two-job
+table and the memo’s accurate citation check. Ask who can authorize
+publication, who can authorize institutional reliance, and which order
+meets both synthetic deadlines.</p>
+<p><strong>Answer key:</strong> Citation accuracy establishes neither
+authority nor a binding interpretation; B→A meets the first schedule,
+neither order solves C; a rights notice and scholarly rebuttal may
+concern the same artifact but need different remedies. A legal
+operational reliance type unsupported by the adapter must be refused
+rather than relabeled <code>scientific</code>.</p>
+<p><strong>Forty-five-minute clinic:</strong> Assign scholar, opponent,
+publication editor and operator. Keep all notices fictional. Introduce a
+founder conflict, a sensitive field, a policy amendment and an
+unavailable alternate. Record which assertions must remain unresolved,
+who sees each field, and whether the group escalates without inventing
+authority. Do not solicit real legal problems or confidential documents
+as onboarding material.</p>
+<h2 id="implementer-task-and-falsifiable-benchmark">Implementer task and
+falsifiable benchmark</h2>
+<p>Run the schedule oracle and replay the citation check through the toy
+engine. Attempt <code>kind="legal_operational"</code>; the expected
+result is rejection. Verify that a later policy amendment marks the
+relevant teaching use pending while preserving the old record. Test
+rights intake separately from scientific rating: no queue score should
+convert a notice into a scientific result.</p>
+<p>A future tabletop comparison should measure mistaken authority
+upgrades, missed synthetic deadlines, inappropriate disclosure, correct
+routing, inaccessible appeals, total labor and unresolved cases. Include
+a plain case-management checklist as the strongest practical baseline.
+“More receipts produced” is not success. The proposed interface loses if
+it creates more overhead without improving these outcomes. No legal
+process or human study has been validated here.</p>
+<h2 id="claim-ledger-and-closest-work-boundary">Claim ledger and
+closest-work boundary</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Type</th>
+<th>Support or remaining test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Evidence admissibility is an institutional function</td>
+<td>P</td>
+<td>Official U.S. Courts overview; no applicability opinion</td>
+</tr>
+<tr>
+<td>§512(g) includes timing and recipient disclosure provisions</td>
+<td>P</td>
+<td>Official Copyright Office text; conditional summary only</td>
+</tr>
+<tr>
+<td>Total work within aggregate capacity need not meet deadlines</td>
+<td>T/I</td>
+<td>Two exact schedule fixtures and tests</td>
+</tr>
+<tr>
+<td>Typed authority must not be inferred from citation agreement</td>
+<td>D</td>
+<td>Explicit design predicate; no claim to grant authority</td>
+</tr>
+<tr>
+<td>MCRP improves dispute operations</td>
+<td>H</td>
+<td>Unrun tabletop and institution-specific assessment</td>
+</tr>
+</tbody>
+</table>
+<p>Existing docket, case-management, scholarly commentary and correction
+practices already separate many of these objects. MCRP’s proposed
+contribution is a portable record of the particular use and its limits.
+Its public research release should invite criticism from those
+communities without advertising a live legal service.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

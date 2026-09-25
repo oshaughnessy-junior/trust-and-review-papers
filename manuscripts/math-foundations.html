@@ -1,0 +1,702 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Small contracts, measurable limits: mathematical foundations for the MCRP seed release · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="small-contracts-measurable-limits-mathematical-foundations-for-the-mcrp-seed-release">Small
+contracts, measurable limits: mathematical foundations for the MCRP seed
+release</h1>
+<p><strong>Research prototype, 25 September 2026.</strong> Conditional
+propositions and synthetic experiments; not evidence of field efficacy.
+This manuscript advances the counterexamples in dossier 06 into small
+executable modeling interfaces. The results use elementary probability,
+constrained incentives and positive-system bounds. The contribution is
+the alignment of those tools with protocol records, not a claim to
+invent the underlying mathematics.</p>
+<h2 id="abstract">Abstract</h2>
+<p>A protocol intended for a solo researcher, a large collaboration, a
+single agent and a team of agents should not charge its participants for
+understanding the internal complexity of everyone else. It should expose
+what can be checked at the boundary: exact work, declared
+responsibility, available attention, performed checks, and the
+conditions under which a reliance decision needs renewal. Four models
+identify what this interface can and cannot guarantee. Sampling
+accountable groups before representatives removes one
+representation-multiplicity incentive under known control. Selective
+completion can nevertheless reverse offered-panel bounds, while retries
+spend scarce attention without repairing the selection bias. A common
+weighted repair envelope controls expected cascades under changing
+regimes, but neither stable snapshots nor a small expected workload
+certify a safe queue. Finally, an audit must fit effort incentives,
+participation and its own funding constraint simultaneously. The package
+contains exact calculations, independent finite enumerations,
+reproducible stochastic checks and deliberate negative cases. Every
+positive result is paired with a premise whose failure is observable in
+a toy experiment or requires a real-world investigation.</p>
+<h2 id="the-interface-as-a-modeling-boundary">1. The interface as a
+modeling boundary</h2>
+<p>The participant-facing actions remain <strong>offer → check → rely →
+amend</strong>. They are composable actions, not an exclusive sequence
+of statuses. The mathematics adds no fifth user action. It specifies
+what a scheduler or experiment must record behind those actions.</p>
+<p>An <strong>offer</strong> fixes a version, bounded claim, requested
+check and responsible boundary. A <strong>check</strong> records
+performed work and its limits; it is not a vote that converts into
+general truth. <strong>Rely</strong> is a separate actor’s decision for
+a stated use, with observed evidence and renewal conditions.
+<strong>Amend</strong> identifies a material change and affected uses. A
+large team may automate hundreds of internal checks; that does not
+create hundreds of independently controlled reviewers.</p>
+<p>The minimum experiment state therefore includes an immutable target
+identifier; declared control groups and qualifications; a
+panel-generation policy; invitation, refusal, completion and reliance
+events; actual resource debits; and a declared dependency graph. These
+are inputs and records, not facts made true by a schema. In particular,
+the mathematics below does not authenticate identity, discover
+undeclared dependencies or grant scientific authority to a software
+process.</p>
+<h2 id="representation-invariance-belongs-to-a-distribution">2.
+Representation invariance belongs to a distribution</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+be a fixed finite set of eligible accountable groups. Group
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>m</mi><mi>g</mi></msub><annotation encoding="application/x-tex">m_g</annotation></semantics></math>
+interchangeable representatives. Eligibility, capacity and conflict
+conditions have already been resolved at group level. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℱ</mi><annotation encoding="application/x-tex">\mathcal F</annotation></semantics></math>
+be a nonempty set of feasible
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-group
+panels. We compare two policies.</p>
+<p><strong>Representative-first policy.</strong> Enumerate every
+feasible representative panel with at most one member from each group,
+then choose uniformly. Its induced probability of a group panel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>∈</mo><mi mathvariant="script">ℱ</mi></mrow><annotation encoding="application/x-tex">S\in\mathcal F</annotation></semantics></math>
+is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>m</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><munder><mo>∏</mo><mrow><mi>g</mi><mo>∈</mo><mi>S</mi></mrow></munder><msub><mi>m</mi><mi>g</mi></msub></mrow><mrow><munder><mo>∑</mo><mrow><mi>T</mi><mo>∈</mo><mi mathvariant="script">ℱ</mi></mrow></munder><munder><mo>∏</mo><mrow><mi>h</mi><mo>∈</mo><mi>T</mi></mrow></munder><msub><mi>m</mi><mi>h</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">Q_m(S)=\frac{\prod_{g\in S}m_g}{\sum_{T\in\mathcal F}\prod_{h\in T}m_h}.</annotation></semantics></math></p>
+<p>It satisfies the one-seat-per-group rule while still rewarding label
+multiplicity. With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">G=\{A,B,C\}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k=2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">m=(n,1,1)</annotation></semantics></math>,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Pr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> receives a seat</mtext></mrow><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mn>2</mn><mi>n</mi></mrow><mrow><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\Pr(A\text{ receives a seat})=\frac{2n}{2n+1}.</annotation></semantics></math></p>
+<p>One hundred representatives move the probability from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">2/3</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>200</mn><mi>/</mi><mn>201</mn></mrow><annotation encoding="application/x-tex">200/201</annotation></semantics></math>
+without adding a group or changing the claim’s scientific needs.</p>
+<p><strong>Group-first policy.</strong> Fix a distribution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℱ</mi><annotation encoding="application/x-tex">\mathcal F</annotation></semantics></math>
+using only clone-invariant group attributes. Draw
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>∼</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">S\sim Q</annotation></semantics></math>.
+Conditional on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>,
+choose one representative per group by any normalized kernel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>m</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>⋅</mi><mo>∣</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">K_m(\cdot\mid S)</annotation></semantics></math>
+supported on that group panel.</p>
+<p><strong>Proposition 1 (pushforward invariance).</strong> If only
+representative multiplicities change, while
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℱ</mi><annotation encoding="application/x-tex">\mathcal F</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+remain fixed, the distribution of selected group panels remains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.</p>
+<p><em>Proof.</em> For any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>,
+the probability of all representative realizations mapping to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><msub><mo>∑</mo><mi>x</mi></msub><msub><mi>K</mi><mi>m</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>∣</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>S</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Q(S)\sum_xK_m(x\mid S)=Q(S)</annotation></semantics></math>.
+No summand from another group panel maps to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>.
+Consequently every statistic depending only on the group panel is
+invariant.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>This is a statement about an entire pushforward distribution, not a
+claim that a cap on individual graph scores suffices. The executable
+baseline takes all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-subsets
+and uniform
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>;
+it does not solve general conflict-aware scheduling. A production
+implementation must construct feasible panels using actual skill,
+conflict, independence and capacity constraints <strong>before</strong>
+drawing, and define what happens when the feasible set is empty. It must
+not silently relax coverage.</p>
+<p><strong>Falsifier.</strong> Declare two secretly controlled accounts
+as different groups. With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>G</mi><mo>′</mo></msup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">G&#39;=\{A_1,A_2,B,C\}</annotation></semantics></math>
+and uniform pairs, the true controller behind
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">A_1,A_2</annotation></semantics></math>
+now receives at least one seat with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mi>/</mi><mn>6</mn></mrow><annotation encoding="application/x-tex">5/6</annotation></semantics></math>,
+and both seats with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>6</mn></mrow><annotation encoding="application/x-tex">1/6</annotation></semantics></math>.
+Group-first sampling has not solved Sybil resistance. Douceur’s original
+analysis establishes why multiple identities undermine redundancy and
+why identity certification is a substantive assumption; our toy group
+map supplies that assumption rather than implementing it. <a
+href="https://www.microsoft.com/en-us/research/publication/the-sybil-attack/">The
+Sybil Attack</a></p>
+<p><strong>Meaning for participants.</strong> An individual and a
+collaboration may expose the same accountable boundary. Splitting a team
+into more named software processes must not automatically buy the team
+more external allocation probability. Real new expertise or
+independently controlled capacity may legitimately change the feasible
+set; that is not the cloning transformation in Proposition 1.</p>
+<h2 id="completion-is-a-second-selection-mechanism">3. Completion is a
+second selection mechanism</h2>
+<p>Label a panel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+if it belongs to a synthetic risk category. This is a model label, not a
+diagnosis of any real group. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mrow><mi mathvariant="normal">Pr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p=\Pr(R)</annotation></semantics></math>
+among offers, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+be its completion probability, and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+be the other category’s completion probability. Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>p</mi><mi>a</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mi>b</mi><mo>,</mo><mspace width="2.0em"></mspace><mrow><mi mathvariant="normal">Pr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo>∣</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi></mrow><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>p</mi><mi>a</mi></mrow><mi>s</mi></mfrac><mo>,</mo><mspace width="1.0em"></mspace><mi>s</mi><mo>&gt;</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">s=pa+(1-p)b,\qquad
+\Pr(R\mid\mathrm{complete})=\frac{pa}{s},\quad s&gt;0.</annotation></semantics></math></p>
+<p>A
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">10\%</annotation></semantics></math>
+offered share becomes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>91.743</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">91.743\%</annotation></semantics></math>
+of completed panels when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a=1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mn>.01</mn></mrow><annotation encoding="application/x-tex">b=.01</annotation></semantics></math>.
+An offered-panel cap is therefore not a completed-panel cap.</p>
+<p><strong>Proposition 2 (completion envelope).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≤</mo><mi>ϵ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p\le\epsilon&lt;1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">a\le u</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>≥</mo><mi>ℓ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b\ge\ell&gt;0</annotation></semantics></math>,
+then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Pr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo>∣</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi></mrow><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mfrac><mrow><mi>ϵ</mi><mi>u</mi></mrow><mrow><mi>ϵ</mi><mi>u</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">)</mo><mi>ℓ</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\Pr(R\mid\mathrm{complete})\le
+\frac{\epsilon u}{\epsilon u+(1-\epsilon)\ell}.</annotation></semantics></math></p>
+<p><em>Proof.</em> The conditional fraction increases with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and decreases with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+whenever its denominator is positive. Substitute the respective extrema.
+The case
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u=0</annotation></semantics></math>
+has zero risky completions.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>The missing premise is often the important one: humans cannot be
+compelled to supply
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ell&gt;0</annotation></semantics></math>
+completion. Refusals may be the appropriate response to conflicts,
+insufficient time, confidential material or inadequate expertise.
+Treating them as misconduct would change the protocol’s purpose.</p>
+<h3
+id="finite-retries-cost-attention-but-do-not-remove-iid-selection-bias">Finite
+retries cost attention but do not remove IID selection bias</h3>
+<p>Suppose each new attempt independently draws from the same offer
+distribution, with unchanged completion probabilities. Stop at the first
+completion or after
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+attempts. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>L</mi></msub><annotation encoding="application/x-tex">N_L</annotation></semantics></math>
+for attempts actually made. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s&gt;0</annotation></semantics></math>,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>N</mi><mi>L</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>L</mi><mo>−</mo><mn>1</mn></mrow></munderover><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>j</mi></msup><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>L</mi></msup></mrow><mi>s</mi></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mrow><mi mathvariant="normal">Pr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>L</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">E[N_L]=\sum_{j=0}^{L-1}(1-s)^j
+=\frac{1-(1-s)^L}{s},\qquad
+\Pr(\mathrm{unresolved})=(1-s)^L.</annotation></semantics></math></p>
+<p>The probability of risky completion is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>a</mi><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>L</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">pa\sum_{j=0}^{L-1}(1-s)^j</annotation></semantics></math>.
+Dividing by total completion probability cancels the same sum: the risky
+share among completions remains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>a</mi><mi>/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">pa/s</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s=0</annotation></semantics></math>,
+every request uses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+attempts and stays unresolved.</p>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>i</mi></msub><annotation encoding="application/x-tex">c_i</annotation></semantics></math>
+be invitation/triage cost per attempt and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>c</mi></msub><annotation encoding="application/x-tex">c_c</annotation></semantics></math>
+be work cost charged on completion. Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>C</mi><mi>L</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><msub><mi>c</mi><mi>i</mi></msub><mi>E</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>N</mi><mi>L</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>+</mo><msub><mi>c</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>s</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>L</mi></msup><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">E[C_L]=c_iE[N_L]+c_c\{1-(1-s)^L\}.</annotation></semantics></math></p>
+<p>Expected refusals equal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>N</mi><mi>L</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>−</mo><mrow><mi mathvariant="normal">Pr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi></mrow><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">E[N_L]-\Pr(\mathrm{complete})</annotation></semantics></math>;
+expected retries equal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>N</mi><mi>L</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">E[N_L]-1</annotation></semantics></math>.
+These are different quantities. Standby reservations, partial work, late
+cancellations and case intake require additional debits in a real
+ledger. The toy costs are chosen constants, not estimated labor.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>.1</mn><mo>,</mo><mi>a</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>b</mi><mo>=</mo><mn>.01</mn><mo>,</mo><msub><mi>c</mi><mi>i</mi></msub><mo>=</mo><mn>.2</mn><mo>,</mo><msub><mi>c</mi><mi>c</mi></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">p=.1,a=1,b=.01,c_i=.2,c_c=2</annotation></semantics></math>,
+one attempt costs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.418</mn><annotation encoding="application/x-tex">.418</annotation></semantics></math>
+model units on average, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>89.1</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">89.1\%</annotation></semantics></math>
+unresolved. Ten attempts cost about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2.626</mn><annotation encoding="application/x-tex">2.626</annotation></semantics></math>,
+and fifty about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3.823</mn><annotation encoding="application/x-tex">3.823</annotation></semantics></math>.
+The completed-panel risk share remains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>91.743</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">91.743\%</annotation></semantics></math>.
+The growth in completed work is real in this model, but presenting only
+the completion count conceals the resource cost and composition.</p>
+<p>The seeded demonstration runs 20,000 requests per case, 80,000 in
+total. For the ten-attempt case, 13,810 complete, the observed risky
+share is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>91.665</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">91.665\%</annotation></semantics></math>,
+and its pointwise nominal 95% Wilson interval is approximately
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>91.193</mn><mi>%</mi><mo>,</mo><mn>92.115</mn><mi>%</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[91.193\%,92.115\%]</annotation></semantics></math>.
+This interval describes Monte Carlo variation under the supplied
+Bernoulli model. It says nothing about uncertainty in real refusal
+behavior. Adaptive rerolls, learning completion rates, collusion and
+repeated contacts violate the IID model; they need a new model, not
+reuse of these error bars.</p>
+<h3 id="the-denominator-is-part-of-the-result">The denominator is part
+of the result</h3>
+<p>Publish eligible, invited, accepted, completed and relied-upon counts
+separately, plus offered requests, excluded requests, refusal attempts,
+retries, outstanding work and resource costs. The toy retry model
+collapses acceptance and completion into one Bernoulli event; the
+protocol simulator should keep the stages distinct. The mathematical
+results are intentionally not a substitute for that event log.</p>
+<p>Inverse probability weighting can diagnose observed selection when
+probabilities are known and positive, but it does not produce missing
+scientific checks or restore a physical panel guarantee. The classical
+unequal-probability estimator is standard statistical machinery, not a
+novel trust mechanism. <a
+href="https://www.stat.cmu.edu/~brian/905-2008/papers/Horvitz-Thompson-1952-jasa.pdf">Horvitz
+and Thompson, 1952</a></p>
+<h3 id="red-team-extension-adapted-completion-shares">Red-team
+extension: adapted completion shares</h3>
+<p>The red mathematical reviewer supplied a stronger envelope and an
+independent finite-tree verification in
+<code>reviews/red-math/adaptive-completion.md</code>. At every reached
+pre-attempt history
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>,
+require
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>h</mi></msub><mo>≤</mo><mi>ϵ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p_h\le\epsilon&lt;1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>h</mi></msub><mo>≤</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">a_h\le u</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mi>h</mi></msub><mo>≥</mo><mi>ℓ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b_h\ge\ell&gt;0</annotation></semantics></math>.
+Stopping must occur before inspecting the current draw. The risky and
+other terminal-completion masses at that history obey
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>h</mi></msub><mo>=</mo><msub><mi>p</mi><mi>h</mi></msub><msub><mi>a</mi><mi>h</mi></msub><mo>≤</mo><mi>K</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mi>h</mi></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>b</mi><mi>h</mi></msub><mo>=</mo><mi>K</mi><msub><mi>y</mi><mi>h</mi></msub></mrow><annotation encoding="application/x-tex">x_h=p_ha_h\le K(1-p_h)b_h=Ky_h</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mi>ϵ</mi><mi>u</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">)</mo><mi>ℓ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">K=\epsilon u/((1-\epsilon)\ell)</annotation></semantics></math>.
+Weight by the probability of reaching each history and sum.
+First-completion events are disjoint, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>≤</mo><mi>K</mi><mi>Y</mi></mrow><annotation encoding="application/x-tex">X\le KY</annotation></semantics></math>
+and the same completion-share envelope follows. This permits adapted
+policies and history-dependent completion, but <strong>does not
+generalize IID retry costs</strong>. Cherry-picking an uncounted draw
+violates the effective offer bound. Selecting only risky completed
+panels for reliance is yet another selection stage; the completion bound
+says nothing about that relied-upon distribution. Credit for this
+extension and its independent probes belongs to the red mathematical
+lane.</p>
+<h2 id="repair-must-survive-changing-regimes">4. Repair must survive
+changing regimes</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mi>t</mi></msub><annotation encoding="application/x-tex">Z_t</annotation></semantics></math>
+be a nonnegative row vector of outstanding repair items by type in
+generation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>.
+Types can mean data calibration, statistical interpretation, software
+execution or a rights-handling obligation. The branching abstraction
+counts work items, not unique scientific truths. Duplicate notices and
+reusable checks need deduplication before interpretation as labor.</p>
+<p>Conditional on history
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="script">ℋ</mi><mi>t</mi></msub><annotation encoding="application/x-tex">\mathcal H_t</annotation></semantics></math>,
+suppose</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>Z</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∣</mo><msub><mi mathvariant="script">ℋ</mi><mi>t</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>≤</mo><msub><mi>Z</mi><mi>t</mi></msub><msub><mi>M</mi><mi>t</mi></msub><mo>,</mo></mrow><annotation encoding="application/x-tex">E[Z_{t+1}\mid\mathcal H_t]\le Z_tM_t,</annotation></semantics></math></p>
+<p>componentwise, where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>t</mi></msub><annotation encoding="application/x-tex">M_t</annotation></semantics></math>
+belongs to a declared family
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="script">ℳ</mi><annotation encoding="application/x-tex">\mathcal M</annotation></semantics></math>
+and can be chosen based on history. This premise is stronger than
+estimating unconditional average offspring in a convenient sample.
+Suppose there is a vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">w&gt;0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r&lt;1</annotation></semantics></math>
+with</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>w</mi><mo>≤</mo><mi>r</mi><mi>w</mi><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">for every </mtext><mspace width="0.333em"></mspace></mrow><mi>M</mi><mo>∈</mo><mi mathvariant="script">ℳ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">Mw\le rw\quad\text{for every }M\in\mathcal M.</annotation></semantics></math></p>
+<p><strong>Proposition 3 (common weighted repair envelope).</strong> For
+deterministic initial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mn>0</mn></msub><mo>=</mo><msub><mi>z</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">Z_0=z_0</annotation></semantics></math>,
+the expected cumulative weighted work satisfies</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">[</mo><munderover><mo>∑</mo><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow><mo accent="false">∞</mo></munderover><msub><mi>Z</mi><mi>t</mi></msub><mi>w</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>≤</mo><mfrac><mrow><msub><mi>z</mi><mn>0</mn></msub><mi>w</mi></mrow><mrow><mn>1</mn><mo>−</mo><mi>r</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">E\left[\sum_{t=0}^{\infty}Z_tw\right]
+\le\frac{z_0w}{1-r}.</annotation></semantics></math></p>
+<p><em>Proof.</em> Multiplying the conditional bound by positive
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>Z</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>w</mi><mo>∣</mo><msub><mi mathvariant="script">ℋ</mi><mi>t</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>≤</mo><mi>r</mi><msub><mi>Z</mi><mi>t</mi></msub><mi>w</mi></mrow><annotation encoding="application/x-tex">E[Z_{t+1}w\mid\mathcal H_t]\le rZ_tw</annotation></semantics></math>.
+Iterated expectation yields
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>Z</mi><mi>t</mi></msub><mi>w</mi><mo stretchy="false" form="postfix">]</mo><mo>≤</mo><msup><mi>r</mi><mi>t</mi></msup><msub><mi>z</mi><mn>0</mn></msub><mi>w</mi></mrow><annotation encoding="application/x-tex">E[Z_tw]\le r^tz_0w</annotation></semantics></math>.
+Sum the finite geometric bound and apply monotone convergence to
+nonnegative partial sums. Independence between generations and a fixed
+switching sequence are unnecessary under the conditional premise.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mi>i</mi></msub><annotation encoding="application/x-tex">w_i</annotation></semantics></math>
+bounds immediate work hours per
+type-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+item, the right side also bounds expected cumulative hours. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+is only a mathematical witness, its units are abstract weighted work and
+must not be relabeled as human hours. A failure to find this witness
+does not prove instability: even a supplied
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">w=(1,1)</annotation></semantics></math>
+can fail where another positive
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+succeeds. Common Lyapunov methods are established stability tools; the
+author’s accessible survey distinguishes stable subsystems from stable
+switching. <a
+href="https://www3.nd.edu/~pantsakl/Archive/Publications_Through2009/366-TAC08.pdf">Lin
+and Antsaklis, author manuscript</a></p>
+<h3
+id="counterexample-snapshots-pass-while-switching-explodes">Counterexample:
+snapshots pass while switching explodes</h3>
+<p>Take</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>B</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">A=\begin{pmatrix}0&amp;2\\0&amp;0\end{pmatrix},\qquad
+B=\begin{pmatrix}0&amp;0\\2&amp;0\end{pmatrix}.</annotation></semantics></math></p>
+<p>Each matrix is nilpotent, so repeating either regime alone eventually
+clears all work in this linear model. Alternating
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math>
+from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>0</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">z_0=(1,0)</annotation></semantics></math>
+doubles work every generation and produces 1,024 items in generation 10.
+No common positive
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r&lt;1</annotation></semantics></math>
+envelope exists:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>w</mi><mn>2</mn></msub><mo>≤</mo><mi>r</mi><msub><mi>w</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">2w_2\le rw_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mi>w</mi><mn>1</mn></msub><mo>≤</mo><mi>r</mi><msub><mi>w</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">2w_1\le rw_2</annotation></semantics></math>
+imply
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>≤</mo><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">4\le r^2</annotation></semantics></math>.
+Thus checking each snapshot’s spectral radius is insufficient even
+before introducing stochastic human behavior.</p>
+<p>For the positive example, use</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>.2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>.1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>.1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>.4</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>M</mi><mn>2</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>.1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>.3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>.05</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>.2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mi>w</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>T</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">M_1=\begin{pmatrix}.2&amp;.1\\.1&amp;.4\end{pmatrix},\quad
+M_2=\begin{pmatrix}.1&amp;.3\\.05&amp;.2\end{pmatrix},\quad w=(1,2)^T.</annotation></semantics></math></p>
+<p>Both satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>j</mi></msub><mi>w</mi><mo>≤</mo><mn>.7</mn><mi>w</mi></mrow><annotation encoding="application/x-tex">M_jw\le .7w</annotation></semantics></math>.
+Starting with one first-type item gives an expected cumulative weighted
+bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mn>.7</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>10</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">1/(1-.7)=10/3</annotation></semantics></math>.
+Exhaustive enumeration of every length-eight switching sequence checks
+the finite inequalities; a longer alternating trajectory is included in
+the CSV output. These tests supplement the proof; they do not estimate a
+real matrix family.</p>
+<h3 id="finite-mean-is-not-a-service-guarantee">Finite mean is not a
+service guarantee</h3>
+<p>A branching item that produces 50 descendants with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.01</mn><annotation encoding="application/x-tex">.01</annotation></semantics></math>
+and none otherwise has mean offspring
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.5</mn><annotation encoding="application/x-tex">.5</annotation></semantics></math>.
+It is subcritical in first moment, yet its first generation alone
+exceeds an eight-item capacity with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.01</mn><annotation encoding="application/x-tex">.01</annotation></semantics></math>.
+For nonnegative total work
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>,
+the preceding expectation bound gives at most the conservative Markov
+bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Pr</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>W</mi><mo>≥</mo><mi>H</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>E</mi><mo stretchy="false" form="prefix">[</mo><mi>W</mi><mo stretchy="false" form="postfix">]</mo><mi>/</mi><mi>H</mi></mrow><annotation encoding="application/x-tex">\Pr(W\ge H)\le E[W]/H</annotation></semantics></math>,
+capped at one. It does not establish deadline compliance or acceptable
+tails.</p>
+<p>The capacity interface instead records commitments by <strong>person
+and epoch across all lanes</strong>. Three hours of checking, two of
+audit and four of repair consume nine hours of the same person’s
+eight-hour day. Three separately feasible lane budgets do not make the
+joint plan feasible. Skills, simultaneous appointments, legal priority,
+independence and deadlines impose additional constraints. Our checker
+only verifies the shared declared hour totals. Unrecorded obligations
+remain a failure mode; expected future repair bounds cannot be booked as
+realized work.</p>
+<h2 id="incentives-must-fit-the-audit-and-participation-budget">5.
+Incentives must fit the audit and participation budget</h2>
+<p>Consider a one-shot invitation. Honest work yields reward
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>,
+costs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+and is incorrectly sanctioned on an audit with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>.
+Shirking saves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
+and is detected on an audit with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>.
+Audit probability is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>;
+the modeled enforceable loss is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">F\ge0</annotation></semantics></math>.
+Abstaining yields outside utility
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>.
+Utilities are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>H</mi></msub><mo>=</mo><mi>R</mi><mo>−</mo><mi>c</mi><mo>−</mo><mi>q</mi><mi>α</mi><mi>F</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>U</mi><mi>S</mi></msub><mo>=</mo><mi>R</mi><mo>−</mo><mi>q</mi><mi>β</mi><mi>F</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>U</mi><mi>A</mi></msub><mo>=</mo><mi>u</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">U_H=R-c-q\alpha F,\qquad U_S=R-q\beta F,\qquad U_A=u.</annotation></semantics></math></p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>&gt;</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">\beta&gt;\alpha</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">F&gt;0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mi>F</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha F&gt;0</annotation></semantics></math>,
+honest work is a weak best response and the expected audit expenditure
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+invitations at unit cost
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+fits
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+only if</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>c</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>β</mi><mo>−</mo><mi>α</mi><mo stretchy="false" form="postfix">)</mo><mi>F</mi></mrow></mfrac><mo>≤</mo><mi>q</mi><mo>≤</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mrow><mo stretchy="true" form="prefix">{</mo><mn>1</mn><mo>,</mo><mfrac><mi>B</mi><mrow><mi>N</mi><mi>a</mi></mrow></mfrac><mo>,</mo><mfrac><mrow><mi>R</mi><mo>−</mo><mi>c</mi><mo>−</mo><mi>u</mi></mrow><mrow><mi>α</mi><mi>F</mi></mrow></mfrac><mo stretchy="true" form="postfix">}</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{c}{(\beta-\alpha)F}\le q\le
+\min\left\{1,\frac{B}{Na},\frac{R-c-u}{\alpha F}\right\}.</annotation></semantics></math></p>
+<p><strong>Proposition 4 (one-shot feasibility).</strong> Under the
+stated assumptions, this interval is necessary and sufficient for honest
+work to weakly dominate both shirking and abstention while satisfying
+the expected invited audit expenditure constraint. This is not a hard
+reservation or a pathwise spending guarantee.</p>
+<p><em>Proof.</em> Rearrange
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>H</mi></msub><mo>≥</mo><msub><mi>U</mi><mi>S</mi></msub></mrow><annotation encoding="application/x-tex">U_H\ge U_S</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>H</mi></msub><mo>≥</mo><msub><mi>U</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">U_H\ge U_A</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>a</mi><mi>q</mi><mo>≤</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">Naq\le B</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>q</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le q\le1</annotation></semantics></math>.
+All constraints are affine in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>.
+Their intersection is exactly the interval. The code handles zero audit
+cost, zero effort cost and zero discrimination without dividing by zero.
+Negative discrimination with zero effort permits only
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">q=0</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><mn>.2</mn><mo>,</mo><mi>R</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>F</mi><mo>=</mo><mn>2</mn><mo>,</mo><mi>α</mi><mo>=</mo><mn>.02</mn><mo>,</mo><mi>β</mi><mo>=</mo><mn>.8</mn><mo>,</mo><mi>u</mi><mo>=</mo><mn>.1</mn><mo>,</mo><mi>N</mi><mo>=</mo><mn>100</mn><mo>,</mo><mi>a</mi><mo>=</mo><mn>.1</mn><mo>,</mo><mi>B</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">c=.2,R=1,F=2,\alpha=.02,\beta=.8,u=.1,N=100,a=.1,B=2</annotation></semantics></math>,
+the interval is approximately
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>.1282</mn><mo>,</mo><mn>.2</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[.1282,.2]</annotation></semantics></math>.
+Reducing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+to 1 makes it empty. Keeping ample funding but lowering reward to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.3</mn><annotation encoding="application/x-tex">.3</annotation></semantics></math>
+and increasing false sanctions to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.3</mn><annotation encoding="application/x-tex">.3</annotation></semantics></math>
+can also make it empty:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>≥</mo><mn>.2</mn></mrow><annotation encoding="application/x-tex">q\ge.2</annotation></semantics></math>
+is needed for effort while
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>≤</mo><mn>.0833</mn></mrow><annotation encoding="application/x-tex">q\le.0833</annotation></semantics></math>
+is needed to keep honest participation worthwhile. Increasing policing
+without controlling false positives can exclude contributors.</p>
+<p>The sweep uses 102 artificial agents with two reward levels and 51
+effort costs. Each chooses the best of honest, shirk and abstain. Ties
+prefer abstain, then honest, then shirk. It reports both honest share
+<strong>among participants</strong> and counts among <strong>all
+invitations</strong>, along with expected audit work among participants
+and expected expenditure if every invited agent participates. The sweep
+is a mechanism diagnostic: its utilities are neither survey responses
+nor a fit to scientists, lawyers or software agents.</p>
+<h3 id="red-team-correction-fund-a-hard-audit-cap">Red-team correction:
+fund a hard audit cap</h3>
+<p>The first draft incorrectly called
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>a</mi><mi>q</mi><mo>≤</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">Naq\le B</annotation></semantics></math>
+a worst-case reservation. Red finding RM-1 supplies the counterexample:
+independent Bernoulli audits at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>100</mn><mo>,</mo><mi>q</mi><mo>=</mo><mn>.2</mn><mo>,</mo><mi>a</mi><mo>=</mo><mn>.1</mn><mo>,</mo><mi>B</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N=100,q=.2,a=.1,B=2</annotation></semantics></math>
+exceed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+with probability about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.44054</mn><annotation encoding="application/x-tex">.44054</annotation></semantics></math>.
+The algebra above has been relabeled expected expenditure; the original
+finding is retained.</p>
+<p>For fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+and identical actual audit cost
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a&gt;0</annotation></semantics></math>,
+define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>N</mi><mo>,</mo><mo stretchy="false" form="prefix">⌊</mo><mi>B</mi><mi>/</mi><mi>a</mi><mo stretchy="false" form="postfix">⌋</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">k_{max}=\min\{N,\lfloor B/a\rfloor\}</annotation></semantics></math>.
+Uniformly sample a concealed subset of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+invitation indices before behavior, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≤</mo><msub><mi>k</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></mrow><annotation encoding="application/x-tex">k\le k_{max}</annotation></semantics></math>.
+Every index has marginal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>k</mi><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">q=k/N</annotation></semantics></math>,
+and every realized audit cost is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>.
+Noninteger
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">Nq</annotation></semantics></math>
+can be implemented by mixing its adjacent integer counts, provided both
+are at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>k</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><annotation encoding="application/x-tex">k_{max}</annotation></semantics></math>.
+Therefore the hard-cap upper bound is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>≤</mo><mfrac><mrow><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>N</mi><mo>,</mo><mo stretchy="false" form="prefix">⌊</mo><mi>B</mi><mi>/</mi><mi>a</mi><mo stretchy="false" form="postfix">⌋</mo><mo stretchy="false" form="postfix">}</mo></mrow><mi>N</mi></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">q\le\frac{\min\{N,\lfloor B/a\rfloor\}}{N}.</annotation></semantics></math></p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn><mo>,</mo><mi>a</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>B</mi><mo>=</mo><mn>1.5</mn></mrow><annotation encoding="application/x-tex">N=3,a=1,B=1.5</annotation></semantics></math>,
+the expected constraint allows
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>.5</mn></mrow><annotation encoding="application/x-tex">q=.5</annotation></semantics></math>
+but the hard cap allows at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">1/3</annotation></semantics></math>.
+<code>hard_audit_interval</code> intersects this bound with effort and
+participation; <code>blinded_audit_sample</code> implements the subset
+lottery. Concealment is a caller obligation, not a cryptographic
+property of a returned Python list. If actors learn their selection
+before effort, unaudited actors may shirk and the
+common-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+incentive calculation no longer applies to their information sets.
+Changing invitation populations, variable audit cost, failed delivery
+and funding of the reward
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+are separate obligations. Fixed sample size does not create credible
+commitment or independent audit authority.</p>
+<p>This is deliberately not a whole-network equilibrium. Audit
+credibility, collusion, appeal reversal, reviewer judgment, wealth
+constraints, repeated identity resets and the legitimacy of imposing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+are outside the model. The simpler prototype may rely on bounded
+recognition and loss of future assignments, not monetary penalties. Such
+a loss still needs a justified valuation and a responsible institution;
+a symbolic variable cannot supply either.</p>
+<h2 id="four-deep-adaptations-one-common-experiment-boundary">6. Four
+deep adaptations, one common experiment boundary</h2>
+<p><strong>Physics and astronomy.</strong> Treat calibration and
+inference as separate repair types. A new instrument calibration can
+invalidate a derived estimate without invalidating the raw observations.
+A collaboration’s 100 analysis processes remain one control boundary for
+panel sampling. Ask whether repair notices reach the actual downstream
+uses and whether the limited calibration specialists are double-booked.
+The switched-matrix counterexample represents changing dependency
+patterns, not a fitted astrophysical pipeline.</p>
+<p><strong>Biology.</strong> A data-use restriction can remove evidence
+without proving a biological claim false. Give evidence availability,
+statistical checks and authorized reuse separate records. Let wet-lab
+replication complete more slowly than a computational check; the
+completion model demonstrates why counting only finished work can favor
+an easy-to-complete category. A wet-lab refusal is not a negative
+scientific verdict. Consent and restricted data do not enter a public
+toy fixture.</p>
+<p><strong>Economics and social science.</strong> Use offered/completed
+denominators to teach how selection can create apparent institutional
+improvement. Vary completion rates, setup costs and outside options;
+report unresolved projects and labor as outcomes. The audit experiment
+shows a mechanism whose apparent integrity among remaining participants
+improves while scarce contributors can leave. A substantive causal claim
+requires a real identification strategy and external data, not this
+queue.</p>
+<p><strong>Law and governance.</strong> Treat rights response,
+scientific disagreement and appeal as different authorities drawing on
+some of the same people’s time. The capacity checker can reject nine
+hours booked into eight without deciding legal priority. The audit
+model’s sanction must not be read as a legally enforceable fine. A
+timely record, lawful recipient-specific disclosure and authorized
+reversal require operator processes outside these mathematical
+models.</p>
+<h2 id="claim-ledger-and-reproducibility">7. Claim ledger and
+reproducibility</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>ID</th>
+<th>Status</th>
+<th>Claim and evidence</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1</td>
+<td>T</td>
+<td>Group-first pushforward invariance; proof and exact probability
+tests</td>
+<td>Fixed true/declared group map, feasibility and weights</td>
+</tr>
+<tr>
+<td>M2</td>
+<td>T</td>
+<td>Completion conditioning and finite IID retry accounting; proof and
+independent path enumeration</td>
+<td>Retry costs use IID assumptions; the adapted completion-share
+extension needs bounds at every reached history</td>
+</tr>
+<tr>
+<td>M3</td>
+<td>T</td>
+<td>Common positive envelope bounds conditional expected cumulative
+repair; proof</td>
+<td>Envelope validity is an empirical/operational assumption</td>
+</tr>
+<tr>
+<td>M4</td>
+<td>T</td>
+<td>One-shot audit/participation/funding interval; affine
+inequalities</td>
+<td>Audit and enforceable loss exogenous, no equilibrium selection</td>
+</tr>
+<tr>
+<td>M5</td>
+<td>I</td>
+<td>Executable synthetic implementation reproduces positive and negative
+cases</td>
+<td>Floating-point toy range, no production scheduler</td>
+</tr>
+<tr>
+<td>M6</td>
+<td>I</td>
+<td>80,000 seeded simulated requests with pointwise uncertainty</td>
+<td>Simulation outcomes only, no human evidence</td>
+</tr>
+<tr>
+<td>M7</td>
+<td>D</td>
+<td>Keep simple participant actions while instrumenting full
+denominators and shared budgets</td>
+<td>Usability and effectiveness untested</td>
+</tr>
+</tbody>
+</table>
+<p>Here T denotes a conditional theoretical result, I implementation
+evidence including explicitly synthetic experiments, and D a design
+proposal. These labels follow the repository claim vocabulary and do not
+confer scientific acceptance. Twenty-one unit tests include an
+independent representative panel enumeration, an independent finite
+retry-path tree, all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mn>8</mn></msup><annotation encoding="application/x-tex">2^8</annotation></semantics></math>
+switching sequences and utility comparisons on both sides of a feasible
+audit interval. Three negative results are required demonstrations, not
+optional caveats: hidden control, refusal-driven completion bias and
+unstable switching.</p>
+<p>From the repository root:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/models/math <span class="at">-p</span> <span class="st">&#39;test_*.py&#39;</span> <span class="at">-v</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/models/math/run_experiments.py</span></code></pre></div>
+<p>The second command writes 115 parameter-sweep rows in four CSV files
+and the 80,000-request Monte Carlo summary under
+<code>models/math/results/</code>. The manifest records exact
+source/table SHA-256 digests, seeds, Python version and interval
+interpretation. Standard-library Python is sufficient. No service,
+credential, network access or actual author data are used. Input
+validation catches malformed shapes, negative work and non-finite scalar
+inputs. The numerical routines are small research references; they are
+not certified against overflow for every finite IEEE-754 value or
+combinatorial explosion on large group populations.</p>
+<p>The decisive next question is not whether these plots look plausible.
+It is whether the full event trace preserves the stated boundary when
+one toy actor refuses, splits its identity, hides a dependency or
+overloads a shared reviewer. A human pilot should then compare the
+four-action interface with an ordinary structured referee template with
+the same information and comparable declared support, measuring actual
+total labor. If the template works as well with less effort, retain the
+portable evidence records and simplify the surrounding machinery.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

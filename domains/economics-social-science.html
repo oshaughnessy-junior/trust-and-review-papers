@@ -1,0 +1,288 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Economics and social science: the denominator is part of the claim · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="economics-and-social-science-the-denominator-is-part-of-the-claim">Economics
+and social science: the denominator is part of the claim</h1>
+<p><strong>Research question.</strong> Can a portable reliance record
+preserve the distinction between a registered analysis, an identified
+sample effect, a transported policy claim, and the population of reviews
+that actually finishes?</p>
+<p><strong>Bounded answer.</strong> A declared record can keep these
+objects separate. Two elementary models show why the separation matters;
+they do not show that a real institution will honor it. The study,
+people, outcomes, and effort prices here are synthetic.</p>
+<h2 id="the-situation">The situation</h2>
+<p>The invented Harbor team evaluates an informational intervention in
+two types of site. Its versioned plan specifies an average effect for
+the trial sample. The team obtains a positive estimate and shares code
+that reproduces its table. A municipal analyst wants to use that
+estimate for a different mix of sites. A funder also wants an apparently
+neutral review queue to prioritize its own studies.</p>
+<p>These are distinct questions. Registration can document what was
+planned; reproduction can document what code calculates; identification
+concerns how the design supports the estimand; transport concerns a new
+setting. The review queue itself has a selection problem if some
+reviewers disproportionately decline or finish particular work.</p>
+<p>The AEA RCT Registry’s official guidelines distinguish registration
+review from research-quality or ethics review and support versioned
+study entries. Its stated eligibility is social-science RCTs, not
+clinical trials. Use the registry as a source identifier and chronology,
+not as a quality badge. <a
+href="https://docs.socialscienceregistry.org/registration_guidelines">Guidelines,
+checked 2026-09-25</a>.</p>
+<p>Deaton and Cartwright’s primary paper emphasizes that moving trial
+findings to other groups requires justification. That motivates our
+explicit transport assumptions; our numerical example is independently
+constructed. <a href="https://www.nber.org/papers/w22595">Primary paper
+record, search-retrieved abstract checked 2026-09-25</a>.</p>
+<h2
+id="model-1-a-sample-effect-is-not-automatically-a-target-effect">Model
+1: a sample effect is not automatically a target effect</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S\in\{A,B\}</annotation></semantics></math>
+label site type and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>s</mi></msub><annotation encoding="application/x-tex">\tau_s</annotation></semantics></math>
+be its average treatment effect. Under random assignment within the toy
+trial, an appropriate estimator can estimate the sample mixture</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mrow></msub><mo>=</mo><msub><mi>w</mi><mi>A</mi></msub><msub><mi>τ</mi><mi>A</mi></msub><mo>+</mo><msub><mi>w</mi><mi>B</mi></msub><msub><mi>τ</mi><mi>B</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">\tau_{\mathrm{trial}}=w_A\tau_A+w_B\tau_B.</annotation></semantics></math></p>
+<p>Suppose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>A</mi></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\tau_A=2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>B</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\tau_B=0</annotation></semantics></math>,
+and trial weights are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0.8</mn><mo>,</mo><mn>0.2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0.8,0.2)</annotation></semantics></math>.
+The trial effect is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1.6</mn><annotation encoding="application/x-tex">1.6</annotation></semantics></math>.
+A target population with weights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0.2</mn><mo>,</mo><mn>0.8</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0.2,0.8)</annotation></semantics></math>
+has effect
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.4</mn><annotation encoding="application/x-tex">0.4</annotation></semantics></math>
+<em>if</em> the within-type effects transfer unchanged and both target
+types have trial support. The fourfold difference comes entirely from
+composition. It is not a bias correction that MCRP can infer from a
+citation.</p>
+<p>The elementary transport formula</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>=</mo><munder><mo>∑</mo><mi>s</mi></munder><msub><mi>v</mi><mi>s</mi></msub><msub><mi>τ</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\tau_{\mathrm{target}}=\sum_s v_s\tau_s</annotation></semantics></math></p>
+<p>requires target weights, adequate support, stable definitions of
+treatment and outcome, and justified within-type transport.
+Interference, unmeasured effect modifiers, endogenous participation,
+implementation changes and general-equilibrium effects can break that
+model. A missing type C cannot be repaired by renormalizing only A and B
+without changing the target estimand. Report unsupported transport as
+unknown or partial, not as zero effect for C.</p>
+<p>The fixture uses stipulated exact effects, so no confidence interval
+is claimed. A real analysis would propagate sampling uncertainty and
+weight uncertainty, and separate confirmatory and exploratory
+analyses.</p>
+<h2 id="model-2-completed-reviews-are-a-selected-population">Model 2:
+completed reviews are a selected population</h2>
+<p>Let an invitation target an adversarial control group with
+probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>,
+with completion probabilities
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>a</mi></msub><annotation encoding="application/x-tex">c_a</annotation></semantics></math>
+for adversarial and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>h</mi></msub><annotation encoding="application/x-tex">c_h</annotation></semantics></math>
+for other invitees. Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>∣</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi></mrow><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>q</mi><msub><mi>c</mi><mi>a</mi></msub></mrow><mrow><mi>q</mi><msub><mi>c</mi><mi>a</mi></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>c</mi><mi>h</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">P(a\mid\mathrm{complete})=
+\frac{q c_a}{q c_a+(1-q)c_h}.</annotation></semantics></math></p>
+<p>At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>0.1</mn></mrow><annotation encoding="application/x-tex">q=0.1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>a</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">c_a=1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>h</mi></msub><mo>=</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">c_h=0.01</annotation></semantics></math>,
+the completed share is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mi>/</mi><mn>109</mn><mo>≈</mo><mn>0.91743</mn></mrow><annotation encoding="application/x-tex">100/109\approx0.91743</annotation></semantics></math>.
+An invitation-level “10% maximum” would badly misdescribe completed
+reviews. This is a conditional-probability identity, not an estimated
+attack rate.</p>
+<p>The repair is not simply to reroll until someone completes. Rerolls
+spend time, can amplify selection, and may exhaust the only independent
+experts. Record offered, eligible, invited, accepted, completed and
+relied-upon denominators, plus refusals and retries. A fair invitation
+distribution and a fair completion distribution are different design
+objectives. Neither establishes correct reviews.</p>
+<p>Reliance can select once more, independently of allocation. Suppose
+10 adverse and 90 other reviews have completed: the adverse completion
+share is 0.1. If an editor relies only on the adverse 10, the adverse
+share among relied-upon reviews is 1. That is a separate finite-count
+fixture, not a continuation of the earlier 100/109 example. Recording
+every stage exposes the selection; it does not constrain the editor’s
+legitimate discretion or prove decision quality. Any promised influence
+bound must specify whether it concerns invitations, completions, or
+actual reliance. Representation, expertise and decision quality are
+different objectives.</p>
+<h2 id="four-receipts-without-upgrading-the-estimand">Four receipts,
+without upgrading the estimand</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Action</th>
+<th>Concrete record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Offer <code>econ-offer-v1</code></td>
+<td>Harbor offers target <code>econ-trial-ate@1</code>, synthetic strata
+table, code and plan version; scopes <code>arithmetic</code> and
+<code>estimand_alignment</code>. Target population and transport are
+excluded. Requested check budget: 2 effort tokens.</td>
+</tr>
+<tr>
+<td>Check <code>econ-check-v1</code></td>
+<td>An external analyst verifies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.8</mn><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>0.2</mn><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1.6</mn></mrow><annotation encoding="application/x-tex">0.8(2)+0.2(0)=1.6</annotation></semantics></math>
+and confirms that the <em>synthetic</em> plan’s named estimand is the
+trial mixture; records inaccessible/nonexistent real assignment records
+and no empirical causal validation.</td>
+</tr>
+<tr>
+<td>Rely <code>econ-rely-v1</code></td>
+<td>A named scientific decision maker accepts 1.6 as the worked model’s
+trial-mixture calculation, not as an actual intervention estimate or
+citywide recommendation. Scope stays bounded; expiry is logical time
+20.</td>
+</tr>
+<tr>
+<td>Amend <code>econ-amend-v2</code></td>
+<td>The municipal analyst supplies target weights
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0.2</mn><mo>,</mo><mn>0.8</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0.2,0.8)</annotation></semantics></math>
+and requests a separate target claim. Version 2 computes 0.4 under
+stated transport assumptions. It links the original stratum estimates
+but does not overwrite the trial estimand.</td>
+</tr>
+</tbody>
+</table>
+<p>In a real application, a substantive identification check would need
+more than matching a plan and script. Timestamped plans can still be
+underspecified or amended; protocol records should show both chronology
+and deviations. An exploratory analysis may be valuable if labeled as
+such. The framework should not incentivize retroactive relabeling as
+preregistered.</p>
+<h2
+id="scarcity-sponsorship-and-individual-versus-team-participation">Scarcity,
+sponsorship and individual versus team participation</h2>
+<p>Suppose 20 studies compete for 40 effort tokens. A sponsor submits 15
+studies, each requesting 2 tokens; unsponsored authors submit 5. Uniform
+allocation per study gives 75% of attention to the sponsor even if the
+verdict function never reads a payment field. This does not prove
+wrongdoing, but it shows why “no paid verdict” is incomplete as an
+attention-fairness claim.</p>
+<p>Track sponsor/control-group shares separately from judgments. Compare
+uniform qualified assignment, disclosed principal-level caps, and a
+newcomer opportunity reserve under matched expertise and total capacity.
+Caps can themselves deny useful work; publish exclusions and delays. An
+allegedly additive sponsored pool is not additive if it draws the same
+scarce reviewers away from the common pool.</p>
+<p>A solo researcher can contribute a 1-token estimand check. A large
+team can prepare a replication bundle and conduct internal checks, but
+its agents do not become many independent outside reviewers. An
+economist may model different within-team production functions while
+retaining one external accountable principal. The protocol needs the
+boundary, not a theory of every team’s internals.</p>
+<h2 id="failure-and-repaired-workflow">Failure and repaired
+workflow</h2>
+<p>The failure path labels a registered, reproducible estimate
+“policy-ready,” reports only completed favorable reviews, and cites an
+invitation cap as protection from capture. The repaired path retains the
+original estimand, offers transport as a new scoped claim, records
+unsupported population cells, and reports completion selection
+separately from allocation. A declined or incomplete check is visible
+work, not erased from the denominator.</p>
+<p>An amendment can change an analysis plan, an estimate, or an intended
+use. These are different events. A changed city population does not
+necessarily invalidate the old trial calculation; it can invalidate its
+relevance to the city. Exact receipt identity permits both statements to
+coexist without a global trust score.</p>
+<h2 id="human-exercise-and-answer-key">Human exercise and answer
+key</h2>
+<p><strong>Ten-minute entry:</strong> Ask participants to compute the
+two weighted averages and write the population attached to each. Then
+give them the completion probabilities and ask whether a 10% invitation
+share ensures a 10% completed-review share.</p>
+<p><strong>Answer key:</strong> Trial mixture 1.6; target mixture 0.4
+conditional on transport; completed adverse share about 91.74%. In the
+separate final-selection example, a 10% completed share becomes a 100%
+relied-upon share. An unrepresented target type remains unknown. A
+perfectly performed arithmetic check does not establish causal
+identification.</p>
+<p><strong>Forty-five-minute clinic:</strong> Participants play author,
+checker, municipal analyst, and resource steward. The author presents a
+plan deviation; the analyst changes the target population; the steward
+introduces asymmetric refusal. Each role must preserve the useful narrow
+result and state which new work is needed. Count the steward’s
+administrative labor, not just the reviewing economists’ labor.</p>
+<h2 id="agent-task-and-falsifiable-evaluation">Agent task and
+falsifiable evaluation</h2>
+<p>The domain oracle computes the two mixture effects and conditional
+completion share with exact rational arithmetic. The implementer should
+maintain distinct targets for the trial calculation and transport
+calculation, with transport assumptions as explicit dependencies. A new
+target mix must not silently mutate the old result. The toy receipt
+engine checks scopes and declared dependencies; it does not estimate
+treatment effects or validate randomization.</p>
+<p>Proposed evaluation crosses three interfaces (letter, structured
+template, receipts) with hidden versus explicit population changes. A
+separate routing experiment varies completion probabilities, sponsor
+submission share, and principal labeling. Outcomes include estimand
+errors, unsupported transport, completion concentration, denied work,
+and total labor. Arithmetic accuracy alone is an inadequate endpoint. No
+study has been preregistered or run by this packet.</p>
+<h2 id="claim-ledger-and-closest-work-boundary">Claim ledger and
+closest-work boundary</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Type</th>
+<th>Support or remaining test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registry presence is not research-quality approval</td>
+<td>P</td>
+<td>AEA’s own registration guidelines</td>
+</tr>
+<tr>
+<td>Trial-to-target transfer requires justification</td>
+<td>P</td>
+<td>Deaton–Cartwright primary paper abstract</td>
+</tr>
+<tr>
+<td>Mixture changes yield 1.6 versus 0.4 in this model</td>
+<td>T/I</td>
+<td>Explicit effects and exact fixture</td>
+</tr>
+<tr>
+<td>Completion can reverse an invitation-level impression</td>
+<td>T/I</td>
+<td>Conditional-probability identity and fixture</td>
+</tr>
+<tr>
+<td>Typed receipts improve policy interpretation and incentives</td>
+<td>H</td>
+<td>Future comparative study; no behavioral evidence</td>
+</tr>
+</tbody>
+</table>
+<p>The addition to existing registry, replication and evidence-synthesis
+practice is a proposed portable boundary around a particular use. It is
+not a new causal identification theorem, public procurement rule, or
+mechanism-design equilibrium.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

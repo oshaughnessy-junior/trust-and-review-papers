@@ -1,0 +1,200 @@
+{
+  "configuration": {
+    "clone_count": 100,
+    "completion_offers": 10000,
+    "selection_draws": 3000
+  },
+  "evidence_class": "I: synthetic implementation experiment",
+  "python": "3.9.6",
+  "scenarios": {
+    "completion_bias": {
+      "completed_risky_fraction": 0.9157088122605364,
+      "conditional_exact": 0.9174311926605504,
+      "counts": {
+        "accepted": 1044,
+        "completed": 1044,
+        "eligible": 10000,
+        "invited": 10000,
+        "offered": 10000,
+        "refused": 8956,
+        "relied": 0,
+        "retries": 0,
+        "risky_completed": 956,
+        "risky_offered": 956,
+        "unresolved": 8956
+      },
+      "intake_and_check_units": 11044,
+      "limitation": "No real refusals; scripted completion probabilities; no retries or reliance issued.",
+      "offered_risky_fraction": 0.0956,
+      "seed": 17
+    },
+    "control_group_clones": {
+      "canonical_A_fraction": 0.6716666666666666,
+      "canonical_exact": 0.6666666666666666,
+      "clones": 100,
+      "draws": 3000,
+      "naive_A_fraction": 0.9943333333333333,
+      "naive_exact": 0.9950248756218906,
+      "premise": "declared control groups correct; static qualified pool",
+      "seed": 17
+    },
+    "hidden_dependency": {
+      "failure_exposed": true,
+      "lesson": "Declared dependency traversal cannot discover missing scientific dependencies.",
+      "omniscient_fixture_should_reconsider": true,
+      "reported_state": "current_under_toy_policy"
+    },
+    "release_cycle": {
+      "after": "reconsideration_pending",
+      "before": "current_under_toy_policy",
+      "degraded_amendment_retained": true,
+      "degraded_new_offer": {
+        "accepted": false,
+        "reason": "degraded: new discretionary offers paused"
+      },
+      "events": [
+        {
+          "action": "offer",
+          "id": "offer-0001",
+          "target": {
+            "claim_id": "calibration",
+            "evidence_digest": "fixture:calibration-1",
+            "version": "v1"
+          }
+        },
+        {
+          "action": "offer",
+          "id": "offer-0002",
+          "target": {
+            "claim_id": "inference",
+            "evidence_digest": "fixture:inference-1",
+            "version": "v1"
+          }
+        },
+        {
+          "action": "check",
+          "id": "check-0003",
+          "now": 0,
+          "outcome": "support"
+        },
+        {
+          "action": "check",
+          "id": "check-0004",
+          "now": 0,
+          "outcome": "support"
+        },
+        {
+          "action": "rely",
+          "id": "rely-0005",
+          "kind": "scientific",
+          "now": 0
+        },
+        {
+          "action": "amend",
+          "affected": [
+            {
+              "claim_id": "calibration",
+              "evidence_digest": "fixture:calibration-1",
+              "version": "v1"
+            },
+            {
+              "claim_id": "inference",
+              "evidence_digest": "fixture:inference-1",
+              "version": "v1"
+            }
+          ],
+          "now": 2,
+          "reason": "synthetic changed calibration",
+          "target": {
+            "claim_id": "calibration",
+            "evidence_digest": "fixture:calibration-1",
+            "version": "v1"
+          }
+        },
+        {
+          "action": "check",
+          "id": "check-0007",
+          "now": 3,
+          "outcome": "support"
+        },
+        {
+          "action": "check",
+          "id": "check-0008",
+          "now": 3,
+          "outcome": "support"
+        },
+        {
+          "action": "rely",
+          "id": "rely-0009",
+          "kind": "scientific",
+          "now": 3
+        },
+        {
+          "action": "degraded",
+          "reason": "protected repair capacity needed"
+        },
+        {
+          "action": "amend",
+          "affected": [
+            {
+              "claim_id": "calibration",
+              "evidence_digest": "fixture:calibration-1",
+              "version": "v1"
+            },
+            {
+              "claim_id": "inference",
+              "evidence_digest": "fixture:inference-1",
+              "version": "v1"
+            }
+          ],
+          "now": 4,
+          "reason": "correction intake remains open",
+          "target": {
+            "claim_id": "calibration",
+            "evidence_digest": "fixture:calibration-1",
+            "version": "v1"
+          }
+        }
+      ],
+      "historical_receipt_unchanged": true,
+      "old_check_reuse": {
+        "accepted": false,
+        "reason": "checks mismatch target, outcome, current generation or time"
+      },
+      "panel": [
+        "reviewer-a",
+        "reviewer-b"
+      ],
+      "person_effort": {
+        "reviewer-a": 2,
+        "reviewer-b": 2
+      },
+      "renewal": "current_under_toy_policy",
+      "seed": 17,
+      "unauthorized_decision": {
+        "accepted": false,
+        "reason": "missing typed decision authority"
+      }
+    },
+    "shared_capacity": {
+      "appeal_request": 2,
+      "capacity": 4,
+      "charged_after_rejection": 3,
+      "naive_separate_lane_accounting_would_accept": true,
+      "result": {
+        "accepted": false,
+        "reason": "person capacity unavailable"
+      },
+      "review": 3
+    }
+  },
+  "schema": "mcrp-toy-agents/0.1",
+  "seed": 17,
+  "source_sha256": {
+    "__init__.py": "2ebaf4878f14632d467bf24710a5d97b43d00a995fc162c6f079afa529831c8f",
+    "protocol.py": "0a1a6b48f5fc4075c00f1819ee85103907c49169fd9f2d1b76ec86de236ddeff",
+    "run.py": "671fed4d5444b53652b001e6fa7d828614e6cf3b1e5d3b6502b2da1060b5cbeb",
+    "scenarios.py": "5b77fddd3a5fcdd8a998d40b7cbb90effd324b867dfd309edb1ed5e97278c5b7",
+    "tests/test_protocol.py": "a76abb03617767fd4df9454185d9a2d92bb6d6230700ece86e260d9d068ec3af"
+  }
+}

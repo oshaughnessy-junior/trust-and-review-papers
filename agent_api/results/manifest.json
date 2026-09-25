@@ -1,0 +1,79 @@
+{
+  "schema": "mcrp-agent-examples/0.1",
+  "python": "3.9.6",
+  "examples": [
+    {
+      "domain": "physics_astro",
+      "request": "examples/physics_astro.json",
+      "result": "results/physics_astro.json",
+      "expected_refused_commands": [
+        "stale-check-refusal"
+      ],
+      "expected_observations": [
+        "current_under_toy_policy",
+        "reconsideration_pending",
+        "current_under_toy_policy",
+        "reconsideration_pending"
+      ],
+      "request_digest": "sha256:0b12ff27b53ef5f9a4d89816b7da2d24dc9e314c49d3ce260ca6b0bfc6ac0418",
+      "state_digest": "sha256:71cff5a7ec571513572ffdc47e55951fbbbe1d897801fd35a4e1a3b7ba6c2ca1"
+    },
+    {
+      "domain": "biology",
+      "request": "examples/biology.json",
+      "result": "results/biology.json",
+      "expected_refused_commands": [
+        "stale-check-refusal"
+      ],
+      "expected_observations": [
+        "current_under_toy_policy",
+        "reconsideration_pending",
+        "current_under_toy_policy",
+        "reconsideration_pending"
+      ],
+      "request_digest": "sha256:5ba3b75b8c176f9c3aa09d36641f0799ce0076158321caa5ccbdf5067346bb1d",
+      "state_digest": "sha256:bb0a5d58144d8ba1d07235f6ab3f76fda139f45a49beb16d8185433820458686"
+    },
+    {
+      "domain": "economics_social",
+      "request": "examples/economics_social.json",
+      "result": "results/economics_social.json",
+      "expected_refused_commands": [
+        "stale-check-refusal"
+      ],
+      "expected_observations": [
+        "current_under_toy_policy",
+        "reconsideration_pending",
+        "current_under_toy_policy",
+        "reconsideration_pending"
+      ],
+      "request_digest": "sha256:ae9b12b9659818a177070486ada94629902532bcc011367eaab601b8e0547fa1",
+      "state_digest": "sha256:bac3a49b492dbfc79528a3839a239fcef1978ee666d6b6d7554f9b790accf0b9"
+    },
+    {
+      "domain": "law",
+      "request": "examples/law.json",
+      "result": "results/law.json",
+      "expected_refused_commands": [
+        "stale-check-refusal"
+      ],
+      "expected_observations": [
+        "current_under_toy_policy",
+        "reconsideration_pending",
+        "current_under_toy_policy",
+        "reconsideration_pending"
+      ],
+      "request_digest": "sha256:3ac4d0b68cd46b9cd2e41bf12753f2a81c6b214d7dfe069209d9ad518561fa1c",
+      "state_digest": "sha256:6dd6d8635f68d9d8056b862b703393c063479690b0b905d81785cda215e9b929"
+    }
+  ],
+  "source_sha256": {
+    "build_examples.py": "ef695768f89407fdb74d2168c9ad90f3842d91c5080ae204d2a1434d63bbb182",
+    "cli.py": "f426fe9023123a2f5b4d1b3a3f4f5fc2cf1fa14b7bed6988c6672a929b96115d",
+    "interface.py": "1897c7fed8beb787de5b900bc333e8f714e9002779c4bd8767fcc420d26c7d8e"
+  },
+  "imported_sha256": {
+    "toy_agents/protocol.py": "0a1a6b48f5fc4075c00f1819ee85103907c49169fd9f2d1b76ec86de236ddeff",
+    "adapters/legacy.py": "dcf4ff6598466caa727c7abab37b9fbbf0eb934f65b8c576458f2fe8a66259b0"
+  }
+}

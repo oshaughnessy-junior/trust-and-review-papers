@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Response to domain adversarial review · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="response-to-domain-adversarial-review">Response to domain
+adversarial review</h1>
+<p>Author-lane response, 2026-09-25. The original adversarial report
+remains separate in <code>../reviews/red-domains-law/</code>; this
+document does not speak for that reviewer.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Revision</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1: unconditional zero mean is insufficient</td>
+<td>Biology explicitly requires conditional zero mean given treatment
+and batch for its conditional-mean identity; the balanced binary
+counterexample is displayed</td>
+<td><code>test_unconditional_error_mean_does_not_supply_conditional_exogeneity</code></td>
+</tr>
+<tr>
+<td>D2: crossed columns do not establish causation or exact
+additivity</td>
+<td>Explicit structural causal countermodel;
+<code>additive_model_identification</code> replaces the ambiguous scope
+token; average contrast, exact-additivity flag and exact additive
+coefficient are separate outputs</td>
+<td><code>test_same_crossed_observations_can_have_zero_causal_effect</code>;
+<code>test_interaction_is_not_mislabeled_as_an_exact_additive_effect</code></td>
+</tr>
+<tr>
+<td>D2: interaction input mislabeled</td>
+<td>Contrasts 1 and 3 yield average 2, false exact-additivity flag and
+null exact additive coefficient; actual replay narrows the amended scope
+to arithmetic</td>
+<td>Same interaction regression exercises both oracle and receipt
+engine</td>
+</tr>
+<tr>
+<td>D3: federal jurisdiction qualifier omitted</td>
+<td>Law now refers to covered federal proceedings, subject to
+applicability and exceptions; source ledger retains the institutional
+scope</td>
+<td>Official U.S. Courts pages rechecked; no live-case opinion
+claimed</td>
+</tr>
+<tr>
+<td>D4: final reliance can select again</td>
+<td>Added separate finite-count example: 10 adverse of 100 completed,
+all 10 relied upon, hence shares 0.1→1</td>
+<td><code>test_final_reliance_can_select_again_after_completion</code>;
+undefined zero-reliance case also tested</td>
+</tr>
+<tr>
+<td>D7: novice should see a completed card</td>
+<td>Biology adds a worked four-sentence card and interaction answer key
+before requesting abstract protocol fluency</td>
+<td>Teaching proposal only; no measured onboarding effect</td>
+</tr>
+</tbody>
+</table>
+<p>All 20 domain tests pass in the regenerated run. Original working
+numerical cases retain their values. The more precise scope token is a
+fixture-schema change, not a claim of public wire-protocol
+compatibility. Original unchecked causal and institutional premises
+remain outside toy-engine authority.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

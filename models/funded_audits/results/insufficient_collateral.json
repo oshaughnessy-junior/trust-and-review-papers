@@ -1,0 +1,62 @@
+{
+  "schema": "mcrp-funded-audit.v1",
+  "config": {
+    "offered_population": 8,
+    "promised_quota": 4,
+    "delivered_quota": 4,
+    "reward": 0.6,
+    "loss": 2.0,
+    "false_positive": 0.02,
+    "detection": 0.8,
+    "audit_token_cost": 1.0,
+    "audit_token_budget": 4.0,
+    "reward_token_budget": 4.8,
+    "actor_escrow": 1,
+    "review_hours": 1.0,
+    "audit_hours": 0.5,
+    "role_mode": "dedicated",
+    "review_capacity": 8.0,
+    "audit_capacity": 2.0,
+    "shared_person_capacity": 6.0,
+    "disclose_selection": false,
+    "allow_broken_promise": false
+  },
+  "seed": 60,
+  "offered_effort_utilities": [
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3
+  ],
+  "offered_outside_utilities": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "status": "unavailable_before_offering",
+  "reason": "fully collateralized toy loss unavailable",
+  "counts": {
+    "planned_population": 8,
+    "offered": 0,
+    "accepted": 0,
+    "completed": 0,
+    "audited": 0,
+    "refused": 0
+  },
+  "events": [
+    {
+      "event": "program_unavailable",
+      "reason": "fully collateralized toy loss unavailable"
+    }
+  ],
+  "interpretation": "No invitations or audit promise issued by the conforming branch"
+}

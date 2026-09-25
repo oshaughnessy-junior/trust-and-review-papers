@@ -1,0 +1,458 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>MCRP as a bridge between evidence, decisions, and repair · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="mcrp-as-a-bridge-between-evidence-decisions-and-repair">MCRP as
+a bridge between evidence, decisions, and repair</h1>
+<p>Research positioning draft, 2026-09-25. The comparison below was
+checked against primary specifications and community documentation;
+retrieval scope appears in <a href="positioning-sources.html">the source
+ledger</a>. This is a proposed integration design, not a
+standards-conformance report, adoption announcement, or priority
+claim.</p>
+<p><strong>Question:</strong> When does an additional protocol help
+people use existing research artifacts without losing the boundaries of
+the checks and decisions behind them?</p>
+<p><strong>Answer proposed for testing:</strong> A small, portable
+reliance profile may help when one artifact supports several uses with
+different authority, evidence, freshness, and repair requirements. Where
+an existing workflow already conveys those facts adequately, the right
+result is a faithful adapter—or no additional layer.</p>
+<h2 id="the-strongest-positive-proposition">The strongest positive
+proposition</h2>
+<p>An astronomer can correctly reproduce a catalog calculation without
+checking its calibration. A biologist can reproduce a contrast that does
+not identify a causal effect. An economist can verify a trial
+calculation that does not transfer to a new population. A legal scholar
+can verify citations without acquiring authority to decide an
+institution’s conduct. Each has contributed something useful. The
+problem arises when the contribution crosses an organizational boundary
+and its limits disappear.</p>
+<p>MCRP proposes to carry those limits with the object: this exact
+claim, these performed checks, this intended use, this responsible
+decision maker, and these conditions for reconsideration. It also asks
+who has capacity to perform the promised follow-up. <strong>Offer →
+check → rely → amend</strong> is the human entry into that profile; it
+is not a claim that science follows four sequential states.</p>
+<p>The seed is most compelling as a way to connect existing records. A
+successful deployment could preserve a laboratory’s internal system, a
+collaboration’s editorial process, and an individual’s preferred writing
+tools. The external record would make a particular use inspectable
+without requiring agreement on a universal score or one institutional
+theory of evidence.</p>
+<h2 id="what-already-existsand-should-be-reused">What already exists—and
+should be reused</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Existing work</th>
+<th>Directly documented capability</th>
+<th>Proposed MCRP role, if useful</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://coar-notify.net/specification/1.0.1/">COAR Notify
+1.0.1</a></td>
+<td>Standardized scholarly notifications, including requests,
+acknowledgments, announcements, and offer withdrawal</td>
+<td>Refer to scoped receipt resources through existing notification
+patterns; avoid inventing another transport</td>
+</tr>
+<tr>
+<td><a href="https://www.w3.org/TR/prov-o/">W3C PROV-O</a></td>
+<td>Entities, activities, responsible agents, qualified relations,
+delegation, derivation and revision</td>
+<td>Reuse provenance terms; define application-specific reliance
+constraints rather than claim provenance is missing</td>
+</tr>
+<tr>
+<td><a
+href="https://www.researchobject.org/ro-crate/specification/1.3/introduction.html">RO-Crate
+1.3 introduction</a></td>
+<td>JSON-LD research packages describing data, contextual entities,
+production and reuse</td>
+<td>Carry evidence and receipt files in a familiar research package</td>
+</tr>
+<tr>
+<td><a
+href="https://www.researchobject.org/ro-crate/specification/1.3/provenance.html">RO-Crate
+provenance</a></td>
+<td>Creation/update actions, responsible humans, workflow state changes
+and retained old/new files</td>
+<td>Preserve existing history; add a purpose-specific currentness view
+only where needed</td>
+</tr>
+<tr>
+<td><a href="https://peercommunityin.org/faq/">PCI
+documentation</a></td>
+<td>Review, editorial decisions, public recommendations and archived
+process records</td>
+<td>Import the actual institution’s decision and limits rather than mint
+a competing approval</td>
+</tr>
+<tr>
+<td><a href="https://peercommunityin.org/?p=6218">PCI Registered Reports
+account</a></td>
+<td>Pre-study and post-study review, versioned plans and visible
+amendments</td>
+<td>Link a downstream use to the relevant accepted plan or result
+version; preserve the original conditions</td>
+</tr>
+<tr>
+<td><a href="https://credit.niso.org/">CRediT</a> and <a
+href="https://info.orcid.org/what-is-orcid/">ORCID</a></td>
+<td>Structured contribution roles; persistent researcher identifiers and
+linked records</td>
+<td>Keep attribution and identification distinct from appointment,
+independence, or authority</td>
+</tr>
+</tbody>
+</table>
+<p>This overlap changes the research claim. “We separate review from
+publication,” “we preserve versions,” and “we disclose who did the work”
+are not sufficient novelty claims. RO-Crate even describes authorized
+workflow changes, and PCI RR already documents a condition-bearing
+review process. The proposed increment is a particular
+<strong>cross-system use profile and executable failure suite</strong>,
+not ownership of those ideas. A complete prior-art survey may identify
+still closer profiles.</p>
+<p>An ORCID iD should be an identity reference, not a credential
+inferred from having an account; ORCID explicitly permits broad
+registration and records the source of connections. A CRediT
+contribution describes work, not appointment to a review panel. These
+are MCRP design inferences about correct use of those systems, not
+criticisms that either system failed its stated purpose. <a
+href="https://info.orcid.org/orcid-trust/">ORCID Trust</a>, <a
+href="https://credit.niso.org/">CRediT role taxonomy</a>.</p>
+<h2
+id="semantic-crosswalk-preserve-meaning-before-translating-names">Semantic
+crosswalk: preserve meaning before translating names</h2>
+<p>The following mappings are design proposals. An adapter must keep the
+originating institution’s identifiers, scope, chronology, and authority;
+it must not infer consent or a scientific judgment from a successful
+import.</p>
+<p>Preserve the original access and disclosure conditions too. A record
+someone may read is not necessarily theirs to republish. PCI’s FAQ, for
+example, distinguishes published recommended-review records from
+rejected reports that are not public. Use synthetic or
+permission-cleared material in an open adapter test. If a receiving
+public format cannot preserve a restriction, report that incompatibility
+or refuse the export rather than copying private content into public
+metadata. <a href="https://peercommunityin.org/faq/">PCI review
+visibility</a>.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>MCRP action</th>
+<th>Existing representation to reuse</th>
+<th>Additional profile information to preserve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Offer</strong></td>
+<td>A versioned evidence package; a PROV entity for the offer record and
+activity for preparing it; where applicable COAR’s <code>Offer</code> +
+<code>ReviewAction</code> request pattern</td>
+<td>Exact claim and evidence identity, requested check scope,
+exclusions, resource envelope; sending system is not automatically the
+author</td>
+</tr>
+<tr>
+<td><strong>Check</strong></td>
+<td>PROV activity uses the evidence and generates a report; reviewer
+association can carry role; COAR review announcement points to that
+report</td>
+<td>What was actually checked, outcome, uncertainty, unavailable
+evidence, common dependencies and control disclosures; execution success
+does not imply scientific coverage</td>
+</tr>
+<tr>
+<td><strong>Rely</strong></td>
+<td>A distinct decision artifact with its provenance; existing editorial
+recommendation preserved; COAR endorsement announcement only if the
+artifact genuinely is that kind of endorsement</td>
+<td>Named use, scope, decision authority kind, conditions, time
+boundary, and correction endpoint; a review receipt alone supplies none
+of these by implication</td>
+</tr>
+<tr>
+<td><strong>Amend</strong></td>
+<td>Revision relationship and new artifact; RO-Crate old/new file
+history; an appropriate notification of the relevant new resource</td>
+<td>Affected uses, material-change reason, unresolved work and
+responsibility; an old historical check may remain accurate while a
+present use becomes pending</td>
+</tr>
+</tbody>
+</table>
+<p>For the offer mapping, COAR’s <a
+href="https://coar-notify.net/specification/1.0.1/request-review/">Request
+Review</a> already distinguishes the resource landing page from the
+content item and uses <code>Offer</code> with <code>ReviewAction</code>.
+For the check mapping, <a
+href="https://coar-notify.net/specification/1.0.1/announce-review/">Announce
+Review</a> places the review in <code>object</code> and the reviewed
+resource in <code>context</code>. An adapter must not reverse those
+identities or treat the notification as the report itself.</p>
+<p><a
+href="https://coar-notify.net/specification/1.0.1/announce-endorsement/">Announce
+Endorsement</a> likewise announces an endorsement resource. It is a
+candidate carrier for an appropriate decision, not a universal encoding
+of every local reliance. A legal operational decision is not
+automatically a scholarly endorsement. <a
+href="https://coar-notify.net/specification/1.0.1/undo-offer/">Undo
+Offer</a> withdraws a previous offer; it must not be used as if it
+retracts a published result or resolves every downstream reliance. Where
+no existing pattern fits, keep the typed amendment resource and mark the
+transport mapping unsupported.</p>
+<p>PROV terms can express rich responsibility and revision
+relationships; they are not an instruction to erase old evidence when
+current use changes. In particular, do not equate a disputed scientific
+use with destruction of the underlying PROV entity. Nor does a delegated
+software activity prove independent governance. These are application
+semantics the adapter must preserve, using PROV’s extension points where
+needed. <a href="https://www.w3.org/TR/prov-o/">PROV-O qualified and
+expanded terms</a>.</p>
+<p>An RO-Crate profile is a plausible packaging route: the specification
+explicitly supports domain-specific conventions and extension
+vocabularies. A future MCRP profile should declare exactly which fields
+it requires, with examples and validation rules. That does not make the
+current plain JSON fixtures conforming RO-Crates; no such adapter or
+independent round trip has been demonstrated. <a
+href="https://www.researchobject.org/ro-crate/specification/1.3/profiles.html">RO-Crate
+profiles</a>.</p>
+<h2 id="what-would-make-the-integration-worth-its-cost">What would make
+the integration worth its cost?</h2>
+<p>The question is not whether these facts <em>can</em> be represented
+in an existing extensible vocabulary. Usually they can. The question is
+whether a shared minimal profile preserves consequential distinctions
+when information moves between people and systems—and whether doing so
+costs less than the mistakes it avoids.</p>
+<p>Let a local decision record have semantic projection</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Π</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mtext mathvariant="normal">target</mtext><mo>,</mo><mtext mathvariant="normal">checks</mtext><mo>,</mo><mtext mathvariant="normal">scope</mtext><mo>,</mo><mtext mathvariant="normal">authority</mtext><mo>,</mo><mtext mathvariant="normal">purpose</mtext><mo>,</mo><mtext mathvariant="normal">conditions</mtext><mo>,</mo><mtext mathvariant="normal">validity</mtext><mo>,</mo><mtext mathvariant="normal">repair</mtext><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\Pi(r)=(\text{target},\text{checks},\text{scope},\text{authority},
+\text{purpose},\text{conditions},\text{validity},\text{repair}).</annotation></semantics></math></p>
+<p>For an encoder
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>
+and decoder
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>,
+the desired round-trip property is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Π</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi mathvariant="normal">Π</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Pi(D(E(r)))=\Pi(r)</annotation></semantics></math>
+on supported cases. This is a proposed test oracle, not a proved
+property of the current package. Unsupported fields must produce
+explicit loss information or rejection; they must not disappear into a
+generic positive badge. A receiving system may lack the original
+institution’s authority even when the record is translated
+perfectly.</p>
+<p>A concrete integration test would send two uses of the same
+calibrated result: one permits numerical reconstruction, the other
+requires independent calibration. Then change only the calibration
+artifact. Measure which use becomes pending, which historical check
+survives, and which specialist work is reserved. Run the same test with
+a plain structured attachment. The new profile earns adoption only if it
+preserves more relevant meaning at acceptable total labor.</p>
+<p>Capacity is part of the proposed decision contract, not a solved
+standards gap. For each person and skill, review, supervision,
+amendment, and appeal commitments must draw on the same available
+resources. Existing systems can represent tasks and costs; MCRP’s
+research opportunity is to test whether binding those commitments to
+particular uses prevents silent oversubscription. The dossier’s
+elementary models expose overload and shared-error cases, but supply no
+field evidence that this profile improves them.</p>
+<h2 id="three-cases-where-existing-methods-are-enough">Three cases where
+existing methods are enough</h2>
+<ol type="1">
+<li><strong>A computational artifact needs packaging and rerun
+provenance.</strong> If the user only needs inputs, software versions,
+outputs, and responsible contributors, an existing research package plus
+execution record can answer the question. Adding a reliance ceremony
+would impose labor without a new decision boundary. RO-Crate already
+describes software and file-production history. <a
+href="https://www.researchobject.org/ro-crate/specification/1.3/provenance.html">Provenance
+guidance</a>.</li>
+<li><strong>A reader wants the review history and accepted plan of a
+registered report.</strong> If the existing process already supplies the
+relevant version, conditions, reviews and deviations, point to those
+records. A duplicate MCRP acceptance would create a reconciliation
+problem. A wrapper becomes useful only for a genuinely different
+downstream use. <a href="https://peercommunityin.org/?p=6218">PCI RR
+workflow account</a>.</li>
+<li><strong>A journal and repository only need to announce that a review
+exists.</strong> Use the existing COAR announcement and link to the
+actual review. No extra trust score or MCRP state machine is required.
+The narrower transport problem is already specified. <a
+href="https://coar-notify.net/specification/1.0.1/announce-review/">Announce
+Review</a>.</li>
+</ol>
+<p>These are acceptance criteria for the research agenda. A protocol
+seed that can recommend its own omission is easier to integrate than one
+that demands every existing workflow be renamed.</p>
+<h2 id="domain-entry-one-useful-bridge-per-audience">Domain entry: one
+useful bridge per audience</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Audience</th>
+<th>Paper focus worth reading first</th>
+<th>Human entry and implementer entry</th>
+<th>First adoption claim to test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physics/astro</td>
+<td><a href="../domains/physics-astro.html">Shared calibration case</a>,
+then <a href="../manuscripts/math-foundations.md">repair mathematics</a>
+and <a href="../manuscripts/coupled-agents.html">coupled
+allocation</a></td>
+<td>Human: annotate one reconstruction check with its calibration
+exclusion. Agent: retain the existing release bundle and expose the
+exact calibration dependency and two differently scoped uses.</td>
+<td>A calibration amendment reaches the uses that actually depend on it
+without invalidating a still-correct old computation.</td>
+</tr>
+<tr>
+<td>Biology</td>
+<td><a href="../domains/biology.md">Batch and identification case</a>,
+then the scope/correction analysis</td>
+<td>Human: distinguish an arithmetic check from the declared model and a
+causal claim. Agent: package the batch map and exact design, retain the
+unknown outcome, and replay the interaction counterexample.</td>
+<td>Participants distinguish supported and unsupported interpretations
+better than with a plain checklist given the same information and
+comparable declared support; report actual total labor and appropriate
+retained uses separately.</td>
+</tr>
+<tr>
+<td>Economics/social science</td>
+<td><a href="../domains/economics-social-science.html">Estimands and
+selection case</a>, then attention allocation and games</td>
+<td>Human: attach a population and intended use to one estimate. Agent:
+keep trial and target estimands separate and preserve
+invitation/completion/reliance denominators.</td>
+<td>Transport assumptions and final-selection concentration remain
+visible after export and reuse.</td>
+</tr>
+<tr>
+<td>Law</td>
+<td><a href="../domains/law.md">Authority and deadline case</a>, then
+legal operations</td>
+<td>Human: distinguish accurate citations, competing interpretations and
+the power to decide. Agent: preserve institution and jurisdiction scope;
+refuse an unsupported legal authority type rather than relabel it
+scientific.</td>
+<td>Translation never upgrades scholarly agreement into legal power or
+hides an unresolved deadline behind a positive badge.</td>
+</tr>
+</tbody>
+</table>
+<p>These are proposed invitations to collaborate, not assertions that
+those groups have adopted MCRP. No venue eligibility or available review
+capacity follows from the comparison. A community can retain its
+existing authority and attach one experimental receipt to a synthetic
+case before considering real data or decisions.</p>
+<h2 id="a-staged-adoption-experiment">A staged adoption experiment</h2>
+<p><strong>First, attach rather than migrate.</strong> Start with one
+shareable or synthetic artifact and a four-sentence human card. Link the
+original record; do not replace its identifiers, decision letter, or
+correction page. Permit a contributor to add only a scoped check. This
+stage needs no shared reputation economy.</p>
+<p><strong>Second, test a read-only adapter.</strong> Select one
+packaging/provenance combination and document semantic loss field by
+field. Include unknown scope, incompatible authority, withdrawn
+evidence, conflicting checks, and different institutional uses of one
+target. Pass/fail concerns preservation of meaning, not whether the JSON
+parses. Keep the original record available to its permitted audience
+alongside any projection; do not broaden its readership merely to make
+an adapter demonstration public.</p>
+<p><strong>Third, try a two-system synthetic exchange.</strong> Have
+separately developed adapters exchange an offer, check, decision and
+amendment. Duplicate or delayed notifications must not mint duplicate
+authority. A transport acknowledgment must not be displayed as
+acceptance of the scientific claim. No independent exchange has been
+completed in this release packet.</p>
+<p><strong>Fourth, ask humans whether the extra structure
+helped.</strong> Compare the bridge with a plain structured paragraph
+and the community’s current workflow. Count author, reviewer,
+facilitator, operator and correction labor; record refusals as well as
+completed work. If the simpler method preserves the same distinctions
+more cheaply, retain its vocabulary and drop unnecessary machinery.</p>
+<h2 id="contribution-and-claim-ledger">Contribution and claim
+ledger</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Status</th>
+<th>Evidence or next test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Existing systems already supply notifications, provenance, versioned
+review and contribution records</td>
+<td>P</td>
+<td>Linked primary documentation; bounded feature inspection in source
+ledger</td>
+</tr>
+<tr>
+<td>A particular use should retain scope, authority, conditions and
+repair responsibility across systems</td>
+<td>D</td>
+<td>Proposed MCRP profile, not a universal institutional rule</td>
+</tr>
+<tr>
+<td>The semantic projection is a useful round-trip oracle</td>
+<td>D/H</td>
+<td>Define fixtures; obtain an independent adapter; test loss and
+ambiguity</td>
+</tr>
+<tr>
+<td>Toy models expose failures hidden by an undifferentiated positive
+badge</td>
+<td>I/T within the models</td>
+<td>Domain fixtures and preserved counterexamples; no human efficacy
+inference</td>
+</tr>
+<tr>
+<td>The bridge improves real scientific or legal practice</td>
+<td>H</td>
+<td>Unrun comparative studies and community-specific governance
+work</td>
+</tr>
+</tbody>
+</table>
+<p>The public research invitation can therefore be concrete:
+<strong>bring a synthetic record or one you are entitled to share; help
+us preserve one consequential distinction when it travels.</strong> That
+is a smaller demand than joining a new review institution, and a sharper
+experiment than asking whether a new universal trust protocol sounds
+attractive.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

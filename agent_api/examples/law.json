@@ -1,0 +1,187 @@
+{
+  "schema": "mcrp-agent-task/0.1",
+  "synthetic_fixture": true,
+  "task_id": "law-bounded-cycle",
+  "commands": [
+    {
+      "id": "offer",
+      "action": "offer",
+      "agent_id": "author-agent",
+      "now": 0,
+      "input": {
+        "claim_id": "toy-law",
+        "claim": "Synthetic record lists a response before a fictional internal deadline; no legal advice.",
+        "evidence": {
+          "response_tick": 3,
+          "fictional_deadline_tick": 4,
+          "jurisdiction": "none"
+        },
+        "scope": [
+          "timeline-accounting"
+        ],
+        "dependencies": [],
+        "required_groups": 1
+      }
+    },
+    {
+      "id": "check",
+      "action": "check",
+      "agent_id": "review-agent",
+      "now": 1,
+      "input": {
+        "offer": "offer",
+        "scope": [
+          "timeline-accounting"
+        ],
+        "method": "Caller asserts a manual synthetic fixture check; not executed by this interface",
+        "outcome": "support",
+        "limits": "Only the disclosed toy calculation; no empirical or institutional validation",
+        "units": 1
+      }
+    },
+    {
+      "id": "rely",
+      "action": "rely",
+      "agent_id": "decision-agent",
+      "now": 2,
+      "input": {
+        "offer": "offer",
+        "checks": [
+          "check"
+        ],
+        "purpose": "synthetic local demonstration only",
+        "scope": [
+          "timeline-accounting"
+        ],
+        "kind": "scientific",
+        "expires": 20
+      }
+    },
+    {
+      "id": "observe-before",
+      "action": "observe",
+      "agent_id": "decision-agent",
+      "now": 2,
+      "input": {
+        "reliance": "rely",
+        "observed_at": 2,
+        "max_age": 0
+      }
+    },
+    {
+      "id": "amend",
+      "action": "amend",
+      "agent_id": "author-agent",
+      "now": 3,
+      "input": {
+        "offer": "offer",
+        "reason": "The fictional receipt timestamp is corrected to5: old ordering must be reconsidered."
+      }
+    },
+    {
+      "id": "observe-after",
+      "action": "observe",
+      "agent_id": "decision-agent",
+      "now": 3,
+      "input": {
+        "reliance": "rely",
+        "observed_at": 3,
+        "max_age": 0
+      }
+    },
+    {
+      "id": "stale-check-refusal",
+      "action": "rely",
+      "agent_id": "decision-agent",
+      "now": 3,
+      "input": {
+        "offer": "offer",
+        "checks": [
+          "check"
+        ],
+        "purpose": "synthetic local demonstration only",
+        "scope": [
+          "timeline-accounting"
+        ],
+        "kind": "scientific",
+        "expires": 20
+      }
+    },
+    {
+      "id": "offer-updated",
+      "action": "offer",
+      "agent_id": "author-agent",
+      "now": 4,
+      "input": {
+        "claim_id": "toy-law",
+        "claim": "Synthetic record lists a response after a fictional internal deadline; no legal advice.",
+        "evidence": {
+          "response_tick": 5,
+          "fictional_deadline_tick": 4,
+          "jurisdiction": "none"
+        },
+        "scope": [
+          "timeline-accounting"
+        ],
+        "dependencies": [],
+        "required_groups": 1
+      }
+    },
+    {
+      "id": "recheck",
+      "action": "check",
+      "agent_id": "review-team-child",
+      "now": 5,
+      "input": {
+        "offer": "offer-updated",
+        "scope": [
+          "timeline-accounting"
+        ],
+        "method": "Caller asserts a manual synthetic fixture check; not executed by this interface",
+        "outcome": "support",
+        "limits": "Only the disclosed toy calculation; no empirical or institutional validation",
+        "units": 1
+      }
+    },
+    {
+      "id": "renew",
+      "action": "rely",
+      "agent_id": "decision-agent",
+      "now": 6,
+      "input": {
+        "offer": "offer-updated",
+        "checks": [
+          "recheck"
+        ],
+        "purpose": "synthetic local demonstration only",
+        "scope": [
+          "timeline-accounting"
+        ],
+        "kind": "scientific",
+        "expires": 20
+      }
+    },
+    {
+      "id": "observe-renewed",
+      "action": "observe",
+      "agent_id": "decision-agent",
+      "now": 6,
+      "input": {
+        "reliance": "renew",
+        "observed_at": 6,
+        "max_age": 0
+      }
+    },
+    {
+      "id": "observe-original",
+      "action": "observe",
+      "agent_id": "decision-agent",
+      "now": 6,
+      "input": {
+        "reliance": "rely",
+        "observed_at": 6,
+        "max_age": 0
+      }
+    }
+  ]
+}

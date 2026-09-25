@@ -1,0 +1,41 @@
+{
+  "schema": "mcrp-pre-results-design.v1",
+  "status": "No human study conducted, approved or registered",
+  "power_method": "Exact enumeration of all balanced block assignments under specified fixed binary potential outcomes; two-sided sharp-null rejection alpha=.05",
+  "rows": 15,
+  "thresholds": [
+    {
+      "units": 8,
+      "smallest_tested_effect_reaching_80_percent_power": null,
+      "meaning": "Coarse-grid threshold under ONE optimistic fixed potential-outcome family; not an empirical MDE or recommended study size"
+    },
+    {
+      "units": 16,
+      "smallest_tested_effect_reaching_80_percent_power": null,
+      "meaning": "Coarse-grid threshold under ONE optimistic fixed potential-outcome family; not an empirical MDE or recommended study size"
+    },
+    {
+      "units": 24,
+      "smallest_tested_effect_reaching_80_percent_power": null,
+      "meaning": "Coarse-grid threshold under ONE optimistic fixed potential-outcome family; not an empirical MDE or recommended study size"
+    }
+  ],
+  "mock_statistic": {
+    "difference_in_adequacy": "-3/4",
+    "two_sided_sharp_null_p": "1/6",
+    "assignments": "36"
+  },
+  "missing_outcome_realized_arm_contrast_bounds": [
+    "-1/4",
+    "1/2"
+  ],
+  "missing_bounds_target": "Complete observed rate contrast between realized assigned arms; not finite-population causal ATE bounds or confidence intervals",
+  "uncertainty": "No Monte Carlo error. Strong model uncertainty; exact sharp-null p-values do not give exact average-effect confidence intervals.",
+  "python": "3.9.6",
+  "source_sha256": {
+    "allocation.py": "75e81457b8e2c50b21d02dc94376a8a29cdca3164a89baf8401664813d5963aa",
+    "run_design.py": "c45a2abcf4ce35e008a25a45fb4be41358ce4da30b1c3c63715e7ca0206e9ac9",
+    "test_allocation.py": "9163d78ab5ef1ec4c98b45cb825209cc3b0aa2121f0d67a0920b086c2182dd56"
+  },
+  "csv_sha256": "f1e55375ae127da9b8a22a023476eee752a073a98bb0493b652c07a4f09192ca"
+}

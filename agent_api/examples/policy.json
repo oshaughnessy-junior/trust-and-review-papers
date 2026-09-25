@@ -1,0 +1,99 @@
+{
+  "schema": "mcrp-agent-policy/0.1",
+  "synthetic_fixture": true,
+  "policy_id": "four-domain-local-fixture-v1",
+  "principals": [
+    {
+      "principal_id": "author-principal",
+      "control_group": "author-control",
+      "skills": [],
+      "roles": [],
+      "capacity": 12,
+      "skill_capacity": {},
+      "operations": [
+        "offer",
+        "amend",
+        "availability",
+        "adapt_legacy"
+      ]
+    },
+    {
+      "principal_id": "reviewer-principal",
+      "control_group": "reviewer-control",
+      "skills": [
+        "calibration-arithmetic",
+        "assay-arithmetic",
+        "selection-accounting",
+        "timeline-accounting"
+      ],
+      "roles": [],
+      "capacity": 12,
+      "skill_capacity": {
+        "calibration-arithmetic": 12,
+        "assay-arithmetic": 12,
+        "selection-accounting": 12,
+        "timeline-accounting": 12
+      },
+      "operations": [
+        "check"
+      ]
+    },
+    {
+      "principal_id": "second-reviewer-principal",
+      "control_group": "second-reviewer-control",
+      "skills": [
+        "calibration-arithmetic",
+        "assay-arithmetic",
+        "selection-accounting",
+        "timeline-accounting"
+      ],
+      "roles": [],
+      "capacity": 12,
+      "skill_capacity": {
+        "calibration-arithmetic": 12,
+        "assay-arithmetic": 12,
+        "selection-accounting": 12,
+        "timeline-accounting": 12
+      },
+      "operations": [
+        "check"
+      ]
+    },
+    {
+      "principal_id": "decision-principal",
+      "control_group": "decision-control",
+      "skills": [],
+      "roles": [
+        "scientific"
+      ],
+      "capacity": 12,
+      "skill_capacity": {},
+      "operations": [
+        "rely",
+        "observe"
+      ]
+    }
+  ],
+  "agents": [
+    {
+      "agent_id": "author-agent",
+      "principal_id": "author-principal"
+    },
+    {
+      "agent_id": "review-agent",
+      "principal_id": "reviewer-principal"
+    },
+    {
+      "agent_id": "review-team-child",
+      "principal_id": "reviewer-principal"
+    },
+    {
+      "agent_id": "second-review-agent",
+      "principal_id": "second-reviewer-principal"
+    },
+    {
+      "agent_id": "decision-agent",
+      "principal_id": "decision-principal"
+    }
+  ]
+}

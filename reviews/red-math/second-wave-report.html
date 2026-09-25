@@ -1,0 +1,152 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Second mathematical red pass: coupled behavior and audit repair · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="second-mathematical-red-pass-coupled-behavior-and-audit-repair">Second
+mathematical red pass: coupled behavior and audit repair</h1>
+<p>This review follows the first blue repairs and the new coupled
+simulator. It reads the actual code, manuscript, five traces, aggregate
+outputs, introductory blog and both onboarding paths. This is a second
+internal adversarial pass, not independent institutional peer
+review.</p>
+<h2 id="verdict-at-this-checkpoint">Verdict at this checkpoint</h2>
+<p><strong>Qualified assent to a public research seed, conditional on
+the new RM-3 interface repair and the runtime reviewer’s ledger
+repair.</strong> The coupled experiment meaningfully advances the first
+packet: capacity reservation, strategic toy responses, retries, reliance
+selection and repair now share one person-hour ledger. Its unfavorable
+results remain visible. The blog and onboarding preserve the distinction
+between a useful record and a scientifically adequate check. No
+service-readiness or human-efficacy endorsement follows.</p>
+<h2 id="original-findings-verified">Original findings verified</h2>
+<p><strong>RM-1 corrected in the model and prose.</strong> The
+expected-budget inequality is now labeled expected expenditure. The
+separate hard-cap design selects bounded-size subsets of a fixed
+invitation population with equal marginal audit probabilities.
+Concealment, actual delivery, constant cost and independent authority
+remain explicit assumptions. Mixture of floor(Nq) and ceil(Nq) has
+correct marginal q and respects the count cap when its parameters are
+represented consistently. The new function’s arithmetic interface has a
+defect described next; the mathematical design itself is sound.</p>
+<p><strong>RM-2 corrected in executable behavior.</strong> The same
+seeded completion scenario now reports 8,956 unresolved requests and
+satisfies offered=completed+unresolved. This review executed the
+repaired function rather than relying on an author’s reported test
+result. The original defect and output remain archived.</p>
+<p><strong>Adaptive completion theorem accepted.</strong> The
+incorporated extension correctly requires history-conditional bounds,
+and does not transfer IID expected-cost formulas to adaptive retry. The
+explicit reliance-selection caveat is retained. The proof’s stopping
+decision is taken before observing the next draw; discarding
+inconvenient draws must be counted as selection/refusal, not hidden.</p>
+<h2 id="rm-3-returned-hard-audit-endpoint-cannot-be-sampled">RM-3:
+returned hard-audit endpoint cannot be sampled</h2>
+<p>At N=6, a=1, B=5 and zero effort/loss,
+<code>hard_audit_interval</code> returns feasible=true and
+maximum_audit=0.8333333333333334. Passing that exact returned float to
+<code>blinded_audit_sample</code> raises
+<code>ValueError: marginal exceeds hard audit count cap</code> because
+converting its decimal representation to Fraction and multiplying by six
+gives a value slightly greater than five.</p>
+<p>This is an interface inconsistency, not evidence that the hard-cap
+theorem fails. The function changes numerical interpretations between
+output and input. Preserve the count cap; do not permit a sixth audit by
+widening a comparison tolerance. Preferred repair: expose exact rational
+interval endpoints and let the sampler consume rational parameters
+directly, retaining floating values as display conveniences. Compute
+feasibility under consistent decimal/rational input semantics. Simply
+rounding an upper endpoint down is conservative, but can spuriously
+eliminate a boundary-only incentive-feasible interval.</p>
+<p>The original implementation is preserved in
+<code>original_hard_audit.txt</code>; <code>second_wave.py</code>
+executes that snapshot so the failure remains reproducible after repair.
+A new regression should pass the interval’s own exact endpoint directly
+to the sampler at nonterminating fractions such as 5/6 and verify zero
+budget violations.</p>
+<h2 id="coupled-simulation-validation">Coupled simulation
+validation</h2>
+<p><code>second_wave.py</code> independently checked:</p>
+<ul>
+<li>All 7,400 recorded replicate runs and their scenario means and
+pooled stage shares.</li>
+<li>All <strong>888</strong> pointwise normal intervals, recalculating
+replicate variance through an independent sum-of-squared-deviations
+identity. The replication unit is the whole shared-budget run, not
+individual requests.</li>
+<li>All five full event traces, comparing regenerated events with saved
+outputs, then reconstructing actor work, steward
+intake/triage/invitation/reliance/repair debits, completed panels,
+full-effort panels and true-control independence counts.</li>
+<li>Per-person lane totals, zero terminal holds, true-versus-declared
+dependency reach, and the absence of automatic renewal after a repair
+check.</li>
+<li>An independent finite tree of individual completion outcomes.
+Fixed-panel retry gives completion 23/32, attempts 15/8 and completed
+A-share 101/138. Reroll gives 7/8, 7/4 and 5/6. These agree with the
+manuscript and the author oracle.</li>
+<li>All 14 coupled tests and 19 mathematical tests at this checkpoint
+passed.</li>
+</ul>
+<p>The five reconstructed actual-work totals were 7.59 (group-first
+scarce), 27.51 (group-first plentiful), 5.05 (naive scarce), 26.48
+(hidden control), and 27.41 (selective reliance), up to ordinary
+floating representation. Validation results and reviewed source hashes
+are stored in <code>second-wave-results.json</code>.</p>
+<h2 id="remaining-interpretation-boundaries">Remaining interpretation
+boundaries</h2>
+<p><strong>Believed audits are not delivered audits.</strong> The
+coupled agents use an exogenous q in hypothetical utilities; the coupled
+code supplies no audits or reward funding. This is stated prominently in
+code, README and manuscript. Coupling the new hard-cap audit assignment
+to those decisions is a valuable next experiment, but absence of that
+coupling is not concealed. Do not call the present result an enforced
+honest equilibrium.</p>
+<p><strong>Skills are fixture predicates.</strong> A and C are
+designated calibration/inference repair specialists, with actual-person
+capacity shared across lanes. The experiment does not fit heterogeneous
+skill proficiency, parallel scheduling, service deadlines or competence
+discovery. The manuscript says so. Its valid accounting identities are
+useful despite those omissions.</p>
+<p><strong>Multiplicity invariance is unusually strong only within this
+fixture.</strong> Group-first runs preserve the random path under
+clone-count changes because their group lottery, true-person mapping and
+behavior do not consume representative-dependent randomness.
+Complete-trace equality is correct here. Adding real expertise, changing
+a qualification threshold or allowing a new capacity pool changes the
+model rather than refuting the stated fixed-boundary result.</p>
+<p><strong>More completions need not optimize the intended
+objective.</strong> The synthetic A category has a different
+acceptance/effort pattern. Naive concentration can improve reported
+completion under plentiful resources while worsening representative
+opportunity. The model has not selected a normative social-welfare
+objective. The manuscript avoids presenting one aggregate score as
+universal success.</p>
+<p><strong>Repair checks remain checks.</strong> Known affected reliance
+stays unresolved after repair. Unknown graph edges preserve a falsely
+quiet local view relative to the omniscient simulation oracle. This is
+an appropriate negative control, not a discovery mechanism.</p>
+<p><strong>Floating ledger invariants require careful closure.</strong>
+The runtime reviewer independently found that allowing actual settlement
+to exceed each reservation by a tolerance can accumulate excess through
+multiple zero-demand holds. That finding is theirs; their preserved
+probe and repair verification should govern disposition. Default
+coarse-hour traces reproduced correctly in this mathematical review.
+Passing those traces does not excuse an incorrect public API
+invariant.</p>
+<h2 id="collective-recommendation">Collective recommendation</h2>
+<p>The release is compelling when framed as a small falsifiable boundary
+with tangible examples: label multiplication, reservation scarcity,
+legitimate refusal, selective reliance, hidden dependencies and repair
+without automatic renewal. Its blue/red record now demonstrates
+substantive correction rather than merely attaching caveats. Complete
+RM-3 and the independent runtime/export fixes, rerun the release checks,
+and bind the final collective assent to that exact candidate. A live
+institution still requires people, authority, budgets and measured
+behavior outside this packet.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

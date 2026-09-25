@@ -1,0 +1,108 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Third-wave review: evidence lineage, adapter types and publication sequences · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="third-wave-review-evidence-lineage-adapter-types-and-publication-sequences">Third-wave
+review: evidence lineage, adapter types and publication sequences</h1>
+<p><strong>Internal AI adversarial review, 25 September 2026.</strong>
+This supplements the first runtime and integration reports. It is not an
+independent institutional audit. The final candidate’s bytes were not
+frozen when this report was written.</p>
+<h2 id="new-findings">New findings</h2>
+<p><strong>RR-13 — P2, saved evidence was not bound to model
+validation.</strong> The initial validation manifest named Python
+sources, CSV tables and test logs, but omitted JSON traces/oracles and
+figures. Editing a saved result after a passing run and rebuilding could
+create a self-consistent export with an unrelated
+<code>passed=true</code> record. Export integrity alone says what bytes
+were packaged, not which bytes were the recorded results. Source hashes
+were also captured only after commands, allowing a concurrent edit to
+appear as tested source.</p>
+<p>The author added a before/after source-and-fixture inventory, an
+evidence inventory covering generated JSON and figures, and export
+verification of validation, source-copy and figure-lineage references. A
+further omission of the adapter’s actual evidence text fixture was
+identified and corrected. Five independent regressions verify that a
+post-validation JSON or SVG edit followed by a rebuild fails
+verification, that mid-run source or fixture mutation marks validation
+failed, and that the evidence text is an input. These use a miniature
+packet and stub commands: they test binding machinery, not scientific
+correctness. Final full-model reproduction and final candidate
+verification remain separate gates.</p>
+<p><strong>RR-14 — P2, JSON Boolean/integer confusion upgraded a legacy
+assertion.</strong> Set raw <code>claim.immutable_refs</code> to integer
+<code>1</code>: the adapter correctly refused execution. Change only its
+projected value to Boolean <code>true</code>: the original
+<code>roundtrip</code> accepted the envelope because Python nested
+equality equates <code>True</code> and <code>1</code>. Execution then
+accepted the literal Boolean flag. The source hash and raw source still
+recorded the integer. This violated the adapter’s deterministic
+projection boundary without forging any source hash or institutional
+credentials.</p>
+<p>The author replaced ordinary equality with canonical JSON-byte
+equality. <code>test_adapter_boundary.py</code> independently verifies
+rejection of the same mutation. The original observed sequence is
+recorded in <code>adapter-baseline.json</code>. The repair preserves the
+intended distinction among Boolean, integer and floating tokens; it does
+not authenticate the legacy source or verify a referenced artifact’s
+bytes. A well-shaped fabricated digest remains an explicitly documented
+negative control, not a security feature supplied by this repair.</p>
+<h2 id="publication-sequences-that-survived-challenge">Publication
+sequences that survived challenge</h2>
+<p>Four additional tests exercise combinations beyond field-by-field
+mutation:</p>
+<ul>
+<li>A <code>missing</code> observation made before delivery remains the
+<strong>last dated observation</strong> until a new observation occurs.
+Delivery alone does not upgrade it.</li>
+<li>A matching observation after decision expiry does not revive
+publication authority; currentness remains
+<code>decision_unavailable</code>.</li>
+<li>An observation for wrong evidence metadata reports binding mismatch
+without poisoning a prior correctly bound receipt for the actual
+candidate.</li>
+<li>An initially tampered stored delivery cannot be silently overwritten
+by an idempotent repeat. Recovery through a new release ID requires a
+new decision, a new observation and an explicit amendment edge.</li>
+</ul>
+<p>These sequences pass. The model is deliberately narrow: it is not a
+remote transport repair implementation or continuous monitoring system.
+Outstanding work reservations also have no wall-clock lease or automatic
+stale-reservation reaper. They live in an explicit synthetic epoch until
+settled or cancelled. A claim of deadline-aware availability or recovery
+would require a new model.</p>
+<h2 id="composition-and-reproducibility-limits">Composition and
+reproducibility limits</h2>
+<p>The legacy adapter actually calls the adjacent toy protocol under
+separate, explicit synthetic enrichment. It does <strong>not</strong>
+make the coupled or ecology simulators implementations of that runtime.
+Its one-target fixture starts a new protocol instance per run; repeating
+the demo is not a persistent shared-capacity service. An external
+appointment, consent, identity assertion or actual review method is
+never supplied by passing a metadata roundtrip test.</p>
+<p>Core reproduction uses Python’s standard library. The new export
+regressions use a deterministic renderer stub, avoiding an accidental
+Pandoc dependency in the core suite. Actual HTML rendering requires
+optional Pandoc; scientific figure regeneration requires optional
+Matplotlib and is distinct from rerunning model arithmetic. Byte
+inventories bind saved outputs but do not establish that their
+interpretation is correct, or defend against a hostile trusted
+process.</p>
+<h2 id="status">Status</h2>
+<p>At this review checkpoint, <strong>23 runtime red regression methods
+pass</strong>: thirteen from earlier rounds, four publication sequences,
+one adapter type-confusion regression and five evidence-binding
+regressions. The checked-in log is <code>third-wave-test-log.txt</code>.
+This count is included in, not additional to, the full packet’s
+aggregate count. No exact final-export certificate is issued here.</p>
+<p>I continue to support release of the repaired package as an
+explicitly synthetic, inspectable research seed, conditional on the
+final ZIP and rendered candidate passing the agreed integrity, lineage
+and clean-extraction reproduction checks.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

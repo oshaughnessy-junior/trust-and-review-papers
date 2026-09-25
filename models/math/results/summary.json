@@ -1,0 +1,308 @@
+{
+  "schema": "mcrp-release-math.v1",
+  "interpretation": "Synthetic conditional examples, no empirical validation",
+  "panel": {
+    "clone_rows": 12,
+    "declared_control_required": true,
+    "hidden_control_A_seat_probability": "5/6",
+    "baseline_A_seat_probability": "2/3"
+  },
+  "completion_monte_carlo": [
+    {
+      "seed": 25101,
+      "requests": 20000,
+      "attempts": 20000,
+      "retries": 0,
+      "completed": 2210,
+      "unresolved": 17790,
+      "refused_attempts": 17790,
+      "risky_completed": 2015,
+      "completion_rate": 0.1105,
+      "completion_wilson_95": [
+        0.10622959716324047,
+        0.11491999892446504
+      ],
+      "risky_among_completed": 0.9117647058823529,
+      "risky_among_completed_wilson_95": [
+        0.899213527785599,
+        0.9228868953266809
+      ],
+      "mean_cost": 0.42100000000000004,
+      "mean_cost_standard_error": 0.004433839526488,
+      "mean_cost_normal_95": [
+        0.41230967452808354,
+        0.42969032547191655
+      ],
+      "exact": {
+        "offered_risk": 0.1,
+        "success_per_attempt": 0.10900000000000001,
+        "completed_risk": 0.9174311926605504,
+        "completion_probability": 0.10900000000000001,
+        "unresolved_probability": 0.891,
+        "expected_attempts": 1.0,
+        "expected_refusals": 0.891,
+        "expected_retry_attempts": 0.0,
+        "expected_cost": 0.41800000000000004
+      }
+    },
+    {
+      "seed": 25102,
+      "requests": 20000,
+      "attempts": 124734,
+      "retries": 104734,
+      "completed": 13810,
+      "unresolved": 6190,
+      "refused_attempts": 110924,
+      "risky_completed": 12659,
+      "completion_rate": 0.6905,
+      "completion_wilson_95": [
+        0.6840570674805838,
+        0.6968697667820404
+      ],
+      "risky_among_completed": 0.9166545981173063,
+      "risky_among_completed_wilson_95": [
+        0.9119279801604135,
+        0.9211494830713421
+      ],
+      "mean_cost": 2.62834,
+      "mean_cost_standard_error": 0.004418825468484363,
+      "mean_cost_normal_95": [
+        2.6196791020817707,
+        2.6370008979182296
+      ],
+      "exact": {
+        "offered_risk": 0.1,
+        "success_per_attempt": 0.10900000000000001,
+        "completed_risk": 0.9174311926605504,
+        "completion_probability": 0.6846614688315288,
+        "unresolved_probability": 0.3153385311684712,
+        "expected_attempts": 6.281297879188337,
+        "expected_refusals": 5.596636410356808,
+        "expected_retry_attempts": 5.281297879188337,
+        "expected_cost": 2.625582513500725
+      }
+    },
+    {
+      "seed": 25103,
+      "requests": 20000,
+      "attempts": 182491,
+      "retries": 162491,
+      "completed": 19941,
+      "unresolved": 59,
+      "refused_attempts": 162550,
+      "risky_completed": 18306,
+      "completion_rate": 0.99705,
+      "completion_wilson_95": [
+        0.99619695613099,
+        0.9977121408256364
+      ],
+      "risky_among_completed": 0.9180081239656989,
+      "risky_among_completed_wilson_95": [
+        0.914119249108759,
+        0.9217359786412304
+      ],
+      "mean_cost": 3.81901,
+      "mean_cost_standard_error": 0.01181527871171695,
+      "mean_cost_normal_95": [
+        3.7958520537250346,
+        3.8421679462749654
+      ],
+      "exact": {
+        "offered_risk": 0.1,
+        "success_per_attempt": 0.10900000000000001,
+        "completed_risk": 0.9174311926605504,
+        "completion_probability": 0.9968819347309085,
+        "unresolved_probability": 0.003118065269091687,
+        "expected_attempts": 9.145705823219343,
+        "expected_refusals": 8.148823888488435,
+        "expected_retry_attempts": 8.145705823219343,
+        "expected_cost": 3.822905034105686
+      }
+    },
+    {
+      "seed": 25104,
+      "requests": 20000,
+      "attempts": 20000,
+      "retries": 0,
+      "completed": 20000,
+      "unresolved": 0,
+      "refused_attempts": 0,
+      "risky_completed": 1937,
+      "completion_rate": 1.0,
+      "completion_wilson_95": [
+        0.9998079639438954,
+        1.0
+      ],
+      "risky_among_completed": 0.09685,
+      "risky_among_completed_wilson_95": [
+        0.0928282239925572,
+        0.10102661467947997
+      ],
+      "mean_cost": 2.2,
+      "mean_cost_standard_error": 0.0,
+      "mean_cost_normal_95": [
+        2.2,
+        2.2
+      ],
+      "exact": {
+        "offered_risk": 0.1,
+        "success_per_attempt": 1.0,
+        "completed_risk": 0.1,
+        "completion_probability": 1.0,
+        "unresolved_probability": 0.0,
+        "expected_attempts": 1.0,
+        "expected_refusals": 0.0,
+        "expected_retry_attempts": 0.0,
+        "expected_cost": 2.2
+      }
+    }
+  ],
+  "repair": {
+    "bad_family": [
+      [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    ],
+    "bad_common_weight_test": {
+      "factor": 2.0,
+      "certified": false,
+      "meaning": "conditional expected weighted offspring contraction"
+    },
+    "good_family": [
+      [
+        [
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.4
+        ]
+      ],
+      [
+        [
+          0.1,
+          0.3
+        ],
+        [
+          0.05,
+          0.2
+        ]
+      ]
+    ],
+    "weights": [
+      1,
+      2
+    ],
+    "good_common_weight_test": {
+      "factor": 0.7,
+      "certified": true,
+      "meaning": "conditional expected weighted offspring contraction"
+    },
+    "good_total_expected_weight_bound": 3.333333333333333,
+    "rare_burst": {
+      "offspring_zero_probability": 0.99,
+      "offspring_50_probability": 0.01,
+      "mean_offspring": 0.5,
+      "first_generation_exceeds_8_probability": 0.01,
+      "warning": "Mean subcriticality is not a pathwise capacity bound or deadline guarantee"
+    }
+  },
+  "shared_capacity": {
+    "feasible": false,
+    "rows": [
+      {
+        "person": "Ada",
+        "epoch": "day1",
+        "used": 9.0,
+        "capacity": 8.0,
+        "slack": -1.0
+      }
+    ]
+  },
+  "audit": {
+    "expected_budget_case": {
+      "feasible": true,
+      "minimum_audit": 0.12820512820512822,
+      "maximum_audit": 0.2,
+      "budget_kind": "expected audit expenditure",
+      "reason": "nonempty weak best-response interval"
+    },
+    "hard_budget_case": {
+      "feasible": true,
+      "minimum_audit": 0.1282051282051282,
+      "maximum_audit": 0.2,
+      "minimum_audit_exact": "5/39",
+      "maximum_audit_exact": "1/5",
+      "maximum_audit_count": 20,
+      "budget_kind": "hard identical-cost audit count cap",
+      "numeric_semantics": "exact fields authoritative; decimal floats interpreted via str",
+      "reason": "nonempty weak best-response interval"
+    },
+    "nonintegral_hard_budget": {
+      "feasible": true,
+      "minimum_audit": 0.0,
+      "maximum_audit": 0.3333333333333333,
+      "minimum_audit_exact": "0",
+      "maximum_audit_exact": "1/3",
+      "maximum_audit_count": 1,
+      "budget_kind": "hard identical-cost audit count cap",
+      "numeric_semantics": "exact fields authoritative; decimal floats interpreted via str",
+      "reason": "nonempty weak best-response interval"
+    },
+    "underfunded_case": {
+      "feasible": false,
+      "minimum_audit": 0.12820512820512822,
+      "maximum_audit": 0.1,
+      "budget_kind": "expected audit expenditure",
+      "reason": "incentive, participation or budget conflict"
+    },
+    "participation_conflict": {
+      "feasible": false,
+      "minimum_audit": 0.2,
+      "maximum_audit": 0.0833333333333333,
+      "budget_kind": "expected audit expenditure",
+      "reason": "incentive, participation or budget conflict"
+    }
+  },
+  "counts": {
+    "clone_rows": 12,
+    "retry_rows": 20,
+    "repair_rows": 42,
+    "audit_rows": 41
+  },
+  "reproducibility": {
+    "python": "3.9.6",
+    "random_generator": "stdlib random.Random Mersenne Twister",
+    "Monte_Carlo_requests": 80000,
+    "confidence": "Pointwise nominal 95% Wilson binomial intervals; normal mean-cost intervals; no simultaneous or human-behavior inference",
+    "source_sha256": {
+      "protocol_math.py": "7089c361ac1a3649ae2272bc8aa5a80446ff0ca44ea0e9d95ed1d8ae84b24da7",
+      "run_experiments.py": "d95da5c4aee1be462541fac5a204c45d50145e19fe9501616159feb75815f766",
+      "test_protocol_math.py": "5e7b0e518e174062e37b8424ec23e3a4bb5a6122b5f56b0aa1666f6b3ca5731d"
+    },
+    "table_sha256": {
+      "audit-participation.csv": "62d6bcc2c7678c401d8defea5ed47cc9533465fcc704aec85f2550266e14c3de",
+      "clone-invariance.csv": "dbebce94594ac5b905cb47ab6a413ef9950e9d0d169155f6a21a2459e507b1cc",
+      "completion-retry.csv": "6bf4ba815a5b9b50283b85dceec7c09aa928cccc71fbf4ac5fdc131c3aeefc2f",
+      "repair-switching.csv": "462855a25f2b3974aef9aebbe7b2dc7716a9f7151060d4235eb4055a734c2312"
+    }
+  }
+}

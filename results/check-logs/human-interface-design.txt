@@ -1,0 +1,13 @@
+test_assignment_balance_uniqueness_reproducibility (test_allocation.DesignTests) ... ok
+test_complement_symmetry_and_constant_outcomes (test_allocation.DesignTests) ... ok
+test_convolution_against_independent_label_enumeration (test_allocation.DesignTests) ... ok
+test_input_validation (test_allocation.DesignTests) ... ok
+test_missing_bounds_are_not_causal_effect_bounds (test_allocation.DesignTests) ... ok
+test_missing_bounds_match_exhaustive_completions (test_allocation.DesignTests) ... ok
+test_potential_outcome_family_effect (test_allocation.DesignTests) ... ok
+test_test_is_exact_under_sharp_null (test_allocation.DesignTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.005s
+
+OK

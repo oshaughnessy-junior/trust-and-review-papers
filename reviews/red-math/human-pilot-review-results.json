@@ -1,0 +1,95 @@
+{
+  "interpretation": "Exact enumeration of artificial potential outcomes, no actual human study",
+  "power_rows_independently_matched": 15,
+  "rows": [
+    {
+      "units": 8,
+      "benefit_units": 0,
+      "exact_power": "0"
+    },
+    {
+      "units": 8,
+      "benefit_units": 1,
+      "exact_power": "0"
+    },
+    {
+      "units": 8,
+      "benefit_units": 2,
+      "exact_power": "0"
+    },
+    {
+      "units": 8,
+      "benefit_units": 3,
+      "exact_power": "0"
+    },
+    {
+      "units": 8,
+      "benefit_units": 4,
+      "exact_power": "0"
+    },
+    {
+      "units": 16,
+      "benefit_units": 0,
+      "exact_power": "17/648"
+    },
+    {
+      "units": 16,
+      "benefit_units": 2,
+      "exact_power": "11/648"
+    },
+    {
+      "units": 16,
+      "benefit_units": 4,
+      "exact_power": "73/1296"
+    },
+    {
+      "units": 16,
+      "benefit_units": 6,
+      "exact_power": "61/432"
+    },
+    {
+      "units": 16,
+      "benefit_units": 8,
+      "exact_power": "421/1296"
+    },
+    {
+      "units": 24,
+      "benefit_units": 0,
+      "exact_power": "271/23328"
+    },
+    {
+      "units": 24,
+      "benefit_units": 3,
+      "exact_power": "635/23328"
+    },
+    {
+      "units": 24,
+      "benefit_units": 6,
+      "exact_power": "581/5832"
+    },
+    {
+      "units": 24,
+      "benefit_units": 9,
+      "exact_power": "6671/23328"
+    },
+    {
+      "units": 24,
+      "benefit_units": 12,
+      "exact_power": "5671/7776"
+    }
+  ],
+  "cached_labeled_null_patterns": 49,
+  "missing_bound_counterexample": {
+    "true_finite_population_effect": "0",
+    "realized_complete_data_armcontrast_bounds": [
+      "1",
+      "1"
+    ],
+    "reason": "Potential outcomes differ across units, not treatment; actual realized arm contrast has randomization error."
+  },
+  "missing_completion_enumeration": {
+    "lower": "-1/4",
+    "upper": "1/2"
+  },
+  "source_sha256": "75e81457b8e2c50b21d02dc94376a8a29cdca3164a89baf8401664813d5963aa"
+}

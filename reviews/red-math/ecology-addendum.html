@@ -1,0 +1,100 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Ecology addendum and full-packet collective position · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="ecology-addendum-and-full-packet-collective-position">Ecology
+addendum and full-packet collective position</h1>
+<p>The mathematics reviewer inspected the new
+<code>local-rules.md</code>, ecology implementation and all recorded
+results, alongside the previously reviewed mathematics, coupled
+simulator, blog and human/agent onboarding. This addendum records the
+final substantive review of the research model before repair
+verification.</p>
+<h2 id="what-was-independently-confirmed">What was independently
+confirmed</h2>
+<p><code>ecology_review.py</code> reran all <strong>216</strong>
+scenarios and compared all CSV metrics. It checked <strong>351</strong>
+aggregate metric summaries and paired differences, reproducing every
+reported mean, minimum and maximum. All policies shared the same
+offered-input fingerprints and number of common-blindness periods within
+each seed/regime. Every trajectory conserved actor-period integer labor
+and every bounded-policy score stayed in [0,1]. Seed ranges and paired
+means are appropriately described as descriptive sensitivity, without
+inferential confidence claims.</p>
+<p>The softmax attention ceiling is correct for K&gt;=1, epsilon in
+[0,1] and beta&gt;=0. State these parameter ranges beside the result;
+they are already enforced by the routing implementation. The ceiling
+applies to a selected group at a particular lottery with its active set,
+not to final population coverage. It is not a completed-panel or
+downstream reliance bound.</p>
+<p>The separate symmetric mean-field multiplier is correct. An
+independent central difference in a zero-sum direction gave
+0.9283333333304222 versus the analytic 0.9283333333333333 at K=6,
+epsilon=.15, beta=2, mu=.1. The simulator is not that map: credit comes
+from audits and correction, and heterogeneous capacity and queues change
+feedback. The manuscript prominently preserves this distinction. The
+local threshold supplies a diagnostic, not a proof of global
+self-organization or cooperation.</p>
+<p>The shared-blindness negative control was independently reproduced
+with three fully diligent but jointly blind groups: six completed
+checks, zero accuracy, zero recognized repair debt. This is a useful
+demonstration that throughput and quiet correction queues can conceal
+common error.</p>
+<h2
+id="new-incentive-boundary-correction-credit-can-reward-avoidable-defects">New
+incentive boundary: correction credit can reward avoidable defects</h2>
+<p>A second negative control uses three otherwise identical groups with
+100 capacity tokens each, no audits, no common blindness and perfectly
+diligent checking. Keep the offer process/configuration fixed, and
+compare all clean offers with all defective offers. After 30 periods,
+clean work produces no correction credit and total score about
+<strong>0.04239</strong> (decay of initial credit). Defective work
+produces 22 completed corrections and total score about
+<strong>1.34493</strong>. Repair gives credit to both handler and
+original author.</p>
+<p>This does not demonstrate that actual participants would deliberately
+produce defects. It does show that the recognition mechanism contains a
+potential incentive to create work whose repair earns credit, while
+clean unaudited work earns none. A false alarm can also create a
+correction task; the model does not adjudicate whether correction credit
+was deserved. Because offer defect rates, diligence and participation
+are exogenous, the present ecology cannot establish incentive
+compatibility of this rule.</p>
+<p>Keep the result as an explicit unresolved mechanism question. The
+strongest next experiment allows a toy author to choose costly
+prevention versus strategically created defects, then compares
+recognition and resource outcomes. Separate useful disclosure/correction
+credit from avoidable-defect production without punishing honest error
+reporting. A large punitive rule table is not yet warranted by this
+synthetic case; the uniform baseline remains the default comparison.</p>
+<h2 id="collective-exchange">Collective exchange</h2>
+<p>The domain/legal reviewer independently noticed author credit after
+false-alarm correction and agrees this is a disclosed research boundary,
+not a reason to block a protocol-seeding publication. Both reviewers
+agree that the packet makes no explicit claim that bounded attention,
+group invariance, audit incentives and repair bounds compose into a
+general cooperative equilibrium. The collective report should say that
+plainly: each positive result has its own assumptions, and passing the
+adjacent runtime checks does not supply identity, competence, funding or
+legal authority.</p>
+<p>The runtime reviewer found an accumulating ledger-tolerance defect
+and public-export concerns; those require their own repair/recheck. The
+mathematics reviewer found the audit endpoint inconsistency RM-3, with
+the original preserved for regression. These concrete software defects
+are different from the remaining hypotheses about human incentives and
+adoption.</p>
+<p><strong>Qualified collective assent:</strong> support a curated
+public research seed once the concrete defects and final artifact checks
+are closed. The blog gives a reasonable invitation; human onboarding can
+begin with one synthetic claim and a colleague, while agents can
+immediately run the models. No need to construct an entire appeals
+institution before people discuss a research protocol. Public
+attribution, licensing scope, exact destination/artifact and responsible
+intake remain concrete publication choices. This assent does not
+authorize or certify a live dispute/review service.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

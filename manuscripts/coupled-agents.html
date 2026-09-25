@@ -1,0 +1,431 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>One queue, one ledger: coupled toy agents for protocol allocation and repair · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="one-queue-one-ledger-coupled-toy-agents-for-protocol-allocation-and-repair">One
+queue, one ledger: coupled toy agents for protocol allocation and
+repair</h1>
+<p><strong>Research experiment, 25 September 2026.</strong> All
+identities, utilities, scientific labels and dependency graphs are
+artificial. This is an inspectable allocation and accounting simulation.
+It is not a deployed review service or an empirical behavioral
+model.</p>
+<h2 id="why-join-the-models">Why join the models</h2>
+<p>A clone-invariant lottery can feed a clone-biased completion
+population. A locally valid invitation can consume the time required to
+repair yesterday’s work. A completed repair check can still lack
+authority to renew a reliance decision. The first dossier showed these
+failures separately. This experiment makes them compete for the
+<strong>same finite person-hour ledger</strong> so their interaction is
+visible. It responds directly to the red team’s request for a coupled
+pipeline and retains negative outcomes as results rather than forcing
+every request into success.</p>
+<p>The interface remains offer, check, rely, amend. Internally, a
+synthetic request passes through selection, atomic reservation,
+invitations, utility-driven responses, reported completion, a separate
+scoped reliance decision and a later repair obligation. No new
+participant-facing verb is required. These are simulation records; they
+are not authenticated protocol messages and do not constitute
+conformance to the adjacent <code>toy_agents</code> runtime.</p>
+<h2 id="state-people-and-decisions">State, people and decisions</h2>
+<p>Each independent replicate contains 12 requests in one epoch. Three
+actual people A, B and C can perform the toy review skill; one steward
+performs intake, reservation triage, invitations and reliance
+administration. Every person has a fixed capacity of 3, 8 or 20 model
+hours. Repair requires A’s calibration skill, C’s inference skill and
+steward time. Qualification is a fixed fixture predicate; there is no
+learned qualification model. Money, utility and hours are different
+units.</p>
+<p>A normally has one declared group with 1, 10 or 100 interchangeable
+labels. Cloning never adds a person or an hour. A deliberately
+incorrect-control scenario presents A1 and A2 as different groups while
+debiting both to actual person A. The simulated evaluator knows that
+mapping; a real operator generally does not. This distinction lets the
+negative control measure false independence without pretending that the
+router has solved identity discovery.</p>
+<p>For each request, selection draws a two-group panel using either:</p>
+<ul>
+<li><strong>group first:</strong> a uniform pair of declared
+groups;</li>
+<li><strong>naive multiplicity:</strong> a uniform representative panel,
+whose group-pair weight is the product of its groups’ representative
+counts.</li>
+</ul>
+<p>In fixed-panel retry, the first selected pair is retained for all
+attempts. In reroll retry, each attempt draws again. Both have a maximum
+of three attempts. A new selection can fail capacity reservation; it
+still consumes triage effort. No finite-capacity feasibility claim is
+made by the initial lottery.</p>
+<h2 id="atomic-capacity-and-actual-work">Atomic capacity and actual
+work</h2>
+<p>The ledger tracks capacity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>p</mi></msub><annotation encoding="application/x-tex">C_p</annotation></semantics></math>,
+spent work
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>U</mi><mi>p</mi></msub><annotation encoding="application/x-tex">U_p</annotation></semantics></math>
+and held work
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mi>p</mi></msub><annotation encoding="application/x-tex">H_p</annotation></semantics></math>
+for each person. A demand vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+is reserved only if</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>p</mi></msub><mo>+</mo><msub><mi>H</mi><mi>p</mi></msub><mo>+</mo><msub><mi>d</mi><mi>p</mi></msub><mo>≤</mo><msub><mi>C</mi><mi>p</mi></msub><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">for every person </mtext><mspace width="0.333em"></mspace></mrow><mi>p</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">U_p+H_p+d_p\le C_p\quad\text{for every person }p.</annotation></semantics></math></p>
+<p>The operation is all-or-none: failure changes no hold. A token can be
+settled once, charging actual work
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>x</mi><mi>p</mi></msub><mo>≤</mo><msub><mi>d</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">0\le x_p\le d_p</annotation></semantics></math>
+and releasing the unused reservation. Lanes share the same capacity, so
+repair cannot spend an hour already consumed by checking. This is a
+sequential in-memory atomicity model, not a concurrent database
+transaction or a guarantee about unrecorded external commitments.</p>
+<p>Every admitted request charges
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.05</mn><annotation encoding="application/x-tex">.05</annotation></semantics></math>
+steward hours for intake. Each attempted reservation charges
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.02</mn><annotation encoding="application/x-tex">.02</annotation></semantics></math>
+for triage. A reserved invitation holds one hour per selected actor and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.1</mn><annotation encoding="application/x-tex">.1</annotation></semantics></math>
+steward hours. Actual actor work is one hour for honest work,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.25</mn><annotation encoding="application/x-tex">.25</annotation></semantics></math>
+for shallow work and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.05</mn><annotation encoding="application/x-tex">.05</annotation></semantics></math>
+for refusal/response. A reliance decision costs another
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.1</mn><annotation encoding="application/x-tex">.1</annotation></semantics></math>
+steward hours. Each repair requires
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.5</mn><annotation encoding="application/x-tex">.5</annotation></semantics></math>
+A hours,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.5</mn><annotation encoding="application/x-tex">.5</annotation></semantics></math>
+C hours and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.1</mn><annotation encoding="application/x-tex">.1</annotation></semantics></math>
+steward hours. If hidden labels share person A, their demands are summed
+before admission. Costs are arbitrary declared constants, not measured
+labor.</p>
+<p>A reserve variant holds one A hour and one C hour during initial
+checking, then releases the holds immediately before repair. It can
+reduce new completions to preserve some repair opportunity. It does not
+guarantee repair: steward capacity and the number of affected uses can
+still bind. It also cannot repair an undiscovered dependency.</p>
+<h2 id="utility-policy-toy-agents">Utility-policy toy agents</h2>
+<p>Actors choose among honest, shallow and refuse using the largest
+hypothetical utility, with ties preferring refusal, then honest work. A
+perceived audit chance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>.2</mn></mrow><annotation encoding="application/x-tex">q=.2</annotation></semantics></math>,
+loss
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">F=2</annotation></semantics></math>,
+false detection
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>.02</mn></mrow><annotation encoding="application/x-tex">\alpha=.02</annotation></semantics></math>,
+detection
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mn>.8</mn></mrow><annotation encoding="application/x-tex">\beta=.8</annotation></semantics></math>
+and reward
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>.8</mn></mrow><annotation encoding="application/x-tex">R=.8</annotation></semantics></math>
+give</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>H</mi></msub><mo>=</mo><mi>R</mi><mo>−</mo><msub><mi>c</mi><mi>p</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mo>,</mo><msub><mi>U</mi><mi>p</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>q</mi><mi>α</mi><mi>F</mi><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>U</mi><mi>S</mi></msub><mo>=</mo><mi>R</mi><mo>−</mo><mi>q</mi><mi>β</mi><mi>F</mi><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>U</mi><mi>R</mi></msub><mo>=</mo><msub><mi>u</mi><mi>p</mi></msub><mo>+</mo><mi>ξ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">U_H=R-c_p(j,U_p)-q\alpha F,\quad
+U_S=R-q\beta F,\quad U_R=u_p+\xi.</annotation></semantics></math></p>
+<p>The outside-option shock
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math>
+is uniform on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>.25</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,.25]</annotation></semantics></math>.
+Base effort costs are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>.12</mn><mo>,</mo><mn>.44</mn><mo>,</mo><mn>.23</mn></mrow><annotation encoding="application/x-tex">.12,.44,.23</annotation></semantics></math>
+for A, B and C, with request-type increments
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>.04</mn><mo stretchy="false" form="prefix">(</mo><mi>j</mi><mrow><mspace width="0.222em"></mspace><mrow><mi mathvariant="normal">mod</mi><mo>&#8289;</mo></mrow><mspace width="0.222em"></mspace><mn>3</mn></mrow><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">.04(j\bmod3)</annotation></semantics></math>
+and fatigue increment
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>.012</mn><msub><mi>U</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">.012U_p</annotation></semantics></math>.
+Base outside utilities are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>.05</mn><mo>,</mo><mn>.4</mn><mo>,</mo><mn>.12</mn></mrow><annotation encoding="application/x-tex">.05,.4,.12</annotation></semantics></math>.
+These quantities are synthetic utility units; they do not equal hours or
+money. The monitoring probability is an <strong>exogenous
+belief</strong>. No audit is delivered or funded by this coupled
+experiment; the separate hard-budget audit model examines that missing
+commitment assumption.</p>
+<p>An honest actor reports completion with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.95</mn><annotation encoding="application/x-tex">.95</annotation></semantics></math>;
+shallow effort reports completion with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.98</mn><annotation encoding="application/x-tex">.98</annotation></semantics></math>.
+Refusal never completes. A panel completes only when both actors report
+completion. This deliberately distinguishes a finished assertion from
+adequate actual effort: the evaluator records whether both worked
+honestly, but the decision actor does not receive that oracle. There is
+no claim that a shallow check is scientifically valid or that a protocol
+record discovers the lie. Actual scientific correctness is not
+simulated.</p>
+<p>Independent invitation shocks permit a refusal to change on retry.
+Fatigue and capacity make repeated outcomes endogenous, so the IID
+geometric cost formulas from the simpler mathematical model do
+<strong>not</strong> apply here. The executable event trace supplies
+observed cost and unresolved counts directly.</p>
+<h2
+id="completion-scoped-reliance-and-amendment-remain-different">Completion,
+scoped reliance and amendment remain different</h2>
+<p>After a reported completion, the steward either relies on every
+completion or, in a negative-control condition, only on panels including
+A. Reliance records name an exact toy target such as
+<code>claim-5:v1</code>, the scope
+<code>toy numerical decision only</code>, the synthetic decision actor
+and the declared groups. These labels are simulation identifiers, not
+cryptographic content addresses or human approvals. Completion by itself
+does not issue a reliance record.</p>
+<p>All 12 toy claims lie in a true dependency chain. The declared graph
+omits every fourth edge. A material amendment to claim 0 therefore truly
+affects the chain but is discoverable only through the initial declared
+segment. This is a known simulation oracle for measuring missed
+awareness, not a proposed completeness algorithm. A real deployment
+needs declared evidence and admits that some edges may remain
+unknown.</p>
+<p>Noticed affected receipts become
+<code>unresolved_material_change</code>. Repair can be completed if the
+shared ledger has capacity. <strong>Repair never renews reliance
+automatically</strong>: the original receipt stays unresolved until a
+separately authorized new decision, which this experiment intentionally
+does not implement. Undiscovered affected receipts stay locally
+<code>as_recorded</code>; the evaluator counts them as unnoticed
+affected uses. The contrast exposes the gap between a quiet local view
+and scientific currentness.</p>
+<h2 id="a-finite-exact-benchmark-before-stochastic-policy-sweeps">A
+finite exact benchmark before stochastic policy sweeps</h2>
+<p>For a one-request, nonbinding-capacity special case, set actor
+completion probabilities to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>A</mi></msub><mo>=</mo><mn>1</mn><mo>,</mo><msub><mi>P</mi><mi>B</mi></msub><mo>=</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo>,</mo><msub><mi>P</mi><mi>C</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">P_A=1,P_B=1/4,P_C=1</annotation></semantics></math>,
+independent across attempts. A uniform group-pair draw gives panel
+completion probabilities
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>4</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/4,1,1/4</annotation></semantics></math>.
+With three attempts, exact enumeration yields:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Retry rule</th>
+<th style="text-align: right;">Request completes</th>
+<th style="text-align: right;">Expected attempts</th>
+<th style="text-align: right;">A share among completed panels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reroll</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">7/8</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">7/4</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mi>/</mi><mn>6</mn></mrow><annotation encoding="application/x-tex">5/6</annotation></semantics></math></td>
+</tr>
+<tr>
+<td>Fixed panel</td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>23</mn><mi>/</mi><mn>32</mn></mrow><annotation encoding="application/x-tex">23/32</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">15/8</annotation></semantics></math></td>
+<td
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>101</mn><mi>/</mi><mn>138</mn></mrow><annotation encoding="application/x-tex">101/138</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+<p>For fixed panels, average each panel’s finite geometric paths; for
+rerolls, first mix the per-attempt probabilities. The policies are
+different even with no strategic learning and no resource bottleneck.
+This oracle is exact Fraction arithmetic and has tests against the
+listed rational values. An all-complete special case is also checked
+against the full runtime. These special cases do not establish exact
+expectations for the fatigue-dependent multi-request model.</p>
+<h2 id="results-from-the-coupled-sweep">Results from the coupled
+sweep</h2>
+<p>The experiment runs 74 scenarios with 100 independent replicate seeds
+each: 7,400 runs and 88,800 offered toy requests. The main factorial
+varies lottery, retry rule, label multiplicity, capacity and protected
+repair reserve. Two extra scenarios use hidden control and selective
+reliance. The following values are means or pooled descriptive shares
+from the specified synthetic fixture, not forecasts of human behavior.
+Each row here uses 100 labels, no repair reserve.</p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Lottery / retry</th>
+<th style="text-align: right;">Hours per person</th>
+<th style="text-align: right;">Mean completed / 12</th>
+<th style="text-align: right;">Mean unresolved / 12</th>
+<th style="text-align: right;">A share, initial panels</th>
+<th style="text-align: right;">A share, completions</th>
+<th style="text-align: right;">Mean actual total hours</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Group first / fixed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">10.00</td>
+<td style="text-align: right;">.671</td>
+<td style="text-align: right;">.665</td>
+<td style="text-align: right;">8.191</td>
+</tr>
+<tr>
+<td>Group first / reroll</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2.09</td>
+<td style="text-align: right;">9.91</td>
+<td style="text-align: right;">.666</td>
+<td style="text-align: right;">.770</td>
+<td style="text-align: right;">8.061</td>
+</tr>
+<tr>
+<td>Naive / fixed</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1.65</td>
+<td style="text-align: right;">10.35</td>
+<td style="text-align: right;">.995</td>
+<td style="text-align: right;">.988</td>
+<td style="text-align: right;">6.108</td>
+</tr>
+<tr>
+<td>Naive / reroll</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1.82</td>
+<td style="text-align: right;">10.18</td>
+<td style="text-align: right;">.995</td>
+<td style="text-align: right;">.989</td>
+<td style="text-align: right;">6.416</td>
+</tr>
+<tr>
+<td>Group first / fixed</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">9.28</td>
+<td style="text-align: right;">2.72</td>
+<td style="text-align: right;">.672</td>
+<td style="text-align: right;">.718</td>
+<td style="text-align: right;">28.631</td>
+</tr>
+<tr>
+<td>Group first / reroll</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">10.55</td>
+<td style="text-align: right;">1.45</td>
+<td style="text-align: right;">.684</td>
+<td style="text-align: right;">.814</td>
+<td style="text-align: right;">29.784</td>
+</tr>
+<tr>
+<td>Naive / fixed</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">10.06</td>
+<td style="text-align: right;">1.94</td>
+<td style="text-align: right;">.995</td>
+<td style="text-align: right;">.997</td>
+<td style="text-align: right;">29.193</td>
+</tr>
+<tr>
+<td>Naive / reroll</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">11.38</td>
+<td style="text-align: right;">.62</td>
+<td style="text-align: right;">.997</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">30.206</td>
+</tr>
+</tbody>
+</table>
+<p>Group-first runs with 1 and 100 labels are <strong>identical event
+for event</strong> under a shared seed, including resource debits and
+repair outcomes. That stronger fixture property follows because
+multiplicity changes neither the lottery nor the agent behavior or
+person map. Thirty seeds test this full-trace invariance. Changing
+actual capacity, qualification or true control would change the
+premises.</p>
+<p>The naive rule’s lower work expenditure in scarce conditions is not
+efficiency: it overloads the commonly selected A and leaves other
+capacity unusable for those panels. It completes fewer requests and
+leaves more unresolved. In plentiful conditions, naive selection can
+complete more reported panels because A more often accepts; that is
+still a heavily concentrated population. Completion counts alone would
+reward a different objective than representative opportunity.</p>
+<p>Rerolling increases completion in these examples, but it also shifts
+the completed population. With plentiful capacity, group-first offers
+put A in roughly two thirds of initial panels while reroll completions
+include A about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>.814</mn><annotation encoding="application/x-tex">.814</annotation></semantics></math>
+of the time. A separate reliance filter can raise the share to one
+without changing any completed check. Neither outcome violates the
+fixed-set group theorem; each is a new selection stage.</p>
+<p>Repair creates another stark tradeoff. In the plentiful
+group-first/reroll case, an average 3.48 known affected uses receive
+repair checks, while 7.07 affected uses remain
+<strong>unnoticed</strong> because of missing declared dependencies. In
+the scarce case, no repairs complete and about two noticed uses per run
+await capacity. Even completed repair checks do not clear the reliance
+state. More available hours cannot reconstruct the hidden chain edge by
+itself.</p>
+<p>The full output contains 888 metric rows with pointwise normal 95%
+intervals on replicate means. Requests inside one replicate compete for
+the same capacity, so they are not treated as independent Bernoulli
+samples. Pooled stage shares are reported descriptively without a
+misleading binomial interval. Common random seeds across policies permit
+paired future analyses, but no paired confidence claim is made here.
+Intervals address finite simulation variation, not utility
+misspecification, behavioral uncertainty or human adoption.</p>
+<h2 id="accounting-identities-and-falsifiable-boundaries">Accounting
+identities and falsifiable boundaries</h2>
+<p>Every trace separates request-level stages from attempt and actor
+counts:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mspace width="0.222em"></mspace><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">s</mi></mrow><mo>=</mo><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mspace width="0.222em"></mspace><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">s</mi></mrow><mo>+</mo><mrow><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mspace width="0.222em"></mspace><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">q</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">s</mi></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\mathrm{offered\ requests}=\mathrm{completed\ requests}+\mathrm{unresolved\ requests},</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">v</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mspace width="0.222em"></mspace><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">s</mi></mrow><mo>=</mo><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mspace width="0.222em"></mspace><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">s</mi></mrow><mo>+</mo><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">g</mi><mspace width="0.222em"></mspace><mi mathvariant="normal">a</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">s</mi></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\mathrm{invited\ actors}=\mathrm{accepted\ actors}+\mathrm{refusing\ actors},</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">f</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mspace width="0.222em"></mspace><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mspace width="0.222em"></mspace><mi mathvariant="normal">u</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">s</mi></mrow><mo>=</mo><mrow><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow><mo>+</mo><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">g</mi><mspace width="0.222em"></mspace><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi></mrow><mo>+</mo><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">r</mi><mspace width="0.222em"></mspace><mi mathvariant="normal">c</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">k</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathrm{affected\ relied\ uses}=\mathrm{unnoticed}+\mathrm{pending\ repair}+\mathrm{repair\ checked}.</annotation></semantics></math></p>
+<p>Intake or capacity rejection remains an unresolved request in this
+experiment; there is no terminal withdrawal state. A request may receive
+several refused or failed attempts, so refusal counts are not
+substituted for unresolved counts. Completed-but-not-relied requests are
+explicit. Actual hours and holds are exposed for each person and lane.
+At termination, every hold is settled or released.</p>
+<p>Fourteen tests check atomic failure, settlement bounds,
+double-settlement rejection, shared lanes, independent panel
+enumeration, clone-invariant complete traces, policy/capacity/control
+accounting, fixed-panel preservation, selective reliance, hidden control
+sharing actual capacity and the absence of automatic renewal after
+repair. Every positive behavioral interpretation remains conditional on
+synthetic utilities and the chosen order of operations.</p>
+<h2 id="what-each-community-can-change">What each community can
+change</h2>
+<p>A physics/astronomy group can replace the toy chain with a
+calibration-to-inference graph and expose how scarce instrument experts
+constrain correction. A biology group can make completion delay and
+evidence accessibility depend on replication or data-use authority
+without treating refusal as a negative scientific verdict. Economics and
+social-science groups can replace the synthetic utility function,
+compare exclusion and welfare objectives, and investigate whether
+repeated invitations impose unequal costs. Legal scholars can add
+deadline and recusal constraints; the current hour ledger makes no claim
+of legal scheduling adequacy.</p>
+<p>The human entry point is to inspect one trace, identify one
+assumption that would be wrong in the participant’s field, and propose a
+counterexample. The agent entry point is to substitute a behavior
+function or graph and run the accounting tests immediately. Neither path
+requires accepting a universal trust score.</p>
+<h2 id="reproduce">Reproduce</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/models/coupled <span class="at">-p</span> <span class="st">&#39;test_*.py&#39;</span> <span class="at">-v</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/models/coupled/run_experiments.py</span></code></pre></div>
+<p>Standard-library Python is sufficient.
+<code>results/summary.json</code> contains settings, seeds, source/table
+hashes and aggregate results. Five full JSON traces expose individual
+actions and ledger balances. The CSV is a plotting surface, not an
+empirical dataset. The model uses no credentials, network access, real
+research participants or private data. Primary mathematical context and
+source verification are in <code>math-foundations.md</code> and its
+<code>models/math/source-map.json</code>; the coupled simulation is a
+new local fixture responding to
+<code>reviews/red-math/report.md</code>.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

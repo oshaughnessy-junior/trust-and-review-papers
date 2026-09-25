@@ -1,0 +1,203 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Independent review: delivered audits, participation and funded resources · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1
+id="independent-review-delivered-audits-participation-and-funded-resources">Independent
+review: delivered audits, participation and funded resources</h1>
+<h2 id="judgment">Judgment</h2>
+<p>The funded-audit addition closes a useful and narrow simulation loop.
+It reserves audit and reward budgets, draws a fixed concealed quota,
+commits actions, performs selected inspections and transfers stipulated
+collectible losses. It no longer merely inserts an unsupported audit
+probability into agent utilities. <strong>Qualified assent continues
+after the two numerical defects below were repaired and independently
+rechecked.</strong> This remains a one-shot game with fixed identities,
+trusted concealment, automatic auditor effort and artificial token
+utility. It is not a deployed sanction system or a whole-network
+equilibrium.</p>
+<h2 id="findings-and-repair-verification">Findings and repair
+verification</h2>
+<p><strong>RM-5: epsilon authorized positive work against no
+hours.</strong> The original ledger accepted a 1e-12 audit debit against
+a zero reservation. With positive review/audit costs of 1e-13 and zero
+actual reviewer/auditor capacity, the entire default program still
+executed. The per-person tolerance was bounded rather than the earlier
+unlimited per-hold accumulation, but it contradicted the pathwise
+funded-hour claim. The repaired ledger uses exact decimal-rational
+capacity, reservation and debit arithmetic. It rejects the zero-capacity
+examples and correctly accepts three .1-hour debits against .3 hours.
+Original code and outputs remain preserved.</p>
+<p><strong>RM-6: floating ties changed the declared strategy.</strong>
+At q=1/8, alpha=.1, beta=.3, loss=2, reward=.6, effort=.05 and outside
+option zero, honest and shallow utility both equal 21/40. The declared
+tie rule selects honest work; original float arithmetic chose shallow
+work for all eight actors. Conversely, reward=.4, effort=.1, outside=.3,
+alpha=0 and q=1 should select refusal at equality; floating arithmetic
+chose honest work. Exact decimal-rational utility comparison now
+implements the stated refusal/honest/shallow order, with exact utility
+fields in output. Both original failures are executable from the
+archived source and both repairs were independently confirmed.</p>
+<p><code>funded-original-model.txt</code> preserves the original.
+<code>funded_review.py</code> runs that archived source as a local
+fixture and checks the repaired implementation, writing
+<code>funded-review-results.json</code>. The preserved vulnerabilities
+are not current release implementations.</p>
+<h2 id="independent-finite-path-oracle">Independent finite-path
+oracle</h2>
+<p>The adversarial oracle independently computes rational utilities and
+the preferred action for each quota subset. It then enumerates every
+positive-probability sanction outcome, injects that controlled
+selection/detection path into the actual runtime, and checks its
+actions, event debits, collateral transfers and realized utilities. This
+is an independent conditional outcome oracle, not an alternative
+random-number generator certification. The imported quota sampler was
+separately checked in the earlier mathematical review.</p>
+<p>The oracle covers <strong>3,839 positive-probability paths across
+nine configurations</strong>: concealed funded audits, partial refusal,
+early selection disclosure, high-false-positive total refusal, certain
+false sanctions, both tie boundaries, shared cross-role hours and no
+inspections. Exact expected results include:</p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr>
+<th>Configuration</th>
+<th style="text-align: right;">Honest / shallow / refused</th>
+<th style="text-align: right;">Expected inspections</th>
+<th style="text-align: right;">Expected sanctions</th>
+<th style="text-align: right;">Expected utility per ordinary actor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concealed funded</td>
+<td style="text-align: right;">8 / 0 / 0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2/25</td>
+<td style="text-align: right;">7/25</td>
+</tr>
+<tr>
+<td>Four fixed refusals</td>
+<td style="text-align: right;">4 / 0 / 4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1/25</td>
+<td style="text-align: right;">7/25 among participating actors</td>
+</tr>
+<tr>
+<td>Early disclosure</td>
+<td style="text-align: right;">4 / 4 / 0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2/25</td>
+<td style="text-align: right;">43/100 before selection is revealed</td>
+</tr>
+<tr>
+<td>High false-positive refusal</td>
+<td style="text-align: right;">0 / 0 / 8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1/10</td>
+</tr>
+<tr>
+<td>Certain false sanctions, larger reward</td>
+<td style="text-align: right;">8 / 0 / 0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Honest/shallow exact tie</td>
+<td style="text-align: right;">8 / 0 / 0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1/10</td>
+<td style="text-align: right;">21/40</td>
+</tr>
+<tr>
+<td>Honest/refusal exact tie</td>
+<td style="text-align: right;">0 / 0 / 8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3/10</td>
+</tr>
+</tbody>
+</table>
+<p>The early-disclosure expected utility is averaged before disclosure
+across selected/unselected status; actual commitment uses the revealed
+0/1 probability. It must not be substituted into the
+concealed-information best-response calculation.</p>
+<p>Separately, I reproduced all <strong>11 saved full traces and 220
+seeded sweep rows</strong>, including status, action/detection counts,
+token expenditure and the broken-promise regret measure. All
+<strong>18</strong> current author tests pass. These replications test
+both structural cases and the actual recorded RNG runs; neither
+represents human data.</p>
+<h2 id="conditional-marginal-and-participation">Conditional marginal and
+participation</h2>
+<p>The k/N statement is correct for each fixed actor whose participation
+decision and private shocks do not depend on the concealed subset.
+Leaving refused slots unused preserves that actor’s marginal. It does
+not force the realized audit fraction among participants to equal k/N in
+every run, and the all-refusal denominator is undefined. The manuscript
+now states these distinctions.</p>
+<p>All actions are committed before any outcome is exposed. Early
+disclosure correctly changes the relevant probability to zero or one and
+makes the unselected actors choose shallow work. Arbitrary
+selection-dependent participation, collusion, public seed inference,
+sequential outcome leakage or replacement of unused slots would require
+a different conditional calculation. The fixture supplies the
+information boundary; the output’s eventual disclosure is for evaluator
+inspection, not an implementation of secrecy.</p>
+<p>The k=0 edge case needs no binomial coefficient with negative lower
+index: it has inclusion probability zero directly. The manuscript states
+this separately after review.</p>
+<h2 id="resource-and-authority-boundaries">Resource and authority
+boundaries</h2>
+<p>Audit tokens and reward tokens are reserved separately; sanctions do
+not refinance those promises. Per-actor collateral makes the stipulated
+loss collectible within the fixture. It does not establish consent,
+legitimate legal authority, real wealth, capital costs or a recommended
+bond requirement. Requiring collateral can exclude low-resource
+contributors; the model’s unavailable result is a disclosed boundary,
+not an institutional recommendation.</p>
+<p>The dedicated mode’s eight decision accounts share one reviewer
+capacity key. They are eight modeled task/contract choices, not eight
+independently resourced people. Cross-role mode similarly maps tasks to
+two actual resource pools. Different account labels must not be read as
+independent scientific judgment. The conservative shared-role
+reservation covers the worst quota subset before sampling, preventing
+capacity-conditioned rejection from silently changing the lottery. This
+consumes opportunity to use otherwise spare hours; it is not an optimal
+allocation claim.</p>
+<p>Review and audit hours are distinct from utility effort and token
+units. The utility function stipulates unit marginal utility for reward
+and loss tokens. It is not calibrated wealth utility. Refusals here
+consume no human hours; the coupled queue has a different refusal-cost
+model. Those assumptions cannot be silently combined into one empirical
+estimate.</p>
+<p>Auditors execute automatically with given detection probabilities. No
+model of auditor refusal, strategic effort, institutional budget
+diversion, sanction appeal or false-positive reversal is supplied. The
+new program closes audit delivery within its declared one-shot fixture.
+It does not repair the old coupled model retrospectively or make its
+assumed q empirically credible.</p>
+<h2 id="collective-disposition">Collective disposition</h2>
+<p>The new experiment supports a stronger but still bounded claim: some
+promised audit incentives can be connected to actual simulated resource
+reservation and execution, while leakage, false positives, weak capacity
+and collateral shortages produce visible failure. It does not make the
+entire collection one coherent institution. Keep the old perceived-audit
+model, this delivered-audit model and their incompatible assumptions
+explicit in the synthesis. My continued research-seed assent includes
+this repaired addition and its negative controls.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

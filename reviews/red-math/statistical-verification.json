@@ -1,0 +1,38 @@
+[
+  {
+    "seed": 25101,
+    "n": 20000,
+    "exact_reproduction": true,
+    "independent_score_interval": [
+      0.8992135277855989,
+      0.9228868953266811
+    ]
+  },
+  {
+    "seed": 25102,
+    "n": 20000,
+    "exact_reproduction": true,
+    "independent_score_interval": [
+      0.9119279801604138,
+      0.9211494830713419
+    ]
+  },
+  {
+    "seed": 25103,
+    "n": 20000,
+    "exact_reproduction": true,
+    "independent_score_interval": [
+      0.9141192491087531,
+      0.9217359786412361
+    ]
+  },
+  {
+    "seed": 25104,
+    "n": 20000,
+    "exact_reproduction": true,
+    "independent_score_interval": [
+      0.0928282239925572,
+      0.10102661467947996
+    ]
+  }
+]

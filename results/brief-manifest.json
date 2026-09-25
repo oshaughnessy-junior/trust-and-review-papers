@@ -1,0 +1,14 @@
+{
+  "schema": "mcrp.brief-evidence.v1",
+  "reportlab": "4.4.9",
+  "pypdf": "6.10.0",
+  "inputs": {
+    "surfaces/build_brief.py": "738c0d1256c541ae0c919071b1bee953ac77befc41ba1a937009a7cb22f2558d",
+    "results/figures/selection-through-stages.png": "4511c92e3477b48214c8020d6aa7ea29b913c159497286ecb620ba25d580d744",
+    "publication/notices/bitstream-vera-license.txt": "3361d054759a2fc686a2c058be82deaf9c2e6fe549be9004d7935a6c1736315d"
+  },
+  "artifacts": {
+    "results/mcrp-release-brief.pdf": "6e45e1107a2a7fc649fc9972a9e6d2b58f37f0c417a854d18d6277f09e2d8b3b"
+  },
+  "scope": "Human-readable synthesis; fixed PDF metadata for reproducibility; claims derive from named packet sources"
+}

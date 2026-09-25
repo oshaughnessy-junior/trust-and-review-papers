@@ -1,0 +1,96 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Bring an existing review without inventing new authority · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="bring-an-existing-review-without-inventing-new-authority">Bring
+an existing review without inventing new authority</h1>
+<p>You can begin with a versioned paper and an ordinary review letter.
+The prototype asks what that review actually supports, then keeps
+unresolved questions visible. An agent can prepare the structured
+wrapper immediately; a human must still make or authorize any real
+responsibility assertion attributed to them.</p>
+<h2 id="a-six-question-card-with-the-matching-agent-action">A
+six-question card, with the matching agent action</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Human question</th>
+<th>Agent action in this example</th>
+<th>If the answer is missing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Which exact claim and version?</strong> Point to the
+precise result, immutable release and evidence.</td>
+<td>Preserve claim ID, declared git object and evidence digest; keep the
+ordinary URL as context.</td>
+<td>Stop the executable conversion; do not treat a moving page as an
+exact release.</td>
+</tr>
+<tr>
+<td><strong>2. What was checked?</strong> Name the method, scope, result
+and limits in the reviewer’s terms.</td>
+<td>Keep declared check scope/result/method separate from the
+recommendation to accept.</td>
+<td>Preserve unknown; never fill in a positive result from tone or
+recommendation.</td>
+</tr>
+<tr>
+<td><strong>3. Who can take responsibility, and for what use?</strong> A
+reviewer, author and editor have different roles.</td>
+<td>Leave decision authority unknown until a separately explicit
+assertion exists.</td>
+<td>No scoped reliance or publication permission is inferred.</td>
+</tr>
+<tr>
+<td><strong>4. What connections could limit independence?</strong>
+Include shared control and inaccessible prerequisites.</td>
+<td>Preserve disclosures; never infer independent groups from different
+names or many team members.</td>
+<td>Unknown remains unknown. Nonempty unsupported disclosures must be
+reconciled, not overwritten.</td>
+</tr>
+<tr>
+<td><strong>5. What effort and conditions can be supported?</strong>
+State purpose, capacity and expiry.</td>
+<td>Require explicit fixture capacity, exact scope, purpose and expiry
+before the toy run.</td>
+<td>Do not promise completed coverage or an appeal service.</td>
+</tr>
+<tr>
+<td><strong>6. What would make us reconsider?</strong> Identify
+dependency changes and a correction path.</td>
+<td>Record dependencies separately and exercise a material
+amendment.</td>
+<td>Missing dependencies remain a known blind spot; the adapter cannot
+discover them.</td>
+</tr>
+</tbody>
+</table>
+<p>The machine-readable path is runnable from the extracted packet
+root:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> adapters.demo</span></code></pre></div>
+<p>First, the original legacy metadata is refused for scoped reliance.
+Then a <strong>separate invented fixture</strong> supplies the missing
+assertions solely to demonstrate the actual toy protocol. Its old
+reliance becomes pending after amendment. The original source, every
+absent/null/empty distinction, and the semantic loss report stay
+attached to the result.</p>
+<p>The example does not parse arbitrary prose, contact a journal,
+authenticate a reviewer, establish consent, or claim conformance with an
+existing interoperability standard. It shows a practical entry point
+that agents can execute today while keeping the human questions
+explicit. A real adapter should earn trust through independent round
+trips and permission-aware integration tests before live use.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

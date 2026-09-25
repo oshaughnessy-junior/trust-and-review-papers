@@ -1,0 +1,10 @@
+{
+  "scope": "Transcription of independently observed pre-repair public-API behavior; no origin authentication was claimed.",
+  "source_change": "claim.immutable_refs = integer 1",
+  "ordinary_execution": "rejected: declared exact claim, git object and SHA-256 references required; no URL-only target",
+  "projection_change_only": "mapped.immutable_refs.value = Boolean true",
+  "tampered_roundtrip": "accepted while source and source_sha256 remained unchanged",
+  "tampered_execution": "current_under_toy_policy",
+  "cause": "Python nested equality treats true and 1 as equal",
+  "repair": "Compare canonical JSON bytes instead; type-changing projection is now rejected"
+}

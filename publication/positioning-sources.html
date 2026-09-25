@@ -1,0 +1,201 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Positioning source ledger · MCRP</title><link rel="stylesheet" href="../surfaces/site.css"></head>
+<body><header><a href="../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../publication/blog-introduction.html">Introduction</a>
+<a href="../domains/README.html">Domain cases</a><a href="../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="positioning-source-ledger">Positioning source ledger</h1>
+<p>Primary-source inspection on 2026-09-25. All links below were
+retrieved through the web tool. This ledger supports
+<code>positioning-and-adoption.md</code>; it is not a comprehensive
+systematic review or standards-conformance audit. No outreach,
+submission, registration, account creation or external notification was
+performed.</p>
+<h2 id="sources-actually-read">Sources actually read</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>ID</th>
+<th>Primary page and version</th>
+<th>Inspected material</th>
+<th>Bounded use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td><a href="https://coar-notify.net/specification/">COAR Notify
+specification index</a></td>
+<td>Design principles and current-version link</td>
+<td>Established decentralized notification architecture; index
+identified 1.0.1 as current on inspection date</td>
+</tr>
+<tr>
+<td>S2</td>
+<td><a href="https://coar-notify.net/specification/1.0.1/">COAR Notify
+1.0.1</a></td>
+<td>Baseline activity requirements and pattern list</td>
+<td>Existing notification families; no claim of implemented endpoint
+compatibility</td>
+</tr>
+<tr>
+<td>S3</td>
+<td><a
+href="https://coar-notify.net/specification/1.0.1/request-review/">Request
+Review, 1.0.1</a></td>
+<td>Required types and resource/content distinction</td>
+<td>Candidate offer mapping; exact MCRP tuple is additional profile
+data</td>
+</tr>
+<tr>
+<td>S4</td>
+<td><a
+href="https://coar-notify.net/specification/1.0.1/announce-review/">Announce
+Review, 1.0.1</a></td>
+<td><code>object</code>, <code>context</code>, activity types</td>
+<td>Review notification is distinct from the review resource and
+reviewed resource</td>
+</tr>
+<tr>
+<td>S5</td>
+<td><a
+href="https://coar-notify.net/specification/1.0.1/announce-endorsement/">Announce
+Endorsement, 1.0.1</a></td>
+<td>Endorsement resource and context</td>
+<td>Conditional mapping for a genuine endorsement, not every reliance
+kind</td>
+</tr>
+<tr>
+<td>S6</td>
+<td><a
+href="https://coar-notify.net/specification/1.0.1/undo-offer/">Undo
+Offer, 1.0.1</a></td>
+<td>Withdrawal semantics and original-offer reference</td>
+<td>Do not confuse an offer withdrawal with a scientific retraction</td>
+</tr>
+<tr>
+<td>S7</td>
+<td><a href="https://www.w3.org/TR/prov-o/">PROV-O, W3C Recommendation
+2013-04-30</a></td>
+<td>Introduction, starting/expanded/qualified terms, responsibility and
+revision descriptions</td>
+<td>Provenance and extensibility already exist; proposed mapping is not
+proof of semantic equivalence</td>
+</tr>
+<tr>
+<td>S8</td>
+<td><a
+href="https://www.researchobject.org/ro-crate/specification/1.3/introduction.html">RO-Crate
+1.3 introduction</a></td>
+<td>Package model, metadata document and human preview</td>
+<td>Existing research-artifact packaging; no MCRP conformance
+assertion</td>
+</tr>
+<tr>
+<td>S9</td>
+<td><a
+href="https://www.researchobject.org/ro-crate/specification/1.3/provenance.html">RO-Crate
+1.3 provenance</a></td>
+<td>Equipment/software actions and recording changes</td>
+<td>Existing human authorization, workflow changes and old/new file
+history</td>
+</tr>
+<tr>
+<td>S10</td>
+<td><a
+href="https://www.researchobject.org/ro-crate/specification/1.3/profiles.html">RO-Crate
+1.3 profiles</a></td>
+<td>Profile requirements, extension support and conformance
+declarations</td>
+<td>A possible future packaging profile; none implemented here</td>
+</tr>
+<tr>
+<td>S11</td>
+<td><a href="https://peercommunityin.org/faq/">PCI FAQ</a></td>
+<td>Recommender role, recommendation process and archive
+description</td>
+<td>Existing institutionally grounded open review; no acceptance
+guarantee for this work</td>
+</tr>
+<tr>
+<td>S12</td>
+<td><a href="https://peercommunityin.org/?p=6218">PCI account of
+version-controlled Registered Reports</a></td>
+<td>Pre/post-study review, amendments and version-specific examples</td>
+<td>Prior workflow already connects versions, decisions and changes;
+historical explanatory account, not verified current submission
+instructions</td>
+</tr>
+<tr>
+<td>S13</td>
+<td><a href="https://credit.niso.org/">CRediT resource hub</a></td>
+<td>Fourteen-role taxonomy and standard status</td>
+<td>Reuse contributor-role vocabulary; no automatic panel authority
+inferred</td>
+</tr>
+<tr>
+<td>S14</td>
+<td><a
+href="https://credit.niso.org/contributor-roles/validation/">CRediT
+Validation role</a></td>
+<td>Role description</td>
+<td>Contribution vocabulary can describe checking work; it does not
+itself establish a particular external review’s sufficiency</td>
+</tr>
+<tr>
+<td>S15</td>
+<td><a href="https://info.orcid.org/what-is-orcid/">About ORCID</a></td>
+<td>Identifier, record and API description</td>
+<td>Persistent identity reference, not a substitute for domain
+appointment</td>
+</tr>
+<tr>
+<td>S16</td>
+<td><a href="https://info.orcid.org/orcid-trust/">ORCID Trust</a></td>
+<td>Individual control, broad eligibility and source transparency</td>
+<td>Identity/contribution context should not be promoted into unstated
+qualification or common-control guarantees</td>
+</tr>
+</tbody>
+</table>
+<p>COAR’s vocabulary index was also read to verify the published action
+names. The main source claims are paraphrased; no long source passages
+or payloads were copied. Proposed semantic mappings and adoption tests
+are our design inferences, not instructions endorsed by the standards
+bodies or communities.</p>
+<h2 id="retrieval-and-inference-boundaries">Retrieval and inference
+boundaries</h2>
+<p>The direct PCI Registered Reports about page returned a
+bot-protection page. The accessible PCI parent-site FAQ and named
+explanatory account therefore support only the limited comparisons
+above. They do not establish present submission eligibility, AI policy,
+fees, staffing or review times. The attempted Episciences English page
+returned a retrieval error; no Episciences feature or availability claim
+is made from that failed retrieval.</p>
+<p>The first direct RO-Crate provenance-page request failed; following
+the official profile page’s provenance link subsequently retrieved it
+successfully. An initially guessed ORCID trust URL failed; the official
+navigation link resolved to the page recorded as S16. These failures
+were not treated as negative evidence about the systems’
+capabilities.</p>
+<p>The comparison examined selected core features, not every extension,
+deployment or companion standard. “The inspected core does not mandate
+this profile” must not become “no existing system can represent it.” In
+particular, PROV and RO-Crate are extensible, and local editorial
+workflows can already carry detailed conditions.</p>
+<p>The desired round-trip identity, resource accounting and domain
+adoption outcomes remain design hypotheses. No network interoperability,
+authentication, authority verification, standards validation,
+independently developed adapter, or human adoption experiment was
+performed for this positioning memo. The toy engine and public export
+were left unchanged while these two new documents were written.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../export-manifest.json">File manifest</a></footer></body></html>

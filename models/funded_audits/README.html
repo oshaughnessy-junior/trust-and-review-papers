@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Closed-loop funded audit toy · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="closed-loop-funded-audit-toy">Closed-loop funded audit toy</h1>
+<p>Read <a
+href="../../manuscripts/funded-audits.html">funded-audits.md</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/models/funded_audits <span class="at">-p</span> <span class="st">&#39;test_*.py&#39;</span> <span class="at">-v</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/models/funded_audits/run_experiments.py</span></code></pre></div>
+<p>Python3.9+ standard library only. Eighteen tests,11 scenarios,20
+seeds each, 220 run rows and11 complete illustrative traces. The
+existing math sampler is imported; its digest is recorded alongside
+local source hashes.</p>
+<p>Fixed ex-ante offers, concealed hard quota, all decisions committed
+before audit, actual detection and fully collateralized toy losses.
+Refused selected slots are unused; no silent quota redistribution.
+Separate token audit/reward budgets and one person-hour ledger across
+review/audit roles. Shared roles audit another person’s work, never
+their own. Preflight capacity/independence/funding failures return
+unavailable before offering; broken promises appear only under an
+explicit negative-control flag.</p>
+<p>Selection inclusion probability is k/N; executed-audit fraction among
+participants is random and can differ per run. Its conditional marginal
+requires behavior independent of concealed selection. No actual funds,
+sanctions, authenticated identities or deployment authority exist. This
+is a standalone behavior/resource model, not a replacement for the
+protocol runtime or a cooperation equilibrium.</p>
+<p>Red review found that the first floating-hour ledger allowed positive
+work within a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>10</mn><mrow><mi>−</mi><mn>12</mn></mrow></msup><annotation encoding="application/x-tex">10^{-12}</annotation></semantics></math>
+tolerance above zero capacity. The repaired ledger uses exact
+decimal-rational reservation/debit arithmetic with no overspending
+tolerance. Regression tests reject positive tiny work against zero
+capacity and verify that .1 plus .2 exactly fills .3. The original
+source is preserved in
+<code>models/funded_audits/results/model-before-exact-ledger.txt</code>.</p>
+<p>The red review also exposed binary-floating tie reversals between
+honest/shallow and honest/refusal utilities. Preferences now use exact
+decimal-rational arithmetic internally; output includes the exact
+advertised utilities. Regression tests preserve the specified
+refusal-first, then honest, then shallow tie rule. Token rewards and
+losses enter utility at a stipulated one-to-one marginal conversion, not
+an inferred welfare measure.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>

@@ -1,0 +1,100 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MCRP research prototype: scoped reliance, mathematical models, and toy agents.">
+<title>Synthetic domain fixtures · MCRP</title><link rel="stylesheet" href="../../surfaces/site.css"></head>
+<body><header><a href="../../index.html">MCRP / Research prototype</a>
+<nav aria-label="Main"><a href="../../publication/blog-introduction.html">Introduction</a>
+<a href="../../domains/README.html">Domain cases</a><a href="../../reviews/COLLECTIVE.html">Red-team review</a></nav></header>
+<main><article><h1 id="synthetic-domain-fixtures">Synthetic domain fixtures</h1>
+<p>Run from the repository root:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/domains/fixtures/domain_models.py</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> papers/07-release-packet/domains/fixtures/replay_receipts.py</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> unittest discover <span class="at">-s</span> papers/07-release-packet/domains/fixtures <span class="at">-p</span> <span class="st">&#39;test_*.py&#39;</span></span></code></pre></div>
+<p>Both scripts print JSON and write nothing. All inputs are invented
+and committed in <code>scenarios.json</code>. Rational arithmetic is
+exact; displayed square roots use Python floating point. There is no
+random sampling or estimated parameter.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Case</th>
+<th>Mathematical behavior</th>
+<th>Engine behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physics</td>
+<td>Shared-error variance 101/400 versus mistaken 29/1600; calibration
+revision 10.5→10</td>
+<td>Declared calibration amendment makes old use pending; fresh exact
+calculation supports new version</td>
+</tr>
+<tr>
+<td>Biology</td>
+<td>Two different treatment/batch explanations both have RSS 4; crossed
+toy contrast 1</td>
+<td>Arithmetic is supported while the separate additive-model
+coefficient is unknown; broader model scope rejected; crossed version
+checked separately</td>
+</tr>
+<tr>
+<td>Economics</td>
+<td>Trial mixture 8/5 versus target mixture 2/5; adverse completion
+share 100/109; separate final selection changes 1/10 to 1</td>
+<td>Trial and target calculations retain distinct versioned evidence;
+transport assumptions remain unchecked</td>
+</tr>
+<tr>
+<td>Law</td>
+<td>Same total work, FIFO misses one deadline and selected deadline
+order misses none; one infeasible job remains</td>
+<td>Citation accuracy supports a teaching publication only; unsupported
+legal authority kind rejected</td>
+</tr>
+</tbody>
+</table>
+<p><code>replay_receipts.py</code> calls the actual neighboring toy
+engine. It does not merely print prewritten receipts. Its adapters
+perform narrow deterministic calculations, then submit those outcomes to
+the engine. The engine trusts roles, control groups, outcomes and clock
+inputs. It neither rediscovers the science nor authenticates the inputs.
+It does not model counter-notices, privileged material or legal
+calendars. The law schedule is an independent mathematical
+illustration.</p>
+<p>The known negative control omits a real planted dependency. Its
+result remains <code>current_under_toy_policy</code> even after the
+undeclared premise changes. This is an intentional demonstrated limit,
+not a passing real-world currentness guarantee. Two affected planted
+cases yield one pending record, hence recall 1/2. This denominator
+consists of two separate synthetic replays, not two actual papers.</p>
+<p>For the interaction counterexample, contrasts 1 and 3 produce an
+average of 2, <code>crossed_exact_additivity=false</code> and a null
+<code>crossed_additive_effect</code>. The receipt adapter then supports
+arithmetic only. Tests preserve the conditional-exogeneity and
+causal-countermodel distinctions; a full-rank observed design is not
+causal identification.</p>
+<p>The checked-in <code>oracle-results.json</code> and
+<code>replay-results.json</code> are convenience outputs. Regenerate
+with the scripts and compare parsed JSON. <code>run-manifest.json</code>
+records source/output hashes and the Python version used for the
+accompanying test run. These outputs establish only deterministic
+fixture behavior.</p>
+<h2 id="scope-of-validation">Scope of validation</h2>
+<p>Tests use independently specified numeric expectations, limiting
+cases, missing support, dropped-job rejection, content-identity
+behavior, actual engine amendment cycles, and prohibited scope/authority
+upgrades. They do not establish scientific efficacy, fairness under
+unknown common control, or safe operation with real users.</p>
+<p>Future extensions should add partial confounding and sampling noise,
+heterogeneous transport uncertainty, cross-skill scheduling, and
+hidden-common-cause sampling. Those are proposals, not capabilities
+supplied by this four-case package.</p>
+</article></main><footer>Agent-first research prototype · Synthetic models · Substantial AI contribution disclosed.
+No external peer review or operational certification. <a href="../../publication/launch.html">Launch and contribution terms</a> ·
+<a href="../../export-manifest.json">File manifest</a></footer></body></html>
