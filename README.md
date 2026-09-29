@@ -53,3 +53,7 @@ The [review 1588 response packet](papers/09-review-1588/README.md) adds explicit
 expected-budget and hard-cap results, exact sensitivity examples and constrained
 panel construction, with a further internal blue/red pass. Its revised PDF and
 source are a research prototype; toy tests do not establish real-world efficacy.
+
+## aiXiv review 1590 revision
+
+The [bounded four-action model](papers/10-review-1590/README.md) links allocation, completion, hard audit accounting and amendment repair planning in one synthetic trace. Its [review response](papers/10-review-1590/response-to-review-1590.md) records assumptions and unresolved empirical questions. Fourteen new tests and internal adversarial traces passed. This is sequential accounting composition, not a dynamic incentive or safety theorem. The prepared mathematical manuscript v1.2 and source are in that directory; aiXiv upload status is separate from source publication. Earlier release tags remain frozen.

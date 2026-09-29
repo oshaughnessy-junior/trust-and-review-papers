@@ -7,7 +7,7 @@ results use elementary probability, constrained incentives and positive-system
 bounds. The contribution is the alignment of those tools with protocol records,
 not a claim to invent the underlying mathematics.
 
-**Revision responding to aiXiv review 1588.** The new examples and internal
+**Revision responding to aiXiv reviews 1588 and 1590.** The new examples and internal
 adversarial checks remain work of the same author-directed AI team. They do not
 constitute independent scientific validation.
 
@@ -251,12 +251,12 @@ $$\frac{z}{1-z}=\frac{p}{1-p}\frac ab,\qquad z>p\iff a>b.$$
 Hence the completion-rate ratio, rather than either parameter alone, determines
 the odds distortion. At $p=1/10$:
 
-| $a$ | $b$ | Exact completed share |
-|---:|---:|---:|
-| 1/10 | 1 | 1/91 |
-| 1/10 | 1/10 | 1/10 |
-| 1/10 | 1/100 | 10/19 |
-| 1 | 1/100 | 100/109 |
+| Completion rate $a$ | Completion rate $b$ | Rate ratio $a/b$ | Exact completed share $z$ |
+|---:|---:|---:|---:|
+| $1/10$ | $1$ | $1/10$ | $1/91$ |
+| $1/10$ | $1/10$ | $1$ | $1/10$ |
+| $1/10$ | $1/100$ | $10$ | $10/19$ |
+| $1$ | $1/100$ | $100$ | $100/109$ |
 
 Under the IID retry model, cost sensitivity is exactly
 $\partial E[C_L]/\partial c_i=E[N_L]$ and
@@ -281,10 +281,12 @@ restore a physical panel guarantee. The classical unequal-probability estimator
 is standard statistical machinery, not a novel trust mechanism.
 [Horvitz and Thompson, 1952](https://www.stat.cmu.edu/~brian/905-2008/papers/Horvitz-Thompson-1952-jasa.pdf)
 
-### Red-team extension: adapted completion shares
+### Adapted completion bound: internal proof and checks
 
-The red mathematical reviewer supplied a stronger envelope and an independent
-finite-tree verification in `reviews/red-math/adaptive-completion.md`. At every
+An internal adversarial reviewer supplied the adapted bound and a separately written
+finite-tree checker in `reviews/red-math/adaptive-completion.md`. Both were developed
+and run within the same author-directed AI team, not an independent institution.
+The proof below, rather than the identity of that internal lane, supports the conditional result. At every
 reached pre-attempt history $h$, require $p_h\le\epsilon<1$, $a_h\le u$, and
 $b_h\ge\ell>0$. Stopping must occur before inspecting the current draw. The risky
 and other terminal-completion masses at that history obey
@@ -295,8 +297,9 @@ same completion-share envelope follows. This permits adapted policies and
 history-dependent completion, but **does not generalize IID retry costs**.
 Cherry-picking an uncounted draw violates the effective offer bound. Selecting
 only risky completed panels for reliance is yet another selection stage; the
-completion bound says nothing about that relied-upon distribution. Credit for
-this extension and its independent probes belongs to the red mathematical lane.
+completion bound says nothing about that relied-upon distribution. These internal
+checks do not establish adversarial robustness against unspecified strategies or
+constitute external replication.
 
 ## 4. Repair must survive changing regimes
 
@@ -516,6 +519,78 @@ and representative pushforwards using exact rational arithmetic. It does not
 supply measured human/agent preferences, independence, enforcement or field efficacy.
 
 
+### A bounded four-action decision procedure
+
+The [sequential reference machine](../../10-review-1590/README.md) now supplies an
+explicit implementation profile for one synthetic episode. It admits at most
+eight versioned targets and 64 accepted events. State consists of target scope,
+declared dependencies, phase, fixed panel/alias draws, next attempt, audit slots,
+spent/held work, immutable event records and separately recorded reliance decisions.
+Every command carries a unique request ID and actor; records add sequence,
+version/scope, outcome/evidence and exact resource balances. Rejections leave the
+state unchanged. The bounded local guard rules are:
+
+| Action | Guard | Transition |
+|---|---|---|
+| offer | New identity; declared author; no known stale dependency; audit preflight and sufficient worst-case work reservation | Fix distribution and three attempt slots; create open target. |
+| check | Declared verifier; exact open target/scope and planned representatives; explicit result/evidence | Debit the next slot; refusal stays open until exhausted; completed success becomes ready; completed failure becomes failed. |
+| rely | Separately declared decision-maker; ready exact target/scope; matching last successful check | Append current reliance; a check never creates it implicitly. |
+| amend | Declared author; changed identity and fresh successor | Mark declared transitive affected targets pending, suspend current reliance, preserve historical events; compute an optional repair planning bound. |
+
+Equivalent dispatcher pseudocode is: validate request identity; save state;
+validate the action guard; apply its transition and resource debit; append the
+event; restore saved state on any rejected command. This is single-process
+sequential atomicity, not distributed consensus, durable replay protection or
+authentication. Actor strings, evidence references and scientific outcomes remain
+trusted fixture assertions. A successor designation neither performs repair nor
+renews reliance. Missing dependency edges remain a demonstrated failure premise.
+
+### One trace through all four models
+
+Offer `mean@v1` over three synthetic values, depending on `data@v1`. Uniform group
+panels AB,AC,BC give offered category probability p=1/3 for AB; interchangeable
+aliases do not change this law. Set panel-level completion a=1 for AB and b=1/4
+otherwise, with completion coins fixed independently before observing audit
+results. For three IID attempts, s=1/2, E[N]=7/4, completion probability=7/8, and
+AB's completed share=2/3. These are probabilities over the stipulated fixture,
+not frequencies inferred from its single realization.
+
+Invitation work costs 1/10 and completed checking costs one abstract unit. Audit
+cost is one, the fixed three-slot cohort has quota at most one, and ex-ante q=1/3.
+Before attempts, reserve 43/10 units for worst-case checking and auditing from one
+20-unit account. Expected check work is 21/20; expected audit work is 7/12 under
+the stipulated stopping/independence premises. Administrative overhead is not
+modeled, and these units are not calibrated human hours. Static audit utilities
+c=1/10,R=1,u=0,alpha=1/20,beta=17/20,F=1 yield effort lower bound 1/8 and hard cap
+1/3, so this configured q passes the ex-ante feasibility test.
+
+| Event | Retained realization | Cumulative actual work |
+|---|---|---:|
+| offer | Fix mean@v1 and reserve 43/10 | 0 |
+| check 1 | AC refuses | 1/10 |
+| check 2 | AC refuses | 1/5 |
+| check 3 | AB completes; one audit executes | 23/10 |
+| rely | Separate decision cites check 3 | 23/10 |
+| amend | data@v1→data@v2 suspends current reliance | 23/10 |
+
+One affected claim starts repair workload Z0=(1,0). Matrices
+M1=((1/4,1/4),(0,1/2)) and M2=((1/2,0),(1/4,1/4)) share w=(1,1), r=1/2, giving
+conditional expected cumulative weighted repair ≤2. The machine records this
+planning bound; it neither reserves nor executes repair from that expectation.
+Absent a valid witness, invalidation still occurs and the bound stays unavailable.
+
+This is accounting composition, **not a composed incentive or safety theorem**.
+The API reveals audit outcomes: if the first refused slot consumes the only audit,
+later conditional q=0 and honest effort need not remain a best response. The
+positive trace fixes behavior before reading those outcomes; the implementation
+retains the adaptive counterexample rather than claiming concealment. Reward
+funding, sanctions, truthful effort and physical audit performance remain external
+premises. Additional branches reject expected-budget-only admission, stale reliance,
+wrong scope/authority, duplicate requests and insufficient capacity; hidden lineage
+and unstable repair switching remain explicitly failing premises. This executable
+linkage—not new probability theory or measured efficacy—is the added contribution.
+
+
 ## 6. Four deep adaptations, one common experiment boundary
 
 **Physics and astronomy.** Treat calibration and inference as separate repair
@@ -551,17 +626,19 @@ operator processes outside these mathematical models.
 
 | ID | Status | Claim and evidence | Limitation |
 |---|---|---|---|
-| M1 | T (fixed feasible family and Q) | Group-first pushforward invariance; proof and exact probability tests | Fixed true/declared group map, feasibility and weights |
-| M2 | T (conditioning); T (IID retries) | Completion-share envelope and separately conditional retry accounting | Adapted share bounds require bounds at every reached history; IID costs do not generalize to adapted retries |
-| M3 | T | Common positive envelope bounds conditional expected cumulative repair; proof | Envelope validity is an empirical/operational assumption |
-| M4 | T (expected spending); T (hard cap) | Distinct one-shot audit/participation intervals under their respective budget constraints | Hard cap additionally fixes population, identical actual cost and concealed delivery; neither result selects an equilibrium |
-| M5 | I | Executable synthetic implementation reproduces positive and negative cases | Floating-point toy range, no production scheduler |
-| M6 | I | 80,000 seeded simulated requests with pointwise uncertainty | Simulation outcomes only, no human evidence |
-| M7 | D | Keep simple participant actions while instrumenting full denominators and shared budgets | Usability and effectiveness untested |
+| M1 | Conditional theorem (fixed feasible family and Q) | Group-first pushforward invariance; proof and exact probability tests | Fixed true/declared group map, feasibility and weights |
+| M2 | Conditional theorems (conditioning; IID retries) | Completion-share envelope and separately conditional retry accounting | Adapted share bounds require bounds at every reached history; IID costs do not generalize to adapted retries |
+| M3 | Conditional theorem | Common positive envelope bounds conditional expected cumulative repair; proof | Envelope validity is an empirical/operational assumption |
+| M4 | Conditional theorems (expected spending; hard cap) | Distinct one-shot audit/participation intervals under their respective budget constraints | Hard cap additionally fixes population, identical actual cost and concealed delivery; neither result selects an equilibrium |
+| M5 | Synthetic implementation tests | Executable synthetic implementation reproduces positive and negative cases | Floating-point toy range, no production scheduler |
+| M6 | Monte Carlo simulation | 80,000 seeded simulated requests with pointwise uncertainty | Simulation outcomes only, no human evidence |
+| M7 | Design proposal | Keep simple participant actions while instrumenting full denominators and shared budgets | Usability and effectiveness untested |
+| M8 | Executable design example | Four-action guards and one trace linking the four models | Asserted identities/outcomes; sequential accounting only; no dynamic incentive or safety theorem |
 
-Here T denotes a conditional theoretical result, I implementation evidence
-including explicitly synthetic experiments, and D a design proposal. These labels
-follow the repository claim vocabulary and do not confer scientific acceptance.
+These conventional categories separate proved implications under stated premises,
+implementation tests, synthetic Monte Carlo experiments and proposed design.
+Older repository labels T/I/D respectively denote conditional theory,
+implementation/simulation, and design; none denotes empirical field validation.
 Twenty-one unit tests include an independent representative
 panel enumeration, an independent finite retry-path tree, all $2^8$ switching
 sequences and utility comparisons on both sides of a feasible audit interval.
@@ -598,3 +675,15 @@ The review1588 revision adds separate exact fixtures. Run the formal and sensiti
 tests documented in [the revision packet](../../09-review-1588/README.md). Its
 [response](../../09-review-1588/response-to-review-1588.md) and internal red reports
 distinguish original claims, clarified assumptions and new examples.
+
+
+The review-1590 executable example is independently runnable from the repository root:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s papers/10-review-1590 -p 'test_*.py' -v
+PYTHONDONTWRITEBYTECODE=1 python3 papers/10-review-1590/demo.py
+```
+
+The saved trace includes refusals, a separate reliance decision, amendment, and
+rejected stale/replayed/underfunded requests. Its fourteen named tests are internal
+synthetic checks, not evidence of operational or scientific effectiveness.

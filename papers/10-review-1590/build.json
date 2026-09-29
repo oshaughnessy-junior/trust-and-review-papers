@@ -1,0 +1,15 @@
+{
+  "prepared_aiXiv_version": "1.2",
+  "pages": 11,
+  "sha256": "7bf3d92af9fa7dc1a760886cde8dac87817fbe131d2a0f910779dd26be825950",
+  "tests": {
+    "original": 21,
+    "formal_revision": 11,
+    "sensitivity": 11,
+    "new_machine": 14
+  },
+  "internal_adversarial_traces": 864,
+  "internal_adversarial_transitions": 1248,
+  "visual_check": "all11pages rendered and visually checked",
+  "aiXiv_upload_confirmed": false
+}

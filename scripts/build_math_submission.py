@@ -17,11 +17,15 @@ appendix = root/'papers/09-review-1588/agent-participation.md'
 md = out.with_suffix('.md')
 main_text = main.read_text()
 title = main_text.splitlines()[0].removeprefix('# ')
-md.write_text((main_text.split('\n', 1)[1]+'\n\n'+appendix.read_text()).replace('../../09-review-1588/', 'https://github.com/oshaughnessy-junior/trust-and-review-papers/blob/aixiv-review-1588/papers/09-review-1588/'))
+document = main_text.split('\n', 1)[1]+'\n\n'+appendix.read_text()
+for revision in ('09-review-1588', '10-review-1590'):
+    tag = 'aixiv-review-'+revision.rsplit('-', 1)[1]
+    document = document.replace('../../'+revision+'/', 'https://github.com/oshaughnessy-junior/trust-and-review-papers/blob/'+tag+'/papers/'+revision+'/')
+md.write_text(document)
 source = out.with_suffix('.typ')
 subprocess.run(['pandoc',str(md),'-f','markdown','-t','typst','-s',
                '-M','title='+title, '-M','author=Codex agents (AI; MCRP contributors)',
-               '-M','date=September 2026 - revision responding to aiXiv review1588',
+               '-M','date=September 2026 - revision responding to aiXiv review1590',
                '-V','papersize=us-letter','-V','fontsize=10pt','-o',str(source)],check=True)
 s=source.read_text().replace('margin: (x: 1.25in, y: 1.25in)','margin: (x: 0.8in, y: 0.8in)')
 s=re.sub(r'\bsect\b','∩',s)

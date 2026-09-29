@@ -1,0 +1,194 @@
+{
+  "status": "one synthetic accounting example, not an incentive equilibrium or science validation",
+  "analytic": {
+    "group_panel_law": {
+      "AB": "1/3",
+      "AC": "1/3",
+      "BC": "1/3"
+    },
+    "risk_category": "AB panel only",
+    "p": "1/3",
+    "a": "1",
+    "b": "1/4",
+    "per_attempt_completion": "1/2",
+    "IID_expected_attempts": "7/4",
+    "IID_completion_by_three": "7/8",
+    "IID_completed_risk_share": "2/3",
+    "IID_expected_check_work": "21/20",
+    "ex_ante_expected_audit_work": "7/12",
+    "audit_utility_lower": "1/8",
+    "audit_hard_upper": "1/3",
+    "common_repair_bound": "2",
+    "repair_is_reserved": false
+  },
+  "precommitted_fixture_outcomes": [
+    "refused",
+    "refused",
+    "passed"
+  ],
+  "events": [
+    {
+      "seq": 1,
+      "request": "offer-1",
+      "action": "offer",
+      "actor": "author",
+      "target": "mean@v1",
+      "scope": "three synthetic values only",
+      "dependencies": [
+        "data@v1"
+      ],
+      "panel_law": "uniform-AB-AC-BC",
+      "incentive_scope": "ex-ante fixed actions only; not sequential incentive compatibility",
+      "max_attempts": 3,
+      "audit_q": "1/3",
+      "audit_budget": "1",
+      "reservation": "43/10",
+      "spent_after": "0",
+      "held_after": "43/10"
+    },
+    {
+      "seq": 2,
+      "request": "check-0",
+      "action": "check",
+      "actor": "verifier",
+      "target": "mean@v1",
+      "scope": "three synthetic values only",
+      "panel": [
+        "A",
+        "C"
+      ],
+      "representatives": [
+        "A:0",
+        "C:0"
+      ],
+      "attempt": 1,
+      "outcome": "refused",
+      "evidence": "synthetic-evidence:0",
+      "audit_executed": false,
+      "audit_clear": null,
+      "work_charge": "1/10",
+      "phase": "open",
+      "spent_after": "1/10",
+      "held_after": "21/5"
+    },
+    {
+      "seq": 3,
+      "request": "check-1",
+      "action": "check",
+      "actor": "verifier",
+      "target": "mean@v1",
+      "scope": "three synthetic values only",
+      "panel": [
+        "A",
+        "C"
+      ],
+      "representatives": [
+        "A:0",
+        "C:0"
+      ],
+      "attempt": 2,
+      "outcome": "refused",
+      "evidence": "synthetic-evidence:1",
+      "audit_executed": false,
+      "audit_clear": null,
+      "work_charge": "1/10",
+      "phase": "open",
+      "spent_after": "1/5",
+      "held_after": "41/10"
+    },
+    {
+      "seq": 4,
+      "request": "check-2",
+      "action": "check",
+      "actor": "verifier",
+      "target": "mean@v1",
+      "scope": "three synthetic values only",
+      "panel": [
+        "A",
+        "B"
+      ],
+      "representatives": [
+        "A:0",
+        "B:0"
+      ],
+      "attempt": 3,
+      "outcome": "passed",
+      "evidence": "synthetic-evidence:2",
+      "audit_executed": true,
+      "audit_clear": true,
+      "work_charge": "21/10",
+      "phase": "ready",
+      "spent_after": "23/10",
+      "held_after": "0"
+    },
+    {
+      "seq": 5,
+      "request": "rely-1",
+      "action": "rely",
+      "target": "mean@v1",
+      "scope": "three synthetic values only",
+      "actor": "decision-maker",
+      "check_seq": 4,
+      "current": true,
+      "spent_after": "23/10",
+      "held_after": "0"
+    },
+    {
+      "seq": 6,
+      "request": "amend-1",
+      "action": "amend",
+      "actor": "author",
+      "changed": "data@v1",
+      "successor": "data@v2",
+      "affected": [
+        "mean@v1"
+      ],
+      "repair_plan": {
+        "certified": true,
+        "r": "1/2",
+        "bound": "2"
+      },
+      "repair_reserved": 0,
+      "meaning": "reassessment-required-not-refutation",
+      "spent_after": "23/10",
+      "held_after": "0"
+    }
+  ],
+  "actual_work": "23/10",
+  "actual_attempts": 3,
+  "current_reliances": [
+    {
+      "target": "mean@v1",
+      "scope": "three synthetic values only",
+      "actor": "decision-maker",
+      "check_seq": 4,
+      "current": false
+    }
+  ],
+  "rejected": [
+    {
+      "case": "stale-reliance",
+      "reason": "Reliance check binding",
+      "state_unchanged": true
+    },
+    {
+      "case": "replayed-event",
+      "reason": "Event identity/limit",
+      "state_unchanged": true
+    },
+    {
+      "case": "expected-budget-is-not-hard-cap",
+      "reason": "Hard audit cap preflight",
+      "state_unchanged": true
+    }
+  ],
+  "negative_premises": {
+    "hidden_lineage": "absent edges cannot be discovered",
+    "sequential_incentives": "a disclosed first-slot audit leaves later conditional q=0; ex-ante IC does not extend",
+    "unstable_switching": {
+      "certified": false,
+      "r": "2",
+      "bound": null
+    }
+  }
+}
