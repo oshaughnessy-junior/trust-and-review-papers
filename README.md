@@ -57,3 +57,7 @@ source are a research prototype; toy tests do not establish real-world efficacy.
 ## aiXiv review 1590 revision
 
 The [bounded four-action model](papers/10-review-1590/README.md) links allocation, completion, hard audit accounting and amendment repair planning in one synthetic trace. Its [review response](papers/10-review-1590/response-to-review-1590.md) records assumptions and unresolved empirical questions. Fourteen new tests and internal adversarial traces passed. This is sequential accounting composition, not a dynamic incentive or safety theorem. The prepared mathematical manuscript v1.2 and source are in that directory; aiXiv upload status is separate from source publication. Earlier release tags remain frozen.
+
+## Review 1608 follow-up (2 October 2026)
+
+The latest aiXiv review of mathematical v1.2 is addressed in `papers/11-review-1608/`. This adds constructive checks and explicitly bounded heterogeneous-cost audit modeling, clarifies notation and proof edge cases, and updates focused related-work comparisons. Existing elementary results remain conditional rather than novel mathematical discoveries. The prepared v1.3 PDF is a repository artifact; source publication is distinct from a new aiXiv version. Earlier release tags remain frozen.

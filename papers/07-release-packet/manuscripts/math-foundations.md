@@ -7,7 +7,7 @@ results use elementary probability, constrained incentives and positive-system
 bounds. The contribution is the alignment of those tools with protocol records,
 not a claim to invent the underlying mathematics.
 
-**Revision responding to aiXiv reviews 1588 and 1590.** The new examples and internal
+**Revision responding to aiXiv reviews 1588, 1590 and 1608.** The new examples and internal
 adversarial checks remain work of the same author-directed AI team. They do not
 constitute independent scientific validation.
 
@@ -86,6 +86,61 @@ that institutions need. This focused comparison marks the limited contribution:
 small inspectable conditional calculations that help expose when a proposed
 scientific-review protocol exceeds its assumptions. It is not an exhaustive
 review of audit or mechanism-design research.
+
+### Intended audience and recent adjacent work
+
+The intended audience is researchers and implementers of automated-science review
+infrastructure, mechanism design and reproducible computational workflows. This
+is a protocol-design research prototype, not a claim to meet a new-theorem bar in
+probability or control theory. The elementary results restate established tools;
+the contribution is their explicit alignment with versioned review records,
+resource accounting and executable counterexamples.
+
+[Srinivasan and Morgenstern, *Auctions and Peer Prediction for Academic Peer
+Review* (2023 revision)](https://arxiv.org/abs/2109.00923v2) combine an auction for
+review slots with H-DIPP peer prediction and use submission-stage revenue to pay
+reviewers. Our one-shot inequalities instead treat funding and detection as
+supplied inputs; they neither elicit peer signals nor implement their mechanism.
+[Kim, Lee and Lee (2025)](https://arxiv.org/abs/2505.04966v1) propose author feedback
+and reviewer rewards as an accountability reform. That position motivates a
+possible institutional layer; our synthetic utilities do not evaluate it.
+
+[Anderson et al., *Blockchain-based token system for incentivizing peer review:
+A design science approach* (2025)](https://doi.org/10.1016/j.dss.2025.114514)
+develop a token-based incentive design and report cost analysis, a survey and
+interviews. MCRP does not supply a token market, reward redemption system or
+comparable participant evidence. Transferring a token is distinct from funding
+and performing the actual audit; neither our algebra nor a ledger validates
+scientific quality.
+
+[Song, *LinkDID* (2026 revision)](https://arxiv.org/abs/2307.14679v3) studies
+identifier association, anonymous credentials and progressive Sybil resistance.
+Our fixed control-group partition begins after such identity questions. We do
+not implement or evaluate LinkDID. As a protocol boundary, an authenticated
+holder still need not be an independently controlled or scientifically qualified
+reviewer: distinct holders can share funding, instructions or failure modes.
+These focused comparisons are not a systematic literature review, and none
+establishes novelty or empirical validity for our composed example.
+
+### Notation and units
+
+Symbols are local to the indicated model; probabilities and counts are dimensionless.
+Exact synthetic inputs below use fractions; reported simulation percentages and
+long expected-cost outputs are rounded decimals.
+
+| Model | Symbols | Meaning and units |
+|---|---|---|
+| Sampling | $G,\mathcal F,Q,m_g$ | Groups, feasible panels, group-panel law, representative count |
+| Completion | $p,a,b,s$ | Offered category share, two completion probabilities, total completion probability |
+| Retries | $L,N_L,c_i,c_c,C_L$ | Attempt cap/count; work units per attempt, per completion, and total work |
+| Repair | $Z_t,M,w,r$ | Item-count vector, offspring envelope, positive type weights, contraction factor |
+| Audit | $N,q,a,B$ | Fixed invitation count, marginal audit probability, cost per audit, audit budget |
+| Utility | $c,R,u,F,\alpha,\beta$ | Effort cost, reward, outside utility, loss in common utility units; two flag probabilities |
+
+Audit cost $a$ in Section 5 is separate from completion probability $a$ in Section 3;
+heterogeneous audit costs below are $\kappa_i$. Audit-budget units need not be the
+utility units of $c,R,u,F$ or the work units of $c_i,c_c$. There is no implicit
+conversion among these quantities.
 
 ## 2. Representation invariance belongs to a distribution
 
@@ -186,7 +241,7 @@ $$s=pa+(1-p)b,\qquad
 \Pr(R\mid\mathrm{complete})=\frac{pa}{s},\quad s>0.$$
 
 A $10\%$ offered share becomes $91.743\%$ of completed panels when $a=1$ and
-$b=.01$. An offered-panel cap is therefore not a completed-panel cap.
+$b=1/100$. An offered-panel cap is therefore not a completed-panel cap.
 
 **Proposition 2 (completion envelope).** If $p\le\epsilon<1$, $a\le u$, and
 $b\ge\ell>0$, then
@@ -218,8 +273,12 @@ $pa\sum_{j=0}^{L-1}(1-s)^j$. Dividing by total completion probability cancels th
 same sum: the risky share among completions remains $pa/s$ for every $L$.
 For $s=0$, every request uses $L$ attempts and stays unresolved.
 
-Let $c_i$ be invitation/triage cost per attempt and $c_c$ be work cost charged on
-completion. Then
+Let $L\ge1$ be a fixed integer and $c_i,c_c\ge0$ be constant charges in the same
+chosen work unit: $c_i$ per reached invitation/triage attempt and $c_c$ per
+completion. Let $T$ be the first completion attempt (infinite if none),
+$N_L=\min(T,L)$ and $I_L=1\{T\le L\}$. Stop on completion of either category,
+regardless of the scientific outcome; there can be at most one completion.
+The pathwise ledger is $C_L=c_iN_L+c_cI_L$, so linearity gives
 
 $$E[C_L]=c_iE[N_L]+c_c\{1-(1-s)^L\}.$$
 
@@ -228,7 +287,7 @@ $E[N_L]-1$. These are different quantities. Standby reservations, partial work,
 late cancellations and case intake require additional debits in a real ledger.
 The toy costs are chosen constants, not estimated labor.
 
-For $p=.1,a=1,b=.01,c_i=.2,c_c=2$, one attempt costs $.418$ model units on average,
+For $p=1/10,a=1,b=1/100,c_i=1/5,c_c=2$, one attempt costs $209/500$ model units on average,
 with $89.1\%$ unresolved. Ten attempts cost about $2.626$, and fifty about $3.823$.
 The completed-panel risk share remains $91.743\%$. The growth in completed work is
 real in this model, but presenting only the completion count conceals the resource
@@ -260,8 +319,8 @@ the odds distortion. At $p=1/10$:
 
 Under the IID retry model, cost sensitivity is exactly
 $\partial E[C_L]/\partial c_i=E[N_L]$ and
-$\partial E[C_L]/\partial c_c=\Pr(\mathrm{completion})$. At $L=10$ with the original $p=.1,a=1,b=.01$,
-changing $(c_i,c_c)$ from (.2,2) to (.02,2), (.2,20), or (2,2) changes expected
+$\partial E[C_L]/\partial c_c=\Pr(\mathrm{completion})$. At $L=10$ with the original $p=1/10,a=1,b=1/100$,
+changing $(c_i,c_c)$ from (1/5,2) to (1/50,2), (1/5,20), or (2,2) changes expected
 cost from 2.625583 to 1.494949, 14.949489, or 13.931919 model units. This does not
 alter completed share under IID assumptions; adaptive behavior requires another
 model. These are stipulated parameter sensitivities, not observed labor.
@@ -295,6 +354,10 @@ $K=\epsilon u/((1-\epsilon)\ell)$. Weight by the probability of reaching each
 history and sum. First-completion events are disjoint, so $X\le KY$ and the
 same completion-share envelope follows. This permits adapted policies and
 history-dependent completion, but **does not generalize IID retry costs**.
+For a fixed cap with adaptation, $E[N_L]=\sum_{j=1}^L\Pr(N_L\ge j)$ and
+$E[C_L]=c_iE[N_L]+c_c\Pr(T\le L)$ still hold; reaching probabilities generally
+do not equal $(1-s)^{j-1}$. Learning, fatigue or repeat-contact effects therefore
+require history-dependent reaching/completion probabilities.
 Cherry-picking an uncounted draw violates the effective offer bound. Selecting
 only risky completed panels for reliance is yet another selection stage; the
 completion bound says nothing about that relied-upon distribution. These internal
@@ -340,6 +403,29 @@ another positive $w$ succeeds. Common Lyapunov methods are established stability
 tools; the author's accessible survey distinguishes stable subsystems from stable
 switching. [Lin and Antsaklis, author manuscript](https://www3.nd.edu/~pantsakl/Archive/Publications_Through2009/366-TAC08.pdf)
 
+### Constructing a common witness
+
+For a supplied finite rational matrix family and fixed rational $0\le r<1$, finding
+$Mw\le rw$ for every $M$ with $w_i\ge1$ is linear-program feasibility. Scaling makes
+$w_i\ge1$ equivalent to strict positivity; it does not impose a physical work unit.
+The normalized alternative fixes $\sum_iw_i=1$ and $w_i\ge\varepsilon>0$.
+Our [bounded exact implementation](../../11-review-1608/README.md) enumerates
+vertices of this compact polytope and verifies each candidate with rational
+arithmetic. For $m$ matrices of size $n$, it considers at most
+$\binom{mn+n}{n-1}$ active sets, each requiring $O(n^3+mn^2)$ arithmetic operations;
+bit costs depend on input sizes. The implementation caps $m,n$ at four.
+This is an inspectable fixture, not an efficient general LP solver.
+
+For $M=((0,1),(0,0))$, uniform weights fail at $r=1/2$, while
+$w=(2/3,1/3)$ succeeds. A normalized lower bound $\varepsilon=2/5$
+excludes all witnesses at that $r$; $\varepsilon=1/4$ permits one. Failure therefore
+certifies only the specified LP's emptiness, not absence of every common witness
+or instability. Searching rational $r$ upward toward one and $\varepsilon$ downward
+toward zero eventually finds a strictly contractive positive witness if one exists
+for a finite rational family, but supplies no universal finite failure certificate.
+A common linear envelope remains a sufficient condition, not a necessary test
+for stability under switching; no prevalence in real repair systems is estimated.
+
 ### Counterexample: snapshots pass while switching explodes
 
 Take
@@ -356,20 +442,20 @@ introducing stochastic human behavior.
 
 For the positive example, use
 
-$$M_1=\begin{pmatrix}.2&.1\\.1&.4\end{pmatrix},\quad
-M_2=\begin{pmatrix}.1&.3\\.05&.2\end{pmatrix},\quad w=(1,2)^T.$$
+$$M_1=\begin{pmatrix}1/5&1/10\\1/10&2/5\end{pmatrix},\quad
+M_2=\begin{pmatrix}1/10&3/10\\1/20&1/5\end{pmatrix},\quad w=(1,2)^T.$$
 
-Both satisfy $M_jw\le .7w$. Starting with one first-type item gives an expected
-cumulative weighted bound $1/(1-.7)=10/3$. Exhaustive enumeration of every
+Both satisfy $M_jw\le (7/10)w$. Starting with one first-type item gives an expected
+cumulative weighted bound $1/(1-7/10)=10/3$. Exhaustive enumeration of every
 length-eight switching sequence checks the finite inequalities; a longer
 alternating trajectory is included in the CSV output. These tests supplement the
 proof; they do not estimate a real matrix family.
 
 ### Finite mean is not a service guarantee
 
-A branching item that produces 50 descendants with probability $.01$ and none
-otherwise has mean offspring $.5$. It is subcritical in first moment, yet its
-first generation alone exceeds an eight-item capacity with probability $.01$.
+A branching item that produces 50 descendants with probability $1/100$ and none
+otherwise has mean offspring $1/2$. It is subcritical in first moment, yet its
+first generation alone exceeds an eight-item capacity with probability $1/100$.
 For nonnegative total work $W$, the preceding expectation bound gives at most the
 conservative Markov bound $\Pr(W\ge H)\le E[W]/H$, capped at one. It does not
 establish deadline compliance or acceptable tails.
@@ -448,8 +534,56 @@ the assumed $q$ at each actor's decision information set. The theorem constructs
 a distribution; it does not supply concealment, credible enforcement, authentic
 independent auditors, correct detection, or delivery. Revealing selection before
 action gives unaudited actors conditional $q=0$, so the common-$q$ incentive argument
-no longer applies to them. Variable audit costs, risk-sensitive utility or changing
-$N$ require a different model.
+no longer applies to them. Heterogeneous deterministic costs admit the extension below; random costs,
+risk-sensitive utility and changing $N$ need additional contracts.
+
+**Endpoints and small cohorts.** The necessary condition $Nq\le K$ excludes every
+$q$ with $Nq>K$ before the construction. If $K=N$, $q\le1$ already makes that
+case impossible; $q=1$ chooses the whole cohort. If $K=0$, only $q=0$ is possible.
+For $N=2,a=1,B=3/2$, $K=1$ and $q_H=1/2$; $q=1/3$ is implemented by the empty
+subset and the two singleton subsets, each with probability $1/3$. The realized
+number audited is integer even though each marginal need not be a multiple of
+$1/N$. For positive identical cost, $q_E=q_H$ exactly when $B\ge Na$ or $B/a$ is
+an integer. Smaller-cohort rounding is therefore substantive, not a rounding error.
+
+### Heterogeneous deterministic audit costs
+
+For fixed $N$, declared actual costs $\kappa_i\ge0$ and budget $B$, define
+$\mathcal S_B=\{S\subseteq\{1,\ldots,N\}:\sum_{i\in S}\kappa_i\le B\}$.
+A marginal vector $q=(q_1,\ldots,q_N)$ is achievable exactly when the standard
+finite-lottery condition holds:
+
+$$q\in\operatorname{conv}\{1_S:S\in\mathcal S_B\}.$$
+
+This is necessary because any hard-feasible lottery averages feasible incidence
+vectors, and sufficient because its convex-combination coefficients are that
+lottery. For identical utilities, let $t_H$ maximize $t$ subject to
+$\lambda_S\ge0$, $\sum_S\lambda_S=1$, and
+$\sum_{S\ni i}\lambda_S=t$ for every $i$. Mixing an optimum with the empty subset
+achieves every $0\le t\le t_H$. The common-marginal weak-incentive set is exactly
+$\{t\in[0,t_H]:dt\ge c,ht\le v\}$ under the same information premises as above.
+Heterogeneous utility parameters instead require coordinate-specific inequalities.
+
+Costs $(2,1)$ and $B=2$ allow only empty/singleton audits, so $t_H=1/2$, attained by
+equal singleton probabilities. Expected spending alone permits $t=2/3$:
+$\sum_i\kappa_it=2$, showing it is insufficient for a hard cap. With costs
+$(2,1,1),B=2$, the subsets $\{1\}$ and $\{2,3\}$ each with probability $1/2$
+attain $t_H=1/2$. The bounded solver enumerates feasible subsets and basic lottery
+supports of size at most $N$, with exact checks including zero-cost cases and
+reduction to Proposition 4b. Its exponential enumeration is limited to $N\le4$;
+this convex-hull observation is established optimization machinery, not a new
+mechanism or a claim of scalable procurement.
+
+Random costs require a declared guarantee. Known joint support may define subsets
+whose costs never exceed $B$ (up to null events); known deterministic upper bounds
+supply conservative robust subsets. If a selected audit retains an unbounded positive cost tail conditional on
+selection-time information, it cannot ensure a finite hard cap without an external
+cap. Marginal unboundedness alone does not establish this conditional premise.
+Expected or chance constraints are different promises. If cohort size is observed
+before selection, condition the lottery on that size and require its hard constraint
+for every allowed realization; replacing $N$ with $E[N]$ does not suffice.
+Selection based on costs or history also changes the probabilities at effort choice.
+None of these distributions ensures delivery, concealment or independent authority.
 
 ### Worked comparison and negative cases
 
@@ -483,16 +617,16 @@ responsible institution; a symbolic variable cannot supply either.
 
 ### Synthetic audit sensitivity
 
-Use $c=.2,R=1,u=.1,F=2,\alpha=.02,\beta=.8,N=100$, audit cost $a_a=.1$ and $B=2$ as the
+Use $c=1/5,R=1,u=1/10,F=2,\alpha=1/50,\beta=4/5,N=100$, audit cost $a_a=1/10$ and $B=2$ as the
 synthetic baseline. Its hard-cap interval is $[5/39,1/5]$. One-at-a-time changes give:
 
 | Changed parameter | Hard-cap interval | Feasible? |
 |---|---|---|
-| $\alpha=.3$ | $[1/5,1/5]$ | Weak-indifference point only |
-| $\beta=.4$ | $[5/19,1/5]$ | No |
-| $c=.4$ | $[10/39,1/5]$ | No |
+| $\alpha=3/10$ | $[1/5,1/5]$ | Weak-indifference point only |
+| $\beta=2/5$ | $[5/19,1/5]$ | No |
+| $c=2/5$ | $[10/39,1/5]$ | No |
 | $F=4$ | $[5/78,1/5]$ | Yes |
-| $a_a=.2$ | $[5/39,1/10]$ | No |
+| $a_a=1/5$ | $[5/39,1/10]$ | No |
 | $B=4$ | $[5/39,2/5]$ | Yes |
 
 For $\alpha>0,F>0,\beta>\alpha$, compatibility of effort and participation requires
@@ -500,11 +634,11 @@ For $\alpha>0,F>0,\beta>\alpha$, compatibility of effort and participation requi
 $$c\alpha\le(R-c-u)(\beta-\alpha).$$
 
 $F$ cancels: increasing sanctions cannot repair this particular conflict. For
-$R=.4,c=.2,u=.1,\alpha=.3,\beta=.8$, right minus left is $-.01$, so $F=1,2,8$ all fail
+ $R=2/5,c=1/5,u=1/10,\alpha=3/10,\beta=4/5$, right minus left is $-1/100$, so $F=1,2,8$ all fail
 even before funding is considered. A nonempty interval only makes honesty a weak
 best response; it neither selects that behavior at ties nor funds real rewards.
 
-A simultaneous stipulated box $c\in[.1,.2]$, $\alpha\in[.01,.04]$, $\beta\in[.7,.9]$, $F\in[2,3]$,
+A simultaneous stipulated box $c\in[1/10,1/5]$, $\alpha\in[1/100,1/25]$, $\beta\in[7/10,9/10]$, $F\in[2,3]$,
 with other baseline quantities fixed, has common hard-feasible interval
 $[5/33,1/5]$. The effort lower bound increases with $c$ and $\alpha$ and decreases with
 $\beta$ and $F$; the participation upper bound decreases with $c$, $\alpha$ and $F$ here,
@@ -551,7 +685,7 @@ Offer `mean@v1` over three synthetic values, depending on `data@v1`. Uniform gro
 panels AB,AC,BC give offered category probability p=1/3 for AB; interchangeable
 aliases do not change this law. Set panel-level completion a=1 for AB and b=1/4
 otherwise, with completion coins fixed independently before observing audit
-results. For three IID attempts, s=1/2, E[N]=7/4, completion probability=7/8, and
+results. For three IID attempts, s=1/2, E[N_L]=7/4, completion probability=7/8, and
 AB's completed share=2/3. These are probabilities over the stipulated fixture,
 not frequencies inferred from its single realization.
 
@@ -624,16 +758,21 @@ operator processes outside these mathematical models.
 
 ## 7. Claim ledger and reproducibility
 
-| ID | Status | Claim and evidence | Limitation |
-|---|---|---|---|
-| M1 | Conditional theorem (fixed feasible family and Q) | Group-first pushforward invariance; proof and exact probability tests | Fixed true/declared group map, feasibility and weights |
-| M2 | Conditional theorems (conditioning; IID retries) | Completion-share envelope and separately conditional retry accounting | Adapted share bounds require bounds at every reached history; IID costs do not generalize to adapted retries |
-| M3 | Conditional theorem | Common positive envelope bounds conditional expected cumulative repair; proof | Envelope validity is an empirical/operational assumption |
-| M4 | Conditional theorems (expected spending; hard cap) | Distinct one-shot audit/participation intervals under their respective budget constraints | Hard cap additionally fixes population, identical actual cost and concealed delivery; neither result selects an equilibrium |
-| M5 | Synthetic implementation tests | Executable synthetic implementation reproduces positive and negative cases | Floating-point toy range, no production scheduler |
-| M6 | Monte Carlo simulation | 80,000 seeded simulated requests with pointwise uncertainty | Simulation outcomes only, no human evidence |
-| M7 | Design proposal | Keep simple participant actions while instrumenting full denominators and shared budgets | Usability and effectiveness untested |
-| M8 | Executable design example | Four-action guards and one trace linking the four models | Asserted identities/outcomes; sequential accounting only; no dynamic incentive or safety theorem |
+**M1 — Conditional theorem (fixed feasible family and Q).** Group-first pushforward invariance; proof and exact probability tests. Limitation: Fixed true/declared group map, feasibility and weights.
+
+**M2 — Conditional theorems (conditioning; IID retries).** Completion-share envelope and separately conditional retry accounting. Limitation: Adapted share bounds require bounds at every reached history; IID costs do not generalize to adapted retries.
+
+**M3 — Conditional theorem.** Common positive envelope bounds conditional expected cumulative repair; proof. Limitation: Envelope validity is an empirical/operational assumption.
+
+**M4 — Conditional theorems (expected spending; hard cap).** Distinct expected/hard audit intervals and finite heterogeneous-cost lottery characterization. Limitation: Fixed delivered costs and cohort; applicable decision-time audit probability; no equilibrium selection.
+
+**M5 — Synthetic implementation tests.** Executable synthetic implementation reproduces positive and negative cases. Limitation: Floating-point toy range, no production scheduler.
+
+**M6 — Monte Carlo simulation.** 80,000 seeded simulated requests with pointwise uncertainty. Limitation: Simulation outcomes only, no human evidence.
+
+**M7 — Design proposal.** Keep simple participant actions while instrumenting full denominators and shared budgets. Limitation: Usability and effectiveness untested.
+
+**M8 — Executable design example.** Four-action guards and one trace linking the four models. Limitation: Asserted identities/outcomes; sequential accounting only; no dynamic incentive or safety theorem.
 
 These conventional categories separate proved implications under stated premises,
 implementation tests, synthetic Monte Carlo experiments and proposed design.
@@ -687,3 +826,18 @@ PYTHONDONTWRITEBYTECODE=1 python3 papers/10-review-1590/demo.py
 The saved trace includes refusals, a separate reliance decision, amendment, and
 rejected stale/replayed/underfunded requests. Its fourteen named tests are internal
 synthetic checks, not evidence of operational or scientific effectiveness.
+
+
+The review-1608 packet adds constructive fixed-parameter witness search and
+heterogeneous deterministic-cost audit lotteries. Ten named exact tests cover
+positive, negative and degenerate fixtures. Run:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s papers/11-review-1608 -p 'test_*.py' -v
+PYTHONDONTWRITEBYTECODE=1 python3 papers/11-review-1608/extensions.py
+```
+
+The [packet](../../11-review-1608/README.md) records search complexity, fixed-parameter
+failure limits, licenses and AI provenance; its [response](../../11-review-1608/response-to-review-1608.md)
+distinguishes clarifications from bounded extensions. These are internal synthetic
+checks, with no newly claimed scientific or operational effectiveness.

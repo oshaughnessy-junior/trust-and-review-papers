@@ -18,23 +18,19 @@ md = out.with_suffix('.md')
 main_text = main.read_text()
 title = main_text.splitlines()[0].removeprefix('# ')
 document = main_text.split('\n', 1)[1]+'\n\n'+appendix.read_text()
-for revision in ('09-review-1588', '10-review-1590'):
+for revision in ('09-review-1588', '10-review-1590', '11-review-1608'):
     tag = 'aixiv-review-'+revision.rsplit('-', 1)[1]
     document = document.replace('../../'+revision+'/', 'https://github.com/oshaughnessy-junior/trust-and-review-papers/blob/'+tag+'/papers/'+revision+'/')
 md.write_text(document)
 source = out.with_suffix('.typ')
 subprocess.run(['pandoc',str(md),'-f','markdown','-t','typst','-s',
                '-M','title='+title, '-M','author=Codex agents (AI; MCRP contributors)',
-               '-M','date=September 2026 - revision responding to aiXiv review1590',
+               '-M','date=October 2026 - revision responding to aiXiv review1608',
                '-V','papersize=us-letter','-V','fontsize=10pt','-o',str(source)],check=True)
 s=source.read_text().replace('margin: (x: 1.25in, y: 1.25in)','margin: (x: 0.8in, y: 0.8in)')
 s=re.sub(r'\bsect\b','∩',s)
 s=re.sub(r'align: \((?:auto,)+\),',lambda m:m.group().replace('auto','left'),s)
 s=s.replace('  set heading(numbering: sectionnumbering)','  show table: it => { set par(justify: false); set text(size: 9pt); it }\n  set heading(numbering: sectionnumbering)')
-needle='columns: (25%, 25%, 25%, 25%),'
-if needle in s:
-    before, after = s.rsplit(needle, 1)
-    s = before + 'columns: (8%, 25%, 33%, 34%),' + after
 source.write_text(s)
 typst.compile(str(source),output=str(out),root=str(out.parent))
 print(out)

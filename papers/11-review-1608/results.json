@@ -1,0 +1,94 @@
+{
+  "witness": [
+    "2/3",
+    "1/3"
+  ],
+  "r": "1/2",
+  "heterogeneous": [
+    {
+      "costs": [
+        2,
+        1
+      ],
+      "budget": 2,
+      "q": "1/2",
+      "lottery": [
+        {
+          "subset": [
+            0
+          ],
+          "probability": "1/2"
+        },
+        {
+          "subset": [
+            1
+          ],
+          "probability": "1/2"
+        }
+      ]
+    },
+    {
+      "costs": [
+        2,
+        1,
+        1
+      ],
+      "budget": 2,
+      "q": "1/2",
+      "lottery": [
+        {
+          "subset": [
+            0
+          ],
+          "probability": "1/2"
+        },
+        {
+          "subset": [
+            1,
+            2
+          ],
+          "probability": "1/2"
+        }
+      ]
+    },
+    {
+      "costs": [
+        2,
+        2
+      ],
+      "budget": 3,
+      "q": "1/2",
+      "lottery": [
+        {
+          "subset": [
+            0
+          ],
+          "probability": "1/2"
+        },
+        {
+          "subset": [
+            1
+          ],
+          "probability": "1/2"
+        }
+      ]
+    },
+    {
+      "costs": [
+        0,
+        0
+      ],
+      "budget": 0,
+      "q": "1",
+      "lottery": [
+        {
+          "subset": [
+            0,
+            1
+          ],
+          "probability": "1"
+        }
+      ]
+    }
+  ]
+}

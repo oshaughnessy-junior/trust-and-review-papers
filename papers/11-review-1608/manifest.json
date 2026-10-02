@@ -1,0 +1,10 @@
+{
+  "purpose": "Exact synthetic review-1608 extension fixtures; no empirical validation",
+  "sha256": {
+    "extensions.py": "d168496daad4c4511f6d8acc6d10d68e5efde6e3dbd709fb4133032207a8dcf0",
+    "test_extensions.py": "e4b3bed33b807434e1526e7378e887e86eb473c8892ec38848be8d009fef68f0",
+    "results.json": "2a5b9fd40b1c8526a770a50685eadfe2d5728088d3dbdc1cb589fe6b90708820",
+    "README.md": "5b9673027926a377362491217159ec62549b007ba55ce99c2dd77e1b05726a8f",
+    "response-to-review-1608.md": "a4adb55f72aeb0fe30a7c67f64f16215b2b0e2f36f48efd0248396e32a48e02b"
+  }
+}

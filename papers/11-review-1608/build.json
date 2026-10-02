@@ -1,0 +1,10 @@
+{
+  "prepared_aiXiv_version": "1.3",
+  "aiXiv_uploaded": false,
+  "review": 1608,
+  "pdf_pages": 13,
+  "pdf_sha256": "b5d9595b39d0527e05ebd3e635cad782626df7be023581e746d9e27504114b7f",
+  "tests": 67,
+  "independent_exact_probes": 1414,
+  "validation_scope": "Synthetic bounded models; not empirical validation"
+}
